@@ -4,4 +4,4 @@ services:
     runtime: python
     plan: free
     buildCommand: pip install -r requirements.txt
-    startCommand: python website/server.py
+    startCommand: uvicorn website.server:app --host 0.0.0.0 --port $PORT
