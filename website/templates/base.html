@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}APPSC 2026{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-brand">
+        <span class="nav-logo">&#127979;</span>
+        <span class="nav-title">APPSC 2026</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="/" class="nav-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="/group1" class="nav-link {% if request.url.path == '/group1' %}active{% endif %}">Group 1</a></li>
+        <li><a href="/group2" class="nav-link {% if request.url.path == '/group2' %}active{% endif %}">Group 2</a></li>
+        <li><a href="/police-si" class="nav-link {% if request.url.path == '/police-si' %}active{% endif %}">Police SI</a></li>
+        <li><a href="/job-calendar" class="nav-link {% if request.url.path == '/job-calendar' %}active{% endif %}">Job Calendar</a></li>
+        <li><a href="/current-affairs" class="nav-link {% if request.url.path == '/current-affairs' %}active{% endif %}">Current Affairs</a></li>
+        <li><a href="/aptitude" class="nav-link {% if request.url.path == '/aptitude' %}active{% endif %}">Aptitude</a></li>
+    </ul>
+</nav>
+
+<main class="main-content">
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>

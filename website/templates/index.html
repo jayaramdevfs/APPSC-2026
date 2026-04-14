@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}APPSC 2026 — Exam Preparation{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1 class="hero-title">APPSC 2026 Exam Preparation</h1>
+    <p class="hero-subtitle">Andhra Pradesh Public Service Commission</p>
+</section>
+
+<section class="cards-grid">
+
+    <a href="/group1" class="card">
+        <div class="card-icon">&#128218;</div>
+        <div class="card-body">
+            <h2 class="card-title">Group 1</h2>
+            <p class="card-desc">Gazetted Officers &mdash; Prelims &amp; Mains Syllabus</p>
+        </div>
+        <div class="card-action">View Syllabus &rarr;</div>
+    </a>
+
+    <a href="/group2" class="card">
+        <div class="card-icon">&#128196;</div>
+        <div class="card-body">
+            <h2 class="card-title">Group 2</h2>
+            <p class="card-desc">Non-Gazetted Officers &mdash; Full Syllabus</p>
+        </div>
+        <div class="card-action">View Syllabus &rarr;</div>
+    </a>
+
+    <a href="/police-si" class="card">
+        <div class="card-icon">&#128110;</div>
+        <div class="card-body">
+            <h2 class="card-title">AP Police SI</h2>
+            <p class="card-desc">Sub-Inspector of Police &mdash; Exam Topics</p>
+        </div>
+        <div class="card-action">View Topics &rarr;</div>
+    </a>
+
+    <a href="/job-calendar" class="card">
+        <div class="card-icon">&#128197;</div>
+        <div class="card-body">
+            <h2 class="card-title">Job Calendar 2026</h2>
+            <p class="card-desc">APPSC Exam Schedule &amp; Notification Dates</p>
+        </div>
+        <div class="card-action">View Calendar &rarr;</div>
+    </a>
+
+</section>
+{% endblock %}

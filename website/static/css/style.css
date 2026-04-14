@@ -1,0 +1,766 @@
+/* =========================================
+   APPSC 2026 — Website Styles
+   ========================================= */
+
+/* Utility colours */
+.clr-green { color: #2e7d32; }
+.clr-muted { color: #9e9e9e; }
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --navy:      #1a237e;
+    --navy-dark: #0d1457;
+    --gold:      #f9a825;
+    --white:     #ffffff;
+    --bg:        #f4f6fb;
+    --text:      #1c1c2e;
+    --muted:     #6b7280;
+    --border:    #dde1f0;
+    --shadow:    0 4px 18px rgba(26, 35, 126, 0.10);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* ---- Navbar ---- */
+.navbar {
+    background: var(--navy);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+}
+
+.nav-title {
+    color: var(--gold);
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0.25rem;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+}
+
+.nav-link.active {
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-weight: 700;
+}
+
+/* ---- Main content area ---- */
+.main-content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---- Hero (home page) ---- */
+.hero {
+    text-align: center;
+    padding: 2.5rem 1rem 1.5rem;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+}
+
+/* ---- Cards grid ---- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(26, 35, 126, 0.16);
+    border-color: var(--navy);
+}
+
+.card-icon {
+    font-size: 2.2rem;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.card-desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.card-action {
+    margin-top: auto;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+/* ---- Section / PDF pages ---- */
+.page-header {
+    margin-bottom: 1.25rem;
+}
+
+.back-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--navy);
+    text-decoration: none;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.page-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.page-subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+}
+
+/* ---- PDF iframe ---- */
+.pdf-container {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 85vh;
+    border: none;
+    display: block;
+}
+
+/* =========================================
+   GROUP 2 STUDY PORTAL
+   ========================================= */
+
+.g2-header { margin-bottom: 1.25rem; }
+
+/* ---- Tab bar ---- */
+.g2-tabs {
+    display: flex;
+    gap: 0.25rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 1.25rem;
+}
+
+.g2-tab {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 0.55rem 1.15rem 0.7rem;
+    margin-bottom: -2px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-family: inherit;
+    transition: color 0.18s, border-color 0.18s;
+}
+
+.tab-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--muted);
+    transition: color 0.18s;
+}
+
+.tab-sub {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.g2-tab:hover .tab-label { color: var(--navy); }
+
+.g2-tab.active .tab-label {
+    color: var(--navy);
+}
+
+.g2-tab.active {
+    border-bottom-color: var(--navy);
+}
+
+/* ---- Panels ---- */
+.g2-panel { display: none; }
+.g2-panel.active { display: block; }
+
+/* ---- Portal two-column layout ---- */
+.portal-wrap {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+/* ---- Sidebar ---- */
+.g2-sidebar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: sticky;
+    top: 70px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+.sidebar-info {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    font-size: 0.71rem;
+    padding: 0.5rem 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.g2-section { border-bottom: 1px solid var(--border); }
+.g2-section:last-child { border-bottom: none; }
+
+.g2-section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--navy);
+    background: #eef0fb;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.g2-marks-badge {
+    font-size: 0.65rem;
+    background: var(--navy);
+    color: #fff;
+    padding: 0.1rem 0.38rem;
+    border-radius: 4px;
+}
+
+.g2-topic-list { list-style: none; padding: 0.3rem 0; }
+
+.g2-topic-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.42rem 0.85rem;
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--muted);
+    border-left: 3px solid transparent;
+    transition: background 0.15s, color 0.15s;
+    line-height: 1.35;
+}
+
+.g2-topic-item:hover {
+    background: #f0f2ff;
+    color: var(--text);
+}
+
+.g2-topic-item.selected {
+    background: #e8ebff;
+    color: var(--navy);
+    border-left-color: var(--navy);
+    font-weight: 600;
+}
+
+.g2-topic-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    flex-shrink: 0;
+    margin-top: 0.35rem;
+}
+
+.g2-topic-item.selected .g2-topic-dot { background: var(--navy); }
+
+.g2-topic-name { flex: 1; }
+
+/* ---- Content area ---- */
+.g2-content {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    min-height: 480px;
+    padding: 2rem;
+}
+
+.hidden { display: none !important; }
+
+/* Welcome / empty state */
+.g2-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 420px;
+    text-align: center;
+    color: var(--muted);
+    gap: 0.75rem;
+}
+
+.g2-welcome-icon { font-size: 2.5rem; }
+
+.g2-welcome p { font-size: 0.9rem; line-height: 1.6; }
+
+/* Topic detail card */
+.g2-topic-detail { animation: fadeIn 0.2s ease; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.g2-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.g2-detail-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.3;
+}
+
+.g2-detail-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+}
+
+.g2-official-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* Syllabus bullet points */
+.g2-syllabus-points {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+}
+
+.g2-point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text);
+    padding: 0.6rem 0.85rem;
+    background: #f8f9ff;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--navy);
+    border-radius: 0 8px 8px 0;
+}
+
+.g2-point-item::before {
+    content: "▸";
+    color: var(--navy);
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.22rem;
+}
+
+/* Footer note */
+.g2-detail-footer {
+    margin-top: 1.75rem;
+    padding: 0.75rem 1rem;
+    background: #fffde7;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    color: #6d4c41;
+}
+
+/* =========================================
+   CURRENT AFFAIRS — CALENDAR
+   ========================================= */
+
+.ca-header { margin-bottom: 1.25rem; }
+
+/* ── Month strip ── */
+.ca-month-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.ca-month-pill {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.ca-month-pill:hover {
+    border-color: var(--navy);
+    color: var(--navy);
+}
+
+.ca-month-pill.active {
+    background: var(--navy);
+    border-color: var(--navy);
+    color: var(--white);
+}
+
+/* ── Body layout: calendar + content side by side ── */
+.ca-body {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+/* ── Calendar card ── */
+.ca-calendar-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 0.65rem;
+    position: sticky;
+    top: 70px;
+}
+
+.ca-cal-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.ca-cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    margin-bottom: 4px;
+}
+
+.ca-dow {
+    text-align: center;
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: var(--muted);
+    padding: 0.15rem 0;
+    text-transform: uppercase;
+}
+
+.ca-cal-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 3px;
+}
+
+.ca-day-cell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text);
+    position: relative;
+    transition: background 0.15s, color 0.15s;
+    gap: 1px;
+}
+
+.ca-day-cell.empty {
+    cursor: default;
+}
+
+.ca-day-cell:not(.empty):hover {
+    background: #f0f2ff;
+    color: var(--navy);
+}
+
+.ca-day-cell.today .ca-day-num {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.ca-day-cell.has-data {
+    background: #fffde7;
+}
+
+.ca-day-cell.has-data:not(.empty):hover {
+    background: #fff8c4;
+}
+
+.ca-day-cell.selected {
+    background: var(--navy) !important;
+    color: var(--white) !important;
+}
+
+.ca-day-cell.selected .ca-day-num {
+    background: none !important;
+    color: var(--white) !important;
+    width: auto;
+    height: auto;
+}
+
+.ca-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+}
+
+.ca-day-cell.selected .ca-dot {
+    background: rgba(255,255,255,0.7);
+}
+
+/* ── Content card ── */
+.ca-content-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    min-height: 460px;
+    overflow: hidden;
+}
+
+.ca-content-header {
+    background: var(--navy);
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.ca-date-text {
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.ca-date-iso {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    font-family: monospace;
+}
+
+.ca-content-body {
+    padding: 1.5rem;
+}
+
+/* Empty / placeholder states */
+.ca-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 360px;
+    text-align: center;
+    color: var(--muted);
+    gap: 0.75rem;
+}
+
+.ca-empty-icon { font-size: 2.5rem; }
+
+.ca-empty-state p { font-size: 0.88rem; line-height: 1.65; }
+
+.ca-add-hint {
+    margin-top: 0.5rem;
+    font-size: 0.8rem !important;
+    color: #9e9e9e;
+}
+
+.ca-add-hint code {
+    background: #eef0fb;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    color: var(--navy);
+    word-break: break-all;
+}
+
+.ca-loading {
+    text-align: center;
+    padding: 3rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.ca-error { color: #c62828; font-size: 0.88rem; }
+
+/* Markdown inside CA */
+.ca-md-body { font-size: 0.9rem; line-height: 1.75; color: var(--text); }
+.ca-md-body h1 { font-size: 1.3rem; color: var(--navy); margin: 1.2rem 0 0.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.3rem; }
+.ca-md-body h2 { font-size: 1.1rem; color: var(--navy); margin: 1.1rem 0 0.45rem; }
+.ca-md-body h3 { font-size: 0.95rem; color: #283593; margin: 0.9rem 0 0.35rem; font-weight: 700; }
+.ca-md-body p  { margin-bottom: 0.6rem; }
+.ca-md-body ul, .ca-md-body ol { margin: 0.4rem 0 0.6rem 1.4rem; }
+.ca-md-body li { margin-bottom: 0.3rem; }
+.ca-md-body strong { color: var(--navy); }
+.ca-md-body table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; font-size: 0.83rem; }
+.ca-md-body th { background: var(--navy); color: #fff; padding: 0.45rem 0.7rem; text-align: left; font-weight: 600; }
+.ca-md-body td { padding: 0.4rem 0.7rem; border: 1px solid var(--border); }
+.ca-md-body tr:nth-child(even) td { background: #f8f9ff; }
+
+/* ══════════════════════════════════════════════════════════════
+   Aptitude & Reasoning — exam source badges
+   ══════════════════════════════════════════════════════════════ */
+
+/* Inline badge in sidebar topic list */
+.apt-exam-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.apt-badge-g1prelims {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+.apt-badge-g2screening {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+/* Large badge in detail header */
+.apt-exam-badge-lg {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+.apt-badge-lg-g1prelims {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+.apt-badge-lg-g2screening {
+    background: #e3f2fd;
+    color: #1565c0;
+    border: 1px solid #90caf9;
+}
+
+/* Make topic items flex so the badge floats right */
+.apt-topic-item {
+    display: flex !important;
+    align-items: center;
+    gap: 0.4rem;
+}

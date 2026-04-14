@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Aptitude & Reasoning — APPSC 2026{% endblock %}
+
+{% block content %}
+
+<div class="g2-header">
+  <a href="/" class="back-link">&larr; Back to Home</a>
+  <h1 class="page-title">Aptitude &amp; Reasoning</h1>
+  <p class="page-subtitle">General Mental Ability &nbsp;&bull;&nbsp; Group 1 (Prelims) &nbsp;&bull;&nbsp; Group 2 (Screening)</p>
+</div>
+
+<div class="portal-wrap">
+
+  <!-- Sidebar -->
+  <aside class="g2-sidebar">
+    {% for section in structure.sections %}
+    <div class="g2-section">
+      <div class="g2-section-head">
+        <span>{{ section.title }}</span>
+        <span class="g2-marks-badge">{{ section.topics | length }}T</span>
+      </div>
+      <ul class="g2-topic-list">
+        {% for topic in section.topics %}
+        <li class="g2-topic-item apt-topic-item"
+            data-topic-id="{{ topic.id }}">
+          <span class="g2-topic-dot"></span>
+          <span class="g2-topic-name">{{ topic.title }}</span>
+          <span class="apt-exam-badge apt-badge-{{ topic.exam | replace(' ','') | lower }}">{{ topic.exam }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </aside>
+
+  <!-- Content area -->
+  <div class="g2-content">
+    <div class="g2-welcome" id="apt-welcome">
+      <div class="g2-welcome-icon">&#129488;</div>
+      <p>Select a topic from the sidebar to see its official syllabus.</p>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:0.5rem;">Topics drawn from Group 1 Prelims (Paper II) and Group 2 Screening Test.</p>
+    </div>
+    <div class="g2-topic-detail hidden" id="apt-detail">
+      <div class="g2-detail-header">
+        <div>
+          <h2 class="g2-detail-title" id="apt-title"></h2>
+          <p class="g2-detail-meta">Official Syllabus &nbsp;&bull;&nbsp; <span id="apt-exam-label"></span></p>
+        </div>
+        <div style="display:flex;gap:0.5rem;align-items:center;">
+          <span class="apt-exam-badge-lg" id="apt-exam-badge-lg"></span>
+          <span class="g2-official-tag">APPSC Official</span>
+        </div>
+      </div>
+      <ul class="g2-syllabus-points" id="apt-points"></ul>
+      <div class="g2-detail-footer">
+        <span>&#9998;</span> Notes &amp; practice questions for this topic will be added here.
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const APT = {{ structure_json | safe }};
+
+// Flatten topics for quick lookup by id
+const topicMap = {};
+APT.sections.forEach(sec => {
+  sec.topics.forEach(t => { topicMap[t.id] = t; });
+});
+
+document.querySelectorAll('.apt-topic-item').forEach(li => {
+  li.addEventListener('click', () => {
+    document.querySelectorAll('.apt-topic-item').forEach(x => x.classList.remove('selected'));
+    li.classList.add('selected');
+
+    const topic = topicMap[li.dataset.topicId];
+    if (!topic) return;
+
+    document.getElementById('apt-welcome').classList.add('hidden');
+    document.getElementById('apt-detail').classList.remove('hidden');
+
+    document.getElementById('apt-title').textContent = topic.title;
+    document.getElementById('apt-exam-label').textContent = topic.exam;
+
+    const badgeLg = document.getElementById('apt-exam-badge-lg');
+    badgeLg.textContent = topic.exam;
+    badgeLg.className = 'apt-exam-badge-lg apt-badge-lg-' +
+                        topic.exam.replace(/\s/g,'').toLowerCase();
+
+    const ul = document.getElementById('apt-points');
+    ul.innerHTML = topic.points
+      .map(p => `<li class="g2-point-item">${p}</li>`)
+      .join('');
+  });
+});
+</script>
+
+{% endblock %}

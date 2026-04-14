@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}Group 2 — APPSC 2026{% endblock %}
+
+{% block content %}
+
+<div class="g2-header">
+  <a href="/" class="back-link">&larr; Back to Home</a>
+  <h1 class="page-title">Group 2 &mdash; Study Portal</h1>
+  <p class="page-subtitle">APPSC Non-Gazetted Officers Exam &nbsp;|&nbsp; Screening Test &bull; Paper 1 &bull; Paper 2</p>
+</div>
+
+<!-- ── Tab bar ─────────────────────────────────────────────────── -->
+<div class="g2-tabs">
+  <button class="g2-tab active" data-tab="syllabus">
+    <span class="tab-label">Syllabus</span>
+    <span class="tab-sub">Official PDF</span>
+  </button>
+  {% for key, stage in structure.items() %}
+  <button class="g2-tab" data-tab="{{ key }}">
+    <span class="tab-label">{{ stage.label }}</span>
+    <span class="tab-sub">{{ stage.subtitle.split('|')[0].strip() }}</span>
+  </button>
+  {% endfor %}
+</div>
+
+<!-- ── Syllabus panel (default) ────────────────────────────────── -->
+<div class="g2-panel active" id="panel-syllabus">
+  <div class="pdf-container">
+    <iframe src="/pdfs/5_PDFsam_APPSC_GROUP2_SYLLABUS.pdf"
+            class="pdf-viewer" title="Group 2 Official Syllabus PDF"></iframe>
+  </div>
+</div>
+
+<!-- ── Exam panels (Screening / Paper 1 / Paper 2) ─────────────── -->
+{% for key, stage in structure.items() %}
+<div class="g2-panel" id="panel-{{ key }}">
+
+  <div class="portal-wrap">
+
+    <!-- Sidebar -->
+    <aside class="g2-sidebar">
+      <div class="sidebar-info">{{ stage.subtitle }}</div>
+      {% for section in stage.sections %}
+      <div class="g2-section">
+        <div class="g2-section-head">
+          <span>{{ section.title }}</span>
+          <span class="g2-marks-badge">{{ section.marks }}M</span>
+        </div>
+        <ul class="g2-topic-list">
+          {% for topic in section.topics %}
+          <li class="g2-topic-item"
+              data-stage="{{ key }}"
+              data-topic-id="{{ topic.id }}">
+            <span class="g2-topic-dot"></span>
+            <span class="g2-topic-name">{{ topic.title }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+    </aside>
+
+    <!-- Content area -->
+    <div class="g2-content">
+
+      <!-- Default: nothing selected yet -->
+      <div class="g2-welcome" id="welcome-{{ key }}">
+        <div class="g2-welcome-icon">&#128218;</div>
+        <p>Select a topic from the sidebar to see its official syllabus.</p>
+      </div>
+
+      <!-- Topic detail (hidden until a topic is clicked) -->
+      <div class="g2-topic-detail hidden" id="detail-{{ key }}">
+        <div class="g2-detail-header">
+          <div>
+            <h2 class="g2-detail-title" id="title-{{ key }}"></h2>
+            <p class="g2-detail-meta">Official Syllabus &nbsp;&bull;&nbsp; {{ stage.label }}</p>
+          </div>
+          <span class="g2-official-tag">APPSC Official</span>
+        </div>
+        <ul class="g2-syllabus-points" id="points-{{ key }}"></ul>
+        <div class="g2-detail-footer">
+          <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+{% endfor %}
+
+<!-- Embed syllabus data for JavaScript (no API calls needed) -->
+<script>
+const G2 = {{ structure_json | safe }};
+
+// ── Tab switching ──────────────────────────────────────────────
+document.querySelectorAll('.g2-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.g2-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.g2-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  });
+});
+
+// ── Topic click ────────────────────────────────────────────────
+document.querySelectorAll('.g2-topic-item').forEach(li => {
+  li.addEventListener('click', () => {
+    const stageKey = li.dataset.stage;
+    const topicId  = li.dataset.topicId;
+
+    // Highlight
+    document.querySelectorAll(`.g2-topic-item[data-stage="${stageKey}"]`)
+            .forEach(t => t.classList.remove('selected'));
+    li.classList.add('selected');
+
+    // Find topic data
+    const stage = G2[stageKey];
+    let topic = null;
+    for (const section of stage.sections) {
+      topic = section.topics.find(t => t.id === topicId);
+      if (topic) break;
+    }
+    if (!topic) return;
+
+    // Render
+    document.getElementById('welcome-' + stageKey).classList.add('hidden');
+    const detail = document.getElementById('detail-' + stageKey);
+    detail.classList.remove('hidden');
+
+    document.getElementById('title-' + stageKey).textContent = topic.title;
+
+    const ul = document.getElementById('points-' + stageKey);
+    ul.innerHTML = topic.points
+      .map(p => `<li class="g2-point-item">${p}</li>`)
+      .join('');
+  });
+});
+</script>
+
+{% endblock %}
