@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}APPSC 2026{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
@@ -13,6 +16,10 @@
         <span class="nav-logo">&#127979;</span>
         <span class="nav-title">APPSC 2026</span>
     </div>
+    <button class="nav-toggle" aria-label="Toggle menu"
+            onclick="this.closest('.navbar').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
         <li><a href="/" class="nav-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
         <li><a href="/group1" class="nav-link {% if request.url.path == '/group1' %}active{% endif %}">Group 1</a></li>
@@ -28,5 +35,12 @@
     {% block content %}{% endblock %}
 </main>
 
+<script>
+  document.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function() {
+      document.querySelector('.navbar').classList.remove('nav-open');
+    });
+  });
+</script>
 </body>
 </html>
