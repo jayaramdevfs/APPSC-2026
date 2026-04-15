@@ -1485,18 +1485,8 @@ async def group2(request: Request):
     })
 
 
-async def police_si(request: Request):
-    return templates.TemplateResponse(request, "police_si.html", {
-        "title": "AP Police SI Exam Topics",
-        "pdf_url": "/pdfs/AP-Police-SI-Exam-Topics.pdf",
-    })
 
 
-async def job_calendar(request: Request):
-    return templates.TemplateResponse(request, "job_calendar.html", {
-        "title": "APPSC Job Calendar 2026",
-        "pdf_url": "/pdfs/appsc%20job%20calender%202026.pdf",
-    })
 
 
 # ---------------------------------------------------------------------------
@@ -1649,8 +1639,6 @@ routes = [
     Route("/",                              homepage),
     Route("/group1",                        group1),
     Route("/group2",                        group2),
-    Route("/police-si",                     police_si),
-    Route("/job-calendar",                  job_calendar),
     Route("/current-affairs",              current_affairs),
     Route("/aptitude",                      aptitude),
     Route("/api/ca/content/{date}",         api_ca_content),
