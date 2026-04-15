@@ -92,6 +92,14 @@ document.querySelectorAll('.apt-topic-item').forEach(li => {
     ul.innerHTML = topic.points
       .map(p => `<li class="g2-point-item">${p}</li>`)
       .join('');
+
+    // Scroll to content panel on mobile
+    if (window.innerWidth <= 768) {
+      setTimeout(() => {
+        document.getElementById('apt-detail')
+          .scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 60);
+    }
   });
 });
 </script>

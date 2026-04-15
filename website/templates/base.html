@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}APPSC 2026{% endblock %}</title>
+    <title>{% block title %}GroupsGuru{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css?v=3">
 </head>
 <body>
 
 <nav class="navbar">
-    <div class="nav-brand">
-        <span class="nav-logo">&#127979;</span>
-        <span class="nav-title">APPSC 2026</span>
-    </div>
-    <button class="nav-toggle" aria-label="Toggle menu"
-            onclick="this.closest('.navbar').classList.toggle('nav-open')">
+    <!-- Hamburger — always LEFT (GroupsGuru pattern) -->
+    <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle">
         <span></span><span></span><span></span>
     </button>
+
+    <!-- Brand -->
+    <div class="nav-brand">
+        <span class="nav-logo">&#127979;</span>
+        <span class="nav-title">GroupsGuru</span>
+    </div>
+
+    <!-- Desktop horizontal links (hidden on mobile via CSS) -->
     <ul class="nav-links">
         <li><a href="/" class="nav-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
         <li><a href="/group1" class="nav-link {% if request.url.path == '/group1' %}active{% endif %}">Group 1</a></li>
@@ -31,15 +35,58 @@
     </ul>
 </nav>
 
+<!-- Backdrop (click to close drawer) -->
+<div class="nav-backdrop" id="nav-backdrop"></div>
+
+<!-- Left slide-out drawer -->
+<div class="nav-drawer" id="nav-drawer">
+    <div class="nav-drawer-header">
+        <div class="nav-brand">
+            <span class="nav-logo">&#127979;</span>
+            <span class="nav-title">GroupsGuru</span>
+        </div>
+        <button class="nav-close" id="nav-close" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="nav-drawer-links">
+        <li><a href="/" class="nav-drawer-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="/group1" class="nav-drawer-link {% if request.url.path == '/group1' %}active{% endif %}">Group 1</a></li>
+        <li><a href="/group2" class="nav-drawer-link {% if request.url.path == '/group2' %}active{% endif %}">Group 2</a></li>
+        <li><a href="/police-si" class="nav-drawer-link {% if request.url.path == '/police-si' %}active{% endif %}">Police SI</a></li>
+        <li><a href="/job-calendar" class="nav-drawer-link {% if request.url.path == '/job-calendar' %}active{% endif %}">Job Calendar</a></li>
+        <li><a href="/current-affairs" class="nav-drawer-link {% if request.url.path == '/current-affairs' %}active{% endif %}">Current Affairs</a></li>
+        <li><a href="/aptitude" class="nav-drawer-link {% if request.url.path == '/aptitude' %}active{% endif %}">Aptitude</a></li>
+    </ul>
+</div>
+
 <main class="main-content">
     {% block content %}{% endblock %}
 </main>
 
 <script>
-  document.querySelectorAll('.nav-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      document.querySelector('.navbar').classList.remove('nav-open');
-    });
+  const navToggle  = document.getElementById('nav-toggle');
+  const navDrawer  = document.getElementById('nav-drawer');
+  const navBackdrop = document.getElementById('nav-backdrop');
+  const navClose   = document.getElementById('nav-close');
+
+  function openMenu() {
+    navDrawer.classList.add('open');
+    navBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    navDrawer.classList.remove('open');
+    navBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  navToggle.addEventListener('click', openMenu);
+  navBackdrop.addEventListener('click', closeMenu);
+  navClose.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-drawer-link').forEach(function(l) {
+    l.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMenu();
   });
 </script>
 </body>
