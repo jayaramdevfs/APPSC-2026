@@ -4,6 +4,7 @@ import os
 import re
 import secrets
 import sqlite3
+from datetime import date, timedelta
 from pathlib import Path
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
@@ -74,6 +75,29 @@ def init_db() -> None:
             role          TEXT DEFAULT 'student',
             is_active     INTEGER DEFAULT 1,
             created_at    TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS topic_progress (
+            id            INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id       INTEGER NOT NULL,
+            topic_id      TEXT NOT NULL,
+            subject       TEXT NOT NULL,
+            topic_title   TEXT,
+            first_studied TEXT DEFAULT CURRENT_DATE,
+            last_studied  TEXT DEFAULT CURRENT_DATE,
+            study_count   INTEGER DEFAULT 1,
+            UNIQUE(user_id, topic_id)
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS revision_log (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id         INTEGER NOT NULL,
+            topic_id        TEXT NOT NULL,
+            revision_number INTEGER NOT NULL,
+            completed_at    TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, topic_id, revision_number)
         )
     """)
     con.commit()
@@ -1684,6 +1708,7 @@ async def group1(request: Request):
     return templates.TemplateResponse(request, "group1.html", {
         "structure": G1_STRUCTURE,
         "structure_json": json.dumps(G1_STRUCTURE),
+        "shared_topics_json": json.dumps(SHARED_TOPICS),
         "current_user": get_current_user(request),
     })
 
@@ -1692,12 +1717,306 @@ async def group2(request: Request):
     return templates.TemplateResponse(request, "group2.html", {
         "structure": G2_STRUCTURE,
         "structure_json": json.dumps(G2_STRUCTURE),
+        "shared_topics_json": json.dumps(SHARED_TOPICS),
         "current_user": get_current_user(request),
     })
 
 
 
 
+
+
+# ---------------------------------------------------------------------------
+# Cross-Syllabus Shared Topics — Complete bidirectional map
+# Covers: G1 Prelims ↔ G2 Screening, G1 Prelims ↔ G1 Mains,
+#         G1 Mains ↔ G2 Mains, G2 Screening ↔ G2 Mains
+# ---------------------------------------------------------------------------
+
+SHARED_TOPICS = {
+
+    # ── HISTORY ─────────────────────────────────────────────────────────────
+
+    # G1 Prelims History ↔ G2 Screening History
+    "pre-ha-01": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
+                  {"id": "m2-hi-01",    "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+    "pre-ha-02": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
+                  {"id": "m2-hi-02",    "label": "G1 Mains P2: South Indian Dynasties"}],
+    "pre-ha-03": [{"id": "scr-hist-02", "label": "G2 Screening: Medieval India"},
+                  {"id": "m2-hi-02",    "label": "G1 Mains P2: South Indian Dynasties to Delhi Sultanate"},
+                  {"id": "m2-hi-03",    "label": "G1 Mains P2: Mughals, Marathas & Europeans"}],
+    "pre-ha-04": [{"id": "scr-hist-02", "label": "G2 Screening: Medieval India"},
+                  {"id": "scr-hist-03", "label": "G2 Screening: Modern India"},
+                  {"id": "m2-hi-03",    "label": "G1 Mains P2: Mughals, Marathas & Europeans"}],
+    "pre-ha-05": [{"id": "scr-hist-03", "label": "G2 Screening: Modern India"},
+                  {"id": "m2-hi-04",    "label": "G1 Mains P2: British Rule, 1857 & Reform Movements"}],
+    "pre-ha-06": [{"id": "scr-hist-03", "label": "G2 Screening: Modern India"},
+                  {"id": "m2-hi-05",    "label": "G1 Mains P2: Indian Nationalism & Independence"}],
+
+    # G2 Screening History ↔ G1 Prelims + G1 Mains + G2 Paper 1 AP History
+    "scr-hist-01": [{"id": "pre-ha-01", "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+                    {"id": "m2-hi-01",  "label": "G1 Mains P2: Pre-Historic to Kushans"},
+                    {"id": "p1-aph-01", "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"}],
+    "scr-hist-02": [{"id": "pre-ha-03", "label": "G1 Prelims: Medieval India"},
+                    {"id": "pre-ha-04", "label": "G1 Prelims: Europeans in India"},
+                    {"id": "m2-hi-02",  "label": "G1 Mains P2: South Indian Dynasties to Delhi Sultanate"},
+                    {"id": "m2-hi-03",  "label": "G1 Mains P2: Mughals, Marathas & Europeans"},
+                    {"id": "p1-aph-02", "label": "G2 Paper 1: Dynasties of 11th–16th Century AD"}],
+    "scr-hist-03": [{"id": "pre-ha-05", "label": "G1 Prelims: 1857 & Reform Movements"},
+                    {"id": "pre-ha-06", "label": "G1 Prelims: Gandhi, Independence & Post-Independence"},
+                    {"id": "m2-hi-04",  "label": "G1 Mains P2: British Rule, 1857 & Reform Movements"},
+                    {"id": "m2-hi-05",  "label": "G1 Mains P2: Indian Nationalism & Independence"},
+                    {"id": "p1-aph-03", "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+
+    # G1 Mains Paper 2 — History of India ↔ G2 Screening + G2 Paper 1 AP History
+    "m2-hi-01": [{"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+                 {"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
+                 {"id": "p1-aph-01",  "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"}],
+    "m2-hi-02": [{"id": "pre-ha-02",  "label": "G1 Prelims: South Indian Dynasties"},
+                 {"id": "pre-ha-03",  "label": "G1 Prelims: Medieval India"},
+                 {"id": "scr-hist-02","label": "G2 Screening: Medieval India"},
+                 {"id": "p1-aph-02",  "label": "G2 Paper 1: Dynasties of 11th–16th Century"}],
+    "m2-hi-03": [{"id": "pre-ha-03",  "label": "G1 Prelims: Medieval India"},
+                 {"id": "pre-ha-04",  "label": "G1 Prelims: Europeans in India"},
+                 {"id": "scr-hist-02","label": "G2 Screening: Medieval India"},
+                 {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+    "m2-hi-04": [{"id": "pre-ha-05",  "label": "G1 Prelims: 1857 & Reform Movements"},
+                 {"id": "scr-hist-03","label": "G2 Screening: Modern India"},
+                 {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+    "m2-hi-05": [{"id": "pre-ha-06",  "label": "G1 Prelims: Gandhi, Independence & Post-Independence"},
+                 {"id": "scr-hist-03","label": "G2 Screening: Modern India"},
+                 {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+
+    # G1 Mains Paper 2 — AP History ↔ G2 Paper 1 AP History (STRONGEST OVERLAP)
+    "m2-ap-01": [{"id": "p1-aph-01", "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"},
+                 {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
+    "m2-ap-02": [{"id": "p1-aph-02", "label": "G2 Paper 1: Dynasties of 11th–16th Century AD"}],
+    "m2-ap-03": [{"id": "p1-aph-03", "label": "G2 Paper 1: Advent of Europeans to Independence"},
+                 {"id": "scr-hist-03","label": "G2 Screening: Modern India"}],
+    "m2-ap-04": [{"id": "p1-aph-04", "label": "G2 Paper 1: Andhra Movement & Formation of Andhra State"}],
+    "m2-ap-05": [{"id": "p1-aph-05", "label": "G2 Paper 1: Formation of Andhra Pradesh (1956–2014)"}],
+
+    # G2 Paper 1 AP History ↔ G1 Mains AP History (STRONGEST OVERLAP — near identical)
+    "p1-aph-01": [{"id": "m2-ap-01",  "label": "G1 Mains P2: Ancient Andhra"},
+                  {"id": "m2-hi-01",  "label": "G1 Mains P2: Pre-Historic to Kushans"},
+                  {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
+    "p1-aph-02": [{"id": "m2-ap-02",  "label": "G1 Mains P2: Medieval Andhra (1000–1565 AD)"},
+                  {"id": "scr-hist-02","label": "G2 Screening: Medieval India"}],
+    "p1-aph-03": [{"id": "m2-ap-03",  "label": "G1 Mains P2: Modern Andhra — Social Awakening"},
+                  {"id": "m2-hi-04",  "label": "G1 Mains P2: British Rule, 1857 & Reform"},
+                  {"id": "scr-hist-03","label": "G2 Screening: Modern India"}],
+    "p1-aph-04": [{"id": "m2-ap-04",  "label": "G1 Mains P2: Andhra Movement & State Formation"}],
+    "p1-aph-05": [{"id": "m2-ap-05",  "label": "G1 Mains P2: AP 1956–2014 & Bifurcation"}],
+
+    # ── GEOGRAPHY ───────────────────────────────────────────────────────────
+
+    # G1 Prelims Geography ↔ G2 Screening + G1 Mains Paper 2 Geography
+    "pre-ge-01": [{"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"},
+                  {"id": "m2-ge-01",   "label": "G1 Mains P2: Physical Features & Resources"}],
+    "pre-ge-02": [{"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"},
+                  {"id": "m2-ge-01",   "label": "G1 Mains P2: Physical Features & Resources"}],
+    "pre-ge-03": [{"id": "scr-geo-03", "label": "G2 Screening: Human Geography of India & AP"},
+                  {"id": "m2-ge-03",   "label": "G1 Mains P2: Social & Faunal-Floral Geography"}],
+    "pre-ge-04": [{"id": "scr-geo-02", "label": "G2 Screening: Economic Geography of India & AP"},
+                  {"id": "m2-ge-02",   "label": "G1 Mains P2: Economic Geography"}],
+
+    # G2 Screening Geography ↔ G1 Prelims + G1 Mains
+    "scr-geo-01": [{"id": "pre-ge-01", "label": "G1 Prelims: General & Physical Geography"},
+                   {"id": "pre-ge-02", "label": "G1 Prelims: Physical Features — India & AP"},
+                   {"id": "m2-ge-01",  "label": "G1 Mains P2: Physical Features & Resources"}],
+    "scr-geo-02": [{"id": "pre-ge-04", "label": "G1 Prelims: Economic Geography"},
+                   {"id": "m2-ge-02",  "label": "G1 Mains P2: Economic Geography"}],
+    "scr-geo-03": [{"id": "pre-ge-03", "label": "G1 Prelims: Social & Human Geography"},
+                   {"id": "m2-ge-03",  "label": "G1 Mains P2: Social & Faunal-Floral Geography"}],
+
+    # G1 Mains Paper 2 Geography ↔ G2 Screening
+    "m2-ge-01": [{"id": "pre-ge-01",  "label": "G1 Prelims: General & Physical Geography"},
+                 {"id": "pre-ge-02",  "label": "G1 Prelims: Physical Features — India & AP"},
+                 {"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"}],
+    "m2-ge-02": [{"id": "pre-ge-04",  "label": "G1 Prelims: Economic Geography"},
+                 {"id": "scr-geo-02", "label": "G2 Screening: Economic Geography"}],
+    "m2-ge-03": [{"id": "pre-ge-03",  "label": "G1 Prelims: Social & Human Geography"},
+                 {"id": "scr-geo-03", "label": "G2 Screening: Human Geography"}],
+    "m2-ge-04": [{"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"}],
+
+    # ── POLITY / CONSTITUTION ────────────────────────────────────────────────
+
+    # G1 Prelims Polity ↔ G2 Paper 1 Constitution + G1 Mains Paper 3 Polity
+    "pre-cp-01": [{"id": "p1-con-01", "label": "G2 Paper 1: Nature & Features of the Constitution"},
+                  {"id": "m3-pc-01",  "label": "G1 Mains P3: Indian Constitution — Salient Features"}],
+    "pre-cp-02": [{"id": "p1-con-02", "label": "G2 Paper 1: Structure & Functions of Indian Government"},
+                  {"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                  {"id": "m3-pc-02",  "label": "G1 Mains P3: Federal Structure & Distribution of Powers"}],
+    "pre-cp-03": [{"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                  {"id": "m3-pc-03",  "label": "G1 Mains P3: Local Governance & Constitutional Authorities"}],
+    "pre-cp-04": [{"id": "m3-pa-03",  "label": "G1 Mains P3: Statutory, Regulatory Bodies & Civil Services"}],
+    "pre-cp-05": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"},
+                  {"id": "m3-et-02",  "label": "G1 Mains P3: Human Values, Attitude & Emotional Intelligence"}],
+    "pre-cp-06": [{"id": "p1-con-04", "label": "G2 Paper 1: Centre–State Relations & Elections"}],
+
+    # G2 Paper 1 Constitution ↔ G1 Prelims + G1 Mains Paper 3
+    "p1-con-01": [{"id": "pre-cp-01", "label": "G1 Prelims: Indian Constitution — Evolution & Features"},
+                  {"id": "m3-pc-01",  "label": "G1 Mains P3: Indian Constitution — Salient Features"}],
+    "p1-con-02": [{"id": "pre-cp-02", "label": "G1 Prelims: Union, States & Federal Structure"},
+                  {"id": "m3-pc-04",  "label": "G1 Mains P3: Parliament & State Legislatures"}],
+    "p1-con-03": [{"id": "pre-cp-02", "label": "G1 Prelims: Union, States & Federal Structure"},
+                  {"id": "pre-cp-03", "label": "G1 Prelims: Constitutional Authorities & Governance"},
+                  {"id": "m3-pc-02",  "label": "G1 Mains P3: Federal Structure & Distribution of Powers"},
+                  {"id": "m3-pc-03",  "label": "G1 Mains P3: Local Governance & Constitutional Authorities"}],
+    "p1-con-04": [{"id": "pre-cp-06", "label": "G1 Prelims: India's Foreign Policy & IR"},
+                  {"id": "m3-pc-02",  "label": "G1 Mains P3: Federal Structure & Distribution of Powers"}],
+    "p1-con-05": [{"id": "m3-pc-03",  "label": "G1 Mains P3: Local Governance & Constitutional Authorities"}],
+
+    # G1 Mains Paper 3 Polity ↔ G1 Prelims + G2 Paper 1 Constitution
+    "m3-pc-01": [{"id": "pre-cp-01", "label": "G1 Prelims: Indian Constitution — Evolution & Features"},
+                 {"id": "p1-con-01", "label": "G2 Paper 1: Nature & Features of the Constitution"}],
+    "m3-pc-02": [{"id": "pre-cp-02", "label": "G1 Prelims: Union, States & Federal Structure"},
+                 {"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                 {"id": "p1-con-04", "label": "G2 Paper 1: Centre–State Relations & Elections"}],
+    "m3-pc-03": [{"id": "pre-cp-03", "label": "G1 Prelims: Constitutional Authorities & Governance"},
+                 {"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                 {"id": "p1-con-05", "label": "G2 Paper 1: Decentralisation & Panchayati Raj"}],
+    "m3-pc-04": [{"id": "p1-con-02", "label": "G2 Paper 1: Structure & Functions of Indian Government"}],
+    "m3-pc-05": [{"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"}],
+
+    # ── ECONOMY ─────────────────────────────────────────────────────────────
+
+    # G1 Prelims Economy ↔ G2 Paper 2 Economy + G1 Mains Paper 4
+    "pre-ec-01": [{"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"},
+                  {"id": "m4-ec-01",  "label": "G1 Mains P4: Major Challenges of Indian Economy"},
+                  {"id": "m4-ec-04",  "label": "G1 Mains P4: Inclusive Growth"}],
+    "pre-ec-02": [{"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"},
+                  {"id": "m4-ec-04",  "label": "G1 Mains P4: Inclusive Growth"}],
+    "pre-ec-03": [{"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"},
+                  {"id": "m4-ec-05",  "label": "G1 Mains P4: Agricultural Development"},
+                  {"id": "m4-ec-06",  "label": "G1 Mains P4: Industrial Development & Policy"}],
+    "pre-ec-04": [{"id": "p2-eco-02", "label": "G2 Paper 2: Money, Banking, Public Finance & Foreign Trade"},
+                  {"id": "m4-ec-02",  "label": "G1 Mains P4: Resource Mobilization in Indian Economy"},
+                  {"id": "m4-ec-03",  "label": "G1 Mains P4: Government Budgeting"}],
+    "pre-ec-05": [{"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"},
+                  {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"},
+                  {"id": "m4-ap-01",  "label": "G1 Mains P4: Resource Mobilization in AP"},
+                  {"id": "m4-ap-02",  "label": "G1 Mains P4: Government Budgeting in AP"},
+                  {"id": "m4-ap-03",  "label": "G1 Mains P4: Agricultural Development in AP"},
+                  {"id": "m4-ap-04",  "label": "G1 Mains P4: Industrial Policy of AP"}],
+
+    # G2 Paper 2 Economy ↔ G1 Prelims + G1 Mains Paper 4
+    "p2-eco-01": [{"id": "pre-ec-01", "label": "G1 Prelims: Indian Economy Basics & Planning"},
+                  {"id": "pre-ec-02", "label": "G1 Prelims: National Income, Poverty & Employment"},
+                  {"id": "m4-ec-01",  "label": "G1 Mains P4: Major Challenges of Indian Economy"},
+                  {"id": "m4-ec-04",  "label": "G1 Mains P4: Inclusive Growth"}],
+    "p2-eco-02": [{"id": "pre-ec-04", "label": "G1 Prelims: Financial Institutions & Fiscal Policy"},
+                  {"id": "m4-ec-02",  "label": "G1 Mains P4: Resource Mobilization in Indian Economy"},
+                  {"id": "m4-ec-03",  "label": "G1 Mains P4: Government Budgeting"}],
+    "p2-eco-03": [{"id": "pre-ec-03", "label": "G1 Prelims: Agriculture, Industry & Economic Reforms"},
+                  {"id": "m4-ec-05",  "label": "G1 Mains P4: Agricultural Development"},
+                  {"id": "m4-ec-06",  "label": "G1 Mains P4: Industrial Development & Policy"}],
+    "p2-eco-04": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                  {"id": "m4-ap-01",  "label": "G1 Mains P4: Resource Mobilization in AP"},
+                  {"id": "m4-ap-02",  "label": "G1 Mains P4: Government Budgeting in AP"}],
+    "p2-eco-05": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                  {"id": "m4-ap-03",  "label": "G1 Mains P4: Agricultural Development in AP"},
+                  {"id": "m4-ap-04",  "label": "G1 Mains P4: Industrial Policy of AP"},
+                  {"id": "m4-ap-05",  "label": "G1 Mains P4: Infrastructure Development in AP"}],
+
+    # G1 Mains Paper 4 ↔ G1 Prelims + G2 Paper 2 Economy
+    "m4-ec-01": [{"id": "pre-ec-01", "label": "G1 Prelims: Indian Economy Basics & Planning"},
+                 {"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"}],
+    "m4-ec-02": [{"id": "pre-ec-04", "label": "G1 Prelims: Financial Institutions & Fiscal Policy"},
+                 {"id": "p2-eco-02", "label": "G2 Paper 2: Money, Banking, Public Finance & Foreign Trade"}],
+    "m4-ec-03": [{"id": "pre-ec-04", "label": "G1 Prelims: Financial Institutions & Fiscal Policy"},
+                 {"id": "p2-eco-02", "label": "G2 Paper 2: Money, Banking, Public Finance & Foreign Trade"}],
+    "m4-ec-04": [{"id": "pre-ec-01", "label": "G1 Prelims: Indian Economy Basics & Planning"},
+                 {"id": "pre-ec-02", "label": "G1 Prelims: National Income, Poverty & Employment"},
+                 {"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"}],
+    "m4-ec-05": [{"id": "pre-ec-03", "label": "G1 Prelims: Agriculture, Industry & Economic Reforms"},
+                 {"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"}],
+    "m4-ec-06": [{"id": "pre-ec-03", "label": "G1 Prelims: Agriculture, Industry & Economic Reforms"},
+                 {"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"}],
+    "m4-ec-07": [{"id": "m4-ap-05",  "label": "G1 Mains P4: Infrastructure Development in AP"},
+                 {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
+    "m4-ap-01": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
+    "m4-ap-02": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
+    "m4-ap-03": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"}],
+    "m4-ap-04": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"}],
+    "m4-ap-05": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"},
+                 {"id": "m4-ec-07",  "label": "G1 Mains P4: Infrastructure in India"}],
+
+    # ── SCIENCE & TECHNOLOGY ────────────────────────────────────────────────
+
+    # G1 Prelims S&T ↔ G2 Paper 2 S&T + G1 Mains Paper 5
+    "pre-st-01": [{"id": "p2-sci-01", "label": "G2 Paper 2: Technology Missions, Policies & Applications"},
+                  {"id": "p2-sci-03", "label": "G2 Paper 2: Ecosystem & Biodiversity"},
+                  {"id": "p2-sci-05", "label": "G2 Paper 2: Environment & Health"},
+                  {"id": "m5-st-01",  "label": "G1 Mains P5: Integration of S&T for Human Life"},
+                  {"id": "m5-st-03",  "label": "G1 Mains P5: Indian Space Programme & DRDO"}],
+
+    # G2 Paper 2 Science ↔ G1 Prelims + G1 Mains Paper 5
+    "p2-sci-01": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"},
+                  {"id": "m5-st-01",  "label": "G1 Mains P5: Integration of S&T for Human Life"},
+                  {"id": "m5-st-02",  "label": "G1 Mains P5: ICT, E-Governance & Cyber Security"},
+                  {"id": "m5-st-03",  "label": "G1 Mains P5: Indian Space Programme & DRDO"},
+                  {"id": "m5-st-04",  "label": "G1 Mains P5: Energy & Nuclear Policy"}],
+    "p2-sci-02": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"},
+                  {"id": "m5-st-04",  "label": "G1 Mains P5: Energy & Nuclear Policy"}],
+    "p2-sci-03": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"},
+                  {"id": "m5-st-05",  "label": "G1 Mains P5: Biotechnology & Nanotechnology"}],
+    "p2-sci-04": [{"id": "m5-st-05",  "label": "G1 Mains P5: Biotechnology & Nanotechnology"}],
+    "p2-sci-05": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"}],
+
+    # G1 Mains Paper 5 S&T ↔ G1 Prelims + G2 Paper 2 S&T
+    "m5-st-01": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"}],
+    "m5-st-02": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"}],
+    "m5-st-03": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"}],
+    "m5-st-04": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"},
+                 {"id": "p2-sci-02",  "label": "G2 Paper 2: Energy Management"}],
+    "m5-st-05": [{"id": "p2-sci-03",  "label": "G2 Paper 2: Ecosystem & Biodiversity"},
+                 {"id": "p2-sci-04",  "label": "G2 Paper 2: Waste Management & Pollution Control"}],
+
+    # ── MENTAL ABILITY ──────────────────────────────────────────────────────
+
+    "pre-ma-01": [{"id": "scr-ma-01", "label": "G2 Screening: Logical Reasoning"}],
+    "pre-ma-02": [{"id": "scr-ma-02", "label": "G2 Screening: Mental Ability"},
+                  {"id": "scr-ma-03", "label": "G2 Screening: Basic Numeracy & Data Analysis"}],
+    "pre-ma-03": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"},
+                  {"id": "m3-et-02",  "label": "G1 Mains P3: Human Values, Attitude & Emotional Intelligence"}],
+    "scr-ma-01": [{"id": "pre-ma-01", "label": "G1 Prelims: Reasoning & Analytical Ability"}],
+    "scr-ma-02": [{"id": "pre-ma-02", "label": "G1 Prelims: Quantitative Aptitude"}],
+    "scr-ma-03": [{"id": "pre-ma-02", "label": "G1 Prelims: Quantitative Aptitude"}],
+
+    # ── CURRENT AFFAIRS ─────────────────────────────────────────────────────
+
+    "pre-st-02": [{"id": "scr-ca-01", "label": "G2 Screening: Current Affairs"},
+                  {"id": "m1-ge-01",  "label": "G1 Mains P1: General Essay (Current Affairs)"}],
+    "scr-ca-01": [{"id": "pre-st-02", "label": "G1 Prelims: Current Events"},
+                  {"id": "m1-ge-01",  "label": "G1 Mains P1: General Essay (Current Affairs)"}],
+    "m1-ge-01":  [{"id": "pre-st-02", "label": "G1 Prelims: Current Events"},
+                  {"id": "scr-ca-01", "label": "G2 Screening: Current Affairs"}],
+
+    # ── G1 MAINS PAPER 3 ETHICS ↔ G1 PRELIMS ───────────────────────────────
+
+    "m3-et-01": [{"id": "pre-cp-05",  "label": "G1 Prelims: Rights Issues"},
+                 {"id": "pre-ma-03",  "label": "G1 Prelims: Emotional & Social Intelligence"}],
+    "m3-et-02": [{"id": "pre-cp-05",  "label": "G1 Prelims: Rights Issues"},
+                 {"id": "pre-ma-03",  "label": "G1 Prelims: Emotional & Social Intelligence"}],
+    "m3-pa-03": [{"id": "pre-cp-04",  "label": "G1 Prelims: LPG Impact & Regulatory Bodies"}],
+
+    # ── G2 SCREENING SOCIETY ↔ G1 MAINS ────────────────────────────────────
+
+    "scr-soc-01": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"}],
+    "scr-soc-02": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"},
+                   {"id": "m3-et-02",  "label": "G1 Mains P3: Human Values, Attitude & Emotional Intelligence"}],
+    "scr-soc-03": [{"id": "pre-cp-05", "label": "G1 Prelims: Rights Issues"},
+                   {"id": "m3-pa-02",  "label": "G1 Mains P3: Government Policies, Civil Society & NGOs"}],
+}
 
 
 # ---------------------------------------------------------------------------
@@ -2311,6 +2630,235 @@ async def api_ca_month(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Progress API — 1-4-7 revision tracker
+# ---------------------------------------------------------------------------
+
+def _progress_con():
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    return con
+
+
+async def api_mark_studied(request: Request):
+    """POST {topic_id, subject, topic_title} — upsert topic_progress + auto-link shared twins."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+
+    topic_id    = str(body.get("topic_id", "")).strip()
+    subject     = str(body.get("subject", "")).strip()
+    topic_title = str(body.get("topic_title", "")).strip()
+    if not topic_id or not subject:
+        return JSONResponse({"error": "topic_id and subject required"}, status_code=400)
+
+    today_str = date.today().isoformat()
+    con = _progress_con()
+
+    def _upsert(uid, tid, subj, title):
+        existing = con.execute(
+            "SELECT id, first_studied, study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
+            (uid, tid)
+        ).fetchone()
+        if existing:
+            con.execute(
+                "UPDATE topic_progress SET last_studied=?, study_count=study_count+1 WHERE user_id=? AND topic_id=?",
+                (today_str, uid, tid)
+            )
+            return dict(existing)["first_studied"]
+        else:
+            con.execute(
+                "INSERT INTO topic_progress (user_id, topic_id, subject, topic_title, first_studied, last_studied, study_count) VALUES (?,?,?,?,?,?,1)",
+                (uid, tid, subj, title, today_str, today_str)
+            )
+            return today_str
+
+    first_studied = _upsert(user["id"], topic_id, subject, topic_title)
+
+    # Auto-link shared twins — mark them studied too (same first_studied date)
+    twins = SHARED_TOPICS.get(topic_id, [])
+    for twin in twins:
+        twin_subj = "g2" if twin["id"].startswith(("scr-", "p1-", "p2-")) else "g1"
+        _upsert(user["id"], twin["id"], twin_subj, twin["label"])
+
+    con.commit()
+    existing_row = con.execute(
+        "SELECT study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    con.close()
+    return JSONResponse({"ok": True, "first_studied": first_studied, "study_count": existing_row["study_count"]})
+
+
+async def api_mark_revised(request: Request):
+    """POST {topic_id, revision_number} — record a completed revision."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+
+    topic_id        = str(body.get("topic_id", "")).strip()
+    revision_number = int(body.get("revision_number", 0))
+    if not topic_id or revision_number not in (1, 2, 3):
+        return JSONResponse({"error": "topic_id and revision_number (1/2/3) required"}, status_code=400)
+
+    con = _progress_con()
+    try:
+        con.execute(
+            "INSERT OR IGNORE INTO revision_log (user_id, topic_id, revision_number) VALUES (?,?,?)",
+            (user["id"], topic_id, revision_number)
+        )
+        con.commit()
+    finally:
+        con.close()
+    return JSONResponse({"ok": True})
+
+
+async def api_due_today(request: Request):
+    """GET — return topics where the next scheduled revision is due today or overdue."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+
+    today = date.today()
+    con = _progress_con()
+
+    rows = con.execute(
+        "SELECT topic_id, subject, topic_title, first_studied FROM topic_progress WHERE user_id=?",
+        (user["id"],)
+    ).fetchall()
+
+    done_rows = con.execute(
+        "SELECT topic_id, revision_number FROM revision_log WHERE user_id=?",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+
+    done_set = {(r["topic_id"], r["revision_number"]) for r in done_rows}
+    due_offsets = {1: 1, 2: 4, 3: 7}  # revision_number -> days after first_studied
+
+    results = []
+    for row in rows:
+        try:
+            first = date.fromisoformat(row["first_studied"])
+        except Exception:
+            continue
+        for rev_num, offset in due_offsets.items():
+            if (row["topic_id"], rev_num) in done_set:
+                continue
+            due_date = first + timedelta(days=offset)
+            if due_date <= today:
+                days_overdue = (today - due_date).days
+                results.append({
+                    "topic_id":       row["topic_id"],
+                    "subject":        row["subject"],
+                    "topic_title":    row["topic_title"],
+                    "revision_number": rev_num,
+                    "due_date":       due_date.isoformat(),
+                    "days_overdue":   days_overdue,
+                })
+            break  # only show the earliest pending revision per topic
+
+    results.sort(key=lambda x: (x["days_overdue"], x["topic_id"]), reverse=True)
+    return JSONResponse({"due": results})
+
+
+async def api_batch_status(request: Request):
+    """GET ?ids=id1,id2,... — return study status for each topic_id."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({})
+
+    raw = request.query_params.get("ids", "")
+    ids = [i.strip() for i in raw.split(",") if i.strip()]
+    if not ids:
+        return JSONResponse({})
+
+    con = _progress_con()
+    placeholders = ",".join("?" * len(ids))
+    prog_rows = con.execute(
+        f"SELECT topic_id, first_studied, study_count FROM topic_progress WHERE user_id=? AND topic_id IN ({placeholders})",
+        [user["id"]] + ids
+    ).fetchall()
+    rev_rows = con.execute(
+        f"SELECT topic_id, revision_number FROM revision_log WHERE user_id=? AND topic_id IN ({placeholders})",
+        [user["id"]] + ids
+    ).fetchall()
+    con.close()
+
+    status = {}
+    for r in prog_rows:
+        status[r["topic_id"]] = {"first_studied": r["first_studied"], "study_count": r["study_count"], "revisions_done": []}
+    for r in rev_rows:
+        if r["topic_id"] in status:
+            status[r["topic_id"]]["revisions_done"].append(r["revision_number"])
+
+    return JSONResponse(status)
+
+
+async def api_progress_summary(request: Request):
+    """GET — overall progress stats for the logged-in user."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"total_studied": 0, "mastered": 0, "streak_days": 0, "by_subject": {}})
+
+    con = _progress_con()
+    prog_rows = con.execute(
+        "SELECT topic_id, subject, first_studied, last_studied FROM topic_progress WHERE user_id=?",
+        (user["id"],)
+    ).fetchall()
+    rev_rows = con.execute(
+        "SELECT topic_id FROM revision_log WHERE user_id=? GROUP BY topic_id HAVING COUNT(DISTINCT revision_number)=3",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+
+    mastered_set = {r["topic_id"] for r in rev_rows}
+    by_subject = {}
+    study_dates = set()
+    for r in prog_rows:
+        subj = r["subject"]
+        by_subject[subj] = by_subject.get(subj, 0) + 1
+        if r["last_studied"]:
+            study_dates.add(r["last_studied"])
+
+    # Streak: consecutive days up to and including today
+    today = date.today()
+    streak = 0
+    check = today
+    while check.isoformat() in study_dates:
+        streak += 1
+        check -= timedelta(days=1)
+
+    return JSONResponse({
+        "total_studied": len(prog_rows),
+        "mastered":      len(mastered_set),
+        "streak_days":   streak,
+        "by_subject":    by_subject,
+    })
+
+
+# ---------------------------------------------------------------------------
+# Dashboard
+# ---------------------------------------------------------------------------
+
+async def dashboard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "dashboard.html", {
+        "current_user": user,
+        "today": date.today().isoformat(),
+    })
+
+
+# ---------------------------------------------------------------------------
 # Auth route handlers
 # ---------------------------------------------------------------------------
 
@@ -2342,7 +2890,7 @@ async def login_post(request: Request):
         request.session["user_id"]  = user["id"]
         request.session["username"] = user["username"]
         request.session["role"]     = user["role"]
-        return RedirectResponse("/", status_code=302)
+        return RedirectResponse("/dashboard", status_code=302)
 
     return templates.TemplateResponse(request, "login.html", {
         "current_user": None,
@@ -2452,22 +3000,28 @@ async def change_password_post(request: Request):
 # ---------------------------------------------------------------------------
 
 routes = [
-    Route("/",                              homepage),
-    Route("/group1",                        group1),
-    Route("/group2",                        group2),
-    Route("/current-affairs",              current_affairs),
-    Route("/aptitude",                      aptitude),
-    Route("/telugu",                        telugu),
-    Route("/login",                         login_page,         methods=["GET"]),
-    Route("/login",                         login_post,         methods=["POST"]),
-    Route("/register",                      register_page,      methods=["GET"]),
-    Route("/register",                      register_post,      methods=["POST"]),
-    Route("/logout",                        logout),
-    Route("/forgot-password",               forgot_password_page),
-    Route("/change-password",              change_password_page, methods=["GET"]),
-    Route("/change-password",              change_password_post, methods=["POST"]),
-    Route("/api/ca/content/{date}",         api_ca_content),
-    Route("/api/ca/month/{year}/{month}",   api_ca_month),
+    Route("/",                                    homepage),
+    Route("/dashboard",                           dashboard),
+    Route("/group1",                              group1),
+    Route("/group2",                              group2),
+    Route("/current-affairs",                    current_affairs),
+    Route("/aptitude",                            aptitude),
+    Route("/telugu",                              telugu),
+    Route("/login",                               login_page,              methods=["GET"]),
+    Route("/login",                               login_post,              methods=["POST"]),
+    Route("/register",                            register_page,           methods=["GET"]),
+    Route("/register",                            register_post,           methods=["POST"]),
+    Route("/logout",                              logout),
+    Route("/forgot-password",                     forgot_password_page),
+    Route("/change-password",                    change_password_page,    methods=["GET"]),
+    Route("/change-password",                    change_password_post,    methods=["POST"]),
+    Route("/api/ca/content/{date}",               api_ca_content),
+    Route("/api/ca/month/{year}/{month}",         api_ca_month),
+    Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
+    Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
+    Route("/api/progress/due-today",              api_due_today),
+    Route("/api/progress/batch-status",           api_batch_status),
+    Route("/api/progress/summary",                api_progress_summary),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]

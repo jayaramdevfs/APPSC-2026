@@ -1,0 +1,197 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — GroupsGuru{% endblock %}
+{% block content %}
+
+<style>
+/* CA preview bullets */
+.ca-preview-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.4rem; }
+.ca-preview-list li { font-size: 0.82rem; color: var(--muted); padding-left: 0.9rem; position: relative; }
+.ca-preview-list li::before { content: "•"; position: absolute; left: 0; color: var(--gold); }
+.ca-loading { color: var(--faint); font-size: 0.82rem; font-style: italic; }
+</style>
+
+<div class="dash-hero">
+    <span class="dash-greeting">
+        {% set hr = today.split('-')[0] | int %}
+        Good day, {{ current_user.username | title }}
+    </span>
+    <span class="dash-date" id="dash-date-display">{{ today }}</span>
+</div>
+
+<!-- Stats strip -->
+<div class="dash-stats" id="dash-stats">
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-studied">—</span><span class="dash-stat-label">Topics Studied</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-mastered">—</span><span class="dash-stat-label">Mastered</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-streak">—</span><span class="dash-stat-label">Day Streak</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label">Due Today</span></div>
+</div>
+
+<!-- CA + Revision row -->
+<div class="dash-grid">
+
+    <!-- Today's Current Affairs -->
+    <div class="dash-card">
+        <div class="dash-card-icon">📰</div>
+        <div class="dash-card-title">Today's Current Affairs</div>
+        <div class="dash-card-body">
+            <div id="ca-preview"><span class="ca-loading">Loading…</span></div>
+        </div>
+        <a href="/current-affairs" class="dash-card-link">Read Full →</a>
+    </div>
+
+    <!-- Due for Revision Today -->
+    <div class="dash-card">
+        <div class="dash-card-icon">🔁</div>
+        <div class="dash-card-title">Due for Revision Today</div>
+        <div class="dash-card-body">
+            <div id="revision-list-wrap">
+                <div class="revision-list" id="revision-list">
+                    <div class="revision-empty">Loading…</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Study Plan -->
+<div class="dash-card-title" style="margin-bottom: 0.75rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">Today's Study Plan</div>
+<div class="dash-plan-grid">
+    <a href="/group1" class="dash-plan-card">
+        <span class="plan-icon">📘</span>
+        <span class="plan-label">Group 1</span>
+        <span class="plan-sub" id="plan-g1">Prelims · Mains</span>
+    </a>
+    <a href="/group2" class="dash-plan-card">
+        <span class="plan-icon">📗</span>
+        <span class="plan-label">Group 2</span>
+        <span class="plan-sub" id="plan-g2">Screening · Paper 1 · 2</span>
+    </a>
+    <a href="/telugu" class="dash-plan-card">
+        <span class="plan-icon">🔤</span>
+        <span class="plan-label">Telugu</span>
+        <span class="plan-sub">Daily Practice</span>
+    </a>
+    <a href="/aptitude" class="dash-plan-card">
+        <span class="plan-icon">🧮</span>
+        <span class="plan-label">Aptitude</span>
+        <span class="plan-sub">Reasoning · Quant</span>
+    </a>
+    <a href="/current-affairs" class="dash-plan-card">
+        <span class="plan-icon">🌐</span>
+        <span class="plan-label">Current Affairs</span>
+        <span class="plan-sub">Today's edition</span>
+    </a>
+</div>
+
+<script>
+const TODAY = {{ today | tojson }};
+
+// ---- Format date nicely ----
+(function() {
+    const d = new Date(TODAY + 'T00:00:00');
+    const fmt = d.toLocaleDateString('en-IN', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('dash-date-display').textContent = fmt;
+})();
+
+// ---- Load progress summary ----
+fetch('/api/progress/summary')
+    .then(r => r.json())
+    .then(data => {
+        document.getElementById('stat-studied').textContent  = data.total_studied ?? 0;
+        document.getElementById('stat-mastered').textContent = data.mastered ?? 0;
+        document.getElementById('stat-streak').textContent   = (data.streak_days ?? 0) + 'd';
+        // plan subject studied counts
+        const bs = data.by_subject || {};
+        if (bs.g1) document.getElementById('plan-g1').textContent = bs.g1 + ' topics done';
+        if (bs.g2) document.getElementById('plan-g2').textContent = bs.g2 + ' topics done';
+    })
+    .catch(() => {});
+
+// ---- Load revisions due today ----
+fetch('/api/progress/due-today')
+    .then(r => r.json())
+    .then(data => {
+        const list  = document.getElementById('revision-list');
+        const items = data.due || [];
+        document.getElementById('stat-due').textContent = items.length;
+        if (!items.length) {
+            list.innerHTML = '<div class="revision-empty">All caught up! No revisions due. Keep studying.</div>';
+            return;
+        }
+        const subjectLabel = { g1: 'G1', g2: 'G2', aptitude: 'Apt', telugu: 'Telugu', ca: 'CA' };
+        const revLabel = { 1: 'Day+1', 2: 'Day+4', 3: 'Day+7' };
+        list.innerHTML = items.map(item => {
+            const overdue  = item.days_overdue > 0;
+            const tagClass = overdue ? 'overdue' : 'today';
+            const tagText  = overdue ? `${item.days_overdue}d overdue` : 'Due today';
+            const subj     = subjectLabel[item.subject] || item.subject;
+            const rev      = revLabel[item.revision_number] || `Rev ${item.revision_number}`;
+            return `
+            <div class="revision-item" id="ri-${item.topic_id}-${item.revision_number}">
+                <span class="revision-item-title">${escHtml(item.topic_title || item.topic_id)}</span>
+                <span class="apt-exam-badge">${subj}</span>
+                <span class="due-tag ${tagClass}">${tagText}</span>
+                <span class="due-tag today" style="background:rgba(255,255,255,0.05);border-color:var(--border);color:var(--muted)">${rev}</span>
+                <button class="btn-mark-revised"
+                    data-topic-id="${item.topic_id}"
+                    data-rev="${item.revision_number}"
+                    onclick="markRevised(this)">Done ✓</button>
+            </div>`;
+        }).join('');
+    })
+    .catch(() => {
+        document.getElementById('stat-due').textContent = '?';
+    });
+
+// ---- Load CA preview ----
+fetch('/api/ca/content/' + TODAY)
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(md => {
+        // extract first 4 non-heading, non-empty lines
+        const lines = md.split('\n')
+            .filter(l => l.trim() && !l.startsWith('#'))
+            .slice(0, 4)
+            .map(l => l.replace(/^\s*[-*]\s*/, '').replace(/\*\*/g, '').trim());
+        if (!lines.length) { document.getElementById('ca-preview').textContent = 'No content yet for today.'; return; }
+        document.getElementById('ca-preview').innerHTML =
+            '<ul class="ca-preview-list">' + lines.map(l => `<li>${escHtml(l)}</li>`).join('') + '</ul>';
+    })
+    .catch(() => {
+        document.getElementById('ca-preview').textContent = 'No current affairs uploaded for today yet.';
+    });
+
+// ---- Mark revised ----
+function markRevised(btn) {
+    const topicId = btn.dataset.topicId;
+    const revNum  = parseInt(btn.dataset.rev);
+    btn.disabled  = true;
+    btn.textContent = '…';
+    fetch('/api/progress/mark-revised', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ topic_id: topicId, revision_number: revNum })
+    })
+    .then(r => r.json())
+    .then(() => {
+        const row = document.getElementById(`ri-${topicId}-${revNum}`);
+        if (row) {
+            row.style.opacity = '0.4';
+            btn.textContent   = 'Done ✓';
+            btn.classList.add('done');
+            setTimeout(() => row.remove(), 1200);
+        }
+        // decrement due counter
+        const dueEl = document.getElementById('stat-due');
+        const cur   = parseInt(dueEl.textContent) || 0;
+        if (cur > 0) dueEl.textContent = cur - 1;
+    })
+    .catch(() => { btn.disabled = false; btn.textContent = 'Done ✓'; });
+}
+
+function escHtml(str) {
+    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+
+{% endblock %}

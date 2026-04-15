@@ -184,9 +184,14 @@
           </div>
           <span class="g2-official-tag">APPSC Official</span>
         </div>
+        <div class="shared-topic-banner" id="shared-{{ key }}" style="display:none"></div>
         <ul class="g2-syllabus-points" id="points-{{ key }}"></ul>
         <div class="g2-detail-footer">
           <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
+          {% if current_user %}
+          <button class="btn-mark-studied" id="btn-studied-{{ key }}"
+                  data-stage="{{ key }}" data-subject="g1">Mark as Studied</button>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -197,6 +202,33 @@
 
 <script>
 const G1 = {{ structure_json | safe }};
+const SHARED = {{ shared_topics_json | safe }};
+
+// Collect all topic IDs on page for batch-status fetch
+const ALL_IDS = [];
+for (const stageKey in G1) {
+  for (const section of G1[stageKey].sections) {
+    for (const t of section.topics) ALL_IDS.push(t.id);
+  }
+}
+
+// studiedSet: topic IDs the user has already studied
+const studiedSet = new Set();
+
+// Fetch batch status on page load (only if logged in)
+{% if current_user %}
+fetch('/api/progress/batch-status?ids=' + ALL_IDS.join(','))
+  .then(r => r.json())
+  .then(data => {
+    for (const [tid, info] of Object.entries(data)) {
+      studiedSet.add(tid);
+      // Green dot on sidebar
+      const li = document.querySelector(`.g2-topic-item[data-topic-id="${tid}"]`);
+      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+    }
+  })
+  .catch(() => {});
+{% endif %}
 
 document.querySelectorAll('.g2-tab').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -236,6 +268,37 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
       .map(p => `<li class="g2-point-item">${p}</li>`)
       .join('');
 
+    // Shared topic banner
+    const banner = document.getElementById('shared-' + stageKey);
+    const twins = SHARED[topicId];
+    if (twins && twins.length) {
+      const links = twins.map(tw => {
+        const href = tw.id.startsWith('scr-') || tw.id.startsWith('p1-') || tw.id.startsWith('p2-') ? '/group2' : '/group1';
+        return `<a href="${href}">${tw.label}</a>`;
+      }).join(', ');
+      banner.innerHTML = `<span>&#128204;</span> <span>Also tested in: <strong>${links}</strong> &mdash; studying once covers both!</span>`;
+      banner.style.display = 'flex';
+    } else {
+      banner.style.display = 'none';
+    }
+
+    {% if current_user %}
+    // Update Mark as Studied button
+    const btn = document.getElementById('btn-studied-' + stageKey);
+    if (btn) {
+      btn.dataset.topicId = topicId;
+      btn.dataset.title   = topic.title;
+      if (studiedSet.has(topicId)) {
+        btn.textContent = 'Studied \u2713';
+        btn.classList.add('studied');
+      } else {
+        btn.textContent = 'Mark as Studied';
+        btn.classList.remove('studied');
+        btn.disabled = false;
+      }
+    }
+    {% endif %}
+
     // Scroll to content panel on mobile
     if (window.innerWidth <= 768) {
       setTimeout(() => {
@@ -245,6 +308,34 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
     }
   });
 });
+
+{% if current_user %}
+// Mark as Studied button handler
+document.querySelectorAll('.btn-mark-studied').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const topicId = btn.dataset.topicId;
+    const title   = btn.dataset.title || btn.dataset.topicId;
+    if (!topicId || btn.classList.contains('studied')) return;
+    btn.disabled    = true;
+    btn.textContent = '…';
+    fetch('/api/progress/mark-studied', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic_id: topicId, subject: 'g1', topic_title: title })
+    })
+    .then(r => r.json())
+    .then(() => {
+      btn.textContent = 'Studied \u2713';
+      btn.classList.add('studied');
+      studiedSet.add(topicId);
+      // Green dot
+      const li = document.querySelector(`.g2-topic-item[data-topic-id="${topicId}"]`);
+      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+    })
+    .catch(() => { btn.disabled = false; btn.textContent = 'Mark as Studied'; });
+  });
+});
+{% endif %}
 </script>
 
 {% endblock %}

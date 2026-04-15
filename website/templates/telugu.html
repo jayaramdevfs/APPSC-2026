@@ -46,6 +46,9 @@
         <ul class="g2-syllabus-points" id="points-basics"></ul>
         <div class="g2-detail-footer">
           <span>&#9998;</span> More examples, practice exercises and audio will be added here.
+          {% if current_user %}
+          <button class="btn-mark-studied" id="btn-tel-basics-studied" data-subject="telugu">Mark as Studied</button>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -78,6 +81,9 @@
         <ul class="g2-syllabus-points" id="points-appsc"></ul>
         <div class="g2-detail-footer">
           <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
+          {% if current_user %}
+          <button class="btn-mark-studied" id="btn-tel-appsc-studied" data-subject="telugu">Mark as Studied</button>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -130,6 +136,8 @@ document.querySelectorAll('.g2-tab').forEach(btn => {
   });
 });
 
+const studiedSet = new Set();
+
 // ── Topic click ────────────────────────────────────────────────
 document.addEventListener('click', function(e) {
   const li = e.target.closest('.g2-topic-item');
@@ -159,6 +167,25 @@ document.addEventListener('click', function(e) {
     .map(p => `<li class="g2-point-item">${p}</li>`)
     .join('');
 
+  {% if current_user %}
+  // Synthetic ID for tracking: telugu:tab:section:topic
+  const syntheticId = `telugu:${tabKey}:${sectionKey}:${topicKey}`;
+  const btnId = tabKey === 'basics' ? 'btn-tel-basics-studied' : 'btn-tel-appsc-studied';
+  const btn   = document.getElementById(btnId);
+  if (btn) {
+    btn.dataset.topicId = syntheticId;
+    btn.dataset.title   = topic.title;
+    if (studiedSet.has(syntheticId)) {
+      btn.textContent = 'Studied \u2713';
+      btn.classList.add('studied');
+    } else {
+      btn.textContent = 'Mark as Studied';
+      btn.classList.remove('studied');
+      btn.disabled = false;
+    }
+  }
+  {% endif %}
+
   // Scroll to content panel on mobile
   if (window.innerWidth <= 768) {
     setTimeout(() => {
@@ -167,6 +194,30 @@ document.addEventListener('click', function(e) {
     }, 60);
   }
 });
+
+{% if current_user %}
+document.querySelectorAll('.btn-mark-studied').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const topicId = btn.dataset.topicId;
+    const title   = btn.dataset.title || topicId;
+    if (!topicId || btn.classList.contains('studied')) return;
+    btn.disabled    = true;
+    btn.textContent = '…';
+    fetch('/api/progress/mark-studied', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic_id: topicId, subject: 'telugu', topic_title: title })
+    })
+    .then(r => r.json())
+    .then(() => {
+      btn.textContent = 'Studied \u2713';
+      btn.classList.add('studied');
+      studiedSet.add(topicId);
+    })
+    .catch(() => { btn.disabled = false; btn.textContent = 'Mark as Studied'; });
+  });
+});
+{% endif %}
 </script>
 
 {% endblock %}

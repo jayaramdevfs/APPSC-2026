@@ -54,6 +54,9 @@
       <ul class="g2-syllabus-points" id="apt-points"></ul>
       <div class="g2-detail-footer">
         <span>&#9998;</span> Notes &amp; practice questions for this topic will be added here.
+        {% if current_user %}
+        <button class="btn-mark-studied" id="btn-apt-studied" data-subject="aptitude">Mark as Studied</button>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -68,6 +71,22 @@ const topicMap = {};
 APT.sections.forEach(sec => {
   sec.topics.forEach(t => { topicMap[t.id] = t; });
 });
+
+const studiedSet = new Set();
+
+{% if current_user %}
+const allIds = Object.keys(topicMap).join(',');
+fetch('/api/progress/batch-status?ids=' + allIds)
+  .then(r => r.json())
+  .then(data => {
+    for (const tid of Object.keys(data)) {
+      studiedSet.add(tid);
+      const li = document.querySelector(`.apt-topic-item[data-topic-id="${tid}"]`);
+      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+    }
+  })
+  .catch(() => {});
+{% endif %}
 
 document.querySelectorAll('.apt-topic-item').forEach(li => {
   li.addEventListener('click', () => {
@@ -93,6 +112,22 @@ document.querySelectorAll('.apt-topic-item').forEach(li => {
       .map(p => `<li class="g2-point-item">${p}</li>`)
       .join('');
 
+    {% if current_user %}
+    const btn = document.getElementById('btn-apt-studied');
+    if (btn) {
+      btn.dataset.topicId = topic.id;
+      btn.dataset.title   = topic.title;
+      if (studiedSet.has(topic.id)) {
+        btn.textContent = 'Studied \u2713';
+        btn.classList.add('studied');
+      } else {
+        btn.textContent = 'Mark as Studied';
+        btn.classList.remove('studied');
+        btn.disabled = false;
+      }
+    }
+    {% endif %}
+
     // Scroll to content panel on mobile
     if (window.innerWidth <= 768) {
       setTimeout(() => {
@@ -102,6 +137,33 @@ document.querySelectorAll('.apt-topic-item').forEach(li => {
     }
   });
 });
+
+{% if current_user %}
+const btnApt = document.getElementById('btn-apt-studied');
+if (btnApt) {
+  btnApt.addEventListener('click', () => {
+    const topicId = btnApt.dataset.topicId;
+    const title   = btnApt.dataset.title || topicId;
+    if (!topicId || btnApt.classList.contains('studied')) return;
+    btnApt.disabled    = true;
+    btnApt.textContent = '…';
+    fetch('/api/progress/mark-studied', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ topic_id: topicId, subject: 'aptitude', topic_title: title })
+    })
+    .then(r => r.json())
+    .then(() => {
+      btnApt.textContent = 'Studied \u2713';
+      btnApt.classList.add('studied');
+      studiedSet.add(topicId);
+      const li = document.querySelector(`.apt-topic-item[data-topic-id="${topicId}"]`);
+      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+    })
+    .catch(() => { btnApt.disabled = false; btnApt.textContent = 'Mark as Studied'; });
+  });
+}
+{% endif %}
 </script>
 
 {% endblock %}
