@@ -10,5 +10,9 @@
 </div>
 <div class="pdf-container">
     <iframe src="{{ pdf_url }}" class="pdf-viewer" title="APPSC Job Calendar 2026 PDF"></iframe>
+    <div class="pdf-mobile-fallback">
+        <p>PDF preview is not supported in mobile browsers.<br>Tap below to open the full calendar.</p>
+        <a href="{{ pdf_url }}" target="_blank" class="pdf-open-btn">&#128196; Open PDF</a>
+    </div>
 </div>
 {% endblock %}
