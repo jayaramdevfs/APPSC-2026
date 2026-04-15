@@ -171,3 +171,193 @@ python website/server.py
 - Render free tier: spins down after 15 min inactivity, wakes in ~30 sec
 - marked.js is served locally from `static/js/marked.min.js` (no CDN)
 - Starlette 1.0.0 API: `TemplateResponse(request, "template.html", context)` — NOT the old format
+
+---
+---
+
+# Session 2 — UI Overhaul & Mobile Fixes
+
+**Date:** April 15, 2026
+**Branch:** `main` (auto-pushes to `master` for Render deploy)
+**Commits:** `b946021` → `6175136`
+
+---
+
+## What Was Done This Session
+
+### 1. Responsive Navbar — Hamburger Menu
+- Added `<button class="nav-toggle">` in `base.html` between brand and nav links
+- Hidden on desktop (>1024px), visible on mobile/tablet (≤1024px)
+- Tapping any link auto-closes the menu via JS
+- **Files:** `base.html`, `style.css`
+
+### 2. Dark Luxury Theme (GroupsGuru Palette Clone)
+Complete visual overhaul from light navy to dark luxury theme. Reference: `C:\GroupsGuru\Lms\groupsguru-frontend\app\globals.css`
+
+| Token | Old Value | New Value |
+|-------|-----------|-----------|
+| Page background | `#f4f6fb` (light grey) | `#191919` (near-black) |
+| Navbar/sidebar bg | `#1a237e` (navy blue) | `#1A1A1A` (dark) |
+| Card background | `#ffffff` (white) | `#242424` (dark card) |
+| Surface (panels) | `#ffffff` | `#1E1E1E` |
+| Inset (headers) | `#eef0fb` | `#141414` |
+| Primary accent | `#f9a825` (yellow-gold) | `#D97706` (amber-orange) |
+| Primary text | `#1c1c2e` (dark navy) | `#E8E8E8` (light) |
+| Muted text | `#6b7280` | `#A0A0A0` |
+| Borders | `#dde1f0` | `#3A3A3A` |
+
+Additional details:
+- Subtle amber dot-grid pattern on `body` background (3px × 40px grid)
+- Gold glow on card hover: `0 0 25px rgba(217,119,6,0.3)`
+- Custom slim scrollbar: 6px, `#3A3A3A` thumb
+- Status badges (green/blue) use dark translucent backgrounds
+- **File:** `style.css`
+
+### 3. Typography — Inter + JetBrains Mono
+- Replaced `'Segoe UI'` with **Inter** (Anthropic/Claude Code font) via Google Fonts
+- Added **JetBrains Mono** for ISO dates and inline code elements
+- Loaded weights: Inter 400/500/600/700/800, JetBrains Mono 400/500/700
+- **File:** `base.html` (Google Fonts link), `style.css` (font-family declarations)
+
+### 4. Global Layout — 90% Width
+- Replaced `max-width: 1200px; margin: 0 auto` with `width: 90%; max-width: 1600px`
+- Gives ~5% gap each side on all pages — more usable horizontal space
+- Mobile override: `width: 94%` for ≤400px screens
+- **File:** `style.css` → `.main-content`
+
+### 5. Left Slide-Out Drawer Navigation (GroupsGuru Pattern)
+Replaced the dropdown mobile menu with a proper slide-in left drawer.
+
+**HTML structure added to `base.html`:**
+```
+<nav.navbar>
+  <button#nav-toggle>   ← hamburger, LEFT side, always visible
+  <div.nav-brand>       ← text-only "GroupsGuru", no emoji
+  <ul.nav-links>        ← desktop horizontal links (hidden ≤1024px)
+</nav>
+<div#nav-backdrop>      ← fixed overlay (click to close)
+<div#nav-drawer>        ← fixed left panel, 260px, slides in
+  <div.nav-drawer-header>  ← brand + × close button
+  <ul.nav-drawer-links>    ← vertical nav links with active highlight
+```
+
+**CSS (added to `style.css`):**
+- `.nav-backdrop` — `position: fixed; inset: 0; z-index: 200; backdrop-filter: blur(2px)`
+- `.nav-drawer` — `position: fixed; left: 0; width: 260px; z-index: 300; transform: translateX(-100%); transition: 0.25s`
+- `.nav-drawer.open` — `transform: translateX(0)`
+- Active drawer link: left border + gold color + dark card background
+- ESC key, backdrop click, and × button all close the drawer
+
+### 6. Mobile Portal Layout — Single Column Stack
+The two-column `portal-wrap` grid (`270px sidebar + 1fr content`) was unusable on mobile.
+
+**Fix (`style.css` → `@media (max-width: 768px)`):**
+```css
+.portal-wrap       → grid-template-columns: 1fr  (sidebar stacks above content)
+.g2-sidebar        → position: static; max-height: 55vh; overflow-y: auto
+.g2-content        → overflow-x: hidden; min-width: 0
+.g2-detail-header  → flex-wrap: wrap (title + badge wrap instead of overflow)
+.ca-body           → grid-template-columns: 1fr  (calendar stacks above CA content)
+.ca-calendar-card  → position: static
+```
+
+**JS scroll fix** (added to `group1.html`, `group2.html`, `aptitude.html`):
+After populating topic detail, auto-scroll to content panel on mobile:
+```javascript
+if (window.innerWidth <= 768) {
+  setTimeout(() => {
+    document.getElementById('detail-' + stageKey)
+      .scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 60);
+}
+```
+
+### 7. PDF Mobile Fallback
+Mobile Chrome (Android) renders PDF iframes as a 1-page preview with an "Open" button — not the full inline viewer. Fixed by hiding the iframe on mobile and showing a styled button instead.
+
+**CSS:**
+```css
+@media (max-width: 768px) {
+  .pdf-viewer          { display: none; }
+  .pdf-mobile-fallback { display: flex !important; }
+}
+```
+
+**Templates updated** (added `.pdf-mobile-fallback` div alongside every `<iframe>`):
+- `group1.html` — Group 1 syllabus PDF
+- `group2.html` — Group 2 syllabus PDF
+- `police_si.html` — Police SI PDF
+- `job_calendar.html` — Job Calendar PDF
+
+Button style: amber-orange background, dark text, opens PDF in new tab (`target="_blank"`).
+
+### 8. Brand Rename
+- `APPSC 2026` → **GroupsGuru** in the navbar brand (both main navbar and drawer header)
+- Logo emoji removed — text-only brand
+- Default `<title>` updated to `GroupsGuru` in `base.html`
+
+### 9. Git Push Configuration — Dual Branch
+**Problem:** Render deploys from `master` branch but work was on `main`. Every push to `main` didn't trigger Render.
+
+**Fix (one-time git config):**
+```cmd
+git config remote.origin.push "refs/heads/main:refs/heads/main"
+git config --add remote.origin.push "refs/heads/main:refs/heads/master"
+```
+
+Now a single `git push` updates both `origin/main` and `origin/master` simultaneously, triggering Render auto-deploy every time.
+
+### 10. CSS Cache Busting
+Mobile browsers aggressively cache CSS. Added version query string to CSS `<link>` in `base.html`:
+```html
+<link rel="stylesheet" href="/static/css/style.css?v=4">
+```
+Bump `v=N` after every CSS change to force mobile browsers to re-fetch.
+**Current version: v=4**
+
+---
+
+## Files Changed This Session
+
+| File | What Changed |
+|------|-------------|
+| `website/templates/base.html` | Navbar restructure, drawer HTML, brand rename, Google Fonts, CSS v4 |
+| `website/static/css/style.css` | Full dark theme, drawer styles, mobile stack, PDF fallback styles |
+| `website/templates/group1.html` | PDF mobile fallback, mobile scroll JS |
+| `website/templates/group2.html` | PDF mobile fallback, mobile scroll JS |
+| `website/templates/aptitude.html` | Mobile scroll JS |
+| `website/templates/police_si.html` | PDF mobile fallback |
+| `website/templates/job_calendar.html` | PDF mobile fallback |
+
+---
+
+## CSS Variable Reference (Current)
+
+```css
+:root {
+  --base:         #191919;   /* page background */
+  --surface:      #1E1E1E;   /* panels, content areas */
+  --card:         #242424;   /* cards, hover backgrounds */
+  --inset:        #141414;   /* section headers, code bg */
+  --navy:         #1A1A1A;   /* navbar, sidebar bg */
+  --gold:         #D97706;   /* primary accent (amber-orange) */
+  --accent:       #D97706;   /* same — buttons, active states */
+  --accent-hover: #F59E0B;   /* hover state */
+  --white:        #E8E8E8;   /* primary text */
+  --muted:        #A0A0A0;   /* secondary text */
+  --faint:        #666666;   /* tertiary text, icons */
+  --border:       #3A3A3A;   /* all borders */
+  --glow-gold-hover: 0 0 25px rgba(217,119,6,0.3), 0 0 50px rgba(217,119,6,0.12);
+}
+```
+
+---
+
+## Pending / Next Session (Session 3) Ideas
+1. **Study Notes per topic** — add notes content alongside syllabus bullet points
+2. **MCQ Practice** — clickable questions with answer reveal per topic
+3. **Admin panel** — add/edit current affairs from browser (no git needed)
+4. **Police SI structured portal** — same sidebar/detail pattern as G1/G2
+5. **Progress tracker** — mark topics as "studied", localStorage persistence
+6. **Search** — search across all topics from navbar
+7. **Home page polish** — better hero section, exam countdown timer
