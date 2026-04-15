@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block title %}Telugu — GroupsGuru{% endblock %}
+
+{% block content %}
+
+<div class="g2-header">
+  <a href="/" class="back-link">&larr; Back to Home</a>
+  <h1 class="page-title">Telugu &mdash; Study Portal</h1>
+  <p class="page-subtitle">Learn from scratch &nbsp;&bull;&nbsp; APPSC Telugu Paper topics</p>
+</div>
+
+<!-- ── Tab bar ────────────────────────────────────────────────── -->
+<div class="g2-tabs">
+  <button class="g2-tab active" data-tab="basics">
+    <span class="tab-label">Learn Telugu</span>
+    <span class="tab-sub">Start from Scratch</span>
+  </button>
+  <button class="g2-tab" data-tab="appsc">
+    <span class="tab-label">APPSC Paper</span>
+    <span class="tab-sub">Grammar &bull; Literature &bull; Essay</span>
+  </button>
+</div>
+
+<!-- ── Basics panel ──────────────────────────────────────────── -->
+<div class="g2-panel active" id="panel-basics">
+  <div class="portal-wrap">
+
+    <aside class="g2-sidebar">
+      <div class="sidebar-info">Start from Scratch &nbsp;&bull;&nbsp; Alphabets to Conversation</div>
+      <div id="sidebar-basics"></div>
+    </aside>
+
+    <div class="g2-content">
+      <div class="g2-welcome" id="welcome-basics">
+        <div class="g2-welcome-icon">&#128488;</div>
+        <p>Select a topic from the sidebar to start learning Telugu.</p>
+      </div>
+      <div class="g2-topic-detail hidden" id="detail-basics">
+        <div class="g2-detail-header">
+          <div>
+            <h2 class="g2-detail-title" id="title-basics"></h2>
+            <p class="g2-detail-meta" id="meta-basics"></p>
+          </div>
+          <span class="g2-official-tag telugu-tag">Telugu Basics</span>
+        </div>
+        <ul class="g2-syllabus-points" id="points-basics"></ul>
+        <div class="g2-detail-footer">
+          <span>&#9998;</span> More examples, practice exercises and audio will be added here.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── APPSC panel ───────────────────────────────────────────── -->
+<div class="g2-panel" id="panel-appsc">
+  <div class="portal-wrap">
+
+    <aside class="g2-sidebar">
+      <div class="sidebar-info">APPSC Telugu Paper &nbsp;&bull;&nbsp; Grammar &bull; Literature &bull; Essay</div>
+      <div id="sidebar-appsc"></div>
+    </aside>
+
+    <div class="g2-content">
+      <div class="g2-welcome" id="welcome-appsc">
+        <div class="g2-welcome-icon">&#128218;</div>
+        <p>Select a topic from the sidebar to see APPSC syllabus points.</p>
+      </div>
+      <div class="g2-topic-detail hidden" id="detail-appsc">
+        <div class="g2-detail-header">
+          <div>
+            <h2 class="g2-detail-title" id="title-appsc"></h2>
+            <p class="g2-detail-meta" id="meta-appsc"></p>
+          </div>
+          <span class="g2-official-tag">APPSC Official</span>
+        </div>
+        <ul class="g2-syllabus-points" id="points-appsc"></ul>
+        <div class="g2-detail-footer">
+          <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const TELUGU = {{ structure_json | safe }};
+
+// ── Build sidebar HTML for a given tab key ─────────────────────
+function buildSidebar(tabKey) {
+  const tabData  = TELUGU[tabKey];
+  const sections = tabData.sections;
+  let html = '';
+  for (const [sectionKey, section] of Object.entries(sections)) {
+    html += `
+      <div class="g2-section">
+        <div class="g2-section-head">
+          <span>${section.label}</span>
+        </div>
+        <div class="telugu-section-sub">${section.sub}</div>
+        <ul class="g2-topic-list">`;
+    for (const [topicKey, topic] of Object.entries(section.topics)) {
+      html += `
+          <li class="g2-topic-item"
+              data-tab="${tabKey}"
+              data-section="${sectionKey}"
+              data-topic="${topicKey}">
+            <span class="g2-topic-dot"></span>
+            <span class="g2-topic-name">${topic.title}</span>
+          </li>`;
+    }
+    html += `</ul></div>`;
+  }
+  return html;
+}
+
+document.getElementById('sidebar-basics').innerHTML = buildSidebar('basics');
+document.getElementById('sidebar-appsc').innerHTML  = buildSidebar('appsc');
+
+// ── Tab switching ──────────────────────────────────────────────
+document.querySelectorAll('.g2-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.g2-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.g2-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  });
+});
+
+// ── Topic click ────────────────────────────────────────────────
+document.addEventListener('click', function(e) {
+  const li = e.target.closest('.g2-topic-item');
+  if (!li) return;
+
+  const tabKey     = li.dataset.tab;
+  const sectionKey = li.dataset.section;
+  const topicKey   = li.dataset.topic;
+
+  // Highlight selected
+  document.querySelectorAll(`.g2-topic-item[data-tab="${tabKey}"]`)
+          .forEach(t => t.classList.remove('selected'));
+  li.classList.add('selected');
+
+  const topic = TELUGU[tabKey].sections[sectionKey].topics[topicKey];
+  if (!topic) return;
+
+  document.getElementById('welcome-' + tabKey).classList.add('hidden');
+  const detail = document.getElementById('detail-' + tabKey);
+  detail.classList.remove('hidden');
+
+  document.getElementById('title-' + tabKey).textContent = topic.title;
+  document.getElementById('meta-' + tabKey).textContent  = topic.meta;
+
+  const ul = document.getElementById('points-' + tabKey);
+  ul.innerHTML = topic.points
+    .map(p => `<li class="g2-point-item">${p}</li>`)
+    .join('');
+
+  // Scroll to content panel on mobile
+  if (window.innerWidth <= 768) {
+    setTimeout(() => {
+      document.getElementById('detail-' + tabKey)
+        .scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 60);
+  }
+});
+</script>
+
+{% endblock %}

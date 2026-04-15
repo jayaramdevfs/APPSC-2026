@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=4">
+    <link rel="stylesheet" href="/static/css/style.css?v=6">
 </head>
 <body>
 
@@ -17,10 +17,10 @@
         <span></span><span></span><span></span>
     </button>
 
-    <!-- Brand -->
-    <div class="nav-brand">
+    <!-- Brand — links to home -->
+    <a href="/" class="nav-brand">
         <span class="nav-title">GroupsGuru</span>
-    </div>
+    </a>
 
     <!-- Desktop horizontal links (hidden on mobile via CSS) -->
     <ul class="nav-links">
@@ -29,7 +29,18 @@
         <li><a href="/group2" class="nav-link {% if request.url.path == '/group2' %}active{% endif %}">Group 2</a></li>
         <li><a href="/current-affairs" class="nav-link {% if request.url.path == '/current-affairs' %}active{% endif %}">Current Affairs</a></li>
         <li><a href="/aptitude" class="nav-link {% if request.url.path == '/aptitude' %}active{% endif %}">Aptitude</a></li>
+        <li><a href="/telugu" class="nav-link {% if request.url.path == '/telugu' %}active{% endif %}">Telugu</a></li>
     </ul>
+
+    <!-- Auth area — always visible, pinned top-right -->
+    <div class="nav-auth">
+        {% if current_user %}
+            <a href="/change-password" class="nav-user-badge" title="Change password">{{ current_user.username }}@groupsguru.in</a>
+            <a href="/logout" class="nav-auth-btn nav-auth-logout">Logout</a>
+        {% else %}
+            <a href="/login" class="nav-auth-btn nav-auth-login {% if request.url.path == '/login' %}active{% endif %}">Login</a>
+        {% endif %}
+    </div>
 </nav>
 
 <!-- Backdrop (click to close drawer) -->
@@ -38,9 +49,9 @@
 <!-- Left slide-out drawer -->
 <div class="nav-drawer" id="nav-drawer">
     <div class="nav-drawer-header">
-        <div class="nav-brand">
+        <a href="/" class="nav-brand">
             <span class="nav-title">GroupsGuru</span>
-        </div>
+        </a>
         <button class="nav-close" id="nav-close" aria-label="Close menu">&#10005;</button>
     </div>
     <ul class="nav-drawer-links">
@@ -49,6 +60,13 @@
         <li><a href="/group2" class="nav-drawer-link {% if request.url.path == '/group2' %}active{% endif %}">Group 2</a></li>
         <li><a href="/current-affairs" class="nav-drawer-link {% if request.url.path == '/current-affairs' %}active{% endif %}">Current Affairs</a></li>
         <li><a href="/aptitude" class="nav-drawer-link {% if request.url.path == '/aptitude' %}active{% endif %}">Aptitude</a></li>
+        <li><a href="/telugu" class="nav-drawer-link {% if request.url.path == '/telugu' %}active{% endif %}">Telugu</a></li>
+        {% if current_user %}
+            <li><a href="/change-password" class="nav-drawer-link">Change Password</a></li>
+            <li><a href="/logout" class="nav-drawer-link nav-drawer-logout">Logout</a></li>
+        {% else %}
+            <li><a href="/login" class="nav-drawer-link {% if request.url.path == '/login' %}active{% endif %}">Login</a></li>
+        {% endif %}
     </ul>
 </div>
 

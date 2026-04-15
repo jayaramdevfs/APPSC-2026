@@ -361,3 +361,181 @@ Bump `v=N` after every CSS change to force mobile browsers to re-fetch.
 5. **Progress tracker** — mark topics as "studied", localStorage persistence
 6. **Search** — search across all topics from navbar
 7. **Home page polish** — better hero section, exam countdown timer
+
+---
+---
+
+# Session 3 — Exam Scheme Tables & Backend Syllabus Updates
+
+**Date:** April 15, 2026
+**Branch:** `main` (auto-pushes to `master` for Render deploy)
+
+---
+
+## What Was Done This Session
+
+### 1. Extracted Missing Mains Papers into Backend (`server.py`)
+- The descriptive Telugu and English papers were previously missing from Group 1's dictionary.
+- Added `telugu` and `english` paper dictionaries directly into `G1_STRUCTURE`.
+- Added `paper1` (General Essay) mapping. All 825 marks for Group 1 are now securely modeled in the backend API response structures.
+
+### 2. Discarded iFrames and Replaced with HTML Tables (`group1.html`, `group2.html`)
+- Extracted exact table schema structures from the official APPSC PDF.
+- Removed the static `<iframe src="PDF...">` fallback layout inside `panel-syllabus`.
+- Hand-coded structurally clean, natively rendering HTML tables capturing Subjects, Question Counts, Durations, and Maximum Marks.
+- Added detailed nested topic breakdowns (`A`, `B`, `C`, `D`) for Group 1 Screening Test precisely mapping the notification's language.
+
+### 3. Styled Tables to Match Dark Luxury Base (`style.css`)
+- Created `.scheme-table-container`, `.scheme-table-title`, and `.scheme-table` classes.
+- Used CSS Variables (`var(--inset)`, `var(--border)`, `var(--gold)`) matching the native brand theme.
+- Addressed overflow scrolling via `overflow-x: auto;` ensuring mobile usability without breaking the responsive grid frame.
+- Swapped table padding logic to render identically flawless across desktop and mobile form factors.
+
+### 4. Cache Management (`base.html`)
+- Increment CSS busting query string from `?v=4` to `?v=5` to prevent stale Chrome Desktop cache rendering the raw unstyled HTML tables post-deploy.
+
+---
+
+## Files Changed This Session
+| File | What Changed |
+|------|-------------|
+| `website/server.py` | Added Telugu, English, Paper 1 logic to `G1_STRUCTURE` |
+| `website/static/css/style.css` | Implemented `.scheme-table` structure blocks |
+| `website/templates/group1.html` | Erased PDF iframe, injected G1 Screening & Mains pure HTML tables |
+| `website/templates/group2.html` | Erased PDF iframe, injected G2 Screening & Mains pure HTML tables |
+| `website/templates/base.html` | Bumped css parameter to cache-break (`v=5`) |
+
+---
+---
+
+# Session 4 — Telugu Section + Login/Auth + Navbar Brand Link
+
+**Date:** April 16, 2026
+**Branch:** `main` (auto-pushes to `master` for Render deploy)
+
+---
+
+## What Was Done This Session
+
+### 1. Login / Register / Auth System
+
+**New packages added:**
+- `itsdangerous>=2.0.0` — required by Starlette's `SessionMiddleware`
+
+**Database (`website/users.db`):**
+- SQLite via Python's built-in `sqlite3` — no extra ORM needed
+- Table: `users` (id, username, display_name, email, password_hash, role, is_active, created_at)
+- Username stored as prefix only (e.g., `jram`) — displayed as `jram@groupsguru.in`
+- Passwords hashed with `hashlib.pbkdf2_hmac('sha256', ..., 260_000 iterations)`
+- Admin auto-seeded on every startup from env var `ADMIN_PASSWORD` (default: `GroupsGuru@2026`)
+
+**Note — Render free tier:** SQLite DB is ephemeral (wiped on each deploy). Admin is re-seeded automatically. Student accounts are lost on redeploy. Future fix: add Render Disk or Supabase.
+
+**Routes added:**
+| Route | Method | Handler |
+|-------|--------|---------|
+| `/login` | GET | Show login form |
+| `/login` | POST | Validate + set session |
+| `/register` | GET | Show registration form |
+| `/register` | POST | Create user account |
+| `/logout` | GET | Clear session + redirect home |
+| `/forgot-password` | GET | "Contact admin" placeholder |
+
+**Sessions:** Starlette `SessionMiddleware` with signed cookie. Env var `SECRET_KEY` (default: `dev-secret-groupsguru-2026`).
+
+**Templates created:**
+- `website/templates/login.html` — username+@groupsguru.in field, password with show/hide toggle
+- `website/templates/register.html` — username, display name, optional email, password strength indicator
+- `website/templates/forgot_password.html` — "Contact admin" placeholder page
+
+### 2. Telugu Learning Section (`/telugu`)
+
+**Route:** `GET /telugu` → `telugu.html`
+**Data:** `TELUGU_STRUCTURE` dict in `server.py` (after APT_STRUCTURE)
+
+**Two tabs:**
+- **Learn Telugu** — Start from Scratch
+  - Sections: Telugu Script (Vowels + 6 Consonant Groups), Numbers (0–20 + tens), Greetings & Phrases, Days & Months
+- **APPSC Paper** — Telugu Paper topics
+  - Sections: Grammar (Sandhi, Samasa, Vibhakti, Chandassu, Alankaras), Literature (Ancient, Vijayanagara, Modern, Prabandhas), General Essay (Structure, Topics, Language Phrases)
+
+**Layout:** Same sidebar+content pattern as Group 1/2. JS builds sidebar dynamically from `TELUGU_STRUCTURE` dict. Topic click loads title + meta + bullet points into content panel. Mobile auto-scroll included.
+
+### 3. Navbar Brand → Clickable Link
+
+- `<div class="nav-brand">` → `<a href="/" class="nav-brand">` in both main navbar and drawer header
+- CSS: `a.nav-brand { text-decoration: none; }` + hover brightens gold text
+
+### 4. Nav — Telugu + Login/User added
+
+**Desktop nav and drawer now show:**
+- Telugu link → `/telugu`
+- If logged in: `username@groupsguru.in` badge (JetBrains Mono) + Logout link
+- If logged out: Login link → `/login`
+
+### 5. Home Page Cards Completed
+
+`index.html` now shows 5 cards: Group 1, Group 2, Current Affairs, Aptitude, Telugu (Current Affairs and Aptitude were missing before).
+
+### 6. CSS Updates (v=6)
+
+New CSS classes added to `style.css`:
+- `a.nav-brand`, `.nav-user-badge` — navbar brand link + user display
+- `.auth-page`, `.auth-card`, `.auth-title`, `.auth-input`, `.auth-suffix`, `.auth-eye-btn`, `.auth-btn`, `.auth-error`, `.auth-success`, `.auth-pwd-strength`, `.auth-info-box` — auth form styles
+- `.telugu-section-sub`, `.telugu-tag` — Telugu portal sidebar sub-label and tag
+
+---
+
+## Files Changed This Session
+
+| File | What Changed |
+|------|-------------|
+| `requirements.txt` | Added `itsdangerous>=2.0.0` |
+| `.gitignore` | Added `*.db` |
+| `website/server.py` | DB init, auth helpers, TELUGU_STRUCTURE, telugu() + auth routes, SessionMiddleware, init_db() call |
+| `website/templates/base.html` | Brand → `<a>` link, Telugu + Login/User items in nav + drawer, CSS v=6 |
+| `website/templates/index.html` | Added Current Affairs, Aptitude, and Telugu cards |
+| `website/templates/login.html` | NEW — login form |
+| `website/templates/register.html` | NEW — registration form |
+| `website/templates/forgot_password.html` | NEW — placeholder page |
+| `website/templates/telugu.html` | NEW — Telugu learning portal |
+| `website/static/css/style.css` | Auth styles, brand link, Telugu tag, nav user badge; bumped to v=6 |
+
+---
+
+## Environment Variables to Set on Render
+
+| Key | Value |
+|-----|-------|
+| `ADMIN_PASSWORD` | Your chosen admin password |
+| `SECRET_KEY` | Random 32+ char string (for session cookie signing) |
+
+---
+
+## Key server.py Sections (Updated)
+
+| Lines (approx) | Content |
+|----------------|---------|
+| 1–20 | Imports (added: hashlib, secrets, sqlite3, Middleware, SessionMiddleware, RedirectResponse) |
+| 21–30 | Path setup + DB_PATH, SECRET_KEY, ADMIN_PASSWORD constants |
+| 31–150 | hash_password(), verify_password(), init_db(), db_* helpers, get_current_user() |
+| 151–200 | G2_STRUCTURE |
+| 200–1466 | G1_STRUCTURE |
+| 1467–1570 | APT_STRUCTURE |
+| 1571–2100 | TELUGU_STRUCTURE (basics + appsc) |
+| ~2100 | Route handlers: homepage, group1, group2, aptitude, telugu, current_affairs |
+| ~2150 | Auth handlers: login_page/post, register_page/post, logout, forgot_password_page |
+| ~2200 | Routes list + Starlette app with SessionMiddleware |
+| Last line | init_db() + uvicorn startup |
+
+---
+
+## Pending / Next Session (Session 5) Ideas
+
+1. **Email password reset** — SMTP via Gmail App Password; send reset link to registered email
+2. **Google OAuth** — Sign in with Google (requires Google Cloud project setup)
+3. **Admin panel** — manage users, approve/delete accounts, add/edit current affairs from browser
+4. **Progress tracker** — localStorage: mark topics as studied, show completion %
+5. **MCQ practice** — per-topic practice questions with answer reveal
+6. **Notes per topic** — editable notes alongside syllabus points (admin adds, students read)
+7. **Search** — search across all topics from navbar

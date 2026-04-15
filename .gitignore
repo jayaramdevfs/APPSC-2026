@@ -21,6 +21,9 @@ start.bat
 # Claude Code local settings
 .claude/
 
+# Database (SQLite — ephemeral on Render, never commit)
+*.db
+
 # OS
 .DS_Store
 Thumbs.db

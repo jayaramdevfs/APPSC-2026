@@ -1041,3 +1041,336 @@ body {
     align-items: center;
     gap: 0.4rem;
 }
+
+/* =========================================
+   NAVBAR — brand as link + user badge
+   ========================================= */
+
+a.nav-brand {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+a.nav-brand:hover .nav-title {
+    color: var(--accent-hover);
+}
+
+/* Always-visible top-right auth area */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.nav-auth-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.38rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+
+.nav-auth-login {
+    background: var(--gold);
+    color: #111;
+    border: 1px solid transparent;
+}
+
+.nav-auth-login:hover {
+    background: var(--accent-hover);
+    color: #111;
+}
+
+.nav-auth-logout {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+
+.nav-auth-logout:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+/* Drawer logout link — distinct colour */
+.nav-drawer-logout {
+    color: #f87171 !important;
+}
+
+.nav-drawer-logout:hover {
+    background: rgba(248, 113, 113, 0.1) !important;
+    color: #f87171 !important;
+    border-left-color: #f87171 !important;
+}
+
+.nav-user-badge {
+    color: var(--muted);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+}
+
+a.nav-user-badge:hover {
+    color: var(--gold);
+    background: rgba(217, 119, 6, 0.08);
+}
+
+/* =========================================
+   AUTH PAGES — login / register
+   ========================================= */
+
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3rem 1rem 4rem;
+}
+
+.auth-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 420px;
+}
+
+.auth-title {
+    color: var(--gold);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+    color: var(--muted);
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+}
+
+.auth-field {
+    margin-bottom: 1.25rem;
+}
+
+.auth-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+}
+
+.auth-label-opt {
+    color: var(--faint);
+    font-size: 0.78rem;
+    font-weight: 400;
+}
+
+.auth-input-row {
+    display: flex;
+    align-items: stretch;
+}
+
+.auth-input {
+    width: 100%;
+    background: var(--inset);
+    border: 1px solid var(--border);
+    color: var(--white);
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    font-family: inherit;
+    transition: border-color 0.15s;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.auth-input-prefix {
+    border-radius: 8px 0 0 8px;
+    border-right: none;
+    flex: 1;
+}
+
+.auth-suffix {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: none;
+    color: var(--muted);
+    padding: 0.65rem 0.75rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.82rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.auth-eye-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: none;
+    color: var(--muted);
+    padding: 0 0.75rem;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.15s;
+}
+
+.auth-eye-btn:hover { color: var(--white); }
+
+.auth-hint {
+    font-size: 0.78rem;
+    color: var(--faint);
+    margin-top: 0.3rem;
+}
+
+.auth-forgot-link {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.auth-forgot-link:hover { color: var(--gold); }
+
+.auth-btn {
+    width: 100%;
+    background: var(--gold);
+    color: #111;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s;
+    margin-top: 0.5rem;
+}
+
+.auth-btn:hover { background: var(--accent-hover); }
+
+.auth-error {
+    background: rgba(220, 38, 38, 0.12);
+    border: 1px solid rgba(220, 38, 38, 0.35);
+    color: #fca5a5;
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.auth-success {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
+    border-radius: 8px;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.auth-link-row {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+.auth-link-row a {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-link-row a:hover { color: var(--accent-hover); }
+
+/* Password strength bar */
+.auth-pwd-strength {
+    margin-top: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.auth-pwd-strength.weak   { color: #f87171; }
+.auth-pwd-strength.ok     { color: #fbbf24; }
+.auth-pwd-strength.strong { color: #34d399; }
+
+/* Forgot password info box */
+.auth-info-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.auth-info-box p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    line-height: 1.6;
+}
+
+.auth-info-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.auth-info-contact {
+    color: var(--gold) !important;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem !important;
+    font-weight: 600;
+    margin-top: 0.75rem !important;
+}
+
+/* =========================================
+   TELUGU PORTAL — sidebar sub-label
+   ========================================= */
+
+.telugu-section-sub {
+    font-size: 0.77rem;
+    color: var(--faint);
+    padding: 0 0.85rem 0.4rem;
+    line-height: 1.4;
+}
+
+.telugu-tag {
+    background: rgba(99, 102, 241, 0.15) !important;
+    border-color: rgba(99, 102, 241, 0.4) !important;
+    color: #a5b4fc !important;
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .nav-user-badge {
+        display: none;
+    }
+}

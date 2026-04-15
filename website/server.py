@@ -1,13 +1,18 @@
+import hashlib
 import json
 import os
 import re
+import secrets
+import sqlite3
 from pathlib import Path
 from starlette.applications import Starlette
+from starlette.middleware import Middleware
+from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Route, Mount
+from starlette.responses import JSONResponse, PlainTextResponse, RedirectResponse
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 from starlette.requests import Request
-from starlette.responses import JSONResponse, PlainTextResponse
 import uvicorn
 
 BASE_DIR      = Path(__file__).parent
@@ -16,8 +21,123 @@ FILES_DIR     = ROOT_DIR / "FILES"
 CA_DIR        = FILES_DIR / "current-affairs"
 TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR    = BASE_DIR / "static"
+DB_PATH       = BASE_DIR / "users.db"
+
+SECRET_KEY     = os.environ.get("SECRET_KEY", "dev-secret-groupsguru-2026")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "GroupsGuru@2026")
 
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+
+# ---------------------------------------------------------------------------
+# Auth — password helpers
+# ---------------------------------------------------------------------------
+
+def hash_password(pwd: str) -> str:
+    salt = os.urandom(32)
+    key  = hashlib.pbkdf2_hmac("sha256", pwd.encode(), salt, 260_000)
+    return salt.hex() + ":" + key.hex()
+
+
+def verify_password(pwd: str, stored: str) -> bool:
+    try:
+        salt_hex, key_hex = stored.split(":")
+        key = hashlib.pbkdf2_hmac("sha256", pwd.encode(), bytes.fromhex(salt_hex), 260_000)
+        return secrets.compare_digest(key.hex(), key_hex)
+    except Exception:
+        return False
+
+
+# ---------------------------------------------------------------------------
+# Database — init + seed
+# ---------------------------------------------------------------------------
+
+def _seed_user(con, username: str, display_name: str, role: str, password: str) -> None:
+    """Insert user only if username doesn't already exist."""
+    row = con.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone()
+    if not row:
+        con.execute(
+            "INSERT INTO users (username, display_name, role, password_hash) VALUES (?,?,?,?)",
+            (username, display_name, role, hash_password(password)),
+        )
+        con.commit()
+
+
+def init_db() -> None:
+    con = sqlite3.connect(DB_PATH)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id            INTEGER PRIMARY KEY AUTOINCREMENT,
+            username      TEXT UNIQUE NOT NULL,
+            display_name  TEXT NOT NULL,
+            email         TEXT,
+            password_hash TEXT NOT NULL,
+            role          TEXT DEFAULT 'student',
+            is_active     INTEGER DEFAULT 1,
+            created_at    TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    con.commit()
+
+    # Admin — password overrideable via ADMIN_PASSWORD env var on Render
+    _seed_user(con, "jayaramadmin", "Jayaram", "admin", os.environ.get("ADMIN_PASSWORD", "jayaramadmin@2026"))
+    # Reserved student accounts
+    _seed_user(con, "jayaram",   "Jayaram",   "student", "jayaram@2026")
+    _seed_user(con, "leelarani", "Leela Rani","student", "leelarani@2026")
+    _seed_user(con, "tejashree", "Tejashree", "student", "tejashree@2026")
+
+    con.close()
+
+
+def db_get_user_by_username(username: str):
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    row = con.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
+    con.close()
+    return dict(row) if row else None
+
+
+def db_create_user(username: str, display_name: str, email: str, password: str) -> bool:
+    try:
+        con = sqlite3.connect(DB_PATH)
+        con.execute(
+            "INSERT INTO users (username, display_name, email, password_hash) VALUES (?,?,?,?)",
+            (username, display_name, email or None, hash_password(password)),
+        )
+        con.commit()
+        con.close()
+        return True
+    except sqlite3.IntegrityError:
+        return False
+
+
+def db_username_taken(username: str) -> bool:
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone()
+    con.close()
+    return row is not None
+
+
+def db_update_password(user_id: int, new_password: str) -> None:
+    con = sqlite3.connect(DB_PATH)
+    con.execute("UPDATE users SET password_hash = ? WHERE id = ?",
+                (hash_password(new_password), user_id))
+    con.commit()
+    con.close()
+
+
+# ---------------------------------------------------------------------------
+# Session helper
+# ---------------------------------------------------------------------------
+
+def get_current_user(request: Request):
+    uid = request.session.get("user_id")
+    if not uid:
+        return None
+    return {
+        "id":       uid,
+        "username": request.session.get("username"),
+        "role":     request.session.get("role"),
+    }
 
 # ---------------------------------------------------------------------------
 # Group 2 — Official Syllabus Structure
@@ -1555,13 +1675,16 @@ G1_STRUCTURE = {
 
 
 async def homepage(request: Request):
-    return templates.TemplateResponse(request, "index.html")
+    return templates.TemplateResponse(request, "index.html", {
+        "current_user": get_current_user(request),
+    })
 
 
 async def group1(request: Request):
     return templates.TemplateResponse(request, "group1.html", {
         "structure": G1_STRUCTURE,
         "structure_json": json.dumps(G1_STRUCTURE),
+        "current_user": get_current_user(request),
     })
 
 
@@ -1569,6 +1692,7 @@ async def group2(request: Request):
     return templates.TemplateResponse(request, "group2.html", {
         "structure": G2_STRUCTURE,
         "structure_json": json.dumps(G2_STRUCTURE),
+        "current_user": get_current_user(request),
     })
 
 
@@ -1674,6 +1798,472 @@ async def aptitude(request: Request):
     return templates.TemplateResponse(request, "aptitude.html", {
         "structure": APT_STRUCTURE,
         "structure_json": json.dumps(APT_STRUCTURE),
+        "current_user": get_current_user(request),
+    })
+
+
+# ---------------------------------------------------------------------------
+# Telugu — Bilingual Learning + APPSC Paper
+# ---------------------------------------------------------------------------
+
+TELUGU_STRUCTURE = {
+    "basics": {
+        "label": "Learn Telugu",
+        "subtitle": "Start from Scratch",
+        "sections": {
+            "script": {
+                "label": "Telugu Script",
+                "sub": "అక్షరమాల — The Alphabet",
+                "topics": {
+                    "vowels": {
+                        "title": "Vowels (అచ్చులు)",
+                        "meta": "16 Vowels • Telugu Basics",
+                        "points": [
+                            "అ (a) — short 'a', as in 'about'",
+                            "ఆ (aa) — long 'a', as in 'father'",
+                            "ఇ (i) — short 'i', as in 'pin'",
+                            "ఈ (ii) — long 'i', as in 'see'",
+                            "ఉ (u) — short 'u', as in 'put'",
+                            "ఊ (uu) — long 'u', as in 'food'",
+                            "ఋ (ru) — retroflex vowel, Sanskrit origin",
+                            "ఎ (e) — short 'e', as in 'bet'",
+                            "ఏ (ee) — long 'e', as in 'late'",
+                            "ఐ (ai) — diphthong, as in 'high'",
+                            "ఒ (o) — short 'o', as in 'hot'",
+                            "ఓ (oo) — long 'o', as in 'go'",
+                            "ఔ (au) — diphthong, as in 'out'",
+                            "అం (am) — anusvara, nasal sound",
+                            "అః (aha) — visarga, aspirated sound",
+                        ],
+                    },
+                    "consonants_ka": {
+                        "title": "Velar Group — కంఠ్యాలు (K sounds)",
+                        "meta": "Consonants • Group 1 of 7",
+                        "points": [
+                            "క (ka) — as in 'k' in 'kite' | కమలం = lotus",
+                            "ఖ (kha) — aspirated 'k' | ఖాళీ = empty",
+                            "గ (ga) — as in 'g' in 'go' | గమనం = movement",
+                            "ఘ (gha) — aspirated 'g' | ఘనత = greatness",
+                            "ఙ (nga) — nasal 'ng', as in 'sing' (rare, in conjuncts)",
+                        ],
+                    },
+                    "consonants_cha": {
+                        "title": "Palatal Group — తాలవ్యాలు (Ch sounds)",
+                        "meta": "Consonants • Group 2 of 7",
+                        "points": [
+                            "చ (cha) — as in 'ch' in 'chair' | చంద్రుడు = moon",
+                            "ఛ (chha) — aspirated 'ch' | ఛత్రం = umbrella",
+                            "జ (ja) — as in 'j' in 'jungle' | జలం = water",
+                            "ఝ (jha) — aspirated 'j' | ఝరి = waterfall",
+                            "ఞ (nya) — palatal nasal, as in 'ny' (rare, in conjuncts)",
+                        ],
+                    },
+                    "consonants_ta_retro": {
+                        "title": "Retroflex Group — మూర్ధన్యాలు (T retroflex)",
+                        "meta": "Consonants • Group 3 of 7",
+                        "points": [
+                            "ట (Ta) — retroflex 't', tongue curls back | టైమ్ = time",
+                            "ఠ (Tha) — aspirated retroflex 't' | ఠీవి = dignity",
+                            "డ (Da) — retroflex 'd' | డబ్బు = money",
+                            "ఢ (Dha) — aspirated retroflex 'd' | ఢంకా = drum",
+                            "ణ (Na) — retroflex nasal | ణకారం = the letter ణ",
+                        ],
+                    },
+                    "consonants_ta_dental": {
+                        "title": "Dental Group — దంత్యాలు (T dental)",
+                        "meta": "Consonants • Group 4 of 7",
+                        "points": [
+                            "త (ta) — dental 't', tongue at teeth | తల = head",
+                            "థ (tha) — aspirated dental 't' | థాలీ = plate",
+                            "ద (da) — dental 'd' | దారి = path/road",
+                            "ధ (dha) — aspirated dental 'd' | ధనం = money/wealth",
+                            "న (na) — dental nasal | నది = river",
+                        ],
+                    },
+                    "consonants_pa": {
+                        "title": "Labial Group — ఓష్ఠ్యాలు (P sounds)",
+                        "meta": "Consonants • Group 5 of 7",
+                        "points": [
+                            "ప (pa) — as in 'p' in 'pen' | పాలు = milk",
+                            "ఫ (pha) — aspirated 'p' | ఫలితం = result",
+                            "బ (ba) — as in 'b' in 'bat' | బడి = school",
+                            "భ (bha) — aspirated 'b' | భవనం = building",
+                            "మ (ma) — as in 'm' in 'man' | మనసు = mind/heart",
+                        ],
+                    },
+                    "consonants_semi": {
+                        "title": "Semi-vowels & Sibilants (Y, R, L, V, S, H)",
+                        "meta": "Consonants • Group 6 & 7 of 7",
+                        "points": [
+                            "య (ya) — as in 'y' in 'yes' | యువత = youth",
+                            "ర (ra) — as in 'r' in 'run' | రాత్రి = night",
+                            "ల (la) — as in 'l' in 'lake' | లోకం = world",
+                            "వ (va) — as in 'v' in 'van' | వర్షం = rain",
+                            "శ (sha) — palatal sibilant 'sh' | శాంతి = peace",
+                            "ష (Sha) — retroflex sibilant | షడ్రసాలు = six tastes",
+                            "స (sa) — as in 's' in 'sun' | సమయం = time",
+                            "హ (ha) — as in 'h' in 'hat' | హృదయం = heart",
+                            "ళ (Lla) — retroflex lateral, unique to Telugu | పళ్ళు = teeth",
+                            "క్ష (ksha) — combined consonant | క్షమ = forgiveness",
+                            "ఱ (rra) — rolled 'r', archaic form used in classical texts",
+                        ],
+                    },
+                },
+            },
+            "numbers": {
+                "label": "Numbers",
+                "sub": "సంఖ్యలు — Count in Telugu",
+                "topics": {
+                    "numbers_0_10": {
+                        "title": "Numbers 0–10 (సంఖ్యలు)",
+                        "meta": "Basics • Telugu Numbers",
+                        "points": [
+                            "0 — సున్న (sunna)",
+                            "1 — ఒకటి (okaTi)",
+                            "2 — రెండు (reṃDu)",
+                            "3 — మూడు (muuDu)",
+                            "4 — నాలుగు (naalugu)",
+                            "5 — అయిదు (ayidu)",
+                            "6 — ఆరు (aaru)",
+                            "7 — ఏడు (eeḍu)",
+                            "8 — ఎనిమిది (enimidi)",
+                            "9 — తొమ్మిది (tommidi)",
+                            "10 — పది (padi)",
+                        ],
+                    },
+                    "numbers_11_20": {
+                        "title": "Numbers 11–20",
+                        "meta": "Intermediate • Telugu Numbers",
+                        "points": [
+                            "11 — పదకొండు (padakonDu)",
+                            "12 — పన్నెండు (panneṃDu)",
+                            "13 — పదమూడు (padamuuDu)",
+                            "14 — పదునాలుగు (padunaalugu)",
+                            "15 — పదిహేను (padihenu)",
+                            "16 — పదహారు (padahaaru)",
+                            "17 — పదిహేడు (padiheeḍu)",
+                            "18 — పదునెనిమిది (padunenmidi)",
+                            "19 — పందొమ్మిది (pandommidi)",
+                            "20 — ఇరవై (iravai)",
+                        ],
+                    },
+                    "numbers_tens": {
+                        "title": "Tens & Key Numbers",
+                        "meta": "Advanced • Telugu Numbers",
+                        "points": [
+                            "30 — ముప్పై (muppai)",
+                            "40 — నలభై (nalabhai)",
+                            "50 — యాభై (yaabhai)",
+                            "60 — అరవై (aravai)",
+                            "70 — డెభ్భై (Debbhai)",
+                            "80 — ఎనభై (enabhai)",
+                            "90 — తొంభై (tombhai)",
+                            "100 — వంద (vanda)",
+                            "1,000 — వేయి (veeyi)",
+                            "100,000 — లక్ష (laksha)",
+                            "10,000,000 — కోటి (koti)",
+                        ],
+                    },
+                },
+            },
+            "greetings": {
+                "label": "Greetings & Phrases",
+                "sub": "రోజువారీ మాటలు — Daily Conversation",
+                "topics": {
+                    "greetings_basic": {
+                        "title": "Basic Greetings (శుభాకాంక్షలు)",
+                        "meta": "Conversation • Daily Use",
+                        "points": [
+                            "నమస్కారం (Namaskaram) — Hello / Greetings (formal)",
+                            "నమస్తే (Namaste) — Hello (slightly informal)",
+                            "హాయ్ (Haay) — Hi (casual, modern)",
+                            "శుభోదయం (Shubhodayam) — Good morning",
+                            "శుభ సాయంత్రం (Shubha Sayantram) — Good evening",
+                            "శుభ రాత్రి (Shubha Raatri) — Good night",
+                            "వెళ్ళొస్తాను (Vellostaanu) — Goodbye (lit. I'll go and come back)",
+                            "తర్వాత కలుద్దాం (Tarvaata kaluddaam) — See you later",
+                        ],
+                    },
+                    "phrases_polite": {
+                        "title": "Polite Expressions",
+                        "meta": "Conversation • Politeness",
+                        "points": [
+                            "ధన్యవాదాలు (Dhanyavaadaalu) — Thank you",
+                            "దయచేసి (Dayacheesi) — Please",
+                            "క్షమించండి (Kshamincandi) — Sorry / Excuse me",
+                            "సరే (Sare) — Okay / Alright",
+                            "అవును (Avunu) — Yes",
+                            "కాదు (Kaadu) — No",
+                            "నాకు అర్థం కాలేదు (Naaku artham kaaledu) — I don't understand",
+                            "మళ్ళీ చెప్పండి (Mallee cheppandi) — Please say it again",
+                            "మీ పేరు ఏమిటి? (Mee peru emiti?) — What is your name?",
+                            "నా పేరు ___ (Naa peru ___) — My name is ___",
+                        ],
+                    },
+                    "phrases_daily": {
+                        "title": "Daily Life Phrases",
+                        "meta": "Conversation • Everyday",
+                        "points": [
+                            "బాగున్నారా? (Baagunnaara?) — How are you?",
+                            "బాగున్నాను (Baagunnaanu) — I am well",
+                            "నాకు ఆకలి వేస్తోంది (Naaku aakali veestundi) — I am hungry",
+                            "నీళ్ళు ఇవ్వండి (Neellu ivvandi) — Please give water",
+                            "ఇది ఎంత? (Idi enta?) — How much is this?",
+                            "అక్కడ ఎలా వెళ్ళాలి? (Akkada elaa vellaali?) — How to go there?",
+                            "సమయం ఎంత అయింది? (Samayam enta ayindi?) — What time is it?",
+                            "నాకు సహాయం చేయండి (Naaku sahaayam cheyandi) — Please help me",
+                        ],
+                    },
+                },
+            },
+            "days_months": {
+                "label": "Days & Months",
+                "sub": "వారాలు & నెలలు — Calendar Words",
+                "topics": {
+                    "days": {
+                        "title": "Days of the Week (వారాలు)",
+                        "meta": "Calendar • Days",
+                        "points": [
+                            "ఆదివారం (Aadivaram) — Sunday",
+                            "సోమవారం (Somavaram) — Monday",
+                            "మంగళవారం (Mangalavaram) — Tuesday",
+                            "బుధవారం (Budhavaram) — Wednesday",
+                            "గురువారం (Guruvaram) — Thursday",
+                            "శుక్రవారం (Shukravaram) — Friday",
+                            "శనివారం (Shanivaram) — Saturday",
+                        ],
+                    },
+                    "months": {
+                        "title": "English Months in Telugu (నెలలు)",
+                        "meta": "Calendar • English Months",
+                        "points": [
+                            "జనవరి (Janavari) — January",
+                            "ఫిబ్రవరి (Phibravari) — February",
+                            "మార్చి (Maarchi) — March",
+                            "ఏప్రిల్ (Eepril) — April",
+                            "మే (Me) — May",
+                            "జూన్ (Juun) — June",
+                            "జూలై (Juulai) — July",
+                            "ఆగస్టు (Aagustu) — August",
+                            "సెప్టెంబర్ (Septambar) — September",
+                            "అక్టోబర్ (Aktobar) — October",
+                            "నవంబర్ (Navambar) — November",
+                            "డిసెంబర్ (Disambar) — December",
+                        ],
+                    },
+                    "telugu_months": {
+                        "title": "Telugu Calendar Months (తెలుగు నెలలు)",
+                        "meta": "Calendar • Telugu Months",
+                        "points": [
+                            "చైత్రం (Chaitram) — Mar–Apr | Telugu New Year (Ugadi) falls in this month",
+                            "వైశాఖం (Vaishakham) — Apr–May",
+                            "జ్యేష్ఠం (Jyeshtham) — May–Jun",
+                            "ఆషాఢం (Aashadham) — Jun–Jul",
+                            "శ్రావణం (Shravanam) — Jul–Aug | Raksha Bandhan, Varalakshmi Vratam",
+                            "భాద్రపదం (Bhadrapadam) — Aug–Sep | Ganesh Chaturthi",
+                            "ఆశ్వయుజం (Ashvayujam) — Sep–Oct | Navaratri, Dussehra",
+                            "కార్తీకం (Kartikam) — Oct–Nov | Deepavali",
+                            "మార్గశిరం (Margashiram) — Nov–Dec",
+                            "పుష్యం (Pushyam) — Dec–Jan",
+                            "మాఘం (Maagham) — Jan–Feb | Maha Shivaratri",
+                            "ఫాల్గుణం (Phalgunam) — Feb–Mar | Holi",
+                        ],
+                    },
+                },
+            },
+        },
+    },
+    "appsc": {
+        "label": "APPSC Paper",
+        "subtitle": "Telugu Paper for APPSC Exams",
+        "sections": {
+            "grammar": {
+                "label": "Telugu Grammar",
+                "sub": "వ్యాకరణం — High Weightage",
+                "topics": {
+                    "sandhi": {
+                        "title": "సంధులు (Sandhi — Euphonic Combinations)",
+                        "meta": "Grammar • Very High Weightage",
+                        "points": [
+                            "అకార సంధి — Combination of 'a' + 'a' = long 'aa' (e.g., రామ + అయ్య = రామయ్య)",
+                            "ఇకార సంధి — Combinations involving 'i' sound",
+                            "ఉకార సంధి — Combinations involving 'u' sound",
+                            "యడాగమ సంధి — Insertion of 'y' as liaison consonant (e.g., రా + ఇ = రాయి)",
+                            "తత్సమ సంధులు — Sandhi rules borrowed from Sanskrit (e.g., విద్యా + అలయం = విద్యాలయం)",
+                            "గసడదవాదేశ సంధి — Substitution sandhi: first consonant of second word changes",
+                            "ద్రుత ప్రకృతిక సంధి — Sandhi with short/dhruta words (ని, ఒ, etc.)",
+                            "లోపసంధి — Elision sandhi: a vowel is dropped",
+                            "ర్వాదేశ సంధి — Substitution by 'r'-sound",
+                        ],
+                    },
+                    "samasa": {
+                        "title": "సమాసాలు (Samasa — Compound Words)",
+                        "meta": "Grammar • Very High Weightage",
+                        "points": [
+                            "తత్పురుష సమాసం — Determinative compound: second word is head (e.g., రాజభవనం = king's palace)",
+                            "కర్మధారయ సమాసం — Appositional: both words refer to same thing (e.g., నీలకమలం = blue lotus)",
+                            "ద్విగు సమాసం — Numeral compound: first word is number (e.g., త్రిలోకం = three worlds)",
+                            "ద్వంద్వ సమాసం — Copulative 'and' compound (e.g., రాజరాణి = king and queen)",
+                            "బహువ్రీహి సమాసం — Possessive: compound describes something else (e.g., నీలకంఠుడు = Shiva)",
+                            "అవ్యయీభావ సమాసం — Adverbial compound (e.g., యథాశక్తి = as per ability)",
+                            "నఞ్ సమాసం — Negative compound with 'a-' or 'an-' prefix (e.g., అన్యాయం = injustice)",
+                        ],
+                    },
+                    "vibhakti": {
+                        "title": "విభక్తులు (Vibhakti — Case Endings)",
+                        "meta": "Grammar • Foundational",
+                        "points": [
+                            "ప్రథమా విభక్తి — Nominative (subject): -డు, -ము, -వు (రాముడు వెళ్ళాడు)",
+                            "ద్వితీయా విభక్తి — Accusative (object): -ని, -ను (పుస్తకాన్ని చదివాను)",
+                            "తృతీయా విభక్తి — Instrumental (by/with): -తో, -చేత (కలంతో రాశాను)",
+                            "చతుర్థీ విభక్తి — Dative (for/to): -కు, -కి (అమ్మకు ఇచ్చాను)",
+                            "పంచమీ విభక్తి — Ablative (from): -నుండి, -నుంచి (హైదరాబాదు నుండి వచ్చాను)",
+                            "షష్ఠీ విభక్తి — Genitive (of): -యొక్క (రాముని యొక్క బాణం)",
+                            "సప్తమీ విభక్తి — Locative (in/at): -లో, -న (గ్రామంలో ఉన్నాను)",
+                            "సంబోధన విభక్తి — Vocative (O!/Hey!): -ఓ, -ఏ (రామా! ఓ కృష్ణా!)",
+                        ],
+                    },
+                    "chandassu": {
+                        "title": "ఛందస్సు (Chandassu — Prosody & Metres)",
+                        "meta": "Grammar • Medium Weightage",
+                        "points": [
+                            "ఉత్పలమాల — 20-syllable metre; most popular in classical Telugu poetry",
+                            "చంపకమాల — 21-syllable metre; common in ornate prabandhas",
+                            "శార్దూలవిక్రీడితం — 19-syllable metre (gana-based, from Sanskrit)",
+                            "మత్తేభవిక్రీడితం — 20-syllable metre",
+                            "తేటగీతి — Native Telugu metre; used since ancient Nannaya period",
+                            "ఆటవెలది — Shorter Telugu metre; used in folk and classical compositions",
+                            "సీసపద్యం — Four-line metre with unique 'sisa' pattern",
+                            "కందపద్యం — Quatrain metre; specific gana rules; very popular",
+                        ],
+                    },
+                    "alankaras": {
+                        "title": "అలంకారాలు (Alankaras — Figures of Speech)",
+                        "meta": "Grammar • Medium Weightage",
+                        "points": [
+                            "ఉపమాలంకారం — Simile: comparison using 'like' or 'as' (వంటి, లాంటి)",
+                            "రూపకాలంకారం — Metaphor: direct identification without 'like'",
+                            "ఉత్ప్రేక్షాలంకారం — Fancy/Poetic fancy: imagining one thing as another",
+                            "అతిశయోక్తి — Hyperbole: deliberate exaggeration for effect",
+                            "యమకం — Repetition of same-sounding syllables with different meanings",
+                            "అనుప్రాస — Alliteration: same consonant sound repeated at word-starts",
+                            "శ్లేష — Pun: single expression with two different meanings",
+                            "విరోధాభాస — Paradox: apparent contradiction that reveals truth",
+                        ],
+                    },
+                },
+            },
+            "literature": {
+                "label": "Telugu Literature",
+                "sub": "సాహిత్యం — Periods & Works",
+                "topics": {
+                    "ancient": {
+                        "title": "Ancient Period — నన్నయ నుండి (11th–14th Century)",
+                        "meta": "Literature • Classical Era",
+                        "points": [
+                            "నన్నయ భట్టు (1022–1063) — First Telugu poet; translated Mahabharata (Adiparva + Sabhaparva)",
+                            "తిక్కన సోమయాజి (1220–1300) — 'Ubhaya Kavi Mitra'; completed 15 parvas of Mahabharata",
+                            "ఎఱ్ఱన (1280–1350) — Completed Aranyaparva; known for Raghavapandaviyam (dvyartha kavya)",
+                            "ముగ్గురు కవులు — 'Kavitrayam' (Three Poets): Nannaya, Tikkana, Errana",
+                            "పాల్కురికి సోమనాథుడు — Shaiva bhakti poet; Basavapurana in native Telugu metres",
+                        ],
+                    },
+                    "vijayanagara": {
+                        "title": "Vijayanagara Period (14th–16th Century)",
+                        "meta": "Literature • Golden Age",
+                        "points": [
+                            "శ్రీనాథుడు (1379–1470) — 'Kavi Sarvabhouma'; Shringaranaishadha, Kasikhanda",
+                            "పోతన (1450–1510) — Composed Bhagavatam in Telugu; rejected royal patronage for devotion",
+                            "అష్టదిగ్గజాలు — Eight celebrated poets at court of Krishna Devaraya",
+                            "కృష్ణదేవరాయలు (1509–1529) — Composed Amuktamalyada (the gem of Telugu kavya)",
+                            "అల్లసాని పెద్దన — 'Andhra Kavita Pitamaha'; wrote Manucharitra (first Prabandha)",
+                            "నంది తిమ్మన — Wrote Parijatapaharana; known as 'Mukku Timmana'",
+                        ],
+                    },
+                    "modern": {
+                        "title": "Modern Period (19th–20th Century)",
+                        "meta": "Literature • Renaissance Era",
+                        "points": [
+                            "గురజాడ అప్పారావు (1862–1915) — Father of modern Telugu literature; Kanyasulkam (social play)",
+                            "కందుకూరి వీరేశలింగం — Social reformer; wrote first Telugu novel Rajashekhara Charitra",
+                            "విశ్వనాథ సత్యనారాయణ — Jnanpith Award winner (1970); Ramayana Kalpavrikshamu",
+                            "శ్రీ శ్రీ (1910–1983) — 'Mahakavi'; Maha Prasthanam (revolutionary poetry)",
+                            "జాషువా (1895–1971) — Dalit poet; Gabbilam, Firdausi — voice of the marginalized",
+                            "దేవులపల్లి కృష్ణశాస్త్రి — Romantic lyricist; called 'Telugu Shelley'",
+                        ],
+                    },
+                    "prabandhas": {
+                        "title": "Important Prabandhas (ప్రబంధాలు)",
+                        "meta": "Literature • Key Works",
+                        "points": [
+                            "మనుచరిత్ర — Allasani Peddana; first Telugu Prabandha; story of Manu and Varuthini",
+                            "అముక్తమాల్యద — Krishna Devaraya; story of Andal (Godadevi); greatest Telugu kavya",
+                            "రాఘవపాండవీయం — Errana; dvyartha kavya describing both Ramayana and Mahabharata simultaneously",
+                            "కాళహస్తి మాహాత్మ్యం — Dhurjati; devotional Shaiva prabandha",
+                            "పాండురంగ మాహాత్మ్యం — Tenali Ramakrishna; Vaishnava devotional work",
+                            "కళాపూర్ణోదయం — Pingali Suranna; early realistic novel-like prabandha",
+                        ],
+                    },
+                },
+            },
+            "essay": {
+                "label": "General Essay",
+                "sub": "వ్యాస రచన — Writing Skills",
+                "topics": {
+                    "essay_structure": {
+                        "title": "Essay Structure & Format (నిర్మాణం)",
+                        "meta": "Essay • Writing Technique",
+                        "points": [
+                            "పరిచయం (Introduction) — Hook sentence, background context, clear thesis statement",
+                            "ముఖ్యాంశాలు (Main Body) — 3–4 paragraphs; each paragraph = one clear idea",
+                            "ఉపసంహారం (Conclusion) — Summary, personal view, way forward / future outlook",
+                            "Ideal length: 600–800 words for APPSC examination essays",
+                            "Use Telugu idiomatic expressions (నుడికారాలు) to enrich language",
+                            "Incorporate Telugu proverbs (సామెతలు) where contextually appropriate",
+                            "Quote relevant Telugu poets or literature to add scholarly depth",
+                        ],
+                    },
+                    "essay_topics": {
+                        "title": "Common APPSC Essay Topics",
+                        "meta": "Essay • Topic Bank",
+                        "points": [
+                            "తెలుగు భాష ప్రాముఖ్యత — Importance and glory of the Telugu language",
+                            "స్త్రీ విద్య — Women's education and empowerment in modern India",
+                            "పర్యావరణ సంరక్షణ — Environmental conservation and climate change",
+                            "ప్రజాస్వామ్యం — Democracy: strengths, challenges, and responsibilities",
+                            "నీటి సమస్య — Water scarcity: causes, impact, and management",
+                            "సాంకేతిక పరిజ్ఞానం — Technology and its impact on society",
+                            "గ్రామీణాభివృద్ధి — Rural development and upliftment",
+                            "మాదక ద్రవ్యాల దుష్ప్రభావం — Ill effects of drug abuse on youth",
+                            "జాతీయ సమైక్యత — National integration and unity in diversity",
+                            "యువత పాత్ర — Role of youth in nation building",
+                        ],
+                    },
+                    "essay_language": {
+                        "title": "Useful Phrases for Essays",
+                        "meta": "Essay • Language Bank",
+                        "points": [
+                            "మొదట / అన్నింటికంటే ముందుగా — Firstly / To begin with",
+                            "అదే విధంగా / అలాగే — Similarly / In the same way",
+                            "అయినప్పటికీ / అయినా — However / Nevertheless",
+                            "కాబట్టి / అందుకే — Therefore / Hence",
+                            "పైన చెప్పిన విషయాలను బట్టి — Based on the above points",
+                            "సమాజంలో మార్పు తీసుకురావాలంటే — To bring change in society",
+                            "ప్రభుత్వం తగిన చర్యలు తీసుకోవాలి — The government must take appropriate steps",
+                            "ముగింపుగా చెప్పాలంటే — In conclusion / To sum up",
+                        ],
+                    },
+                },
+            },
+        },
+    },
+}
+
+
+async def telugu(request: Request):
+    return templates.TemplateResponse(request, "telugu.html", {
+        "structure_json": json.dumps(TELUGU_STRUCTURE),
+        "current_user": get_current_user(request),
     })
 
 
@@ -1694,7 +2284,9 @@ def _ca_days_for_month(year: int, month: int) -> list[int]:
 
 
 async def current_affairs(request: Request):
-    return templates.TemplateResponse(request, "current_affairs.html")
+    return templates.TemplateResponse(request, "current_affairs.html", {
+        "current_user": get_current_user(request),
+    })
 
 
 async def api_ca_content(request: Request):
@@ -1719,6 +2311,143 @@ async def api_ca_month(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Auth route handlers
+# ---------------------------------------------------------------------------
+
+_USERNAME_RE = re.compile(r'^[a-zA-Z0-9_\-]{3,20}$')
+
+
+async def login_page(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    registered = request.query_params.get("registered") == "1"
+    return templates.TemplateResponse(request, "login.html", {
+        "current_user": None,
+        "error": None,
+        "registered": registered,
+    })
+
+
+async def login_post(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    form = await request.form()
+    raw_username = str(form.get("username", "")).strip().lower()
+    password     = str(form.get("password", ""))
+    # Strip @groupsguru.in if user typed the full address
+    username = raw_username.replace("@groupsguru.in", "")
+
+    user = db_get_user_by_username(username)
+    if user and user["is_active"] and verify_password(password, user["password_hash"]):
+        request.session["user_id"]  = user["id"]
+        request.session["username"] = user["username"]
+        request.session["role"]     = user["role"]
+        return RedirectResponse("/", status_code=302)
+
+    return templates.TemplateResponse(request, "login.html", {
+        "current_user": None,
+        "error": "Invalid username or password.",
+        "registered": False,
+    }, status_code=200)
+
+
+async def register_page(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    return templates.TemplateResponse(request, "register.html", {
+        "current_user": None,
+        "error": None,
+    })
+
+
+async def register_post(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    form = await request.form()
+    username     = str(form.get("username", "")).strip().lower()
+    display_name = str(form.get("display_name", "")).strip()
+    email        = str(form.get("email", "")).strip()
+    password     = str(form.get("password", ""))
+    confirm_pwd  = str(form.get("confirm_password", ""))
+
+    def fail(msg):
+        return templates.TemplateResponse(request, "register.html", {
+            "current_user": None,
+            "error": msg,
+            "vals": {"username": username, "display_name": display_name, "email": email},
+        }, status_code=200)
+
+    if not _USERNAME_RE.match(username):
+        return fail("Username must be 3–20 characters: letters, numbers, _ or - only.")
+    if not display_name:
+        return fail("Display name is required.")
+    if len(password) < 8:
+        return fail("Password must be at least 8 characters.")
+    if password != confirm_pwd:
+        return fail("Passwords do not match.")
+    if db_username_taken(username):
+        return fail(f"Username '{username}' is already taken. Please choose another.")
+
+    db_create_user(username, display_name, email, password)
+    return RedirectResponse("/login?registered=1", status_code=302)
+
+
+async def logout(request: Request):
+    request.session.clear()
+    return RedirectResponse("/", status_code=302)
+
+
+async def forgot_password_page(request: Request):
+    return templates.TemplateResponse(request, "forgot_password.html", {
+        "current_user": get_current_user(request),
+    })
+
+
+async def change_password_page(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "change_password.html", {
+        "current_user": user,
+        "error": None,
+        "success": None,
+    })
+
+
+async def change_password_post(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+
+    form        = await request.form()
+    current_pwd = str(form.get("current_password", ""))
+    new_pwd     = str(form.get("new_password", ""))
+    confirm_pwd = str(form.get("confirm_password", ""))
+
+    def fail(msg):
+        return templates.TemplateResponse(request, "change_password.html", {
+            "current_user": user,
+            "error": msg,
+            "success": None,
+        }, status_code=200)
+
+    db_user = db_get_user_by_username(user["username"])
+    if not db_user or not verify_password(current_pwd, db_user["password_hash"]):
+        return fail("Current password is incorrect.")
+    if len(new_pwd) < 8:
+        return fail("New password must be at least 8 characters.")
+    if new_pwd != confirm_pwd:
+        return fail("New passwords do not match.")
+
+    db_update_password(user["id"], new_pwd)
+    return templates.TemplateResponse(request, "change_password.html", {
+        "current_user": user,
+        "error": None,
+        "success": "Password changed successfully.",
+    }, status_code=200)
+
+
+# ---------------------------------------------------------------------------
 # Routing table
 # ---------------------------------------------------------------------------
 
@@ -1728,21 +2457,36 @@ routes = [
     Route("/group2",                        group2),
     Route("/current-affairs",              current_affairs),
     Route("/aptitude",                      aptitude),
+    Route("/telugu",                        telugu),
+    Route("/login",                         login_page,         methods=["GET"]),
+    Route("/login",                         login_post,         methods=["POST"]),
+    Route("/register",                      register_page,      methods=["GET"]),
+    Route("/register",                      register_post,      methods=["POST"]),
+    Route("/logout",                        logout),
+    Route("/forgot-password",               forgot_password_page),
+    Route("/change-password",              change_password_page, methods=["GET"]),
+    Route("/change-password",              change_password_post, methods=["POST"]),
     Route("/api/ca/content/{date}",         api_ca_content),
     Route("/api/ca/month/{year}/{month}",   api_ca_month),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]
 
-app = Starlette(routes=routes)
+app = Starlette(
+    routes=routes,
+    middleware=[Middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=False)],
+)
+
+init_db()
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     host = "0.0.0.0" if os.environ.get("RENDER") else "127.0.0.1"
     if not os.environ.get("RENDER"):
         print("=" * 50)
-        print("  APPSC 2026 Website")
+        print("  GroupsGuru — APPSC 2026")
         print("  Open: http://localhost:8000")
+        print("  Admin: admin@groupsguru.in")
         print("  Press Ctrl+C to stop")
         print("=" * 50)
     uvicorn.run(app, host=host, port=port)
