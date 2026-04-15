@@ -239,7 +239,72 @@ body {
     width: 100%;
     height: 85vh;
     border: none;
-    display: block;
+}
+
+/* ---- Scheme Table ---- */
+.scheme-table-container {
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    overflow-x: auto;
+    margin-bottom: 2rem;
+}
+
+.scheme-table-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--inset);
+    margin: 0;
+}
+
+.scheme-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.scheme-table th {
+    background: var(--inset);
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-align: left;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 2px solid var(--border);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.scheme-table td {
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.scheme-table tr:last-child td {
+    border-bottom: none;
+}
+
+.scheme-table tbody tr {
+    transition: background 0.15s;
+}
+
+.scheme-table tbody tr:hover {
+    background: var(--card);
+}
+
+.scheme-table .total-row td {
+    font-weight: 800;
+    color: var(--gold);
+    background: rgba(217, 119, 6, 0.05); /* very faint gold */
+    border-top: 2px solid var(--border);
 }
 
 /* =========================================

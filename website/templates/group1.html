@@ -12,8 +12,8 @@
 <!-- ── Tab bar ─────────────────────────────────────────────────── -->
 <div class="g2-tabs">
   <button class="g2-tab active" data-tab="syllabus">
-    <span class="tab-label">Syllabus</span>
-    <span class="tab-sub">Official PDF</span>
+    <span class="tab-label">Exam Scheme</span>
+    <span class="tab-sub">Official Pattern</span>
   </button>
   {% for key, stage in structure.items() %}
   <button class="g2-tab" data-tab="{{ key }}">
@@ -23,16 +23,122 @@
   {% endfor %}
 </div>
 
-<!-- ── Syllabus panel (default) ────────────────────────────────── -->
+<!-- ── Scheme panel (default) ────────────────────────────────── -->
 <div class="g2-panel active" id="panel-syllabus">
-  <div class="pdf-container">
-    <iframe src="/pdfs/4_PDFsam_APPSC_GROUP%201%20SYLLABUS.pdf"
-            class="pdf-viewer" title="Group 1 Official Syllabus PDF"></iframe>
-    <div class="pdf-mobile-fallback">
-      <p>PDF preview is not supported in mobile browsers.<br>Tap below to open the full syllabus.</p>
-      <a href="/pdfs/4_PDFsam_APPSC_GROUP%201%20SYLLABUS.pdf" target="_blank" class="pdf-open-btn">&#128196; Open PDF</a>
-    </div>
+  
+  <div class="scheme-table-container">
+    <h3 class="scheme-table-title">Screening Test - Written Examination (Objective Type)</h3>
+    <table class="scheme-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>No. of Questions</th>
+          <th>Duration Minutes</th>
+          <th>Maximum Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>Screening Test (Objective Type) Paper-I: General Studies</strong><br>
+            <span style="font-size: 0.85rem; color: var(--muted); display: block; margin-top: 4px;">
+              This paper consists of 04 parts i.e., ABCD each part carries 30 marks<br>
+              A. History and Culture.<br>
+              B. Constitution, Polity, Social Justice and International relations.<br>
+              C. Indian and Andhra Pradesh Economy and Planning.<br>
+              D. Geography.
+            </span>
+          </td>
+          <td>120</td>
+          <td>120</td>
+          <td>120</td>
+        </tr>
+        <tr>
+          <td>
+            <strong>Screening Test (Objective Type) Paper-II: General Aptitude</strong><br>
+            <span style="font-size: 0.85rem; color: var(--muted); display: block; margin-top: 4px;">
+              This paper consists of 2 parts i.e., A and B each part carries 60 Marks (Part-A - 60 Marks, Part-B (i) - 30 Marks and B (ii) - 30 Marks).<br>
+              A. General Mental Ability, Administrative and Psychological Abilities.<br>
+              B. (i) Science and Technology<br>
+                 &nbsp;&nbsp;&nbsp;(ii) Current events of Regional, National and International importance
+            </span>
+          </td>
+          <td>120</td>
+          <td>120</td>
+          <td>120</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+
+  <div class="scheme-table-container">
+    <h3 class="scheme-table-title">Mains - Written Examination (Descriptive Type)</h3>
+    <table class="scheme-table">
+      <thead>
+        <tr>
+          <th style="width: 15%">Paper</th>
+          <th style="width: 45%">Subject</th>
+          <th style="width: 20%">Duration</th>
+          <th style="width: 20%">Maximum Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Paper in Telugu</strong></td>
+          <td>Qualifying Nature</td>
+          <td>180 minutes</td>
+          <td>150 Marks</td>
+        </tr>
+        <tr>
+          <td><strong>Paper in English</strong></td>
+          <td>Qualifying Nature</td>
+          <td>180 minutes</td>
+          <td>150 Marks</td>
+        </tr>
+        <tr>
+          <td><strong>Paper - I</strong></td>
+          <td>General Essay - on contemporary themes and issues of regional, national and international importance.</td>
+          <td>180 minutes</td>
+          <td>150 Marks</td>
+        </tr>
+        <tr>
+          <td><strong>Paper - II</strong></td>
+          <td>History and Cultural and Geography of India and Andhra Pradesh</td>
+          <td>180 minutes</td>
+          <td>150 Marks</td>
+        </tr>
+        <tr>
+          <td><strong>Paper - III</strong></td>
+          <td>Polity, constitution, Governance, Law and Ethics</td>
+          <td>180 minutes</td>
+          <td>150 Marks</td>
+        </tr>
+        <tr>
+          <td><strong>Paper - IV</strong></td>
+          <td>Economy and Development of India and Andhra Pradesh</td>
+          <td>180 minutes</td>
+          <td>150 Marks</td>
+        </tr>
+        <tr>
+          <td><strong>Paper - V</strong></td>
+          <td>Science, Technology and Environmental Issues</td>
+          <td>180 minutes</td>
+          <td>150 Marks</td>
+        </tr>
+        <tr>
+          <td><strong>Interview</strong></td>
+          <td>Personality Test</td>
+          <td>-</td>
+          <td>75 Marks</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="3" style="text-align: right; padding-right: 2rem;">TOTAL MARKS</td>
+          <td>825 Marks</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>
 
 <!-- ── Exam panels ─────────────────────────────────────────────── -->

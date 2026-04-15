@@ -812,6 +812,93 @@ G1_STRUCTURE = {
         ],
     },
 
+    "telugu": {
+        "label": "Mains: Telugu",
+        "subtitle": "Qualifying Nature | 150 Marks | 180 Min",
+        "sections": [
+            {
+                "title": "Telugu Syllabus (SSC Standard)",
+                "marks": 150,
+                "topics": [
+                    {
+                        "id": "tel-01",
+                        "title": "Topics",
+                        "points": [
+                            "Essay (Minimum 200 words, Maximum 250 words)",
+                            "To elaborate the thought of poetic or verse",
+                            "Precis Writing (1/3rd summary)",
+                            "Comprehension (Reading passage followed by questions)",
+                            "Formal Speech (Welcome, Farewell, Inauguration, etc.)",
+                            "Prepare Statements for publicity media",
+                            "Letter Writing",
+                            "Debate Writing",
+                            "Application Writing",
+                            "Report Writing",
+                            "Dialogue Writing or Dialogue Skills",
+                            "Translation (English to Telugu)",
+                            "Grammar of Telugu"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+    "english": {
+        "label": "Mains: English",
+        "subtitle": "Qualifying Nature | 150 Marks | 180 Min",
+        "sections": [
+            {
+                "title": "English Syllabus (SSC Standard)",
+                "marks": 150,
+                "topics": [
+                    {
+                        "id": "eng-01",
+                        "title": "Topics",
+                        "points": [
+                            "Essay (Descriptive, analytical, philosophical, based on Current Affairs)",
+                            "Letter Writing (Formal letter)",
+                            "Press Release / Appeal",
+                            "Report Writing",
+                            "Writing on Visual Information",
+                            "Formal Speech",
+                            "Precis Writing",
+                            "Reading Comprehension",
+                            "English Grammar",
+                            "Translation (Regional Language to English)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+    "paper1": {
+        "label": "Mains: Paper I",
+        "subtitle": "General Essay | 150 Marks | 180 Min",
+        "sections": [
+            {
+                "title": "General Essay",
+                "marks": 150,
+                "topics": [
+                    {
+                        "id": "m1-ge-01",
+                        "title": "Section I, II & III",
+                        "points": [
+                            "Current Affairs",
+                            "Socio-political issues",
+                            "Socio-economic issues",
+                            "Socio-environmental issues",
+                            "Cultural and historical aspects",
+                            "Issues related to civic awareness",
+                            "Reflective topics"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
     "paper2": {
         "label": "Mains: Paper II",
         "subtitle": "History, Culture & Geography of India and AP | 150 Marks | 180 Min",
