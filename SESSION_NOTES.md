@@ -503,11 +503,34 @@ New CSS classes added to `style.css`:
 
 ---
 
+## Hotfix — python-multipart (commit f1e10e9)
+
+**Bug:** POST /login and POST /register returned 500 on Render but worked locally.
+
+**Root cause:** `request.form()` requires `python-multipart`. Was installed globally on local machine but not listed in `requirements.txt`, so Render's clean environment never installed it.
+
+**Fix:** Added `python-multipart>=0.0.7` to `requirements.txt`.
+
+---
+
+## Seeded Accounts
+
+| Username | Login | Default Password | Role |
+|----------|-------|-----------------|------|
+| `jayaramadmin` | jayaramadmin@groupsguru.in | `jayaramadmin@2026` | Admin |
+| `jayaram` | jayaram@groupsguru.in | `jayaram@2026` | Student |
+| `leelarani` | leelarani@groupsguru.in | `leelarani@2026` | Student |
+| `tejashree` | tejashree@groupsguru.in | `tejashree@2026` | Student |
+
+Accounts re-seeded automatically on every server start (if not already present). Admin password overrideable via `ADMIN_PASSWORD` env var on Render.
+
+---
+
 ## Environment Variables to Set on Render
 
 | Key | Value |
 |-----|-------|
-| `ADMIN_PASSWORD` | Your chosen admin password |
+| `ADMIN_PASSWORD` | Your chosen admin password (overrides `jayaramadmin@2026`) |
 | `SECRET_KEY` | Random 32+ char string (for session cookie signing) |
 
 ---
