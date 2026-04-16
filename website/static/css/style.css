@@ -130,8 +130,8 @@ body {
 /* ---- Main content area ---- */
 .main-content {
     padding: 2rem 0;
-    width: 90%;
-    max-width: 1600px;
+    width: 96%;
+    max-width: none;
     margin: 0 auto;
 }
 

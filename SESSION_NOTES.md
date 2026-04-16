@@ -668,3 +668,32 @@ Replaced the chaotic horizontal scrolling tab bar with a dual-mode professional 
 
 ## Technical Reference
 - **Render Deployment Note:** Secret Keys are blocked by `.gitignore`. The `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` must be uploaded directly via the Environment Variables tab in the Render Dashboard in order for Google Login to work on production infrastructure.
+
+---
+---
+
+# Session 7 — Kindle UI Study Desk Overhaul
+
+**Date:** April 17, 2026
+**Branch:** `main` (auto-pushes to `master` for Render deploy)
+
+---
+
+## What Was Done This Session
+
+### 1. Immersive Kindle Reader Experience
+- Transformed the `study_desk.html` portal into a distraction-free environment mirroring the Kindle e-reader UI.
+- Removed global navigation, substituting it with a slide-in top app bar and a persistent bottom progress footer (tracking reading percentage and local cache save status).
+
+### 2. Full-Screen Global Saffron Grid
+- Overrode the default fixed-width containers natively inside the `study_desk.html` reader layout so it respects the requested 2-3% side-spacing parameter globally.
+- Set the Kindle UI background in `theme-dark` mode to be actively dynamic/transparent, exposing the underlying platform-wide dark luxury Saffron grid to bleed through the canvas.
+- Realigned control layers (the Aa menu, top bar, and sliding Notebook) with opaque `#1A1A1A` Navy to float perfectly atop the subtle orange technical grid.
+
+### 3. Click-to-Manage Highlighter Logic
+- Upgraded the text highlight UX to match e-reader standards.
+- Injected a Saffron (`#FF9933`) color selector into the floating context menu.
+- Added native `<mark>` click detection directly on the DOM so returning users can select and hit `✗ Clear` without tediously dragging their mouse to reselect precise string matches.
+
+### 4. Code Cleanup & Removal
+- Cleanly deleted the unused/distracting Flashcards feature. Focus remains exclusively on immersive reading and integrated Markdown note generation.

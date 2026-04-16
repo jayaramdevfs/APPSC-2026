@@ -1,132 +1,320 @@
 {% extends "base.html" %}
-{% block title %}Study Desk — Topic: {{ topic_id }}{% endblock %}
+{% block title %}Kindle Reader — Topic: {{ topic_id }}{% endblock %}
 
 {% block content %}
-<!-- Include html2pdf library from CDN for PDF Export -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-<div class="sd-navbar">
-  <div class="sd-nav-left">
-    <a href="javascript:history.back()" class="sd-back-btn">&larr; Back to Syllabus</a>
-    <div class="sd-topic-info">
-      <h1 class="sd-title">Study Desk: <span class="sd-topic-badge" id="sd-topic-badge">{{ topic_id }}</span></h1>
-      <div class="sd-save-indicator" id="sd-auto-save">All changes saved locally</div>
+<!-- Kindle Main Container -->
+<div id="kindle-app" class="theme-dark font-serif size-medium">
+  
+  <!-- Top App Bar -->
+  <div class="k-topbar" id="k-topbar">
+    <div class="k-topbar-left">
+      <a href="javascript:history.back()" class="k-btn"><i class="icon-back">←</i> <span class="k-back-text">Library</span></a>
     </div>
-  </div>
-  <div class="sd-nav-right">
-    <button class="sd-btn-export" onclick="exportPDF('study_notes')">Export Study Notes (PDF)</button>
-    <button class="sd-btn-export" onclick="exportPDF('my_notes')">Export My Notes (PDF)</button>
-  </div>
-</div>
-
-<div class="sd-container">
-  <!-- LEFT PANE: OFFICIAL NOTES -->
-  <div class="sd-pane sd-left-pane">
-    <div class="sd-pane-header">
-      <h2>Official Reference Material</h2>
+    <div class="k-topbar-center">
+      <h1 class="k-book-title" id="sd-topic-badge">{{ topic_id }}</h1>
     </div>
-    <div class="sd-pane-body" id="official-notes-container">
-      <div class="notes-loading">Loading notes securely...</div>
+    <div class="k-topbar-right">
+      <button class="k-btn" id="btn-aa" title="Appearance (Aa)">Aa</button>
+      <button class="k-btn" id="btn-notebook" title="My Notebook">Notebook</button>
+      <button class="k-btn" onclick="exportPDF('study_notes')" title="Export">↓</button>
     </div>
   </div>
 
-  <!-- RIGHT PANE: RICH TEXT MY NOTES -->
-  <div class="sd-pane sd-right-pane">
-    <div class="sd-pane-header" style="justify-content: space-between;">
-      <h2>My Personal Notes</h2>
-      <button class="sd-btn-fc" id="sd-btn-open-fc" onclick="toggleFCModal()">&#128218; Flashcards</button>
+  <!-- Appearance Menu (Aa) Popup -->
+  <div class="k-menu-aa" id="k-menu-aa" style="display: none;">
+    <div class="k-aa-section">
+      <div class="k-aa-label">Themes</div>
+      <div class="k-aa-options">
+        <button class="k-theme-btn theme-light" data-theme="theme-light">Aa</button>
+        <button class="k-theme-btn theme-sepia active" data-theme="theme-sepia">Aa</button>
+        <button class="k-theme-btn theme-dark" data-theme="theme-dark">Aa</button>
+      </div>
     </div>
-    <div class="sd-pane-body">
-      <div class="sd-rich-editor" id="my-notes-editor" contenteditable="true" placeholder="Start typing your structured notes or paste images here..."></div>
+    <div class="k-aa-section">
+      <div class="k-aa-label">Font Family</div>
+      <div class="k-aa-options">
+        <button class="k-font-btn font-serif active" data-font="font-serif">Bookerly</button>
+        <button class="k-font-btn font-sans" data-font="font-sans">Amazon Ember</button>
+      </div>
+    </div>
+    <div class="k-aa-section">
+      <div class="k-aa-label">Font Size</div>
+      <div class="k-aa-options">
+        <button class="k-size-btn" data-size="size-small">A-</button>
+        <button class="k-size-btn active" data-size="size-medium">A</button>
+        <button class="k-size-btn" data-size="size-large">A+</button>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Simple Flashcard Modal -->
-<div id="sd-fc-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#1a1e24; border:1px solid #ff9800; border-radius:12px; padding:2rem; z-index:2000; box-shadow:0 10px 40px rgba(0,0,0,0.8); width: 400px;">
-  <h2 style="color:#ff9800; margin-top:0;">Official Flashcards</h2>
-  <div id="sd-fc-list" style="max-height: 400px; overflow-y:auto; margin: 1rem 0;"></div>
-  <button onclick="toggleFCModal()" style="background:#444; color:#fff; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;">Close</button>
-</div>
+  <!-- E-Reader Content Area -->
+  <div class="k-reader-scroll" id="k-reader-scroll">
+    <div class="k-reader-content" id="official-notes-container">
+      <div class="k-loading">Loading book securely...</div>
+    </div>
+  </div>
 
-<!-- Floating Annotation Toolbar -->
-<div class="hl-toolbar" id="sd-hl-toolbar" style="display:none">
-  <button class="hl-btn hl-yellow" data-type="highlight" data-color="yellow" title="Yellow Highlight">&#9608;</button>
-  <button class="hl-btn hl-green" data-type="highlight" data-color="green" title="Green Highlight">&#9608;</button>
-  <button class="hl-btn hl-underline" data-type="underline" title="Underline">_</button>
-  <button class="hl-btn hl-add-note" data-type="inline-note" title="Add Inline Snippet">+ Text</button>
-  <button class="hl-btn hl-remove" data-type="remove" title="Remove Formatting">&#10005; Clear</button>
+  <!-- Bottom Progress Footer -->
+  <div class="k-footer" id="k-footer">
+    <div class="k-footer-left" id="k-footer-text">Loc 1 • 0%</div>
+    <div class="k-footer-center" id="sd-auto-save">All changes saved locally</div>
+    <div class="k-footer-right">15 mins left in chapter</div>
+  </div>
+
+  <!-- Notebook Slide-in Drawer -->
+  <div class="k-notebook-drawer" id="k-notebook-drawer">
+    <div class="k-notebook-header">
+      <h2>My Notebook</h2>
+      <button class="k-btn-close" id="btn-close-notebook">×</button>
+    </div>
+    <div class="k-notebook-body">
+      <p class="k-notebook-desc">Type your personal notes here. They are saved automatically.</p>
+      <div class="k-rich-editor" id="my-notes-editor" contenteditable="true" placeholder="Start typing..."></div>
+    </div>
+  </div>
+
+  <!-- Kindle Context Menu (Highlighting) -->
+  <div class="k-context-menu" id="k-context-menu" style="display: none;">
+    <button class="k-color-btn k-yellow" data-color="yellow"></button>
+    <button class="k-color-btn k-saffron" data-color="saffron"></button>
+    <button class="k-color-btn k-red" data-color="red"></button>
+    <button class="k-color-btn k-blue" data-color="blue"></button>
+    <button class="k-color-btn k-green" data-color="green"></button>
+    <div class="k-divider"></div>
+    <button class="k-action-btn" data-action="note">Note</button>
+    <button class="k-action-btn" data-action="remove">✗ Clear</button>
+  </div>
+
 </div>
 
 <style>
-/* Study Desk Specific Styles */
-body { margin: 0; background-color: #191919; color: #E8E8E8; font-family: 'Inter', system-ui, sans-serif;
-  background-image: linear-gradient(to right, rgba(255, 153, 51, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 153, 51, 0.04) 1px, transparent 1px);
-  background-size: 40px 40px; 
+/* --- KINDLE VARIABLES & THEMES --- */
+:root {
+  --k-theme-light-bg: #FFFFFF;
+  --k-theme-light-text: #111111;
+  --k-theme-light-border: #E0E0E0;
+  
+  --k-theme-sepia-bg: #FBF0D9;
+  --k-theme-sepia-text: #2D2A26;
+  --k-theme-sepia-border: #E5CDAC;
+
+  --k-theme-dark-bg: transparent;
+  --k-theme-dark-text: var(--text, #E8E8E8);
+  --k-theme-dark-border: var(--border, #3A3A3A);
+
+  --k-font-serif: 'Georgia', 'Times New Roman', serif; /* Simulates Bookerly */
+  --k-font-sans: 'Inter', '-apple-system', sans-serif; /* Simulates Amazon Ember */
 }
-nav.navbar { display: none !important; } /* Hide the main navigation inside Study Desk */
-.sd-navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 2rem; background: #121417; border-bottom: 2px solid #ff9800; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-.sd-nav-left { display: flex; align-items: center; gap: 1rem; }
-.sd-back-btn { color: #ffb74d; text-decoration: none; font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.7rem; border: 1px solid rgba(255,183,77,0.5); border-radius: 4px; transition: 0.2s; }
-.sd-back-btn:hover { background: #ffb74d; color: #121417; }
-.sd-title { margin: 0; font-size: 1.1rem; color: #ffffff; display: flex; align-items: center; gap: 10px; }
-.sd-topic-badge { background: transparent; font-size: 1.1rem; padding: 0; border-radius: 0; color: #ffb74d; font-weight: bold; margin-left: 5px; }
-.sd-save-indicator { font-size: 0.75rem; color: #888; font-style: italic; margin-left: 1rem;}
-.sd-btn-export { background: transparent; color: #ffb74d; border: 1px dashed #ff9800; padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 4px; cursor: pointer; margin-left: 0.5rem; transition: background 0.2s; }
-.sd-btn-export:hover { background: rgba(255, 152, 0, 0.1); }
-.sd-btn-fc { background: rgba(255, 153, 51, 0.1); border: 1px solid #ff9800; color: #ff9800; padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem; cursor: pointer; }
-.sd-btn-fc:hover { background: #ff9800; color: #000; }
 
-.sd-container { display: flex; width: 100%; min-height: 100vh; gap: 2rem; padding: 2rem; box-sizing: border-box; }
-.sd-pane { display: flex; flex-direction: column; background: transparent; }
-.sd-left-pane { width: 65%; }
-.sd-right-pane { width: 35%; }
+body { 
+  margin: 0; padding: 0; overflow: hidden; 
+  background-color: var(--base, #191919);
+  background-image: linear-gradient(to right, rgba(255, 153, 51, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 153, 51, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+} /* Hide global nav */
+nav.navbar { display: none !important; }
 
-.sd-pane-header { background: #1a1e24; padding: 0.8rem 1.5rem; position: sticky; top: 60px; z-index: 10; display: flex; justify-content: space-between; align-items: center; border: 1px solid #3A3A3A; border-bottom: none; border-radius: 8px 8px 0 0; }
-.sd-pane-header h2 { margin: 0; font-size: 1rem; color: #ff9800; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-.sd-tip { font-size: 0.8rem; color: #777; }
+/* The App Container */
+#kindle-app {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease, color 0.3s ease;
+  z-index: 1000; /* overlay everything */
+}
 
-.sd-pane-body { width: 100%; box-sizing: border-box; }
+/* Base Theme Applications */
+#kindle-app.theme-light { --k-bg: var(--k-theme-light-bg); --k-text: var(--k-theme-light-text); --k-border: var(--k-theme-light-border); }
+#kindle-app.theme-sepia { --k-bg: var(--k-theme-sepia-bg); --k-text: var(--k-theme-sepia-text); --k-border: var(--k-theme-sepia-border); }
+#kindle-app.theme-dark { --k-bg: var(--k-theme-dark-bg); --k-text: var(--k-theme-dark-text); --k-border: var(--k-theme-dark-border); }
 
-/* Official Notes Styling (PDF Feel) */
-#official-notes-container { background: transparent; padding: 2rem 3rem; border: 1px solid #3A3A3A; border-top: none; border-radius: 0 0 8px 8px; line-height: 1.7; font-size: 1rem; }
-.sd-rich-editor { outline: none; min-height: 600px; padding: 1.5rem; background: rgba(20,20,20,0.8); border: 1px solid #3A3A3A; border-top: none; border-radius: 0 0 8px 8px; line-height: 1.6; }
-.sd-rich-editor img { max-width: 100%; border-radius: 8px; margin: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-[contenteditable="true"]:empty:before { content: attr(placeholder); color: #777; pointer-events: none; display: block; }
+/* Typography Applications */
+#kindle-app.font-serif { --k-font-family: var(--k-font-serif); }
+#kindle-app.font-sans { --k-font-family: var(--k-font-sans); }
 
-/* Annotation Styles */
-mark.hl-yellow { background: rgba(255, 235, 59, 0.4); color: inherit; padding: 2px 0; border-radius: 2px; }
-mark.hl-green { background: rgba(76, 175, 80, 0.4); color: inherit; padding: 2px 0; border-radius: 2px; }
-.ann-underline { text-decoration: underline; text-decoration-color: #ff9800; text-decoration-thickness: 2px; }
-.ann-inline { display: inline-block; background: #2a3441; border-left: 3px solid #ff5722; padding: 2px 8px; margin: 0 5px; font-size: 0.9em; color: #ffab91; border-radius: 3px; font-family: monospace; }
+#kindle-app.size-small { --k-font-size: 16px; --k-line-height: 1.6; }
+#kindle-app.size-medium { --k-font-size: 20px; --k-line-height: 1.8; }
+#kindle-app.size-large { --k-font-size: 26px; --k-line-height: 1.9; }
 
-/* Toolbar */
-.hl-toolbar { position: absolute; background: #1f2833; padding: 0.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); display: flex; gap: 0.5rem; z-index: 1000; border: 1px solid #ff9800; }
-.hl-btn { background: none; border: none; font-size: 1rem; cursor: pointer; padding: 0.3rem 0.6rem; color: #c5c6c7; outline: none; border-radius: 4px; }
-.hl-btn:hover { background: rgba(102,252,241,0.2); }
-.hl-btn.hl-yellow { color: #fbc02d; }
-.hl-btn.hl-green { color: #4caf50; }
-.hl-btn.hl-underline { text-decoration: underline; font-weight: bold; }
-.hl-btn.hl-add-note { font-size: 0.8rem; font-weight: bold; color: #ff5722; border: 1px solid #ff5722; margin-left: 5px; }
+#kindle-app {
+  background-color: var(--k-bg);
+  color: var(--k-text);
+  font-family: var(--k-font-family);
+}
 
-/* PDF Export styles - when printing, remove dark theme so it looks like proper paper */
-.pdf-export-mode { background: white !important; color: black !important; padding: 20px !important; margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+/* --- TOP BAR --- */
+.k-topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.5rem; height: 60px;
+  background: var(--k-bg);
+  border-bottom: 1px solid var(--k-border);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  font-family: var(--k-font-sans);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.k-topbar.hidden { transform: translateY(-100%); position: absolute; width: 100%; }
+
+.k-btn {
+  background: transparent; border: none; color: var(--k-text);
+  font-size: 1rem; cursor: pointer; padding: 0.5rem 0.8rem;
+  border-radius: 4px; font-family: inherit;
+}
+.k-btn:hover { background: rgba(128,128,128,0.1); }
+.k-book-title {
+  margin: 0; font-size: 1.1rem; font-weight: 600; text-align: center;
+}
+
+/* --- FOOTER --- */
+.k-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 1.5rem; height: 40px;
+  font-family: var(--k-font-sans);
+  font-size: 0.85rem; color: var(--k-text); opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* --- READER CONTENT MODE --- */
+.k-reader-scroll {
+  flex-grow: 1; overflow-y: auto; overflow-x: hidden;
+  display: flex; justify-content: center;
+  scroll-behavior: smooth;
+  padding-bottom: 50px;
+}
+.k-reader-scroll::-webkit-scrollbar { width: 8px; }
+.k-reader-scroll::-webkit-scrollbar-thumb { background: var(--k-border); border-radius: 4px; }
+
+.k-reader-content {
+  width: 94%; max-width: none; margin: 0 auto;
+  padding: 3rem 0;
+  font-size: var(--k-font-size);
+  line-height: var(--k-line-height);
+  text-align: justify;
+}
+.k-reader-content h1, .k-reader-content h2, .k-reader-content h3 {
+  font-family: var(--k-font-sans);
+  font-weight: 600; text-align: left; margin-top: 2em; margin-bottom: 0.5em;
+}
+.k-reader-content p { margin-bottom: 1.5em; }
+.k-reader-content img {
+  max-width: 100%; border-radius: 4px; display: block; margin: 2rem auto;
+  filter: grayscale(20%); /* gives an e-reader vibe to images */
+}
+
+/* --- Aa MENU --- */
+.k-menu-aa {
+  position: absolute; top: 65px; right: 2rem;
+  background: var(--k-bg); border: 1px solid var(--k-border);
+  border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  padding: 1.5rem; width: 300px; z-index: 110;
+  font-family: var(--k-font-sans);
+}
+.k-aa-section { margin-bottom: 1.5rem; }
+.k-aa-section:last-child { margin-bottom: 0; }
+.k-aa-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; opacity: 0.7; font-weight: 600;}
+.k-aa-options { display: flex; gap: 0.5rem; }
+
+.k-theme-btn, .k-font-btn, .k-size-btn {
+  flex: 1; padding: 0.8rem 0; border: 1px solid var(--k-border);
+  border-radius: 4px; cursor: pointer; font-size: 1rem;
+  text-align: center; transition: 0.2s;
+}
+.k-theme-btn.theme-light { background: var(--k-theme-light-bg); color: var(--k-theme-light-text); }
+.k-theme-btn.theme-sepia { background: var(--k-theme-sepia-bg); color: var(--k-theme-sepia-text); }
+.k-theme-btn.theme-dark { background: var(--k-theme-dark-bg); color: var(--k-theme-dark-text); }
+
+.k-font-btn.font-serif { font-family: var(--k-font-serif); }
+.k-font-btn.font-sans { font-family: var(--k-font-sans); }
+
+.k-theme-btn:hover, .k-font-btn:hover, .k-size-btn:hover { border-color: currentColor; }
+.active { border-color: currentColor; border-width: 2px; font-weight:bold; }
+.k-theme-btn, .k-font-btn, .k-size-btn { background: transparent; color: var(--k-text); }
+
+/* Overrides for theme buttons to keep their own color */
+.k-theme-btn.theme-light { background: #fff; color: #000; }
+.k-theme-btn.theme-sepia { background: #FBF0D9; color: #000; }
+.k-theme-btn.theme-dark { background: #1A1A1A; color: #fff; }
+
+#kindle-app.theme-dark .k-topbar,
+#kindle-app.theme-dark .k-menu-aa,
+#kindle-app.theme-dark .k-notebook-drawer {
+    background: #1A1A1A; /* Solid dark panels */
+}
+
+/* --- NOTEBOOK DRAWER --- */
+.k-notebook-drawer {
+  position: absolute; top: 0; right: 0; bottom: 0; width: 400px;
+  background: var(--k-bg); border-left: 1px solid var(--k-border);
+  box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+  transform: translateX(100%); transition: transform 0.3s ease;
+  display: flex; flex-direction: column; z-index: 200;
+  font-family: var(--k-font-sans);
+}
+.k-notebook-drawer.open { transform: translateX(0); }
+.k-notebook-header {
+  padding: 1.5rem; display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--k-border);
+}
+.k-notebook-header h2 { margin: 0; font-size: 1.2rem; }
+.k-btn-close { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--k-text); }
+.k-notebook-body { flex: 1; overflow-y: auto; padding: 1.5rem; display:flex; flex-direction:column;}
+.k-notebook-desc { font-size: 0.9rem; opacity: 0.7; margin-top:0; margin-bottom: 1rem; }
+.k-rich-editor {
+  flex: 1; outline: none; border: 1px dashed var(--k-border); border-radius: 4px;
+  padding: 1rem; line-height: 1.6; font-size:0.95rem; background: rgba(128,128,128,0.05);
+  overflow-y:auto;
+}
+
+/* --- CONTEXT MENU (HIGHLIGHTING) --- */
+.k-context-menu {
+  position: absolute; background: #2D2D2D; color: #FFF;
+  border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  display: flex; align-items: center; padding: 0.4rem; z-index: 1000;
+  font-family: var(--k-font-sans);
+}
+.k-color-btn {
+  width: 24px; height: 24px; border-radius: 50%; border: none;
+  margin: 0 6px; cursor: pointer; border: 2px solid transparent;
+}
+.k-color-btn:hover { transform: scale(1.1); }
+.k-yellow { background: #FFD54F; }
+.k-saffron { background: #FF9933; }
+.k-red { background: #E57373; }
+.k-blue { background: #64B5F6; }
+.k-green { background: #81C784; }
+
+.k-divider { width: 1px; height: 24px; background: rgba(255,255,255,0.2); margin: 0 8px; }
+.k-action-btn {
+  background: none; border: none; color: #FFF; font-size: 0.9rem;
+  cursor: pointer; padding: 0 8px; font-family: inherit; font-weight: 500;
+}
+.k-action-btn:hover { color: #FFD54F; }
+
+/* Highlights visually in text */
+mark.hl-yellow { background: rgba(255, 213, 79, 0.4); border-bottom: 2px solid #FFD54F; color: inherit; padding: 1px 0; }
+mark.hl-saffron{ background: rgba(255, 153, 51, 0.4); border-bottom: 2px solid #FF9933; color: inherit; padding: 1px 0;}
+mark.hl-red    { background: rgba(229, 115, 115, 0.3); border-bottom: 2px solid #E57373; color: inherit; padding: 1px 0;}
+mark.hl-blue   { background: rgba(100, 181, 246, 0.3); border-bottom: 2px solid #64B5F6; color: inherit; padding: 1px 0;}
+mark.hl-green  { background: rgba(129, 199, 132, 0.3); border-bottom: 2px solid #81C784; color: inherit; padding: 1px 0;}
+
+/* PDF Export styles */
+.pdf-export-mode { background: white !important; color: black !important; padding: 20px !important; }
 .pdf-export-mode * { color: black !important; }
-.pdf-export-mode mark.hl-yellow { background: yellow !important; }
-.pdf-export-mode mark.hl-green { background: lightgreen !important; }
-.pdf-export-mode .ann-inline { background: #f0f0f0 !important; border-left: 3px solid #d84315 !important; color: #d84315 !important; }
 </style>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
 const TOPIC_ID = "{{ topic_id }}";
 
-// Fetch Topic Title from URL
+// --- INIT DATA ---
 const urlParams = new URLSearchParams(window.location.search);
 const topicTitle = urlParams.get('title') || TOPIC_ID;
 document.getElementById('sd-topic-badge').textContent = topicTitle;
 
-// 1. Load Official Content
+// --- LOAD CONTENT ---
 fetch('/api/content/' + TOPIC_ID)
   .then(r => r.json())
   .then(data => {
@@ -135,45 +323,97 @@ fetch('/api/content/' + TOPIC_ID)
       container.innerHTML = marked.parse(data.content);
       loadAnnotations(); 
     } else {
-      container.innerHTML = '<h2>Content Not Available Yet</h2><p>The notes for this topic are currently being prepared.</p>';
+      container.innerHTML = '<h2 style="text-align:center;">Book Not Available</h2><p style="text-align:center;">The content for this topic is missing or being prepared.</p>';
     }
   });
 
-// 2. Load My Notes (Rich Edit)
-const editor = document.getElementById('my-notes-editor');
 fetch('/api/user-notes/' + TOPIC_ID)
   .then(r => r.json())
   .then(data => {
     if (data.content) {
-      editor.innerHTML = data.content;
+      document.getElementById('my-notes-editor').innerHTML = data.content;
     }
   });
 
-// Flashcards Modal
-function toggleFCModal() {
-  const modal = document.getElementById('sd-fc-modal');
-  if (modal.style.display === 'none') {
-    modal.style.display = 'block';
-    fetch('/api/flashcards/' + TOPIC_ID).then(r=>r.json()).then(d => {
-      const list = document.getElementById('sd-fc-list');
-      if(d.cards && d.cards.length > 0) {
-        list.innerHTML = d.cards.map(c => `<div style="background:#2a3441; padding:10px; margin-bottom:10px; border-left:3px solid #ff9800; border-radius:4px;"><b>${c.term}</b><br><span style="color:#aaa; font-size:0.9em">${c.definition}</span></div>`).join('');
-      } else {
-        list.innerHTML = '<p>No flashcards created for this topic yet.</p>';
-      }
-    });
-  } else {
-    modal.style.display = 'none';
-  }
-}
+// --- UI INTERACTIONS ---
+const app = document.getElementById('kindle-app');
+const menuAa = document.getElementById('k-menu-aa');
+const btnAa = document.getElementById('btn-aa');
+const notebookDrawer = document.getElementById('k-notebook-drawer');
+const btnNotebook = document.getElementById('btn-notebook');
+const btnCloseNotebook = document.getElementById('btn-close-notebook');
 
-// Auto-save Rich Editor
+// Toggle Aa Menu
+btnAa.addEventListener('click', (e) => {
+  e.stopPropagation();
+  menuAa.style.display = menuAa.style.display === 'none' ? 'block' : 'none';
+});
+
+// Hide Aa menu on outside click
+app.addEventListener('click', (e) => {
+  if (!menuAa.contains(e.target) && e.target !== btnAa) {
+    menuAa.style.display = 'none';
+  }
+});
+
+// Theme Selection
+document.querySelectorAll('.k-theme-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    app.classList.remove('theme-light', 'theme-sepia', 'theme-dark');
+    app.classList.add(btn.dataset.theme);
+    document.querySelectorAll('.k-theme-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Font Selection
+document.querySelectorAll('.k-font-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    app.classList.remove('font-serif', 'font-sans');
+    app.classList.add(btn.dataset.font);
+    document.querySelectorAll('.k-font-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Size Selection
+document.querySelectorAll('.k-size-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    app.classList.remove('size-small', 'size-medium', 'size-large');
+    app.classList.add(btn.dataset.size);
+    document.querySelectorAll('.k-size-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+});
+
+// Notebook Toggle
+btnNotebook.addEventListener('click', () => {
+  notebookDrawer.classList.toggle('open');
+});
+btnCloseNotebook.addEventListener('click', () => {
+  notebookDrawer.classList.remove('open');
+});
+
+// Scroll Progress
+const readerScroll = document.getElementById('k-reader-scroll');
+const pgtxt = document.getElementById('k-footer-text');
+readerScroll.addEventListener('scroll', () => {
+  const scrollTop = readerScroll.scrollTop;
+  const scrollHeight = readerScroll.scrollHeight - readerScroll.clientHeight;
+  if(scrollHeight > 0) {
+    const pct = Math.round((scrollTop / scrollHeight) * 100);
+    pgtxt.textContent = `Page ${Math.ceil((pct/100)*20) || 1} • ${pct}%`;
+  }
+});
+
+
+// Auto-save Notebook
 let saveTimeout;
 const saveIndicator = document.getElementById('sd-auto-save');
+const editor = document.getElementById('my-notes-editor');
 
 editor.addEventListener('input', () => {
   saveIndicator.textContent = 'Saving...';
-  saveIndicator.style.color = '#ff9800';
   clearTimeout(saveTimeout);
   saveTimeout = setTimeout(() => {
     fetch('/api/user-notes/' + TOPIC_ID, {
@@ -181,13 +421,12 @@ editor.addEventListener('input', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: editor.innerHTML })
     }).then(() => {
-      saveIndicator.textContent = 'All changes saved locally \u2713';
-      saveIndicator.style.color = '#4caf50';
+      saveIndicator.textContent = 'Notes saved ✓';
     });
   }, 1000);
 });
 
-// 3. Annotation Logic (Official Box)
+// --- HIGHLIGHTING LOGIC ---
 let _annotations = [];
 function loadAnnotations() {
   fetch('/api/highlights/' + TOPIC_ID)
@@ -202,12 +441,12 @@ function renderAnnotations() {
   const container = document.getElementById('official-notes-container');
   let html = container.innerHTML;
   
-  // Clean existing markers first to prevent stacking bugs
   const tempWrap = document.createElement('div');
   tempWrap.innerHTML = html;
-  tempWrap.querySelectorAll('mark, .ann-underline, .ann-inline').forEach(el => {
-    if (el.classList.contains('ann-inline')) el.remove(); // removes inline notes entirely
-    else { const parent = el.parentNode; while(el.firstChild) parent.insertBefore(el.firstChild, el); parent.removeChild(el); }
+  tempWrap.querySelectorAll('mark').forEach(el => {
+    const parent = el.parentNode; 
+    while(el.firstChild) parent.insertBefore(el.firstChild, el); 
+    parent.removeChild(el); 
   });
   html = tempWrap.innerHTML;
 
@@ -218,11 +457,6 @@ function renderAnnotations() {
     
     if (ann.type === 'highlight') {
       replacement = `<mark class="hl-${ann.color || 'yellow'}">${ann.text}</mark>`;
-    } else if (ann.type === 'underline') {
-      replacement = `<span class="ann-underline">${ann.text}</span>`;
-    } else if (ann.type === 'inline-note') {
-      // Append the note straight after the text
-      replacement = `${ann.text}<span class="ann-inline">\u2710 ${ann.comment}</span>`;
     }
     
     if (replacement) {
@@ -235,88 +469,104 @@ function renderAnnotations() {
 
 function saveAnnotations() {
   saveIndicator.textContent = 'Saving annotations...';
-  saveIndicator.style.color = '#ff9800';
   fetch('/api/highlights/' + TOPIC_ID, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ highlights: _annotations })
   }).then(() => {
-    saveIndicator.textContent = 'All changes saved locally \u2713';
-    saveIndicator.style.color = '#4caf50';
+    saveIndicator.textContent = 'Highlights saved ✓';
   });
 }
 
-// Toolbar Setup
-const toolbar = document.getElementById('sd-hl-toolbar');
+// Context Menu Setup
+const ctxMenu = document.getElementById('k-context-menu');
 let selectedText = '';
 
 document.getElementById('official-notes-container').addEventListener('mouseup', e => {
-  if (toolbar.contains(e.target)) return;
+  if (ctxMenu.contains(e.target)) return;
+  
   const sel = window.getSelection();
-  if (!sel || sel.isCollapsed || !sel.toString().trim()) {
-    toolbar.style.display = 'none';
+  
+  // If user clicked an existing highlight (MARK) without selecting text
+  if ((!sel || sel.isCollapsed || !sel.toString().trim()) && e.target.tagName === 'MARK') {
+    selectedText = e.target.textContent;
+    const rect = e.target.getBoundingClientRect();
+    ctxMenu.style.display = 'flex';
+    const top = rect.top - 45;
+    const left = rect.left + (rect.width / 2) - (ctxMenu.offsetWidth / 2);
+    ctxMenu.style.top = Math.max(10, top) + 'px';
+    ctxMenu.style.left = Math.max(10, left) + 'px';
     return;
   }
+  
+  if (!sel || sel.isCollapsed || !sel.toString().trim()) {
+    ctxMenu.style.display = 'none';
+    return;
+  }
+  
   selectedText = sel.toString().trim();
   const rect = sel.getRangeAt(0).getBoundingClientRect();
-  toolbar.style.display = 'flex';
+  ctxMenu.style.display = 'flex';
   
-  // Position above selection
-  const top = rect.top + window.scrollY - 50;
-  const left = rect.left + window.scrollX;
-  toolbar.style.top = top + 'px';
-  toolbar.style.left = left + 'px';
+  // Kindle style: position above the text
+  const top = rect.top - 45;
+  const left = rect.left + (rect.width / 2) - (ctxMenu.offsetWidth / 2);
+  ctxMenu.style.top = Math.max(10, top) + 'px';
+  ctxMenu.style.left = Math.max(10, left) + 'px';
 });
 
 document.addEventListener('mousedown', e => {
-  if (toolbar && !toolbar.contains(e.target) && !document.getElementById('official-notes-container').contains(e.target)) {
-     toolbar.style.display = 'none';
+  if (!ctxMenu.contains(e.target)) {
+     ctxMenu.style.display = 'none';
   }
 });
 
-// Toolbar Actions
-document.querySelectorAll('.hl-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.stopPropagation();
-    if (!selectedText) return;
-    
-    const type = btn.dataset.type;
-    
-    // Always remove exact matches first to avoid duplicates
-    _annotations = _annotations.filter(a => a.text !== selectedText);
-    
-    if (type !== 'remove') {
-      let ann = { text: selectedText, type: type };
-      if (type === 'highlight') ann.color = btn.dataset.color;
-      if (type === 'inline-note') {
-        const comment = prompt("Enter your inline note to attach to this text:");
-        if (!comment) { toolbar.style.display = 'none'; return; }
-        ann.comment = comment;
-      }
-      _annotations.push(ann);
-    }
-    
+// Highlight Actions
+ctxMenu.addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if (!btn) return;
+  e.stopPropagation();
+  
+  if (!selectedText) return;
+  
+  // Clear exact existing matches to avoid doubling up
+  _annotations = _annotations.filter(a => a.text !== selectedText);
+  
+  if (btn.classList.contains('k-color-btn')) {
+    let ann = { text: selectedText, type: 'highlight', color: btn.dataset.color };
+    _annotations.push(ann);
     saveAnnotations();
     renderAnnotations();
-    toolbar.style.display = 'none';
-    window.getSelection()?.removeAllRanges();
-  });
-});
-
-// 4. PDF Export
-function exportPDF(target) {
-  let element;
-  let filename = `APPSC_StudyDesk_${TOPIC_ID}.pdf`;
-  
-  if (target === 'study_notes') {
-    element = document.getElementById('official-notes-container');
-    filename = `APPSC_OfficialNotes_${TOPIC_ID}.pdf`;
-  } else {
-    element = document.getElementById('my-notes-editor');
-    filename = `APPSC_MyNotes_${TOPIC_ID}.pdf`;
+  } else if (btn.dataset.action === 'note') {
+    let ann = { text: selectedText, type: 'highlight', color: 'yellow' };
+    _annotations.push(ann);
+    saveAnnotations();
+    renderAnnotations();
+    
+    // Open notebook to write a note
+    notebookDrawer.classList.add('open');
+    editor.innerHTML += `<br><blockquote><b>"${selectedText}"</b></blockquote><p>My Note: </p>`;
+    // Move cursor to end
+    const range = document.createRange();
+    const sel = window.getSelection();
+    range.selectNodeContents(editor);
+    range.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(range);
+    editor.focus();
+  } else if (btn.dataset.action === 'remove') {
+    saveAnnotations();
+    renderAnnotations();
   }
   
-  // Temporarily add pdf-class for white background
+  ctxMenu.style.display = 'none';
+  window.getSelection()?.removeAllRanges();
+});
+
+// Export PDF
+function exportPDF(target) {
+  let element = document.getElementById('official-notes-container');
+  let filename = `APPSC_StudyDesk_${TOPIC_ID}.pdf`;
   element.classList.add('pdf-export-mode');
   
   const opt = {
@@ -327,10 +577,8 @@ function exportPDF(target) {
     jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
   };
   
-  saveIndicator.textContent = 'Generating PDF...';
   html2pdf().set(opt).from(element).save().then(() => {
     element.classList.remove('pdf-export-mode');
-    saveIndicator.textContent = 'PDF Downloaded \u2713';
   });
 }
 </script>
