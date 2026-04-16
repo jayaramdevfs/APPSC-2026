@@ -22,8 +22,8 @@
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
 | ✅ | `scr-hist-01` | Ancient India | pre-ha-01, pre-ha-02, m2-hi-01, p1-aph-01, m2-ap-01 | (Claude, 2026-04-16) |
-| ⬜ | `scr-hist-02` | Medieval India | pre-ha-03, pre-ha-04, m2-hi-02, m2-hi-03, p1-aph-02 |
-| ⬜ | `scr-hist-03` | Modern India | pre-ha-05, pre-ha-06, m2-hi-04, m2-hi-05, p1-aph-03 |
+| ✅ | `scr-hist-02` | Medieval India | pre-ha-03, pre-ha-04, m2-hi-02, m2-hi-03, p1-aph-02 | (Gemini, 2026-04-17) |
+| ✅ | `scr-hist-03` | Modern India | pre-ha-05, pre-ha-06, m2-hi-04, m2-hi-05, p1-aph-03 | (Gemini, 2026-04-17) |
 
 ---
 
