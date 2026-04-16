@@ -165,27 +165,10 @@
         </div>
         <div class="shared-topic-banner" id="shared-{{ key }}" style="display:none"></div>
         <ul class="g2-syllabus-points" id="points-{{ key }}"></ul>
-        <div class="desk-topbar">
-          <button class="btn-fc" id="btn-fc-{{ key }}" onclick="toggleFcPanel('{{ key }}')">&#128218; Flashcards (<span id="fc-count-{{ key }}">0</span>)</button>
-          <a href="/last-day-revision" class="btn-pins" target="_blank">&#11088; My Pins</a>
-        </div>
-        <div class="topic-study-desk">
-          <div class="desk-toc hidden" id="toc-{{ key }}">
-            <div class="toc-label">Contents</div>
-            <nav id="toc-nav-{{ key }}"></nav>
-          </div>
-          <div class="desk-notes" id="notes-panel-{{ key }}"></div>
-          <div class="desk-mynotes">
-            <div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-{{ key }}"></span></div>
-            <textarea class="mynotes-area" id="user-notes-{{ key }}" placeholder="Take notes while you study&#8230;"></textarea>
-          </div>
-        </div>
-        <div class="fc-panel hidden" id="fc-panel-{{ key }}">
-          <div class="fc-panel-hdr">
-            Flashcards
-            <button class="fc-close-btn" onclick="toggleFcPanel('{{ key }}')">&#10005;</button>
-          </div>
-          <div id="fc-list-{{ key }}"></div>
+        <div class="open-desk-container" style="margin-top: 2rem; padding: 2rem; background: #121417; border-radius: 8px; text-align: center; border: 1px dashed #45a29e;">
+          <h3 style="color:#66fcf1; margin-bottom: 10px;">Virtual Study Environment</h3>
+          <p style="color:#c5c6c7; margin-bottom: 20px; font-size: 0.9em;">Access official notes, create highlights, add inline text snippets, format rich-text personal notes securely, and export PDFs in a distraction-free window.</p>
+          <a href="#" class="btn-open-desk" id="btn-open-desk-{{ key }}" style="display:inline-block; background: #45a29e; color: #0b0c10; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 4px; box-shadow: 0 4px 10px rgba(69, 162, 158, 0.3);">Launch Study Desk &rarr;</a>
         </div>
         <div class="g2-detail-footer">
           <button class="btn-mark-studied" id="btn-studied-{{ key }}"
@@ -281,15 +264,14 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
     const btn = document.getElementById('btn-studied-' + stageKey);
     if (btn) { btn.dataset.topicId = topicId; btn.dataset.title = topic.title; if (studiedSet.has(topicId)) { btn.textContent = 'Studied \u2713'; btn.classList.add('studied'); } else { btn.textContent = 'Mark as Studied'; btn.classList.remove('studied'); btn.disabled = false; } }
     currentTopicId = topicId; currentStageKey = stageKey;
-    const notesPanel = document.getElementById('notes-panel-' + stageKey);
-    notesPanel.innerHTML = '<div class="notes-loading">Loading notes\u2026</div>';
-    fetch('/api/content/' + topicId).then(r => r.json()).then(data => {
-      if (data.available) {
-        const srcHtml = data.source ? `<div class="notes-source">Shared notes from: ${data.source}</div>` : '';
-        notesPanel.innerHTML = `<div class="notes-header">Study Notes</div>${srcHtml}<div class="notes-body">${marked.parse(data.content)}</div>`;
-        loadStudyDesk(topicId, stageKey);
-      } else { notesPanel.innerHTML = '<div class="notes-unavailable">Notes being prepared for this topic.</div>'; loadUserNotes(topicId,stageKey); loadFlashcardCount(topicId,stageKey); loadRevisionBadge(topicId,stageKey); }
-    }).catch(() => { notesPanel.innerHTML = ''; });
+    const btnDesk = document.getElementById('btn-open-desk-' + stageKey);
+    if (btnDesk) {
+      btnDesk.href = '/study-desk/' + topicId;
+    }
+    
+    // We don't fetch notes content here anymore; it's handled by Study Desk.
+    // Just handle revision badge and flashcard logic (optional) if needed on the main page.
+    loadRevisionBadge(topicId,stageKey);
     if (window.innerWidth <= 768) setTimeout(() => document.getElementById('detail-'+stageKey).scrollIntoView({behavior:'smooth',block:'start'}), 60);
   });
 });

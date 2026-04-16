@@ -3766,6 +3766,19 @@ async def last_day_revision(request: Request):
         "current_user": user,
     })
 
+# ── Dedicated Study Desk ──────────────────────────────────────────────────────
+
+async def study_desk(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    topic_id = request.path_params["topic_id"]
+    return templates.TemplateResponse(request, "study_desk.html", {
+        "current_user": user,
+        "user_id": user["id"],
+        "topic_id": topic_id,
+    })
+
 
 # ---------------------------------------------------------------------------
 # Routing table
@@ -3821,6 +3834,7 @@ routes = [
     Route("/api/pins",                            api_all_pins,             methods=["GET"]),
     Route("/api/progress/topic-status/{topic_id}", api_topic_status,        methods=["GET"]),
     Route("/last-day-revision",                   last_day_revision),
+    Route("/study-desk/{topic_id}",               study_desk),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]

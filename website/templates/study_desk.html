@@ -1,0 +1,302 @@
+{% extends "base.html" %}
+{% block title %}Study Desk — Topic: {{ topic_id }}{% endblock %}
+
+{% block content %}
+<!-- Include html2pdf library from CDN for PDF Export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<div class="sd-navbar">
+  <div class="sd-nav-left">
+    <a href="javascript:history.back()" class="sd-back-btn">&larr; Back to Syllabus</a>
+    <div class="sd-topic-info">
+      <h1 class="sd-title">Study Desk <span class="sd-topic-badge">{{ topic_id }}</span></h1>
+      <div class="sd-save-indicator" id="sd-auto-save">All changes saved locally</div>
+    </div>
+  </div>
+  <div class="sd-nav-right">
+    <button class="sd-btn-export" onclick="exportPDF('study_notes')">Export Study Notes (PDF)</button>
+    <button class="sd-btn-export" onclick="exportPDF('my_notes')">Export My Notes (PDF)</button>
+  </div>
+</div>
+
+<div class="sd-container">
+  <!-- LEFT PANE: OFFICIAL NOTES -->
+  <div class="sd-pane sd-left-pane">
+    <div class="sd-pane-header">
+      <h2>Official Reference Material</h2>
+    </div>
+    <div class="sd-pane-body" id="official-notes-container">
+      <div class="notes-loading">Loading notes securely...</div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANE: RICH TEXT MY NOTES -->
+  <div class="sd-pane sd-right-pane">
+    <div class="sd-pane-header">
+      <h2>My Interactive Notes</h2>
+      <span class="sd-tip">Tip: You can paste images from Google directly here!</span>
+    </div>
+    <div class="sd-pane-body">
+      <div class="sd-rich-editor" id="my-notes-editor" contenteditable="true" placeholder="Start typing your structured notes or paste images here..."></div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Annotation Toolbar -->
+<div class="hl-toolbar" id="sd-hl-toolbar" style="display:none">
+  <button class="hl-btn hl-yellow" data-type="highlight" data-color="yellow" title="Yellow Highlight">&#9608;</button>
+  <button class="hl-btn hl-green" data-type="highlight" data-color="green" title="Green Highlight">&#9608;</button>
+  <button class="hl-btn hl-underline" data-type="underline" title="Underline">_</button>
+  <button class="hl-btn hl-add-note" data-type="inline-note" title="Add Inline Snippet">+ Text</button>
+  <button class="hl-btn hl-remove" data-type="remove" title="Remove Formatting">&#10005;</button>
+</div>
+
+<style>
+/* Study Desk Specific Styles */
+body { margin: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; background: #0b0c10; color: #c5c6c7; font-family: 'Inter', sans-serif; }
+nav.navbar { display: none !important; } /* Hide the main navigation inside Study Desk */
+.sd-navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #1f2833; border-bottom: 2px solid #45a29e; }
+.sd-nav-left { display: flex; align-items: center; gap: 1.5rem; }
+.sd-back-btn { color: #66fcf1; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid #66fcf1; border-radius: 4px; transition: 0.2s; }
+.sd-back-btn:hover { background: #66fcf1; color: #1f2833; }
+.sd-title { margin: 0; font-size: 1.4rem; color: #ffffff; display: flex; align-items: center; gap: 10px; }
+.sd-topic-badge { background: #45a29e; font-size: 0.8rem; padding: 0.2rem 0.6rem; border-radius: 12px; color: #0b0c10; }
+.sd-save-indicator { font-size: 0.8rem; color: #888; font-style: italic; }
+.sd-btn-export { background: transparent; color: #66fcf1; border: 1px dashed #45a29e; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-left: 0.5rem; transition: background 0.2s; }
+.sd-btn-export:hover { background: rgba(102, 252, 241, 0.1); }
+
+.sd-container { display: flex; flex: 1; overflow: hidden; }
+.sd-pane { flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding: 0 1rem; }
+.sd-left-pane { border-right: 1px solid #1f2833; padding-right: 0; }
+.sd-right-pane { padding-left: 0; }
+
+.sd-pane-header { background: #121417; padding: 1rem 2rem; position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #222; }
+.sd-pane-header h2 { margin: 0; font-size: 1.1rem; color: #45a29e; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.sd-tip { font-size: 0.8rem; color: #777; }
+
+.sd-pane-body { padding: 2rem; max-width: 800px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+
+/* Official Notes Styling (PDF Feel) */
+#official-notes-container { background: #1a1e24; box-shadow: 0 4px 15px rgba(0,0,0,0.5); min-height: 100%; padding: 3rem 4rem; border-radius: 4px; }
+.sd-rich-editor { outline: none; min-height: 100%; padding: 3rem 4rem; background: #1a1e24; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border-radius: 4px; line-height: 1.6; }
+.sd-rich-editor img { max-width: 100%; border-radius: 8px; margin: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+[contenteditable="true"]:empty:before { content: attr(placeholder); color: #555; display: block; }
+
+/* Annotation Styles */
+mark.hl-yellow { background: rgba(255, 235, 59, 0.4); color: inherit; padding: 2px 0; border-radius: 2px; }
+mark.hl-green { background: rgba(76, 175, 80, 0.4); color: inherit; padding: 2px 0; border-radius: 2px; }
+.ann-underline { text-decoration: underline; text-decoration-color: #66fcf1; text-decoration-thickness: 2px; }
+.ann-inline { display: inline-block; background: #2a3441; border-left: 3px solid #ff5722; padding: 2px 8px; margin: 0 5px; font-size: 0.9em; color: #ffab91; border-radius: 3px; font-family: monospace; }
+
+/* Toolbar */
+.hl-toolbar { position: absolute; background: #1f2833; padding: 0.5rem; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); display: flex; gap: 0.5rem; z-index: 1000; border: 1px solid #45a29e; }
+.hl-btn { background: none; border: none; font-size: 1rem; cursor: pointer; padding: 0.3rem 0.6rem; color: #c5c6c7; outline: none; border-radius: 4px; }
+.hl-btn:hover { background: rgba(102,252,241,0.2); }
+.hl-btn.hl-yellow { color: #fbc02d; }
+.hl-btn.hl-green { color: #4caf50; }
+.hl-btn.hl-underline { text-decoration: underline; font-weight: bold; }
+.hl-btn.hl-add-note { font-size: 0.8rem; font-weight: bold; color: #ff5722; border: 1px solid #ff5722; margin-left: 5px; }
+
+/* PDF Export styles - when printing, remove dark theme so it looks like proper paper */
+.pdf-export-mode { background: white !important; color: black !important; padding: 20px !important; margin: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+.pdf-export-mode * { color: black !important; }
+.pdf-export-mode mark.hl-yellow { background: yellow !important; }
+.pdf-export-mode mark.hl-green { background: lightgreen !important; }
+.pdf-export-mode .ann-inline { background: #f0f0f0 !important; border-left: 3px solid #d84315 !important; color: #d84315 !important; }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+const TOPIC_ID = "{{ topic_id }}";
+
+// 1. Load Official Content
+fetch('/api/content/' + TOPIC_ID)
+  .then(r => r.json())
+  .then(data => {
+    const container = document.getElementById('official-notes-container');
+    if (data.available) {
+      container.innerHTML = marked.parse(data.content);
+      loadAnnotations(); 
+    } else {
+      container.innerHTML = '<h2>Content Not Available Yet</h2><p>The notes for this topic are currently being prepared.</p>';
+    }
+  });
+
+// 2. Load My Notes (Rich Edit)
+const editor = document.getElementById('my-notes-editor');
+fetch('/api/user-notes/' + TOPIC_ID)
+  .then(r => r.json())
+  .then(data => {
+    if (data.content) {
+      editor.innerHTML = data.content;
+    }
+  });
+
+// Auto-save Rich Editor
+let saveTimeout;
+const saveIndicator = document.getElementById('sd-auto-save');
+
+editor.addEventListener('input', () => {
+  saveIndicator.textContent = 'Saving...';
+  saveIndicator.style.color = '#ff9800';
+  clearTimeout(saveTimeout);
+  saveTimeout = setTimeout(() => {
+    fetch('/api/user-notes/' + TOPIC_ID, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content: editor.innerHTML })
+    }).then(() => {
+      saveIndicator.textContent = 'All changes saved locally \u2713';
+      saveIndicator.style.color = '#4caf50';
+    });
+  }, 1000);
+});
+
+// 3. Annotation Logic (Official Box)
+let _annotations = [];
+function loadAnnotations() {
+  fetch('/api/highlights/' + TOPIC_ID)
+    .then(r => r.json())
+    .then(data => {
+      _annotations = data.highlights || [];
+      renderAnnotations();
+    });
+}
+
+function renderAnnotations() {
+  const container = document.getElementById('official-notes-container');
+  let html = container.innerHTML;
+  
+  // Clean existing markers first to prevent stacking bugs
+  const tempWrap = document.createElement('div');
+  tempWrap.innerHTML = html;
+  tempWrap.querySelectorAll('mark, .ann-underline, .ann-inline').forEach(el => {
+    if (el.classList.contains('ann-inline')) el.remove(); // removes inline notes entirely
+    else { const parent = el.parentNode; while(el.firstChild) parent.insertBefore(el.firstChild, el); parent.removeChild(el); }
+  });
+  html = tempWrap.innerHTML;
+
+  _annotations.forEach(ann => {
+    if (!ann.text) return;
+    const esc = ann.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    let replacement = '';
+    
+    if (ann.type === 'highlight') {
+      replacement = `<mark class="hl-${ann.color || 'yellow'}">${ann.text}</mark>`;
+    } else if (ann.type === 'underline') {
+      replacement = `<span class="ann-underline">${ann.text}</span>`;
+    } else if (ann.type === 'inline-note') {
+      // Append the note straight after the text
+      replacement = `${ann.text}<span class="ann-inline">\u2710 ${ann.comment}</span>`;
+    }
+    
+    if (replacement) {
+      html = html.replace(new RegExp(esc, 'g'), replacement);
+    }
+  });
+  
+  container.innerHTML = html;
+}
+
+function saveAnnotations() {
+  saveIndicator.textContent = 'Saving annotations...';
+  saveIndicator.style.color = '#ff9800';
+  fetch('/api/highlights/' + TOPIC_ID, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ highlights: _annotations })
+  }).then(() => {
+    saveIndicator.textContent = 'All changes saved locally \u2713';
+    saveIndicator.style.color = '#4caf50';
+  });
+}
+
+// Toolbar Setup
+const toolbar = document.getElementById('sd-hl-toolbar');
+let selectedText = '';
+
+document.getElementById('official-notes-container').addEventListener('mouseup', e => {
+  if (toolbar.contains(e.target)) return;
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed || !sel.toString().trim()) {
+    toolbar.style.display = 'none';
+    return;
+  }
+  selectedText = sel.toString().trim();
+  const rect = sel.getRangeAt(0).getBoundingClientRect();
+  toolbar.style.display = 'flex';
+  
+  // Position above selection
+  const top = rect.top + window.scrollY - 50;
+  const left = rect.left + window.scrollX;
+  toolbar.style.top = top + 'px';
+  toolbar.style.left = left + 'px';
+});
+
+document.addEventListener('mousedown', e => {
+  if (toolbar && !toolbar.contains(e.target) && !document.getElementById('official-notes-container').contains(e.target)) {
+     toolbar.style.display = 'none';
+  }
+});
+
+// Toolbar Actions
+document.querySelectorAll('.hl-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    if (!selectedText) return;
+    
+    const type = btn.dataset.type;
+    
+    // Always remove exact matches first to avoid duplicates
+    _annotations = _annotations.filter(a => a.text !== selectedText);
+    
+    if (type !== 'remove') {
+      let ann = { text: selectedText, type: type };
+      if (type === 'highlight') ann.color = btn.dataset.color;
+      if (type === 'inline-note') {
+        const comment = prompt("Enter your inline note to attach to this text:");
+        if (!comment) { toolbar.style.display = 'none'; return; }
+        ann.comment = comment;
+      }
+      _annotations.push(ann);
+    }
+    
+    saveAnnotations();
+    renderAnnotations();
+    toolbar.style.display = 'none';
+    window.getSelection()?.removeAllRanges();
+  });
+});
+
+// 4. PDF Export
+function exportPDF(target) {
+  let element;
+  let filename = `APPSC_StudyDesk_${TOPIC_ID}.pdf`;
+  
+  if (target === 'study_notes') {
+    element = document.getElementById('official-notes-container');
+    filename = `APPSC_OfficialNotes_${TOPIC_ID}.pdf`;
+  } else {
+    element = document.getElementById('my-notes-editor');
+    filename = `APPSC_MyNotes_${TOPIC_ID}.pdf`;
+  }
+  
+  // Temporarily add pdf-class for white background
+  element.classList.add('pdf-export-mode');
+  
+  const opt = {
+    margin:       10,
+    filename:     filename,
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { scale: 2, useCORS: true },
+    jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+  
+  saveIndicator.textContent = 'Generating PDF...';
+  html2pdf().set(opt).from(element).save().then(() => {
+    element.classList.remove('pdf-export-mode');
+    saveIndicator.textContent = 'PDF Downloaded \u2713';
+  });
+}
+</script>
+{% endblock %}
