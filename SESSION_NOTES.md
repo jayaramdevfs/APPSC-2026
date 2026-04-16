@@ -88,8 +88,22 @@ Cards linking to all 4 exam sections.
   - `GET /api/ca/month/{year}/{month}` → `{"days": [1,14,...]}`
   - `GET /api/ca/content/YYYY-MM-DD` → raw markdown text
 
-### 6. Police SI (`/police-si`) — PDF embed
-### 7. Job Calendar (`/job-calendar`) — PDF embed
+### 6. Study Desk (`/study-desk/{topic_id}`)
+- A distraction-free sandbox for focused studying.
+- Features dual-pane design with a 70/30 split (Official Reference vs. Interactive Personal Notes).
+- Adheres to the GroupsGuru dark gradient grid.
+- Includes Advanced Annotations (highlighting, underlining, inline snippets).
+- Native image paste support into the local rich-text editor.
+- Floating Flashcards drawer loaded per topic.
+- PDF Export capability for both structured notes and user notes via `html2pdf.js`.
+
+### 7. Police SI (`/police-si`) — PDF embed
+### 8. Job Calendar (`/job-calendar`) — PDF embed
+
+---
+
+## Technical Reminders / Next Session Focus
+- **REMINDER:** Discuss `kindle book type` format logic in the next session!
 
 ---
 
