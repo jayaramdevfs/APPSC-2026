@@ -696,6 +696,79 @@ body {
 }
 
 /* =========================================
+   TOPIC NOTES PANEL
+   ========================================= */
+
+.topic-notes-section {
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+.notes-loading {
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-style: italic;
+}
+.notes-header {
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+.notes-source {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+}
+.notes-body {
+    line-height: 1.75;
+    color: var(--text);
+    font-size: 0.92rem;
+}
+.notes-body h1,
+.notes-body h2 {
+    color: var(--gold);
+    font-size: 1rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+.notes-body h3 {
+    color: var(--text);
+    font-size: 0.92rem;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+.notes-body ul,
+.notes-body ol {
+    padding-left: 1.25rem;
+    margin: 0.4rem 0;
+}
+.notes-body li {
+    margin-bottom: 0.25rem;
+}
+.notes-body strong {
+    color: var(--text);
+    font-weight: 600;
+}
+.notes-body blockquote {
+    border-left: 3px solid var(--gold);
+    padding-left: 0.75rem;
+    margin-left: 0;
+    color: var(--muted);
+    font-style: italic;
+}
+.notes-unavailable {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.88rem;
+    padding: 0.5rem 0;
+}
+
+/* =========================================
    CURRENT AFFAIRS — CALENDAR
    ========================================= */
 

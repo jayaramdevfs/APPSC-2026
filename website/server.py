@@ -3388,6 +3388,33 @@ async def api_search(request: Request):
     return JSONResponse(results[:50])  # cap at 50
 
 
+# ── Content Notes API ────────────────────────────────────────────────────────
+NOTES_DIR = FILES_DIR / "content" / "topics"
+
+async def api_get_content(request: Request):
+    topic_id = request.path_params["topic_id"]
+    if not re.match(r'^[a-z0-9-]+$', topic_id):
+        return JSONResponse({"available": False})
+
+    # Direct file check
+    direct = NOTES_DIR / f"{topic_id}.md"
+    if direct.exists():
+        return JSONResponse({"available": True, "content": direct.read_text("utf-8")})
+
+    # Twin fallback via SHARED_TOPICS
+    for twin in SHARED_TOPICS.get(topic_id, []):
+        twin_file = NOTES_DIR / f"{twin['id']}.md"
+        if twin_file.exists():
+            return JSONResponse({
+                "available": True,
+                "content": twin_file.read_text("utf-8"),
+                "source": twin["label"],
+            })
+
+    return JSONResponse({"available": False, "content": None})
+
+
+
 # ---------------------------------------------------------------------------
 # Routing table
 # ---------------------------------------------------------------------------
@@ -3428,6 +3455,7 @@ routes = [
     Route("/api/admin/ca",                        api_admin_ca_save,       methods=["POST"]),
     Route("/api/admin/ca/{date}",                 api_admin_ca_delete,     methods=["DELETE"]),
     Route("/api/search",                          api_search),
+    Route("/api/content/{topic_id}",              api_get_content),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]

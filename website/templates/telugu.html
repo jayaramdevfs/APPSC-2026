@@ -44,8 +44,8 @@
           <span class="g2-official-tag telugu-tag">Telugu Basics</span>
         </div>
         <ul class="g2-syllabus-points" id="points-basics"></ul>
+        <div class="topic-notes-section" id="notes-panel-basics"></div>
         <div class="g2-detail-footer">
-          <span>&#9998;</span> More examples, practice exercises and audio will be added here.
           <button class="btn-mark-studied" id="btn-tel-basics-studied" data-subject="telugu">Mark as Studied</button>
         </div>
       </div>
@@ -77,8 +77,8 @@
           <span class="g2-official-tag">APPSC Official</span>
         </div>
         <ul class="g2-syllabus-points" id="points-appsc"></ul>
+        <div class="topic-notes-section" id="notes-panel-appsc"></div>
         <div class="g2-detail-footer">
-          <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
           <button class="btn-mark-studied" id="btn-tel-appsc-studied" data-subject="telugu">Mark as Studied</button>
         </div>
       </div>
@@ -239,6 +239,32 @@ document.addEventListener('click', function(e) {
       btn.textContent = 'Mark as Studied';
       btn.classList.remove('studied');
       btn.disabled = false;
+    }
+  }
+
+  // Load study notes (uses tel-01 for APPSC tab; basics tab will show "preparing")
+  const panelId   = tabKey === 'basics' ? 'notes-panel-basics' : 'notes-panel-appsc';
+  const notesEl   = document.getElementById(panelId);
+  const apiId     = tabKey === 'appsc' ? 'tel-01' : null;
+  if (notesEl) {
+    if (apiId) {
+      notesEl.innerHTML = '<div class="notes-loading">Loading notes\u2026</div>';
+      fetch('/api/content/' + apiId)
+        .then(r => r.json())
+        .then(data => {
+          if (data.available) {
+            notesEl.innerHTML =
+              `<div class="notes-header">Study Notes</div>` +
+              `<div class="notes-body">${marked.parse(data.content)}</div>`;
+          } else {
+            notesEl.innerHTML =
+              '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
+          }
+        })
+        .catch(() => { notesEl.innerHTML = ''; });
+    } else {
+      notesEl.innerHTML =
+        '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
     }
   }
 

@@ -212,9 +212,8 @@
         </div>
         <div class="shared-topic-banner" id="shared-{{ key }}" style="display:none"></div>
         <ul class="g2-syllabus-points" id="points-{{ key }}"></ul>
+        <div class="topic-notes-section" id="notes-panel-{{ key }}"></div>
         <div class="g2-detail-footer">
-          <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
-          <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
           <button class="btn-mark-studied" id="btn-studied-{{ key }}"
                   data-stage="{{ key }}" data-subject="g1">Mark as Studied</button>
         </div>
@@ -396,6 +395,27 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
         btn.classList.remove('studied');
         btn.disabled = false;
       }
+    }
+
+    // Load study notes
+    const notesPanel = document.getElementById('notes-panel-' + stageKey);
+    if (notesPanel) {
+      notesPanel.innerHTML = '<div class="notes-loading">Loading notes\u2026</div>';
+      fetch('/api/content/' + topicId)
+        .then(r => r.json())
+        .then(data => {
+          if (data.available) {
+            const srcHtml = data.source
+              ? `<div class="notes-source">Shared notes from: ${data.source}</div>` : '';
+            notesPanel.innerHTML =
+              `<div class="notes-header">Study Notes</div>${srcHtml}` +
+              `<div class="notes-body">${marked.parse(data.content)}</div>`;
+          } else {
+            notesPanel.innerHTML =
+              '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
+          }
+        })
+        .catch(() => { notesPanel.innerHTML = ''; });
     }
 
     // Scroll to content panel on mobile
