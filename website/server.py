@@ -1,14 +1,29 @@
+import hashlib
 import json
 import os
 import re
+import secrets
+import sqlite3
+import smtplib
+import httpx
+import urllib.parse
+from email.message import EmailMessage
+from datetime import date, timedelta, datetime
 from pathlib import Path
 from starlette.applications import Starlette
+from starlette.middleware import Middleware
+from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Route, Mount
+from starlette.responses import JSONResponse, PlainTextResponse, RedirectResponse
 from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 from starlette.requests import Request
-from starlette.responses import JSONResponse, PlainTextResponse
 import uvicorn
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 BASE_DIR      = Path(__file__).parent
 ROOT_DIR      = BASE_DIR.parent
@@ -16,11 +31,208 @@ FILES_DIR     = ROOT_DIR / "FILES"
 CA_DIR        = FILES_DIR / "current-affairs"
 TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR    = BASE_DIR / "static"
+DB_PATH       = BASE_DIR / "users.db"
+
+SECRET_KEY     = os.environ.get("SECRET_KEY", "dev-secret-groupsguru-2026")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "GroupsGuru@2026")
+
+EMAIL_USER = os.environ.get("EMAIL_USER", "")
+EMAIL_PASS = os.environ.get("EMAIL_PASS", "")
+GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
+GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
 
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
 # ---------------------------------------------------------------------------
-# Group 2 — Official Syllabus Structure
+# Auth — password helpers
+# ---------------------------------------------------------------------------
+
+def hash_password(pwd: str) -> str:
+    salt = os.urandom(32)
+    key  = hashlib.pbkdf2_hmac("sha256", pwd.encode(), salt, 260_000)
+    return salt.hex() + ":" + key.hex()
+
+
+def verify_password(pwd: str, stored: str) -> bool:
+    try:
+        salt_hex, key_hex = stored.split(":")
+        key = hashlib.pbkdf2_hmac("sha256", pwd.encode(), bytes.fromhex(salt_hex), 260_000)
+        return secrets.compare_digest(key.hex(), key_hex)
+    except Exception:
+        return False
+
+
+# ---------------------------------------------------------------------------
+# Database — init + seed
+# ---------------------------------------------------------------------------
+
+def _seed_user(con, username: str, display_name: str, role: str, password: str) -> None:
+    """Insert user only if username doesn't already exist."""
+    row = con.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone()
+    if not row:
+        con.execute(
+            "INSERT INTO users (username, display_name, role, password_hash) VALUES (?,?,?,?)",
+            (username, display_name, role, hash_password(password)),
+        )
+        con.commit()
+
+
+def init_db() -> None:
+    con = sqlite3.connect(DB_PATH)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS users (
+            id            INTEGER PRIMARY KEY AUTOINCREMENT,
+            username      TEXT UNIQUE NOT NULL,
+            display_name  TEXT NOT NULL,
+            email         TEXT,
+            password_hash TEXT NOT NULL,
+            role          TEXT DEFAULT 'student',
+            is_active     INTEGER DEFAULT 1,
+            created_at    TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS topic_progress (
+            id            INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id       INTEGER NOT NULL,
+            topic_id      TEXT NOT NULL,
+            subject       TEXT NOT NULL,
+            topic_title   TEXT,
+            first_studied TEXT DEFAULT CURRENT_DATE,
+            last_studied  TEXT DEFAULT CURRENT_DATE,
+            study_count   INTEGER DEFAULT 1,
+            UNIQUE(user_id, topic_id)
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS revision_log (
+            id              INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id         INTEGER NOT NULL,
+            topic_id        TEXT NOT NULL,
+            revision_number INTEGER NOT NULL,
+            completed_at    TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, topic_id, revision_number)
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS password_resets (
+            token       TEXT PRIMARY KEY,
+            user_id     INTEGER NOT NULL,
+            expires_at  TEXT NOT NULL
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS topic_highlights (
+            user_id         INTEGER NOT NULL,
+            topic_id        TEXT NOT NULL,
+            highlights_json TEXT DEFAULT '[]',
+            updated_at      TEXT DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (user_id, topic_id)
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS topic_user_notes (
+            user_id    INTEGER NOT NULL,
+            topic_id   TEXT NOT NULL,
+            content    TEXT DEFAULT '',
+            updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (user_id, topic_id)
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS flashcards (
+            id         INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id    INTEGER NOT NULL,
+            topic_id   TEXT NOT NULL,
+            front      TEXT NOT NULL,
+            back       TEXT DEFAULT '',
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS paragraph_pins (
+            id         INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id    INTEGER NOT NULL,
+            topic_id   TEXT NOT NULL,
+            para_index INTEGER NOT NULL,
+            para_text  TEXT NOT NULL,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, topic_id, para_index)
+        )
+    """)
+    con.commit()
+
+    # Admin — password overrideable via ADMIN_PASSWORD env var on Render
+    _seed_user(con, "jayaramadmin", "Jayaram", "admin", os.environ.get("ADMIN_PASSWORD", "jayaramadmin@2026"))
+    # Reserved student accounts
+    _seed_user(con, "jayaram",   "Jayaram",   "student", "jayaram@2026")
+    _seed_user(con, "leelarani", "Leela Rani","student", "leelarani@2026")
+    _seed_user(con, "tejashree", "Tejashree", "student", "tejashree@2026")
+
+    con.close()
+
+
+def db_get_user_by_username(username: str):
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    row = con.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
+    con.close()
+    return dict(row) if row else None
+
+
+def db_get_user_by_email(email: str):
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    row = con.execute("SELECT * FROM users WHERE email = ? COLLATE NOCASE", (email,)).fetchone()
+    con.close()
+    return dict(row) if row else None
+
+
+def db_create_user(username: str, display_name: str, email: str, password: str) -> bool:
+    try:
+        con = sqlite3.connect(DB_PATH)
+        con.execute(
+            "INSERT INTO users (username, display_name, email, password_hash) VALUES (?,?,?,?)",
+            (username, display_name, email or None, hash_password(password)),
+        )
+        con.commit()
+        con.close()
+        return True
+    except sqlite3.IntegrityError:
+        return False
+
+
+def db_username_taken(username: str) -> bool:
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone()
+    con.close()
+    return row is not None
+
+
+def db_update_password(user_id: int, new_password: str) -> None:
+    con = sqlite3.connect(DB_PATH)
+    con.execute("UPDATE users SET password_hash = ? WHERE id = ?",
+                (hash_password(new_password), user_id))
+    con.commit()
+    con.close()
+
+
+# ---------------------------------------------------------------------------
+# Session helper
+# ---------------------------------------------------------------------------
+
+def get_current_user(request: Request):
+    uid = request.session.get("user_id")
+    if not uid:
+        return None
+    return {
+        "id":       uid,
+        "username": request.session.get("username"),
+        "role":     request.session.get("role"),
+    }
+
+# ---------------------------------------------------------------------------
+# Group II — Official Syllabus Structure
 # Source: APPSC Group II Syllabus PDF (5_PDFsam_APPSC_GROUP2_SYLLABUS.pdf)
 # points = exact bullet points extracted from the official syllabus
 # ---------------------------------------------------------------------------
@@ -485,7 +697,7 @@ G2_STRUCTURE = {
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
-# Group 1 — Official Syllabus Structure
+# Group I — Official Syllabus Structure
 # Source: APPSC Group I Syllabus PDF (4_PDFsam_APPSC_GROUP 1 SYLLABUS.pdf)
 # ---------------------------------------------------------------------------
 G1_STRUCTURE = {
@@ -810,6 +1022,93 @@ G1_STRUCTURE = {
                 ],
             },
         ],
+    },
+
+    "telugu": {
+        "label": "Mains: Telugu",
+        "subtitle": "Qualifying Nature | 150 Marks | 180 Min",
+        "sections": [
+            {
+                "title": "Telugu Syllabus (SSC Standard)",
+                "marks": 150,
+                "topics": [
+                    {
+                        "id": "tel-01",
+                        "title": "Topics",
+                        "points": [
+                            "Essay (Minimum 200 words, Maximum 250 words)",
+                            "To elaborate the thought of poetic or verse",
+                            "Precis Writing (1/3rd summary)",
+                            "Comprehension (Reading passage followed by questions)",
+                            "Formal Speech (Welcome, Farewell, Inauguration, etc.)",
+                            "Prepare Statements for publicity media",
+                            "Letter Writing",
+                            "Debate Writing",
+                            "Application Writing",
+                            "Report Writing",
+                            "Dialogue Writing or Dialogue Skills",
+                            "Translation (English to Telugu)",
+                            "Grammar of Telugu"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+    "english": {
+        "label": "Mains: English",
+        "subtitle": "Qualifying Nature | 150 Marks | 180 Min",
+        "sections": [
+            {
+                "title": "English Syllabus (SSC Standard)",
+                "marks": 150,
+                "topics": [
+                    {
+                        "id": "eng-01",
+                        "title": "Topics",
+                        "points": [
+                            "Essay (Descriptive, analytical, philosophical, based on Current Affairs)",
+                            "Letter Writing (Formal letter)",
+                            "Press Release / Appeal",
+                            "Report Writing",
+                            "Writing on Visual Information",
+                            "Formal Speech",
+                            "Precis Writing",
+                            "Reading Comprehension",
+                            "English Grammar",
+                            "Translation (Regional Language to English)"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+
+    "paper1": {
+        "label": "Mains: Paper I",
+        "subtitle": "General Essay | 150 Marks | 180 Min",
+        "sections": [
+            {
+                "title": "General Essay",
+                "marks": 150,
+                "topics": [
+                    {
+                        "id": "m1-ge-01",
+                        "title": "Section I, II & III",
+                        "points": [
+                            "Current Affairs",
+                            "Socio-political issues",
+                            "Socio-economic issues",
+                            "Socio-environmental issues",
+                            "Cultural and historical aspects",
+                            "Issues related to civic awareness",
+                            "Reflective topics"
+                        ]
+                    }
+                ]
+            }
+        ]
     },
 
     "paper2": {
@@ -1468,35 +1767,332 @@ G1_STRUCTURE = {
 
 
 async def homepage(request: Request):
-    return templates.TemplateResponse(request, "index.html")
+    return templates.TemplateResponse(request, "index.html", {
+        "current_user": get_current_user(request),
+    })
 
 
 async def group1(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group1.html", {
         "structure": G1_STRUCTURE,
         "structure_json": json.dumps(G1_STRUCTURE),
+        "shared_topics_json": json.dumps(SHARED_TOPICS),
+        "current_user": user,
+        "user_id": user["id"],
     })
 
 
 async def group2(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group2.html", {
         "structure": G2_STRUCTURE,
         "structure_json": json.dumps(G2_STRUCTURE),
+        "shared_topics_json": json.dumps(SHARED_TOPICS),
+        "current_user": user,
+        "user_id": user["id"],
     })
 
 
-async def police_si(request: Request):
-    return templates.TemplateResponse(request, "police_si.html", {
-        "title": "AP Police SI Exam Topics",
-        "pdf_url": "/pdfs/AP-Police-SI-Exam-Topics.pdf",
-    })
 
 
-async def job_calendar(request: Request):
-    return templates.TemplateResponse(request, "job_calendar.html", {
-        "title": "APPSC Job Calendar 2026",
-        "pdf_url": "/pdfs/appsc%20job%20calender%202026.pdf",
-    })
+
+
+# ---------------------------------------------------------------------------
+# Cross-Syllabus Shared Topics — Complete bidirectional map
+# Covers: G1 Prelims ↔ G2 Screening, G1 Prelims ↔ G1 Mains,
+#         G1 Mains ↔ G2 Mains, G2 Screening ↔ G2 Mains
+# ---------------------------------------------------------------------------
+
+SHARED_TOPICS = {
+
+    # ── HISTORY ─────────────────────────────────────────────────────────────
+
+    # G1 Prelims History ↔ G2 Screening History
+    "pre-ha-01": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
+                  {"id": "m2-hi-01",    "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+    "pre-ha-02": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
+                  {"id": "m2-hi-02",    "label": "G1 Mains P2: South Indian Dynasties"}],
+    "pre-ha-03": [{"id": "scr-hist-02", "label": "G2 Screening: Medieval India"},
+                  {"id": "m2-hi-02",    "label": "G1 Mains P2: South Indian Dynasties to Delhi Sultanate"},
+                  {"id": "m2-hi-03",    "label": "G1 Mains P2: Mughals, Marathas & Europeans"}],
+    "pre-ha-04": [{"id": "scr-hist-02", "label": "G2 Screening: Medieval India"},
+                  {"id": "scr-hist-03", "label": "G2 Screening: Modern India"},
+                  {"id": "m2-hi-03",    "label": "G1 Mains P2: Mughals, Marathas & Europeans"}],
+    "pre-ha-05": [{"id": "scr-hist-03", "label": "G2 Screening: Modern India"},
+                  {"id": "m2-hi-04",    "label": "G1 Mains P2: British Rule, 1857 & Reform Movements"}],
+    "pre-ha-06": [{"id": "scr-hist-03", "label": "G2 Screening: Modern India"},
+                  {"id": "m2-hi-05",    "label": "G1 Mains P2: Indian Nationalism & Independence"}],
+
+    # G2 Screening History ↔ G1 Prelims + G1 Mains + G2 Paper 1 AP History
+    "scr-hist-01": [{"id": "pre-ha-01", "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+                    {"id": "m2-hi-01",  "label": "G1 Mains P2: Pre-Historic to Kushans"},
+                    {"id": "p1-aph-01", "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"}],
+    "scr-hist-02": [{"id": "pre-ha-03", "label": "G1 Prelims: Medieval India"},
+                    {"id": "pre-ha-04", "label": "G1 Prelims: Europeans in India"},
+                    {"id": "m2-hi-02",  "label": "G1 Mains P2: South Indian Dynasties to Delhi Sultanate"},
+                    {"id": "m2-hi-03",  "label": "G1 Mains P2: Mughals, Marathas & Europeans"},
+                    {"id": "p1-aph-02", "label": "G2 Paper 1: Dynasties of 11th–16th Century AD"}],
+    "scr-hist-03": [{"id": "pre-ha-05", "label": "G1 Prelims: 1857 & Reform Movements"},
+                    {"id": "pre-ha-06", "label": "G1 Prelims: Gandhi, Independence & Post-Independence"},
+                    {"id": "m2-hi-04",  "label": "G1 Mains P2: British Rule, 1857 & Reform Movements"},
+                    {"id": "m2-hi-05",  "label": "G1 Mains P2: Indian Nationalism & Independence"},
+                    {"id": "p1-aph-03", "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+
+    # G1 Mains Paper 2 — History of India ↔ G2 Screening + G2 Paper 1 AP History
+    "m2-hi-01": [{"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+                 {"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
+                 {"id": "p1-aph-01",  "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"}],
+    "m2-hi-02": [{"id": "pre-ha-02",  "label": "G1 Prelims: South Indian Dynasties"},
+                 {"id": "pre-ha-03",  "label": "G1 Prelims: Medieval India"},
+                 {"id": "scr-hist-02","label": "G2 Screening: Medieval India"},
+                 {"id": "p1-aph-02",  "label": "G2 Paper 1: Dynasties of 11th–16th Century"}],
+    "m2-hi-03": [{"id": "pre-ha-03",  "label": "G1 Prelims: Medieval India"},
+                 {"id": "pre-ha-04",  "label": "G1 Prelims: Europeans in India"},
+                 {"id": "scr-hist-02","label": "G2 Screening: Medieval India"},
+                 {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+    "m2-hi-04": [{"id": "pre-ha-05",  "label": "G1 Prelims: 1857 & Reform Movements"},
+                 {"id": "scr-hist-03","label": "G2 Screening: Modern India"},
+                 {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+    "m2-hi-05": [{"id": "pre-ha-06",  "label": "G1 Prelims: Gandhi, Independence & Post-Independence"},
+                 {"id": "scr-hist-03","label": "G2 Screening: Modern India"},
+                 {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
+
+    # G1 Mains Paper 2 — AP History ↔ G2 Paper 1 AP History (STRONGEST OVERLAP)
+    "m2-ap-01": [{"id": "p1-aph-01", "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"},
+                 {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
+    "m2-ap-02": [{"id": "p1-aph-02", "label": "G2 Paper 1: Dynasties of 11th–16th Century AD"}],
+    "m2-ap-03": [{"id": "p1-aph-03", "label": "G2 Paper 1: Advent of Europeans to Independence"},
+                 {"id": "scr-hist-03","label": "G2 Screening: Modern India"}],
+    "m2-ap-04": [{"id": "p1-aph-04", "label": "G2 Paper 1: Andhra Movement & Formation of Andhra State"}],
+    "m2-ap-05": [{"id": "p1-aph-05", "label": "G2 Paper 1: Formation of Andhra Pradesh (1956–2014)"}],
+
+    # G2 Paper 1 AP History ↔ G1 Mains AP History (STRONGEST OVERLAP — near identical)
+    "p1-aph-01": [{"id": "m2-ap-01",  "label": "G1 Mains P2: Ancient Andhra"},
+                  {"id": "m2-hi-01",  "label": "G1 Mains P2: Pre-Historic to Kushans"},
+                  {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
+    "p1-aph-02": [{"id": "m2-ap-02",  "label": "G1 Mains P2: Medieval Andhra (1000–1565 AD)"},
+                  {"id": "scr-hist-02","label": "G2 Screening: Medieval India"}],
+    "p1-aph-03": [{"id": "m2-ap-03",  "label": "G1 Mains P2: Modern Andhra — Social Awakening"},
+                  {"id": "m2-hi-04",  "label": "G1 Mains P2: British Rule, 1857 & Reform"},
+                  {"id": "scr-hist-03","label": "G2 Screening: Modern India"}],
+    "p1-aph-04": [{"id": "m2-ap-04",  "label": "G1 Mains P2: Andhra Movement & State Formation"}],
+    "p1-aph-05": [{"id": "m2-ap-05",  "label": "G1 Mains P2: AP 1956–2014 & Bifurcation"}],
+
+    # ── GEOGRAPHY ───────────────────────────────────────────────────────────
+
+    # G1 Prelims Geography ↔ G2 Screening + G1 Mains Paper 2 Geography
+    "pre-ge-01": [{"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"},
+                  {"id": "m2-ge-01",   "label": "G1 Mains P2: Physical Features & Resources"}],
+    "pre-ge-02": [{"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"},
+                  {"id": "m2-ge-01",   "label": "G1 Mains P2: Physical Features & Resources"}],
+    "pre-ge-03": [{"id": "scr-geo-03", "label": "G2 Screening: Human Geography of India & AP"},
+                  {"id": "m2-ge-03",   "label": "G1 Mains P2: Social & Faunal-Floral Geography"}],
+    "pre-ge-04": [{"id": "scr-geo-02", "label": "G2 Screening: Economic Geography of India & AP"},
+                  {"id": "m2-ge-02",   "label": "G1 Mains P2: Economic Geography"}],
+
+    # G2 Screening Geography ↔ G1 Prelims + G1 Mains
+    "scr-geo-01": [{"id": "pre-ge-01", "label": "G1 Prelims: General & Physical Geography"},
+                   {"id": "pre-ge-02", "label": "G1 Prelims: Physical Features — India & AP"},
+                   {"id": "m2-ge-01",  "label": "G1 Mains P2: Physical Features & Resources"}],
+    "scr-geo-02": [{"id": "pre-ge-04", "label": "G1 Prelims: Economic Geography"},
+                   {"id": "m2-ge-02",  "label": "G1 Mains P2: Economic Geography"}],
+    "scr-geo-03": [{"id": "pre-ge-03", "label": "G1 Prelims: Social & Human Geography"},
+                   {"id": "m2-ge-03",  "label": "G1 Mains P2: Social & Faunal-Floral Geography"}],
+
+    # G1 Mains Paper 2 Geography ↔ G2 Screening
+    "m2-ge-01": [{"id": "pre-ge-01",  "label": "G1 Prelims: General & Physical Geography"},
+                 {"id": "pre-ge-02",  "label": "G1 Prelims: Physical Features — India & AP"},
+                 {"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"}],
+    "m2-ge-02": [{"id": "pre-ge-04",  "label": "G1 Prelims: Economic Geography"},
+                 {"id": "scr-geo-02", "label": "G2 Screening: Economic Geography"}],
+    "m2-ge-03": [{"id": "pre-ge-03",  "label": "G1 Prelims: Social & Human Geography"},
+                 {"id": "scr-geo-03", "label": "G2 Screening: Human Geography"}],
+    "m2-ge-04": [{"id": "scr-geo-01", "label": "G2 Screening: General & Physical Geography"}],
+
+    # ── POLITY / CONSTITUTION ────────────────────────────────────────────────
+
+    # G1 Prelims Polity ↔ G2 Paper 1 Constitution + G1 Mains Paper 3 Polity
+    "pre-cp-01": [{"id": "p1-con-01", "label": "G2 Paper 1: Nature & Features of the Constitution"},
+                  {"id": "m3-pc-01",  "label": "G1 Mains P3: Indian Constitution — Salient Features"}],
+    "pre-cp-02": [{"id": "p1-con-02", "label": "G2 Paper 1: Structure & Functions of Indian Government"},
+                  {"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                  {"id": "m3-pc-02",  "label": "G1 Mains P3: Federal Structure & Distribution of Powers"}],
+    "pre-cp-03": [{"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                  {"id": "m3-pc-03",  "label": "G1 Mains P3: Local Governance & Constitutional Authorities"}],
+    "pre-cp-04": [{"id": "m3-pa-03",  "label": "G1 Mains P3: Statutory, Regulatory Bodies & Civil Services"}],
+    "pre-cp-05": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"},
+                  {"id": "m3-et-02",  "label": "G1 Mains P3: Human Values, Attitude & Emotional Intelligence"}],
+    "pre-cp-06": [{"id": "p1-con-04", "label": "G2 Paper 1: Centre–State Relations & Elections"}],
+
+    # G2 Paper 1 Constitution ↔ G1 Prelims + G1 Mains Paper 3
+    "p1-con-01": [{"id": "pre-cp-01", "label": "G1 Prelims: Indian Constitution — Evolution & Features"},
+                  {"id": "m3-pc-01",  "label": "G1 Mains P3: Indian Constitution — Salient Features"}],
+    "p1-con-02": [{"id": "pre-cp-02", "label": "G1 Prelims: Union, States & Federal Structure"},
+                  {"id": "m3-pc-04",  "label": "G1 Mains P3: Parliament & State Legislatures"}],
+    "p1-con-03": [{"id": "pre-cp-02", "label": "G1 Prelims: Union, States & Federal Structure"},
+                  {"id": "pre-cp-03", "label": "G1 Prelims: Constitutional Authorities & Governance"},
+                  {"id": "m3-pc-02",  "label": "G1 Mains P3: Federal Structure & Distribution of Powers"},
+                  {"id": "m3-pc-03",  "label": "G1 Mains P3: Local Governance & Constitutional Authorities"}],
+    "p1-con-04": [{"id": "pre-cp-06", "label": "G1 Prelims: India's Foreign Policy & IR"},
+                  {"id": "m3-pc-02",  "label": "G1 Mains P3: Federal Structure & Distribution of Powers"}],
+    "p1-con-05": [{"id": "m3-pc-03",  "label": "G1 Mains P3: Local Governance & Constitutional Authorities"}],
+
+    # G1 Mains Paper 3 Polity ↔ G1 Prelims + G2 Paper 1 Constitution
+    "m3-pc-01": [{"id": "pre-cp-01", "label": "G1 Prelims: Indian Constitution — Evolution & Features"},
+                 {"id": "p1-con-01", "label": "G2 Paper 1: Nature & Features of the Constitution"}],
+    "m3-pc-02": [{"id": "pre-cp-02", "label": "G1 Prelims: Union, States & Federal Structure"},
+                 {"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                 {"id": "p1-con-04", "label": "G2 Paper 1: Centre–State Relations & Elections"}],
+    "m3-pc-03": [{"id": "pre-cp-03", "label": "G1 Prelims: Constitutional Authorities & Governance"},
+                 {"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"},
+                 {"id": "p1-con-05", "label": "G2 Paper 1: Decentralisation & Panchayati Raj"}],
+    "m3-pc-04": [{"id": "p1-con-02", "label": "G2 Paper 1: Structure & Functions of Indian Government"}],
+    "m3-pc-05": [{"id": "p1-con-03", "label": "G2 Paper 1: Distribution of Powers — Union & States"}],
+
+    # ── ECONOMY ─────────────────────────────────────────────────────────────
+
+    # G1 Prelims Economy ↔ G2 Paper 2 Economy + G1 Mains Paper 4
+    "pre-ec-01": [{"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"},
+                  {"id": "m4-ec-01",  "label": "G1 Mains P4: Major Challenges of Indian Economy"},
+                  {"id": "m4-ec-04",  "label": "G1 Mains P4: Inclusive Growth"}],
+    "pre-ec-02": [{"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"},
+                  {"id": "m4-ec-04",  "label": "G1 Mains P4: Inclusive Growth"}],
+    "pre-ec-03": [{"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"},
+                  {"id": "m4-ec-05",  "label": "G1 Mains P4: Agricultural Development"},
+                  {"id": "m4-ec-06",  "label": "G1 Mains P4: Industrial Development & Policy"}],
+    "pre-ec-04": [{"id": "p2-eco-02", "label": "G2 Paper 2: Money, Banking, Public Finance & Foreign Trade"},
+                  {"id": "m4-ec-02",  "label": "G1 Mains P4: Resource Mobilization in Indian Economy"},
+                  {"id": "m4-ec-03",  "label": "G1 Mains P4: Government Budgeting"}],
+    "pre-ec-05": [{"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"},
+                  {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"},
+                  {"id": "m4-ap-01",  "label": "G1 Mains P4: Resource Mobilization in AP"},
+                  {"id": "m4-ap-02",  "label": "G1 Mains P4: Government Budgeting in AP"},
+                  {"id": "m4-ap-03",  "label": "G1 Mains P4: Agricultural Development in AP"},
+                  {"id": "m4-ap-04",  "label": "G1 Mains P4: Industrial Policy of AP"}],
+
+    # G2 Paper 2 Economy ↔ G1 Prelims + G1 Mains Paper 4
+    "p2-eco-01": [{"id": "pre-ec-01", "label": "G1 Prelims: Indian Economy Basics & Planning"},
+                  {"id": "pre-ec-02", "label": "G1 Prelims: National Income, Poverty & Employment"},
+                  {"id": "m4-ec-01",  "label": "G1 Mains P4: Major Challenges of Indian Economy"},
+                  {"id": "m4-ec-04",  "label": "G1 Mains P4: Inclusive Growth"}],
+    "p2-eco-02": [{"id": "pre-ec-04", "label": "G1 Prelims: Financial Institutions & Fiscal Policy"},
+                  {"id": "m4-ec-02",  "label": "G1 Mains P4: Resource Mobilization in Indian Economy"},
+                  {"id": "m4-ec-03",  "label": "G1 Mains P4: Government Budgeting"}],
+    "p2-eco-03": [{"id": "pre-ec-03", "label": "G1 Prelims: Agriculture, Industry & Economic Reforms"},
+                  {"id": "m4-ec-05",  "label": "G1 Mains P4: Agricultural Development"},
+                  {"id": "m4-ec-06",  "label": "G1 Mains P4: Industrial Development & Policy"}],
+    "p2-eco-04": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                  {"id": "m4-ap-01",  "label": "G1 Mains P4: Resource Mobilization in AP"},
+                  {"id": "m4-ap-02",  "label": "G1 Mains P4: Government Budgeting in AP"}],
+    "p2-eco-05": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                  {"id": "m4-ap-03",  "label": "G1 Mains P4: Agricultural Development in AP"},
+                  {"id": "m4-ap-04",  "label": "G1 Mains P4: Industrial Policy of AP"},
+                  {"id": "m4-ap-05",  "label": "G1 Mains P4: Infrastructure Development in AP"}],
+
+    # G1 Mains Paper 4 ↔ G1 Prelims + G2 Paper 2 Economy
+    "m4-ec-01": [{"id": "pre-ec-01", "label": "G1 Prelims: Indian Economy Basics & Planning"},
+                 {"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"}],
+    "m4-ec-02": [{"id": "pre-ec-04", "label": "G1 Prelims: Financial Institutions & Fiscal Policy"},
+                 {"id": "p2-eco-02", "label": "G2 Paper 2: Money, Banking, Public Finance & Foreign Trade"}],
+    "m4-ec-03": [{"id": "pre-ec-04", "label": "G1 Prelims: Financial Institutions & Fiscal Policy"},
+                 {"id": "p2-eco-02", "label": "G2 Paper 2: Money, Banking, Public Finance & Foreign Trade"}],
+    "m4-ec-04": [{"id": "pre-ec-01", "label": "G1 Prelims: Indian Economy Basics & Planning"},
+                 {"id": "pre-ec-02", "label": "G1 Prelims: National Income, Poverty & Employment"},
+                 {"id": "p2-eco-01", "label": "G2 Paper 2: Economic Structure & Planning"}],
+    "m4-ec-05": [{"id": "pre-ec-03", "label": "G1 Prelims: Agriculture, Industry & Economic Reforms"},
+                 {"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"}],
+    "m4-ec-06": [{"id": "pre-ec-03", "label": "G1 Prelims: Agriculture, Industry & Economic Reforms"},
+                 {"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"}],
+    "m4-ec-07": [{"id": "m4-ap-05",  "label": "G1 Mains P4: Infrastructure Development in AP"},
+                 {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
+    "m4-ap-01": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
+    "m4-ap-02": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
+    "m4-ap-03": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"}],
+    "m4-ap-04": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"}],
+    "m4-ap-05": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
+                 {"id": "p2-eco-05", "label": "G2 Paper 2: AP Agriculture, Industry & Services"},
+                 {"id": "m4-ec-07",  "label": "G1 Mains P4: Infrastructure in India"}],
+
+    # ── SCIENCE & TECHNOLOGY ────────────────────────────────────────────────
+
+    # G1 Prelims S&T ↔ G2 Paper 2 S&T + G1 Mains Paper 5
+    "pre-st-01": [{"id": "p2-sci-01", "label": "G2 Paper 2: Technology Missions, Policies & Applications"},
+                  {"id": "p2-sci-03", "label": "G2 Paper 2: Ecosystem & Biodiversity"},
+                  {"id": "p2-sci-05", "label": "G2 Paper 2: Environment & Health"},
+                  {"id": "m5-st-01",  "label": "G1 Mains P5: Integration of S&T for Human Life"},
+                  {"id": "m5-st-03",  "label": "G1 Mains P5: Indian Space Programme & DRDO"}],
+
+    # G2 Paper 2 Science ↔ G1 Prelims + G1 Mains Paper 5
+    "p2-sci-01": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"},
+                  {"id": "m5-st-01",  "label": "G1 Mains P5: Integration of S&T for Human Life"},
+                  {"id": "m5-st-02",  "label": "G1 Mains P5: ICT, E-Governance & Cyber Security"},
+                  {"id": "m5-st-03",  "label": "G1 Mains P5: Indian Space Programme & DRDO"},
+                  {"id": "m5-st-04",  "label": "G1 Mains P5: Energy & Nuclear Policy"}],
+    "p2-sci-02": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"},
+                  {"id": "m5-st-04",  "label": "G1 Mains P5: Energy & Nuclear Policy"}],
+    "p2-sci-03": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"},
+                  {"id": "m5-st-05",  "label": "G1 Mains P5: Biotechnology & Nanotechnology"}],
+    "p2-sci-04": [{"id": "m5-st-05",  "label": "G1 Mains P5: Biotechnology & Nanotechnology"}],
+    "p2-sci-05": [{"id": "pre-st-01", "label": "G1 Prelims: Science & Technology"}],
+
+    # G1 Mains Paper 5 S&T ↔ G1 Prelims + G2 Paper 2 S&T
+    "m5-st-01": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"}],
+    "m5-st-02": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"}],
+    "m5-st-03": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"}],
+    "m5-st-04": [{"id": "pre-st-01",  "label": "G1 Prelims: Science & Technology"},
+                 {"id": "p2-sci-01",  "label": "G2 Paper 2: Technology Missions, Policies & Applications"},
+                 {"id": "p2-sci-02",  "label": "G2 Paper 2: Energy Management"}],
+    "m5-st-05": [{"id": "p2-sci-03",  "label": "G2 Paper 2: Ecosystem & Biodiversity"},
+                 {"id": "p2-sci-04",  "label": "G2 Paper 2: Waste Management & Pollution Control"}],
+
+    # ── MENTAL ABILITY ──────────────────────────────────────────────────────
+
+    "pre-ma-01": [{"id": "scr-ma-01", "label": "G2 Screening: Logical Reasoning"}],
+    "pre-ma-02": [{"id": "scr-ma-02", "label": "G2 Screening: Mental Ability"},
+                  {"id": "scr-ma-03", "label": "G2 Screening: Basic Numeracy & Data Analysis"}],
+    "pre-ma-03": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"},
+                  {"id": "m3-et-02",  "label": "G1 Mains P3: Human Values, Attitude & Emotional Intelligence"}],
+    "scr-ma-01": [{"id": "pre-ma-01", "label": "G1 Prelims: Reasoning & Analytical Ability"}],
+    "scr-ma-02": [{"id": "pre-ma-02", "label": "G1 Prelims: Quantitative Aptitude"}],
+    "scr-ma-03": [{"id": "pre-ma-02", "label": "G1 Prelims: Quantitative Aptitude"}],
+
+    # ── CURRENT AFFAIRS ─────────────────────────────────────────────────────
+
+    "pre-st-02": [{"id": "scr-ca-01", "label": "G2 Screening: Current Affairs"},
+                  {"id": "m1-ge-01",  "label": "G1 Mains P1: General Essay (Current Affairs)"}],
+    "scr-ca-01": [{"id": "pre-st-02", "label": "G1 Prelims: Current Events"},
+                  {"id": "m1-ge-01",  "label": "G1 Mains P1: General Essay (Current Affairs)"}],
+    "m1-ge-01":  [{"id": "pre-st-02", "label": "G1 Prelims: Current Events"},
+                  {"id": "scr-ca-01", "label": "G2 Screening: Current Affairs"}],
+
+    # ── G1 MAINS PAPER 3 ETHICS ↔ G1 PRELIMS ───────────────────────────────
+
+    "m3-et-01": [{"id": "pre-cp-05",  "label": "G1 Prelims: Rights Issues"},
+                 {"id": "pre-ma-03",  "label": "G1 Prelims: Emotional & Social Intelligence"}],
+    "m3-et-02": [{"id": "pre-cp-05",  "label": "G1 Prelims: Rights Issues"},
+                 {"id": "pre-ma-03",  "label": "G1 Prelims: Emotional & Social Intelligence"}],
+    "m3-pa-03": [{"id": "pre-cp-04",  "label": "G1 Prelims: LPG Impact & Regulatory Bodies"}],
+
+    # ── G2 SCREENING SOCIETY ↔ G1 MAINS ────────────────────────────────────
+
+    "scr-soc-01": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"}],
+    "scr-soc-02": [{"id": "m3-et-01",  "label": "G1 Mains P3: Ethics & Human Interface"},
+                   {"id": "m3-et-02",  "label": "G1 Mains P3: Human Values, Attitude & Emotional Intelligence"}],
+    "scr-soc-03": [{"id": "pre-cp-05", "label": "G1 Prelims: Rights Issues"},
+                   {"id": "m3-pa-02",  "label": "G1 Mains P3: Government Policies, Civil Society & NGOs"}],
+}
 
 
 # ---------------------------------------------------------------------------
@@ -1594,9 +2190,483 @@ APT_STRUCTURE = {
 
 
 async def aptitude(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "aptitude.html", {
         "structure": APT_STRUCTURE,
         "structure_json": json.dumps(APT_STRUCTURE),
+        "current_user": user,
+        "user_id": user["id"],
+    })
+
+
+# ---------------------------------------------------------------------------
+# Telugu — Bilingual Learning + APPSC Paper
+# ---------------------------------------------------------------------------
+
+TELUGU_STRUCTURE = {
+    "basics": {
+        "label": "Learn Telugu",
+        "subtitle": "Start from Scratch",
+        "sections": {
+            "script": {
+                "label": "Telugu Script",
+                "sub": "అక్షరమాల — The Alphabet",
+                "topics": {
+                    "vowels": {
+                        "title": "Vowels (అచ్చులు)",
+                        "meta": "16 Vowels • Telugu Basics",
+                        "points": [
+                            "అ (a) — short 'a', as in 'about'",
+                            "ఆ (aa) — long 'a', as in 'father'",
+                            "ఇ (i) — short 'i', as in 'pin'",
+                            "ఈ (ii) — long 'i', as in 'see'",
+                            "ఉ (u) — short 'u', as in 'put'",
+                            "ఊ (uu) — long 'u', as in 'food'",
+                            "ఋ (ru) — retroflex vowel, Sanskrit origin",
+                            "ఎ (e) — short 'e', as in 'bet'",
+                            "ఏ (ee) — long 'e', as in 'late'",
+                            "ఐ (ai) — diphthong, as in 'high'",
+                            "ఒ (o) — short 'o', as in 'hot'",
+                            "ఓ (oo) — long 'o', as in 'go'",
+                            "ఔ (au) — diphthong, as in 'out'",
+                            "అం (am) — anusvara, nasal sound",
+                            "అః (aha) — visarga, aspirated sound",
+                        ],
+                    },
+                    "consonants_ka": {
+                        "title": "Velar Group — కంఠ్యాలు (K sounds)",
+                        "meta": "Consonants • Group I of 7",
+                        "points": [
+                            "క (ka) — as in 'k' in 'kite' | కమలం = lotus",
+                            "ఖ (kha) — aspirated 'k' | ఖాళీ = empty",
+                            "గ (ga) — as in 'g' in 'go' | గమనం = movement",
+                            "ఘ (gha) — aspirated 'g' | ఘనత = greatness",
+                            "ఙ (nga) — nasal 'ng', as in 'sing' (rare, in conjuncts)",
+                        ],
+                    },
+                    "consonants_cha": {
+                        "title": "Palatal Group — తాలవ్యాలు (Ch sounds)",
+                        "meta": "Consonants • Group II of 7",
+                        "points": [
+                            "చ (cha) — as in 'ch' in 'chair' | చంద్రుడు = moon",
+                            "ఛ (chha) — aspirated 'ch' | ఛత్రం = umbrella",
+                            "జ (ja) — as in 'j' in 'jungle' | జలం = water",
+                            "ఝ (jha) — aspirated 'j' | ఝరి = waterfall",
+                            "ఞ (nya) — palatal nasal, as in 'ny' (rare, in conjuncts)",
+                        ],
+                    },
+                    "consonants_ta_retro": {
+                        "title": "Retroflex Group — మూర్ధన్యాలు (T retroflex)",
+                        "meta": "Consonants • Group 3 of 7",
+                        "points": [
+                            "ట (Ta) — retroflex 't', tongue curls back | టైమ్ = time",
+                            "ఠ (Tha) — aspirated retroflex 't' | ఠీవి = dignity",
+                            "డ (Da) — retroflex 'd' | డబ్బు = money",
+                            "ఢ (Dha) — aspirated retroflex 'd' | ఢంకా = drum",
+                            "ణ (Na) — retroflex nasal | ణకారం = the letter ణ",
+                        ],
+                    },
+                    "consonants_ta_dental": {
+                        "title": "Dental Group — దంత్యాలు (T dental)",
+                        "meta": "Consonants • Group 4 of 7",
+                        "points": [
+                            "త (ta) — dental 't', tongue at teeth | తల = head",
+                            "థ (tha) — aspirated dental 't' | థాలీ = plate",
+                            "ద (da) — dental 'd' | దారి = path/road",
+                            "ధ (dha) — aspirated dental 'd' | ధనం = money/wealth",
+                            "న (na) — dental nasal | నది = river",
+                        ],
+                    },
+                    "consonants_pa": {
+                        "title": "Labial Group — ఓష్ఠ్యాలు (P sounds)",
+                        "meta": "Consonants • Group 5 of 7",
+                        "points": [
+                            "ప (pa) — as in 'p' in 'pen' | పాలు = milk",
+                            "ఫ (pha) — aspirated 'p' | ఫలితం = result",
+                            "బ (ba) — as in 'b' in 'bat' | బడి = school",
+                            "భ (bha) — aspirated 'b' | భవనం = building",
+                            "మ (ma) — as in 'm' in 'man' | మనసు = mind/heart",
+                        ],
+                    },
+                    "consonants_semi": {
+                        "title": "Semi-vowels & Sibilants (Y, R, L, V, S, H)",
+                        "meta": "Consonants • Group 6 & 7 of 7",
+                        "points": [
+                            "య (ya) — as in 'y' in 'yes' | యువత = youth",
+                            "ర (ra) — as in 'r' in 'run' | రాత్రి = night",
+                            "ల (la) — as in 'l' in 'lake' | లోకం = world",
+                            "వ (va) — as in 'v' in 'van' | వర్షం = rain",
+                            "శ (sha) — palatal sibilant 'sh' | శాంతి = peace",
+                            "ష (Sha) — retroflex sibilant | షడ్రసాలు = six tastes",
+                            "స (sa) — as in 's' in 'sun' | సమయం = time",
+                            "హ (ha) — as in 'h' in 'hat' | హృదయం = heart",
+                            "ళ (Lla) — retroflex lateral, unique to Telugu | పళ్ళు = teeth",
+                            "క్ష (ksha) — combined consonant | క్షమ = forgiveness",
+                            "ఱ (rra) — rolled 'r', archaic form used in classical texts",
+                        ],
+                    },
+                },
+            },
+            "numbers": {
+                "label": "Numbers",
+                "sub": "సంఖ్యలు — Count in Telugu",
+                "topics": {
+                    "numbers_0_10": {
+                        "title": "Numbers 0–10 (సంఖ్యలు)",
+                        "meta": "Basics • Telugu Numbers",
+                        "points": [
+                            "0 — సున్న (sunna)",
+                            "1 — ఒకటి (okaTi)",
+                            "2 — రెండు (reṃDu)",
+                            "3 — మూడు (muuDu)",
+                            "4 — నాలుగు (naalugu)",
+                            "5 — అయిదు (ayidu)",
+                            "6 — ఆరు (aaru)",
+                            "7 — ఏడు (eeḍu)",
+                            "8 — ఎనిమిది (enimidi)",
+                            "9 — తొమ్మిది (tommidi)",
+                            "10 — పది (padi)",
+                        ],
+                    },
+                    "numbers_11_20": {
+                        "title": "Numbers 11–20",
+                        "meta": "Intermediate • Telugu Numbers",
+                        "points": [
+                            "11 — పదకొండు (padakonDu)",
+                            "12 — పన్నెండు (panneṃDu)",
+                            "13 — పదమూడు (padamuuDu)",
+                            "14 — పదునాలుగు (padunaalugu)",
+                            "15 — పదిహేను (padihenu)",
+                            "16 — పదహారు (padahaaru)",
+                            "17 — పదిహేడు (padiheeḍu)",
+                            "18 — పదునెనిమిది (padunenmidi)",
+                            "19 — పందొమ్మిది (pandommidi)",
+                            "20 — ఇరవై (iravai)",
+                        ],
+                    },
+                    "numbers_tens": {
+                        "title": "Tens & Key Numbers",
+                        "meta": "Advanced • Telugu Numbers",
+                        "points": [
+                            "30 — ముప్పై (muppai)",
+                            "40 — నలభై (nalabhai)",
+                            "50 — యాభై (yaabhai)",
+                            "60 — అరవై (aravai)",
+                            "70 — డెభ్భై (Debbhai)",
+                            "80 — ఎనభై (enabhai)",
+                            "90 — తొంభై (tombhai)",
+                            "100 — వంద (vanda)",
+                            "1,000 — వేయి (veeyi)",
+                            "100,000 — లక్ష (laksha)",
+                            "10,000,000 — కోటి (koti)",
+                        ],
+                    },
+                },
+            },
+            "greetings": {
+                "label": "Greetings & Phrases",
+                "sub": "రోజువారీ మాటలు — Daily Conversation",
+                "topics": {
+                    "greetings_basic": {
+                        "title": "Basic Greetings (శుభాకాంక్షలు)",
+                        "meta": "Conversation • Daily Use",
+                        "points": [
+                            "నమస్కారం (Namaskaram) — Hello / Greetings (formal)",
+                            "నమస్తే (Namaste) — Hello (slightly informal)",
+                            "హాయ్ (Haay) — Hi (casual, modern)",
+                            "శుభోదయం (Shubhodayam) — Good morning",
+                            "శుభ సాయంత్రం (Shubha Sayantram) — Good evening",
+                            "శుభ రాత్రి (Shubha Raatri) — Good night",
+                            "వెళ్ళొస్తాను (Vellostaanu) — Goodbye (lit. I'll go and come back)",
+                            "తర్వాత కలుద్దాం (Tarvaata kaluddaam) — See you later",
+                        ],
+                    },
+                    "phrases_polite": {
+                        "title": "Polite Expressions",
+                        "meta": "Conversation • Politeness",
+                        "points": [
+                            "ధన్యవాదాలు (Dhanyavaadaalu) — Thank you",
+                            "దయచేసి (Dayacheesi) — Please",
+                            "క్షమించండి (Kshamincandi) — Sorry / Excuse me",
+                            "సరే (Sare) — Okay / Alright",
+                            "అవును (Avunu) — Yes",
+                            "కాదు (Kaadu) — No",
+                            "నాకు అర్థం కాలేదు (Naaku artham kaaledu) — I don't understand",
+                            "మళ్ళీ చెప్పండి (Mallee cheppandi) — Please say it again",
+                            "మీ పేరు ఏమిటి? (Mee peru emiti?) — What is your name?",
+                            "నా పేరు ___ (Naa peru ___) — My name is ___",
+                        ],
+                    },
+                    "phrases_daily": {
+                        "title": "Daily Life Phrases",
+                        "meta": "Conversation • Everyday",
+                        "points": [
+                            "బాగున్నారా? (Baagunnaara?) — How are you?",
+                            "బాగున్నాను (Baagunnaanu) — I am well",
+                            "నాకు ఆకలి వేస్తోంది (Naaku aakali veestundi) — I am hungry",
+                            "నీళ్ళు ఇవ్వండి (Neellu ivvandi) — Please give water",
+                            "ఇది ఎంత? (Idi enta?) — How much is this?",
+                            "అక్కడ ఎలా వెళ్ళాలి? (Akkada elaa vellaali?) — How to go there?",
+                            "సమయం ఎంత అయింది? (Samayam enta ayindi?) — What time is it?",
+                            "నాకు సహాయం చేయండి (Naaku sahaayam cheyandi) — Please help me",
+                        ],
+                    },
+                },
+            },
+            "days_months": {
+                "label": "Days & Months",
+                "sub": "వారాలు & నెలలు — Calendar Words",
+                "topics": {
+                    "days": {
+                        "title": "Days of the Week (వారాలు)",
+                        "meta": "Calendar • Days",
+                        "points": [
+                            "ఆదివారం (Aadivaram) — Sunday",
+                            "సోమవారం (Somavaram) — Monday",
+                            "మంగళవారం (Mangalavaram) — Tuesday",
+                            "బుధవారం (Budhavaram) — Wednesday",
+                            "గురువారం (Guruvaram) — Thursday",
+                            "శుక్రవారం (Shukravaram) — Friday",
+                            "శనివారం (Shanivaram) — Saturday",
+                        ],
+                    },
+                    "months": {
+                        "title": "English Months in Telugu (నెలలు)",
+                        "meta": "Calendar • English Months",
+                        "points": [
+                            "జనవరి (Janavari) — January",
+                            "ఫిబ్రవరి (Phibravari) — February",
+                            "మార్చి (Maarchi) — March",
+                            "ఏప్రిల్ (Eepril) — April",
+                            "మే (Me) — May",
+                            "జూన్ (Juun) — June",
+                            "జూలై (Juulai) — July",
+                            "ఆగస్టు (Aagustu) — August",
+                            "సెప్టెంబర్ (Septambar) — September",
+                            "అక్టోబర్ (Aktobar) — October",
+                            "నవంబర్ (Navambar) — November",
+                            "డిసెంబర్ (Disambar) — December",
+                        ],
+                    },
+                    "telugu_months": {
+                        "title": "Telugu Calendar Months (తెలుగు నెలలు)",
+                        "meta": "Calendar • Telugu Months",
+                        "points": [
+                            "చైత్రం (Chaitram) — Mar–Apr | Telugu New Year (Ugadi) falls in this month",
+                            "వైశాఖం (Vaishakham) — Apr–May",
+                            "జ్యేష్ఠం (Jyeshtham) — May–Jun",
+                            "ఆషాఢం (Aashadham) — Jun–Jul",
+                            "శ్రావణం (Shravanam) — Jul–Aug | Raksha Bandhan, Varalakshmi Vratam",
+                            "భాద్రపదం (Bhadrapadam) — Aug–Sep | Ganesh Chaturthi",
+                            "ఆశ్వయుజం (Ashvayujam) — Sep–Oct | Navaratri, Dussehra",
+                            "కార్తీకం (Kartikam) — Oct–Nov | Deepavali",
+                            "మార్గశిరం (Margashiram) — Nov–Dec",
+                            "పుష్యం (Pushyam) — Dec–Jan",
+                            "మాఘం (Maagham) — Jan–Feb | Maha Shivaratri",
+                            "ఫాల్గుణం (Phalgunam) — Feb–Mar | Holi",
+                        ],
+                    },
+                },
+            },
+        },
+    },
+    "appsc": {
+        "label": "APPSC Paper",
+        "subtitle": "Telugu Paper for APPSC Exams",
+        "sections": {
+            "grammar": {
+                "label": "Telugu Grammar",
+                "sub": "వ్యాకరణం — High Weightage",
+                "topics": {
+                    "sandhi": {
+                        "title": "సంధులు (Sandhi — Euphonic Combinations)",
+                        "meta": "Grammar • Very High Weightage",
+                        "points": [
+                            "అకార సంధి — Combination of 'a' + 'a' = long 'aa' (e.g., రామ + అయ్య = రామయ్య)",
+                            "ఇకార సంధి — Combinations involving 'i' sound",
+                            "ఉకార సంధి — Combinations involving 'u' sound",
+                            "యడాగమ సంధి — Insertion of 'y' as liaison consonant (e.g., రా + ఇ = రాయి)",
+                            "తత్సమ సంధులు — Sandhi rules borrowed from Sanskrit (e.g., విద్యా + అలయం = విద్యాలయం)",
+                            "గసడదవాదేశ సంధి — Substitution sandhi: first consonant of second word changes",
+                            "ద్రుత ప్రకృతిక సంధి — Sandhi with short/dhruta words (ని, ఒ, etc.)",
+                            "లోపసంధి — Elision sandhi: a vowel is dropped",
+                            "ర్వాదేశ సంధి — Substitution by 'r'-sound",
+                        ],
+                    },
+                    "samasa": {
+                        "title": "సమాసాలు (Samasa — Compound Words)",
+                        "meta": "Grammar • Very High Weightage",
+                        "points": [
+                            "తత్పురుష సమాసం — Determinative compound: second word is head (e.g., రాజభవనం = king's palace)",
+                            "కర్మధారయ సమాసం — Appositional: both words refer to same thing (e.g., నీలకమలం = blue lotus)",
+                            "ద్విగు సమాసం — Numeral compound: first word is number (e.g., త్రిలోకం = three worlds)",
+                            "ద్వంద్వ సమాసం — Copulative 'and' compound (e.g., రాజరాణి = king and queen)",
+                            "బహువ్రీహి సమాసం — Possessive: compound describes something else (e.g., నీలకంఠుడు = Shiva)",
+                            "అవ్యయీభావ సమాసం — Adverbial compound (e.g., యథాశక్తి = as per ability)",
+                            "నఞ్ సమాసం — Negative compound with 'a-' or 'an-' prefix (e.g., అన్యాయం = injustice)",
+                        ],
+                    },
+                    "vibhakti": {
+                        "title": "విభక్తులు (Vibhakti — Case Endings)",
+                        "meta": "Grammar • Foundational",
+                        "points": [
+                            "ప్రథమా విభక్తి — Nominative (subject): -డు, -ము, -వు (రాముడు వెళ్ళాడు)",
+                            "ద్వితీయా విభక్తి — Accusative (object): -ని, -ను (పుస్తకాన్ని చదివాను)",
+                            "తృతీయా విభక్తి — Instrumental (by/with): -తో, -చేత (కలంతో రాశాను)",
+                            "చతుర్థీ విభక్తి — Dative (for/to): -కు, -కి (అమ్మకు ఇచ్చాను)",
+                            "పంచమీ విభక్తి — Ablative (from): -నుండి, -నుంచి (హైదరాబాదు నుండి వచ్చాను)",
+                            "షష్ఠీ విభక్తి — Genitive (of): -యొక్క (రాముని యొక్క బాణం)",
+                            "సప్తమీ విభక్తి — Locative (in/at): -లో, -న (గ్రామంలో ఉన్నాను)",
+                            "సంబోధన విభక్తి — Vocative (O!/Hey!): -ఓ, -ఏ (రామా! ఓ కృష్ణా!)",
+                        ],
+                    },
+                    "chandassu": {
+                        "title": "ఛందస్సు (Chandassu — Prosody & Metres)",
+                        "meta": "Grammar • Medium Weightage",
+                        "points": [
+                            "ఉత్పలమాల — 20-syllable metre; most popular in classical Telugu poetry",
+                            "చంపకమాల — 21-syllable metre; common in ornate prabandhas",
+                            "శార్దూలవిక్రీడితం — 19-syllable metre (gana-based, from Sanskrit)",
+                            "మత్తేభవిక్రీడితం — 20-syllable metre",
+                            "తేటగీతి — Native Telugu metre; used since ancient Nannaya period",
+                            "ఆటవెలది — Shorter Telugu metre; used in folk and classical compositions",
+                            "సీసపద్యం — Four-line metre with unique 'sisa' pattern",
+                            "కందపద్యం — Quatrain metre; specific gana rules; very popular",
+                        ],
+                    },
+                    "alankaras": {
+                        "title": "అలంకారాలు (Alankaras — Figures of Speech)",
+                        "meta": "Grammar • Medium Weightage",
+                        "points": [
+                            "ఉపమాలంకారం — Simile: comparison using 'like' or 'as' (వంటి, లాంటి)",
+                            "రూపకాలంకారం — Metaphor: direct identification without 'like'",
+                            "ఉత్ప్రేక్షాలంకారం — Fancy/Poetic fancy: imagining one thing as another",
+                            "అతిశయోక్తి — Hyperbole: deliberate exaggeration for effect",
+                            "యమకం — Repetition of same-sounding syllables with different meanings",
+                            "అనుప్రాస — Alliteration: same consonant sound repeated at word-starts",
+                            "శ్లేష — Pun: single expression with two different meanings",
+                            "విరోధాభాస — Paradox: apparent contradiction that reveals truth",
+                        ],
+                    },
+                },
+            },
+            "literature": {
+                "label": "Telugu Literature",
+                "sub": "సాహిత్యం — Periods & Works",
+                "topics": {
+                    "ancient": {
+                        "title": "Ancient Period — నన్నయ నుండి (11th–14th Century)",
+                        "meta": "Literature • Classical Era",
+                        "points": [
+                            "నన్నయ భట్టు (1022–1063) — First Telugu poet; translated Mahabharata (Adiparva + Sabhaparva)",
+                            "తిక్కన సోమయాజి (1220–1300) — 'Ubhaya Kavi Mitra'; completed 15 parvas of Mahabharata",
+                            "ఎఱ్ఱన (1280–1350) — Completed Aranyaparva; known for Raghavapandaviyam (dvyartha kavya)",
+                            "ముగ్గురు కవులు — 'Kavitrayam' (Three Poets): Nannaya, Tikkana, Errana",
+                            "పాల్కురికి సోమనాథుడు — Shaiva bhakti poet; Basavapurana in native Telugu metres",
+                        ],
+                    },
+                    "vijayanagara": {
+                        "title": "Vijayanagara Period (14th–16th Century)",
+                        "meta": "Literature • Golden Age",
+                        "points": [
+                            "శ్రీనాథుడు (1379–1470) — 'Kavi Sarvabhouma'; Shringaranaishadha, Kasikhanda",
+                            "పోతన (1450–1510) — Composed Bhagavatam in Telugu; rejected royal patronage for devotion",
+                            "అష్టదిగ్గజాలు — Eight celebrated poets at court of Krishna Devaraya",
+                            "కృష్ణదేవరాయలు (1509–1529) — Composed Amuktamalyada (the gem of Telugu kavya)",
+                            "అల్లసాని పెద్దన — 'Andhra Kavita Pitamaha'; wrote Manucharitra (first Prabandha)",
+                            "నంది తిమ్మన — Wrote Parijatapaharana; known as 'Mukku Timmana'",
+                        ],
+                    },
+                    "modern": {
+                        "title": "Modern Period (19th–20th Century)",
+                        "meta": "Literature • Renaissance Era",
+                        "points": [
+                            "గురజాడ అప్పారావు (1862–1915) — Father of modern Telugu literature; Kanyasulkam (social play)",
+                            "కందుకూరి వీరేశలింగం — Social reformer; wrote first Telugu novel Rajashekhara Charitra",
+                            "విశ్వనాథ సత్యనారాయణ — Jnanpith Award winner (1970); Ramayana Kalpavrikshamu",
+                            "శ్రీ శ్రీ (1910–1983) — 'Mahakavi'; Maha Prasthanam (revolutionary poetry)",
+                            "జాషువా (1895–1971) — Dalit poet; Gabbilam, Firdausi — voice of the marginalized",
+                            "దేవులపల్లి కృష్ణశాస్త్రి — Romantic lyricist; called 'Telugu Shelley'",
+                        ],
+                    },
+                    "prabandhas": {
+                        "title": "Important Prabandhas (ప్రబంధాలు)",
+                        "meta": "Literature • Key Works",
+                        "points": [
+                            "మనుచరిత్ర — Allasani Peddana; first Telugu Prabandha; story of Manu and Varuthini",
+                            "అముక్తమాల్యద — Krishna Devaraya; story of Andal (Godadevi); greatest Telugu kavya",
+                            "రాఘవపాండవీయం — Errana; dvyartha kavya describing both Ramayana and Mahabharata simultaneously",
+                            "కాళహస్తి మాహాత్మ్యం — Dhurjati; devotional Shaiva prabandha",
+                            "పాండురంగ మాహాత్మ్యం — Tenali Ramakrishna; Vaishnava devotional work",
+                            "కళాపూర్ణోదయం — Pingali Suranna; early realistic novel-like prabandha",
+                        ],
+                    },
+                },
+            },
+            "essay": {
+                "label": "General Essay",
+                "sub": "వ్యాస రచన — Writing Skills",
+                "topics": {
+                    "essay_structure": {
+                        "title": "Essay Structure & Format (నిర్మాణం)",
+                        "meta": "Essay • Writing Technique",
+                        "points": [
+                            "పరిచయం (Introduction) — Hook sentence, background context, clear thesis statement",
+                            "ముఖ్యాంశాలు (Main Body) — 3–4 paragraphs; each paragraph = one clear idea",
+                            "ఉపసంహారం (Conclusion) — Summary, personal view, way forward / future outlook",
+                            "Ideal length: 600–800 words for APPSC examination essays",
+                            "Use Telugu idiomatic expressions (నుడికారాలు) to enrich language",
+                            "Incorporate Telugu proverbs (సామెతలు) where contextually appropriate",
+                            "Quote relevant Telugu poets or literature to add scholarly depth",
+                        ],
+                    },
+                    "essay_topics": {
+                        "title": "Common APPSC Essay Topics",
+                        "meta": "Essay • Topic Bank",
+                        "points": [
+                            "తెలుగు భాష ప్రాముఖ్యత — Importance and glory of the Telugu language",
+                            "స్త్రీ విద్య — Women's education and empowerment in modern India",
+                            "పర్యావరణ సంరక్షణ — Environmental conservation and climate change",
+                            "ప్రజాస్వామ్యం — Democracy: strengths, challenges, and responsibilities",
+                            "నీటి సమస్య — Water scarcity: causes, impact, and management",
+                            "సాంకేతిక పరిజ్ఞానం — Technology and its impact on society",
+                            "గ్రామీణాభివృద్ధి — Rural development and upliftment",
+                            "మాదక ద్రవ్యాల దుష్ప్రభావం — Ill effects of drug abuse on youth",
+                            "జాతీయ సమైక్యత — National integration and unity in diversity",
+                            "యువత పాత్ర — Role of youth in nation building",
+                        ],
+                    },
+                    "essay_language": {
+                        "title": "Useful Phrases for Essays",
+                        "meta": "Essay • Language Bank",
+                        "points": [
+                            "మొదట / అన్నింటికంటే ముందుగా — Firstly / To begin with",
+                            "అదే విధంగా / అలాగే — Similarly / In the same way",
+                            "అయినప్పటికీ / అయినా — However / Nevertheless",
+                            "కాబట్టి / అందుకే — Therefore / Hence",
+                            "పైన చెప్పిన విషయాలను బట్టి — Based on the above points",
+                            "సమాజంలో మార్పు తీసుకురావాలంటే — To bring change in society",
+                            "ప్రభుత్వం తగిన చర్యలు తీసుకోవాలి — The government must take appropriate steps",
+                            "ముగింపుగా చెప్పాలంటే — In conclusion / To sum up",
+                        ],
+                    },
+                },
+            },
+        },
+    },
+}
+
+
+async def telugu(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "telugu.html", {
+        "structure_json": json.dumps(TELUGU_STRUCTURE),
+        "current_user": user,
+        "user_id": user["id"],
     })
 
 
@@ -1617,11 +2687,18 @@ def _ca_days_for_month(year: int, month: int) -> list[int]:
 
 
 async def current_affairs(request: Request):
-    return templates.TemplateResponse(request, "current_affairs.html")
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "current_affairs.html", {
+        "current_user": user,
+    })
 
 
 async def api_ca_content(request: Request):
     """Return raw markdown for a given date, or 404 if not found."""
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
     date = request.path_params["date"]
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
         return PlainTextResponse("Invalid date format.", status_code=400)
@@ -1633,6 +2710,8 @@ async def api_ca_content(request: Request):
 
 async def api_ca_month(request: Request):
     """Return list of day numbers (int) that have CA content for year/month."""
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
     try:
         year  = int(request.path_params["year"])
         month = int(request.path_params["month"])
@@ -1642,32 +2721,1139 @@ async def api_ca_month(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Progress API — 1-4-7 revision tracker
+# ---------------------------------------------------------------------------
+
+def _progress_con():
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    return con
+
+
+async def api_mark_studied(request: Request):
+    """POST {topic_id, subject, topic_title} — upsert topic_progress + auto-link shared twins."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+
+    topic_id    = str(body.get("topic_id", "")).strip()
+    subject     = str(body.get("subject", "")).strip()
+    topic_title = str(body.get("topic_title", "")).strip()
+    if not topic_id or not subject:
+        return JSONResponse({"error": "topic_id and subject required"}, status_code=400)
+
+    today_str = date.today().isoformat()
+    con = _progress_con()
+
+    def _upsert(uid, tid, subj, title):
+        existing = con.execute(
+            "SELECT id, first_studied, study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
+            (uid, tid)
+        ).fetchone()
+        if existing:
+            con.execute(
+                "UPDATE topic_progress SET last_studied=?, study_count=study_count+1 WHERE user_id=? AND topic_id=?",
+                (today_str, uid, tid)
+            )
+            return dict(existing)["first_studied"]
+        else:
+            con.execute(
+                "INSERT INTO topic_progress (user_id, topic_id, subject, topic_title, first_studied, last_studied, study_count) VALUES (?,?,?,?,?,?,1)",
+                (uid, tid, subj, title, today_str, today_str)
+            )
+            return today_str
+
+    first_studied = _upsert(user["id"], topic_id, subject, topic_title)
+
+    # Auto-link shared twins — mark them studied too (same first_studied date)
+    twins = SHARED_TOPICS.get(topic_id, [])
+    for twin in twins:
+        twin_subj = "g2" if twin["id"].startswith(("scr-", "p1-", "p2-")) else "g1"
+        _upsert(user["id"], twin["id"], twin_subj, twin["label"])
+
+    con.commit()
+    existing_row = con.execute(
+        "SELECT study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    con.close()
+    return JSONResponse({"ok": True, "first_studied": first_studied, "study_count": existing_row["study_count"]})
+
+
+async def api_mark_revised(request: Request):
+    """POST {topic_id, revision_number} — record a completed revision."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+
+    topic_id        = str(body.get("topic_id", "")).strip()
+    revision_number = int(body.get("revision_number", 0))
+    if not topic_id or revision_number not in (1, 2, 3):
+        return JSONResponse({"error": "topic_id and revision_number (1/2/3) required"}, status_code=400)
+
+    con = _progress_con()
+    try:
+        con.execute(
+            "INSERT OR IGNORE INTO revision_log (user_id, topic_id, revision_number) VALUES (?,?,?)",
+            (user["id"], topic_id, revision_number)
+        )
+        con.commit()
+    finally:
+        con.close()
+    return JSONResponse({"ok": True})
+
+
+async def api_due_today(request: Request):
+    """GET — return topics where the next scheduled revision is due today or overdue."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+
+    today = date.today()
+    con = _progress_con()
+
+    rows = con.execute(
+        "SELECT topic_id, subject, topic_title, first_studied FROM topic_progress WHERE user_id=?",
+        (user["id"],)
+    ).fetchall()
+
+    done_rows = con.execute(
+        "SELECT topic_id, revision_number FROM revision_log WHERE user_id=?",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+
+    done_set = {(r["topic_id"], r["revision_number"]) for r in done_rows}
+    due_offsets = {1: 1, 2: 4, 3: 7}  # revision_number -> days after first_studied
+
+    results = []
+    for row in rows:
+        try:
+            first = date.fromisoformat(row["first_studied"])
+        except Exception:
+            continue
+        for rev_num, offset in due_offsets.items():
+            if (row["topic_id"], rev_num) in done_set:
+                continue
+            due_date = first + timedelta(days=offset)
+            if due_date <= today:
+                days_overdue = (today - due_date).days
+                results.append({
+                    "topic_id":       row["topic_id"],
+                    "subject":        row["subject"],
+                    "topic_title":    row["topic_title"],
+                    "revision_number": rev_num,
+                    "due_date":       due_date.isoformat(),
+                    "days_overdue":   days_overdue,
+                })
+            break  # only show the earliest pending revision per topic
+
+    results.sort(key=lambda x: (x["days_overdue"], x["topic_id"]), reverse=True)
+    return JSONResponse({"due": results})
+
+
+async def api_batch_status(request: Request):
+    """GET ?ids=id1,id2,... — return study status for each topic_id."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({})
+
+    raw = request.query_params.get("ids", "")
+    ids = [i.strip() for i in raw.split(",") if i.strip()]
+    if not ids:
+        return JSONResponse({})
+
+    con = _progress_con()
+    placeholders = ",".join("?" * len(ids))
+    prog_rows = con.execute(
+        f"SELECT topic_id, first_studied, study_count FROM topic_progress WHERE user_id=? AND topic_id IN ({placeholders})",
+        [user["id"]] + ids
+    ).fetchall()
+    rev_rows = con.execute(
+        f"SELECT topic_id, revision_number FROM revision_log WHERE user_id=? AND topic_id IN ({placeholders})",
+        [user["id"]] + ids
+    ).fetchall()
+    con.close()
+
+    status = {}
+    for r in prog_rows:
+        status[r["topic_id"]] = {"first_studied": r["first_studied"], "study_count": r["study_count"], "revisions_done": []}
+    for r in rev_rows:
+        if r["topic_id"] in status:
+            status[r["topic_id"]]["revisions_done"].append(r["revision_number"])
+
+    return JSONResponse(status)
+
+
+async def api_progress_summary(request: Request):
+    """GET — overall progress stats for the logged-in user."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"total_studied": 0, "mastered": 0, "streak_days": 0, "by_subject": {}})
+
+    con = _progress_con()
+    prog_rows = con.execute(
+        "SELECT topic_id, subject, first_studied, last_studied FROM topic_progress WHERE user_id=?",
+        (user["id"],)
+    ).fetchall()
+    rev_rows = con.execute(
+        "SELECT topic_id FROM revision_log WHERE user_id=? GROUP BY topic_id HAVING COUNT(DISTINCT revision_number)=3",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+
+    mastered_set = {r["topic_id"] for r in rev_rows}
+    by_subject = {}
+    study_dates = set()
+    for r in prog_rows:
+        subj = r["subject"]
+        by_subject[subj] = by_subject.get(subj, 0) + 1
+        if r["last_studied"]:
+            study_dates.add(r["last_studied"])
+
+    # Streak: consecutive days up to and including today
+    today = date.today()
+    streak = 0
+    check = today
+    while check.isoformat() in study_dates:
+        streak += 1
+        check -= timedelta(days=1)
+
+    return JSONResponse({
+        "total_studied": len(prog_rows),
+        "mastered":      len(mastered_set),
+        "streak_days":   streak,
+        "by_subject":    by_subject,
+    })
+
+
+# ---------------------------------------------------------------------------
+# Dashboard
+# ---------------------------------------------------------------------------
+
+async def dashboard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "dashboard.html", {
+        "current_user": user,
+        "today": date.today().isoformat(),
+    })
+
+
+# ---------------------------------------------------------------------------
+# Admin Panel
+# ---------------------------------------------------------------------------
+
+async def admin_page(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return RedirectResponse("/", status_code=302)
+    return templates.TemplateResponse(request, "admin.html", {
+        "current_user": user
+    })
+
+async def api_admin_users(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    rows = con.execute("SELECT id, username, display_name, email, role, created_at FROM users ORDER BY created_at DESC").fetchall()
+    con.close()
+    return JSONResponse([dict(r) for r in rows])
+
+async def api_admin_delete_user(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    uid = request.path_params["id"]
+    con = sqlite3.connect(DB_PATH)
+    con.execute("DELETE FROM users WHERE id = ?", (uid,))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+async def api_admin_role_user(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    uid = request.path_params["id"]
+    body = await request.json()
+    new_role = str(body.get("role", "student")).strip()
+    
+    con = sqlite3.connect(DB_PATH)
+    con.execute("UPDATE users SET role = ? WHERE id = ?", (new_role, uid))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+async def api_admin_ca_list(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    files = []
+    if CA_DIR.exists():
+        for f in CA_DIR.glob("*.md"):
+            files.append(f.name)
+    files.sort(reverse=True)
+    return JSONResponse({"files": files})
+
+async def api_admin_ca_save(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    body = await request.json()
+    date_str = str(body.get("date", "")).strip()
+    content = str(body.get("content", ""))
+    
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date format"}, status_code=400)
+        
+    CA_DIR.mkdir(parents=True, exist_ok=True)
+    ca_file = CA_DIR / f"{date_str}.md"
+    ca_file.write_text(content, encoding="utf-8")
+    return JSONResponse({"ok": True})
+
+async def api_admin_ca_delete(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    date_str = request.path_params["date"]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date format"}, status_code=400)
+        
+    ca_file = CA_DIR / f"{date_str}.md"
+    if ca_file.exists():
+        ca_file.unlink()
+    return JSONResponse({"ok": True})
+
+
+# ---------------------------------------------------------------------------
+# Auth route handlers
+# ---------------------------------------------------------------------------
+
+_USERNAME_RE = re.compile(r'^[a-zA-Z0-9_\-]{3,20}$')
+
+
+async def login_page(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    registered = request.query_params.get("registered") == "1"
+    
+    err_code = request.query_params.get("error")
+    error_msg = None
+    if err_code == "oauth_not_configured":
+        error_msg = "Google login is currently disabled. Please use username/password."
+    elif err_code == "oauth_failed":
+        error_msg = "Google login failed. Please try again."
+    elif err_code == "invalid_state":
+        error_msg = "Invalid session state. Please try again."
+    elif err_code == "no_email":
+        error_msg = "Google account did not provide an email address."
+        
+    return templates.TemplateResponse(request, "login.html", {
+        "current_user": None,
+        "error": error_msg,
+        "registered": registered,
+    })
+
+
+async def login_post(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    form = await request.form()
+    raw_username = str(form.get("username", "")).strip().lower()
+    password     = str(form.get("password", ""))
+    # Strip @groupsguru.in if user typed the full address
+    username = raw_username.replace("@groupsguru.in", "")
+
+    user = db_get_user_by_username(username)
+    if user and user["is_active"] and verify_password(password, user["password_hash"]):
+        request.session["user_id"]  = user["id"]
+        request.session["username"] = user["username"]
+        request.session["role"]     = user["role"]
+        return RedirectResponse("/dashboard", status_code=302)
+
+    return templates.TemplateResponse(request, "login.html", {
+        "current_user": None,
+        "error": "Invalid username or password.",
+        "registered": False,
+    }, status_code=200)
+
+
+async def register_page(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    return templates.TemplateResponse(request, "register.html", {
+        "current_user": None,
+        "error": None,
+    })
+
+
+async def register_post(request: Request):
+    if get_current_user(request):
+        return RedirectResponse("/", status_code=302)
+    form = await request.form()
+    username     = str(form.get("username", "")).strip().lower()
+    display_name = str(form.get("display_name", "")).strip()
+    email        = str(form.get("email", "")).strip()
+    password     = str(form.get("password", ""))
+    confirm_pwd  = str(form.get("confirm_password", ""))
+
+    def fail(msg):
+        return templates.TemplateResponse(request, "register.html", {
+            "current_user": None,
+            "error": msg,
+            "vals": {"username": username, "display_name": display_name, "email": email},
+        }, status_code=200)
+
+    if not _USERNAME_RE.match(username):
+        return fail("Username must be 3–20 characters: letters, numbers, _ or - only.")
+    if not display_name:
+        return fail("Display name is required.")
+    if len(password) < 8:
+        return fail("Password must be at least 8 characters.")
+    if password != confirm_pwd:
+        return fail("Passwords do not match.")
+    if db_username_taken(username):
+        return fail(f"Username '{username}' is already taken. Please choose another.")
+
+    db_create_user(username, display_name, email, password)
+    return RedirectResponse("/login?registered=1", status_code=302)
+
+
+async def logout(request: Request):
+    request.session.clear()
+    return RedirectResponse("/", status_code=302)
+
+
+async def forgot_password_page(request: Request):
+    return templates.TemplateResponse(request, "forgot_password.html", {
+        "current_user": get_current_user(request),
+        "error": None,
+        "success": None,
+    })
+
+
+async def forgot_password_post(request: Request):
+    form = await request.form()
+    email_addr = str(form.get("email", "")).strip()
+    
+    user = db_get_user_by_email(email_addr)
+    if user and EMAIL_USER and EMAIL_PASS:
+        token = secrets.token_urlsafe(32)
+        expires = (datetime.utcnow() + timedelta(hours=1)).isoformat()
+        
+        con = sqlite3.connect(DB_PATH)
+        con.execute("INSERT INTO password_resets (token, user_id, expires_at) VALUES (?, ?, ?)", (token, user['id'], expires))
+        con.commit()
+        con.close()
+        
+        reset_url = str(request.base_url).rstrip("/") + "/reset-password?token=" + token
+        
+        msg = EmailMessage()
+        msg.set_content(f"Hi {user['display_name']},\n\nClick the link below to reset your password:\n\n{reset_url}\n\nThis link expires in 1 hour.")
+        msg['Subject'] = 'GroupsGuru Password Reset'
+        msg['From'] = EMAIL_USER
+        msg['To'] = email_addr
+        
+        try:
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+                smtp.login(EMAIL_USER, EMAIL_PASS)
+                smtp.send_message(msg)
+        except Exception as e:
+            print(f"Failed to send email: {e}")
+            
+    # Always return success to prevent email enumeration
+    return templates.TemplateResponse(request, "forgot_password.html", {
+        "current_user": get_current_user(request),
+        "error": None,
+        "success": "If an account exists with that email, a password reset link has been sent.",
+    })
+
+
+async def reset_password_page(request: Request):
+    token = request.query_params.get("token")
+    return templates.TemplateResponse(request, "reset_password.html", {
+        "current_user": None,
+        "error": None,
+        "token": token,
+    })
+
+
+async def reset_password_post(request: Request):
+    form = await request.form()
+    token = str(form.get("token", ""))
+    new_pwd = str(form.get("new_password", ""))
+    confirm_pwd = str(form.get("confirm_password", ""))
+    
+    def fail(msg):
+        return templates.TemplateResponse(request, "reset_password.html", {
+            "current_user": None,
+            "error": msg,
+            "token": token,
+        })
+        
+    if new_pwd != confirm_pwd:
+        return fail("Passwords do not match.")
+    if len(new_pwd) < 8:
+        return fail("Password must be at least 8 characters.")
+        
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    row = con.execute("SELECT * FROM password_resets WHERE token = ?", (token,)).fetchone()
+    
+    if not row or datetime.fromisoformat(row['expires_at']) < datetime.utcnow():
+        con.close()
+        return fail("Invalid or expired reset link.")
+        
+    con.execute("UPDATE users SET password_hash = ? WHERE id = ?", (hash_password(new_pwd), row['user_id']))
+    con.execute("DELETE FROM password_resets WHERE token = ?", (token,))
+    con.commit()
+    con.close()
+    
+    return RedirectResponse("/login?reset=1", status_code=302)
+
+
+async def login_google(request: Request):
+    if not GOOGLE_CLIENT_ID:
+        return RedirectResponse("/login?error=oauth_not_configured", status_code=302)
+    
+    state = secrets.token_urlsafe(16)
+    request.session["oauth_state"] = state
+    redirect_uri = str(request.base_url).rstrip("/") + "/auth/google/callback"
+    params = {
+        "client_id": GOOGLE_CLIENT_ID,
+        "redirect_uri": redirect_uri,
+        "response_type": "code",
+        "scope": "openid email profile",
+        "access_type": "online",
+        "prompt": "select_account",
+        "state": state
+    }
+    url = "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode(params)
+    return RedirectResponse(url)
+
+
+async def auth_google_callback(request: Request):
+    code = request.query_params.get("code")
+    state = request.query_params.get("state")
+    saved_state = request.session.pop("oauth_state", None)
+
+    if not code or not state or state != saved_state:
+        return RedirectResponse("/login?error=invalid_state", status_code=302)
+        
+    redirect_uri = str(request.base_url).rstrip("/") + "/auth/google/callback"
+    
+    async with httpx.AsyncClient() as client:
+        token_resp = await client.post("https://oauth2.googleapis.com/token", data={
+            "client_id": GOOGLE_CLIENT_ID,
+            "client_secret": GOOGLE_CLIENT_SECRET,
+            "code": code,
+            "grant_type": "authorization_code",
+            "redirect_uri": redirect_uri
+        })
+        token_data = token_resp.json()
+        access_token = token_data.get("access_token")
+        
+        if not access_token:
+            return RedirectResponse("/login?error=oauth_failed", status_code=302)
+            
+        user_resp = await client.get("https://www.googleapis.com/oauth2/v2/userinfo", headers={
+            "Authorization": f"Bearer {access_token}"
+        })
+        user_info = user_resp.json()
+        
+    email = user_info.get("email")
+    if not email:
+        return RedirectResponse("/login?error=no_email", status_code=302)
+        
+    # Check if user exists by email
+    user = db_get_user_by_email(email)
+    
+    # If not, auto-create account based on google email
+    if not user:
+        username_base = email.split("@")[0].lower()
+        username_base = re.sub(r'[^a-z0-9_-]', '', username_base)
+        username = username_base
+        
+        con = sqlite3.connect(DB_PATH)
+        # Ensure unique username
+        suffix = 1
+        while con.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone():
+            username = f"{username_base}{suffix}"
+            suffix += 1
+            
+        display_name = user_info.get("name", username)
+        
+        con.execute(
+            "INSERT INTO users (username, display_name, email, password_hash) VALUES (?,?,?,?)",
+            (username, display_name, email, hash_password(secrets.token_urlsafe(20))), # random password
+        )
+        con.commit()
+        con.close()
+        
+        user = db_get_user_by_email(email)
+        
+    request.session["user_id"]  = user["id"]
+    request.session["username"] = user["username"]
+    request.session["role"]     = user["role"]
+    
+    return RedirectResponse("/dashboard", status_code=302)
+
+
+async def change_password_page(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "change_password.html", {
+        "current_user": user,
+        "error": None,
+        "success": None,
+    })
+
+
+async def change_password_post(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+
+    form        = await request.form()
+    current_pwd = str(form.get("current_password", ""))
+    new_pwd     = str(form.get("new_password", ""))
+    confirm_pwd = str(form.get("confirm_password", ""))
+
+    def fail(msg):
+        return templates.TemplateResponse(request, "change_password.html", {
+            "current_user": user,
+            "error": msg,
+            "success": None,
+        }, status_code=200)
+
+    db_user = db_get_user_by_username(user["username"])
+    if not db_user or not verify_password(current_pwd, db_user["password_hash"]):
+        return fail("Current password is incorrect.")
+    if len(new_pwd) < 8:
+        return fail("New password must be at least 8 characters.")
+    if new_pwd != confirm_pwd:
+        return fail("New passwords do not match.")
+
+    db_update_password(user["id"], new_pwd)
+    return templates.TemplateResponse(request, "change_password.html", {
+        "current_user": user,
+        "error": None,
+        "success": "Password changed successfully.",
+    }, status_code=200)
+
+
+# ---------------------------------------------------------------------------
+# Global Search
+# ---------------------------------------------------------------------------
+
+async def api_search(request: Request):
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    q = (request.query_params.get("q") or "").strip().lower()
+    if len(q) < 2:
+        return JSONResponse([])
+
+    results = []  # list of {subject, stage, topic_title, topic_id, snippet, url}
+
+    def match_points(points, query):
+        """Return first matching point as a snippet, or None."""
+        for p in points:
+            if query in p.lower():
+                return p
+        return None
+
+    # --- G1 ---
+    for stage_key, stage in G1_STRUCTURE.items():
+        for section in stage["sections"]:
+            for topic in section["topics"]:
+                title_match = q in topic["title"].lower()
+                snippet = match_points(topic["points"], q)
+                if title_match or snippet:
+                    results.append({
+                        "subject": "Group I",
+                        "stage": stage["label"],
+                        "topic_title": topic["title"],
+                        "topic_id": topic["id"],
+                        "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                        "url": "/group1",
+                    })
+
+    # --- G2 ---
+    for stage_key, stage in G2_STRUCTURE.items():
+        for section in stage["sections"]:
+            for topic in section["topics"]:
+                title_match = q in topic["title"].lower()
+                snippet = match_points(topic["points"], q)
+                if title_match or snippet:
+                    results.append({
+                        "subject": "Group II",
+                        "stage": stage["label"],
+                        "topic_title": topic["title"],
+                        "topic_id": topic["id"],
+                        "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                        "url": "/group2",
+                    })
+
+    # --- Aptitude ---
+    for section in APT_STRUCTURE["sections"]:
+        for topic in section["topics"]:
+            title_match = q in topic["title"].lower()
+            snippet = match_points(topic["points"], q)
+            if title_match or snippet:
+                results.append({
+                    "subject": "Aptitude",
+                    "stage": topic.get("exam", "General"),
+                    "topic_title": topic["title"],
+                    "topic_id": topic["id"],
+                    "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                    "url": "/aptitude",
+                })
+
+    # --- Telugu ---
+    for tab_key, tab_data in TELUGU_STRUCTURE.items():
+        for sec_key, sec in tab_data["sections"].items():
+            for topic_key, topic in sec["topics"].items():
+                title_match = q in topic["title"].lower()
+                snippet = match_points(topic["points"], q)
+                if title_match or snippet:
+                    results.append({
+                        "subject": "Telugu",
+                        "stage": sec["label"],
+                        "topic_title": topic["title"],
+                        "topic_id": f"telugu:{tab_key}:{sec_key}:{topic_key}",
+                        "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                        "url": "/telugu",
+                    })
+    # --- Current Affairs (markdown files) ---
+    if CA_DIR.exists():
+        for md_file in sorted(CA_DIR.glob("*.md"), reverse=True):
+            try:
+                content = md_file.read_text(encoding="utf-8")
+            except Exception:
+                continue
+            date_str = md_file.stem  # e.g. "2026-04-14"
+            lines = content.split("\n")
+            heading = ""
+            for line in lines:
+                stripped = line.strip()
+                if stripped.startswith("## "):
+                    heading = stripped[3:].strip()
+                elif q in stripped.lower() and stripped and not stripped.startswith("#"):
+                    # Clean up the bullet text for display
+                    clean = stripped.lstrip("-*• ").strip()
+                    results.append({
+                        "subject": "Current Affairs",
+                        "stage": heading or date_str,
+                        "topic_title": date_str,
+                        "topic_id": f"ca:{date_str}",
+                        "snippet": clean,
+                        "url": "/current-affairs",
+                    })
+            # Stop after scanning last 30 CA files to keep it fast
+            if len([f for f in CA_DIR.glob("*.md")]) > 30:
+                break
+
+    return JSONResponse(results[:50])  # cap at 50
+
+
+# ── Content Notes API ────────────────────────────────────────────────────────
+NOTES_DIR = FILES_DIR / "content" / "topics"
+
+async def api_get_content(request: Request):
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    if not re.match(r'^[a-z0-9-]+$', topic_id):
+        return JSONResponse({"available": False})
+
+    # Direct file check
+    direct = NOTES_DIR / f"{topic_id}.md"
+    if direct.exists():
+        return JSONResponse({"available": True, "content": direct.read_text("utf-8")})
+
+    # Twin fallback via SHARED_TOPICS
+    for twin in SHARED_TOPICS.get(topic_id, []):
+        twin_file = NOTES_DIR / f"{twin['id']}.md"
+        if twin_file.exists():
+            return JSONResponse({
+                "available": True,
+                "content": twin_file.read_text("utf-8"),
+                "source": twin["label"],
+            })
+
+    return JSONResponse({"available": False, "content": None})
+
+
+# ── Highlights API ────────────────────────────────────────────────────────────
+
+async def api_get_highlights(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute(
+        "SELECT highlights_json FROM topic_highlights WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    con.close()
+    return JSONResponse({"highlights": json.loads(row[0]) if row else []})
+
+
+async def api_save_highlights(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    highlights = body.get("highlights", [])
+    con = sqlite3.connect(DB_PATH)
+    con.execute("""
+        INSERT INTO topic_highlights (user_id, topic_id, highlights_json, updated_at)
+        VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+        ON CONFLICT(user_id, topic_id) DO UPDATE SET
+            highlights_json=excluded.highlights_json,
+            updated_at=CURRENT_TIMESTAMP
+    """, (user["id"], topic_id, json.dumps(highlights)))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+# ── Personal Notes API ────────────────────────────────────────────────────────
+
+async def api_get_user_notes(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute(
+        "SELECT content FROM topic_user_notes WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    con.close()
+    return JSONResponse({"content": row[0] if row else ""})
+
+
+async def api_save_user_notes(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    content = body.get("content", "")
+    con = sqlite3.connect(DB_PATH)
+    con.execute("""
+        INSERT INTO topic_user_notes (user_id, topic_id, content, updated_at)
+        VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+        ON CONFLICT(user_id, topic_id) DO UPDATE SET
+            content=excluded.content,
+            updated_at=CURRENT_TIMESTAMP
+    """, (user["id"], topic_id, content))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+# ── Flashcards API ────────────────────────────────────────────────────────────
+
+async def api_get_flashcards(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT id, front, back, created_at FROM flashcards WHERE user_id=? AND topic_id=? ORDER BY id",
+        (user["id"], topic_id)
+    ).fetchall()
+    con.close()
+    return JSONResponse({"cards": [{"id": r[0], "front": r[1], "back": r[2], "created_at": r[3]} for r in rows]})
+
+
+async def api_create_flashcard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    front = (body.get("front") or "").strip()
+    back = (body.get("back") or "").strip()
+    if not front:
+        return JSONResponse({"error": "front is required"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    cur = con.execute(
+        "INSERT INTO flashcards (user_id, topic_id, front, back) VALUES (?, ?, ?, ?)",
+        (user["id"], topic_id, front, back)
+    )
+    card_id = cur.lastrowid
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True, "id": card_id})
+
+
+async def api_update_flashcard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    card_id = int(request.path_params["id"])
+    body = await request.json()
+    back = (body.get("back") or "")
+    con = sqlite3.connect(DB_PATH)
+    con.execute(
+        "UPDATE flashcards SET back=? WHERE id=? AND user_id=?",
+        (back, card_id, user["id"])
+    )
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+async def api_delete_flashcard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    card_id = int(request.path_params["id"])
+    con = sqlite3.connect(DB_PATH)
+    con.execute("DELETE FROM flashcards WHERE id=? AND user_id=?", (card_id, user["id"]))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+# ── Paragraph Pins API ────────────────────────────────────────────────────────
+
+async def api_get_pins(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT para_index, para_text FROM paragraph_pins WHERE user_id=? AND topic_id=? ORDER BY para_index",
+        (user["id"], topic_id)
+    ).fetchall()
+    con.close()
+    return JSONResponse({"pins": [{"para_index": r[0], "para_text": r[1]} for r in rows]})
+
+
+async def api_toggle_pin(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    para_index = int(body.get("para_index", -1))
+    para_text = (body.get("para_text") or "").strip()
+    con = sqlite3.connect(DB_PATH)
+    existing = con.execute(
+        "SELECT id FROM paragraph_pins WHERE user_id=? AND topic_id=? AND para_index=?",
+        (user["id"], topic_id, para_index)
+    ).fetchone()
+    if existing:
+        con.execute("DELETE FROM paragraph_pins WHERE user_id=? AND topic_id=? AND para_index=?",
+                    (user["id"], topic_id, para_index))
+        action = "removed"
+    else:
+        con.execute(
+            "INSERT INTO paragraph_pins (user_id, topic_id, para_index, para_text) VALUES (?, ?, ?, ?)",
+            (user["id"], topic_id, para_index, para_text)
+        )
+        action = "added"
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True, "action": action})
+
+
+async def api_all_pins(request: Request):
+    """All pins for the current user across all topics — for Last-Day Revision page."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT topic_id, para_index, para_text, created_at FROM paragraph_pins WHERE user_id=? ORDER BY topic_id, para_index",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+    # Group by topic_id
+    grouped: dict = {}
+    for topic_id, para_index, para_text, created_at in rows:
+        grouped.setdefault(topic_id, []).append({"para_index": para_index, "para_text": para_text})
+    return JSONResponse({"pins": grouped})
+
+
+# ── Topic Status API (for revision badge) ─────────────────────────────────────
+
+async def api_topic_status(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    prog = con.execute(
+        "SELECT first_studied, last_studied, study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    revs = con.execute(
+        "SELECT revision_number FROM revision_log WHERE user_id=? AND topic_id=? ORDER BY revision_number",
+        (user["id"], topic_id)
+    ).fetchall()
+    con.close()
+    if not prog:
+        return JSONResponse({"studied": False})
+    from datetime import date as _date, timedelta
+    first_studied = _date.fromisoformat(prog[0])
+    last_studied = _date.fromisoformat(prog[1])
+    today = _date.today()
+    days_since = (today - last_studied).days
+    revs_done = [r[0] for r in revs]
+    # 1-4-7 schedule
+    schedule = {1: first_studied + timedelta(days=1),
+                2: first_studied + timedelta(days=4),
+                3: first_studied + timedelta(days=7)}
+    next_due = None
+    next_rev_num = None
+    for rev_num in [1, 2, 3]:
+        if rev_num not in revs_done:
+            due_date = schedule[rev_num]
+            next_due = due_date.isoformat()
+            next_rev_num = rev_num
+            days_until = (due_date - today).days
+            break
+    else:
+        days_until = None
+    return JSONResponse({
+        "studied": True,
+        "first_studied": prog[0],
+        "last_studied": prog[1],
+        "days_since_studied": days_since,
+        "study_count": prog[2],
+        "revisions_done": revs_done,
+        "next_revision_due": next_due,
+        "next_revision_num": next_rev_num,
+        "days_until_revision": days_until,
+    })
+
+
+# ── Last-Day Revision Page ────────────────────────────────────────────────────
+
+async def last_day_revision(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "last_day_revision.html", {
+        "current_user": user,
+    })
+
+# ── Dedicated Study Desk ──────────────────────────────────────────────────────
+
+async def study_desk(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    topic_id = request.path_params["topic_id"]
+    return templates.TemplateResponse(request, "study_desk.html", {
+        "current_user": user,
+        "user_id": user["id"],
+        "topic_id": topic_id,
+    })
+
+
+# ---------------------------------------------------------------------------
 # Routing table
 # ---------------------------------------------------------------------------
 
 routes = [
-    Route("/",                              homepage),
-    Route("/group1",                        group1),
-    Route("/group2",                        group2),
-    Route("/police-si",                     police_si),
-    Route("/job-calendar",                  job_calendar),
-    Route("/current-affairs",              current_affairs),
-    Route("/aptitude",                      aptitude),
-    Route("/api/ca/content/{date}",         api_ca_content),
-    Route("/api/ca/month/{year}/{month}",   api_ca_month),
+    Route("/",                                    homepage),
+    Route("/dashboard",                           dashboard),
+    Route("/group1",                              group1),
+    Route("/group2",                              group2),
+    Route("/current-affairs",                    current_affairs),
+    Route("/aptitude",                            aptitude),
+    Route("/telugu",                              telugu),
+    Route("/login",                               login_page,              methods=["GET"]),
+    Route("/login",                               login_post,              methods=["POST"]),
+    Route("/login/google",                        login_google,            methods=["GET"]),
+    Route("/auth/google/callback",                auth_google_callback,    methods=["GET"]),
+    Route("/register",                            register_page,           methods=["GET"]),
+    Route("/register",                            register_post,           methods=["POST"]),
+    Route("/logout",                              logout),
+    Route("/forgot-password",                     forgot_password_page,    methods=["GET"]),
+    Route("/forgot-password",                     forgot_password_post,    methods=["POST"]),
+    Route("/reset-password",                      reset_password_page,     methods=["GET"]),
+    Route("/reset-password",                      reset_password_post,     methods=["POST"]),
+    Route("/change-password",                    change_password_page,    methods=["GET"]),
+    Route("/change-password",                    change_password_post,    methods=["POST"]),
+    Route("/api/ca/content/{date}",               api_ca_content),
+    Route("/api/ca/month/{year}/{month}",         api_ca_month),
+    Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
+    Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
+    Route("/api/progress/due-today",              api_due_today),
+    Route("/api/progress/batch-status",           api_batch_status),
+    Route("/api/progress/summary",                api_progress_summary),
+    Route("/admin",                               admin_page),
+    Route("/api/admin/users",                     api_admin_users),
+    Route("/api/admin/users/{id}",                api_admin_delete_user,   methods=["DELETE"]),
+    Route("/api/admin/users/{id}/role",           api_admin_role_user,     methods=["POST"]),
+    Route("/api/admin/ca",                        api_admin_ca_list),
+    Route("/api/admin/ca",                        api_admin_ca_save,       methods=["POST"]),
+    Route("/api/admin/ca/{date}",                 api_admin_ca_delete,     methods=["DELETE"]),
+    Route("/api/search",                          api_search),
+    Route("/api/content/{topic_id}",              api_get_content),
+    Route("/api/highlights/{topic_id}",           api_get_highlights,       methods=["GET"]),
+    Route("/api/highlights/{topic_id}",           api_save_highlights,      methods=["POST"]),
+    Route("/api/user-notes/{topic_id}",           api_get_user_notes,       methods=["GET"]),
+    Route("/api/user-notes/{topic_id}",           api_save_user_notes,      methods=["POST"]),
+    Route("/api/flashcards/{topic_id}",           api_get_flashcards,       methods=["GET"]),
+    Route("/api/flashcards/{topic_id}",           api_create_flashcard,     methods=["POST"]),
+    Route("/api/flashcards/card/{id}",            api_update_flashcard,     methods=["PUT"]),
+    Route("/api/flashcards/card/{id}",            api_delete_flashcard,     methods=["DELETE"]),
+    Route("/api/pins/{topic_id}",                 api_get_pins,             methods=["GET"]),
+    Route("/api/pins/{topic_id}",                 api_toggle_pin,           methods=["POST"]),
+    Route("/api/pins",                            api_all_pins,             methods=["GET"]),
+    Route("/api/progress/topic-status/{topic_id}", api_topic_status,        methods=["GET"]),
+    Route("/last-day-revision",                   last_day_revision),
+    Route("/study-desk/{topic_id}",               study_desk),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]
 
-app = Starlette(routes=routes)
+app = Starlette(
+    routes=routes,
+    middleware=[Middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=False)],
+)
+
+init_db()
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     host = "0.0.0.0" if os.environ.get("RENDER") else "127.0.0.1"
     if not os.environ.get("RENDER"):
         print("=" * 50)
-        print("  APPSC 2026 Website")
+        print("  GroupsGuru — APPSC 2026")
         print("  Open: http://localhost:8000")
+        print("  Admin: admin@groupsguru.in")
         print("  Press Ctrl+C to stop")
         print("=" * 50)
     uvicorn.run(app, host=host, port=port)

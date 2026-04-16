@@ -3,44 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}APPSC 2026{% endblock %}</title>
+    <title>{% block title %}GroupsGuru{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css?v=12">
 </head>
 <body>
 
 <nav class="navbar">
-    <div class="nav-brand">
-        <span class="nav-logo">&#127979;</span>
-        <span class="nav-title">APPSC 2026</span>
-    </div>
-    <button class="nav-toggle" aria-label="Toggle menu"
-            onclick="this.closest('.navbar').classList.toggle('nav-open')">
+    <!-- Hamburger — always LEFT (GroupsGuru pattern) -->
+    <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle">
         <span></span><span></span><span></span>
     </button>
+
+    <!-- Brand — links to home -->
+    <a href="/" class="nav-brand">
+        <span class="nav-title">GroupsGuru</span>
+    </a>
+
+    <!-- Desktop horizontal links (hidden on mobile via CSS) -->
     <ul class="nav-links">
+        {% if current_user %}<li><a href="/dashboard" class="nav-link {% if request.url.path == '/dashboard' %}active{% endif %}">Dashboard</a></li>{% endif %}
+        {% if current_user %}<li><a href="/last-day-revision" class="nav-link {% if request.url.path == '/last-day-revision' %}active{% endif %}">&#11088; Pins</a></li>{% endif %}
         <li><a href="/" class="nav-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
-        <li><a href="/group1" class="nav-link {% if request.url.path == '/group1' %}active{% endif %}">Group 1</a></li>
-        <li><a href="/group2" class="nav-link {% if request.url.path == '/group2' %}active{% endif %}">Group 2</a></li>
-        <li><a href="/police-si" class="nav-link {% if request.url.path == '/police-si' %}active{% endif %}">Police SI</a></li>
-        <li><a href="/job-calendar" class="nav-link {% if request.url.path == '/job-calendar' %}active{% endif %}">Job Calendar</a></li>
+        <li><a href="/group1" class="nav-link {% if request.url.path == '/group1' %}active{% endif %}">Group I</a></li>
+        <li><a href="/group2" class="nav-link {% if request.url.path == '/group2' %}active{% endif %}">Group II</a></li>
         <li><a href="/current-affairs" class="nav-link {% if request.url.path == '/current-affairs' %}active{% endif %}">Current Affairs</a></li>
         <li><a href="/aptitude" class="nav-link {% if request.url.path == '/aptitude' %}active{% endif %}">Aptitude</a></li>
+        <li><a href="/telugu" class="nav-link {% if request.url.path == '/telugu' %}active{% endif %}">Telugu</a></li>
     </ul>
+
+    <!-- Auth area — always visible, pinned top-right -->
+    <div class="nav-auth">
+        <button class="nav-search-btn" id="open-search" aria-label="Search" title="Search (Ctrl+K)">&#128269;</button>
+        {% if current_user %}
+            <a href="/change-password" class="nav-user-badge" title="Change password">{{ current_user.username }}@groupsguru.in</a>
+            <a href="/logout" class="nav-auth-btn nav-auth-logout">Logout</a>
+        {% else %}
+            <a href="/login" class="nav-auth-btn nav-auth-login {% if request.url.path == '/login' %}active{% endif %}">Login</a>
+        {% endif %}
+    </div>
 </nav>
+
+<!-- Backdrop (click to close drawer) -->
+<div class="nav-backdrop" id="nav-backdrop"></div>
+
+<!-- Left slide-out drawer -->
+<div class="nav-drawer" id="nav-drawer">
+    <div class="nav-drawer-header">
+        <a href="/" class="nav-brand">
+            <span class="nav-title">GroupsGuru</span>
+        </a>
+        <button class="nav-close" id="nav-close" aria-label="Close menu">&#10005;</button>
+    </div>
+    <ul class="nav-drawer-links">
+        {% if current_user %}<li><a href="/dashboard" class="nav-drawer-link {% if request.url.path == '/dashboard' %}active{% endif %}">Dashboard</a></li>{% endif %}
+        {% if current_user %}<li><a href="/last-day-revision" class="nav-drawer-link {% if request.url.path == '/last-day-revision' %}active{% endif %}">&#11088; Pins</a></li>{% endif %}
+        <li><a href="/" class="nav-drawer-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="/group1" class="nav-drawer-link {% if request.url.path == '/group1' %}active{% endif %}">Group I</a></li>
+        <li><a href="/group2" class="nav-drawer-link {% if request.url.path == '/group2' %}active{% endif %}">Group II</a></li>
+        <li><a href="/current-affairs" class="nav-drawer-link {% if request.url.path == '/current-affairs' %}active{% endif %}">Current Affairs</a></li>
+        <li><a href="/aptitude" class="nav-drawer-link {% if request.url.path == '/aptitude' %}active{% endif %}">Aptitude</a></li>
+        <li><a href="/telugu" class="nav-drawer-link {% if request.url.path == '/telugu' %}active{% endif %}">Telugu</a></li>
+        {% if current_user %}
+            <li><a href="/change-password" class="nav-drawer-link">Change Password</a></li>
+            <li><a href="/logout" class="nav-drawer-link nav-drawer-logout">Logout</a></li>
+        {% else %}
+            <li><a href="/login" class="nav-drawer-link {% if request.url.path == '/login' %}active{% endif %}">Login</a></li>
+        {% endif %}
+    </ul>
+</div>
+
+<!-- ── Search modal ──────────────────────────────────────────── -->
+<div class="search-overlay" id="search-overlay">
+  <div class="search-modal">
+    <div class="search-input-wrap">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" id="search-input" placeholder="Search syllabus topics…" autocomplete="off" spellcheck="false">
+      <kbd class="search-kbd">ESC</kbd>
+    </div>
+    <div class="search-results" id="search-results">
+      <div class="search-empty">Type at least 2 characters to search across all subjects.</div>
+    </div>
+  </div>
+</div>
 
 <main class="main-content">
     {% block content %}{% endblock %}
 </main>
 
 <script>
-  document.querySelectorAll('.nav-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      document.querySelector('.navbar').classList.remove('nav-open');
-    });
+  const navToggle  = document.getElementById('nav-toggle');
+  const navDrawer  = document.getElementById('nav-drawer');
+  const navBackdrop = document.getElementById('nav-backdrop');
+  const navClose   = document.getElementById('nav-close');
+
+  function openMenu() {
+    navDrawer.classList.add('open');
+    navBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    navDrawer.classList.remove('open');
+    navBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  navToggle.addEventListener('click', openMenu);
+  navBackdrop.addEventListener('click', closeMenu);
+  navClose.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-drawer-link').forEach(function(l) {
+    l.addEventListener('click', closeMenu);
+  });
+
+  // ── Search modal ──────────────────────────────────────────────
+  const searchOverlay = document.getElementById('search-overlay');
+  const searchInput   = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  const openSearchBtn = document.getElementById('open-search');
+  let searchTimer = null;
+
+  function openSearch() {
+    searchOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => searchInput.focus(), 60);
+  }
+  function closeSearch() {
+    searchOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    searchInput.value = '';
+    searchResults.innerHTML = '<div class="search-empty">Type at least 2 characters to search across all subjects.</div>';
+  }
+
+  openSearchBtn.addEventListener('click', openSearch);
+  searchOverlay.addEventListener('click', (e) => {
+    if (e.target === searchOverlay) closeSearch();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { closeMenu(); closeSearch(); }
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+
+  function escHtmlBase(s) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function highlightMatch(text, query) {
+    if (!query) return escHtmlBase(text);
+    const escaped = escHtmlBase(text);
+    const qEsc = escHtmlBase(query);
+    const re = new RegExp('(' + qEsc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+    return escaped.replace(re, '<mark>$1</mark>');
+  }
+
+  const subjectColors = {
+    'Group I': '#FF9933', // Saffron
+    'Group II': '#FF9933', // Saffron
+    'Aptitude': '#304ffe', // Blue
+    'Telugu': '#c62828', // Red
+    'Current Affairs': '#000080', // Navy Blue
+  };
+
+  searchInput.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    const q = searchInput.value.trim();
+    if (q.length < 2) {
+      searchResults.innerHTML = '<div class="search-empty">Type at least 2 characters to search across all subjects.</div>';
+      return;
+    }
+    searchResults.innerHTML = '<div class="search-empty search-loading">Searching…</div>';
+    searchTimer = setTimeout(() => {
+      fetch('/api/search?q=' + encodeURIComponent(q))
+        .then(r => r.json())
+        .then(items => {
+          if (!items.length) {
+            searchResults.innerHTML = '<div class="search-empty">No results found for "' + escHtmlBase(q) + '".</div>';
+            return;
+          }
+          searchResults.innerHTML = items.map(it => {
+            const color = subjectColors[it.subject] || '#aaa';
+            return `
+              <a href="${it.url}" class="search-result-item">
+                <div class="search-result-top">
+                  <span class="search-result-badge" style="background:${color}20;color:${color};border-color:${color}40">${escHtmlBase(it.subject)}</span>
+                  <span class="search-result-stage">${escHtmlBase(it.stage)}</span>
+                </div>
+                <div class="search-result-title">${highlightMatch(it.topic_title, q)}</div>
+                <div class="search-result-snippet">${highlightMatch(it.snippet || '', q)}</div>
+              </a>`;
+          }).join('');
+        })
+        .catch(() => {
+          searchResults.innerHTML = '<div class="search-empty">Search failed. Try again.</div>';
+        });
+    }, 250);
   });
 </script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>

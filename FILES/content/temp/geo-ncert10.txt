@@ -1,0 +1,3879 @@
+--- PAGE 1 ---
+Social Science
+Contemporary
+India
+II
+Textbook in Geography
+for Class X
+Rationalised-2023-24
+
+--- PAGE 2 ---
+1068 – CONTEMPORARY INDIA-II
+ISBN 81-7450-644-6
+Textbook for Class X
+First Edition
+January 2006 Agrahayana 1928 ALL RIGHTS RESERVED
+Reprtined q No part of this publication may be reproduced, stored in a retrieval system or transmitted,
+in any form or by any means, electronic, mechanical, photocopying, recording or otherwise
+December 2007, February 2009, without the prior permission of the publisher.
+January 2010, January 2011, q This book is sold subject to the condition that it shall not, by way of trade, be lent, re-sold,
+January 2012, December 2012, hired out or otherwise disposed of without the publisher’s consent, in any form of binding
+or cover other than that in which it is published.
+November 2013, November 2014,
+q The correct price of this publication is the price printed on this page, Any revised price
+December 2015, December 2016, indicated by a rubber stamp or by a sticker or by any other means is incorrect and should
+January 2018, February 2019, be unacceptable.
+December 2019, January 2021
+OFFICES OF THE PUBLICATION
+November 2021
+DIVISION, NCERT
+Revised Edition NCERT Campus
+November 2022 Agrahayana 1944 Sri Aurobindo Marg
+New Delhi 110 016 Phone : 011-26562708
+108, 100 Feet Road
+PD 410T BS Hosdakere Halli Extension
+Banashankari III Stage
+Bengaluru 560 085 Phone : 080-26725740
+© National Council of Educational
+Research and Training, 2006, 2022
+Navjivan Trust Building
+P.O.Navjivan
+Ahmedabad 380 014 Phone : 079-27541446
+CWC Campus
+Opp. Dhankal Bus Stop
+Panihati
+Kolkata 700 114 Phone : 033-25530454
+CWC Complex
+Maligaon
+Guwahati 781 021 Phone : 0361-2674869
+Publication Team
+` 90.00
+Head, Publication : Anup Kumar Rajput
+Division
+Chief Production : Arun Chitkara
+Officer
+Chief Business : Vipin Dewan
+Manager
+Chief Editor (In charge) : Bijnan Sutar
+Assistant Editor : R. N. Bhardwaj
+Production Assistant : Rajesh Pippal
+Printed on 80 GSM paper with NCERT
+watermark
+Cover, Layout and Illustrations
+Published at the Publication Division by the
+Nidhi Wadhwa
+Secretary, National Council of Educational
+Research and Training, Sri Aurobindo Marg,
+Cartography
+New Delhi 110 016 and printed at Prabhat
+Cartographic Design Agency
+Printing Press, D-23, Industrial Area,
+Site-A, Mathura- 281 001 (U.P.)
+Rationalised-2023-24
+
+--- PAGE 3 ---
+FFFFFooooorrrrreeeeewwwwwooooorrrrrddddd
+The National Curriculum Framework (NCF), 2005, recommends that
+children’s life at school must be linked to their life outside the school.
+This principle marks a departure from the legacy of bookish learning
+which continues to shape our system and causes a gap between the
+school, home and community. The syllabi and textbooks developed on
+the basis of NCF signify an attempt to implement this basic idea. They
+also attempt to discourage rote learning and the maintenance of sharp
+boundaries between different subject areas. We hope these measures
+will take us significantly further in the direction of a child-centred system
+of education outlined in the National Policy on Education (1986).
+The success of this effort depends on the steps that school principals
+and teachers will take to encourage children to reflect on their own
+learning and to pursue imaginative activities and questions. We must
+recognise that, given space, time and freedom, children generate new
+knowledge by engaging with the information passed on to them by adults.
+Treating the prescribed textbook as the sole basis of examination is one
+of the key reasons why other resources and sites of learning are ignored.
+Inculcating creativity and initiative is possible if we perceive and treat
+children as participants in learning, not as receivers of a fixed body of
+knowledge.
+These aims imply considerable change in school routines and mode
+of functioning. Flexibility in the daily time-table is as necessary as rigour
+in implementing the annual calendar so that the required number of
+teaching days are actually devoted to teaching. The methods used for
+teaching and evaluation will also determine how effective this textbook
+proves for making children’s life at school a happy experience, rather
+than a source of stress or boredom. Syllabus designers have tried to
+address the problem of curricular burden by restructuring and
+reorienting knowledge at different stages with greater consideration for
+child psychology and the time available for teaching. The textbook
+attempts to enhance this endeavour by giving higher priority and space
+to opportunities for contemplation and wondering, discussion in small
+groups, and activities requiring hands-on experience.
+The National Council of Educational Research and Training (NCERT)
+appreciates the hard work done by the textbook development committee
+responsible for this book. We wish to thank the Chairperson of the
+advisory committee for textbooks in Social Sciences, at the higher
+secondary level, Professor Hari Vasudevan and the Chief Advisor for this
+book, Professor M.H. Qureshi for guiding the work of this committee.
+Several teachers contributed to the development of this textbook; we are
+grateful to their principals for making this possible. We are indebted to
+Rationalised-2023-24
+
+--- PAGE 4 ---
+the institutions and organisations which have generously permitted us to draw
+upon their resources, material and personnel. We are especially grateful to the
+members of the National Monitoring Committee, appointed by the Department
+of Secondary and Higher Education, Ministry of Human Resource Development
+under the Chairpersonship of Professor Mrinal Miri and Professor G.P.
+Deshpande, for their valuable time and contribution. As an organisation
+committed to systemic reform and continuous improvement in the quality of its
+products, NCERT welcomes comments and suggestions which will enable us to
+undertake further revision and refinement.
+Director
+New Delhi National Council of Educational
+20 November 2006 Research and Training
+iv
+Rationalised-2023-24
+
+--- PAGE 5 ---
+RRRRRaaaaatttttiiiiiooooonnnnnaaaaallllliiiiisssssaaaaatttttiiiiiooooonnnnn ooooofffff CCCCCooooonnnnnttttteeeeennnnnttttt iiiiinnnnn ttttthhhhheeeee TTTTTeeeeexxxxxtttttbbbbbooooooooookkkkk
+In view of the COVID-19 pandemic, it is imperative to reduce
+content load on students. The National Education Policy 2020,
+also emphasises reducing the content load and providing
+opportunities for experiential learning with creative mindset. In
+this background, the NCERT has undertaken the exercise to
+rationalise the textbooks across all classes. Learning Outcomes
+already developed by the NCERT across classes have been taken
+into consideration in this exercise.
+Contents of the textbooks have been rationalised in view of
+the following:
+• Overlapping with similar content included in other subject
+areas in the same class
+• Similar content included in the lower or higher class in
+the same subject
+• Difficulty level
+• Content, which is easily accessible to students without
+much interventions from teachers and can be learned by
+children through self-learning or peer-learning
+• Content, which is irrelevant in the present context
+This present edition, is a reformatted version after carrying
+out the changes given above.
+Rationalised-2023-24
+
+--- PAGE 7 ---
+TTTTTeeeeexxxxxtttttbbbbbooooooooookkkkk dddddeeeeevvvvveeeeelllllooooopppppmmmmmeeeeennnnnttttt cccccooooommmmmmmmmmiiiiitttttttttteeeeeeeeee
+CHAIRPERSON, ADVISORY COMMITTEE FOR TEXTBOOKS IN SOCIAL SCIENCES AT
+THE SECONDARY LEVEL
+Hari Vasudevan, Professor, Department of History, University of
+Calcutta, Kolkata
+CHIEF ADVISOR
+M. H. Qureshi, Professor, Centre for the Study of Regional Development,
+Jawaharlal Nehru University, New Delhi
+ADVISOR
+B. S. Butola, Professor, Centre for the Study of Regional Development,
+Jawaharlal Nehru University, New Delhi
+MEMBERS
+Aparajita De, Lecturer, Department of Geography,
+Delhi School of Economics, University of Delhi, Delhi
+Geeta Duggal, Former Principal, Delhi Public School, Rewari
+Indu Sharma, PGT, Demonstration School RIE, Ajmer
+K. Jaya, PGT, Convent of Jesus and Mary, Bangla Sahib Road, New Delhi
+Punam Behari, Reader, Miranda House, University of Delhi, Delhi
+Saroj Sharma, TGT (Retd.), Mother’s International School,
+Sri Aurobindo Marg, New Delhi
+MEMBER-COORDINATOR
+Aparna Pandey, Lecturer, Department of Education in Social Sciences
+and Humanities, NCERT, New Delhi
+Rationalised-2023-24
+
+--- PAGE 9 ---
+AAAAAccccckkkkknnnnnooooowwwwwllllleeeeedddddgggggeeeeemmmmmeeeeennnnntttttsssss
+The National Council of Educational Research and Training
+acknowledges the support of individuals and organisations as listed
+below for providing various photographs and other materials such as
+articles used in this textbook — Shveta Uppal, NCERT, New Delhi for
+Fig. 1.11, 2.2, 4.3, 4.10, 4.11, 7.3, 7.4, 7.5; Kalyan Banerjee, NCERT,
+New Delhi for Fig. 7.9; Centre for Science and Environment, New Delhi
+for Fig. 2.2 (Endangered : the Nicobar megapode), 3.3, 3.5, 3.6, 3.7,
+4.1, 5.14; CCSHAU, Hisar for Fig. 4.4(a), 4.13; Directorate of Extension,
+Ministry of Agriculture, I.A.R.I. Campus, New Pusa, New Delhi for Fig.
+4.2, 4.4(b), 4.5, 4.6, 4.7, 4.8, 4.9 (Groundnut and Mustard), 4.12 (Apple
+and Pomegranate), 4.15, 4.18; Ministry of Environment and Forests,
+Govt. of India for Fig. 2.1, 5.10, 6.8; Ministry of Coal, Govt. of India for
+Fig. 5.11(a) and (b); Ministry of Mines, Govt. of India for Fig. 5.3, 5.5,
+5.8; Department of Road Transport and Highways, Ministry of Shipping,
+Road Transport and Highways, Govt. of India for Fig. 7.2, 7.10; Ministry
+of Heavy Industries and Public Enterprises, Govt. of India for Fig. 5.12,
+6.3, 6.6, 6.7; Department of Shipping, Ministry of Shipping, Road
+Transport and Highways, Govt. of India for Fig. 7.6, 7.7, 7.8;
+Kurukshetra magazine for collage on page 24; The Times of India for
+collage on page 20, 24, 29, 26, 57, 91; The Hindu for collage on page
+20; Hindustan for collage on page 91; NCERT, Social Science, Part-II,
+Textbook for Class-VIII for Fig. 1.12, 3.2.
+The Council is thankful to the Survey of India for certification of maps
+given in the textbook.
+Acknowledgements are due to Savita Sinha, Professor and Head,
+Department of Education in Social Sciences and Humanities for her
+valuable support at every stage of preparation of this textbook.
+Special thanks are due to Vandana R. Singh, Consultant Editor for
+going through the textbook and for giving useful suggestions.
+The Council also gratefully acknowledges the contributions of
+Ishwar Singh, DTP Operator; Ajay Singh, Copy Editor; Dinesh Kumar,
+Computer Incharge, who have helped in giving a final shape to this book.
+The contribution of the Publication Department, NCERT are also duly
+acknowledged.
+The following are applicable to all the maps of India used in this textbook
+1. © Government of India, Copyright 2006
+2. The responsibility for the correctness of internal details rests with the
+publisher.
+3. The territorial waters of India extend into the sea to a distance of twelve
+nautical miles measured from the appropriate base line.
+Rationalised-2023-24
+
+--- PAGE 10 ---
+4. The administrative headquarters of Chandigarh, Haryana and Punjab are
+at Chandigarh.
+5. The interstate boundaries amongst Arunachal Pradesh, Assam and
+Meghalaya shown on this map are as interpreted from the “North-Eastern
+Areas (Reorganisation) Act.1971,” but have yet to be verified.
+6. The external boundaries and coastlines of India agree with the Record/Master
+Copy certified by Survey of India.
+7. The state boundaries between Uttarakhand & Uttar Pradesh, Bihar &
+Jharkhand and Chhattisgarh & Madhya Pradesh have not been verified by
+the Governments concerned.
+8. The spellings of names in these maps have been taken from various sources.
+School Bhuvan–NCERT an Online web portal
+Web based online e-learning Geo spatial portal School Bhuvan–NCERT has
+been launched by NCERT and ISRO in collaboration to enhance geo spatial
+skills among students. This online e-learning portal includes thematic maps
+given in Geography textbooks. This portal enables students to use Geo-spatial
+technology for better understanding of concepts in Geography. Online activities
+available on the portal as Level 1, Level 2 and Level 3 encourage learners
+from Classes VI to XII to develop neighbourhood maps and their attributes on
+satellite imageries available on School Bhuvan–NCERT.
+x
+Rationalised-2023-24
+
+--- PAGE 11 ---
+CCCCCooooonnnnnttttteeeeennnnntttttsssss
+Foreword iii
+Rationalisation of Content in the Textbooks v
+1. Resources and Development 1
+2. Forest and Wildlife Resources 13
+3. Water Resources 19
+4. Agriculture 30
+5. Minerals and Energy Resources 42
+6. Manufacturing Industries 58
+7. Lifelines of National Economy 71
+Appendix–I 84
+Appendix–II 85
+Glossary 86
+Rationalised-2023-24
+
+--- PAGE 12 ---
+Constitution of India
+Part IV A (Article 51 A)
+Fundamental Duties
+It shall be the duty of every citizen of India —
+(a) to abide by the Constitution and respect its ideals and institutions, the
+National Flag and the National Anthem;
+(b) to cherish and follow the noble ideals which inspired our national struggle
+for freedom;
+(c) to uphold and protect the sovereignty, unity and integrity of India;
+(d) to defend the country and render national service when called upon to
+do so;
+(e) to promote harmony and the spirit of common brotherhood amongst all
+the people of India transcending religious, linguistic and regional or
+sectional diversities; to renounce practices derogatory to the dignity of
+women;
+(f) to value and preserve the rich heritage of our composite culture;
+(g) to protect and improve the natural environment including forests, lakes,
+rivers, wildlife and to have compassion for living creatures;
+(h) to develop the scientific temper, humanism and the spirit of inquiry and
+reform;
+(i) to safeguard public property and to abjure violence;
+(j) to strive towards excellence in all spheres of individual and collective
+activity so that the nation constantly rises to higher levels of endeavour
+and achievement;
+*(k) who is a parent or guardian, to provide opportunities for education to
+his child or, as the case may be, ward between the age of six and
+fourteen years.
+Note: The Article 51A containing Fundamental Duties was inserted by the Constitution
+(42nd Amendment) Act, 1976 (with effect from 3 January 1977).
+*(k) was inserted by the Constitution (86th Amendment) Act, 2002 (with effect from
+1 April 2010).
+Rationalised-2023-24
+
+--- PAGE 13 ---
+The process of transformation of things
+Can you identify and name the various items
+available in our environment involves an
+used in making life comfortable in our villages
+interactive relationship between nature,
+and towns. List the items and name the
+technology and institutions. Human beings
+material used in their making.
+interact with nature through technology and
+create institutions to accelerate their
+Everything available in our environment
+economic development.
+which can be used to satisfy our needs,
+Do you think that resources are free
+provided, it is technologically accessible,
+gifts of nature as is assumed by many?
+economically feasible and culturally
+They are not. Resources are a function of
+acceptable can be termed as ‘Resource’.
+human activities. Human beings themselves
+are essential components of resources. They
+transform material available in our
+environment into resources and use them.
+These resources can be classified in the
+following ways–
+(a) On the basis of origin – biotic and abiotic
+(b) On the basis of exhaustibility – renewable
+and non-renewable
+(c) On the basis of ownership – individual,
+community, national and international
+Fig. 1.1: Interdependent relationship between (d) On the basis of status of development –
+nature, technology and institutions potential, developed stock and reserves.
+Fig. 1.2: Classification of resources
+Rationalised-2023-24
+
+--- PAGE 14 ---
+Prepare a list of stock and reserve, resources Sustainable development
+that you are familiar with from your local area. Sustainable economic development means
+‘development should take place without
+damaging the environment, and development
+DEVELOPMENT OF RESOURCES in the present should not compromise with the
+needs of the future generations.’
+Resources are vital for human survival as well
+as for maintaining the quality of life. It was
+believed that resources are free gifts of nature.
+As a result, human beings used them
+indiscriminately and this has led to the
+Rio de Janeiro Earth Summit, 1992
+following major problems.
+In June 1992, more than 100 heads of states
+• Depletion of resources for satisfying the
+met in Rio de Janeiro in Brazil, for the first
+greed of a few individuals.
+International Earth Summit. The Summit was
+• Accumulation of resources in few hands, which, convened for addressing urgent problems of
+in turn, divided the society into two segments environmental protection and socio-
+i.e. haves and have nots or rich and poor. economic development at the global level.
+• Indiscriminate exploitation of resources has The assembled leaders signed the
+led to global ecological crises such as, global Declaration on Global Climatic Change and
+warming, ozone layer depletion, environmental Biological Diversity. The Rio Convention
+pollution and land degradation. endorsed the global Forest Principles and
+adopted Agenda 21 for achieving
+Sustainable Development in the 21st century.
+Agenda 21
+1. Imagine, if the oil supply gets exhausted It is the declaration signed by world leaders
+one day, how would this affect our life style? in 1992 at the United Nations Conference
+2. Plan a survey in your colony/village to on Environment and Development (UNCED),
+investigate people’s attitude towards which took place at Rio de Janeiro, Brazil. It
+recycling of the domestic/agricultural aims at achieving global sustainable
+wastes. Ask questions about : development. It is an agenda to combat
+(a) What do they think about resources environmental damage, poverty, disease
+they use? through global co-operation on common
+(b) What is their opinion about the interests, mutual needs and shared
+wastes, and its utilisation? responsibilities. One major objective of the
+(c) Collage your results. Agenda 21 is that every local government
+should draw its own local Agenda 21.
+An equitable distribution of resources has
+become essential for a sustained quality of life
+RESOURCE PLANNING
+and global peace. If the present trend of resource
+depletion by a few individuals and countries Planning is the widely accepted strategy for
+continues, the future of our planet is in danger. judicious use of resources. It has importance
+Therefore, resource planning is essential for in a country like India, which has enormous
+sustainable existence of all forms of life. diversity in the availability of resources. There
+Sustainable existence is a component of are regions which are rich in certain types of
+sustainable development. resources but are deficient in some other
+2 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 15 ---
+resources. There are some regions which can
+be considered self sufficient in terms of the
+What resources are being developed in your
+availability of resources and there are some
+surroundings by the community/village
+regions which have acute shortage of some vital
+panchayats/ward level communities with the
+resources. For example, the states of
+help of community participation?
+Jharkhand, Chhattisgarh and Madhya
+Pradesh are rich in minerals and coal deposits.
+Arunachal Pradesh has abundance of water
+technology and institutions may hinder
+resources but lacks in infrastructural
+development. There are many regions in our
+development. The state of Rajasthan is very well
+country that are rich in resources but these
+endowed with solar and wind energy but lacks
+are included in economically backward
+in water resources. The cold desert of Ladakh
+regions. On the contrary there are some regions
+is relatively isolated from the rest of the
+which have a poor resource base but they are
+country. It has very rich cultural heritage but
+economically developed.
+it is deficient in water, infrastructure and some
+vital minerals. This calls for balanced resource Can you name some resource rich but
+planning at the national, state, regional and economically backward regions and some
+local levels. resource poor but economically developed
+regions? Give reasons for such a situation.
+The history of colonisation reveals that
+rich resources in colonies were the main
+Prepare a list of resources found in your state attractions for the foreign invaders. It was
+and also identify the resources that are primarily the higher level of technological
+important but deficit in your state. development of the colonising countries that
+helped them to exploit resources of other
+regions and establish their supremacy over
+the colonies. Therefore, resources can
+Resource Planning in India
+contribute to development only when they are
+Resource planning is a complex process accompanied by appropriate technological
+which involves : (i) identification and development and institutional changes. India
+inventory of resources across the regions of has experienced all this in different phases of
+the country. This involves surveying, colonisation. Therefore, in India, development,
+mapping and qualitative and quantitative in general, and resource development in
+estimation and measurement of the particular does not only involve the
+resources. (ii) Evolving a planning structure availability of resources, but also the
+endowed with appropriate technology, skill technology, quality of human resources and
+the historical experiences of the people.
+and institutional set up for implementing
+resource development plans. (iii) Matching Conservation of Resources: Resources are
+the resource development plans with overall vital for any developmental activity. But
+national development plans. irrational consumption and over-utilisation
+India has made concerted efforts for of resources may lead to socio-economic and
+achieving the goals of resource planning right environmental problems. To overcome these
+from the First Five Year Plan launched after problems, resource conservation at various
+Independence. levels is important. This had been the main
+The availability of resources is a necessary concern of the leaders and thinkers in the
+condition for the development of any region, past. For example, Gandhiji was very apt in
+but mere availability of resources in the voicing his concern about resource
+absence of corresponding changes in conservation in these words: “There is enough
+RESOURCES AND DEVELOPMENT 3
+Rationalised-2023-24
+
+--- PAGE 16 ---
+for everybody’s need and not for any body’s available land for various purposes with careful
+greed.” He placed the greedy and selfish planning.
+individuals and exploitative nature of modern India has land under a variety of relief
+technology as the root cause for resource features, namely; mountains, plateaus, plains
+depletion at the global level. He was against and islands. About 43 per cent of the land area
+mass production and wanted to replace it with is plain, which provides facilities for agriculture
+the production by the masses. and industry. Mountains account for 30 per
+cent of the total surface area of the country and
+ensure perennial flow of some rivers, provide
+At the international level, the Club of Rome
+facilities for tourism and ecological aspects.
+advocated resource conservation for the first
+About 27 per cent of the area of the country is
+time in a more systematic way in 1968.
+the plateau region. It possesses rich reserves
+Subsequently, in 1974, Gandhian philosophy
+of minerals, fossil fuels and forests.
+was once again presented by Schumacher
+in his book Small is Beautiful. The seminal L AND U TILISATION
+contribution with respect to resource
+Land resources are used for the following
+conservation at the global level was made
+purposes:
+by the Brundtland Commission Report, 1987.
+This report introduced the concept of 1. Forests
+‘Sustainable Development’ and advocated 2. Land not available for cultivation
+it as a means for resource conservation,
+(a) Barren and waste land
+which was subsequently published in a book
+(b) Land put to non-agricultural uses, e.g.
+entitled Our Common Future. Another
+buildings, roads, factories, etc.
+significant contribution was made at the Earth
+3. Other uncultivated land (excluding
+Summit at Rio de Janeiro, Brazil in 1992.
+fallow land)
+(a) Permanent pastures and grazing land,
+L R (b) Land under miscellaneous tree crops
+AND ESOURCES
+groves (not included in net sown area),
+We live on land, we perform our economic
+(c) Cultruable waste land (left uncultivated
+activities on land and we use it in different
+for more than 5 agricultural years).
+ways. Thus, land is a natural resource of
+utmost importance. It supports natural 4. Fallow lands
+vegetation, wild life, human life, economic (a) Current fallow-(left without cultivation
+activities, transport and communication for one or less than one agricultural year),
+systems. However, land is an asset of a finite (b) Other than current fallow-(left
+magnitude, therefore, it is important to use the uncultivated for the past 1 to 5
+agricultural years).
+5. Net sown area the physical extent of land
+on which crops are sown harvested is
+known as net sown area.
+Area sown more than once in an
+agricultural year plus net sown area is
+known as gross cropped area.
+L U P I
+AND SE ATTERN IN NDIA
+The use of land is determined both by physical
+factors such as topography, climate, soil types
+as well as human factors such as population
+Fig 1.3: India : Land under important Relief density, technological capability and culture
+Features and traditions etc.
+4 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 17 ---
+Reporting Area: 100 Per cent
+Source : Directorate of Economics and Statistics, Ministry of Agriculture, 2017
+Fig. 1.4
+Total geographical area of India is 3.28 of such land is very high. Hence, these lands
+million sq km. Land use data, however, is are cultivated once or twice in about two to
+available only for 93 per cent of the total three years and if these are included in the
+geographical area because the land use net sown area then the percentage of NSA in
+reporting for most of the north-east states India comes to about 54 per cent of the total
+except Assam has not been done fully. reporting area.
+Moreover, some areas of Jammu and Kashmir The pattern of net sown area varies greatly
+occupied by Pakistan and China have also not from one state to another. It is over 80 per
+been surveyed. cent of the total area in Punjab and Haryana
+and less than 10 per cent in Arunachal
+Pradesh, Mizoram, Manipur and Andaman
+Try to do a comparison between the two pie
+Nicobar Islands.
+charts (Fig. 1.4 ) given for land use and find
+out why the net sown area and the land
+Find out reasons for the low proportion of
+under forests have changed from 1960-61
+net sown area in these states.
+to 2014-15 very marginally.
+The land under permanent pasture has Forest area in the country is far lower than
+also decreased. How are we able to feed our the desired 33 per cent of geographical area,
+huge cattle population on this pasture land as it was outlined in the National Forest Policy
+and what are the consequences of it? Most of (1952). It was considered essential for
+the other than the current fallow lands are maintenance of the ecological balance. The
+either of poor quality or the cost of cultivation livelihood of millions of people who live on the
+RESOURCES AND DEVELOPMENT 5
+Rationalised-2023-24
+
+--- PAGE 18 ---
+fringes of these forests depends upon it. A part There are many ways to solve the problems
+of the land is termed as waste land and land of land degradation. Afforestation and proper
+put to other non-agricultural uses. Waste land management of grazing can help to some extent.
+includes rocky, arid and desert areas and land Planting of shelter belts of plants, control on
+put to other non-agricultural uses includes over grazing, stabilisation of sand dunes by
+settlements, roads, railways, industry etc. growing thorny bushes are some of the
+Continuous use of land over a long period of methods to check land degradation in arid
+time without taking appropriate measures to areas. Proper management of waste lands,
+conserve and manage it, has resulted in land control of mining activities, proper discharge
+degradation. This, in turn, has serious and disposal of industrial effluents and wastes
+repercussions on society and the after treatment can reduce land and water
+environment. degradation in industrial and suburban areas.
+LAND DEGRADATION AND CONSERVATION SOIL AS A RESOURCE
+MEASURES
+Soil is the most important renewable natural
+We have shared our land with the past resource. It is the medium of plant growth
+generations and will have to do so with the future and supports different types of living organisms
+generations too. Ninety-five per cent of our basic on the earth. The soil is a living system. It
+needs for food, shelter and clothing are obtained takes millions of years to form soil upto a few
+from land. Human activities have not only cm in depth. Relief, parent rock or bed rock,
+brought about degradation of land but have climate, vegetation and other forms of life and
+also aggravated the pace of natural forces to time are important factors in the formation of
+cause damage to land. soil. Various forces of nature such as change
+Some human activities such as in temperature, actions of running water, wind
+deforestation, over grazing, mining and and glaciers, activities of decomposers etc.
+quarrying too have contributed significantly in contribute to the formation of soil. Chemical
+land degradation. and organic changes which take place in the
+Mining sites are abandoned after
+excavation work is complete leaving deep Top soil
+the upper soil layer
+scars and traces of over-burdening. In states
+like Jharkhand, Chhattisgarh, Madhya
+Subsoil weathered
+Pradesh and Odisha deforestation due to
+rocks sand and
+mining have caused severe land degradation. silt clay
+In states like Gujarat, Rajasthan, Madhya
+Pradesh and Maharashtra overgrazing is one
+of the main reasons for land degradation. In
+the states of Punjab, Haryana, western Uttar Substratum
+Pradesh, over irrigation is responsible for land weathered parent
+degradation due to water logging leading to rock material
+increase in salinity and alkalinity in the soil.
+The mineral processing like grinding of
+limestone for cement industry and calcite and
+soapstone for ceramic industry generate huge
+quantity of dust in the atmosphere. It retards
+the process of infiltration of water into the soil
+Unweathered
+after it settles down on the land. In recent
+parent bed rock
+years, industrial effluents as waste have
+become a major source of land and water
+pollution in many parts of the country.
+Fig. 1.5: Soil Profile
+6 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 19 ---
+soil are equally important. Soil also consists nodules than the Khadar. It has more fine
+of organic (humus) and inorganic materials particles and is more fertile than the bangar.
+(Fig. 1.5). Alluvial soils as a whole are very fertile.
+On the basis of the factors responsible for Mostly these soils contain adequate proportion
+soil formation, colour, thickness, texture, age, of potash, phosphoric acid and lime which
+chemical and physical properties, the soils of are ideal for the growth of sugarcane, paddy,
+India are classified in different types. wheat and other cereal and pulse crops. Due
+to its high fertility, regions of alluvial soils are
+Classification of Soils
+intensively cultivated and densely populated.
+India has varied relief features, landforms, Soils in the drier areas are more alkaline and
+climatic realms and vegetation types. These can be productive after proper treatment and
+have contributed in the development of various irrigation.
+types of soils.
+Black Soil
+Alluvial Soils These soils are black in colour and are also
+This is the most widely spread and important known as regur soils. Black soil is ideal for
+soil. In fact, the entire northern plains are growing cotton and is also known as black
+made of alluvial soil. These have been cotton soil. It is believed that climatic condition
+deposited by three important Himalayan river along with the parent rock material are the
+systems– the Indus, the Ganga and the important factors for the formation of black
+Brahmaputra. These soils also extend in soil. This type of soil is typical of the Deccan
+Rajasthan and Gujarat through a narrow trap (Basalt) region spread over northwest
+corridor. Alluvial soil is also found in the Deccan plateau and is made up of lava flows.
+eastern coastal plains particularly in the deltas They cover the plateaus of Maharashtra,
+of the Mahanadi, the Godavari, the Krishna Saurashtra, Malwa, Madhya Pradesh and
+and the Kaveri rivers. Chhattisgarh and extend in the south east
+direction along the Godavari and the Krishna
+valleys.
+Fig. 1.6: Alluvial Soil
+The alluvial soil consists of various
+proportions of sand, silt and clay. As we move
+inlands towards the river valleys, soil particles
+appear some what bigger in size. In the upper
+reaches of the river valley i.e. near the place
+of the break of slope, the soils are coarse. Such
+soils are more common in piedmont plains
+such as Duars, Chos and Terai.
+Fig. 1.7: Black Soil
+Apart from the size of their grains or
+components, soils are also described on the The black soils are made up of extremely
+basis of their age. According to their age fine i.e. clayey material. They are well-known
+alluvial soils can be classified as old alluvial for their capacity to hold moisture. In addition,
+(Bangar) and new alluvial (Khadar). The they are rich in soil nutrients, such as calcium
+bangar soil has higher concentration of kanker carbonate, magnesium, potash and lime. These
+RESOURCES AND DEVELOPMENT 7
+Rationalised-2023-24
+
+--- PAGE 20 ---
+India: Major Soil Types
+8 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 21 ---
+soils are generally poor in phosphoric contents. vegetation and in semi-arid environment, it is
+They develop deep cracks during hot weather, generally humus poor. They are prone to
+which helps in the proper aeration of the soil. erosion and degradation due to their position
+These soils are sticky when wet and difficult to on the landscape. After adopting appropriate
+work on unless tilled immediately after the first soil conservation techniques particularly in
+shower or during the pre-monsoon period. the hilly areas of Karnataka, Kerala and Tamil
+Nadu, this soil is very useful for growing tea
+Red and Yellow Soils
+and coffee. Red laterite soils in Tamil Nadu,
+Red soil develops on crystalline igneous rocks
+Andhra Pradesh and Kerala are more suitable
+in areas of low rainfall in the eastern and
+for crops like cashew nut.
+southern parts of the Deccan plateau. Yelllow
+and red soils are also found in parts of Arid Soils
+Odisha, Chhattisgarh, southern parts of the
+Arid soils range from red to brown in colour.
+middle Ganga plain and along the piedmont
+They are generally sandy in texture and saline
+zone of the Western Ghats. These soils develop
+in nature. In some areas the salt content is
+a reddish colour due to diffusion of iron in
+very high and common salt is obtained by
+crystalline and metamorphic rocks. It looks
+evaporating the water. Due to the dry climate,
+yellow when it occurs in a hydrated form.
+high temperature, evaporation is faster and
+Laterite Soil the soil lacks humus and moisture. The lower
+horizons of the soil are occupied by Kankar
+Laterite has been derived from the Latin word
+because of the increasing calcium content
+‘later’ which means brick. The laterite soil
+downwards. The Kankar layer formations in
+develops under tropical and subtropical
+the bottom horizons restrict the infiltration of
+climate with alternate wet and dry season.
+water. After proper irrigation these soils
+This soil is the result of intense leaching due
+to heavy rain. Lateritic soils are mostly deep become cultivable as has been in the case of
+to very deep, acidic (pH<6.0), generally western Rajasthan.
+deficient in plant nutrients and occur mostly
+in southern states, Western Ghats region of
+Maharashtra, Odisha, some parts of West
+Bengal and North-east regions. Where these
+soils support deciduous and evergreen
+forests, it is humus rich, but under sparse
+Fig. 1.9: Arid Soil
+Forest Soils
+These soils are found in the hilly and
+mountainous areas where sufficient rain
+forests are available. The soils texture varies
+according to the mountain environment
+where they are formed. They are loamy and
+silty in valley sides and coarse grained in
+Fig. 1.8: Laterite Soil the upper slopes. In the snow covered areas
+RESOURCES AND DEVELOPMENT 9
+Rationalised-2023-24
+
+--- PAGE 22 ---
+of Himalayas, these soils experience
+denudation and are acidic with low humus
+content. The soils found in the lower parts of
+the valleys particularly on the river terraces
+and alluvial fans are fertile.
+Soil Erosion and Soil Conservation
+The denudation of the soil cover and
+subsequent washing down is described as soil
+erosion. The processes of soil formation and
+erosion, go on simultaneously and generally
+there is a balance between the two. Sometimes,
+this balance is disturbed due to human
+activities like deforestation, over-grazing,
+construction and mining etc., while natural Fig. 1.11: Gully Erosion
+forces like wind, glacier and water lead to
+soil is washed away. This is known as sheet
+soil erosion. The running water cuts through
+erosion. Wind blows loose soil off flat or
+the clayey soils and makes deep channels as
+sloping land known as wind erosion. Soil
+gullies. The land becomes unfit for cultivation
+erosion is also caused due to defective methods
+and is known as bad land. In the Chambal
+of farming. Ploughing in a wrong way i.e. up
+basin such lands are called ravines.
+and down the slope form channels for the
+Sometimes water flows as a sheet over large
+quick flow of water leading to soil erosion.
+areas down a slope. In such cases the top
+Ploughing along the contour lines can
+decelerate the flow of water down the slopes.
+This is called contour ploughing. Steps can
+be cut out on the slopes making terraces.
+Terrace cultivation restricts erosion. Western
+and central Himalayas have well developed
+terrace farming. Large fields can be divided into
+strips. Strips of grass are left to grow between
+the crops. This breaks up the force of the wind.
+This method is known as strip cropping.
+Planting lines of trees to create shelter also
+works in a similar way. Rows of such trees are
+called shelter belts. These shelter belts have
+contributed significantly to the stabilisation of
+sand dunes and in stabilising the desert in
+western India.
+Fig. 1.10: Soil Erosion
+10 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 23 ---
+EXERCISES EXERCISES E XERCISES EXERCISES EXERCISES
+1. Multiple choice questions.
+(i) Which one of the following is the main cause of land degradation in Punjab?
+(a) Intensive cultivation (c) Over irrigation
+(b) Deforestation (d) Overgrazing
+(ii) In which one of the following states is terrace cultivation practised?
+(a) Punjab (c) Haryana
+(b) Plains of Uttar Pradesh (d) Uttarakhand
+(iii) In which of the following states black soil is predominantly found?
+(a) Uttar Pradesh (c) Rajasthan
+(b) Maharashtra (d) Jharkhand
+2. Answer the following questions in about 30 words.
+(i) Name three states having black soil and the crop which is mainly grown in it.
+(ii) What type of soil is found in the river deltas of the eastern coast? Give three
+main features of this type of soil.
+(iii) What steps can be taken to control soil erosion in the hilly areas?
+3. Answer the following questions in about 120 words.
+(i) Explain land use pattern in India and why has the land under forest not
+increased much since 1960-61?
+(ii) How have technical and economic development led to more consumption of
+resources?
+P /A
+ROJECT CTIVITY
+1. Make a project showing consumption and conservation of resources in your locality.
+2. Have a discussion in the class– how to conserve various resources used in
+your school.
+3. Imagine if oil supplies get exhausted, how will this affect our life style?
+4. Solve the puzzle by following your search horizontally and vertically to find the
+hidden answers.
+(i) Natural endowments in the form of land, water, vegetation and minerals.
+(ii) A type of non-renewable resource.
+(iii) Soil with high water retaining capacity.
+(iv) Intensively leached soils of the monsoon climate.
+RESOURCES AND DEVELOPMENT 11
+Rationalised-2023-24
+
+--- PAGE 24 ---
+S F G S F O B R O M S U A P J
+Q G A F F O R E S T A T I O N
+P N R E C P R S L D M I L N F
+S N A T Q X U O V A I O L A L
+O D E I D R J U J L D B N B D
+T G H M I N E R A L S A X M W
+B V J K M E D C R U P F M H R
+L A T E R I T E M V A Z T V L
+A B Z O E N M F T I S D L R C
+C G N N S Z I O P A X T Y J H
+K J G K D T D C S L S E G E W
+(i) Natural endowments in the form of land, water, vegetation and minerals.
+(ii) A type of non-renewable resource.
+(iii) Soil with high water retaining capacity.
+(iv) Intensively leached soils of the monsoon climate.
+(v) Plantation of trees on a large scale to check soil erosion.
+(vi) The Great Plains of India are made up of these soils.
+12 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 25 ---
+Flora and Fauna in India
+Narak! My Lord, you are the creator of music
+If you look around, you will be able to find
+in the world of Lepchas
+that there are some animals and plants which
+Oh Narak! My Lord, let me dedicate
+are unique in your area. In fact, India is
+myself to you
+one of the world’s richest countries in terms
+Let me gather your music from the
+of its vast array of biological diversity. This
+springs, the rivers, the mountains, the forests,
+is possibly twice or thrice the number yet
+the insects and the animals
+to be discovered. You have already studied
+Let me gather your music from the sweet
+in detail about the extent and variety of
+breeze and offer it to you
+forest and wildlife resources in India. You
+may have realised the importance of
+these resources in our daily life. These
+Source: Lepcha folk song from northern part of
+diverse flora and fauna are so well
+West Bengal
+integrated in our daily life that we take
+these for granted. But, lately, they are
+We share this planet with millions of other
+under great stress mainy due to insensitivity
+living beings, starting from micro-organisms
+to our environment.
+and bacteria, lichens to banyan trees,
+elephants and blue whales. This entire
+habitat that we live in has immense Find out stories prevalent in your region
+biodiversity. We humans along with all living which are about the harmonious relationship
+organisms form a complex web of ecological between human beings and nature.
+system in which we are only a part and
+very much dependent on this system for
+Conservation of Forest and Wildlife in India
+our own existence. For example, the plants,
+animals and micro-organisms re-create the Conservation in the background of rapid
+quality of the air we breathe, the water we decline in wildlife population and forestry has
+drink and the soil that produces our food become essential. But why do we need to
+without which we cannot survive. Forests conserve our forests and wildlife?
+play a key role in the ecological system as Conservation preserves the ecological diversity
+these are also the primary producers on and our life support systems – water, air and
+which all other living beings depend. soil. It also preserves the genetic diversity of
+plants and animals for better growth of species
+and breeding. For example, in agriculture,
+we are still dependent on traditional crop
+Biodiversity or Biological Diversity is
+varieties. Fisheries too are heavily dependent
+immensely rich in wildlife and cultivated
+on the maintenance of aquatic biodiversity.
+species, diverse in form and function but
+In the 1960s and 1970s, conservationists
+closely integrated in a system through
+demanded a national wildlife protection
+multiple network of interdependencies.
+programme. The Indian Wildlife (Protection)
+Rationalised-2023-24
+
+--- PAGE 26 ---
+Tribal girls using bamboo saplings in a
+nursery at Mukhali near Silent Valley
+Tribal women selling minor forest produce Leaf litter collection by women folk
+Fig. 2.1
+Act was implemented in 1972, with various Project Tiger
+provisions for protecting habitats. An all-
+Tiger is one of the key wildlife species in
+India list of protected species was also
+the faunal web. In 1973, the authorities
+published. The thrust of the programme was
+realised that the tiger population had
+towards protecting the remaining population
+dwindled to 1,827 from an estimated
+of certain endangered species by banning
+55,000 at the turn of the century. The major
+hunting, giving legal protection to their
+threats to tiger population are numerous,
+habitats, and restricting trade in wildlife.
+such as poaching for trade, shrinking
+Subsequently, central and many state
+habitat, depletion of prey base species,
+governments established national parks and
+growing human population, etc. The trade
+wildlife sanctuaries about which you have
+of tiger skins and the use of their bones in
+already studied. The central government also
+traditional medicines, especially in the
+announced several projects for protecting
+Asian countries left the tiger population on
+specific animals, which were gravely
+the verge of extinction. Since India and
+threatened, including the tiger, the one-
+Nepal provide habitat to about two-thirds
+horned rhinoceros, the Kashmir stag or
+of the surviving tiger population in the
+hangul, three types of crocodiles – fresh
+world, these two nations became prime
+water crocodile, saltwater crocodile and the
+targets for poaching and illegal trading.
+Gharial, the Asiatic lion, and others. Most
+“Project Tiger”, one of the well-
+recently, the Indian elephant, black buck
+publicised wildlife campaigns in the world,
+(chinkara), the great Indian bustard
+was launched in 1973. Tiger conservation
+(godawan) and the snow leopard, etc. have
+has been viewed not only as an effort to
+been given full or partial legal protection
+save an endangered species, but with
+against hunting and trade throughout India.
+14 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 27 ---
+Fig. 2.2: Rhino and deer in Kaziranga National Park
+equal importance as a means of much of its forest and wildlife resources are
+preserving biotypes of sizeable magnitude. either owned or managed by the government
+Corbett National Park in Uttarakhand, through the Forest Department or other
+Sunderbans National Park in West Bengal, government departments. These are classified
+Bandhavgarh National Park in Madhya under the following categories.
+Pradesh, Sariska Wildlife Sanctuary in
+(i)Reserved Forests: More than half of the
+Rajasthan, Manas Tiger Reserve in Assam
+total forest land has been declared
+and Periyar Tiger Reserve in Kerala are
+reserved forests. Reserved forests are
+some of the tiger reserves of India.
+regarded as the most valuable as far as the
+conservation of forest and wildlife resources
+are concerned.
+The conservation projects are now focusing
+on biodiversity rather than on a few of its (ii)Protected Forests: Almost one-third of the
+components. There is now a more intensive total forest area is protected forest, as
+search for different conservation measures. declared by the Forest Department. This
+Increasingly, even insects are beginning to find forest land are protected from any further
+a place in conservation planning. In the depletion.
+notification under Wildlife Act of 1980 and
+(iii) Unclassed Forests: These are other
+1986, several hundred butterflies, moths,
+forests and wastelands belonging to
+beetles, and one dragonfly have been added to
+both government and private individuals
+the list of protected species. In 1991, for the
+and communities.
+first time plants were also added to the list,
+Reserved and protected forests are also
+starting with six species.
+referred to as permanent forest estates
+maintained for the purpose of producing
+timber and other forest produce, and for
+Collect more information on the wildlife protective reasons. Madhya Pradesh has the
+sanctuaries and national parks of India and largest area under permanent forests,
+cite their locations on the map of India. constituting 75 per cent of its total forest area.
+Jammu and Kashmir, Andhra Pradesh,
+Uttarakhand, Kerala, Tamil Nadu, West
+Types and Distribution of Forest and
+Bengal, and Maharashtra have large
+Wildlife Resources
+percentages of reserved forests of its total forest
+Even if we want to conserve our vast forest and area whereas Bihar, Haryana, Punjab,
+wildlife resources, it is rather difficult to Himachal Pradesh, Odisha and Rajasthan have
+manage, control and regulate them. In India, a bulk of it under protected forests. All North-
+FOREST AND WILDLIFE RESOURCES 15
+Rationalised-2023-24
+
+--- PAGE 28 ---
+Can you find out the reasons for the above mentioned problems?
+eastern states and parts of Gujarat have a very own set of rules and regulations which do not
+high percentage of their forests as unclassed allow hunting, and are protecting the wildlife
+forests managed by local communities. against any outside encroachments.
+The famous Chipko movement in the
+Community and Conservation
+Himalayas has not only successfully resisted
+Conservation strategies are not new in our deforestation in several areas but has also
+country. We often ignore that in India, forests shown that community afforestation with
+are also home to some of the traditional indigenous species can be enormously
+communities. In some areas of India, local successful. Attempts to revive the traditional
+communities are struggling to conserve these conservation methods or developing new
+habitats along with government officials, methods of ecological farming are now
+recognising that only this will secure their widespread. Farmers and citizen’s groups like
+own long-term livelihood. In Sariska Tiger the Beej Bachao Andolan in Tehri and
+Reserve, Rajasthan, villagers have fought Navdanya have shown that adequate levels of
+against mining by citing the Wildlife Protection diversified crop production without the use of
+Act. In many areas, villagers themselves are synthetic chemicals are possible and
+protecting habitats and explicitly rejecting economically viable.
+government involvement. The inhabitants of In India joint forest management (JFM)
+five villages in the Alwar district of Rajasthan programme furnishes a good example for
+have declared 1,200 hectares of forest as the involving local communities in the
+management and restoration of degraded
+Bhairodev Dakav ‘Sonchuri’, declaring their
+16 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 29 ---
+Sacred groves - a wealth of diverse and rare forests. The programme has been in formal
+species existence since 1988 when the state of
+Nature worship is an age old tribal belief based on Odisha passed the first resolution for joint
+the premise that all creations of nature have to be forest management. JFM depends on the
+protected. Such beliefs have preserved several virgin formation of local (village) institutions that
+forests in pristine form called Sacred Groves (the undertake protection activities mostly on
+forests of God and Goddesses). These patches of degraded forest land managed by the forest
+forest or parts of large forests have been left department. In return, the members of
+untouched by the local people and any interference these communities are entitled to
+with them is banned. intermediary benefits like non-timber
+Certain societies revere a particular tree which forest produces and share in the timber
+they have preserved from time immemorial. The harvested by ‘successful protection’.
+Mundas and the Santhal of Chota Nagpur region The clear lesson from the dynamics of
+worship mahua (Bassia latifolia) and kadamba both environmental destruction and
+(Anthocaphalus cadamba) trees, and the tribals of reconstruction in India is that local
+Odisha and Bihar worship the tamarind (Tamarindus communities everywhere have to be
+indica) and mango (Mangifera indica) trees during involved in some kind of natural resource
+weddings. To many of us, peepal and banyan trees management. But there is still a long way
+are considered sacred. to go before local communities are at the
+Indian society comprises several cultures, each centre-stage in decision-making. Accept
+with its own set of traditional methods of conserving only those economic or developmental
+nature and its creations. Sacred qualities are often
+activities, that are people centric,
+ascribed to springs, mountain peaks, plants and
+environment-friendly and economically
+animals which are closely protected. You will find
+rewarding.
+troops of macaques and langurs around many
+temples. They are fed daily and treated as a part of
+Write a short essay on any practices
+temple devotees. In and around Bishnoi villages in
+which you may have observed and
+Rajasthan, herds of blackbuck, (chinkara), nilgai and
+practised in your everyday lives that
+peacocks can be seen as an integral part of the
+community and nobody harms them. conserve and protect the environment
+around you.
+“The tree is a peculiar organism of unlimited kindness and benevolence and
+makes no demand for its sustenance, and extends generously the products of its
+life activity. It affords protection to all beings, offering shade even to the axemen
+who destroy it”.
+Gautama Buddha (487 B.C.)
+FOREST AND WILDLIFE RESOURCES 17
+Rationalised-2023-24
+
+--- PAGE 30 ---
+EXERCISES EXERCISES E XERCISES EXERCISES EXERCISES
+1. Multiple choice questions
+(i) Which of the following conservation strategies do not directly involve
+community participation?
+(a) Joint forest management (c) Chipko Movement
+(b) Beej Bachao Andolan (d) Demarcation of Wildlife sanctuaries
+2. Match the following.
+Reserved forests other forests and wastelands belonging to both
+government and private individuals and
+communities
+Protected forests forests are regarded as most valuable as far as the
+conservation of forest and wildlife resources
+Unclassed forests forest lands are protected from any further
+depletion
+3. Answer the following questions in about 30 words.
+(i) What is biodiversity? Why is biodiversity important for human lives?
+(ii) How have human activities affected the depletion of flora and fauna? Explain.
+4. Answer the following questions in about 120 words.
+(i) Describe how communities have conserved and protected forests and wildlife
+in India?
+(ii) Write a note on good practices towards conserving forest and wildlife.
+18 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 31 ---
+You already know that three-fourth of the WATER SCARCITY AND THE NEED FOR WATER
+earth’s surface is covered with water, but only
+CONSERVATION AND MANAGEMENT
+a small proportion of it accounts for
+freshwater that can be put to use. This Given the abundance and renewability of
+freshwater is mainly obtained from surface water, it is difficult to imagine that we may
+run off and ground water that is continually suffer from water scarcity. The moment we
+being renewed and recharged through the speak of water shortages, we immediately
+hydrological cycle. All water moves within the associate it with regions having low rainfall
+hydrological cycle ensuring that water is a or those that are drought prone. We
+renewable resource. instantaneously visualise the deserts of
+You might wonder that if three-fourth of Rajasthan and women balancing many
+the world is covered with water and water is ‘matkas’ (earthen pots) used for collecting
+a renewable resource, then how is it that and storing water and travelling long
+countries and regions around the globe suffer distances to get water. True, the availability
+from water scarcity? Why is it predicted that of water resources varies over space and time,
+by 2025, nearly two billion people will live in mainly due to the variations in seasonal and
+absolute water scarcity? annual precipitation, but water scarcity in
+Rationalised-2023-24
+
+--- PAGE 32 ---
+most cases is caused by over-exploitation, consequent greater demands for water, and
+excessive use and unequal access to water unequal access to it. A large population
+among different social groups. requires more water not only for domestic
+Where is then water scarcity likely to use but also to produce more food. Hence, to
+occur? As you have read in the hydrological facilitate higher food-grain production, water
+cycle, freshwater can be obtained directly resources are being over-exploited to expand
+from precipitation, surface run off and irrigated areas for dry-season agriculture.
+groundwater. Irrigated agriculture is the largest consumer
+Is it possible that an area or region may of water. Now it is needed to revolutionise the
+have ample water resources but is still facing agriculture through developing drought
+water scarcity? Many of our cities are such resistant crops and dry farming techniques.
+examples. Thus, water scarcity may be an You may have seen in many television
+outcome of large and growing population and advertisements that most farmers have their
+Water, Water Everywhere, Not a Drop to Drink:
+After a heavy downpour, a boy collects drinking
+water in Kolkata. Life in the city and its adjacent
+districts was paralysed as incessant overnight rain,
+meaning a record 180 mm, flooded vast area and
+disruted traffic.
+A Kashmiri earthquake survivor carries water in
+the snow in a devastated village.
+Fig. 3.1: Water Scarcity
+20 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 33 ---
+own wells and tube-wells in their farms for long-term basis by ensuring functionality of
+irrigation to increase their produce. But have the tap water connections. (Source: Economic
+you ever wondered what this could result in? Survey 2020–21, p.357)
+That it may lead to falling groundwater levels,
+India’s rivers, especially the smaller ones,
+adversely affecting water availability and food
+have all turned into toxic streams. And even
+security of the people. the big ones like the Ganga and Yamuna
+Post-independent India witnessed are far from being pure. The assault on
+intensive industrialisation and urbanisation, India’s rivers – from population growth,
+creating vast opportunities for us. Today, large agricultural modernisation, urbanisation and
+industrial houses are as commonplace as the industrialisation – is enormous and growing
+industrial units of many MNCs (Multinational by the day….. This entire life stands
+Corporations). The ever-increasing number of threatened.
+industries has made matters worse by exerting
+Source: The Citizens’ Fifth Report, CSE, 1999.
+pressure on existing freshwater resources.
+Industries, apart from being heavy users of
+You may have already realised that the need
+water, also require power to run them. Much
+of the hour is to conserve and manage our
+of this energy comes from hydroelectric power.
+water resources, to safeguard ourselves from
+Today, in India hydroeclectric power
+health hazards, to ensure food security,
+contributes approximately 22 per cent of the
+continuation of our livelihoods and productive
+total electricity produced. Moreover,
+activities and also to prevent degradation of our
+multiplying urban centres with large and
+natural ecosystems. Over exploitation and
+dense populations and urban lifestyles have
+mismanagement of water resources will
+not only added to water and energy
+impoverish this resource and cause ecological
+requirements but have further aggravated the
+crisis that may have profound impact on
+problem. If you look into the housing societies
+our lives.
+or colonies in the cities, you would find that
+most of these have their own groundwater
+From your everyday experiences, write a short
+pumping devices to meet their water needs.
+proposal on how you can conserve water.
+Not surprisingly, we find that fragile water
+resources are being over-exploited and have
+caused their depletion in several of these cities. MULTI-PURPOSE RIVER PROJECTS AND
+So far we have focused on the quantitative INTEGRATED WATER RESOURCES MANAGEMENT
+aspects of water scarcity. Now, let us consider
+But, how do we conserve and manage water?
+another situation where water is sufficiently
+Archaeological and historical records show
+available to meet the needs of the people, but,
+that from ancient times we have been
+the area still suffers from water scarcity. This
+constructing sophisticated hydraulic
+scarcity may be due to bad quality of water.
+structures like dams built of stone rubble,
+Lately, there has been a growing concern that
+reservoirs or lakes, embankments and canals
+even if there is ample water to meet the needs
+for irrigation. Not surprisingly, we have
+of the people, much of it may be polluted by
+continued this tradition in modern India by
+domestic and industrial wastes, chemicals,
+building dams in most of our river basins.
+pesticides and fertilisers used in agriculture,
+thus, making it hazardous for human use.
+Hydraulic Structures in Ancient India
+Government of India has accorded highest
+• In the first century B.C., Sringaverapura
+priority to improve the quality of life and
+enhance ease of living of people especially those near Allahabad had sophisticated water
+living in rual areas by announcing the Jal harvesting system channelling the flood
+Jeevan Mission (JJM). The Goal of JJM is to water of the river Ganga.
+enable every rural household get assured • During the time of Chandragupta Maurya,
+supply of potable piped water at a service level dams, lakes and irrigation systems were
+of 55 litres per capita per day regularly on extensively built.
+WATER RESOURCES 21
+Rationalised-2023-24
+
+--- PAGE 34 ---
+• Evidences of sophisticated irrigation works
+A dam is a barrier across flowing water that
+have also been found in Kalinga,
+obstructs, directs or retards the flow, often
+(Odisha), Nagarjunakonda (Andhra
+creating a reservoir, lake or impoundment.
+Pradesh), Bennur (Karnataka), Kolhapur
+“Dam” refers to the reservoir rather than the
+(Maharashtra), etc.
+structure. Most dams have a section called a
+• In the 11th Century, Bhopal Lake, one of the
+spillway or weir over which or through which
+largest artificial lakes of its time was built.
+it is intended that water will flow either
+• In the 14th Century, the tank in Hauz Khas, intermittently or continuously. Dams are
+Delhi was constructed by Iltutmish for classified according to structure, intended
+supplying water to Siri Fort area. purpose or height. Based on structure and
+Source: Dying Wisdom, CSE, 1997. the materials used, dams are classified as
+timber dams, embankment dams or masonry
+dams, with several subtypes. According to
+the height, dams can be categorised as large
+dams and major dams or alternatively as low
+dams, medium height dams and high dams.
+handicap of its colonial past. Jawaharlal Nehru
+proudly proclaimed the dams as the ‘temples of
+modern India’; the reason being that it would
+integrate development of agriculture and the
+village economy with rapid industrialisation and
+growth of the urban economy.
+Find out more about any one traditional
+Fig. 3.2: Hirakud Dam
+method of building dams and irrigation works.
+What are dams and how do they help us
+in conserving and managing water? Dams
+We have sown the crops in Asar
+were traditionally built to impound rivers and
+rainwater that could be used later to irrigate We will bring Bhadu in Bhadra
+agricultural fields. Today, dams are built not Floods have swollen the Damodar
+just for irrigation but for electricity generation,
+The sailing boats cannot sail
+water supply for domestic and industrial
+Oh! Damodar, we fall at your feet
+uses, flood control, recreation, inland
+navigation and fish breeding. Hence, dams are Reduce the floods a little
+now referred to as multi-purpose projects Bhadu will come a year later
+where the many uses of the impounded water
+Let the boats sail on your surface
+are integrated with one another. For example,
+(This popular Bhadu song in the Damodar
+in the Sutluj-Beas river basin, the Bhakra –
+valley region narrates the troubles faced by
+Nangal project water is being used both for
+people owing to the flooding of Damodar river
+hydel power production and irrigation. known as the river of sorrow.)
+Similarly, the Hirakud project in the
+Mahanadi basin integrates conservation of In recent years, multi-purpose projects
+water with flood control. and large dams have come under great
+Multi-purpose projects, launched after scrutiny and opposition for a variety of
+Independence with their integrated water reasons. Regulating and damming of rivers
+resources management approach, were thought affect their natural flow causing poor sediment
+of as the vehicle that would lead the nation to flow and excessive sedimentation at the bottom
+development and progress, overcoming the of the reservoir, resulting in rockier stream
+22 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 35 ---
+beds and poorer habitats for the rivers’ aquatic Source: S. Sharma, quoted in In the Belly of
+life. Dams also fragment rivers making it the River. Tribal conflicts over development in
+Narmada valley, A. Baviskar, 1995.
+difficult for aquatic fauna to migrate, especially
+for spawning. The reservoirs that are created
+on the floodplains also submerge the existing
+vegetation and soil leading to its Sardar Sarovar Dam has been built over
+decomposition over a period of time. the Narmada River in Gujarat. This is one
+Multi-purpose projects and large dams of the largest water resource projects of
+have also been the cause of many new India covering four states—Maharashtra,
+environmental movements like the ‘Narmada Madhya Pradesh, Gujarat and Rajasthan.
+Bachao Andolan’ and the ‘Tehri Dam Andolan’ The Sardar Sarovar project would meet the
+etc. Resistance to these projects has primarily requirement of water in drought-prone and
+been due to the large-scale displacement of desert areas of Gujarat (9,490 villages and
+local communities. Local people often had to 173 towns) and Rajasthan (124 villages).
+give up their land, livelihood and their meagre
+Source: http://www.sardarsarovardam.org/
+access and control over resources for the
+project.aspx
+greater good of the nation. So, if the local
+people are not benefiting from such projects
+Irrigation has also changed the cropping
+then who is benefited? Perhaps, the
+pattern of many regions with farmers shifting
+landowners and large farmers, industrialists
+to water intensive and commercial crops. This
+and few urban centres. Take the case of the
+has great ecological consequences like
+landless in a village – does he really gain from salinisation of the soil. At the same time, it
+such a project? has transformed the social landscape i.e.
+increasing the social gap between the richer
+landowners and the landless poor. As we can
+Narmada Bachao Andolan or Save see, the dams did create conflicts between
+Narmada Movement is a Non Governmental people wanting different uses and benefits
+Organisation (NGO) that mobilised tribal from the same water resources. In Gujarat,
+people, farmers, environmentalists and
+the Sabarmati-basin farmers were agitated
+human rights activists against the Sardar
+and almost caused a riot over the higher
+Sarovar Dam being built across the
+priority given to water supply in urban areas,
+Narmada river in Gujarat. It originally
+particularly during droughts. Inter-state water
+focused on the environmental issues related
+disputes are also becoming common with
+to trees that would be submerged under the
+regard to sharing the costs and benefits of the
+dam water. Recently it has re-focused the
+multi-purpose project.
+aim to enable poor citizens, especially
+the oustees (displaced people) to get
+full rehabilitation facilities from
+the government. Do you know that the Krishna-Godavari
+People felt that their suffering would not dispute is due to the objections raised by
+be in vain… accepted the trauma of Karnataka and Andhra Pradesh
+displacement believing in the promise of governments? It is regarding the diversion
+irrigated fields and plentiful harvests. So, of more water at Koyna by the Maharashtra
+often the survivors of Rihand told us that they government for a multipurpose project. This
+accepted their sufferings as sacrifice for the would reduce downstream flow in their
+sake of their nation. But now, after thirty bitter states with adverse consequences for
+years of being adrift, their livelihood having agriculture and industry.
+even being more precarious, they keep
+asking: “Are we the only ones chosen to
+make sacrifices for the nation?” Make a list of inter-state water disputes.
+WATER RESOURCES 23
+Rationalised-2023-24
+
+--- PAGE 36 ---
+India: Major Rivers and Dams
+24 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 37 ---
+Most of the objections to the projects arose RAINWATER HARVESTING
+due to their failure to achieve the purposes
+Many thought that given the disadvantages
+for which they were built. Ironically, the dams
+and rising resistance against the multi-
+that were constructed to control floods have
+purpose projects, water harvesting system was
+triggered floods due to sedimentation in the
+a viable alternative, both socio-economically
+reservoir. Moreover, the big dams have mostly
+and environmentally. In ancient India, along
+been unsuccessful in controlling floods at the
+with the sophisticated hydraulic structures,
+time of excessive rainfall. You may have seen
+there existed an extraordinary tradition of
+or read how the release of water from dams
+water-harvesting system. People had in-depth
+during heavy rains aggravated the flood
+knowledge of rainfall regimes and soil types
+situation in Maharashtra and Gujarat in 2006.
+and developed wide ranging techniques to
+The floods have not only devastated life and
+harvest rainwater, groundwater, river water
+property but also caused extensive soil
+and flood water in keeping with the local
+erosion. Sedimentation also meant that the
+ecological conditions and their water needs.
+flood plains were deprived of silt, a natural
+In hill and mountainous regions, people built
+fertiliser, further adding on to the problem of
+diversion channels like the ‘guls’ or ‘kuls’ of
+land degradation. It was also observed that
+the Western Himalayas for agriculture.
+the multi-purpose projects induced
+‘Rooftop rainwater harvesting’ was commonly
+earthquakes, caused water-borne diseases and
+practised to store drinking water, particularly
+pests and pollution resulting from excessive
+in Rajasthan. In the flood plains of Bengal,
+use of water.
+people developed inundation channels to
+Collect information about flood prone areas of the country
+WATER RESOURCES 25
+Rationalised-2023-24
+
+--- PAGE 38 ---
+irrigate their fields. In arid and semi-arid
+regions, agricultural fields were converted into
+rain fed storage structures that allowed the
+water to stand and moisten the soil like the
+‘khadins’ in Jaisalmer and ‘Johads’ in other
+parts of Rajasthan.
+Fig. 3.4
+(a) Recharge through Hand Pump
+In the semi-arid and arid regions of
+Rajasthan, particularly in Bikaner, Phalodi
+and Barmer, almost all the houses
+traditionally had underground tanks or
+tankas for storing drinking water. The tanks
+could be as large as a big room; one
+household in Phalodi had a tank that was
+6.1 metres deep, 4.27 metres long and 2.44
+metres wide. The tankas were part of the
+well-developed rooftop rainwater harvesting
+system and were built inside the main house
+or the courtyard. They were connected to
+the sloping roofs of the houses through a
+pipe. Rain falling on the rooftops would
+travel down the pipe and was stored in these
+underground ‘tankas’. The first spell of rain
+(b) Recharge through Abandoned Dugwell was usually not collected as this would
+• Rooftop rainwater is collected using a PVC pipe clean the roofs and the pipes. The rainwater
+• Filtered using sand and bricks from the subsequent showers was then
+• Underground pipe takes water to sump for
+collected.
+immediate usage
+The rainwater can be stored in the
+• Excess water from the sump is taken to the well
+• Water from the well recharges the underground tankas till the next rainfall making it an
+• Take water from the well (later) extremely reliable source of drinking water
+when all other sources are dried up,
+Fig 3.3: Rooftop Rainwater Harvesting
+26 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 39 ---
+Fortunately, in many parts of rural and urban
+India, rooftop rainwater harvesting is being
+successfully adapted to store and conserve
+water. In Gendathur, a remote backward village
+in Mysuru, Karnataka, villagers have installed,
+in their household’s rooftop, rainwater harvesting
+system to meet their water needs. Nearly 200
+households have installed this system and the
+village has earned the rare distinction of being
+rich in rainwater. See Fig. 3.6 for a better
+A kul leads to a circular village tank, as the above understanding of the rooftop rainwater
+in the Kaza village, from which water is released
+harvesting system which is adapted here.
+as and when required.
+Gendathur receives an annual precipitation of
+Fig 3.5: Traditional method of rainwater 1,000 mm, and with 80 per cent of collection
+harvesting efficiency and of about 10 fillings, every house
+can collect and use about 50,000 litres of water
+particularly in the summers. Rainwater, or
+annually. From the 200 houses, the net amount
+palar pani, as commonly referred to in
+of rainwater harvested annually amounts to
+these parts, is considered the purest form
+1,00,000 litres.
+of natural water. Many houses constructed
+underground rooms adjoining the ‘tanka’
+to beat the summer heat as it would keep
+the room cool.
+Rooftop rainwater harvesting is the most
+common practice in Shillong, Meghalaya.
+It is interesting because Cherapunjee and
+Mawsynram situated at a distance of
+55 km. from Shillong receive the highest
+rainfall in the world, yet the state capital
+Shillong faces acute shortage of water.
+Nearly every household in the city has a Rooftop harvesting was common across the towns
+rooftop rainwater harvesting structure. and villages of the Thar. Rainwater that falls on the
+sloping roofs of houses is taken through a pipe into
+Nearly 15-25 per cent of the total water
+an underground tanka (circular holes in the ground).
+requirement of the household comes from
+built in the main house or in the courtyard. The
+rooftop water harvesting. picture above shows water being taken from a
+neighbour’s roof through a long pipe. Here the
+neighbour’s rooftop has been used for collection of
+rainwater. The picture shows a hole through which
+rainwater flows down into an underground tanka.
+Find out other rainwater harvesting systems
+existing in and around your locality. Fig. 3.6
+Today, in western Rajasthan, sadly the Tamil Nadu is the first state in India
+practice of rooftop rainwater harvesting is on which has made rooftop rainwater
+the decline as plenty of water is available due harvesting structure compulsory to all
+to the perennial Indira Gandhi Canal, though the houses across the state. There are
+some houses still maintain the tankas since legal provisions to punish the defaulters.
+they do not like the taste of tap water.
+WATER RESOURCES 27
+Rationalised-2023-24
+
+--- PAGE 40 ---
+BAMBOO DRIP IRRIGATION SYSTEM
+In Meghalaya, a 200-year-old system of tapping stream
+and spring water by using bamboo pipes, is prevalent.
+About 18-20 litres of water enters the bamboo pipe system,
+gets transported over hundreds of metres, and finally
+reduces to 20-80 drops per minute at the site of the plant.
+Picture 1: Bamboo pipes are used to divert perennial springs
+on the hilltops to the lower reaches by gravity.
+Picture 2 and 3: The channel sections, made of bamboo, divert Picture 4: If the pipes pass a road,
+water to the plant site where it is distributed into branches, again they are taken high above the land.
+made and laid out with different forms of bamboo pipes. The flow of
+water into the pipes is controlled by manipulating the pipe positions.
+Picture 5 and 6
+Reduced channel sections
+and diversion units are
+used at the last stage of
+water application. The last
+channel section enables
+water to be dropped near
+the roots of the plant.
+Fig 3.7
+1. Collect information on how industries are polluting our water resources.
+2. Enact with your classmates a scene of water dispute in your locality.
+28 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 41 ---
+EXERCISES EXERCISES EXERCISES EXERCISES EXERCISES
+1. Multiple choice questions.
+(i) Based on the information given below classify each of the situations as
+‘suffering from water scarcity’ or ‘not suffering from water scarcity’.
+(a) Region with high annual rainfall.
+(b) Region having high annual rainfall and large population.
+(c) Region having high annual rainfall but water is highly polluted.
+(d) Region having low rainfall and low population.
+(ii) Which one of the following statements is not an argument in favour of multi-
+purpose river projects?
+(a) Multi-purpose projects bring water to those areas which suffer from
+water scarcity.
+(b) Multi-purpose projects by regulating water flow helps to control floods.
+(c) Multi-purpose projects lead to large scale displacements and loss of
+livelihood.
+(d) Multi-purpose projects generate electricity for our industries and our
+homes.
+(iii) Here are some false statements. Identify the mistakes and rewrite them
+correctly.
+(a) Multiplying urban centres with large and dense populations and urban
+lifestyles have helped in proper utilisation of water resources.
+(b) Regulating and damming of rivers does not affect the river’s natural
+flow and its sediment flow.
+(c) In Gujarat, the Sabarmati basin farmers were not agitated when higher
+priority was given to water supply in urban areas, particularly during
+droughts.
+(d) Today in Rajasthan, the practice of rooftop rainwater water harvesting
+has gained popularity despite high water availability due to the Indira
+Gandhi Canal.
+2. Answer the following questions in about 30 words.
+(i) Explain how water becomes a renewable resource.
+(ii) What is water scarcity and what are its main causes?
+(iii) Compare the advantages and disadvantages of multi-purpose river projects.
+3. Answer the following questions in about 120 words.
+(i) Discuss how rainwater harvesting in semi-arid regions of Rajasthan is
+carried out.
+(ii) Describe how modern adaptations of traditional rainwater harvesting
+methods are being carried out to conserve and store water.
+WATER RESOURCES 29
+Rationalised-2023-24
+
+--- PAGE 42 ---
+India is an agriculturally important country. through natural processes; land productivity
+Two-thirds of its population is engaged in in this type of agriculture is low as the farmer
+agricultural activities. Agriculture is a primary does not use fertilisers or other modern
+activity, which produces most of the food that inputs. It is known by different names in
+we consume. Besides food grains, it also different parts of the country.
+produces raw material for various industries.
+Can you name some such types of farmings?
+Can you name some industries based on
+It is jhumming in north-eastern states like
+agricultural raw material?
+Assam, Meghalaya, Mizoram and Nagaland;
+Moreover, some agricultural products like Pamlou in Manipur, Dipa in Bastar district
+tea, coffee, spices, etc. are also exported. of Chhattishgarh, and in Andaman and
+Nicobar Islands.
+TYPES OF FARMING
+Jhumming: The ‘slash and burn’ agriculture
+Agriculture is an age-old economic activity in
+is known as ‘Milpa’ in Mexico and Central
+our country. Over these years, cultivation
+America, ‘Conuco’ in Venzuela, ‘Roca’ in
+methods have changed significantly depending
+Brazil, ‘Masole’ in Central Africa, ‘Ladang’
+upon the characteristics of physical
+in Indonesia, ‘Ray’ in Vietnam.
+environment, technological know-how and In India, this primitive form of cultivation
+socio-cultural practices. Farming varies from is called ‘Bewar’ or ‘Dahiya’ in Madhya
+subsistence to commercial type. At present, Pradesh, ‘Podu’ or ‘Penda’ in Andhra Pradesh,
+in different parts of India, the following ‘Pama Dabi’ or ‘Koman’ or Bringa’ in Odisha,
+farming systems are practised. ‘Kumari’ in Western Ghats, ‘Valre’ or ‘Waltre’
+in South-eastern Rajasthan, ‘Khil’ in the
+Primitive Subsistence Farming
+Himalayan belt, ‘Kuruwa’ in Jharkhand, and
+This type of farming is still practised in few ‘Jhumming’ in the North-eastern region.
+pockets of India. Primitive subsistence
+agriculture is practised on small patches of
+land with the help of primitive tools like hoe,
+dao and digging sticks, and family/
+community labour. This type of farming
+depends upon monsoon, natural fertility of
+the soil and suitability of other environmental
+conditions to the crops grown.
+It is a ‘slash and burn’ agriculture.
+Farmers clear a patch of land and produce
+cereals and other food crops to sustain their
+family. When the soil fertility decreases, the
+farmers shift and clear a fresh patch of land
+for cultivation. This type of shifting allows
+Nature to replenish the fertility of the soil Fig. 4.1
+Rationalised-2023-24
+
+--- PAGE 43 ---
+Rinjha lived with her family in a small village Plantation is also a type of commercial
+at the outskirts of Diphu in Assam. She enjoys farming. In this type of farming, a single crop
+watching her family members clearing, is grown on a large area. The plantation has
+slashing and burning a patch of land for an interface of agriculture and industry.
+cultivation. She often helps them in irrigating
+Plantations cover large tracts of land, using
+the fields with water running through a
+capital intensive inputs, with the help of
+bamboo canal from the nearby spring. She
+migrant labourers. All the produce is used
+loves the surroundings and wants to stay
+as raw material in respective industries.
+here as long as she can, but this little girl
+In India, tea, coffee, rubber, sugarcane,
+has no idea about the declining fertility of
+banana, etc., are important plantation crops.
+the soil and her family’s search for fresh a
+Tea in Assam and North Bengal coffee in
+patch of land in the next season.
+Karnataka are some of the important
+plantation crops grown in these states. Since
+the production is mainly for market, a well-
+Can you name the type of farming Rinjha’s
+family is engaged in? developed network of transport and
+Can you enlist some crops which are grown communication connecting the plantation
+in such farming? areas, processing industries and markets
+plays an important role in the development
+Intensive Subsistence Farming
+of plantations.
+This type of farming is practised in areas of
+high population pressure on land. It is labour-
+intensive farming, where high doses of
+biochemical inputs and irrigation are used
+for obtaining higher production.
+Can you name some of the states of India
+where such farming is practised?
+Though the ‘right of inheritance’ leading
+to the division of land among successive
+generations has rendered land-holding size
+uneconomical, the farmers continue to take
+maximum output from the limited land in
+Fig. 4.2: Banana plantation in Southern
+the absence of alternative source of livelihood. part of India
+Thus, there is enormous pressure on
+agricultural land.
+Commercial Farming
+The main characteristic of this type of farming
+is the use of higher doses of modern inputs,
+e.g. high yielding variety (HYV) seeds, chemical
+fertilisers, insecticides and pesticides in order
+to obtain higher productivity. The degree of
+commercialisation of agriculture varies from
+one region to another. For example, rice is a
+commercial crop in Haryana and Punjab, but
+in Odisha, it is a subsistence crop.
+Can you give some more examples of crops
+which may be commercial in one region and
+may provide subsistence in another region? Fig. 4.3: Bamboo plantation in North-east
+AGRICULTURE 31
+Rationalised-2023-24
+
+--- PAGE 44 ---
+CROPPING PATTERN watermelon, muskmelon, cucumber,
+vegetables and fodder crops. Sugarcane takes
+You have studied the physical diversities and
+almost a year to grow.
+plurality of cultures in India. These are also
+reflected in agricultural practices and Major Crops
+cropping patterns in the country. Various
+A variety of food and non food crops are
+types of food and fibre crops, vegetables and
+grown in different parts of the country
+fruits, spices and condiments, etc. constitute
+depending upon the variations in soil, climate
+some of the important crops grown in the
+and cultivation practices. Major crops grown
+country. India has three cropping seasons
+in India are rice, wheat, millets, pulses, tea,
+— rabi, kharif and zaid.
+coffee, sugarcane, oil seeds, cotton and jute,
+Rabi crops are sown in winter from October
+etc.
+to December and harvested in summer from
+April to June. Some of the important rabi Rice: It is the staple food crop of a majority of
+crops are wheat, barley, peas, gram and the people in India. Our country is the second
+largest producer of rice in the world after
+mustard. Though, these crops are grown in
+China. It is a kharif crop which requires high
+large parts of India, states from the north
+temperature, (above 25°C) and high humidity
+and north-western parts such as Punjab,
+with annual rainfall above 100 cm. In the areas
+Haryana, Himachal Pradesh, Jammu and
+of less rainfall, it grows with the help of
+Kashmir, Uttarakhand and Uttar Pradesh are
+irrigation.
+important for the production of wheat and
+other rabi crops. Availability of precipitation
+during winter months due to the western
+temperate cyclones helps in the success of
+these crops. However, the success of the green
+revolution in Punjab, Haryana, western Uttar
+Pradesh and parts of Rajasthan has also been
+an important factor in the growth of the above-
+mentioned rabi crops.
+Kharif crops are grown with the onset of
+monsoon in different parts of the country and
+these are harvested in September-October.
+Important crops grown during this season
+are paddy, maize, jowar, bajra, tur (arhar),
+moong, urad, cotton, jute, groundnut and
+soyabean. Some of the most important rice- Fig. 4.4 (a): Rice Cultivation
+growing regions are Assam, West Bengal,
+coastal regions of Odisha, Andhra Pradesh,
+Telangana, Tamil Nadu, Kerala and
+Maharashtra, particularly the (Konkan coast)
+along with Uttar Pradesh and Bihar. Recently,
+paddy has also become an important crop of
+Punjab and Haryana. In states like Assam,
+West Bengal and Odisha, three crops of paddy
+are grown in a year. These are Aus, Aman
+and Boro.
+In between the rabi and the kharif seasons,
+there is a short season during the summer
+months known as the Zaid season. Some of
+Fig. 4.4 (b): Rice is ready to be harvested in the
+the crops produced during ‘zaid’ are
+field
+32 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 45 ---
+India: Distribution of Rice
+AGRICULTURE 33
+Rationalised-2023-24
+
+--- PAGE 46 ---
+Rice is grown in the plains of north and
+north-eastern India, coastal areas and the
+deltaic regions. Development of dense network
+of canal irrigation and tubewells have made
+it possible to grow rice in areas of less rainfall
+such as Punjab, Haryana and western Uttar
+Pradesh and parts of Rajasthan.
+Wheat: This is the second most important
+cereal crop. It is the main food crop, in north
+and north-western part of the country. This
+rabi crop requires a cool growing season and
+a bright sunshine at the time of ripening. It
+Fig. 4.6: Bajra Cultivation
+requires 50 to 75 cm of annual rainfall evenly-
+distributed over the growing season. There
+Bajra grows well on sandy soils and
+are two important wheat-growing zones in the
+shallow black soil. Major Bajra producing
+country – the Ganga-Satluj plains in the
+States are Rajasthan, Uttar Pradesh,
+north-west and black soil region of the Deccan.
+Maharashtra, Gujarat and Haryana. Ragi is
+The major wheat-producing states are
+a crop of dry regions and grows well on red,
+Punjab, Haryana, Uttar Pradesh, Madhya
+black, sandy, loamy and shallow black soils.
+Pradesh, Bihar and Rajasthan.
+Major ragi producing states are: Karnataka,
+Tamil Nadu, Himachal Pradesh, Uttarakhand,
+Sikkim, Jharkhand and Arunachal Pradesh.
+Maize: It is a crop which is used both as
+food and fodder. It is a kharif crop which
+requires temperature between 21°C to 27°C
+and grows well in old alluvial soil. In some
+states like Bihar maize is grown in rabi season
+also. Use of modern inputs such as HYV
+seeds, fertilisers and irrigation have
+contributed to the increasing production of
+maize. Major maize-producing states are
+Karnataka, Madhya Pradesh, Uttar Pradesh,
+Bihar, Andhra Pradesh and Telangana.
+Fig. 4.5: Wheat Cultivation
+Millets: Jowar, bajra and ragi are the
+important millets grown in India. Though,
+these are known as coarse grains, they have
+very high nutritional value. For example, ragi
+is very rich in iron, calcium, other micro
+nutrients and roughage. Jowar is the third
+most important food crop with respect to area
+and production. It is a rain-fed crop mostly
+grown in the moist areas which hardly needs
+irrigation. Major Jowar producing States are
+Maharashtra, Karnataka, Andhra Pradesh
+Fig. 4.7: Maize Cultivation
+and Madhya Pradesh.
+34 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 47 ---
+India: Distribution of Wheat
+AGRICULTURE 35
+Rationalised-2023-24
+
+--- PAGE 48 ---
+Pulses: India is the largest producer as well sowing to harvesting. India is the second
+as the consumer of pulses in the world. These largest producer of sugarcane only after
+are the major source of protein in a vegetarian Brazil. It is the main source of sugar, gur
+diet. Major pulses that are grown in India are (jaggary), khandsari and molasses. The major
+tur (arhar), urad, moong, masur, peas and sugarcane-producing states are Uttar
+gram. Can you distinguish which of these Pradesh, Maharashtra, Karnataka, Tamil
+pulses are grown in the kharif season and Nadu, Andhra Pradesh, Telangana, Bihar,
+which are grown in the rabi season? Pulses Punjab and Haryana.
+need less moisture and survive even in dry
+Oil Seeds: In 2018 India was the second
+conditions. Being leguminous crops, all these
+largest producer of groundnut in the world
+crops except arhar help in restoring soil
+after China. In rapeseed production India was
+fertility by fixing nitrogen from the air.
+third largest producer in the world after
+Therefore, these are mostly grown in rotation
+Canada and China in 2018. Different oil seeds
+with other crops. Major pulse producing states
+are grown covering approximately 12 per cent
+in India are Madhya Pradesh, Rajasthan,
+of the total cropped area of the country. Main
+Maharashtra, Uttar Pradesh and Karnataka.
+oil-seeds produced in India are groundnut,
+Food Crops other than Grains mustard, coconut, sesamum (til), soyabean,
+Sugarcane: It is a tropical as well as a castor seeds, cotton seeds, linseed and
+sunflower. Most of these are edible and used
+subtropical crop. It grows well in hot and
+humid climate with a temperature of 21°C to as cooking mediums. However, some of these
+27°C and an annual rainfall between 75cm. are also used as raw material in the
+and 100cm. Irrigation is required in the production of soap, cosmetics and ointments.
+regions of low rainfall. It can be grown on a Groundnut is a kharif crop and accounts
+variety of soils and needs manual labour from for about half of the major oilseeds produced in
+the country. Gujarat was the largest producer
+of groundnut followed by Rajasthan and Tamil
+Nadu in 2019–20. Linseed and mustard are rabi
+crops. Sesamum is a kharif crop in north and
+rabi crop in south India. Castor seed is grown
+both as rabi and kharif crop.
+Tea: Tea cultivation is an example of
+plantation agriculture. It is also an important
+beverage crop introduced in India initially by
+the British. Today, most of the tea plantations
+are owned by Indians. The tea plant grows
+well in tropical and sub-tropical climates
+endowed with deep and fertile well-drained
+soil, rich in humus and organic matter. Tea
+Fig. 4.8: Sugarcane Cultivation bushes require warm and moist frost-free
+Fig. 4.9: Groundnut, sunflower and mustard are ready to be harvested in the field
+36 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 49 ---
+climate all through the
+year. Frequent showers
+evenly distributed over the
+year ensure continuous
+growth of tender leaves.
+Tea is a labour-intensive
+industry. It requires
+abundant, cheap and
+skilled labour. Tea is
+processed within
+the tea garden to restore Fig. 4.10: Tea Cultivation Fig. 4.11: Tea-leaves Harvesting
+its freshness. Major tea-
+producing states are Assam, hills of Darjeeling Horticulture Crops: In 2018, India was the
+and Jalpaiguri districts, West Bengal, Tamil second largest producer of fruits and
+Nadu and Kerala. Apart from these, Himachal vegetables in the world after China. India is a
+Pradesh, Uttarakhand, Meghalaya, Andhra producer of tropical as well as temperate fruits.
+Pradesh and Tripura are also tea-producing Mangoes of Maharashtra, Andhra Pradesh,
+states in the country. In 2018 India was the Telangana, Uttar Pradesh and West Bengal,
+second largest producer of tea after China. oranges of Nagpur and Cherrapunjee
+(Meghalaya), bananas of Kerala, Mizoram,
+Coffee: Indian coffee is known in the world for
+Maharashtra and Tamil Nadu, lichi and guava
+its good quality. The Arabica variety initially
+of Uttar Pradesh and Bihar, pineapples of
+brought from Yemen is produced in the
+country. This variety is in great demand all over Meghalaya, grapes of Andhra Pradesh,
+the world. Initially its cultivation was Telangana and Maharashtra, apples, pears,
+introduced on the Baba Budan Hills and even apricots and walnuts of Jammu and Kashmir
+today its cultivation is confined to the Nilgiri in and Himachal Pradesh are in great demand
+Karnataka, Kerala and Tamil Nadu. the world over.
+Fig. 4.12: Apricots, apple and pomegranate
+Fig. 4.13: Cultivation of vegetables– peas, cauliflower, tomato and brinjal
+Source: Pocket book of agricultural statistics, 2020, Govt. of India. Directorate of Economics and Statistics.
+AGRICULTURE 37
+Rationalised-2023-24
+
+--- PAGE 50 ---
+India is an important producer of pea, Karnataka, Andhra Pradesh, Telangana, Tamil
+cauliflower, onion, cabbage, tomato, brinjal Nadu, Punjab, Haryana and Uttar Pradesh.
+and potato.
+Jute: It is known as the golden fibre. Jute grows
+Non-Food Crops well on well-drained fertile soils in the flood
+plains where soils are renewed every year. High
+Rubber: It is an equatorial crop, but under
+temperature is required during the time of
+special conditions, it is also grown in tropical
+growth. West Bengal, Bihar, Assam, Odisha and
+and sub-tropical areas. It requires moist and
+Meghalaya are the major jute producing states.
+humid climate with rainfall of more than 200
+It is used in making gunny bags, mats, ropes,
+cm. and temperature above 25°C.
+yarn, carpets and other artefacts. Due to its
+Rubber is an important industrial raw
+high cost, it is losing market to synthetic fibres
+material. It is mainly grown in Kerala, Tamil
+and packing materials, particularly the nylon.
+Nadu, Karnataka and Andaman and Nicobar
+islands and Garo hills of Meghalaya.
+Technological and Institutional Reforms
+It was mentioned in the previous pages that
+List the items which are made of rubber and agriculture has been practised in India for
+are used by us. thousands of years. Sustained uses of land
+without compatible techno-institutional
+Fibre Crops: Cotton, jute, hemp and natural changes have hindered the pace of agricultural
+silk are the four major fibre crops grown in India. development. Inspite of development of sources
+The first three are derived from the crops grown of irrigation most of the farmers in large parts
+in the soil, the latter is obtained from cocoons of of the country still depend upon monsoon and
+the silkworms fed on green leaves specially natural fertility in order to carry on their
+mulberry. Rearing of silk worms for the agriculture. For a growing population, this
+production of silk fibre is known as sericulture. poses a serious challenge. Agriculture which
+provides livelihood for more than 60 per cent
+Cotton: India is believed to be the original home
+of its population, needs some serious technical
+of the cotton plant. Cotton is one of the main
+and institutional reforms. Thus, collectivisation,
+raw materials for cotton textile industry. In
+consolidation of holdings, cooperation and
+2017, India was second largest producer of
+abolition of zamindari, etc. were given priority
+cotton after China. Cotton grows well in drier
+to bring about institutional reforms in the
+parts of the black cotton soil of the Deccan
+country after Independence. ‘Land reform’ was
+plateau. It requires high temperature, light
+the main focus of our First Five Year Plan. The
+rainfall or irrigation, 210 frost-free days and
+right of inheritance had already lead to
+bright sun-shine for its growth. It is a kharif
+fragmentation of land holdings necessitating
+crop and requires 6 to 8 months to mature.
+consolidation of holdings.
+Major cotton-producing states are–
+The laws of land reforms were enacted but
+Maharashtra, Gujarat, Madhya Pradesh,
+the implementation was lacking or lukewarm.
+The Government of India embarked upon
+introducing agricultural reforms to improve
+Indian agriculture in the 1960s and 1970s.
+The Green Revolution based on the use of
+package technology and the White Revolution
+(Operation Flood) were some of the strategies
+initiated to improve the lot of Indian agriculture.
+But, this too led to the concentration of
+development in few selected areas. Therefore,
+in the 1980s and 1990s, a comprehensive land
+development programme was initiated, which
+Fig. 4.14: Cotton Cultivation
+included both institutional and technical
+38 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 51 ---
+Fig. 4.15: Modern technological equipments used in agriculture
+reforms. Provision for crop insurance against Satyagraha as one of the foremost
+drought, flood, cyclone, fire and disease, satyagrahis. He was one of the votaries of
+establishment of Grameen banks, cooperative Gandhi’s concept of gram swarajya. After
+societies and banks for providing loan facilities Gandhiji’s martyrdom, Vinoba Bhave
+to the farmers at lower rates of interest were undertook padyatra to spread Gandhiji’s
+some important steps in this direction. message covered almost the entire country.
+Kissan Credit Card (KCC), Personal Accident Once, when he was delivering a lecture at
+Insurance Scheme (PAIS) are some other Pochampalli in Andhra Pradesh, some poor
+schemes introduced by the Government of India landless villagers demanded some land for
+for the benefit of the farmers. Moreover, special their economic well-being. Vinoba Bhave
+weather bulletins and agricultural programmes could not promise it to them immediately but
+for farmers were introduced on the radio and assured them to talk to the Government of
+television. The government also announces India regarding provision of land for them if
+minimum support price, remunerative and they undertook cooperative farming.
+procurement prices for important crops to check Suddenly, Shri Ram Chandra Reddy stood
+the exploitation of farmers by speculators and up and offered 80 acres of land to be
+middlemen. distributed among 80 land-less villagers.
+This act was known as ‘Bhoodan’. Later he
+travelled and introduced his ideas widely all
+Collect information about agriculture,
+over India. Some zamindars, owners of
+horticulture, agricultural schemes, etc. from
+many villages offered to distribute some
+Farmers’ Portal website https://farmer.
+villages among the landless. It was known
+gov.in/FarmerHome.aspx. Discuss about the
+as Gramdan. However, many land-owners
+benefits of the information available on
+chose to provide some part of their land to
+the portal.
+the poor farmers due to the fear of land
+ceiling act. This Bhoodan-Gramdan
+Bhoodan – Gramdan movement initiated by Vinoba Bhave is also
+Mahatma Gandhi declared Vinoba Bhave as known as the Blood-less Revolution.
+his spiritual heir. He also participated in
+AGRICULTURE 39
+Rationalised-2023-24
+
+--- PAGE 52 ---
+EXERCISES EXERCISES E XERCISES EXERCISES EXERCISES
+1. Multiple choice questions.
+(i) Which one of the following describes a system of agriculture where a single
+crop is grown on a large area?
+(a) Shifting Agriculture
+(b) Plantation Agriculture
+(c) Horticulture
+(d) Intensive Agriculture
+(ii) Which one of the following is a rabi crop?
+(a) Rice
+(b) Gram
+(c) Millets
+(d) Cotton
+(iii) Which one of the following is a leguminous crop?
+(a) Pulses
+(b) Jawar
+(c) Millets
+(d) Sesamum
+2. Answer the following questions in 30 words.
+(i) Name one important beverage crop and specify the geographical conditions
+required for its growth.
+(ii) Name one staple crop of India and the regions where it is produced.
+(iii) Enlist the various institutional reform programmes introduced by the
+government in the interest of farmers.
+3. Answer the following questions in about 120 words.
+(i) Suggest the initiative taken by the government to ensure the increase in
+agricultural production.
+(ii) Describe the geographical conditions required for the growth of rice.
+P
+ROJECTWORK
+1. Group discussion on the necessity of literacy among farmers.
+2. On an outline map of India show wheat producing areas.
+40 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 53 ---
+ACTIVITY
+Solve the puzzle by following your search horizontally and vertically to find the
+hidden answers.
+A Z M X N C B V N X A H D Q
+S D E W S R J D Q J Z V R E
+D K H A R I F G W F M R F W
+F N L R G C H H R S B S V T
+G B C W H E A T Y A C H B R
+H R T K A S S E P H X A N W
+J I E S J O W A R J Z H D T
+K C L A E G A C O F F E E Y
+L T E F Y M T A T S S R G I
+P D E J O U Y V E J G F A U
+O U M H Q S U D I T S W S P
+U O A C O T T O N E A H F O
+Y O L F L U S R Q Q D T W I
+T M U A H R G Y K T R A B F
+E A K D G D Q H S U O I W H
+W Q Z C X V B N M K J A S L
+1. The two staple food crops of India.
+2. This is the summer cropping season of India.
+3. Pulses like arhar, moong, gram, urad contain…
+4. It is a coarse grain.
+5. The two important beverages in India are…
+6. One of the four major fibers grown on black soils.
+AGRICULTURE 41
+Rationalised-2023-24
+
+--- PAGE 54 ---
+Haban comes to Guwahati with his father A bright smile from toothpaste
+from a remote village. and minerals
+He sees people getting into strange
+Toothpaste cleans your teeth. Abrasive
+house like objects which move along the minerals like silica, limestone, aluminium
+road. He also sees a “kitchen” dragging a
+oxide and various phosphate minerals do the
+number of house along with it. He is amazed cleaning. Fluoride which is used to reduce
+and asked his father “Why don’t our houses
+cavities, comes from a mineral fluorite. Most
+move like the one we saw in Guwahati, Ba?” toothpaste are made white with titanium
+Ba replies, “These are not houses, they
+oxide, which comes from minerals called
+are buses and trains. Unlike our houses these rutile, ilmenite and anatase. The sparkle in
+are not made of bricks and stones, metal like
+some toothpastes comes from mica. The
+iron and alluminium are used in making toothbrush and tube containing the paste are
+these. They do not move on their own. They
+made of plastics from petroleum. Find out
+are driven by an engine which needs energy where these minerals are found?
+to work.”
+Dig a little deeper and find out how many
+We use different things in our daily life made minerals are used to make a light bulb?
+from metal. Can you list a number of items
+used in your house made of metals. Where do
+All living things need minerals
+these metals come from?
+Life processes cannot occur without minerals.
+You have studied that the earth’s crust is
+Although our mineral intake represents only
+made up of different minerals embedded in the
+about 0.3 per cent of our total intake of
+rocks. Various metals are extracted from these
+nutrients, they are so potent and so important
+minerals after proper refinement.
+that without them we would not be able to
+Minerals are an indispensable part of our
+utilise the other 99.7 per cent of foodstuffs.
+lives. Almost everything we use, from a tiny pin
+to a towering building or a big ship, all are
+made from minerals. The railway lines and the
+Dig a little deeper and collect “Nutritional
+tarmac (paving) of the roads, our implements
+Facts” printed on food labels.
+and machinery too are made from minerals.
+Cars, buses, trains, aeroplanes are What is a mineral?
+manufactured from minerals and run on Geologists define mineral as a
+power resources derived from the earth. Even “homogenous, natura lly occurring substance
+the food that we eat contains minerals. In all with a definable internal structure.” Minerals
+stages of development, human beings have are found in varied forms in nature, ranging
+used minerals for their livelihood, decoration, from the hardest diamond to the softest talc.
+festivities, religious and ceremonial rites. Why are they so varied?
+Rationalised-2023-24
+
+--- PAGE 55 ---
+You have already learnt about rocks. sufficient concentration to make its extraction
+Rocks are combinations of homogenous commercially viable. The type of formation or
+substances called minerals. Some rocks, for structure in which they are found determines
+instance limestone, consist of a single mineral the relative ease with which mineral ores may
+only, but majority of the rock consist of several be mined. This also determines the cost of
+minerals in varying proportions. Although, extraction. It is, therefore, important for us
+over 2000 minerals have been identified, only to understand the main types of formations
+a few are abundantly found in most of the in which minerals occur.
+rocks. Minerals generally occur in these forms:
+A particular mineral that will be formed (i)In igneous and metamorphic rocks
+from a certain combination of elements
+minerals may occur in the cracks,
+depends upon the physical and chemical crevices, faults or joints. The smaller
+conditions under which the material forms.
+occurrences are called veins and the
+This, in turn, results in a wide range of colours, larger are called lodes. In most cases,
+hardness, crystal forms, lustre and density that
+they are formed when minerals in liquid/
+a particular mineral possesses. Geologists use molten and gaseous forms are forced
+these properties to classify the minerals.
+upward through cavities towards the
+earth’s surface. They cool and solidify as
+Study of Minerals by Geographers they rise. Major metallic minerals like tin,
+and Geologists copper, zinc and lead etc. are obtained
+Geographers study minerals as part of the from veins and lodes.
+earth’s crust for a better understanding of (ii)In sedimentary rocks a number of minerals
+landforms. The distribution of mineral occur in beds or layers. They have been
+resources and associated economic activities formed as a result of deposition,
+are of interest to geographers. A geologist, accumulation and concentration in
+however, is interested in the formation of horizontal strata. Coal and some forms of
+minerals, their age and physical and iron ore have been concentrated as a result
+chemical composition. of long periods under great heat and
+pressure. Another group of sedimentary
+However, for general and commercial minerals include gypsum, potash salt and
+purposes minerals can be classified as under. sodium salt. These are formed as a result
+of evaporation especially in arid regions.
+MODE OF OCCURRENCE OF MINERALS
+(iii) Another mode of formation involves the
+Where are these minerals found?
+decomposition of surface rocks, and the
+Minerals are usually found in “ores”. The
+removal of soluble constituents, leaving
+term ore is used to describe an accumulation
+a residual mass of weathered
+of any mineral mixed with other elements.
+material containing ores. Bauxite is
+The mineral content of the ore must be in
+formed this way.
+Fig. 5.1
+MINERALS AND ENERGY RESOURCES 43
+Rationalised-2023-24
+
+--- PAGE 56 ---
+(iv)Certain minerals may occur as alluvial non-ferrous minerals. The vast alluvial plains
+deposits in sands of valley floors and the of north India are almost devoid of economic
+base of hills. These deposits are called minerals. These variations exist largely because
+‘placer deposits’ and generally contain of the differences in the geological structure,
+minerals, which are not corroded by water. processes and time involved in the formation
+Gold, silver, tin and platinum are most of minerals.
+important among such minerals. Let us now study the distribution of a few
+(v)The ocean waters contain vast quantities major minerals in India. Always remember that
+the concentration of mineral in the ore, the ease
+of minerals, but most of these are too widely
+diffused to be of economic significance. of extraction and closeness to the market play
+an important role in affecting the economic
+However, common salt, magnesium and
+bromine are largely derived from ocean viability of a reserve. Thus, to meet the demand,
+a choice has to be made between a number of
+waters. The ocean beds, too, are rich in
+manganese nodules. possible options. When this is done a mineral
+‘deposit’ or ‘reserve’ turns into a mine.
+Ferrous Minerals
+Rat-Hole Mining. Do you know that most
+Ferrous minerals account for about three-
+of the minerals in India are nationalised
+fourths of the total value of the production of
+and their extraction is possible only after
+metallic minerals. They provide a strong base
+obtaining due permission from the
+for the development of metallurgical industries.
+government? But in most of the tribal
+India exports substantial quantities of ferrous
+areas of the north-east India, minerals are
+minerals after meeting her internal demands.
+owned by individuals or communities. In
+Meghalaya, there are large deposits of coal, Iron Ore
+iron ore, limestone and dolomite etc. Coal
+Iron ore is the basic mineral and the backbone
+mining in Jowai and Cherapunjee is done
+of industrial development. India is endowed
+by family member in the form of a long
+with fairly abundant resources of iron ore. India
+narrow tunnel, known as ‘Rat hole’
+is rich in good quality iron ores. Magnetite is
+mining. The National Green Tribunal has
+the finest iron ore with a very high content of
+declared such activities illegal and
+iron up to 70 per cent. It has excellent magnetic
+recommended that these should be
+qualities, especially valuable in the electrical
+stopped forthwith.
+industry. Hematite ore is the most important
+industrial iron ore in terms of the quantity
+Dig a little deeper: What is the difference used, but has a slightly lower iron content than
+between an open pit mine, a quarry and an magnetite. (50-60 per cent). In 2018–19 almost
+underground mine with shafts? entire production of iron ore (97%) accrued
+from Odisha, Chhattisgarh, Karnataka and
+India is fortunate to have fairly rich and
+Jharkhand. The remaining production (3%)
+varied mineral resources. However, these are
+was from other states.
+unevenly distributed. Broadly speaking,
+peninsular rocks contain most of the reserves
+of coal, metallic minerals, mica and many other
+Kudre in Kannada means horse. The
+non-metallic minerals. Sedimentary rocks on
+highest peak in the western ghats of
+the western and eastern flanks of the peninsula,
+Karnataka resembles the face of a horse.
+in Gujarat and Assam have most of the
+The Bailadila hills look like the hump of
+petroleum deposits. Rajasthan with the rock
+an ox, and hence its name.
+systems of the peninsula, has reserves of many
+44 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 57 ---
+Maharashtra. Though, the ores are not of
+very high quality, yet they are efficiently
+exploited. Iron ore is exported through
+Marmagao port.
+Manganese
+Manganese is mainly used in the
+manufacturing of steel and ferro-manganese
+alloy. Nearly 10 kg of manganese is required
+to manufacture one tonne of steel. It is also
+used in manufacturing bleaching powder,
+insecticides and paints.
+Andhra Others
+Pradesh 2%
+10%
+Fig. 5.2: Iron ore mine
+Karnataka
+The major iron ore belts in India are: 12%
+• Odisha-Jharkhand belt: In Odisha high Madhya
+Pradesh
+grade hematite ore is found in Badampahar
+33%
+mines in the Mayurbhanj and Kendujhar
+districts. In the adjoining Singbhum
+Odisha
+district of Jharkhand haematite iron ore is
+16%
+mined in Gua and Noamundi.
+• Durg-Bastar-Chandrapur belt lies in
+Chhattisgarh and Maharashtra. Very high
+grade hematites are found in the famous Maharashtra
+Bailadila range of hills in the Bastar district 27%
+of Chhattisgarh. The range of hills
+Fig. 5.3: Production of Manganese showing
+comprise of 14 deposits of super high state-wise share in per cent, 2018–19
+grade hematite iron ore. It has the best
+physical properties needed for steel
+Dig a little deeper: Superimpose the maps
+making. Iron ore from these mines is
+showing distribution of iron ore, manganese,
+exported to Japan and South Korea via
+coal and iron and steel industry. Do you see
+Vishakhapatnam port.
+any correlation. Why?
+• Ballari-Chitradurga-Chikkamagaluru-
+Tumakuru belt in Karnataka has large
+reserves of iron ore. The Kudremukh mines Non-Ferrous Minerals
+located in the Western Ghats of Karnataka India’s reserves and production of non-
+are a 100 per cent export unit. Kudremukh ferrous minerals is not very satisfactory.
+deposits are known to be one of the largest However, these minerals, which include
+in the world. The ore is transported as copper, bauxite, lead, zinc and gold play a
+slurry through a pipeline to a port near vital role in a number of metallurgical,
+Mangaluru.
+engineering and electrical industries. Let us
+• Maharashtra-Goa belt includes the state study the distribution of copper and
+of Goa and Ratnagiri district of bauxite.
+MINERALS AND ENERGY RESOURCES 45
+Rationalised-2023-24
+
+--- PAGE 58 ---
+India: Distribution of Iron Ore, Manganese, Bauxite and Mica
+46 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 59 ---
+Copper
+Madhya
+India is critically deficient in the reserve and Maharashtra Pradesh Others
+3%
+production of copper. Being malleable, ductile 6% 1%
+and a good conductor, copper is mainly used Chhattisgarh
+6%
+in electrical cables, electronics and chemical
+Gujarat
+9%
+Odisha
+65%
+Jharkhand
+10%
+Fig. 5.5: Production of Bauxite showing state-wise
+Fig. 5.4: Copper mines at Malanjkhand share in per cent, 2018–19
+industries. The Balaghat mines in Madhya Odisha was the largest bauxite producing
+Pradesh, Khetri mines in Rajasthan and state in India in 2016-17. Panchpatmali
+Singhbhum district of Jharkhand are leading deposits in Koraput district are the most
+producers of copper. important bauxite deposits in the state.
+Bauxite
+Though, several ores
+contain aluminium, it
+is from bauxite, a
+clay-like substance
+that alumina and
+later aluminium is
+obtained. Bauxite
+deposits are formed
+by the decomposition
+of a wide variety of
+rocks rich in
+aluminium silicates.
+Aluminium is an
+important metal
+because it combines
+the strength of metals
+such as iron, with
+extreme lightness
+and also with good
+conductivity and
+great malleability.
+India’s bauxite
+deposits are mainly
+Fig.5.6: Bauxite Mine
+found in the
+Amarkantak plateau, Maikal hills and the Dig a little deeper: Locate the mines of
+plateau region of Bilaspur-Katni. Bauxite on the physical map of India.
+MINERALS AND ENERGY RESOURCES 47
+Rationalised-2023-24
+
+--- PAGE 60 ---
+Rock Minerals
+Limestone is found in association with rocks
+After the discovery of aluminium composed of calcium carbonates or calcium
+Emperor Napoleon III wore buttons and and magnesium carbonates. It is found in
+hooks on his clothes made of aluminium sedimentary rocks of most geological
+and served food to his more illustrious formations. Limestone is the basic raw
+guests in aluminium utensils and the material for the cement industry and
+less honourable ones were served in gold essential for smelting iron ore in the blast
+and silver utensils. Thirty years after this furnace.
+incident aluminium bowls were most
+common with the beggars in Paris. Dig a little deeper: Study the maps to explain
+why Chota Nagpur is a storehouse of minerals.
+Non-Metallic Minerals Others
+8%
+Mica is a mineral made up of a series of plates Maharashtra Rajasthan
+4% 20%
+or leaves. It splits easily into thin sheets. These
+Tamil Nadu
+sheets can be so thin that a thousand can be 6%
+layered into a mica sheet of a few centimeters
+Gujarat
+high. Mica can be clear, black, green, red yellow
+7%
+or brown. Due to its excellent di-electric
+Madhya
+strength, low power loss factor, insulating Pradesh
+properties and resistance to high voltage, mica Telangana 13%
+8%
+is one of the most indispensable minerals used
+in electric and electronic industries.
+Mica deposits are found in the northern Karnataka
+Andhra
+edge of the Chota Nagpur plateau. Koderma 9%
+Pradesh
+Chhattisgarh
+Gaya – Hazaribagh belt of Jharkhand is the 13%
+11%
+leading producer.
+In Rajasthan, the major mica producing
+Fig. 5.7: Production of Limestone showing
+area is around Ajmer. Nellore mica belt of state-wise share in per cent, 2018–19
+Andhra Pradesh is also an important producer
+in the country.
+Hazards of Mining
+Have you ever wondered about the efforts the miners make in making life comfortable
+for you? What are the impacts of mining on
+the health of the miners and the environment?
+The dust and noxious fumes inhaled by
+miners make them vulnerable to pulmonary
+diseases. The risk of collapsing mine roofs,
+inundation and fires in coalmines are a
+constant threat to miners.
+The water sources in the region get
+contaminated due to mining. Dumping of waste
+and slurry leads to degradation of land, soil, Fig. 5.8: Air pollution due to
+and increase in stream and river pollution. generation of dust in mining areas
+48 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 61 ---
+Stricter safety regulations and required millions of years to be created and
+implementation of environmental laws are concentrated. The geological processes of
+essential to prevent mining from becoming a mineral formation are so slow that the rates
+“killer industry”. of replenishment are infinitely small in
+comparison to the present rates of
+CONSERVATION OF MINERALS consumption. Mineral resources are,
+We all appreciate the strong dependence of therefore, finite and non-renewable. Rich
+industry and agriculture upon mineral mineral deposits are our country’s extremely
+deposits and the substances manufactured valuable but short-lived possessions.
+from them. The total volume of workable Continued extraction of ores leads to
+mineral deposits is an insignificant fraction increasing costs as mineral extraction comes
+i.e. one per cent of the earth’s crust. We are from greater depths along with decrease
+rapidly consuming mineral resources that in quality.
+MINERALS AND ENERGY RESOURCES 49
+Rationalised-2023-24
+
+--- PAGE 62 ---
+A concerted effort has to be made in order
+to use our mineral resources in a planned
+and sustainable manner. Improved
+technologies need to be constantly evolved to
+allow use of low grade ores at low costs.
+Recycling of metals, using scrap metals and
+other substitutes are steps in conserving our
+mineral resources for the future.
+Dig a little deeper: Make a list of items where
+substitutes are being used instead of minerals.
+Where are these substitutes obtained from?
+Energy Resources Fig. 5.9 (a): A view from inside of a coal mine
+Energy is required for all activities. It is needed
+to cook, to provide light and heat, to propel
+vehicles and to drive machinery in industries.
+Energy can be generated from fuel
+minerals like coal, petroleum, natural gas,
+uranium and from electricity. Energy
+resources can be classified as conventional
+and non-conventional sources. Conventional
+sources include: firewood, cattle dung cake,
+coal, petroleum, natural gas and electricity
+(both hydel and thermal). Non-conventional
+sources include solar, wind, tidal, geothermal,
+biogas and atomic energy. Firewood and cattle
+dung cake are most common in rural India. Fig. 5.9 (b): A view from outside of a coal mine
+According to one estimate more than 70 per
+cent energy requirement in rural households time of burial. Decaying plants in swamps
+is met by these two ; continuation of these is produce peat. Which has a low carbon and
+increasingly becoming difficult due to high moisture contents and low heating
+decreasing forest area. Moreover, using dung capacity. Lignite is a low grade brown coal,
+cake too is being discouraged because it which is soft with high moisture content. The
+consumes most valuable manure which could principal lignite reserves are in Neyveli in Tamil
+be used in agriculture. Nadu and are used for generation of
+electricity. Coal that has been buried deep
+Conventional Sources of Energy and subjected to increased temperatures is
+Coal: In India, coal is the most abundantly bituminous coal. It is the most popular coal
+available fossil fuel. It provides a substantial in commercial use. Metallurgical coal is high
+part of the nation’s energy needs. It is used grade bituminous coal which has a special
+for power generation, to supply energy to value for smelting iron in blast furnaces.
+industry as well as for domestic needs. India Anthracite is the highest quality hard coal.
+is highly dependent on coal for meeting its In India coal occurs in rock series of two
+commercial energy requirements. main geological ages, namely Gondwana, a
+As you are already aware that coal is little over 200 million years in age and in
+formed due the compression of plant material tertiary deposits which are only about 55
+over millions of years. Coal, therefore, is million years old. The major resources of
+found in a variety of forms depending on the Gondwana coal, which are metallurgical coal,
+degrees of compression and the depth and are located in Damodar valley (West Bengal-
+50 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 63 ---
+India: Distribution of Coal, Oil and Natural Gas
+Collect information about cross country natural gas pipelines laid by GAIL
+(India) under “One Nation One Grid”.
+MINERALS AND ENERGY RESOURCES 51
+Rationalised-2023-24
+
+--- PAGE 64 ---
+Jharkhand). Jharia, Raniganj, Bokaro are gas distribution (COD) networks, natural gas
+important coalfields. The Godavari, is also emerging as a preferred transport fuel
+Mahanadi, Son and Wardha valleys also (CNG) and cooking fuel (PNG) at homes. India’s
+contain coal deposits. major gas reserves are found in the Mumbai
+Tertiary coals occur in the north eastern High and allied fields along the west coast
+states of Meghalaya, Assam, Arunachal which are supplemented by finds in the
+Pradesh and Nagaland. Cambay basin. Along the East Coast, new
+Remember coal is a bulky material, which reserves of natural gas have been discovered
+loses weight on use as it is reduced to ash. in the Krishna-Godavari basin.
+Hence, heavy industries and thermal power The first 1,700 km long Hazira-Vijaipur-
+stations are located on or near the coalfields. Jagdishpur (HVJ) cross country gas pipeline,
+constructed by GAIL (India), linked Mumbai
+Petroleum
+High and Bassein gas fields with various
+Petroleum or mineral oil is the next major
+fertilizer, power and industrial complexes in
+energy source in India after coal. It provides western and northen India. This artery
+fuel for heat and lighting, lubricants for
+provided impetus to Indian gas market
+machinery and raw materials for a number of development. Overall, India’s gas infrastructure
+manufacturing industries. Petroleum refineries
+has expanded over ten times from 1,700 km
+act as a “nodal industry” for synthetic textile, to 18,500 km of cross-country pipelines and
+fertiliser and numerous chemical industries.
+is expected to soon reach over 34, 000 km as
+Most of the petroleum occurrences in India
+Gas Grid by linking all gas sources and
+are associated with anticlines and fault traps
+consuming markets across the country
+in the rock formations of the tertiary age. In
+including North Eastern states.
+regions of folding, anticlines or domes, it
+occurs where oil is trapped in the crest of the Electricity
+upfold. The oil bearing layer is a porous
+Electricity has such a wide range of
+limestone or sandstone through which oil may
+applications in today’s world that, its percapita
+flow. The oil is prevented from rising or
+consumption is considered as an index of
+sinking by intervening non-porous layers.
+development. Electricity is generated mainly in
+Petroleum is also found in fault traps
+two ways: by running water which drives hydro
+between porous and non-porous rocks. Gas,
+turbines to generate hydro electricity; and by
+being lighter usually occurs above the oil.
+burning other fuels such as coal, petroleum
+Mumbai High, Gujarat and Assam are
+and natural gas to drive turbines to produce
+major petroleum production areas in India.
+thermal power. Once generated the electricity
+From the map locate the 3 major off shore
+is exactly the same.
+fields of western India. Ankeleshwar is the
+most important field of Gujarat. Assam is the
+oldest oil producing state of India. Digboi,
+Name some river valley projects and write
+Naharkatiya and Moran-Hugrijan are the
+the names of the dams built on these rivers.
+important oil fields in the state.
+Natural Gas Hydro electricity is generated by fast
+flowing water, which is a renewable resource.
+Natural Gas is found with petroleum deposits
+India has a number of multi-purpose projects
+and is released when crude oil is brought to
+the surface. It can be used as a domestic and like the Bhakra Nangal, Damodar Valley
+industrial fuel. It is used as fuel in power sector corporation, the Kopili Hydel Project etc.
+to generate electricity, for heating purpose in producing hydroelectric power.
+industries, as raw material in chemical, Thermal electricity is generated by using
+petrochemical and fertilizer industries, as coal, petroleum and natural gas. The thermal
+transport fuel and as cooking fuel. With the power stations use non-renewable fossil fuels
+expansion of gas infrastructure and local city for generating electricity.
+52 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 65 ---
+Rawat Bhata
+India: Distribution of Nuclear and Thermal Power Plants
+MINERALS AND ENERGY RESOURCES 53
+Rationalised-2023-24
+
+--- PAGE 66 ---
+Collect information about thermal/hydel
+power plants located in your state. Show
+them on the map of India.
+Non-Conventional Sources of Energy
+The growing consumption of energy has
+resulted in the country becoming increasingly
+dependent on fossil fuels such as coal, oil and
+gas. Rising prices of oil and gas and their
+potential shortages have raised uncertainties
+about the security of energy supply in future,
+which in turn has serious repercussions on the Fig. 5.10: Solar operated electronic milk
+testing equipment
+growth of the national economy. Moreover,
+increasing use of fossil fuels also causes
+serious environmental problems. Hence, there Collect information about newly established
+is a pressing need to use renewable energy solar power plants in India.
+sources like solar energy, wind, tide, biomass
+Wind power
+and energy from waste material. These are
+called non-conventional energy sources. India has great potential of wind power. The
+India is blessed with an abundance of largest wind farm cluster is located in Tamil
+sunlight, water, wind and biomass. It has the Nadu from Nagarcoil to Madurai. Apart from
+largest programmes for the development of these, Andhra Pradesh, Karnataka, Gujarat,
+these renewable energy resources. Kerala, Maharashtra and Lakshadweep have
+important wind farms. Nagarcoil and
+Nuclear or Atomic Energy
+Jaisalmer are well known for effective use of
+It is obtained by altering the structure of
+wind energy in the country.
+atoms. When such an alteration is made, much
+energy is released in the form of heat and this
+is used to generate electric power. Uranium and
+Thorium, which are available in Jharkhand and
+the Aravalli ranges of Rajasthan are used for
+generating atomic or nuclear power. The
+Monazite sands of Kerala is also rich in
+Thorium.
+Locate the 6 nuclear power stations and find
+out the state in which they are located.
+Solar Energy
+Fig. 5.11: Wind mills – Nagarcoil
+India is a tropical country. It has enormous
+Biogas
+possibilities of tapping solar energy.
+Photovoltaic technology converts sunlight Shrubs, farm waste, animal and human waste
+directly into electricity. Solar energy is fast are used to produce biogas for domestic
+becoming popular in rural and remote areas. consumption in rural areas. Decomposition
+Some big solar power plants are being of organic matter yields gas, which has higher
+established in different parts of India which thermal efficiency in comparison to kerosene,
+will minimise the dependence of rural dung cake and charcoal. Biogas plants are
+households on firewood and dung cakes, set up at municipal, cooperative and
+which in turn will contribute to environmental individual levels. The plants using cattle dung
+conservation and adequate supply of manure are known as ‘Gobar gas plants’ in rural India.
+in agriculture. These provide twin benefits to the farmer in
+the form of energy and improved quality of
+54 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 67 ---
+manure. Biogas is by far the most efficient geothermal gradient is high, high temperatures
+use of cattle dung. It improves the quality of are found at shallow depths. Groundwater in
+manure and also prevents the loss of trees such areas absorbs heat from the rocks and
+and manure due to burning of fuel wood becomes hot. It is so hot that when it rises to
+and cow dung cakes. the earth’s surface, it turns into steam. This
+steam is used to drive turbines and generate
+electricity.
+There are several hundred hot springs in
+India, which could be used to generate
+electricity. Two experimental projects have been
+set up in India to harness geothermal energy.
+One is located in the Parvati valley near
+Manikarn in Himachal Pradesh and the other
+is located in the Puga Valley, Ladakh.
+Conservation of Energy Resources
+Energy is a basic requirement for economic
+development. Every sector of the national
+Fig. 5.12: Biogas Plant economy – agriculture, industry, transport,
+commercial and domestic – needs inputs of
+Tidal Energy energy. The economic development plans
+Oceanic tides can be used to generate implemented since Independence necessarily
+electricity. Floodgate dams are built across required increasing amounts of energy to
+inlets. During high tide water flows into the remain operational. As a result, consumption
+inlet and gets trapped when the gate is closed. of energy in all forms has been steadily rising
+After the tide falls outside the flood gate, the all over the country.
+water retained by the floodgate flows back to In this background, there is an urgent need
+the sea via a pipe that carries it through a to develop a sustainable path of energy
+power-generating turbine. development. Promotion of energy conservation
+In India the Gulf of Khambhat, the Gulf and increased use of renewable energy sources
+of Kuchchh in Gujarat on the western coast are the twin planks of sustainable energy.
+and Gangetic delta in Sunderban regions of India is presently one of the least energy
+West Bengal provide ideal conditions for efficient countries in the world. We have to
+utilising tidal energy. adopt a cautious approach for the judicious
+use of our limited energy resources. For
+Geo Thermal Energy
+example, as concerned citizens we can do our
+Geo thermal energy refers to the heat and bit by using public transport systems instead
+electricity produced by using the heat from of individual vehicles; switching off electricity
+the interior of the Earth. Geothermal energy when not in use, using power-saving devices
+exists because, the Earth grows progressively and using non-conventional sources of energy.
+hotter with increasing depth. Where the After all, “energy saved is energy produced”.
+EXERCISES EXERCISES EXERCISES EXERCISES EXERCISES
+1. Multiple choice questions.
+(i) Which one of the following minerals is formed by decomposition of rocks,
+leaving a residual mass of weathered material?
+(a) coal (b) bauxite (c) gold (d) zinc
+(ii) Koderma, in Jharkhand is the leading producer of which one of the following
+minerals?
+(a) bauxite (b) mica (c) iron ore (d) copper
+MINERALS AND ENERGY RESOURCES 55
+Rationalised-2023-24
+
+--- PAGE 68 ---
+(iii) Minerals are deposited and accumulated in the stratas of which of the
+following rocks?
+(a) sedimentary rocks (c) igneous rocks
+(b) metamorphic rocks (d) none of the above
+(iv) Which one of the following minerals is contained in the Monazite sand?
+(a) oil (b) uranium (c) thorium (d) coal
+2. Answer the following questions in about 30 words.
+(i) Distinguish between the following in not more than 30 words.
+(a) ferrous and non-ferrous minerals
+(b) conventional and non-conventional sources of energy
+(ii) What is a mineral?
+(iii) How are minerals formed in igneous and metamorphic rocks?
+(iv) Why do we need to conserve mineral resources ?
+3. Answer the following questions in about 120 words.
+(i) Describe the distribution of coal in India.
+(ii) Why do you think that solar energy has a bright future in India?
+ACTIVITY
+Fill the name of the correct mineral in the crossword below:
+2 1
+M
+2
+M
+4 3
+M
+4
+T
+1 5 5
+T
+6
+o
+7
+y
+56 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 69 ---
+ACROSS DOWN
+1. A ferrous mineral (9) 1. Found in placer deposit (4)
+2. Raw material for cement industry (9) 2. Iron ore mined in Bailadila (8)
+3. Finest iron ore with magnetic properties (9) 3. Indispensable for electrical industry (4)
+4. Highest quality hard coal (10) 4. Geological Age of coal found in north east
+5. Aluminium is obtained from this ore (7) India (8)
+6. Khetri mines are famous for this mineral (6) 5. Formed in veins and lodes (3)
+7. Formed due to evaporation (6)
+MINERALS AND ENERGY RESOURCES 57
+Rationalised-2023-24
+
+--- PAGE 70 ---
+On the occassion of Diwali, Harish went to IMPORTANCE OF MANUFACTURING
+a market with his parents. They purchased
+Manufacturing sector is considered the backbone
+shoes and clothes for him. His mother
+of development in general and economic
+purchased utensils, sugar, tea and diyas
+development in particular mainly because–
+(earthen lamps). Harish observed that the
+• Manufacturing industries not only help in
+shops in the market were flooded with
+modernising agriculture, which forms the
+items for sale. He wondered how so many
+backbone of our economy, they also reduce
+items could be made in such large
+the heavy dependence of people on
+quantities. His father explained that shoes,
+agricultural income by providing them jobs
+clothes, sugar etc. are manufactured by
+in secondary and tertiary sectors.
+machines in large industries, some utensils
+are manufactured in small industries, while • Industrial development is a precondition for
+items like diyas are made by individual eradication of unemployment and poverty
+artisans in household industry. from our country. This was the main
+philosophy behind public sector industries
+Do you have some ideas about these
+and joint sector ventures in India. It was also
+industries?
+aimed at bringing down regional disparities
+by establishing industries in tribal and
+backward areas.
+Production of goods in large quantities after
+• Export of manufactured goods expands
+processing from raw materials to more
+trade and commerce, and brings in much
+valuable products is called manufacturing. Do
+needed foreign exchange.
+you know that paper is manufactured from
+• Countries that transform their raw
+wood, sugar from sugarcane, iron and steel
+materials into a wide variety of finished
+from iron ore and aluminium from bauxite?
+goods of higher value are prosperous.
+Do you also know that some types of clothes
+India’s prosperity lies in increasing and
+are manufactured from yarn which itself is an
+diversifying its manufacturing industries as
+industrial product?
+quickly as possible.
+People employed in the secondary activities
+manufacture the primary materials into Agriculture and industry are not exclusive
+finished goods. The workers employed in steel of each other. They move hand in hand. For
+factories, car, breweries, textile industries, instance, the agro-industries in India have
+bakeries etc. fall into this category. Some people given a major boost to agriculture by raising
+are employed in providing services. In this its productivity. They depend on the latter for
+chapter, we are mainly concerned with raw materials and sell their products such as
+manufacturing industries which fall in the irrigation pumps, fertilisers, insecticides,
+secondary sector. pesticides, plastic and PVC pipes, machines
+The economic strength of a country is and tools, etc. to the farmers. Thus,
+measured by the development of development and competitiveness of
+manufacturing industries.
+58 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 71 ---
+manufacturing industry has not only allowed on the assets of a unit. This limit
+assisted agriculturists in increasing their has changed over a period of time. At
+production but also made the production present the maximum investment allowed
+processes very efficient. is rupees one crore.
+In the present day world of globalisation,
+On the basis of ownership:
+our industry needs to be more efficient and
+competitive. Self-sufficiency alone is not • Public sector, owned and operated by
+enough. Our manufactured goods must be government agencies – BHEL, SAIL etc.
+at par in quality with those in the • Private sector industries owned and
+international market. Only then, will we be operated by individuals or a group of
+able to compete in the international market. individuals –TISCO, Bajaj Auto Ltd.,
+Dabur Industries.
+• Joint sector industries which are jointly run
+Classification of Industries by the state and individuals or a group of
+individuals. Oil India Ltd. (OIL) is jointly
+List the various manufactured products you
+owned by public and private sector.
+use in your daily life such as – transistors,
+electric bulbs, vegetable oil, cement, • Cooperative sector industries are owned
+glassware, petrol, matches, scooters, and operated by the producers or
+automobiles, medicines and so on. If we suppliers of raw materials, workers or
+both. They pool in the resources and share
+classify the various industries based on a
+the profits or losses proportionately. Such
+particular criterion then we would be
+examples are the sugar industry in
+able to understand their manufacturing
+Maharashtra, the coir industry in Kerala.
+better. Industries may be classified as
+follows:
+Based on the bulk and weight of raw material
+and finished goods:
+On the basis of source of raw materials
+used: • Heavy industries such as iron and steel
+• Agro based: cotton, woollen, jute, silk • Light industries that use light raw
+textile, rubber and sugar, tea, coffee, materials and produce light goods such
+edible oil. as electrical goods industries.
+• Mineral based: iron and steel, cement,
+aluminium, machine tools,
+petrochemicals.
+Classify the following into two groups on the
+According to their main role: basis of bulk and weight of raw material and
+• Basic or key industries are those which finished goods.
+supply their products as raw materials to (i) Oil (vi) Sewing Machines
+manufacture other goods e.g. iron and
+(ii)Knitting needles (vii) Shipbuilding
+steel and copper smelting, aluminum
+(iii) Brassware (viii)Electric Bulbs
+smelting.
+(iv) Fuse wires (ix) Paint brushes
+• Consumer industries that produce goods
+for direct use by consumers – sugar, (v)Watches (x)Automobiles
+toothpaste, paper, sewing machines,
+fans etc.
+Agro-based Industries
+On the basis of capital investment: Cotton, jute, silk, woollen textiles, sugar and
+• A small scale industry is defined with edible oil, etc. industries are based on
+reference to the maximum investment agricultural raw materials.
+MANUFACTURING INDUSTRIES 59
+Rationalised-2023-24
+
+--- PAGE 72 ---
+Fig. 6.1: Value addition in the textile industry
+Textile Industry: The textile industry dyeing, designing, packaging, tailoring and
+occupies unique position in the Indian sewing. The industry by creating demands
+economy, because it contributes significantly supports many other industries, such as,
+to industrial production, employment chemicals and dyes, packaging materials
+generation and foreign exchange earnings. It and engineering works.
+is the only industry in the country, which is While spinning continues to be centralised
+self-reliant and complete in the value chain in Maharashtra, Gujarat and Tamil Nadu,
+i.e., from raw material to the highest value weaving is highly decentralised to provide
+added products. scope for incorporating traditional skills and
+designs of weaving in cotton, silk, zari,
+Cotton Textiles: In ancient India, cotton
+embroidery, etc. India has world class
+textiles were produced with hand spinning
+production in spinning, but weaving supplies
+and handloom weaving techniques. After
+low quality of fabric as it cannot use much of
+the 18th century, power-looms came into
+the high quality yarn produced in the country.
+use. Our traditional industries suffered a
+Weaving is done by handloom, powerloom and
+setback during the colonial period because in mills.
+they could not compete with the mill-made The handspun khadi provides large scale
+cloth from England. employment to weavers in their homes as a
+cottage industry.
+• The first successful textile mill was Why did Mahatma Gandhi lay emphasis on
+established in Mumbai in 1854. spinning yarn and weaving khadi?
+• The two world wars were fought in Europe, Why is it important for our country to
+India was a British colony. There was a keep the mill sector loomage lower than
+demand for cloth in U.K. hence, they gave power loom and handloom?
+a boost to the development of the cotton
+textile industry. Jute Textiles
+India is the largest producer of raw jute and
+jute goods and stands at second place as an
+In the early years, the cotton textile
+exporter after Bangladesh. Most of the mills are
+industry was concentrated in the cotton
+located in West Bengal, mainly along the banks
+growing belt of Maharashtra and Gujarat.
+of the Hugli river, in a narrow belt.
+Availability of raw cotton, market, transport
+including accessible port facilities, labour,
+moist climate, etc. contributed towards its The first jute mill was set up near Kolkata in
+localisation. This industry has close links 1855 at Rishra. After Partition in 1947, the
+jute mills remained in India but three-fourth
+with agriculture and provides a living to
+of the jute producing area went to
+farmers, cotton boll pluckers and workers
+Bangladesh (erstwhile East Pakistan).
+engaged in ginning, spinning, weaving,
+60 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 73 ---
+India: Distribution of cotton, woollen and silk industries
+MANUFACTURING INDUSTRIES 61
+Rationalised-2023-24
+
+--- PAGE 74 ---
+Factors responsible for their location in the Mineral-based Industries
+Hugli basin are: proximity of the jute producing
+Industries that use minerals and metals as raw
+areas, inexpensive water transport, supported
+materials are called mineral-based industries.
+by a good network of railways, roadways and
+Can you name some industries that would fall
+waterways to facilitate movement of raw
+in this category?
+material to the mills, abundant water for
+processing raw jute, cheap labour from West Iron and Steel Industry
+Bengal and adjoining states of Bihar, Odisha The iron and steel industry is the basic industry
+and Uttar Pradesh. Kolkata as a large urban
+since all the other industries — heavy, medium
+centre provides banking, insurance and port and light, depend on it for their machinery.
+facilities for export of jute goods.
+Steel is needed to manufacture a variety of
+engineering goods, construction material,
+Sugar Industry
+defence, medical, telephonic, scientific
+India stands second as a world producer of equipment and a variety of consumer goods.
+sugar but occupies the first place in the
+production of gur and khandsari. The raw
+material used in this industry is bulky, and in Make a list of all such goods made of steel
+haulage its sucrose content reduces. The mills
+that you can think of.
+are located in Uttar Pradesh, Bihar,
+Maharashtra, Karnataka, Tamil Nadu, Andhra
+Pradesh, Gujarat, Punjab, Haryana and Production and consumption of steel is
+Madhya Pradesh. Sixty per cent mills are in often regarded as the index of a country’s
+Uttar Pradesh and Bihar. This industry is development. Iron and steel is a heavy industry
+seasonal in nature so, it is ideally suited to the because all the raw materials as well as
+cooperative sector. Can you explain why this finished goods are heavy and bulky entailing
+is so? heavy transportation costs. Iron ore, coking
+In recent years, there is a tendency for the coal and lime stone are required in the ratio of
+mills to shift and concentrate in the southern approximately 4 : 2 : 1. Some quantities of
+and western states, especially in Maharashtra, manganese, are also required to harden the
+This is because the cane produced here has a steel. Where should the steel plants be ideally
+higher sucrose content. The cooler climate also located? Remember that the finished products
+ensures a longer crushing season. Moreover, also need an efficient transport network for
+the cooperatives are more successful in these their distribution to the markets and
+states. consumers.
+Processes of Manufacture of Steel
+Fig. 6.2
+62 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 75 ---
+India: Iron and Steel Plants
+MANUFACTURING INDUSTRIES 63
+Rationalised-2023-24
+
+--- PAGE 76 ---
+Chhotanagpur plateau region has the Aluminium smelting plants in the country
+maximum concentration of iron and steel are located in Odisha, West Bengal, Kerala,
+industries. It is largely, because of the relative Uttar Pradesh, Chhattisgarh, Maharashtra and
+advantages this region has for the development Tamil Nadu.
+of this industry. These include, low cost of iron Bauxite, the raw material used in the
+ore, high grade raw materials in proximity, smelters is a very bulky, dark reddish coloured
+cheap labour and vast growth potential in the rock. The flow chart given below shows the
+home market. process of manufacturing aluminium. Regular
+supply of electricity and an assured source of
+Aluminium Smelting
+raw material at minimum cost are the two
+Aluminium smelting is the second most prime factors for location of the industry.
+important metallurgical industry in India. It is
+Chemical Industries
+light, resistant to corrosion, a good conductor of
+heat, malleable and becomes strong when it is The Chemical industry in India is fast growing
+mixed with other metals. It is used to and diversifying. It comprises both large and
+manufacture aircraft, utensils and wires. It has small scale manufacturing units. Rapid growth
+gained popularity as a substitute of steel, copper, has been recorded in both inorganic and
+zinc and lead in a number of industries. organic sectors. Inorganic chemicals include
+sulphuric acid (used to manufacture fertilizers,
+synthetic fibres, plastics, adhesives, paints,
+dyes stuffs), nitric acid, alkalies, soda ash (used
+to make glass, soaps and detergents, paper)
+and caustic soda. These industries are widely
+spread over the country.
+Why do you think it is so?
+Organic chemicals include petrochemicals,
+which are used for manufacturing of synthetic
+fibers, synthetic rubber, plastics, dye-stuffs,
+Fig. 6.3: Strip coasting mill at smelter of NALCO drugs and pharmaceuticals. Organic chemical
+Fig. 6.4
+Fig. 6.5
+64 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 77 ---
+plants are located near oil refineries or Automobile Industry
+petrochemical plants. Automobiles provide vehicle for quick
+The chemical industry is its own largest transport of good services and passengers.
+consumer. Basic chemicals undergo processing Trucks, buses, cars, motor cycles, scooters,
+to further produce other chemicals that are three-wheelers and multi-utility vehicles are
+used for industrial application, agriculture or manufactured in India at various centres. After
+directly for consumer markets. Make a list of the liberalisation, the coming in of new and
+the products you are aware of. contemporary models stimulated the demand
+for vehicles in the market, which led to the
+Fertilizer Industry
+healthy growth of the industry including
+The fertilizer industry is centred around the
+passenger cars, two and three-wheelers. The
+production of nitrogenous fertilizers (mainly
+industry is located around Delhi, Gurugram,
+urea), phosphatic fertilizers and ammonium
+Mumbai, Pune, Chennai, Kolkata, Lucknow,
+phosphate (DAP) and complex fertilizers which
+Indore, Hyderabad, Jamshedpur and
+have a combination of nitrogen (N), phosphate
+Bengaluru.
+(P), and potash (K). The third, i.e. potash is
+entirely imported as the country does not have Information Technology and
+any reserves of commercially usable potash or Electronics Industry
+potassium compounds in any form. The electronics industry covers a wide range
+After the Green Revolution the industry of products from transistor sets to television,
+expanded to several other parts of the country. telephones, cellular telecom, telephone
+Gujarat, Tamil Nadu, Uttar Pradesh, Punjab exchange, radars, computers and many
+and Kerala contribute towards half of the other equipments required by the
+fertilizer production. Other significant telecommunication industry. Bengaluru has
+producers are Andhra Pradesh, Odisha, emerged as the electronic capital of India. Other
+Rajasthan, Bihar, Maharashtra, Assam, West important centres for electronic goods are
+Bengal, Goa, Delhi, Madhya Pradesh and Mumbai, Delhi, Hyderabad, Pune, Chennai,
+Karnataka. Kolkata, Lucknow and Coimbatore. The major
+industry concentration is at Bengaluru, Noida,
+Cement Industry
+Mumbai, Chennai, Hyderabad and Pune. A
+Cement is essential for construction activity major impact of this industry has been on
+such as building houses, factories, bridges, employment generation. The continuing
+roads, airports, dams and for other commercial growth in the hardware and software is the key
+establishments. This industry requires bulky to the success of IT industry in India.
+and heavy raw materials like limestone, silica
+and gypsum. Coal and electric power are
+needed apart from rail transportation.
+Where would it be economically viable to
+set up the cement manufacturing units?
+The industry has strategically located
+plants in Gujarat that have suitable access to
+the market in the Gulf countries.
+Find out where the plants are located in other
+Fig. 6.6: Cable manufacturing facilities at HCL,
+States of India. Find their names.
+Rupnarainpur (West Bengal)
+MANUFACTURING INDUSTRIES 65
+Rationalised-2023-24
+
+--- PAGE 78 ---
+Industrial Pollution and Environmental Dumping of wastes specially glass, harmful
+Degradation chemicals, industrial effluents, packaging, salts
+and garbage renders the soil useless. Rain
+Although industries contribute significantly to
+water percolates to the soil carrying the
+India’s economic growth and development, the
+pollutants to the ground and the ground water
+increase in pollution of land, water, air, noise
+also gets contaminated.
+and resulting degradation of environment that
+they have caused, cannot be overlooked. Noise pollution not only results in irritation
+Industries are responsible for four types of and anger, it can also cause hearing
+pollution: (a) Air (b) Water (c) Land (d) Noise. impairment, increased heart rate and blood
+The polluting industries also include thermal pressure among other physiological effects.
+power plants. Unwanted sound is an irritant and a source of
+stress. Industrial and construction activities,
+Air pollution is caused by the presence of high
+machinery, factory equipment, generators,
+proportion of undesirable gases, such as
+saws and pneumatic and electric drills also
+sulphur dioxide and carbon monoxide. Air-
+make a lot of noise.
+borne particulate materials contain both solid
+and liquid particles like dust, sprays mist and
+Control of Environmental Degradation
+smoke. Smoke is emitted by chemical and
+Every litre of waste water discharged by our
+paper factories, brick kilns, refineries and
+industry pollutes eight times the quantity of
+smelting plants, and burning of fossil fuels in
+freshwater. How can the industrial pollution of
+big and small factories that ignore pollution
+fresh water be reduced? Some suggestions are-
+norms. Toxic gas leaks can be very hazardous
+with long-term effects. Are you aware of the (i)minimising use water for processing by
+Bhopal Gas tragedy that occurred? Air reusing and recycling it in two or more
+pollution adversely affects human health, successive stages
+animals, plants, buildings and the atmosphere (ii)harvesting of rainwater to meet water
+as a whole. requirements
+Water pollution is caused by organic and (iii) treating hot water and effluents before
+inorganic industrial wastes and affluents releasing them in rivers and ponds.
+discharged into rivers. The main culprits in this Treatment of industrial effluents can be
+regard are paper, pulp, chemical, textile and done in three phases
+dyeing, petroleum refineries, tanneries and (a) Primary treatment by mechanical means.
+electroplating industries that let out dyes,
+This involves screening, grinding,
+detergents, acids, salts and heavy metals like
+flocculation and sedimentation.
+lead and mercury pesticides, fertilisers,
+(b) Secondary treatment by biological process
+synthetic chemicals with carbon, plastics and
+rubber, etc. into the water bodies. Fly ash, (c) Tertiary treatment by biological,
+phospo- gypsum and iron and steel slags are chemical and physical processes. This
+the major solid wastes in India. involves recycling of wastewater.
+Overdrawing of ground water reserves by
+Thermal pollution of water occurs when hot
+industry where there is a threat to ground
+water from factories and thermal plants is
+water resources also needs to be regulated
+drained into rivers and ponds before cooling.
+legally. Particulate matter in the air can be
+What would be the effect on aquatic life?
+reduced by fitting smoke stacks to factories
+Wastes from nuclear power plants, nuclear
+with electrostatic precipitators, fabric filters,
+and weapon production facilities cause
+scrubbers and inertial separators. Smoke
+cancers, birth defects and miscarriages. Soil
+can be reduced by using oil or gas instead
+and water pollution are closely related.
+66 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 79 ---
+India: Some Software Technology Parks
+MANUFACTURING INDUSTRIES 67
+Rationalised-2023-24
+
+--- PAGE 80 ---
+of coal in factories. Machinery and
+(a) Optimum utilisation of equipment
+equipment can be used and generators
+adopting latest techniques and
+should be fitted with silencers. Almost all
+upgrading existing equipment.
+machinery can be redesigned to increase
+(b) Minimising waste generation by
+energy efficiency and reduce noise. Noise
+maximising ash utilisation.
+absorbing material may be used apart from
+(c) Providing green belts for nurturing ecological
+personal use of earplugs and earphones.
+balance and addressing the question of
+The challenge of sustainable development
+special purpose vehicles for afforestation.
+requires integration of economic development
+with environmental concerns. (d) Reducing environmental pollution through
+ash pond management, ash water recycling
+system and liquid waste management.
+(e) Ecological monitoring, reviews and on-
+line database management for all its
+power stations.
+Fig. 6.7: Sewage Treatment plant under Yamuna
+action plan at Faridabad
+NTPC shows the way
+NTPC is a major power providing corporation
+in India. It has ISO certification for EMS
+(Environment Management System) 14001.
+The corporation has a proactive approach
+for preserving the natural environment and
+resources like water, oil and gas and fuels Fig. 6.8: Ramagundam plant
+in places where it is setting up power plants.
+This has been possible through-
+EXERCISES EXERCISES EXERCISES EXERCISES EXERCISES
+1. Multiple choice questions.
+(i) Which one of the following industries uses bauxite as a raw material?
+(a) Aluminium Smelting (b) Cement (c) Paper (d) Steel
+(ii) Which one of the following industries manufactures telephones, computer, etc.
+(a) Steel (c) Aluminium Smelting
+(b) Electronic (d) Information Technology
+2. Answer the following briefly in not more than 30 words.
+(i) What is manufacturing?
+(ii) What are basic industries? Give an example.
+68 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 81 ---
+3. Write the answers of the following questions in 120 words.
+(i) How do industries pollute the environment?
+(ii) Discuss the steps to be taken to minimise environmental degradation
+by industry?
+ACTIVITY
+Give one word for each of the following with regard to industry. The number of
+letters in each word are hinted in brackets.
+(i) Used to drive machinery (5) P...........................
+(ii) People who work in a factory (6) W..........................
+(iii) Where the product is sold (6) M..........................
+(iv) A person who sells goods (8) R...........................
+(v) Thing produced (7) P...........................
+(vi) To make or produce (11) M..........................
+(vii) Land, Water and Air degraded (9) P...........................
+PROJECT WORK
+Select one agro-based and one mineral-based industry in your area.
+(i) What are the raw materials they use?
+(ii) What are the other inputs in the process of manufacturing that involve
+transportation cost?
+(iii) Are these factories following environmental norms?
+ACTIVITY
+Solve the puzzle by following your search horizontally and vertically to find the hidden
+answers.
+1. Textiles, sugar, vegetable oil and plantation industries deriving raw materials
+from agriculture are called…
+2. The basic raw material for sugar industry.
+3. This fibre is also known as the ‘Golden Fibre’.
+4. Iron-ore, coking coal, and limestone are the chief raw materials of this industry.
+5. A public sector steel plant located in Chhattisgarh.
+MANUFACTURING INDUSTRIES 69
+Rationalised-2023-24
+
+--- PAGE 82 ---
+ACTIVITY
+Solve the puzzle by following your search horizontally and vertically to find the hidden
+answers.
+G G G P V A R A N A S I
+U O J I P G X K M Q W V
+K S U G A R C A N E E N
+O T T O N O Z V O P T R
+A U E L U B H I L A I U
+T K O C R A Q N T R L N
+E I R O N S T E E L S J
+E N A N O E P I T L R Y
+G A N U J D R A G D T A
+N T A R P O A P U E P Y
+A S N A E N J D I Y S K
+S M H V L I A J H S K G
+1. Textiles, sugar, vegetable oil and plantation industries deriving raw materials
+from agriculture are called…
+2. The basic raw material for sugar industry.
+3. This fibre is also known as the ‘Golden Fibre’.
+4. Iron-ore, coking coal, and limestone are the chief raw materials of this industry.
+5. A public sector steel plant located in Chhattisgarh.
+6. Railway diesel engines are manufactured in Uttar Pradesh at this place.
+70 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 83 ---
+We use different materials and services in our the help of equally developed communication
+daily life. Some of these are available in our system. Therefore, transport, communication
+immediate surroundings, while other and trade are complementary to each other.
+requirements are met by bringing things from Today, India is well-linked with the rest of
+other places. Goods and services do not move the world despite its vast size, diversity and
+from supply locales to demand locales on their linguistic and socio-cultural plurality.
+own. The movement of these goods and services Railways, airways, waterways, newspapers,
+from their supply locations to demand locations radio, television, cinema and internet, etc. have
+necessitates the need for transport. Some people been contributing to its socio-economic
+are engaged in facilitating these movements. progress in many ways. The trades from local
+These are known to be traders who make the to international levels have added to the vitality
+products come to the consumers by of its economy. It has enriched our life and
+transportation. Thus, the pace of development added substantially to growing amenities and
+of a country depends upon the production of facilities for the comforts of life.
+goods and services as well as their movement In this chapter, you will see how modern
+over space. Therefore, efficient means of transport means of transport and communication serve
+are prerequisites for fast development. as lifelines of our nation and its modern
+Movement of these goods and services can be economy. It is thus, evident that a dense and
+over three important domains of our earth i.e. land, efficient network of transport and
+water and air. Based on these, transport can also communication is a prerequisite for local,
+be classified into land, water and air transport. national and global trade of today.
+Fig. 7.1
+For a long time, trade and transport were TRANSPORT
+restricted to a limited space. With the
+Roadways
+development in science and technology, the
+area of influence of trade and transport India has second largest road networks in the
+expanded far and wide. Today, the world has world, aggregating to about 62.16 lakh km
+been converted into a large village with the help (2020–21). In India, roadways have preceded
+of efficient and fast moving transport. railways. They still have an edge over railways
+Transport has been able to achieve this with in view of the ease with which they can be built
+Rationalised-2023-24
+
+--- PAGE 84 ---
+and maintained. The growing importance of
+road transport vis-à-vis rail transport is
+rooted in the following reasons; (a)
+construction cost of roads is much lower
+than that of railway lines, (b) roads can
+traverse comparatively more dissected and
+undulating topography, (c) roads can
+negotiate higher gradients of slopes and as
+such can traverse mountains such as the
+Himalayas, (d) road transport is economical
+in transportation of few persons and
+relatively smaller amount of goods over
+short distances, (e) it also provides door-
+to-door service, thus the cost of loading
+and unloading is much lower, (f) road
+transport is also used as a feeder to other
+modes of transport such as they provide a Fig.7.2: Ahmedabad- Vadodara Expressway
+link between railway stations, air and
+sea ports.
+Collect information of National Highway
+In India, roads are classified in the
+numbers (old and new) from the website
+following six classes according to their
+morth.nic.in/national-highway-details. The
+capacity. Look at the map of the National
+historical Sher-Shah Suri Marg between
+Highways and find out about the significant
+Delhi and Amritsar is known by which
+role played by these roads.
+National Highway ?
+• Golden Quadrilateral Super Highways:
+The government has launched a major
+road development project linking Delhi- • District Roads: These roads connect the
+Kolkata-Chennai-Mumbai and Delhi by district headquarters with other places of
+six-lane Super Highways. The North- the district.
+South corridors linking Srinagar (Jammu • Other Roads: Rural roads, which link rural
+& Kashmir) and Kanniyakumari (Tamil areas and villages with towns, are classified
+Nadu), and East-West Corridor under this category. These roads received
+connecting Silchar (Assam) and Porbander special impetus under the Pradhan Mantri
+(Gujarat) are part of this project. The Grameen Sadak Yojana. Under this scheme
+major objective of these Super Highways special provisions are made so that every
+is to reduce the time and distance village in the country is linked to a major
+between the mega cities of India. These town in the country by an all season
+highway projects are being implemented motorable road.
+by the National Highway Authority of
+• Border Roads: Apart from these, Border
+India (NHAI).
+Roads Organisation a Government of India
+• National Highways: National Highways undertaking constructs and maintains
+link extreme parts of the country. These roads in the bordering areas of the
+are the primary road systems. A number country. This organisation was established
+of major National Highways run in North- in 1960 for the development of the roads
+South and East-West directions. of strategic importance in the northern and
+• State Highways: Roads linking a state north-eastern border areas. These roads
+capital with different district headquarters have improved accessibility in areas of
+are known as State Highways. difficult terrain and have helped in the
+economic development of these area.
+72 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 85 ---
+India: National Highways
+LIFELINES OF NATIONAL ECONOMY 73
+Rationalised-2023-24
+
+--- PAGE 86 ---
+and narrow. However, in recent years fast
+development of road network has taken place
+The World’s longest Highway tunnel-Atal in different parts of the country
+Tunnel (9.02 Km) has been built by Border
+Road Organisation. This tunnel connects Railways
+Manali to Lahul-Spiti valley throughout the Railways are the principal mode of
+year. Earlier the valley was cut off for about transportation for freight and passengers
+6 months each year owing to heavy snowfall. in India. Railways also make it possible for
+The tunnel is buit with ultra-modern people to conduct multifarious activities
+specifications in the Pir Panjal range of like business, sightseeing, pilgrimage
+Himalayas at an altitude of 3000 metres along with transportation of goods over
+from the Mean Sea Level (MSL). longer distances. Apart from an important
+Source: http://www.bro.gov.in/pagefimg. means of transport the Indian Railways
+asp?imid=144,And PIBdelhi03October2020 have been a great integrating force for more
+than 150 years. Railways in India bind the
+economic life of the country as well as
+accelerate the development of the industry
+and agriculture.
+The Indian Railways is the largest public
+sector undertaking in the country. The first
+train steamed off from Mumbai to Thane in
+1853, covering a distance of 34 km.
+The Indian Railway is now reorganised into
+16 zones.
+Fig. 7.3: Hilly Tracts Find out the current Railway zones and their
+headquarters. Also locate the headquarters
+of Railway zones on the map of India.
+The distribution pattern of the Railway
+network in the country has been largely
+influenced by physiographic, economic and
+administrative factors. The northern plains with
+their vast level land, high population density
+and rich agricultural resources provided the most
+favourable condition for their growth. However,
+a large number of rivers requiring construction
+of bridges across their wide beds posed some
+Fig. 7.4: Traffic on north-eastern border road
+obstacles. In the hilly terrains of the peninsular
+(Arunachal Pradesh)
+region, railway tracts are laid through low hills,
+Roads can also be classified on the basis of gaps or tunnels. The Himalayan mountainous
+the type of material used for their construction regions too are unfavourable for the construction
+such as metalled and unmetalled roads. of railway lines due to high relief, sparse
+Metalled roads may be made of cement, population and lack of economic opportunities.
+concrete or even bitumen of coal, therefore, Likewise, it was difficult to lay railway lines on
+74 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 87 ---
+Table 7.1: India: Railway Track
+The Indian Railway network runs on multiple gauge operations
+extending over 67,956 km.
+Gauge in metres Route (Km)
+Broad Gauge (1.676) 63950
+Metre Gauge (1.000) 2,402
+Narrow Gauge (0.762 and 0.610) 1,604
+Total 67,956
+Source:Railway Yearbook 2019–20, Ministry of Railways, Government of India.
+Website: www.indianrailways.gov.in
+the sandy plain of western Rajasthan, swamps subsequent running costs are minimal. It rules
+of Gujarat, forested tracks of Madhya Pradesh, out trans-shipment losses or delays.
+Chhattisgarh, Odisha and Jharkhand. The There are three important networks of
+contiguous stretch of Sahyadri could be crossed pipeline transportation in the country.
+only through gaps or passes (Ghats). In recent • From oil field in upper Assam to Kanpur
+times, the development of the Konkan railway (Uttar Pradesh), via Guwahati, Barauni and
+along the west coast has facilitated the movement Allahabad. It has branches from Barauni to
+of passengers and goods in this most important Haldia, via Rajbandh, Rajbandh to
+economic region of India. It has also faced a Maurigram and Guwahati to Siliguri.
+number of problem such as sinking of track in
+• From Salaya in Gujarat to Jalandhar in
+some stretches and landslides.
+Punjab, via Viramgam, Mathura, Delhi and
+Today, the railways have become more
+Sonipat. It has branches to connect Koyali
+important in our national economy than all
+(near Vadodara, Gujarat) Chakshu and
+other means of transport put together. However,
+other places.
+rail transport suffers from certain problems as
+• The first 1,700 km long Hazira-Vijaipur-
+well. Many passengers travel without tickets.
+Jagdishpur (HVJ) cross country gas
+Thefts and damaging of railway property has
+pipeline, linked Mumbai High and Bassein
+not yet stopped completely. People stop the
+gas fields with various ferilizer, power and
+trains, pull the chain unnecessarily and this
+industrial complexes in western and
+causes heavy damage to the railway. Think over
+northern India. Overall, India’s gas pipeline
+it, how we can help our railway in running as
+infrastructure has expanded from 1,700 km
+per the scheduled time?
+to 18,500 km of cross-country pipelines.
+Pipelines
+Waterways
+Pipeline transport network is a new arrival on Since the ancient period, India was one of the
+the transportation map of India. In the past, seafaring countries. Its seamen sailed far and
+these were used to transport water to cities and near, thus, carrying and spreading Indian
+industries. Now, these are used for transporting commerce and culture. Waterways are the
+crude oil, petroleum products and natural gas cheapest means of transport. They are most
+from oil and natural gas fields to refineries, suitable for carrying heavy and bulky goods.
+fertilizer factories and big thermal power plants. It is a fuel-efficient and environment friendly
+Solids can also be transported through a mode of transport. India has inland navigation
+pipeline when converted into slurry. The far waterways of 14,500 km in length. Out of these
+inland locations of refineries like Barauni, only 5685 km are navigable by mechanised
+Mathura, Panipat and gas based fertilizer plants vessels. The following waterways have been
+could be thought of only because of pipelines. declared as the National Waterways by the
+Initial cost of laying pipelines is high but Government.
+LIFELINES OF NATIONAL ECONOMY 75
+Rationalised-2023-24
+
+--- PAGE 88 ---
+Activity
+Railway line has been extended from Banihal to Baramula in the Kashmir Valley. Locate these
+two towns on the map of India.
+76 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 89 ---
+Deendayal Port, is a tidal port. It caters to the
+convenient handling of exports and imports of
+highly productive granary and industrial belt
+stretching across UT of Jammu and Kashmir,
+and the states of Himachal Pradesh, Punjab,
+Haryana, Rajasthan and Gujarat.
+Fig. 7.5: Inland waterways widely used in
+north-eastern states
+• The Ganga river between Allahabad and
+Haldia (1620 km)-N.W. No.1
+• The Brahmaputra river between Sadiya and
+Dhubri (891 km)-N.W. No.2
+• The West-Coast Canal in Kerala Fig. 7.6: Trucks being driven into the vessel at
+(Kottapurma-Kollam, Udyogamandal and Mumbai port
+Champakkara canals-205 km) – N.W. No.3
+Mumbai is the biggest port with a spacious
+• Specified stretches of Godavari and Krishna
+natural and well-sheltered harbour. The
+rivers along with Kakinada Puducherry
+Jawaharlal Nehru port was planned with a view
+stretch of canals (1078 km) – N.W. No.4
+to decongest the Mumbai port and serve as a
+• Specified stretches of river Brahmani along
+hub port for this region. Marmagao port (Goa)
+with Matai river, delta channels of Mahanadi
+is the premier iron ore exporting port of the
+and Brahmani rivers and East Coast Canal
+country. This port accounts for about fifty per
+(588 km) – N.W. No.5
+cent of India’s iron ore export. New Mangalore
+There are some other inland water ways
+port, located in Karnataka caters to the export
+on which substantial transportation takes
+of iron ore concentrates from Kudremukh
+place. These are Mandavi, Zuari and
+mines. Kochchi is the extreme south-western
+Cumberjua, Sunderbans, Barak and
+port, located at the entrance of a lagoon with a
+backwaters of Kerala.
+natural harbour.
+Apart from these, India’s trade with foreign
+countries is carried from the ports located
+along the coast. 95 per cent of the country’s
+trade volume (68 per cent in terms of value) is
+moved by sea.
+Major Sea Ports
+With a long coastline of 7,516.6 km, India is
+dotted with 12 major and 200 notified non-
+majors (minor/intermediate) ports. These
+Fig. 7.7: Tanker discharging crude oil at New
+major ports handle 95 per cent of India’s
+Mangalore port
+foreign trade.
+Kandla in Kuchchh was the first port Moving along the east coast, you would see
+developed soon after Independence to ease the extreme south-eastern port of Tuticorin,
+the volume of trade on the Mumbai port, in in Tamil Nadu. This port has a natural harbour
+the wake of loss of Karachi port to Pakistan and rich hinterland. Thus, it has a flourishing
+after the Partition. Kandla also known as the trade handling of a large variety of cargoes to
+LIFELINES OF NATIONAL ECONOMY 77
+Rationalised-2023-24
+
+--- PAGE 90 ---
+even our neighbouring countries like Sri terrains like high mountains, dreary
+Lanka, Maldives, etc. and the coastal regions deserts, dense forests and also long
+of India. Chennai is one of the oldest artificial oceanic stretches with great ease. Think of
+ports of the country. It is ranked next to the north-eastern part of the country,
+Mumbai in terms of the volume of trade and marked with the presence of big rivers,
+cargo. Vishakhapatnam is the deepest dissected relief, dense forests and frequent
+landlocked and well-protected port. This port floods and international frontiers, etc. in
+was, originally, conceived as an outlet for iron the absence of air transport. Air travel has
+ore exports. Paradwip port located in Odisha, made access easier.
+specialises in the export of iron ore. Kolkata is Pawanhans Helicopters Ltd. provides
+an inland riverine port. This port serves a very helicopter services to Oil and Natural Gas
+large and rich hinterland of Ganga- Corporation in its off-shore operations, to
+Brahmaputra basin. Being a tidal port, it inaccessible areas and difficult terrains like the
+requires constant dredging of Hoogly. Haldia north-eastern states and the interior parts of
+port was developed as a subsidiary port, in Jammu and Kashmir, Himachal Pradesh and
+order to relieve growing pressure on the Uttarakhand.
+Kolkata port. Air travel is not within the reach of the
+common people. It is only in the north-
+eastern states that special provisions are
+made to extend the services to the
+common people.
+Communication
+Ever since humans appeared on the earth,
+they have used different means of
+communication. But, the pace of change,
+has been rapid in modern times. Long
+distance communication is far easier
+Fig. 7.8: Handling of oversize cargo at Tuticorin port
+without physical movement of the
+Airways communicator or receiver. Personal
+communication and mass communication
+The air travel, today, is the fastest, most
+including television, radio, press, films, etc.
+comfortable and prestigious mode of
+are the major means of communication in
+transport. It can cover very difficult
+the country. The Indian postal network is
+the largest in the world. It handles
+parcels as well as personal written
+communications. Cards and envelopes are
+considered first-class mail and are airlifted
+between stations covering both land and
+air. The second-class mail includes book
+packets, registered newspapers and
+periodicals. They are carried by surface
+mail, covering land and water transport. To
+facilitate quick delivery of mails in large
+towns and cities, six mail channels have
+been introduced recently. They are called
+Rajdhani Channel, Metro Channel, Green
+Why is air travel preferred in the north- Channel, Business Channel, Bulk Mail
+eastern states? Channel and Periodical Channel.
+Fig. 7.9
+78 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 91 ---
+India: Major Ports and Some International Airports
+LIFELINES OF NATIONAL ECONOMY 79
+Rationalised-2023-24
+
+--- PAGE 92 ---
+of India, is one of the largest terrestrial
+networks in the world. It broadcasts a variety
+Digital India is an umbrella programme
+of programmes from entertainment,
+to prepare India for a knowledge based
+educational to sports, etc. for people of different
+transformation. The focus of Digital India
+age groups.
+Programme is on being transformative to
+realise – IT (Indian Talent) + IT (Information India publishes a large number of
+Technology)=IT (India Tomorrow) and is newspapers and periodicals annually. They
+on making technology central to enabling are of different types depending upon their
+change. periodicity. Newspapers are published in
+about 100 languages and dialects. Did you
+know that the largest number of newspapers
+published in the country are in Hindi, followed
+by English and Urdu? India is the largest
+producer of feature films in the world. It
+produces short films; video feature films and
+video short films. The Central Board of Film
+Certification is the authority to certify both
+Indian and foreign films.
+International Trade
+The exchange of goods among people, states
+and countries is referred to as trade. The
+Fig.7.10 : Emergency call box on NH-8 market is the place where such exchanges
+take place. Trade between two countries is
+India has one of the largest telecom called international trade. It may take place
+networks in Asia. Excluding urban places more through sea, air or land routes. While local
+than two-thirds of the villages in India have trade is carried in cities, towns and villages,
+already been covered with Subscriber Trunk state level trade is carried between two or more
+Dialling (STD) telephone facility. In order to states. Advancement of international trade of
+strengthen the flow of information from the a country is an index to its economic
+grassroot to the higher level, the government prosperity. It is, therefore, considered the
+has made special provision to extend twenty- economic barometer for a country.
+four hours STD facility to every village in the As the resources are space bound, no
+country. There is a uniform rate of STD country can survive without international
+facilities all over India. It has trade. Export and import are the components
+been made possible by integrating the of trade. The balance of trade of a country is
+development in space technology with the difference between its export and import.
+communication technology. When the value of export exceeds the value
+Mass communication provides of imports, it is called a favourable balance
+entertainment and creates awareness among of trade. On the contrary, if the value of
+people about various national programmes imports exceeds the value of exports, it is
+and policies. It includes radio, television, termed as unfavourable balance of trade.
+newspapers, magazines, books and films. All India has trade relations with all the major
+India Radio (Akashwani) broadcasts a variety trading blocks and all geographical regions
+of programmes in national, regional and local of the world. The commodities exported from
+languages for various categories of people, India to other countries include gems and
+spread over different parts of the country. jewellery, chemicals and related products,
+Doordarshan, the national television channel agriculture and allied products, etc.
+80 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 93 ---
+The commodities imported to India adventure tourism, cultural tourism, medical
+include petroleum crude and products, tourism and business tourism.
+gems and jewellery, chemicals and related
+products, base metals, electronic items, There is a vast potential for development of
+machinery, agriculture and allied products. tourism in all parts of the country. Efforts are
+India has emerged as a software giant at the being made to promote different types of
+international level and it is earning large tourism for this upcoming industry.
+foreign exchange through the export of
+information technology.
+On the map of India show important tourist
+Tourism as a Trade
+places of your State/UT and its connectivity
+Tourism in India has grown substantially over with other parts of the country by railways/
+the last three decades. roadways/airways.
+More than 15 million people are directly Discuss in the class:
+engaged in the tourism industry. Tourism also • What type of tourism may be developed in
+promotes national integration, provides your state/UT and why?
+support to local handicrafts and cultural • Which areas in your state/UT you find more
+pursuits. It also helps in the development of attractive for development of tourism and why?
+international understanding about our • How tourism may be helpful for the economic
+development of a region adopting sustainable
+culture and heritage. Foreign tourists visit
+development approach?
+India for heritage tourism, eco tourism,
+Prepare a project on the heritage tourism in India.
+*Source: Annual Report 2016–17, Ministry of Commerce and Industry, Government of India.
+LIFELINES OF NATIONAL ECONOMY 81
+Rationalised-2023-24
+
+--- PAGE 94 ---
+EXERCISES EXERCISES E XERCISES EXERCISES EXERCISES
+1. Multiple choice questions.
+(i) Which two of the following extreme locations are connected by the east-
+west corridor?
+(a) Mumbai and Nagpur (c) Mumbai and Kolkata
+(b) Silchar and Porbandar (d) Nagpur and Siligudi
+(ii) Which mode of transportation reduces trans-shipment losses and delays?
+(a) Railways (c) Pipeline
+(b) Roadways (d) Waterways
+(iii) Which one of the following states is not connected with the H.V.J. pipeline?
+(a) Madhya Pradesh (c) Gujarat
+(b) Maharashtra (d) Uttar Pradesh
+(iv) Which one of the following ports is the deepest land-locked and well-
+protected port along the east coast?
+(a) Chennai (c) Tuticorin
+(b) Paradwip (d) Vishakhapatnam
+(v) Which one of the following is the most important modes of transportation
+in India?
+(a) Pipeline (c) Roadways
+(b) Railways (d) Airways
+(vi) Which one of the following terms is used to describe trade between two or
+more countries?
+(a) Internal trade (c) External trade
+(b) International trade (d) Local trade
+2. Answer the following questions in about 30 words.
+(i) State any three merits of roadways.
+(ii) Where and why is rail transport the most convenient means of
+transportation?
+(iii) What is the significance of the border roads?
+(iv) What is meant by trade? What is the difference between international
+and local trade?
+3. Answer the following questions in about 120 words.
+(i) Why are the means of transportation and communication called the
+lifelines of a nation and its economy?
+(ii) Write a note on the changing nature of the international trade in the last
+fifteen years.
+Q D
+UIZ RIVE
+1. Northern terminal of the North-south corridor.
+2. The name of National Highway No.2.
+3. The headquarter of the southern railway zone.
+4. The rail gauge with a track width of 1.676 m.
+5. The southern terminal of the National Highway No.7.
+6. A Riverine Port.
+7. Busiest railway junction in Northern India.
+82 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 95 ---
+A
+CTIVITY
+Start your search vertically, horizontally or diagonally and reach various
+destinations across the country!
+S H E R S H A H S U R I M A R G
+A R T P R N X E L A T A D L A Y
+J M M X I P O R A Y M P G H T X
+Y C H E N N N A I I K M C A I M
+O D C D A L M C S O T P O R C P
+A P T R G S K J M J L E A N E R
+R A E T A J P O R M W M A S X O
+I L S B R O A D G A U G E L O T
+A S N L C M E C U K Z M A A J E
+L M U G H A L S A R A I B S N A
+G O E T V R A Y F T O R E A J M
+K Q A I P M N Y R Y A Y H L I N
+Q K O L K A T A E U I T W B E A
+N I T N K D E M O U R P N P J D
+LIFELINES OF NATIONAL ECONOMY 83
+Rationalised-2023-24
+
+--- PAGE 96 ---
+AAAAAppppppppppeeeeennnnndddddiiiiixxxxx-----IIIII
+Websites you can see
+Bombay Natural History Society: http://www.bnhs.org/
+Birding in India and South Asia: http://www.birding.in/
+Website of Project Tiger: http://projecttiger.nic.in/
+Nature Conservation Foundation: http://www.ncf-india.org/
+Wildlife Conservation Society of India: http://www.wildlife.in/
+Wildlife Trust of India: http://www.wildlifetrustofindia.org/
+Kalpavriksh Environment Action Group: http://www.kalpavriksh.org/
+Down to Earth Magazine: http://www.downtoearth.org.in/
+Centre for Environment Education, India: http://www.ceeindia.org/cee/index.html
+World Steel Association : http://www.worldsteel.org
+Rationalised-2023-24
+
+--- PAGE 97 ---
+AAAAAppppppppppeeeeennnnndddddiiiiixxxxx-----IIIIIIIIII
+Steel Plants Year of Establishment Collaborating Location
+Country
+IISCO 1870-1913 (Private initially) (Nationalised Kulti and
+in 1972) Burnpur (W.B.)
+TISCO 1907 (Private ownership) Jamshedji Tata Jamshedpur
+(Jharkhand)
+VISL 1923 Private as MISCO Nationalised later Bhadravati
+(Karnataka)
+Bhilai 1959 (Public Sector) Soviet Union Bhilai (M.P.)
+Bokaro 1972 (Public Sector) Soviet Union Bokaro
+(Jharkhand)
+Durgapur 1959 (Public Sector) U.K. Durgapur (W.B.)
+Rourkela — (Public Sector) Germany Rourkela
+(Odisha)
+Vishakhapatnam — (Public Sector) — Vishakhapatnam
+Andhra Pradesh
+Salem — (Public Sector) — Salem (T. Nadu)
+Vijay Nagar — Public Sector — Karnataka
+Rationalised-2023-24
+
+--- PAGE 98 ---
+GGGGGlllllooooossssssssssaaaaarrrrryyyyy
+Anticline: A fold in sedimentary strata that resembles an arch.
+Gross Domestic Product: It is a monetary measure of the value of goods and services
+produced within a natural economy at a given period of time. Normally it is one year.
+Gross Value Added (GVA): The GVA is estimated from GDP by adding subsidies on
+production and substracting indirect taxes.
+Geologist: A scientist who studies the composition, structure and history of the
+earth.
+Geothermal Gradient: The gradual increase in temperature with depth in the
+crust. The average is 30°C per kilometer in the upper crust.
+Humus: Dead and decayed organic matter adds to the fertility of the top soil.
+Igneous Rocks: Rocks which have solidified from molten magma.
+Manganese Nodules: A type of sediment scattered on the ocean floor, consisting
+mainly of manganese and iron, and usually containing small amounts of copper,
+nickel and cobalt.
+Metamorphic Rocks: Rocks which were originally igneous or sedimentary, but have
+changed in character and appearance.
+Oil Trap: A geological structure that allows for significant amounts of oil and gas to
+accumulate.
+Rock: A consolidated mixture of minerals
+Sedimentary Rocks: Rocks which have been deposited as beds and layers of
+sediments.
+86 CONTEMPORARY INDIA – II
+Rationalised-2023-24
+
+--- PAGE 99 ---
+N
+OTES
+APPENDIX 87
+Rationalised-2023-24
+
+--- PAGE 100 ---
+N
+OTES
+Rationalised-2023-24

@@ -12,8 +12,12 @@ build/
 venv/
 env/
 
-# Large content folder (Groups Guru notes — not part of this project)
-FILES/content/
+# Large content folder — PDFs, scripts, source maps excluded (big files)
+FILES/content/sources/
+FILES/content/scripts/
+FILES/content/SOURCE_MAP.md
+FILES/content/CONTENT-GENERATION-PLAYBOOK.md
+# NOTE: FILES/content/topics/ is NOT ignored — prepared .md notes are tracked in git
 
 # Local dev only
 start.bat
@@ -21,7 +25,13 @@ start.bat
 # Claude Code local settings
 .claude/
 
+# Database (SQLite — ephemeral on Render, never commit)
+*.db
+
 # OS
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Secrets
+.env

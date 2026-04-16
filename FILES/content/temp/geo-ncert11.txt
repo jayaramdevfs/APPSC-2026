@@ -1,0 +1,3682 @@
+--- PAGE 1 ---
+I
+NDIA
+P E
+HYSICAL NVIRONMENT
+T G C XI
+EXTBOOK IN EOGRAPHY FOR LASS
+Rationalised 2023-24
+
+--- PAGE 3 ---
+I
+NDIA
+P E
+HYSICAL NVIRONMENT
+T G C XI
+EXTBOOK IN EOGRAPHY FOR LASS
+Rationalised 2023-24
+
+--- PAGE 4 ---
+11094 – INDIA: PHYSICAL ENVIRONMENT
+ISBN 81-7450-538-5
+Textbook in Geography for Class XI
+First Edition
+ALL RIGHTS RESERVED
+March 2006 Phalguna 1927
+q No part of this publication may be reproduced, stored in a retrieval system or
+Reprinted transmitted, in any form or by any means, electronic, mechanical, photocopying,
+recording or otherwise without the prior permission of the publisher.
+November 2006 , December 2007,
+q This book is sold subject to the condition that it shall not, by way of trade, be lent, re-
+December 2008, January 2010, sold, hired out or otherwise disposed of without the publisher’s consent, in any form
+January 2011, January 2013, of binding or cover other than that in which it is published.
+q The correct price of this publication is the price printed on this page, Any revised
+January 2014, December 2014,
+price indicated by a rubber stamp or by a sticker or by any other means is incorrect
+February 2016, February 2017, and should be unacceptable.
+January 2018, January 2019,
+January 2020, January 2021, OFFICES OF THE PUBLICATION
+DIVISION, NCERT
+July 2021 and November 2021
+NCERT Campus
+Sri Aurobindo Marg
+New Delhi 110 016 Phone : 011-26562708
+Revised Edition
+February 2022, Phalguna 1944 108, 100 Feet Road
+Hosdakere Halli Extension
+Banashankari III Stage
+Bengaluru 560 085 Phone : 080-26725740
+PD 150T RSP
+Navjivan Trust Building
+© National Council of Educational P.O.Navjivan
+Research and Training, 2006, 2022 Ahmedabad 380 014 Phone : 079-27541446
+CWC Campus
+Opp. Dhankal Bus Stop
+Panihati
+Kolkata 700 114 Phone : 033-25530454
+CWC Complex
+Maligaon
+Guwahati 781 021 Phone : 0361-2674869
+````` 70.00 Publication Team
+Head, Publication : Anup Kumar Rajput
+Division
+Chief Production : Arun Chitkara
+Officer
+Chief Business Manager : Vipin Dewan
+Chief Editor (In charge) : Bijnan Sutar
+Editor : R.N. Bhardwaj
+Printed on 80 GSM paper with NCERT Production Assistant : Om Prakash
+watermark
+Published at the Publication Division Cover
+by the Secretary, National Council of Shweta Rao
+Educational Research and Training,
+Sri Aurobindo Marg, New Delhi 110 016 and Illustration Cartography
+printed at Sita Fine Arts (P.) Ltd., A-16,
+Dilip Kumar Cartographic Design
+Naraina Industrial Area, Phase-II, New
+Agency
+Delhi - 110 028
+Rationalised 2023-24
+
+--- PAGE 5 ---
+F
+OREWORD
+The National Curriculum Framework (NCF), 2005, recommends that children’s
+life at school must be linked to their life outside the school. This principle marks
+a departure from the legacy of bookish learning which continues to shape our
+system and causes a gap between the school, home and community. The syllabi
+and textbooks developed on the basis of NCF signify an attempt to implement
+this basic idea. They also attempt to discourage rote learning and the
+maintenance of sharp boundaries between different subject areas. We hope these
+measures will take us significantly further in the direction of a child-centred
+system of education outlined in the National Policy on Education (1986).
+The success of this effort depends on the steps that school principals and
+teachers will take to encourage children to reflect on their own learning and to
+pursue imaginative activities and questions. We must recognise that, given space,
+time and freedom, children generate new knowledge by engaging with the
+information passed on to them by adults. Treating the prescribed textbook as
+the sole basis of examination is one of the key reasons why other resources and
+sites of learning are ignored. Inculcating creativity and initiative is possible if we
+perceive and treat children as participants in learning, not as receivers of a fixed
+body of knowledge.
+These aims imply considerable change in school routines and mode of
+functioning. Flexibility in the daily time-table is as necessary as rigour in
+implementing the annual calendar so that the required number of teaching
+days are actually devoted to teaching. The methods used for teaching and
+evaluation will also determine how effective this textbook proves for making
+children’s life at school a happy experience, rather than a source of stress or
+boredom. Syllabus designers have tried to address the problem of curricular
+burden by restructuring and reorienting knowledge at different stages with
+greater consideration for child psychology and the time available for teaching.
+The textbook attempts to enhance this endeavour by giving higher priority and
+space to opportunities for contemplation and wondering, discussion in small
+groups, and activities requiring hands-on experience.
+The National Council of Educational Research and Training (NCERT)
+appreciates the hard work done by the textbook development committee
+responsible for this book. We wish to thank the Chairperson of the advisory
+committee for textbooks in Social Sciences, at the higher secondary
+level, Professor Hari Vasudevan and the Chief Advisor for this book,
+Professor M.H. Qureshi for guiding the work of this committee. Several teachers
+contributed to the development of this textbook; we are grateful to their principals
+for making this possible. We are indebted to the institutions and organisations
+Rationalised 2023-24
+
+--- PAGE 6 ---
+vi
+which have generously permitted us to draw upon their resources, material and
+personnel. We are especially grateful to the members of the National Monitoring
+Committee, appointed by the Department of Secondary and Higher Education,
+Ministry of Human Resource Development under the Chairpersonship of
+Professor Mrinal Miri and Professor G.P. Deshpande, for their valuable time and
+contribution. As an organisation committed to systemic reform and continuous
+improvement in the quality of its products, NCERT welcomes comments and
+suggestions which will enable us to undertake further revision and refinement.
+Director
+New Delhi National Council of Educational
+20 December 2005 Research and Training
+Rationalised 2023-24
+
+--- PAGE 7 ---
+R C T T
+ATIONALISATION OF ONTENT IN HE EXTBOOKS
+In view of the COVID-19 pandemic, it is imperative to reduce content load on
+students. The National Education Policy 2020, also emphasises reducing the
+content load and providing opportunities for experiential learning with creative
+mindset. In this background, the NCERT has undertaken the exercise to
+rationalise the textbooks across all classes. Learning Outcomes already developed
+by the NCERT across classes have been taken into consideration in this exercise.
+Contents of the textbooks have been rationalised in view of the following:
+• Overlapping with similar content included in other subject areas in the same
+class
+• Similar content included in the lower or higher class in the same subject
+• Difficulty level
+• Content, which is easily accessible to students without much interventions
+from teachers and can be learned by children through self-learning or peer-
+learning
+• Content, which is irrelevant in the present context
+This present edition, is a reformatted version after carrying out the
+changes given above.
+Rationalised 2023-24
+
+--- PAGE 9 ---
+T D C
+EXTBOOK EVELOPMENT OMMITTEE
+CHAIRPERSON, ADVISORY COMMITTEE FOR TEXTBOOKS IN SOCIAL SCIENCES AT THE HIGHER
+SECONDARY LEVEL
+Hari Vasudevan, Professor, Department of History, University of Calcutta,
+Kolkata
+CHIEF ADVISOR
+M. H. Qureshi, Professor, Centre for the Study of Regional Development,
+Jawaharlal Nehru University, New Delhi
+MEMBERS
+Aparna Pandey, Lecturer, DESSH, NCERT, New Delhi
+Ashok Diwakar, Lecturer, Government P.G College, Sector 9, Gurgaon
+B. S. Butola, Professor, Centre for the Study of Regional Development, Jawaharlal
+Nehru University, New Delhi
+Beena Srikumar, PGT, CRPF Public School, New Delhi
+Noor Mohammad, Professor, Delhi School of Economics, Delhi University, Delhi
+MEMBER-COORDINATOR
+Tannu Malik, Lecturer, DESSH, NCERT, New Delhi
+Rationalised 2023-24
+
+--- PAGE 10 ---
+A
+CKNOWLEDGEMENTS
+The National Council of Educational Research and Training acknowledges the
+contribution of Bhagirathy Jhingran, Teacher, Pathways World School, Gurgaon
+in the development of this textbook; the National Bureau of Soil Survey and Landuse
+Planning (under ICAR), Government of India, for providing input for the chapter
+on Soils. Special thanks are due to Savita Sinha, Professor and Head, Department
+of Education in Social Sciences and Humanties for her valuable support at every
+stage of preparation of this textbook.
+The Council is thankful to the Survey of India for Certification of Maps given
+in the textbook. It also gratefully acknowledges the support of individuals and
+organisations as listed below for providing various photographs used in this
+textbook — M.H. Qureshi, Professor, CSRD, JNU for Figure 5.4 and 5.5; B.S. Butola,
+Professor, CSRD, JNU for Figure 6.1, 6.5, 6.7 and 6.9; M.V. Srinivasan, Lecturer,
+DESSH, NCERT for Figure 6.3; ITDC/Ministry of Tourism, Government of India
+for Figure 2.1, 2.3, 2.8, 2.5, 2.6, 2.7, 2.8, 3.1, 3.3, 4.4, 5.7; Ministry of Environment
+and Forest, Government of India for Figure 5.1 and 5.6; Social Science Textbook
+for Class VII, Part II (NCERT, 2005), for Figure 5.3 and Social Science Textbook
+for Class VIII, Part II (NCERT, 2005), for Figure 2.10.
+The Council also gratefully acknowledges the contributions of Anil Sharma
+and Arvind Sharma, DTP Operators; Sameer Khatana and Amar Kumar Prusty,
+Copy Editors; Bharat Sanwaria, Shreshtha and Deepti Sharma, Proof Readers;
+Dinesh Kumar, Computer Incharge, who have helped in giving a final shape to
+this book. The contribution of the Publication Department, NCERT is also duly
+acknowledged.
+The following are applicable to all the maps of India used in this book
+© Government of India, Copyright 2006
+1. The responsibility for the correctness of internal details rests with the publisher.
+2. The territorial waters of India extend into the sea to a distance of twelve nautical miles measured
+from the appropriate base line.
+3. The administrative headquarters of Chandigarh, Haryana and Punjab are at Chandigarh.
+4. The interstate boundaries amongst Arunachal Pradesh, Assam and Meghalaya shown on this map
+are as interpreted from the “North-Eastern Areas (Reorganisation) Act.1971,” but have yet to be
+verified.
+5. The external boundaries and coastlines of India agree with the Record/Master Copy certified by
+Survey of India.
+6. The State boundaries between Uttaranchal and Uttar Pradesh, Bihar and Jharkhand, and
+Chhattisgarh and Madhya Pradesh have not been verified by the Governments concerned.
+7. The spellings of names in this map, have been taken from various sources.
+Rationalised 2023-24
+
+--- PAGE 11 ---
+C
+ONTENTS
+FOREWORD v
+RATIONALISATION OF CONTENT IN THE TEXTBOOKS vii
+UNIT I : INTRODUCTION 1-6
+1. India — Location 2
+UNIT II : PHYSIOGRAPHY 7-26
+2. Structure and Physiography 8
+3. Drainage System 17
+UNIT III : CLIMATE AND VEGETATION 27-51
+4. Climate 28
+5. Natural Vegetation 42
+UNIT IV : NATURAL HAZARDS AND DISASTERS: CAUSES, 52-69
+CONSEQUENCES AND MANAGEMENT
+6. Natural Hazards and Disasters 53
+GLOSSARY 70-72
+Rationalised 2023-24
+
+--- PAGE 12 ---
+CONSTITUTION OF INDIA
+Part III (Articles 12 – 35)
+(Subject to certain conditions, some exceptions
+and reasonable restrictions)
+guarantees these
+Fundamental Rights
+Right to Equality
+• before law and equal protection of laws;
+• irrespective of religion, race, caste, sex or place of birth;
+• of opportunity in public employment;
+• by abolition of untouchability and titles.
+Right to Freedom
+• of expression, assembly, association, movement, residence and profession;
+• of certain protections in respect of conviction for offences;
+• of protection of life and personal liberty;
+• of free and compulsory education for children between the age of six and fourteen years;
+• of protection against arrest and detention in certain cases.
+Right against Exploitation
+• for prohibition of traffic in human beings and forced labour;
+• for prohibition of employment of children in hazardous jobs.
+Right to Freedom of Religion
+• freedom of conscience and free profession, practice and propagation of religion;
+• freedom to manage religious affairs;
+• freedom as to payment of taxes for promotion of any particular religion;
+• freedom as to attendance at religious instruction or religious worship in educational
+institutions wholly maintained by the State.
+Cultural and Educational Rights
+• for protection of interests of minorities to conserve their language, script and culture;
+• for minorities to establish and administer educational institutions of their choice.
+Right to Constitutional Remedies
+• by issuance of directions or orders or writs by the Supreme Court and High
+Courts for enforcement of these Fundamental Rights.
+Rationalised 2023-24
+
+--- PAGE 13 ---
+U
+NIT
+I
+I
+NTRODUCTION
+This unit deals with
+• Location — space relations and India’s place in the world
+Rationalised 2023-24
+
+--- PAGE 14 ---
+Do you Remember?
+CHAPTER
+I – L
+NDIA OCATION
+Y
+ou have already seen the map of India Practical Work in Geography – Part I (NCERT,
+in the previous classes. Now you closely 2006) to find out.
+examine the map of India (Figure 1.1). This difference is based on the fact that the
+Mark the southernmost and northernmost distance between two longitudes decreases
+latitudes and the easternmost and towards the poles whereas the distance
+westernmost longitudes. between two latitudes remains the same
+The mainland of India, extends from everywhere. Find out the distance between two
+Kashmir in the north to Kanniyakumari in the latitudes?
+south and Arunachal Pradesh in the east to From the values of latitude, it is understood
+Gujarat in the west. India’s territorial limit that the southern part of the country lies
+further extends towards the sea upto 12 within the tropics and the northern part lies in
+nautical miles (about 21.9 km) from the coast. the sub-tropical zone or the warm temperate
+(See the box for conversion). zone. This location is responsible for large
+variations in land forms, climate, soil types and
+Statute mile = 63,360 inches natural vegetation in the country.
+Nautical mile = 72,960 inches Now, let us observe the longitudinal extent
+1 Statute mile = about 1.6 km (1.584 km)
+and its implications on the Indian people. From
+1 Nautical mile = about 1.8 km (1.852 km)
+the values of longitude, it is quite discernible
+Our southern boundary extends upto that there is a variation of nearly 30 degrees,
+6°45' N latitude in the Bay of Bengal. Let us which causes a time difference of nearly two
+try to analyse the implications of having such hours between the easternmost and the
+a vast longitudinal and latitudinal extent. westernmost parts of our country. You are
+If you work out the latitudinal and familiar with the concept of Indian Standard
+longitudinal extent of India, they are roughly Time (IST). What is the use of the standard
+about 30 degrees, whereas the actual distance meridian? While the sun rises in the
+measured from north to south extremity is northeastern states about two hours earlier as
+3,214 km, and that from east to west is only compared to Jaisalmer, the watches in
+2,933 km. What is the reason for this Dibrugarh, Imphal in the east and Jaisalmer,
+difference? Consult Chapter 3 on the topic Bhopal or Chennai in the other parts of India
+Latitude, Longitude and Time in the book show the same time. Why does this happen?
+There is a general understanding among the countries of the world to select the standard
+meridian in multiples of 7°30' of longitude. That is why 82°30' E has been selected as the
+‘standard meridian’ of India. Indian Standard Time is ahead of Greenwich Mean Time by
+5 hours and 30 minutes.
+There are some countries where there are more than one standard meridian due to
+their vast east-to-west extent. For example, the USA has seven time zones.
+Rationalised 2023-24
+
+--- PAGE 15 ---
+INDIA – LOCATION 3
+Figure 1.1 : India : Administrative Divisions
+Rationalised 2023-24
+
+--- PAGE 16 ---
+4
+INDIA
+:
+PHYSICAL
+ENVIRONMENT
+Figure 1.2 : Location of India in the Eastern World
+Rationalised 2023-24
+
+--- PAGE 17 ---
+INDIA – LOCATION 5
+Name a few places in India through which the geographical coast of the mainland plus the
+standard meridian passes? island groups Andaman and Nicobar located
+India with its area of 3.28 million sq. km in the Bay of Bengal and the Lakshadweep in
+accounts for 2.4 per cent of the world’s land the Arabian Sea. Thus India, as a country, is
+surface area and stands as the seventh a physically diverse land providing occurrence
+largest country in the world. Find out the of varied resources.
+names of the countries which are larger than
+India. Do you Remember?
+School Bhuvan NCERT is a portal
+SIZE providing map-based learning to bring
+awareness among the students about
+The size of India has endowed her with great
+country’s natural resources,
+physical diversity. Thus, you may appreciate
+environment and their role in
+the presence of lofty mountains in the north; sustainable development. It is an
+large rivers such as Ganga, Brahmaputra, initiative of Bhuvan-NRSC/ISRO,
+Mahanadi, Krishna, Godavari and Kaveri; based on NCERT syllabus.
+green forested hills in northeast and south You can explore various maps of India
+India; and the vast sandy expanse of on http://bhuvan-app1.nrsc.gov.in/
+Marusthali. You may further appreciate that mhrd_ncert/
+bounded by the Himalayas in the north,
+Hindukush and Sulaiman ranges in the north- INDIA AND ITS NEIGHBOURS
+west, Purvachal hills in the north-east and by
+Examine the location map of India (Figure 1.2).
+the large expanse of the Indian ocean in the
+You will notice that India is located in the
+south, it forms a great geographic entity known
+south-central part of the continent of Asia,
+as the Indian subcontinent. It includes the
+bordering the Indian ocean and its two arms
+countries — Pakistan, Nepal, Bhutan,
+extending in the form of Bay of Bengal and the
+Bangladesh and India. The Himalayas,
+Arabian Sea. This maritime location of
+together with other ranges, have acted as a
+Peninsular India has provided links to its
+formidable physical barrier in the past. Except
+neighbouring regions through the sea and air
+for a few mountain passes such as the Khyber, routes.
+the Bolan, the Shipkila, the Nathula, the Prepare a list of India’s neighbouring
+Bomdila, etc. it was difficult to cross it. It has countries by consulting the map.
+contributed towards the evolving of a unique Sri Lanka and Maldives are the two island
+regional identity of the Indian subcontinent. countries located in the Indian Ocean, which
+By referring to the physical map of India are our neighbours. Sri Lanka is separated from
+you can now describe the physical variations India by the Gulf of Mannar and Palk Strait.
+which you would come across while travelling
+Differentiate between a Gulf and a Strait.
+from Kashmir to Kanniyakumari and from
+Jaisalmer in Rajasthan to Imphal in Manipur. Do you think that physical barrier is a
+Peninsular part of India extends towards hindrance in interaction with our neighbouring
+the Indian Ocean. This has provided the countries in modern times? Give some
+country with a coastline of 6,100 km in the examples how we have overcome these
+mainland and 7,517 km in the entire difficulties in the present day.
+Activity: Observe the map of India on an atlas/School Bhuvan NCERT portal
+and collect information about states/districts/villages located near the
+international border of India.
+Rationalised 2023-24
+
+--- PAGE 18 ---
+6 INDIA : PHYSICAL ENVIRONMENT
+EXERCISES
+1. Choose the right answer from the four alternatives given below.
+(i) Which one of the following latitudinal extent is relevant for the extent of
+India’s area?
+(a) 8°41'N - 35°7'N (c) 8°4'N - 35°6'N
+(b) 8°4'N - 37°6'N (d) 6°45'N - 37°6'N
+(ii) Which one of the following countries shares the longest land frontier with
+India?
+(a) Bangladesh (c) Pakistan
+(b) China (d) Myanmar
+(iii) Which one of the following countries is larger in area than India?
+(a) China (c) France
+(b) Egypt (d) Iran
+(iv) Which one of the following longitudes is the standard meridian for India?
+(a) 69°30'E (c) 75°30'E
+(b) 82°30'E (d) 90°30'E
+2. Answer the following questions in about 30 words.
+(i) Does India need to have more than one standard time? If yes, why do you
+think so?
+(ii) What are the implications of India having a long coastline?
+(iii) How is the latitudinal spread of India advantageous to her?
+(iv) While the sun rises earlier in the east, say Nagaland and also sets earlier,
+how do the watches at Kohima and New Delhi show the same time?
+Project/Activity
+Activity based on Appendix I (Teachers may help in the exercises by explaining
+and getting it done by the students).
+(i) On a graph paper, plot the number of districts in Madhya Pradesh,
+Karnataka, Meghalaya, Goa, Kerala, Haryana. Do the number of districts
+have some relationship with the area of the state?
+(ii) Which state amongst Uttar Pradesh, West Bengal, Gujarat, Arunachal
+Pradesh, Tamil Nadu, Tripura and Rajasthan is the most thickly populated
+and which one is the least densely populated?
+(iii) Find out the relationship between the area of the state and the number of
+districts.
+(iv) Identify the states with coastal boundaries.
+(v) Arrange the states from west to east which have only land boundary.
+Activity based on Appendix II
+(i) List the Union Territories which have coastal location.
+(ii) How do you explain the variation in the area and population of NCT Delhi
+and the Andaman and Nicobar Islands?
+(iii) On a graph paper, draw a bar diagram to show the area and population of
+all the Union Territories.
+Rationalised 2023-24
+
+--- PAGE 19 ---
+U
+NIT
+II
+P
+HYSIOGRAPHY
+This unit deals with
+• Structure and Relief; physiographic divisions
+• Drainage systems: concept of water sheds — the Himalayan
+and the Peninsular
+Rationalised 2023-24
+
+--- PAGE 20 ---
+CHAPTER
+S P
+TRUCTURE AND HYSIOGRAPHY
+D
+o you know that our earth also has a geological regions broadly follow the physical
+history. The earth and its landforms features:
+that we see today have evolved over a (i) The Penisular Block
+very long time. Current estimation shows that (ii) The Himalayas and other Peninuslar
+the earth is approximately 460 million years old. Mountains
+Over these long years, it has undergone many (iii) Indo-Ganga-Brahmaputra Plain.
+changes brought about primarily by the
+endogenic and exogenic forces. These forces have THE PENINSULAR BLOCK
+played a significant role in giving shape to various
+The northern boundary of the Peninsular
+surface and subsurface features of the earth. You
+Block may be taken as an irregular line
+have already studied about the Plate Tectonics
+running from Kachchh along the western
+and the movement of the Earth’s plates in the
+flank of the Aravali Range near Delhi and
+book Fundamentals of Physical Geography
+then roughly parallel to the Yamuna and
+(NCERT, 2006). Do you know that the Indian
+the Ganga as far as the Rajmahal Hills
+plate was to the south of the equator millions of
+and the Ganga delta. Apart from these,
+years ago? Do you also know that it was much
+the Karbi Anglong and the Meghalaya
+larger in size and the Australian plate was a part
+Plateau in the northeast and Rajasthan
+of it? Over millions of years, this plate broke into
+in the west are also extensions of this
+many parts and the Australian plate moved
+block. The northeastern parts are
+towards the southeastern direction and the
+separated by the Malda fault in West
+Indian plate to the north. Can you map
+Bengal from the Chotanagpur plateau. In
+different phases in the movement of the
+Rajasthan, the desert and other desert–
+Indian plate? This northward movement
+like features overlay this block.
+of the Indian plate is still continuing and it
+The Peninsula is formed essentially by
+has significant consequences on the
+a great complex of very ancient gneisses
+physical environment of the Indian
+and granites, which constitutes a major
+subcontinent. Can you name some important
+part of it. Since the Cambrian period, the
+consequences of the northward movement
+Peninsula has been standing like a rigid
+of the Indian plate? block with the exception of some of its
+It is primarily through the interplay of western coast which is submerged
+these endogenic and exogenic forces and beneath the sea and some other parts
+lateral movements of the plates that the changed due to tectonic activity without
+present geological structure and geomorphologic affecting the original basement. As a part of
+processes active in the Indian subcontinent came the Indo-Australian Plate, it has been subjected
+into existence. Based on the variations in its to various vertical movements and block
+geological structure and formations, India can be faulting. The rift valleys of the Narmada, the
+divided into three geological divisions. These Tapi and the Mahanadi and the Satpura block
+Rationalised 2023-24
+
+--- PAGE 21 ---
+STRUCTURE AND PHYSIOGRAPHY 9
+mountains are some examples of it. The INDO-GANGA-BRAHMAPUTRA PLAIN
+Peninsula mostly consists of relict and residual
+The third geological division of India
+mountains like the Aravali hills, the Nallamala
+comprises the plains formed by the river
+hills, the Javadi hills, the Veliconda hills, the
+Indus, the Ganga and the Brahmaputra.
+Palkonda range and the Mahendragiri hills, etc.
+Originally, it was a geo-synclinal
+The river valleys here are shallow with low
+depression which attained its maximum
+gradients.
+development during the third phase of
+You are aware of the method of
+the Himalayan mountain formation
+calculating the gradient as a part of your
+approximately about 64 million years ago.
+study of the book Practical Work in
+Since then, it has been gradually filled
+Geography– Part I (NCERT, 2006). Can
+by the sediments brought by the
+you calculate the gradient of the
+Himalayan and Peninsular rivers.
+Himalayan and the Peninsular rivers and
+Average depth of alluvial deposits in
+draw the comparisons?
+these plains ranges from 1,000-2,000 m.
+Most of the east flowing rivers form
+It is evident from the above discussion
+deltas before entering into the Bay of
+that there are significant variations
+Bengal. The deltas formed by the
+among the different regions of India in
+Mahanadi, the Krishna, the Kaveri and the
+terms of their geological structure, which
+Godavari are important examples.
+has far-reaching impact upon other
+related aspects. Variations in the
+THE HIMALAYAS AND OTHER
+physiography and relief are important
+PENINSULAR MOUNTAINS
+among these. The relief and physiography
+The Himalayas along with other Peninsular of India has been greatly influenced by
+mountains are young, weak and flexible in their the geological and geomorphological
+geological structure unlike the rigid and stable processes active in the Indian
+Peninsular Block. Consequently, they are still subcontinent.
+subjected to the interplay of exogenic and
+endogenic forces, resulting in the development PHYSIOGRAPHY
+of faults, folds and thrust plains. These
+‘Physiography’ of an area is the outcome
+of structure, process and the stage of
+development. The land of India is
+characterised by great diversity in its
+physical features. The north has a vast
+expanse of rugged topography consisting
+of a series of mountain ranges with varied
+peaks, beautiful valleys and deep gorges.
+The south consists of stable table land
+with highly dissected plateaus, denuded
+rocks and developed series of scarps. In
+between these two lies the vast north Indian
+plain.
+Figure 2.1 : A Gorge Based on these macro variations, India
+can be divided into the following
+mountains are tectonic in origin, dissected by
+physiographic divisions:
+fast-flowing rivers which are in their youthful
+stage. Various landforms like gorges, V-shaped (1) The Northern and North-eastern
+valleys, rapids, waterfalls, etc. are indicative of Mountains
+this stage. (2) The Northern Plain
+Rationalised 2023-24
+
+--- PAGE 22 ---
+10 INDIA : PHYSICAL ENVIRONMENT
+Figure 2.2 : India : Physical
+Rationalised 2023-24
+
+--- PAGE 23 ---
+STRUCTURE AND PHYSIOGRAPHY 11
+(3) The Peninsular Plateau the Indus, the Ganga and the Brahmaputra.
+(4) The Indian Desert These plains extend approximately 3,200 km
+(5) The Coastal Plains from the east to the west. The average width
+(6) The Islands. of these plains varies between 150-300 km.
+The maximum depth of alluvium deposits
+The North and Northeastern Mountains varies between 1,000-2,000 m. From the
+north to the south, these can be divided into
+The North and Northeastern Mountains consist
+three major zones: the Bhabar, the Tarai and
+of the Himalayas and the Northeastern hills.
+the alluvial plains. The alluvial plains can be
+The Himalayas consist of a series of parallel
+further divided into the Khadar and the
+mountain ranges. Some of the important
+Bhangar.
+ranges are the Greater Himalayan range,
+Bhabar is a narrow belt ranging between
+which includes the Great Himalayas and
+8-10 km parallel to the Shiwalik foothills at
+the Shiwalik. The general orientation of these
+the break-up of the slope. As a result of this,
+ranges is from northwest to the southeast
+the streams and rivers coming from the
+direction in the northwestern part of India.
+mountains deposit heavy materials of rocks
+Himalayas in the Darjiling and Sikkim regions
+and boulders, and at times, disappear in this
+lie in an eastwest direction, while in Arunachal
+zone. South of the Bhabar is the Tarai belt, with
+Pradesh they are from southwest to the
+an approximate width of 10-20 km where most
+northwest direction. In Nagaland, Manipur and
+of the streams and rivers re-emerge without
+Mizoram, they are in the northsouth direction.
+having any properly demarcated channel,
+The approximate length of the Great Himalayan
+thereby, creating marshy and swampy
+range, also known as the central axial range, is
+conditions known as the Tarai. This has a
+2,500 km from east to west, and their width varies
+luxurious growth of natural vegetation and
+between 160-400 km from north to south. It is
+houses a varied wildlife.
+also evident from the map that the Himalayas
+The south of Tarai is a belt consisting of
+stand almost like a strong and long wall between
+old and new alluvial deposits known as the
+the Indian subcontinent and the Central and East
+Bhangar and Khadar respectively. These
+Asian countries.
+plains have characteristic features of mature
+Himalayas are not only the physical barrier,
+stage of fluvial erosional and depositional
+they are also a climatic, drainage and cultural
+landforms such as sand bars, meanders, ox-
+divide. Can you identify the impact of Himalayas
+bow lakes and braided channels. The
+on the geoenvironment of the countries of South
+Brahmaputra plains are known for their
+Asia? Can you find some other examples of
+riverine islands and sand bars. Most of
+similar geoenvironmental divide in the world?
+these areas are subjected to periodic floods
+Figure 2.3 : The Himalayas
+The Northern Plains
+The northern plains are formed by the
+alluvial deposits brought by the rivers –
+Figure 2.4 : Northern Plain
+Rationalised 2023-24
+
+--- PAGE 24 ---
+12 INDIA : PHYSICAL ENVIRONMENT
+and shifting river courses forming braided plateau, the Palamu plateau, the Ranchi
+streams. plateau, the Malwa plateau, the Coimbatore
+The mouths of these mighty rivers also form plateau and the Karnataka plateau, etc. This
+some of the largest deltas of the world, for is one of the oldest and the most stable
+example, the famous Sunderbans delta. landmass of India. The general elevation of the
+Otherwise, this is a featureless plain with a plateau is from the west to the east, which is
+general elevation of 50-150 m above the mean also proved by the pattern of the flow of rivers.
+sea level. The states of Haryana and Delhi form Name some rivers of the Peninsular plateau
+a water divide between the Indus and the which have their confluence in the Bay of
+Ganga river systems. As opposed to this, the Bengal and the Arabian sea and mention some
+Brahmaputra river flows from the northeast to landforms which are typical to the east flowing
+the southwest direction before it takes an rivers but are absent in the west flowing rivers.
+almost 90° southward turn at Dhubri before Some of the important physiographic features
+it enters into Bangladesh. These river valley of this region are tors, block mountains, rift
+plains have a fertile alluvial soil cover which valleys, spurs, bare rocky structures, series of
+supports a variety of crops like wheat, rice, hummocky hills and wall-like quartzite dykes
+sugarcane and jute, and hence, supports a offering natural sites for water storage. The
+large population. western and northwestern part of the plateau
+has an emphatic presence of black soil.
+The Peninsular Plateau This Peninsular plateau has undergone
+recurrent phases of upliftment and
+Rising from the height of 150 m above the river
+submergence accompanied by crustal faulting
+plains up to an elevation of 600-900 m is the
+and fractures. (The Bhima fault needs special
+irregular triangle known as the Peninsular
+mention, because of its recurrent seismic
+plateau. Delhi ridge in the northwest, (extension
+activities). These spatial variations have
+of Aravalis), the Rajmahal hills in the east, Gir
+brought in elements of diversity in the relief
+range in the west and the Cardamom hills in
+of the Peninsular plateau. The northwestern
+the south constitute the outer extent of the
+part of the plateau has a complex relief of
+Peninsular plateau. However, an extension of
+ravines and gorges. The ravines of Chambal,
+this is also seen in the northeast, in the form of
+Bhind and Morena are some of the well-known
+Shillong and Karbi-Anglong plateau. The
+examples.
+Peninsular India is made up of a series of
+On the basis of the prominent relief
+patland plateaus such as the Hazaribagh
+features, the Peninsular plateau can be
+divided into three broad groups:
+(i) The Deccan Plateau
+(ii) The Central Highlands
+(iii) The Northeastern Plateau.
+The Deccan Plateau
+This is bordered by the Western Ghats in the
+west, Eastern Ghats in the east and the
+Satpura, Maikal range and Mahadeo hills in
+the north. Western Ghats are locally known
+by different names such as Sahyadri in
+Maharashtra, Nilgiri hills in Karnataka and
+Tamil Nadu and Anaimalai hills and
+Figure 2.5 : A Part of Peninsular Plateau
+Cardamom hills in Kerala. Western Ghats are
+Rationalised 2023-24
+
+--- PAGE 25 ---
+STRUCTURE AND PHYSIOGRAPHY 13
+comparatively higher in elevation and more which lies a large reserve of mineral resources
+continuous than the Eastern Ghats. Their in the Chotanagpur plateau.
+average elevation is about 1,500 m with the
+height increasing from north to south. The Northeastern Plateau
+‘Anaimudi’ (2,695 m), the highest peak of
+In fact it is an extension of the main Peninsular
+Peninsular plateau is located on the
+plateau. It is believed that due to the force
+Anaimalai hills of the Western Ghats followed
+exerted by the northeastward movement of the
+by Dodabetta (2,637 m) on the Nilgiri hills.
+Indian plate at the time of the Himalayan
+Most of the Peninsular rivers have their origin
+origin, a huge fault was created between the
+in the Western Ghats. Eastern Ghats
+Rajmahal hills and the Meghalaya plateau.
+comprising the discontinuous and low hills
+Later, this depression got filled up by the
+are highly eroded by the rivers such as the
+deposition activity of the numerous rivers.
+Mahanadi, the Godavari, the Krishna, the
+Today, the Meghalaya and Karbi Anglong
+Kaveri, etc. Some of the important ranges
+plateau stand detached from the main
+include the Javadi hills, the Palconda range,
+Peninsular Block. The Meghalaya plateau is
+the Nallamala hills, the Mahendragiri hills, etc.
+further sub-divided into three: (i) The Garo
+The Eastern and the Western Ghats meet each
+Hills; (ii) The Khasi Hills; (iii) The Jaintia Hills,
+other at the Nilgiri hills.
+named after the tribal groups inhabiting this
+region. An extension of this is also seen in the
+The Central Highlands
+Karbi Anglong hills of Assam. Similar to the
+They are bounded to the west by the Aravali Chotanagpur plateau, the Meghalaya plateau
+range. The Satpura range is formed by a is also rich in mineral resources like coal, iron
+series of scarped plateaus on the south, ore, sillimanite, limestone and uranium. This
+generally at an elevation varying between area receives maximum rainfall from the south
+600-900 m above the mean sea level. This west monsoon. As a result, the Meghalaya
+forms the northernmost boundary of the plateau has a highly eroded surface.
+Deccan plateau. It is a classic example of the Cherrapunji displays a bare rocky surface
+relict mountains which are highly denuded devoid of any permanent vegetation cover.
+and form discontinuous ranges. The
+extension of the Peninsular plateau can be The Indian Desert
+seen as far as Jaisalmer in the West, where it
+To the northwest of the Aravali hills lies the
+has been covered by the longitudinal sand
+Great Indian desert. It is a land of undulating
+ridges and crescent-shaped sand dunes
+topography dotted with longitudinal dunes
+called barchans. This region has undergone
+and barchans. This region receives low rainfall
+metamorphic processes in its geological
+below 150 mm per year; hence, it has arid
+history, which can be corroborated by the
+climate with low vegetation cover. It is because
+presence of metamorphic rocks such as
+of these characteristic features that this is also
+marble, slate, gneiss, etc.
+known as Marusthali. It is believed that
+The general elevation of the Central
+during the Mesozoic era, this region was
+Highlands ranges between 700-1,000 m
+under the sea. This can be corroborated
+above the mean sea level and it slopes
+by the evidence available at wood fossils
+towards the north and northeastern
+park at Aakal and marine deposits around
+directions. Most of the tributaries of the river
+Brahmsar, near Jaisalmer (The
+Yamuna have their origin in the Vindhyan
+approximate age of the wood-fossils is
+and Kaimur ranges. Banas is the only
+estimated to be 180 million years). Though
+significant tributary of the river Chambal that
+the underlying rock structure of the desert
+originates from the Aravalli in the west. An
+is an extension of the Peninsular plateau,
+eastern extension of the Central Highland is
+yet, due to extreme arid conditions, its surface
+formed by the Rajmahal hills, to the south of
+Rationalised 2023-24
+
+--- PAGE 26 ---
+14 INDIA : PHYSICAL ENVIRONMENT
+provides natural conditions for the
+development of ports and harbours. Kandla,
+Mazagaon, JLN port Navha Sheva, Marmagao,
+Mangalore, Cochin, etc. are some of the
+important natural ports located along the
+west coast. Extending from the Gujarat coast
+in the north to the Kerala coast in the south,
+the western coast may be divided into
+following divisions – the Kachchh and
+Kathiawar coast in Gujarat, Konkan coast in
+Maharashtra, Goan coast and Malabar coast
+in Karnataka and Kerala respectively. The
+western coastal plains are narrow in the
+Figure 2.6 : The Indian Desert
+middle and get broader towards north and
+Can you identify the type of sand south. The rivers flowing through this coastal
+dunes shown in this picture? plain do not form any delta. The Malabar
+coast has got certain distinguishing features
+in the form of ‘Kayals’ (backwaters), which are
+features have been carved by physical
+used for fishing, inland navigation and also
+weathering and wind actions. Some of the well
+due to its special attraction for tourists. Every
+pronounced desert land features present here
+year the famous Nehru Trophy Vallamkali
+are mushroom rocks, shifting dunes and oasis
+(boat race) is held in Punnamada Kayal in
+(mostly in its southern part). On the basis of
+Kerala.
+the orientation, the desert can be divided into
+As compared to the western coastal plain,
+two parts: the northern part is sloping towards
+the eastern coastal plain is broader and is an
+Sindh and the southern towards the Rann of
+example of an emergent coast. There are well-
+Kachchh. Most of the rivers in this region are
+developed deltas here, formed by the rivers
+ephemeral. The Luni river flowing in the
+flowing eastward in to the Bay of Bengal. These
+southern part of the desert is of some
+include the deltas of the Mahanadi, the
+significance. Low precipitation and high
+Godavari, the Krishna and the Kaveri. Because
+evaporation makes it a water deficit region.
+of its emergent nature, it has less number of
+There are some streams which disappear after
+ports and harbours. The continental shelf
+flowing for some distance and present a typical
+extends up to 500 km into the sea, which
+case of inland drainage by joining a lake or
+makes it difficult for the development of
+playa. The lakes and the playas have brackish
+good ports and harbours. Name some ports
+water which is the main source of obtaining salt.
+on the eastern coast.
+The Coastal Plains
+You have already read that India has a long
+coastline . On the basis of the location and
+active geomorphological processes, it can be
+broadly divided into two: (i) the western
+coastal plains; (ii) the eastern coastal plains.
+The western coastal plains are an example
+of submerged coastal plain. It is believed that
+the city of Dwaraka which was once a part of
+the Indian mainland situated along the west
+coast is submerged under water. Because of
+this submergence it is a narrow belt and Figure 2.7 : Coastal Plains
+Rationalised 2023-24
+
+--- PAGE 27 ---
+STRUCTURE AND PHYSIOGRAPHY 15
+On 26 December 2004, the Andaman and Nicobar Islands experienced one of the most
+devasting natural calamity. Can you name the calamity and identify some other areas
+which were adversely affected by the same calamity? What was its major consequence?
+The islands of the Arabian sea include
+The Islands
+Lakshadweep and Minicoy. These are
+There are two major island groups in India – scattered between 8°°N-12°°N and 71°°E -74°°E
+one in the Bay of Bengal and the other in the
+longitude. These islands are located at a
+Arabian Sea. The Bay of Bengal island groups
+distance of 280 km-480 km off the Kerala
+consist of about 572 islands/islets. These are
+coast. The entire island group is built of
+situated roughly between 6°°N-14°°N and
+coral deposits. There are approximately 36
+92°°E -94°°E. The two principal groups of islets
+islands of which 11 are inhabited. Minicoy is
+include the Ritchie’s archipelago and the
+the largest island with an area of 453 sq. km.
+Labrynth island. The entire group of island is
+The entire group of islands is broadly divided
+divided into two broad categories – the
+by the Ten degree channel, north of which is
+Andaman in the north and the Nicobar in
+the Amini Island and to the south of the
+the south. They are separated by a
+Canannore Island. The Islands of this
+waterbody which is called the Ten degree
+archipelago have storm beaches consisting of
+channel. It is believed that these islands are
+unconsolidated pebbles, shingles, cobbles and
+an elevated portion of submarine mountains.
+boulders on the eastern seaboard.
+However, some smaller islands are volcanic in
+origin. Barren island, the only active volcano
+in India is also situated in the Nicobar islands.
+Some important mountain peaks in
+Andaman and Nicobar Islands are Saddle
+peak (North Andaman – 738 m), Mount
+Diavolo (Middle Andaman – 515 m), Mount
+Koyob (South Andaman – 460 m) and Mount
+Thuiller (Great Nicobar – 642 m).
+The coastal line has some coral deposits,
+and beautiful beaches. These islands receive
+convectional rainfall and have an equatorial
+type of vegetation. Figure 2.8 : An Island
+Rationalised 2023-24
+
+--- PAGE 28 ---
+16 INDIA : PHYSICAL ENVIRONMENT
+EXERCISES
+1. Choose the right answer from the four alternatives given below.
+(i) Which one of the water bodies separates the Andaman from the Nicobar?
+(a) 11°° Channel (c) 10°° Channel
+(b) Gulf of Mannar (d)Andaman Sea
+(ii) On which of the following hill range is the ‘Dodabeta’ peak situated?
+(a) Nilgiri hills (c) Cardamom hills
+(b) Anaimalai hills (d)Nallamala hills
+2. Answer the following questions in about 30 words.
+(i) If a person is to travel to Lakshadweep, from which coastal plain does he
+prefer and why?
+(ii) Where in India will you find a cold desert? Name some important
+ranges of this region.
+(iii) Why is the western coastal plain is devoid of any delta?
+3. Answer the following questions in not more than 125 words.
+(i) Make a comparison of the island groups of the Arabian Sea and the
+Bay of Bengal.
+(ii) What are the important geomorphological features found in the river
+valley plains?
+(iii) If you move from Badrinath to Sunderbans delta along the course of
+the river Ganga, what major geomorphological features will you come
+across?
+Project/Activity
+(i) Make a list of major Himalayan peaks from the west to the east with the
+help of an atlas.
+(ii) Identify the major landforms of your state and analyse the major economic
+activity practised by the people in each landform.
+Rationalised 2023-24
+
+--- PAGE 29 ---
+CHAPTER
+D S
+RAINAGE YSTEM
+Y
+ou have observed water flowing through 2006) in this class . Can you, then, explain the
+the rivers, nalas and even channels reason for water flowing from one direction to
+during rainy season which drain the the other? Why do the rivers originating from the
+excess water. Had these channels not been Himalayas in the northern India and the Western
+there, large-scale flooding would have Ghat in the southern India flow towards the east
+occurred. Wherever channels are ill-defined or and discharge their waters in the Bay of Bengal?
+choked, flooding is a common phenomenon.
+The flow of water through well-defined
+channels is known as ‘drainage’ and the
+network of such channels is called a
+‘drainage system’. The drainage pattern
+of an area is the outcome of the geological
+time period, nature and structure of
+rocks, topography, slope, amount of
+water flowing and the periodicity of
+the flow.
+Do you have a river near your village or city?
+Have you ever been there for boating or bathing?
+Figure 3.1 : A River in the Mountainous Region
+Is it perennial (always with water) or ephemeral
+(water during rainy season, and dry, otherwise)? A river drains the water collected from a
+Do you know that rivers flow in the same specific area, which is called its ‘catchment area’.
+direction? You have studied about slopes in the An area drained by a river and its tributaries
+other two textbooks of geography (NCERT, is called a drainage basin. The boundary line
+Important Drainage Patterns
+(i) The drainage pattern resembling the branches of a tree is known as “dendritic” the examples
+of which are the rivers of northern plain.
+(ii) When the rivers originate from a hill and flow in all directions, the drainage pattern is known
+as ‘radial’. The rivers originating from the Amarkantak range present a good example of it.
+(iii) When the primary tributaries of rivers flow parallel to each other and secondary tributaries
+join them at right angles, the pattern is known as ‘trellis’.
+(iv) When the rivers discharge their waters from all directions in a lake or depression, the
+pattern is know as ‘centripetal’.
+Find out some of the patterns in the topo sheet given in Chapter 5 of Practical Work in
+Geography– Part I (NCERT, 2006).
+Rationalised 2023-24
+
+--- PAGE 30 ---
+18 INDIA : PHYSICAL ENVIRONMENT
+Figure 3.2 : Major Rivers of India
+Rationalised 2023-24
+
+--- PAGE 31 ---
+DRAINAGE SYSTEM 19
+separating one drainage basin from the other in the Bay of Bengal. Identify these rivers of the
+is known as the watershed. The catchments of South India.
+large rivers are called river basins while those The Narmada and Tapi are two large rivers
+of small rivulets and rills are often referred to which are exceptions. They along with many
+as watersheds. There is, however, a slight small rivers discharge their waters in the
+difference between a river basin and a Arabian Sea.
+watershed. Watersheds are small in area while Name these rivers of the western coastal
+the basins cover larger areas. region from the Konkan to the Malabar coast.
+River basins and watersheds are marked On the basis of the mode of origin, nature
+by unity. What happens in one part of the and characteristics, the Indian drainage may
+basin or watershed directly affects the other also be classified into the Himalayan drainage
+parts and the unit as a whole. That is why, they and the Peninsular drainage. Although it has
+are accepted as the most appropriate micro, the problem of including the Chambal, the
+meso or macro planning regions. Betwa, the Son, etc. which are much older in
+Indian drainage system may be divided on age and origin than other rivers that have their
+various bases. On the basis of discharge of water origin in the Himalayas, it is the most accepted
+(orientations to the sea), it may be grouped into: basis of classification. Hence, this scheme has
+(i) the Arabian Sea drainage; and (ii) the Bay of been followed in this book.
+Bengal drainage. They are separated from each
+other through the Delhi ridge, the Aravalis and DRAINAGE SYSTEMS OF INDIA
+the Sahyadris (water divide is shown by a line
+Indian drainage system consists of a large
+in Figure 3.1). Nearly 77 per cent of the drainage
+number of small and big rivers. It is the outcome
+area consisting of the Ganga, the Brahmaputra,
+of the evolutionary process of the three major
+the Mahanadi, the Krishna, etc. is oriented
+physiographic units and the nature and
+towards the Bay of Bengal while 23 per cent
+characteristics of precipitation.
+comprising the Indus, the Narmada, the Tapi,
+the Mahi and the Periyar systems discharge
+THE HIMALAYAN DRAINAGE
+their waters in the Arabian Sea.
+On the basis of the size of the watershed, The Himalayan drainage system has evolved
+the drainage basins of India are grouped into through a long geological history. It mainly
+three categories: (i) Major river basins with includes the Ganga, the Indus and the
+more than 20,000 sq. km of catchment area. Brahmaputra river basins. Since these are fed
+It includes 14 drainage basins such as the both by melting of snow and precipitation,
+Ganga, the Brahmaputra, the Krishna, the rivers of this system are perennial. These rivers
+Tapi, the Narmada, the Mahi, the Pennar, the pass through the giant gorges carved out by
+Sabarmati, the Barak, etc. (Appendix III). (ii) the erosional activity carried on simultaneously
+Medium river basins with catchment area with the uplift of the Himalayas. Besides deep
+between 2,000-20,000 sq. km incorporating gorges, these rivers also form V-shaped valleys,
+44 river basins such as the Kalindi, the Periyar, rapids and waterfalls in their mountainous
+the Meghna, etc. (iii) Minor river basins with
+catchment area of less than 2,000 sq. km
+include fairly good number of rivers flowing in
+the area of low rainfall.
+If you look at the Figure 3.1 you can see
+that many rivers have their sources in the
+Himalayas and discharge their waters either in
+the Bay of Bengal or in the Arabian Sea. Identify
+these rivers of North India. Large rivers flowing
+on the Peninsular plateau have their origin in
+the Western Ghats and discharge their waters Figure 3.3 : Rapids
+Rationalised 2023-24
+
+--- PAGE 32 ---
+20 INDIA : PHYSICAL ENVIRONMENT
+course. While entering the plains, they form as the water divide between the Indus and
+depositional features like flat valleys, ox-bow Ganga drainage systems. Likewise, the down-
+lakes, flood plains, braided channels, and thrusting of the Malda gap area between the
+deltas near the river mouth. In the Himalayan Rajmahal hills and the Meghalaya plateau
+reaches, the course of these rivers is highly during the mid-pleistocene period, diverted the
+tortous, but over the plains they display a Ganga and the Brahmaputra systems to flow
+strong meandering tendency and shift their towards the Bay of Bengal.
+courses frequently. River Kosi, also know as
+the ‘sorrow of Bihar’, has been notorious for THE RIVER SYSTEMS OF THE
+frequently changing its course. The Kosi brings HIMALAYAN DRAINAGE
+huge quantity of sediments from its upper
+The Himalayan drainage consists of several
+reaches and deposits it in the plains. The
+river systems but the following are the major
+course gets blocked, and consequently, the
+river systems:
+river changes its course. Why does the Kosi
+river bring such huge quantity of sediments
+The Indus System
+from the upper reaches? Do you think that
+the discharge of the water in the rivers in It is one of the largest river basins of the world,
+general and the Kosi in particular, remains the covering an area of 11,65,000 sq. km (in India
+same, or does it fluctuate? When does the river it is 321, 289 sq. km and a total length of 2,880
+course receive the maximum quantity of water? km (in India 1,114 km). The Indus also
+What are the positive and negative effects of known as the Sindhu, is the westernmost of
+flooding? the Himalayan rivers in India. It originates
+from a glacier near Bokhar Chu (31°°15' N
+EVOLUTION OF THE HIMALAYAN DRAINAGE latitude and 81°°40' E longitude) in the
+Tibetan region at an altitude of 4,164 m in
+There are difference of opinion about the
+the Kailash Mountain range. In Tibet, it is
+evolution of the Himalayan rivers. However,
+known as ‘Singi Khamban; or Lion’s mouth.
+geologists believe that a mighty river called
+After flowing in the northwest direction
+Shiwalik or Indo-Brahma traversed the entire
+between the Ladakh and Zaskar ranges, it
+longitudinal extent of the Himalaya from Assam
+passes through Ladakh and Baltistan. It cuts
+to Punjab and onwards to Sind, and finally
+across the Ladakh range, forming a
+discharged into the Gulf of Sind near lower
+spectacular gorge near Gilgit in Jammu and
+Punjab during the Miocene period some 5-24
+Kashmir. It enters into Pakistan near Chilas
+million years ago The remarkable continuity of
+in the Dardistan region. Find out the area
+the Shiwalik and its lacustrine origin and
+known as Dardistan.
+alluvial deposits consisting of sands, silt, clay,
+The Indus receives a number of Himalayan
+boulders and conglomerates support this tributaries such as the Shyok, the Gilgit, the
+viewpoint. Zaskar, the Hunza, the Nubra, the Shigar, the
+It is opined that in due course of time Indo– Gasting and the Dras. It finally emerges out of
+Brahma river was dismembered into three main the hills near Attock where it receives the Kabul
+drainage systems: (i) the Indus and its five river on its right bank. The other important
+tributaries in the western part; (ii) the Ganga tributaries joining the right bank of the Indus
+and its Himalayan tributaries in the central are the Khurram, the Tochi, the Gomal, the
+part; and (iii) the stretch of the Brahmaputra Viboa and the Sangar. They all originate in the
+in Assam and its Himalayan tributaries in the Sulaiman ranges. The river flows southward
+eastern part. The dismemberment was and receives ‘Panjnad’ a little above Mithankot.
+probably due to the Pleistocene upheaval in The Panjnad is the name given to the five rivers
+the western Himalayas, including the uplift of of Punjab, namely the Satluj, the Beas, the
+the Potwar Plateau (Delhi Ridge), which acted Ravi, the Chenab and the Jhelum. It finally
+Rationalised 2023-24
+
+--- PAGE 33 ---
+DRAINAGE SYSTEM 21
+discharges into the Arabian Sea, east of Gangotri glacier near Gaumukh (3,900 m)
+in the Uttarkashi district of Uttarakhand.
+Karachi. The Indus flows in India only through
+Here, it is known as the Bhagirathi. It cuts
+Jammu and Kashmir.
+through the Central and the Lesser
+The Jhelum, an important tributary of the
+Himalayas in narrow gorges. At Devprayag,
+Indus, rises from a spring at Verinag situated
+the Bhagirathi meets the Alaknanda;
+at the foot of the Pir Panjal in the south-eastern
+hereafter, it is known as the Ganga. The
+part of the valley of Kashmir. It flows through
+Alaknanda has its source in the Satopanth
+Srinagar and the Wular lake before entering
+glacier above Badrinath. The Alaknanda
+Pakistan through a deep narrow gorge. It joins
+consists of the Dhauli and the Vishnu Ganga
+the Chenab near Jhang in Pakistan.
+which meet at Joshimath or Vishnu Prayag.
+The Chenab is the largest tributary of the
+The other tributaries of Alaknanda such as
+Indus. It is formed by two streams, the
+the Pindar joins it at Karna Prayag
+Chandra and the Bhaga, which join at
+while Mandakini or Kali Ganga meets it at
+Tandi near Keylong in Himachal Pradesh.
+Rudra Prayag. The Ganga enters the plains
+Hence, it is also known as Chandrabhaga.
+at Haridwar. From here, it flows first to
+The river flows for 1,180 km before entering
+the south, then to the south-east and east
+into Pakistan.
+before splitting into two distributaries,
+The Ravi is another important tributary of
+namely the Bhagirathi and the Padma. The
+the Indus. It rises west of the Rohtang pass in
+river has a length of 2,525 km. It is shared by
+the Kullu hills of Himachal Pradesh and flows
+Uttarakhand (110 km) and Uttar Pradesh
+through the Chamba valley of the state. Before
+(1,450 km), Bihar (445 km) and West Bengal
+entering Pakistan and joining the Chenab near
+(520 km). The Ganga basin covers about 8.6
+Sarai Sidhu, it drains the area lying between
+lakh sq. km area in India alone. The Ganga
+the southeastern part of the Pir Panjal and the
+Dhauladhar ranges.
+The Beas is another important tributary of
+Do you Know?
+the Indus, originating from the Beas Kund near
+the Rohtang Pass at an elevation of 4,000 m
+‘Namami Gange Programme’, is an
+above the mean sea level. The river flows
+Integrated Conservation Mission, approved
+through the Kullu valley and forms gorges at
+as “Flagship Programme” by the Union
+Kati and Largi in the Dhaoladhar range. It
+Government in June 2014 with the twin
+enters the Punjab plains where it meets the
+objectives of effective abatement of pollution,
+Satluj near Harike.
+conservation and rejuvenation of the
+The Satluj originates in the ‘Raksas tal’ near
+National River Ganga.
+Mansarovar at an altitude of 4,555 m in Tibet
+Main pillars of the Namami Gange
+where it is known as Langchen Khambab. It
+Programme are:
+flows almost parallel to the Indus for about 400
+• Sewerage Treatment Infrastructure
+km before entering India, and comes out of a
+• River-Front Development
+gorge at Rupar. It passes through the Shipki
+• River-Surface Cleaning
+La on the Himalayan ranges and enters the
+• Bio-Diversity
+Punjab plains. It is an antecedent river. It is a
+• Afforestation
+very important tributary as it feeds the canal
+• Public Awareness
+system of the Bhakra Nangal project.
+• Industrial Effluent Monitoring
+• Ganga Gram
+The Ganga System
+You may explore about this project at
+The Ganga is the most important river of http://nmcg.nic.in/NamamiGanga.aspx#
+India both from the point of view of its basin
+and cultural significance. It rises in the
+Rationalised 2023-24
+
+--- PAGE 34 ---
+22 INDIA : PHYSICAL ENVIRONMENT
+river system is the largest in India having a The Kosi is an antecedent river with its
+number of perennial and non-perennial source to the north of Mount Everest in Tibet,
+rivers originating in the Himalayas in the where its main stream Arun rises. After
+north and the Peninsula in the south, crossing the Central Himalayas in Nepal, it is
+respectively. The Son is its major right bank joined by the Son Kosi from the West and the
+tributary. The important left bank Tamur Kosi from the east. It forms Sapt Kosi
+tributaries are the Ramganga, the Gomati,
+after uniting with the river Arun.
+the Ghaghara, the Gandak, the Kosi and the
+The Ramganga is comparatively a small
+Mahananda. The river finally discharges
+river rising in the Garhwal hills near Gairsain.
+itself into the Bay of Bengal near the
+It changes its course to the southwest direction
+Sagar Island.
+after crossing the Shiwalik and enters into the
+The Yamuna, the western most and the
+plains of Uttar Pradesh near Najibabad. Finally,
+longest tributary of the Ganga, has its source
+it joins the Ganga near Kannauj.
+in the Yamunotri glacier on the western
+The Damodar occupies the eastern margins
+slopes of Banderpunch range (6,316 m). It
+of the Chotanagpur Plateau where it flows
+joins the Ganga at Prayag (Allahabad). It is
+joined by the Chambal, the Sind, the Betwa through a rift valley and finally joins the Hugli.
+and the Ken on its right bank which The Barakar is its main tributary. Once known
+originates from the Peninsular plateau while as the ‘sorrow of Bengal’, the Damodar has
+the Hindan, the Rind, the Sengar, the Varuna, been now tamed by the Damodar Valley
+etc. join it on its left bank. Much of its water corporation, a multipurpose project.
+feeds the western and eastern Yamuna and
+The Sarda or Saryu river rises in the Milam
+the Agra canals for irrigation purposes.
+glacier in the Nepal Himalayas where it is
+known as the Goriganga. Along the Indo-Nepal
+Name the states which are drained by
+border, it is called Kali or Chauk, where it joins
+the river Yamuna.
+the Ghaghara.
+The Mahananda is another important
+The Chambal rises near Mhow in the
+tributary of the Ganga rising in the Darjiling
+Malwa plateau of Madhya Pradesh and flows
+hills. It joins the Ganga as its last left bank
+northwards through a gorge up wards of Kota
+tributary in West Bengal.
+in Rajasthan, where the Gandhisagar dam has
+The Son is a large south bank tributary of
+been constructed. From Kota, it traverses down
+the Ganga, originating in the Amarkantak
+to Bundi, Sawai Madhopur and Dholpur, and
+plateau. After forming a series of waterfalls at
+finally joins the Yamuna. The Chambal is
+the edge of the plateau, it reaches Arrah, west
+famous for its badland topography called the
+of Patna, to join the Ganga.
+Chambal ravines.
+The Gandak comprises two streams,
+The Brahmaputra System
+namely Kaligandak and Trishulganga. It rises
+in the Nepal Himalayas between the Dhaulagiri The Brahmaputra, one of the largest rivers
+and Mount Everest and drains the central part of the world, has its origin in the
+of Nepal. It enters the Ganga plain in Chemayungdung glacier of the Kailash
+Champaran district of Bihar and joins the range near the Mansarovar lake. From here,
+Ganga at Sonpur near Patna. it traverses eastward longitudinally for a
+The Ghaghara originates in the glaciers of distance of nearly 1,200 km in a dry and
+Mapchachungo. After collecting the waters of flat region of southern Tibet, where it is
+its tributaries – Tila, Seti and Beri, it comes known as the Tsangpo, which means ‘the
+out of the mountain, cutting a deep gorge at purifier.’ The Rango Tsangpo is the major
+Shishapani. The river Sarda (Kali or Kali right bank tributary of this river in Tibet. It
+Ganga) joins it in the plain before it finally meets emerges as a turbulent and dynamic river
+the Ganga at Chhapra. after carving out a deep gorge in the Central
+Rationalised 2023-24
+
+--- PAGE 35 ---
+DRAINAGE SYSTEM 23
+Himalayas near Namcha Barwa (7,755 m). The Evolution of Peninsular Drainage
+The river emerges from the foothills under System
+the name of Siang or Dihang. It enters India
+Three major geological events in the distant
+west of Sadiya town in Arunachal Pradesh.
+past have shaped the present drainage
+Flowing southwest, it receives its main left
+systems of Peninsular India: (i) Subsidence
+bank tributaries, viz., Dibang or Sikang and
+of the western flank of the Peninsula leading
+Lohit; thereafter, it is known as the
+to its submergence below the sea during the
+Brahmaputra.
+early tertiary period. Generally, it has
+The Brahmaputra receives numerous
+disturbed the symmetrical plan of the river
+tributaries in its 750 km long journey through
+on either side of the original watershed.
+the Assam valley. Its major left bank
+(ii) Upheaval of the Himalayas when the
+tributaries are the Burhi Dihing and Dhansari
+northern flank of the Peninsular block was
+(South) whereas the important right bank
+subjected to subsidence and the consequent
+tributaries are the Subansiri, Kameng, Manas
+trough faulting. The Narmada and The Tapi
+and Sankosh. The Subansiri which has its
+flow in trough faults and fill the original
+origin in Tibet, is an antecedent river. The
+cracks with their detritus materials. Hence,
+Brahmaputra enters into Bangladesh near
+there is a lack of alluvial and deltaic deposits
+Dhubri and flows southward. In Bangladesh,
+in these rivers. (iii) Slight tilting of the
+the Tista joins it on its right bank from where
+Peninsular block from northwest to the
+the river is known as the Jamuna. It finally
+southeastern direction gave orientation to the
+merges with the river Padma, which falls in the
+entire drainage system towards the Bay of
+Bay of Bengal. The Brahmaputra is well-known
+Bengal during the same period.
+for floods, channel shifting and bank erosion.
+This is due to the fact that most of its tributaries
+River Systems of the Peninsular Drainage
+are large, and bring large quantity of sediments
+owing to heavy rainfall in its catchment area. There are a large number of river systems in
+the Peninsular drainage. A brief account of the
+THE PENINSULAR DRAINAGE SYSTEM major Peninsular river systems is given below:
+The Mahanadi rises near Sihawa in
+The Peninsular drainage system is older than
+Raipur district of Chhattisgarh and runs
+the Himalayan one. This is evident from the
+through Odisha to discharge its water into
+broad, largely-graded shallow valleys, and the
+the Bay of Bengal. It is 851 km long and its
+maturity of the rivers. The Western Ghats
+catchment area spreads over 1.42 lakh sq.
+running close to the western coast act as the
+km. Some navigation is carried on in the
+water divide between the major Peninsular
+lower course of this river. Fifty three per cent
+rivers, discharging their water in the Bay of
+of the drainage basin of this river lies in
+Bengal and as small rivulets joining the
+Madhya Pradesh and Chhattisgarh, while 47
+Arabian Sea. Most of the major Peninsular
+per cent lies in Odisha.
+rivers except Narmada and Tapi flow from west The Godavari is the largest Peninsular river
+to east. The Chambal, the Sind, the Betwa, the system. It is also called the Dakshin Ganga. It
+Ken, the Son, originating in the northern part rises in the Nasik district of Maharashtra and
+of the Peninsula belong to the Ganga river discharges its water into the Bay of Bengal. Its
+system. The other major river systems of the tributaries run through the states of
+Peninsular drainage are – the Mahanadi the Maharashtra, Madhya Pradesh, Chhattisgarh,
+Godavari, the Krishna and the Kaveri. Odisha and Andhra Pradesh. It is 1,465 km
+Peninsular rivers are characterised by fixed long with a catchment area spreading over
+course, absence of meanders and non- 3.13 lakh sq. km 49 per cent of this, lies in
+perennial flow of water. The Narmada and the Maharashtra, 20 per cent in Madhya Pradesh
+Tapi which flow through the rift valley are, and Chhattisgarh, and the rest in Andhra
+however, exceptions. Pradesh. The Penganga, the Indravati, the
+Rationalised 2023-24
+
+--- PAGE 36 ---
+24 INDIA : PHYSICAL ENVIRONMENT
+Pranhita, and the Manjra are its principal
+The Tapi is the other important westward
+tributaries. The Godavari is subjected to heavy
+flowing river. It originates from Multai in the Betul
+floods in its lower reaches to the south of
+district of Madhya Pradesh. It is 724 km long
+Polavaram, where it forms a picturesque gorge.
+and drains an area of 65,145 sq. km. Nearly 79
+It is navigable only in the deltaic stretch. The
+per cent of its basin lies in Maharashtra, 15 per
+river after Rajamundri splits into several
+cent in Madhya Pradesh and the remaining
+branches forming a large delta.
+6 per cent in Gujarat.
+The Krishna is the second largest east-
+Luni is the largest river system of
+flowing Peninsular river which rises near
+Rajasthan, west of Aravali. It originates near
+Mahabaleshwar in Sahyadri. Its total length
+Pushkar in two branches, i.e. the Saraswati
+is 1,401 km. The Koyna, the Tungbhadra and
+and the Sabarmati, which join with each other
+the Bhima are its major tributaries. Of the total
+at Govindgarh. From here, the river comes out
+catchment area of the Krishna, 27 per cent
+of Aravali and is known as Luni. It flows
+lies in Maharashtra, 44 per cent in Karnataka
+towards the west till Telwara and then takes a
+and 29 per cent in Andhra Pradesh
+southwest direction to join the Rann of
+and Telangana.
+Kuchchh. The entire river system is ephemeral.
+The Kaveri rises in Brahmagiri hills
+(1,341m) of Kogadu district in Karnataka. Its
+EXTENT OF USABILITY OF RIVER WATER
+length is 800 km and it drains an area of
+81,155 sq. km. Since the upper catchment The rivers of India carry huge volumes of water
+area receives rainfall during the southwest per year but it is unevenly distributed both in
+monsoon season (summer) and the lower part time and space. There are perennial rivers
+during the northeast monsoon season carrying water throughout the year while the
+(winter), the river carries water throughout the non-perennial rivers have very little water during
+year with comparatively less fluctuation than the dry season. During the rainy season, much
+the other Peninsular rivers. About 3 per cent of the water is wasted in floods and flows down
+of the Kaveri basin falls in Kerala, 41 per cent to the sea. Similarly, when there is a flood in one
+in Karnataka and 56 per cent in Tamil Nadu. part of the country, the other area suffers from
+Its important tributaries are the Kabini, the drought. Why does this happen? Is it the
+Bhavani and the Amravati. problem of availability of water resource or
+The Narmada originates on the western that of its management? Can you suggest
+flank of the Amarkantak plateau at a height some measures to mitigate the problems
+of about 1,057 m. Flowing in a rift valley of floods and droughts simultaneously
+between the Satpura in the south and the occuring in different parts of the country?
+Vindhyan range in the north, it forms a (See Chapter 6 of the book).
+picturesque gorge in marble rocks and
+Can these problems be solved or
+Dhuandhar waterfall near Jabalpur. After
+minimised by trasfering the surplus water
+flowing a distance of about 1,312 km, it
+from one basin to the water deficit basins? Do
+meets the Arabian sea south of Bharuch,
+forming a broad 27 km long estuary. Its we have some schemes of inter-basin
+catchment area is about 98,796 sq. km. The linkage?
+Sardar Sarovar Project has been constructed
+on this river. Teachers may explain the following
+examples
+• Periyar Diversion Scheme
+Collect information about Narmada • Indira Gandhi Canal Project
+river conservation mission named • Kurnool-Cuddapah Canal
+“Namami Devi Narmade” and discuss • Beas-Satluj Link Canal
+with your peers. • Ganga-Kaveri Link Canal
+Rationalised 2023-24
+
+--- PAGE 37 ---
+DRAINAGE SYSTEM 25
+Have you read in the newspapers about the (v) River water disputes between states
+linking of rivers? Do you think that digging a (vi) Shrinking of channels due to the extension
+canal is enough to transfer water from the of settlements towards the thalweg.
+Ganga basin to the Peninsular river? What is
+Why are the rivers polluted? Have you seen
+the major problem? Consult Chapter 2 of this
+the dirty waters of cities entering into the
+book and find out the difficulties posed by the
+rivers? Where do the industrial affluents and
+unevenness of the terrain. How can the water
+wastes get disposed of ? Most of the cremation
+be lifted from the plain area to the plateau
+grounds are on the banks of rivers and the
+area? Is there sufficient surplus water in the
+dead bodies are sometimes thrown in the
+north Indian rivers which can be transferred
+rivers. On the occasion of some festivals, the
+on a regular basis? Organise a debate on the
+flowers and statues are immersed in the rivers.
+whole issue and prepare a write up. How do
+Large scale bathing and washing of clothes
+you rank the following problems in using
+also pollute river waters. How can the rivers
+river water? be made pollution free? Have you read about
+Ganga Action Plan, or about a campaign for
+(i) No availability in sufficient quantity
+cleaning the Yamuna at Delhi? Collect
+(ii) River water pollution
+materials on schemes for making rivers
+(iii) Load of silt in the river water
+pollution free and organise the materials in a
+(iv) Uneven seasonal flow of water
+write up.
+EXERCISES
+1. Choose the right answer from the four alternatives given below.
+(i) Which one of the following rivers was known as the ‘Sorrow of Bengal’?
+(a) The Gandak (c) The Kosi
+(b) The Son (d) The Damodar
+(ii) Which one of the following rivers has the largest river basin in India?
+(a) The Indus (c) The Ganga
+(b) The Brahmaputra (d) The Krishna
+(iii) Which one of the following rivers is not included in ‘Panchnad’?
+(a) The Ravi (c) The Indus
+(b) The Chenab (d) The Jhelum
+(iv) Which one of the following rivers flows in a rift valley?
+(a) The Son (c) The Yamuna
+(b) The Narmada (d) The Luni
+(v) Which one of the following is the place of confluence of the Alaknanda and the
+Bhagirathi?
+(a) Vishnu Prayag (c) Karan Prayag
+(b) Rudra Prayag (d) Deva Prayag
+2. State the differences between the following.
+(i) River Basin and Watershed
+(ii) Dendritic and Trellis drainage pattern
+(iii) Radial and Centripetal drainage pattern
+(iv) Delta and Estuary
+3. Answer the following questions in about 30 words.
+(i) What are the socio-economic advantages of inter-linking of rivers in India?
+Rationalised 2023-24
+
+--- PAGE 38 ---
+26 INDIA : PHYSICAL ENVIRONMENT
+(ii) Write three characterstics of the Peninsular river.
+4. Answer the following questions in not more than 125 words.
+(i) What are the important characteristic features of north Indian rivers? How are
+these different from Peninsular rivers?
+(ii) Suppose you are travelling from Haridwar to Siliguri along the foothills of the
+Himalayas. Name the important rivers you will come across. Describe the
+characteristics of any one of them.
+Project/Activity
+Study the Appendix III and answer the following questions.
+(i) Which river has the largest proportion of catchment area in the country?
+(ii) Make a comparative bar diagram on a graph paper to show the length of the
+courses of the rivers.
+Rationalised 2023-24
+
+--- PAGE 39 ---
+U
+NIT
+III
+C V
+LIMATE AND EGETATION
+This unit deals with
+• Weather and climate – spatial and temporal distribution of temperature,
+pressure, winds and rainfall; Indian monsoons: mechanism, onset and
+variability – spatial and temporal; climatic types
+• Natural vegetation – forest types and distribution; wild life
+conservation; biosphere reserves
+Rationalised 2023-24
+
+--- PAGE 40 ---
+28 INDIA : PHYSICAL ENVIRONMENT
+CHAPTER
+C
+LIMATE
+W
+e drink more water during summers. the weather and climate of different regions of
+Your uniform during the summer is India. For example, the climate of Kerala and
+different from the winters. Why do Tamil Nadu in the south are so different from
+you wear lighter clothes during summers and that of Uttar Pradesh and Bihar in the north,
+heavy woollen clothes during winters in north and yet all of these have a monsoon type of
+India? In southern India, woollen clothes are climate. The climate of India has many regional
+not required. In northeastern states, winters variations expressed in the pattern of winds,
+are mild except in the hills. There are variations temperature and rainfall, rhythm of seasons
+in weather conditions during different seasons. and the degree of wetness or dryness. These
+These changes occur due to the changes in the regional diversities may be described as
+elements of weather (temperature, pressure, sub-types of monsoon climate. Let us take a
+wind direction and velocity, humidity and closer look at these regional variations in
+precipitation, etc.). temperature, winds and rainfall.
+While in the summer the mercury
+Weather is the momentary state of the occasionally touches 55°°C in the western
+atmosphere while climate refers to the Rajasthan, it drops down to as low as minus
+average of the weather conditions over a 45°°C in winter around Leh. Churu in
+longer period of time. Weather changes
+Rajasthan may record a temperature of
+quickly, may be within a day or week but 50°°C or more on a June day while the
+climate changes imperceptively and may mercury hardly touches 19°°C in Tawang
+be noted after 50 years or even more.
+(Arunachal Pradesh) on the same day.
+On a December night, temperature in
+You have already studied about the
+Drass (Ladakh) may drop down to minus
+monsoon in your earlier classes. You are also
+45°°C while Thiruvananthapuram or Chennai
+aware of the meaning of the word, “monsoon”.
+on the same night records 20°°C or 22°°C. These
+Monsoon connotes the climate associated with
+examples confirm that there are seasonal
+seasonal reversal in the direction of winds.
+variations in temperature from place to place
+India has hot monsoonal climate which is the
+and from region to region in India. Not only this,
+prevalent climate in south and southeast Asia.
+if we take only a single place and record the
+temperature for just one day, variations are no
+UNITY AND DIVERSITY IN THE MONSOON CLIMATE
+less striking. In Kerala and in the Andaman
+The monsoon regime emphasises the unity of Islands, the difference between day and night
+India with the rest of southeast Asian region. temperatures may be hardly seven or eight
+This view of broad unity of the monsoon type degree Celsius. But in the Thar desert, if the
+of climate should not, however, lead one to day temperature is around 50°°C, at night, it
+ignore its regional variations which differentiate may drop down considerably upto 15°°-20°°C.
+Rationalised 2023-24
+
+--- PAGE 41 ---
+CLIMATE 29
+Now, let us see the regional variations in The Himalayan Mountains : The lofty
+precipitation. While snowfall occurs in the Himalayas in the north along with its
+Himalayas, it only rains over the rest of the extensions act as an effective climatic divide.
+country. Similarly, variations are noticeable not The towering mountain chain provides an
+only in the type of precipitation but also in its invincible shield to protect the subcontinent
+amount. While Cherrapunji and Mawsynram from the cold northern winds. These cold and
+in the Khasi Hills of Meghalaya receive rainfall chilly winds originate near the Arctic circle
+over 1,080 cm in a year, Jaisalmer in Rajasthan
+and blow across central and eastern Asia. The
+rarely gets more than 9 cm of rainfall during
+Himalayas also trap the monsoon winds,
+the same period.
+forcing them to shed their moisture within the
+Tura situated in the Garo Hills of
+subcontinent.
+Meghalaya may receive an amount of rainfall
+in a single day which is equal to 10 years of Distribution of Land and Water : India is
+rainfall at Jaisalmer. While the annual flanked by the Indian Ocean on three sides in
+precipitation is less than 10 cm in the north- the south and girdled by a high and
+west Himalayas and the western deserts, it continuous mountain-wall in the north. As
+exceeds 400 cm in Meghalaya. compared to the landmass, water heats up or
+The Ganga delta and the coastal plains cools down slowly. This differential heating of
+of Odisha are hit by strong rain-bearing land and sea creates different air pressure
+storms almost every third or fifth day in July zones in different seasons in and around
+and August while the Coromandal coast, a the Indian subcontinent. Difference in air
+thousand km to the south, goes generally pressure causes reversal in the direction of
+dry during these months. Most parts of the monsoon winds.
+country get rainfall during June-
+Distance from the Sea : With a long coastline,
+September, but on the coastal areas of Tamil
+large coastal areas have an equable climate.
+Nadu, it rains in the beginning of the winter
+Areas in the interior of India are far away from
+season.
+In spite of these differences and variations, the moderating influence of the sea. Such
+the climate of India is monsoonal in areas have extremes of climate. That is why,
+rhythm and character. the people of Mumbai and the Konkan coast
+have hardly any idea of extremes of
+FACTORS DETERMINING THE CLIMATE OF INDIA temperature and the seasonal rhythm of
+weather. On the other hand, the seasonal
+India’s climate is controlled by a number of
+contrasts in weather at places in the
+factors.
+interior of the country such as Delhi,
+Latitude : You already know the latitudinal
+Kanpur and Amritsar affect the entire
+and longitudinal extent of the land of India.
+sphere of life.
+You also know that the Tropic of Cancer
+passes through the central part of India in Altitude : Temperature decreases with
+east-west direction. Thus, northern part of height. Due to thin air, places in the
+the India lies in sub-tropical and temperate mountains are cooler than places on the
+zone and the part lying south of the Tropic plains. For example, Agra and Darjiling are
+of Cancer falls in the tropical zone. The located on the same latitude, but
+tropical zone being nearer to the equator, temperature of January in Agra is 16°°C
+experiences high temperatures throughout whereas it is only 4°°C in Darjiling.
+the year with small daily and annual range.
+Relief : The physiography or relief of India also
+Area north of the Tropic of Cancer being
+affects the temperature, air pressure, direction
+away from the equator, experiences extreme
+climate with high daily and annual range and speed of wind and the amount and
+of temperature. distribution of rainfall. The windward sides
+Rationalised 2023-24
+
+--- PAGE 42 ---
+30 INDIA : PHYSICAL ENVIRONMENT
+Inter Tropical Convergence Zone (ITCZ)
+Inter Tropical Convergence Zone (ITCZ)
+The Inter Tropical Convergence Zone (ITCZ) is a low pressure zone located at the equator
+whTheree Itnrtaedr eT wroinpidcsa lc oCnovnevregreg,e annced Zsoon, eit (iIsT CaZ z) oins ea wlohwer ep raeisrs tuerned zso ntoe alosccaentedd. a Itn t hJeu leyq, uthateor
+ITwChZe rise ltorcaadtee dw ianrdosu ncodn 2v0er°g°Ne,- 2a5n°d°N s ola, tiitt uisd eas z(oonveer wthhee reG aanirg etetincd ps latoin a),s cseonmde.t i mIne sJ uclayl,l etdhe
+ITCZ is located around 20°N-25°N latitudes (over the Gangetic plain), sometimes called
+the monsoon trough. This monsoon trough encourages the development of thermal low
+the monsoon trough. This monsoon trough encourages the development of thermal low
+over north and northwest India. Due to the shift of ITCZ, the trade winds of the southern
+over north and northwest India. Due to °the shift o°f ITCZ, the trade winds of the southern
+hemisphere cross the equator between 40 ° and 60 °E longitudes and start blowing from
+hemisphere cross the equator between 40° and 60°E longitudes and start blowing from
+southwest to northeast due to the Coriolis force. It becomes southwest monsoon. In winter,
+southwest to northeast due to the Coriolis force. It becomes southwest monsoon. In winter,
+the ITCZ moves southward, and so the reversal of winds from northeast to south and
+the ITCZ moves southward, and so the reversal of winds from northeast to south and
+southwest, takes place. They are called northeast monsoons.
+southwest, takes place. They are called northeast monsoons.
+of Western Ghats and Assam receive high
+gets intensely heated. This causes the
+rainfall during June-September whereas the formation of an intense low pressure in the
+southern plateau remains dry due to its northwestern part of the subcontinent. Since
+leeward situation along the Western Ghats. the pressure in the Indian Ocean in the south
+of the landmass is high as water gets heated
+THE NATURE OF INDIAN MONSOON slowly, the low pressure cell attracts the
+southeast trades across the Equator. These
+Monsoon is a familiar though a little known
+conditions help in the northward shift in the
+climatic phenomenon. Despite the observations
+position of the ITCZ. The southwest monsoon
+spread over centuries, the monsoon continues
+may thus, be seen as a continuation of the
+to puzzle the scientists. Many attempts have
+southeast trades deflected towards the Indian
+been made to discover the exact nature and
+subcontinent after crossing the Equator. These
+causation of monsoon, but so far, no single
+winds cross the Equator between 40°°E and
+theory has been able to explain the monsoon
+60°°E longitudes.
+fully. A real breakthrough has come recently
+when it was studied at the global rather than
+at regional level.
+Systematic studies of the causes of rainfall
+in the South Asian region help to understand
+the causes and salient features of the monsoon,
+particularly some of its important aspects,
+such as:
+(i) The onset of the monsoon.
+(ii) Break in the monsoon.
+Onset of the Monsoon
+Towards the end of the nineteenth
+century, it
+was believed that the differential heating of
+land and sea during the summer months is
+the mechanism which sets the stage for
+the monsoon winds to drift towards the
+subcontinent. During April and May when the
+sun shines vertically over the Tropic of Cancer,
+the large landmass in the north of Indian ocean Figure 4.1 : Onset of Monsoon
+Rationalised 2023-24
+
+--- PAGE 43 ---
+CLIMATE 31
+The shift in the position of the ITCZ is also THE RHYTHM OF SEASONS
+related to the phenomenon of the withdrawal
+The climatic conditions of India can best be
+of the westerly jet stream from its position over
+described in terms of an annual cycle of
+the north Indian plain, south of the Himalayas.
+seasons. The meteorologists recognise the
+The easterly jet stream sets in along 15°°N
+following four seasons :
+latitude only after the western jet stream has
+withdrawn itself from the region. This easterly (i) the cold weather season
+jet stream is held responsible for the burst of (ii) the hot weather season
+the monsoon in India. (iii) the southwest monsoon season
+(iv) the retreating monsoon season.
+Entry of Monsoon into India : The southwest
+monsoon sets in over the Kerala coast by 1st
+The Cold Weather Season
+June and moves swiftly to reach Mumbai
+and Kolkata between 10th and 13th June. Temperature : Usually, the cold weather
+By mid-July, southwest monsoon engulfs season sets in by mid-November in northern
+the entire subcontinent (Figure 4.2) India. December and January are the coldest
+months in the northern plain. The mean
+Break in the Monsoon daily temperature remains below 21°°C over
+most parts of northern India. The night
+During the south-west monsoon period after
+temperature may be quite low, sometimes
+having rains for a few days, if rain fails to occur
+going below freezing point in Punjab and
+for one or more weeks, it is known as break in
+Rajasthan.
+the monsoon. These dry spells are quite
+There are three main reasons for the excessive
+common during the rainy season. These
+cold in north India during this season :
+breaks in the different regions are due to
+(i) States like Punjab, Haryana and
+different reasons:
+Rajasthan being far away from the
+(i) In northern India rains are likely to fail if
+moderating influence of sea
+the rain-bearing storms are not very
+experience continental climate.
+frequent along the monsoon trough or
+(ii) The snowfall in the nearby Himalayan
+the ITCZ over this region.
+ranges creates cold wave situation;
+(ii) Over the west coast the dry spells are
+and
+associated with days when winds blow
+(iii) Around February, the cold winds coming
+parallel to the coast.
+from the Caspian Sea and Turkmenistan
+EI-Nino and the Indian Monsoon
+EI-Nino is a complex weather system that appears once every three to seven years, bringing
+drought, floods and other weather extremes to different parts of the world.
+The system involves oceanic and atmospheric phenomena with the appearance of warm
+currents off the coast of Peru in the Eastern Pacific and affects weather in many places including
+India. EI-Nino is merely an extension of the warm equatorial current which gets replaced temporarily
+by cold Peruvian current or Humbolt current (locate these currents in your atlas). This current
+°
+increases the temperature of water on the Peruvian coast by 10 °C. This results in:
+(i) the distortion of equatorial atmospheric circulation;
+(ii) irregularities in the evaporation of sea water;
+(iii) reduction in the amount of planktons which further reduces the number of fish in the sea.
+The word EI-Nino means ‘Child Christ’ because this current appears around Christmas
+in December. December is a summer month in Peru (Southern Hemisphere).
+EI-Nino is used in India for forecasting long range monsoon rainfall. In 1990-91, there
+was a wild EI-Nino event and the onset of southwest monsoon was delayed over most parts of
+the country ranging from five to twelve days.
+Rationalised 2023-24
+
+--- PAGE 44 ---
+32 INDIA : PHYSICAL ENVIRONMENT
+Figure 4.2 : India : Normal Dates of Onset of the Southwest Monsoon
+Rationalised 2023-24
+
+--- PAGE 45 ---
+CLIMATE 33
+bring cold wave along with frost and fog Due to low pressure gradient, the light
+over the northwestern parts of India. winds with a low velocity of about 3-5 km per
+hour begin to blow outwards. By and large,
+Understanding the Monsoon the topography of the region influences the
+Attempts have been made to wind direction. They are westerly or
+understand the nature and northwesterly down the Ganga Valley. They
+mechanism of the monsoon on the become northerly in the Ganga-Brahmaputra
+basis of data collected on land, oceans delta. Free from the influence of topography,
+and in the upper atmosphere. The
+they are clearly northeasterly over the Bay of
+intensity of southwest monsoon winds
+Bengal.
+of southern oscillation can be
+During the winters, the weather in India
+measured, among others, by
+measuring the difference in pressure is pleasant. The pleasant weather conditions,
+between Tahiti (roughly 20 ° °S and however, at intervals, get disturbed by shallow
+140 ° °W) in French Polynesia in East cyclonic depressions originating over the east
+Pacific and port Darwin (12 ° °30'S and Mediterranean Sea and travelling eastwards
+131 ° °E) in northern Australia. Indian across West Asia, Iran, Afghanistan and
+Meteorological Department (IMD) can Pakistan before they reach the northwestern
+forecast the possible behaviour of parts of India. On their way, the moisture
+monsoons on the basis of 16 content gets augmented from the Caspian Sea
+indicators. in the north and the Persian Gulf in the south.
+What is the role of Westerly Jet Streams in
+steering these depressions in India?
+The Peninsular region of India, however,
+does not have any well-defined cold weather Rainfall : Winter monsoons do not cause
+season. There is hardly any seasonal rainfall as they move from land to the sea. It is
+change in the distribution pattern of the because firstly, they have little humidity; and
+temperature in coastal areas because of secondly, due to anti cyclonic circulation on
+moderating influence of the sea and the land, the possibility of rainfall from them
+proximity to equator. For example, the
+reduces. So, most parts of India do not have
+mean maximum temperature for January
+rainfall in the winter season. However, there are
+at Thiruvanantapuram is as high as 21°°C,
+some exceptions to it:
+and for June, it is 29.5°°C. Temperatures
+(i) In northwestern India, some weak
+at the hills of Western Ghats remain
+temperate cyclones from the
+comparatively low.
+Mediterranean sea cause rainfall in
+Pressure and Winds : By the end of December Punjab, Haryana, Delhi and western
+(22nd December), the sun shines vertically Uttar Pradesh. Although the amount
+over the Tropic of Capricorn in the southern is meagre, it is highly beneficial for
+hemisphere. The weather in this season is rabi crops. The precipitation is in the
+characterised by feeble high pressure form of snowfall in the lower
+conditions over the northern plain. In Himalayas. It is this snow that
+south India, the air pressure is slightly sustains the flow of water in the
+lower. The isobars of 1019 mb and 1013 Himalayan rivers during the summer
+mb pass through northwest India and months. The precipitation goes on
+far south, respectively. decreasing from west to east in the
+As a result, winds start blowing from plains and from north to south in
+northwestern high pressure zone to the low the mountains. The average winter
+air pressure zone over the Indian Ocean in rainfall in Delhi is around 53 mm. In
+the south. Punjab and Bihar, rainfall remains
+Rationalised 2023-24
+
+--- PAGE 46 ---
+34 INDIA : PHYSICAL ENVIRONMENT
+between 25 mm and 18 mm south rather it increases from the coast to
+respectively. the interior. The mean daily minimum
+(ii) Central parts of India and northern temperature during the summer months also
+parts of southern Peninsula also get remains quite high and rarely goes
+winter rainfall occasionally. below 26°°C.
+(iii) Arunachal Pradesh and Assam in the
+Pressure and Winds : The summer months
+northeastern parts of India also have
+are a period of excessive heat and falling air
+rains between 25 mm and 50 mm
+pressure in the northern half of the country.
+during these winter months.
+Because of the heating of the subcontinent,
+(iv) During October and November,
+the ITCZ moves northwards occupying a
+northeast monsoon while crossing over
+position centred at 25°°N in July. Roughly,
+the Bay of Bengal, picks up moisture
+this elongated low pressure monsoon trough
+and causes torrential rainfall over the
+extends over the Thar desert in the north-west
+Tamil Nadu coast, southern Andhra
+to Patna and Chotanagpur plateau in the
+Pradesh, southeast Karnataka and
+east-southeast. The location of the ITCZ
+southeast Kerala.
+attracts a surface circulation of the winds
+which are southwesterly on the west coast as
+The Hot Weather Season
+well as along the coast of West Bengal and
+Temperature: With the apparent northward
+Bangladesh. They are easterly or south-
+movement of the sun towards the Tropic of
+easterly over north Bengal and Bihar. It has
+Cancer in March, temperatures start rising
+been discussed earlier that these currents of
+in north India. April, May and June are the
+southwesterly monsoon are in reality
+months of summer in north India. In most
+‘displaced’ equatorial easterlies. The influx of
+parts of India, temperatures recorded are
+between 30°-32°°C. In March, the highest these winds by mid-June brings about a
+day temperature of about 38°°C occurs in change in the weather towards the
+rainy season.
+the Deccan Plateau while in April,
+temperature ranging between 38°°C and In the heart of the ITCZ in the northwest,
+43°°C are found in Gujarat and Madhya the dry and hot winds known as ‘Loo’, blow
+Pradesh. In May, the heat belt moves in the afternoon, and very often, they
+further north, and in the north-western part continue to well into midnight. Dust storms
+of India, temperatures around 48°°C are in the evening are very common during May
+not uncommon. in Punjab, Haryana, Eastern Rajasthan and
+The hot weather season in south India is
+Uttar Pradesh. These temporary storms
+mild and not so intense as found in north
+bring a welcome respite from the oppressing
+India. The Peninsular situation of south
+heat since they bring with them light rains
+India with moderating effect of the oceans
+and a pleasant cool breeze. Occasionally, the
+keeps the temperatures lower than that
+moisture-laden winds are attracted towards
+prevailing in north India. So, temperatures
+remain between 26°°C and 32°°C. Due to the periphery of the trough. A sudden
+contact between dry and moist air masses
+altitude, the temperatures in the hills of
+Western Ghats remain below 25°°C. In the gives rise to local storms of great intensity.
+coastal regions, the north-south extent of These local storms are associated with
+isotherms parallel to the coast confirms that violent winds, torrential rains and even
+temperature does not decrease from north to hailstorms.
+Rationalised 2023-24
+
+--- PAGE 47 ---
+CLIMATE 35
+Some Famous Local Storms of Hot termed as the “break” or “burst” of the
+Weather Season monsoons. The monsoon may burst in the
+(i) Mango Shower : Towards the end first week of June in the coastal areas of Kerala,
+of summer, there are pre-monsoon Karnataka, Goa and Maharashtra while in the
+showers which are a common interior parts of the country, it may be delayed
+phenomena in Kerala and coastal to the first week of July. The day temperature
+areas of Karnataka. Locally, they registers a decline of 5°°C to 8°°C between mid-
+are known as mango showers since
+June and mid-July.
+they help in the early ripening of
+mangoes. As these winds approach the land, their
+(ii) Blossom Shower : With this shower, southwesterly direction is modified by the relief
+coffee flowers blossom in Kerala and
+and thermal low pressure over the northwest
+nearby areas.
+India. The monsoon approaches the landmass
+(iii) Nor Westers : These are dreaded
+in two branches:
+evening thunderstorms in Bengal
+and Assam. Their notorious nature (i) The Arabian Sea branch
+can be understood from the local (ii) The Bay of Bengal branch.
+nomenclature of ‘Kalbaisakhi’, a
+calamity of the month of Baisakh. Monsoon Winds of the Arabian Sea
+These showers are useful for tea,
+The monsoon winds originating over the
+jute and rice cultivation. In Assam,
+Arabian Sea further split into three branches:
+these storms are known as
+“Bardoisila”. (i) Its one branch is obstructed by the
+(iv) Loo : Hot, dry and oppressing winds Western Ghats. These winds climb the
+blowing in the Northern plains from slopes of the Western Ghats from
+Punjab to Bihar with higher 900-1200 m. Soon, they become cool,
+intensity between Delhi and Patna.
+and as a result, the windward side of the
+Sahyadris and Western Coastal Plain
+THE SOUTHWEST MONSOON SEASON
+receive very heavy rainfall ranging
+As a result of rapid increase of temperature in between 250 cm and 400 cm. After
+May over the northwestern plains, the low crossing the Western Ghats, these winds
+pressure conditions over there get further descend and get heated up. This
+intensified. By early June, they are powerful reduces humidity in the winds. As a
+enough to attract the trade winds of result, these winds cause little rainfall
+Southern Hemisphere coming from the east of the Western Ghats. This region of
+Indian Ocean. These southeast trade low rainfall is known as the rain-shadow
+winds cross the equator and enter the Bay area. Find out the rainfall at Kozhikode,
+of Bengal and the Arabian Sea, only to be Mangalore, Pune and Bengaluru and
+note the difference.
+caught up in the air circulation over India.
+(ii) Another branch of the Arabian sea
+Passing over the equatorial warm
+monsoon strikes the coast north of
+currents, they bring with them moisture
+Mumbai. Moving along the Narmada and
+in abundance. After crossing the equator,
+Tapi river valleys, these winds cause
+they follow a southwesterly direction. That
+rainfall in extensive areas of central India.
+is why they are known as southwest
+The Chotanagpur plateau gets 15 cm
+monsoons.
+rainfall from this part of the branch.
+The rain in the southwest monsoon season
+Thereafter, they enter the Ganga plains
+begins rather abruptly. One result of the first
+and mingle with the Bay of Bengal branch.
+rain is that it brings down the temperature
+(iii) A third branch of this monsoon wind
+substantially. This sudden onset of the
+strikes the Saurashtra Peninsula and the
+moisture-laden winds associated with
+Kachchh. It then passes over west
+violent thunder and lightening, is often
+Rationalised 2023-24
+
+--- PAGE 48 ---
+36 INDIA : PHYSICAL ENVIRONMENT
+Figure 4.3 : India : Seasonal Rainfall (June-September)
+Rationalised 2023-24
+
+--- PAGE 49 ---
+CLIMATE 37
+Rajasthan and along the Aravalis, Rajasthan by the first week of September. It
+causing only a scanty rainfall. In Punjab withdraws from Rajasthan, Gujarat, Western
+and Haryana, it too joins the Bay of Ganga plain and the Central Highlands by the
+Bengal branch. These two branches, end of the month. By the beginning of October,
+reinforced by each other, cause rains in the low pressure covers northern parts of the
+the western Himalayas, Bay of Bengal and by early November, it moves
+over Karnataka and Tamil Nadu. By the
+Monsoon Winds of the Bay of Bengal middle of December, the centre of low
+pressure is completely removed from the
+The Bay of Bengal branch strikes the coast
+Peninsula.
+of Myanmar and part of southeast
+The retreating southwest monsoon season
+Bangladesh. But the Arakan Hills along the is marked by clear skies and rise in
+coast of Myanmar deflect a big portion of temperature. The land is still moist. Owing to
+this branch towards the Indian the conditions of high temperature and
+subcontinent. The monsoon, therefore, humidity, the weather becomes rather
+enters West Bengal and Bangladesh from oppressive. This is commonly known as the
+south and southeast instead of from the ‘October heat’. In the second half of October,
+south-westerly direction. From here, this the mercury begins to fall rapidly, particularly
+branch splits into two under the influence in northern India. The weather in the
+of the Himalayas and the thermal low is retreating monsoon is dry in north India but
+northwest India. Its one branch moves it is associated with rain in the eastern part of
+the Peninsula. Here, October and November
+westward along the Ganga plains reaching
+are the rainiest months of the year.
+as far as the Punjab plains. The other branch
+The widespread rain in this season is
+moves up the Brahmaputra valley in the
+associated with the passage of cyclonic
+north and the northeast, causing
+depressions which originate over the
+widespread rains. Its sub-branch strikes
+Andaman Sea and manage to cross the
+the Garo and Khasi hills of Meghalaya.
+eastern coast of the southern Peninsula.
+Mawsynram, located on the crest of Khasi
+These tropical cyclones are very destructive.
+hills, receives the highest average annual
+The thickly populated deltas of the Godavari,
+rainfall in the world.
+Krishna and Kaveri are their preferred targets.
+Here it is important to know why the Tamil
+Every year cyclones bring disaster here. A few
+Nadu coast remains dry during this season.
+cyclonic storms also strike the coast of West
+There are two factors responsible for it: Bengal, Bangladesh and Myanmar. A bulk of
+the rainfall of the Coromondal coast is derived
+(i) The Tamil Nadu coast is situated
+from these depressions and cyclones. Such
+parallel to the Bay of Bengal branch of
+cyclonic storms are less frequent in the
+southwest monsoon.
+Arabian Sea.
+(ii) It lies in the rainshadow area of the
+Arabian Sea branch of the south-west
+TRADITIONAL INDIAN SEASONS
+monsoon.
+In the Indian tradition, a year is divided into
+Season of Retreating Monsoon six two-monthly seasons. This cycle of
+seasons, which the common people in north
+The months of October and November are
+and central India follow is based on their
+known for retreating monsoons. By the end
+practical experience and age-old perception
+of September, the southwest monsoon
+of weather phenomena. However, this system
+becomes weak as the low pressure trough of
+does not match with the seasons of south
+the Ganga plain starts moving southward in
+India where there is little variation in
+response to the southward march of the sun.
+the seasons.
+The monsoon retreats from the western
+Rationalised 2023-24
+
+--- PAGE 50 ---
+38 INDIA : PHYSICAL ENVIRONMENT
+Seasons Months Months (ii) Except Himalayas all the parts of the
+(According to the (According to the country have temperature above the
+Indian Calendar) Gregorian Calendar) threashold level to grow the crops or
+Vasanta Chaitra-Vaisakha March-April plants throughout the year..
+Grishma Jyaistha-Asadha May-June (iii) Regional variations in monsoon climate
+Varsha Sravana-Bhadra July-August help in growing various types of crops.
+Sharada Asvina-Kartika September-October
+(iv) Variability of rainfall brings droughts or
+Hemanta Margashirsa-Pausa November-December
+floods every year in some parts of the country.
+Shishira Magha-Phalguna January-February
+(v) Agricultural prosperity of India depends
+very much on timely and adequately
+Distribution of Rainfall distributed rainfall. If it fails, agriculture
+is adversely affected particularly in those
+The average annual rainfall in India is about
+regions where means of irrigation are not
+125 cm, but it has great spatial variations .
+developed.
+Areas of High Rainfall : The highest rainfall (vi) Sudden monsoon burst creates problem
+occurs along the west coast, on the Western of soil erosion over large areas in India.
+Ghats, as well as in the sub-Himalayan areas
+(vii) Winter rainfall by temperate cyclones
+is the northeast and the hills of Meghalaya. Here
+in north India is highly beneficial for
+the rainfall exceeds 200 cm. In some parts of
+rabi crops.
+Khasi and Jaintia hills, the rainfall exceeds
+(viii)Regional climatic variation in India
+1,000 cm. In the Brahmaputra valley and the
+is reflected in the vast variety of food,
+adjoining hills, the rainfall is less then 200 cm.
+clothes and house types.
+Areas of Medium Rainfall : Rainfall between
+100-200 cm is received in the southern parts GLOBAL WARMING
+of Gujarat, east Tamil Nadu, northeastern
+You know that change is the law of nature.
+Peninsula covering Odisha, Jharkhand, Bihar,
+Climate has also witnessed change in the past
+eastern Madhya Pradesh, northern Ganga plain
+at the global as well as at local levels. It is
+along the sub-Himalayas and the Cachar Valley
+changing even now but the change is
+and Manipur.
+imperceptible. A number of geological
+Areas of Low Rainfall : Western Uttar Pradesh, evidences suggest that once upon a time,
+Delhi, Haryana, Punjab, Jammu and Kashmir, large part of the earth was under ice cover. Now
+eastern Rajasthan, Gujarat and Deccan Plateau you might have read or heard the debate on
+receive rainfall between 50-100 cm. global warming. Besides the natural causes,
+Areas of Inadequate Rainfall: Parts of the human activities such as large scale
+Peninsula, especially in Andhra Pradesh, industrialisation and presence of polluting
+Karnataka and Maharashtra, Ladakh and most gas in the atmosphere are also important
+of western Rajasthan receive rainfall below 50 cm. factors responsible for global warming. You
+Snowfall is restricted to the Himalayan might have heard about the “green house effect”
+region. while discussing global warming.
+Identify the pattern of rainfall after The temperature of the world is
+consulting the rainfall map. significantly increasing. Carbon dioxide
+produced by human activities is a major
+Monsoons and the Economic Life in India source of concern. This gas, released to the
+atmosphere in large quantities by burning
+(i) Monsoon is that axis around which
+of fossil fuel, is increasing gradually. Other
+revolves the entire agricultural cycle of
+gases like methane, chlorofluorocarbons,
+India. It is because about 64 per cent
+and nitrous oxide which are present in much
+people of India depend on agriculture for
+smaller concentrations in the atmosphere,
+their livelihood and agriculture itself is
+together with carbon dioxide are known as
+based on southwest monsoon.
+Rationalised 2023-24
+
+--- PAGE 51 ---
+CLIMATE 39
+Figure 4.4 : India : Annual Rainfall
+Rationalised 2023-24
+
+--- PAGE 52 ---
+40 INDIA : PHYSICAL ENVIRONMENT
+green house gases. These gases are better changes: one of these is a rise in sea level, as a
+absorbers of long wave radiations than carbon result of melting of glaciers and sea-ice due to
+dioxide, and so, are more effective at warming. According to the current prediction,
+enhancing the green house effect. These on an average, the sea level will rise 48 cm by
+gases have been contributing to global the end of twenty first century. This would
+warming. It is said that due to global warming increase the incidence of annual flooding.
+the polar ice caps and mountain glaciers Climatic change would promote insect-borne
+would melt and the amount of water in the diseases like malaria, and lead to shift in
+oceans would increase. climatic boundaries, making some regions
+The mean annual surface temperature of wetter and others drier. Agricultural pattern
+the earth in the past 150 years has increased. would shift and human population as well as
+It is projected that by the year 2,100, global the ecosystem would experience change. What
+temperature will increase by about 2°°C. This would happen to the Indian sea coasts if the
+rise in temperature will cause many other sea level rises 50 cm above the present one?
+EXERCISES
+1. Choose the right answer from the four alternatives given below.
+(i) What causes rainfall on the coastal areas of Tamil Nadu in the beginning
+of winters?
+(a) South-West monsoon (c) North-Eastern monsoon
+(b) Temperate cyclones (d) Local air circulation
+(ii) What is the proportion of area of India which receives annual rainfall less
+than 75 cm?
+(a) Half (c) Two-third
+(b) One-third (d) Three-fourth
+(iii) Which one of the following is not a fact regarding South India?
+(a) Diurnal range of temperature is less here.
+(b) Annual range of temperature is less here.
+(c) Temperatures here are high throughout the year.
+(d) Extreme climatic conditions are found here.
+(iv) Which one of the following phenomenon happens when the sun shines
+vertically over the Tropic of Capricorn in the southern hemisphere?
+(a) High pressure develops over North-western India due to low
+temperatures.
+(b) Low pressure develops over North-western India due to high
+temperatures.
+(c) No changes in temperature and pressure occur in north-western
+India.
+(d) ‘Loo’ blows in the North-western India.
+Rationalised 2023-24
+
+--- PAGE 53 ---
+CLIMATE 41
+2. Answer the following questions in about 30 words.
+(i) What is the Inter-Tropical Convergene Zone?
+(ii) What is meant by ‘bursting of monsoon’? Name the place of India which gets
+the highest rainfall.
+(iii) Which type(s) of cyclones cause rainfall in north-western India during winter?
+Where do they originate?
+3. Answer the following questions in not more than 125 words.
+(i) Notwithstanding the broad climatic unity, the climate of India has many
+regional variations. Elaborate this statement giving suitable examples.
+(ii) How many distinct seasons are found in India as per the Indian
+Meteorological Department? Discuss the weather conditions associated
+with any one season in detail.
+Project/Activity
+On the outline map of India, show the following:
+(i) Areas of winter rain
+(ii) Wind direction during the summer season
+(iii) Areas having less than 15°°C temperature in January
+(iv) Isohyte of 100 cm.
+Rationalised 2023-24
+
+--- PAGE 54 ---
+CHAPTER
+N V
+ATURAL EGETATION
+H
+ave you ever been to a forest for a picnic? Tropical Evergreen and
+You might have surely gone to a park if Semi Evergreen Forests
+you live in a city or to a mango, guava
+These forests are found in the western slope
+or coconut orchard, if you live in a village. How
+of the Western Ghats, hills of the northeastern
+do you differentiate between the natural
+region and the Andaman and Nicobar Islands.
+vegetation and the planted vegetation? The same
+They are found in warm and humid areas with
+variety may be found growing wild in the forest
+an annual precipitation of over 200 cm and
+under natural conditions and the same tree
+mean annual temperature above 22oC.
+may be the planted one in your garden under
+human supervision. Tropical evergreen forests are well stratified,
+Natural vegetation refers to a plant with layers closer to the ground and are
+community that has been left undisturbed over covered with shrubs and creepers, with short
+a long time, so as to allow its individual species structured trees followed by tall variety of trees.
+to adjust themselves to climate and soil In these forests, trees reach great heights up
+conditions as fully as possible. to 60 m or above. There is no definite time for
+India is a land of great variety of natural trees to shed their leaves, flowering and
+vegetation. Himalayan heights are marked with fruition. As such these forests appear green
+temperate vegetation; the Western Ghats and all the year round. Species found in these
+the Andaman Nicobar Islands have tropical forests include rosewood, mahogony, aini,
+rain forests, the deltaic regions have tropical ebony, etc.
+forests and mangroves; the desert and semi The semi evergreen forests are found in the
+desert areas of Rajasthan are known for cactii, less rainy parts of these regions. Such forests
+a wide variety of bushes and thorny vegetation. have a mixture of evergreen and moist
+Depending upon the variations in the climate deciduous trees. The undergrowing climbers
+and the soil, the vegetation of India changes
+provide an evergreen character to these forests.
+from one region to another.
+Main species are white cedar, hollock and kail.
+On the basis of certain common features
+such as predominant vegetation type and
+climatic regions, Indian forests can be divided
+into the following groups:
+TYPES OF FORESTS
+(i) Tropical Evergreen and Semi
+Evergreen forests
+(ii) Tropical Deciduous forests
+(iii) Tropical Thorn forests
+(iv) Montane forests
+(v) Littoral and Swamp forests. Figure 5.1 : Evergreen Forest
+Rationalised 2023-24
+
+--- PAGE 55 ---
+NATURAL VEGETATION 43
+Figure 5.2 : Natural Vegetation
+Rationalised 2023-24
+
+--- PAGE 56 ---
+44 INDIA : PHYSICAL ENVIRONMENT
+The British were aware of the economic the plains of Uttar Pradesh and Bihar. In the
+value of the forests in India, hence, large scale higher rainfall regions of the Peninsular plateau
+exploitation of these forests was started. The and the northern Indian plain, these forests
+structure of forests was also changed. The oak have a parkland landscape with open stretches
+forests in Garhwal and Kumaon were replaced in which teak and other trees interspersed with
+by pine (chirs) which was needed to lay railway patches of grass are common. As the dry
+lines. Forests were also cleared for introducing season begins, the trees shed their leaves
+plantations of tea, rubber and coffee. The completely and the forest appears like a vast
+British also used timber for construction grassland with naked trees all around. Tendu,
+activities as it acts as an insulator of heat. The palas, amaltas, bel, khair, axlewood, etc. are
+protectional use of forests was, thus, replaced the common trees of these forests. In the
+by commercial use. western and southern part of Rajasthan,
+vegetation cover is very scanty due to low
+Tropical Deciduous Forests rainfall and overgrazing.
+These are the most widespread forests in India.
+Tropical Thorn Forests
+They are also called the monsoon forests. They
+spread over regions which receive rainfall Tropical thorn forests occur in the areas which
+between 70-200 cm. On the basis of the receive rainfall less than 50 cm. These consist
+availability of water, these forests are further of a variety of grasses and shrubs. It includes
+divided into moist and dry deciduous. semi-arid areas of south west Punjab,
+Haryana, Rajasthan, Gujarat, Madhya Pradesh
+and Uttar Pradesh. In these forests, plants
+remain leafless for most part of the year and
+give an expression of scrub vegetation.
+Important species found are babool, ber, and
+wild date palm, khair, neem, khejri, palas, etc.
+Tussocky grass grows upto a height of 2 m as
+the under growth.
+Figure 5.3 : Deciduous Forests
+The Moist deciduous forests are more
+pronounced in the regions which record rainfall
+between 100-200 cm. These forests are found
+in the northeastern states along the foothills of
+Himalayas, eastern slopes of the Western Ghats
+Figure 5.4 : Tropical Thorn Forests
+and Odisha. Teak, sal, shisham, hurra,
+mahua, amla, semul, kusum, and sandalwood
+Montane Forests
+etc. are the main species of these forests.
+Dry deciduous forest covers vast areas of In mountainous areas, the decrease in
+the country, where rainfall ranges between temperature with increasing altitude leads to
+70 -100 cm. On the wetter margins, it has a a corresponding change in natural vegetation.
+transition to the moist deciduous, while on the Mountain forests can be classified into two
+drier margins to thorn forests. These forests types, the northern mountain forests and the
+are found in rainier areas of the Peninsula and southern mountain forests.
+Rationalised 2023-24
+
+--- PAGE 57 ---
+NATURAL VEGETATION 45
+The Himalayan ranges show a succession The southern mountain forests include the
+of vegetation from the tropical to the tundra, forests found in three distinct areas of
+which change in with the altitude. Deciduous Peninsular India viz; the Western Ghats, the
+forests are found in the foothills of the Vindhyas and the Nilgiris. As they are closer
+Himalayas. It is succeeded by the wet to the tropics, and only 1,500 m above the
+temperate type of forests between an altitude sea level, vegetation is temperate in the higher
+of 1,000-2,000 m. In the higher hill ranges of regions, and subtropical on the lower regions
+northeastern India, hilly areas of West Bengal of the Western Ghats, especially in Kerala,
+and Uttaranchal, evergreen broad leaf trees Tamil Nadu and Karnataka. The temperate
+such as oak and chestnut are predominant. forests are called Sholas in the Nilgiris,
+Between 1,500-1,750 m, pine forests are also Anaimalai and Palani hills. Some of the other
+well-developed in this zone, with Chir Pine as trees of this forest of economic significance
+a very useful commercial tree. Deodar, a highly include, magnolia, laurel, cinchona and
+valued endemic species grows mainly in the wattle. Such forests are also found in the
+western part of the Himalayan range. Deodar Satpura and the Maikal ranges.
+is a durable wood mainly used in construction
+activity. Similarly, the chinar and the walnut, Littoral and Swamp Forests
+which sustain the famous Kashmir
+India has a rich variety of wetland habitats.
+handicrafts, belong to this zone. Blue pine and
+About 70 per cent of this comprises areas
+spruce appear at altitudes of 2,225-3,048 m.
+under paddy cultivation. The total area of wet
+At many places in this zone, temperate
+land is 3.9 million hectares. Two sites —
+grasslands are also found. But in the higher
+Chilika Lake (Odisha) and Keoladeo National
+reaches there is a transition to Alpine forests
+Park (Bharatpur) are protected as water-fowl
+and pastures. Silver firs, junipers, pines, birch
+habitats under the Convention of Wetlands of
+and rhododendrons, etc. occur between
+International Importance (Ramsar Convention).
+3,000-4,000 m. However, these pastures are
+used extensively for transhumance by tribes
+An international convention is an
+like the Gujjars, the Bakarwals, the Bhotiyas
+agreement among member states of
+and the Gaddis. The southern slopes of the
+the United Nations.
+Himalayas carry a thicker vegetation cover
+because of relatively higher precipitation than The country’s wetlands have been grouped
+the drier north-facing slopes. At higher into eight categories, viz. (i) the reservoirs of the
+altitudes, mosses and lichens form part of the Deccan Plateau in the south together with the
+tundra vegetation. lagoons and other wetlands of the southern
+west coast; (ii) the vast saline expanses of
+Rajasthan, Gujarat and the Gulf of Kachchh;
+(iii) freshwater lakes and reservoirs from Gujarat
+eastwards through Rajasthan (Keoladeo
+National Park) and Madhya Pradesh; (iv) the
+delta wetlands and lagoons of India’s east coast
+(Chilika Lake); (v) the freshwater marshes of the
+Gangetic Plain; (vi) the floodplains of the
+Brahmaputra; the marshes and swamps in the
+hills of northeast India and the Himalayan
+foothills; (vii) the lakes and rivers of the montane
+region of Kashmir and Ladakh; and (viii) the
+mangrove forest and other wetlands of the island
+arcs of the Andaman and Nicobar Islands.
+Mangroves grow along the coasts in the salt
+marshes, tidal creeks, mud flats and estuaries.
+Figure 5.5 : Montane Forests
+Rationalised 2023-24
+
+--- PAGE 58 ---
+46 INDIA : PHYSICAL ENVIRONMENT
+They consist of a number of salt-tolerant species conserving the natural heritage of the country,
+of plants. Crisscrossed by creeks of stagnant its biological diversity and genetic pool; (iv)
+water and tidal flows, these forests give shelter checks soil erosion, extension of the desert lands
+to a wide variety of birds. and reduction of floods and droughts; (v)
+increasing the forest cover through social
+forestry and afforestation on degraded land; (vi)
+increasing the productivity of forests to make
+timber, fuel, fodder and food available to rural
+population dependant on forests, and
+encourage the substitution of wood; (vii)
+creating of a massive peoples movement
+involving women to encourage planting of trees,
+stop felling of trees and thus, reduce pressure
+on the existing forest.
+Forests and Life
+Figure 5.6 : Mangrove Forests To a vast number of tribal people, the
+forest is a home, a livelihood, their
+In India, the mangrove forests spread over
+very existence. It provides them food,
+6,740 sq. km which is 7 per cent of the world’s
+fruits of all kinds, edible leaves, honey,
+mangrove forests. They are highly developed in
+nourishing roots and wild game. It
+the Andaman and Nicobar Islands and the
+provides them with material to build
+Sunderbans of West Bengal. Other areas of
+their houses and items for practising
+significance are the Mahanadi, the Godavari and
+their arts. The importance of forests
+the Krishna deltas. These forests too, are being
+in tribal economy is well-known as
+encroached upon, and hence, need conservation. they are the source of sustenance and
+livelihood for tribal communities. It is
+FOREST CONSERVATION commonly believed that the tribal
+communities live in harmony with
+Forests have an intricate
+nature and protect forests.
+interrelationship with life and
+Forest and tribals are very closely
+environment. These provide numerous
+related. The age-old knowledge of
+direct and indirect advantages to our
+tribals regarding forestry can be used
+economy and society. Hence, conservation
+in the development of forests. Rather
+of forest is of vital importance to the
+than treating tribals as minor forest
+survival and prosperity of humankind.
+produce collectors they should be
+Accordingly, the Government of India
+made growers of minor forest produce
+proposed to have a nation-wide forest and encouraged to participate in
+conservation policy, and adopted a forest conservation.
+policy in 1952, which was further modified
+in 1988. According to the new forest
+Based on the forest conservation policy the
+policy, the Government will emphasise
+following steps were initiated:
+sustainable forest management in order
+to conserve and expand forest reserve on
+Social Forestry
+the one hand, and to meet the needs of
+local people on the other. Social forestry means the management and
+The forest policy aimed at : (i) bringing 33 protection of forests and afforestation on barren
+per cent of the geographical areas under forest lands with the purpose of helping in the
+cover; (ii) maintaining environmental environmental, social and rural development.
+stability and to restore forests where The National Commission on Agriculture
+ecological balance was disturbed; (iii) (1976) has classified social forestry into three
+Rationalised 2023-24
+
+--- PAGE 59 ---
+NATURAL VEGETATION 47
+categories. These are Urban forestry, Rural for this remarkable diversity of life forms is
+forestry and Farm forestry. the great diversity of the ecosystem which
+Urban forestry pertains to the raising this country has preserved and supported
+and management of trees on public and through the ages. Over the years, their
+privately owned lands in and around urban habitat has been disturbed by human
+centres such as green belts, parks, roadside activities and as a result, their numbers
+avenues, industrial and commercial green have dwindled significantly. There are
+belts, etc. certain species that are at the brink of
+Rural forestry lays emphasis on promotion extinction.
+of agro-forestry and community-forestry. Some of the important reasons of the
+Agro-forestry is the raising of trees and declining of wildlife are as follows:
+agriculture crops on the same land inclusive
+(i) Industrial and technological advancement
+of the waste patches. It combines forestry with
+brought about a rapid increase in the
+agriculture, thus, altering the simultaneous
+exploitation of forest resources.
+production of food, fodder, fuel, timber and (ii) More and more lands were cleared for
+fruit. Community forestry involves the raising agriculture, human settlement, roads,
+of trees on public or community land such as mining, reservoirs, etc.
+the village pasture and temple land, roadside, (iii) Pressure on forests mounted due to
+canal bank, strips along railway lines, and lopping for fodder and fuelwood and
+schools etc. Community forestry programme removal of small timber by the local people.
+aims at providing benefits to the community (iv) Grazing by domestic cattle caused an
+as a whole. Community forestry provides a adverse effect on wildlife and its habitat.
+means under which the people of landless (v) Hunting was taken up as a sport by the
+classes can associate themselves in tree- elite and hundreds of wild animals were
+raising and thus, get those benefits which killed in a single hunt. Now commercial
+otherwise are restricted for landowners. poaching is rampant.
+(vi) Incidence of forest fire.
+Farm Forestry
+It is being felt that conservation of wildlife is
+Farm forestry is a term applied to the process of great significance to the national as well as
+under which farmers grow trees for the world heritage along with the promotion of
+commercial and non-commercial purposes on ecotourism. What steps have been initiated by
+the government in this direction?
+their farm lands.
+Forest departments of various states
+WILDLIFE CONSERVATION IN INDIA
+distribute seedlings of trees free of cost to small
+and medium farmers. Several lands such as The protection of wildlife has a long tradition in
+the margins of agricultural fields, grasslands India. Many stories of Panchtantra and Jungle
+and pastures, land around homes and cow Books, etc. have stood the test of time relating
+sheds may be used for raising trees under non- to the love for wildlife. These have a profound
+impact on young minds.
+commercial farm forestry.
+In 1972, a comprehensive Wildlife Act was
+WILDLIFE enacted, which provides the main legal
+framework for conservation and protection of
+You would have visited a zoo and may have wildlife in India. The two main objectives of the
+seen animals and birds in captivity. Wildlife Act are; to provide protection to the endangered
+of India is a great natural heritage. It is species listed in the schedule of the Act and to
+estimated that about 4-5 per cent of all provide legal support to the conservation areas
+known plant and animal species on the of the country classified as National parks,
+earth are found in India. The main reason sanctuaries and closed areas. This Act has been
+Rationalised 2023-24
+
+--- PAGE 60 ---
+48 INDIA : PHYSICAL ENVIRONMENT
+comprehensively amended in 1991, making
+punishments more stringent and has also
+made provisions for the protection of specified
+plant species and conservation of endangered
+species of wild animals.
+There are 101 National parks and
+553 wildlife sanctuaries in the country
+(Appendix V).
+Wildlife conservation has a very large
+ambit with unbounded potential for the well-
+being of humankind. However, this can be
+achieved only when every individual
+understands its significance and contributes
+Figure 5.7 : Elephants in their Natural Habitat
+his bit.
+For the purpose of effective conservation of
+flora and fauna, special steps have been collaboration with UNESCO’s ‘Man and
+initiated by the Government of India in Biosphere Programme’.
+Table 5.1 : List of Biosphere Reserves
+Sl. Name of the Biosphere Date of Location in the States/UT
+No. Reserve and Total Designation
+Geographical Area (km2)
+1. Nilgiri (5520) 01.08.1986 Part of Wynad, Nagarhole, Bandipur and Madumalai, Nilambur,
+Silent Valley and Siruvani Hills (Tamil Nadu, Kerala and Karnataka).
+2. Nanda Devi (5860.69) 18.01.1988 Part of Chamoli, Pithoragarh and Almora Districts in Uttarakhand.
+3. Nokrek (820) 01.09.1988 Part of East, West and South Garo Hill Districts in Meghalaya.
+4. Manas (2837) 14.03.1989 Part of Kokrajhar, Bongaigaon, Barpeta, Nalbari, Kamrup and
+Darang Districts in Assam
+5. Sunderban (9630) 29.03.1989 Part of delta of Ganges and Brahamaputra river system in West
+Bengal.
+6. Gulf of Mannar (10500) 18.02.1989 Indian part of Gulf of Mannar extending from Rameswaram island
+in the North to Kaniyakumari in the South of Tamil Nadu.
+7. Great Nicobar (885) 06.01.1989 Southern most island of Andaman and Nicobar Islands.
+8. Similipal (4374) 21.06.1994 Part of Mayurbhanj District in Odisha.
+9. Dibru-Saikhowa (765) 28.07.1997 Part of Dibrugarh and Tinsukia Districts in Assam
+10 Dehang Debang (5111.5) 02.09.1998 Part of Upper Siang, West Siang and Dibang Valley Districts in
+Arunachal Pradesh.
+11. Pachmarhi (4981.72) 03.03.1999 Part of Betul, Hoshangabad and Chhindwara Districts in Madhya
+Pradesh.
+12. Khangchendzonga (2619.92) 07.02.2000 Part of North and West Districts in Sikkim
+13. Agasthyamalai (3500.36) 12.11.2001 Part of Thirunelveli and Kanyakumari Districts in Tamil Nadu
+and Thiruvananthapuram, Kollam and Pathanmthitta districts
+in Kerala.
+14. Achanakmar-Amarkantak 30.03.2005 Part of Anuppur and Dindori Districts of Madhya Pradesh
+(3835.51) and Bilaspur district of Chhattisgarh
+15. Kachchh (12,454) 29.01.2008 Part of Kachchh, Rajkot, Surendranagar and Patan Districts in
+Gujarat.
+16. Cold Desert (7770) 28.08.2009 Pin Valley National Park and surroundings; Chandratal and
+Sarchu and Kibber Wildlife sanctuary in Himachal Pradesh.
+17. Seshachalam (4755.997) 20.09.2010 Seshachalam hill ranges in Eastern Ghatsencompassing part of
+Chittoor and Kadapa Districts in Andhra Pradesh.
+18. Panna (2998.98) 25.08.2011 Part of Pann and Chhattarpur Districts in Madhya Pradesh.
+* Sites with bold letters have been included in the World Network of BRs of UNESCO.
+Source : Annual Report 2018-19, Ministry of Environment and Forests, Government of India.
+Rationalised 2023-24
+
+--- PAGE 61 ---
+NATURAL VEGETATION 49
+Figure 5.8 : India : Biosphere Reserves
+Rationalised 2023-24
+
+--- PAGE 62 ---
+50 INDIA : PHYSICAL ENVIRONMENT
+Special schemes like Project Tiger (1973)
+and Project Elephant (1992) have been
+launched to conserve these species and their
+habitat in a sustainable manner.
+Project Tiger has been implemented
+since 1973. The main objective of the scheme
+is to ensure maintenance of viable
+population of tigers in India for scientific,
+aesthetic, cultural and ecological values,
+and to preserve areas of biological
+importance as natural heritage for the
+benefit, education and enjoyment of the
+people. Initially, the Project Tiger was
+launched in nine tiger reserves, covering an
+Figure 5.9 : Objectives of a Biosphere Reserve
+area of 16,339 sq. km, which has now
+increased to 50 tiger reserves, encompassing and conservation of Himalayan Musk deer have
+71,027.10 sq. km of core tiger habitats also been launched by the Government of India.
+distributed in 18 states. The tiger
+population in the country has registered an BIOSPHERE RESERVES
+increase from 1,411 in 2006 to 2,967 in
+2020 which is 70 per cent of the global tiger A Biosphere Reserve is a unique and
+population. representative ecosystem of terrestrial and
+Project Elephant was launched in 1992 to coastal areas which are internationally
+assist states having free ranging population recognised within the framework of UNESCO’s
+of wild elephants. It was aimed at ensuring Man and Biosphere (MAB) Programme. The
+long-term survival of identified viable Biosphere Reserve aims at achieving the three
+population of elephants in their natural objectives as depicted in Figure 5.9.
+habitat. The project is being implemented in There are 18 Biosphere Reserves in India
+16 states. (Table 5.1, Figure 5.8). Eleven Biosphere
+Apart from this, some other projects such Reserves have been recognised by the UNESCO
+as Crocodile Breeding Project, Project Hangul on World Network of Biosphere Reserves.
+EXERCISES
+1. Choose the right answer from the four alternatives given below.
+(i) Sandalwood is an example of:
+(a) Evergreen forest (c) Deltaic forest
+(b) Deciduous forest (d) Thorny forest
+(ii) Which one of the following was the purpose of Project Tiger?
+(a) to kill tigers (c) to protect tigers from illegal hunting
+(b) to put tigers in the Zoo (d) to make films on tigers
+(iii) In which one of the following states is the Nandadevi Biosphere reserve
+situated?
+(a) Bihar (c) Uttarakhand
+(b) Uttar Pradesh (d) Odisha
+Rationalised 2023-24
+
+--- PAGE 63 ---
+NATURAL VEGETATION 51
+(iv) How many of the Biosphere reserves from India are recognised by the
+UNESCO?
+(a) One (c) Eleven
+(b) Two (d) Four
+(v) Which one of the following proportion of area of the country was
+targeted to be under forest in Forest Policy of India?
+(a) 33 (c) 55
+(b) 44 (d) 22
+2. Answer the following questions in about 30 words.
+(i) What is natural vegetation? Under what climatic conditions are tropical
+evergreen forests develop?
+(ii) What do you understand by social forestry?
+(iii) Define Biosphere reserves?
+(iv) What is the difference between forest area and forest cover?
+3. Answer the following questions in not more than 150 words.
+(i) What steps have been taken up to conserve forests?
+(ii) How can people’s participation be effective in conserving forests and wildlife?
+Project/Activity
+1. On the outline map of India, mark and label the following.
+(i) Areas having Mangrove forests.
+(ii) Biosphere reserves of Nanda Devi, Sunderbans, Gulf of Mannar and
+Nilgiri.
+(iii) Mark the location of Forest Survey of India Head Quarter.
+2. List the trees, bush and shrub species found around your school. Write
+their local names and their uses.
+Rationalised 2023-24
+
+--- PAGE 64 ---
+U
+NIT
+IV
+N H D :
+ATURAL AZARDS AND ISASTERS
+C , C M
+AUSES ONSEQUENCES AND ANAGEMENT
+This unit deals with
+• Floods and droughts
+• Earthquakes and tsunami
+• Cyclones
+• Landslides
+Rationalised 2023-24
+
+--- PAGE 65 ---
+CHAPTER
+N H D
+ATURAL AZARDS AND ISASTERS
+Y
+ou might have read about tsunami or the change of seasons, ripening of fruits, while
+seen the images of horror on there are others like earthquakes, floods and
+television set immediately after it wars that are considered bad and undesirable.
+happened. You may also be aware of the severe
+earthquake in Kashmir on both sides of the Observe the environment you live in and
+prepare a list of changes, which take
+Line of Control (LOC). The damage caused to
+place over a long period of time and
+human life and properties during these
+those, which take place within a short
+episodes has moved us all. What are these as
+period of time. Do you know why some
+phenomena and how they are caused? How
+changes are considered good and others
+can we save ourselves? These are some
+bad? Prepare a list of changes, which
+questions which come to our minds. This you notice in your daily life and give
+chapter will attempt to analyse some of these reasons why some of these are
+questions. considered good and others bad.
+Change is the law of nature. It is a continuous
+process that goes on uninterruptedly involving In this chapter, we will read about some of
+phenomena, big and small, material and non- these changes, which are considered bad and
+material that make our physical and socio- have haunted humankind for a long time.
+cultural environment. It is a process present Disasters in general and natural disasters
+everywhere with variations in terms of in particular, are some such changes that are
+magnitude, intensity and scale. Change can be always disliked and feared by humankind.
+a gradual or slow process like the evolution of
+landforms and organisms and it can be as What is a Disaster?
+sudden and swift as volcanic eruptions, “Disaster is an undesirable occurrence
+tsunamis, earthquakes and lightening, etc. resulting from forces that are largely
+Similarly, it may remain confined to a smaller outside human control, strikes quickly
+with little or no warning, which causes
+area occurring within a few seconds like
+or threatens serious disruption of life
+hailstorms, tornadoes and dust storms, and it
+and property including death and injury
+can also have global dimensions such as global
+to a large number of people, and requires
+warming and depletion of the ozone layer.
+therefore, mobilisation of efforts in excess
+Besides these, changes have different
+of that which are normally provided by
+meanings for different people. It depends upon statutory emergency services”.
+the perspective one takes while trying to
+understand them. From the perspective of For a long time, geographical literature
+nature, changes are value-neutral (these are viewed disasters as a consequence of natural
+neither good nor bad). But from the human forces; and human beings were treated as
+perspective, these are value-loaded. There are innocent and helpless victims in front of the
+some changes that are desirable and good like mighty forces of nature. But natural forces are
+Rationalised 2023-24
+
+--- PAGE 66 ---
+54 INDIA : PHYSICAL ENVIRONMENT
+not the only causes of disasters. Disasters are features in the Himalayas or extreme climatic
+also caused by some human activities. There conditions in deserts or glaciated areas.
+are some activities carried by human beings As compared to natural hazards, natural
+that are directly responsible for disasters. disasters are relatively sudden and cause
+Bhopal Gas tragedy, Chernobyl nuclear disaster, large scale, widespread death, loss of
+wars, release of CFCs (Chlorofluorocarbons) and property and disturbance to social systems
+increase of green house gases, environmental and life over which people have a little or no
+pollutions like noise, air, water and soil are some control. Thus, any event can be classed as
+of the disasters which are caused directly by disaster when the magnitude of destruction
+human actions. There are some other activities and damage caused by it is very high.
+of human beings that accelerate or intensify Generally, disasters are generalised
+disasters indirectly. Landslides and floods due experiences of people the world over, and no
+to deforestation, unscientific land use and two disasters are similar and comparable to
+construction activities in fragile areas are some each other. Every disaster is unique in terms
+of the disasters that are the results of indirect of the local socio-environmental factors that
+human actions. Can you identify some other control it, the social response it generates, and
+human activities going on in and around your the way each social group negotiates with it.
+neighbourhood and schools that can lead to However, the opinion mentioned above is
+disasters in the near future? Can you suggest indicative of three important things. Firstly, the
+some measures to prevent it? It is a common magnitude, intensity, frequency and damages
+experience that human-made disasters have caused by natural disasters have increased
+increased both in their numbers and over the years. Secondly, there is a growing
+magnitudes over the years and concerted concern among people the world over to deal
+efforts are on at various levels to prevent and with the menace created by these so that the
+minimise their occurrences. Though the loss of human life and property can be
+success has been only nominal so far, it is minimised. And finally, significant changes
+possible to prevent some of these disasters have taken place in the pattern of natural
+created by human actions. As opposed to this, disasters over the years.
+very little is possible to prevent natural There has also been a change in the
+disasters; therefore, the best way out is to perception of natural disasters and hazards.
+emphasise on natural disaster mitigation and Previously, hazards and disasters were seen
+management. Establishment of National as two closely associated and interrelated
+Institute of Disaster Management, India, Earth phenomena, i.e. areas prone to natural
+Summit at Rio de Janeiro, Brazil, 1993 and hazards, were more vulnerable to disasters.
+the World Conference on Disaster Management Hence, people avoided tampering with the
+in May 1994 at Yokohama, Japan, etc. are delicate balance that existed in a given
+some of the concrete steps towards this ecosystem. People avoided intensification of
+direction initiated at different levels. their activities in such areas and that is how
+Most often it is observed that scholars use disasters were less damaging. Technological
+disasters and natural hazards as interchangeable. power has given large capacity to human
+Both are related phenomena, yet quite distinct intervention in nature. Consequently, now,
+from each other. Hence, it is necessary to human beings tend to intensify their activities
+distinguish between the two. into disaster prone areas increasing their
+Natural Hazards are elements of vulnerability to disasters. Colonisation
+circumstances in the Natural environment that of flood plains of most of the rivers and
+have the potential to cause harm to people or development of large cities and port-towns like
+property or both. These may be swift or – Mumbai and Chennai along the coast, and
+permanent aspects of the respective touching the shore due to high land values,
+environmental settings like currents in the make them vulnerable to the occurrence of
+oceans, steep slope and unstable structural cyclones, hurricanes and tsunamis.
+Rationalised 2023-24
+
+--- PAGE 67 ---
+NATURAL HAZARDS AND DISASTERS 55
+These observations can also be corroborated environmental diversities and cultural
+by the data given in Table 7.1 showing the pluralities that scholars often described it
+magnitude of deaths caused by twelve serious using two meaningful adjectives like the
+natural disasters in the past sixty years in ‘Indian-subcontinent’ and the ‘land of unity in
+different countries of the world. diversity’. Its vastness in terms of natural
+attributes combined with its prolonged colonial
+It is evident from the table that natural
+past, continuing various forms of social
+disasters have caused widespread loss of life
+discriminations and also equally large
+and property. Concerted efforts are on at
+population have enhanced its vulnerability to
+various levels to take appropriate measures
+natural disasters. These observations can also
+to deal with the situation. It is also being felt
+be illustrated by focussing on some of the
+that the damages caused by natural disasters
+major natural disasters in India.
+have global repercussions that are beyond
+the means and capabilities of individual
+Earthquakes
+nation-states to cope up with. Hence, this
+issue was raised at the U.N. General Earthquakes are by far the most unpredictable
+and highly destructive of all the natural
+Assembly in 1989 and it was finally
+disasters. You have already learnt the causes
+formalised at the World Conference on
+of earthquakes in your book Fundamentals of
+Disaster Management in May 1994 at
+Physical Geography (NCERT, 2006).
+Yokohama, Japan. This was subsequently
+Earthquakes that are of tectonic origin have
+called the Yokohama Strategy and Plan of
+proved to be the most devastating and their
+Action for a Safer World.
+area of influence is also quite large. These
+earthquakes result from a series of earth
+CLASSIFICATION OF NATURAL DISASTERS movements brought about by a sudden release
+Human beings the world over have of energy during the tectonic activities in the
+earth’s crust. As compared to these, the
+experienced disasters and have faced and lived
+earthquakes associated with volcanic
+with them. Now people are becoming aware
+eruption, rock fall, landslides, subsidence,
+and various steps have been initiated at
+particularly in the mining areas, impounding
+different levels for mitigating the effects of
+of dams and reservoirs, etc. have limited area of
+disasters. Identification and classification of
+influence and the scale of damage.
+disasters is being considered as an effective and
+It was mentioned in Chapter 2 of the book
+scientific step to deal promptly and efficiently
+that the Indian plate is moving at a speed of one
+with the disasters. Broadly, natural
+centimetre per year towards the north and
+disasters can be classified under four
+northeastern direction and this movement of
+categories (See Table 6.2). plates is being constantly obstructed by the
+India is one of those countries which has Eurasian plate from the north. As a result of this,
+experienced most of the natural disasters
+mentioned in Table 6.2. Every year it loses
+thousands of lives and property worth
+millions of rupees due to these natural
+calamities. In the following section, some of
+the highly devastating natural disasters have been
+discussed, particularly in the context of India.
+NATURAL DISASTERS AND HAZARDS IN INDIA
+It was discussed in one of the previous chapters
+that India is vast and diverse in terms of its
+physical and socio-cultural attributes. It is
+Figure 6.1 : A Damaged Building
+largely due to its vast geographical area,
+Due to an Earthquake
+Rationalised 2023-24
+
+--- PAGE 68 ---
+56 INDIA : PHYSICAL ENVIRONMENT
+Yokohama Strategy and International Decade for Natural Disaster Reduction (IDNDR)
+Yokohama Strategy and Plan of Action for a Safer World
+All the member states of the United Nations and other states met at the World Conference
+on Natural Disaster Reduction in the city of Yokohama from May 23rd-27th 1994. It
+acknowledged that the impact of natural disasters in terms of human and economic losses
+has risen in recent years, and society, in general, has become vulnerable to natural disasters.
+It also accepted that these disasters affected the poor and disadvantageous groups the
+worst, particularly in the developing countries, which are ill-equipped to cope with them.
+Hence, the conference adopted the Yokohama strategy as a guide to rest of the decade and
+beyond, to mitigate the losses due to these disasters.
+The resolution of the World Conference on Natural Disasters Reduction is as mentioned below:
+(i) It will note that each country has the sovereign responsibility to protect its citizens from
+natural disasters;
+(ii) It will give priority attention to the developing countries, particularly the least developed,
+land-locked countries and small-island developing states;
+(iii) It will develop and strengthen national capacities and capabilities and, where appropriate,
+national legislation for natural and other disaster prevention, mitigation and preparedness,
+including the mobilisation of non-governmental organisations and participation of local
+communities;
+(iv) It will promote and strengthen sub-regional, regional and international cooperation in activities
+to prevent, reduce and mitigate natural and other disasters, with particular emphasis on:
+(a) human and institutional capacity-building and strengthening;
+(b) technology sharing: the collection, the dissemination and utilisation of information; and
+(c) mobilisation of resources.
+It also declared the decade 1990-2000 as the International Decade for Natural Disaster
+Reduction (IDNDR).
+both the plates are said to be locked with each National Geophysical Laboratory, Geological
+other resulting in accumulation of energy at Survey of India, Department of Meteorology,
+different points of time. Excessive accumulation Government of India, along with the recently
+of energy results in building up of stress, which formed National Institute of Disaster
+ultimately leads to the breaking up of the lock Management, have made an intensive analysis
+and the sudden release of energy causes of more than 1,200 earthquakes that have
+earthquakes along the Himalayan arch. Some occurred in India in different years in the past,
+of the most vulnerable union territories/states and based on these, they divided India into the
+are Jammu and Kashmir, Ladakh, Himachal following five earthquake zones:
+Pradesh, Uttarakhand, Sikkim, and the
+(i) Very high damage risk zone
+Darjeeling subdivision of West Bengal, and all
+the seven states of the northeast. (ii) High damage risk zone
+Apart from these regions, the central-western (iii) Moderate damage risk zone
+parts of India, particularly Gujarat (in 1819, (iv) Low damage risk zone
+1956 and 2001) and Maharashtra (in 1967 and
+(v) Very low damage risk zone.
+1993) have also experienced some severe
+Out of these, the first two zones had
+earthquakes. Earth scientists have found it
+experienced some of the most devastating
+difficult to explain the occurrence of earthquakes
+earthquakes in India. As shown in the Figure 6.2,
+in one of the oldest, most stable and mature
+areas vulnerable to these earthquakes
+landmass of Peninsular block for a long time.
+are the North-east states, areas to the
+Recently, some earth scientists have come up north of Darbhanga and Araria along the
+with a theory of emergence of a fault line and Indo-Nepal border in Bihar, Uttarakhand,
+energy build-up along the fault line represented Western Himachal Pradesh (around
+by the river Bhima (Krishna) near Latur and Dharamshala) and Kashmir Valley in the
+Osmanabad (Maharashtra) and the possible Himalayan region and the Kuchchh (Gujarat).
+breaking down of the Indian plate (Figure 6.2). These are included in the Very High Damage
+Rationalised 2023-24
+
+--- PAGE 69 ---
+NATURAL HAZARDS AND DISASTERS 57
+Risk Zone. Similarly, the remaining parts of fissures on the upper layers of the earth’s crust
+Jammu and Kashmir, Ladakh, Himachal through which water and other volatile
+Pradesh, Northern parts of Punjab, Eastern materials gush out, inundating the
+parts of Haryana, Delhi, Western Uttar
+neighbouring areas. Earthquakes are also
+Pradesh, and Northern Bihar fall under the
+responsible for landslides and often these
+High Damage Risk Zone. Remaining parts
+cause obstructions in the flow of rivers and
+of the country fall under moderate to very
+channels resulting in the formation of
+Low Damage Risk Zone. Most of the areas
+reservoirs. Sometimes, rivers also change their
+that can be considered safe are from the
+stable landmass covered under the course causing floods and other calamities in
+Deccan plateau. the affected areas.
+Socio-Environmental Consequences of Earthquake Hazard Mitigation
+Earthquakes
+Unlike other disasters, the damages caused
+The idea of an earthquake is often associated with by earthquakes are more devastating. Since
+fear and horror due to the scale, magnitude and it also destroys most of the transport and
+suddenness at which it spreads disasters on the
+communication links, providing timely relief
+surface of the earth without discrimination. It
+to the victims becomes difficult. It is not
+becomes a calamity when it strikes the areas of
+possible to prevent the occurrence of an
+high density of population. It not only damages
+and destroys the settlements, infrastructure, earthquake; hence, the next best option is to
+transport and communication network, emphasis on disaster preparedness and
+industries and other developmental activities but mitigation rather than curative measures
+also robs the population of their material and such as:
+socio-cultural gains that they have preserved
+over generations. It renders them homeless, (i) Establishing earthquake monitoring
+which puts an extra-pressure and stress, centres (seismological centres) for
+particularly on the weak economy of the regular monitoring and fast
+developing countries. dissemination of information among the
+people in the vulnerable areas. Use of
+Effects of Earthquakes
+Geographical Positioning System (GPS)
+Earthquakes have all encompassing disastrous can be of great help in monitoring the
+effects on the area of their occurrence. Some of movement of tectonic plates.
+the important ones are listed in Table 6.1. (ii) Preparing a vulnerability map of the
+country and dissemination of
+Table 6.1 : Effects of Earthquakes
+vulnerability risk information among the
+On Ground On Manmade On Water
+people and educating them about the
+Structures
+ways and means minimising the adverse
+Fissures Cracking Waves
+impacts of disasters.
+Settlements Slidings Hydro-Dynamic
+Pressure (iii) Modifying the house types and
+Landslides Overturning Tsunami building-designs in the vulnerable areas
+Liquefaction Buckling and discouraging construction of high-
+Earth Pressure Collapse
+rise buildings, large industrial
+Possible
+Chain-effects Possible Possible establishments and big urban centres
+Chain-effects Chain-effects in such areas.
+(iv) Finally, making it mandatory to adopt
+Apart from these, earthquakes also have earthquake-resistant designs and use
+some serious and far-reaching environmental light materials in major construction
+consequences. Surface seismic waves produce activities in the vulnerable areas.
+Rationalised 2023-24
+
+--- PAGE 70 ---
+58 INDIA : PHYSICAL ENVIRONMENT
+Figure 6.2 : India: Earthquake Hazard Zones
+Rationalised 2023-24
+
+--- PAGE 71 ---
+NATURAL HAZARDS AND DISASTERS 59
+Tsunami visuals on Banda Ache (Indonesia) presented
+in the book Practical Work in Geography - Part I
+Earthquakes and volcanic eruptions that
+(NCERT, 2006).
+cause the sea-floor to move abruptly resulting
+Unlike other natural hazards, the
+in sudden displacement of ocean water in the
+mitigation of hazards created by tsunami is
+form of high vertical waves are called tsunamis
+difficult, mainly because of the fact that losses
+(harbour waves) or seismic sea waves.
+are on a much larger scale.
+Normally, the seismic waves cause only one
+It is beyond the capacity of individual state
+instantaneous vertical wave; but, after the initial
+or government to mitigate the damage. Hence,
+disturbance, a series of afterwaves are created
+combined efforts at the international levels are
+in the water that oscillate between high crest
+the possible ways of dealing with these
+and low trough in order to restore the water
+disasters as has been in the case of the tsunami
+level.
+that occurred on 26th December 2004 in which
+The speed of wave in the ocean depends
+more than 300,000 people lost their lives. India
+upon the depth of water. It is more in the
+shallow water than in the ocean deep. As a
+result of this, the impact of tsunami is less over
+the ocean and more near the coast where they
+cause large-scale devastations. Therefore, a
+ship at sea is not much affected by tsunami
+and it is difficult to detect a tsunami in the
+deeper parts of sea. It is so because over deep
+water the tsunami has very long wave-length
+and limited wave-height. Thus, a tsunami wave
+raises the ship only a metre or two and each
+rise and fall takes several minutes. As opposed
+to this, when a tsunami enters shallow water,
+its wave-length gets reduced and the period Figure 6.3 : Tsunami Affected Area
+remains unchanged, which increases the wave-
+has volunteered to join the International
+height. Sometimes, this height can be up to
+Tsunami Warning System after the December
+15m or more, which causes large-scale
+2004 tsunami disaster.
+destructions along the shores. Thus, these are
+also called Shallow Water Waves. Tsunamis
+Tropical Cyclone
+are frequently observed along the Pacific ring
+of fire, particularly along the coast of Alaska, Tropical cyclones are intense low-pressure
+Japan, Philippines, and other islands of South- areas confined to the area lying between 30°°
+east Asia, Indonesia, Malaysia, Myanmar, Sri N and 30°° S latitudes, in the atmosphere
+Lanka, and India etc. around which high velocity winds blow.
+After reaching the coast, the tsunami waves Horizontally, it extends up to 500-1,000 km
+release enormous energy stored in them and and vertically from surface to 12-14 km. A
+water flows turbulently onto the land tropical cyclone or hurricane is like a heat
+destroying port-cities and towns, structures, engine that is energised by the release of latent
+buildings and other settlements. Since the heat on account of the condensation of
+coastal areas are densely populated the world moisture that the wind gathers after moving
+over, and these are also centres of intense over the oceans and seas.
+human activity, the loss of life and property is There are differences of opinion among
+likely to be much higher by a tsunami as scientists about the exact mechanism of a
+compared to other natural hazards in the tropical cyclone. However, some initial
+coastal areas. The extent of devastation caused conditions for the emergence of a tropical
+by tsunami can be assessed through the cyclone are:
+Rationalised 2023-24
+
+--- PAGE 72 ---
+60 INDIA : PHYSICAL ENVIRONMENT
+(i) Large and continuous supply of warm A surge is generated due to interaction
+and moist air that can release enormous of air, sea and land. The cyclone provides
+latent heat. the driving force in the form of very high
+horizontal pressure-gradient and very
+(ii) Strong Coriolis force that can prevent
+strong surface winds. The sea water flows
+filling of low pressure at the centre
+across the coast along with strong winds
+(absence of Coriolis force near the
+and heavy downpour.
+equator prohibits the formation of
+tropical cyclone between 0°-5°° This results in inundation of human
+latitude). settlements, agricultural fields, damaging
+(iii) Unstable condition through the crops and destruction of structures created
+troposphere that creates local disturbances by human beings.
+around which a cyclone develops.
+(iv) Finally, absence of strong vertical wind Floods
+wedge, which disturbs the vertical
+You read in newspapers and watch images of
+transport of latent heat.
+floods on televisions occurring in some regions
+during rainy seasons. Inundation of land and
+Spatio-temporal Distribution of Tropical human settlements by the rise of water in the
+Cyclone in India channels and its spill-over presents the
+condition of flooding. Unlike other natural
+Owing to its Peninsular shape surrounded
+disasters, the causes of floods are well-
+by the Bay of Bengal in the east and the
+established. Floods are relatively slow in
+Arabian Sea in the west, the tropical
+occurrences and often, occur in well-identified
+cyclones in India also originate in these
+regions and within expected time in a year.
+two important locations. Though most of
+Floods occur commonly when water in the
+the cyclones originate between 10°-15°°
+form of surface run-off exceeds the carrying
+north latitudes during the monsoon
+capacity of the river channels and streams and
+season, yet in case of the Bay of Bengal,
+flows into the neighbouring low-lying flood
+cyclones mostly develop during the months plains. At times, this even goes beyond the
+of October and November. Here, they capacity of lakes and other inland water bodies
+originate between 16°-2°° N latitudes and in which they flow. Floods can also be caused
+to the west of 92° E. By July the place of due to a storm surge (in the coastal areas), high
+origin of these storms shifts to around 18° N intensity rainfall for a considerably longer time
+latitude and west of 90°E near the period, melting of ice and snow, reduction in
+Sunderban Delta. the infiltration rate and presence of eroded
+material in the water due to higher rate of soil
+erosion. Though floods occur frequently over
+Consequences of Tropical Cyclones wide geographical area having disasterous
+ramifications in many parts of the world, floods
+It was mentioned that the energy to the
+in the South, Southeast and East Asian
+tropical cyclone comes from the latent heat
+countries, particularly in China, India and
+released by the warm moist air. Hence, with
+Bangladesh, are frequent and equally
+the increase in distance from the sea, the force
+disastrous.
+of the cyclone decreases. In India, the force
+Once again, unlike other natural disasters,
+of the cyclone decreases with increase in
+human beings play an important role in the
+distance from the Bay of Bengal and the
+genesis as well as spread of floods.
+Arabian Sea. So, the coastal areas are often
+Indiscriminate deforestation, unscientific
+struck by severe cyclonic storms with an
+agricultural practices, disturbances along the
+average velocity of 180 km/h. Often, this
+natural drainage channels and colonisation
+results in abnormal rise in the sea level
+of flood-plains and river-beds are some of the
+known as Storm Surge.
+human activities that play an important role
+Rationalised 2023-24
+
+--- PAGE 73 ---
+NATURAL HAZARDS AND DISASTERS 61
+Figure 6.4 : Wind and Cyclone Hazard Zones
+Rationalised 2023-24
+
+--- PAGE 74 ---
+62 INDIA : PHYSICAL ENVIRONMENT
+in increasing the intensity, magnitude and also damage physical infrastructure such as
+gravity of floods. roads, rails, bridges and human settlements.
+Various states of India face heavy loss of lives Millions of people are rendered homeless and
+and property due to recurrent floods. Rashtriya are also washed down along with their cattle
+Barh Ayog (National Flood Commission) in the floods. Spread of diseases like cholera,
+identified 40 million hectares of land as flood- gastro-enteritis, hepatitis and other water-
+prone in India. The Figure 6.6 shows the flood- borne diseases spread in the flood-affected
+affected areas in India. Assam, West Bengal and areas. However, floods also make a few
+Bihar are among the high flood-prone states of positive contributions. Every year, floods
+India. Apart from these, most of the rivers in the deposit fertile silt over agricultural fields
+northern states like Punjab and Uttar Pradesh, which is good for the crops. Majuli (Assam),
+are also vulnerable to occasional floods. It has the largest riverine island in the world, is the
+been noticed that states like Rajasthan, Gujarat, best example of good paddy crops after the
+Haryana and Punjab are also getting inundated annual floods in Brahmaputra. But these are
+in recent decades due to flash floods. This is insignificant benefits in comparison to the
+partly because of the pattern of the monsoon grave losses.
+and partly because of blocking of most of the The Government of India as well as the state
+streams and river channels by human governments are well aware of the menace
+activities. Sometimes, Tamil Nadu experiences created by floods every year. How do these
+flooding during November-January due to governments generally respond to the floods?
+the retreating monsoon. Construction of flood protection embankments
+in the flood-prone areas, construction of dams,
+Consequence and Control of Floods afforestation and discouraging major
+construction activities in the upper reaches of
+Frequent inundation of agricultural land and
+most of the flood-creating rivers, etc. are some
+human settlement, particularly in Assam,
+steps that need to be taken up on urgent basis.
+West Bengal, Bihar and Eastern Uttar Pradesh
+Removal of human encroachment from the
+(flooding rivers), coastal areas of Odisha,
+river channels and depopulating the flood
+Andhra Pradesh, Tamil Nadu and Gujarat
+plains can be the other steps. This is
+(cyclone) and Punjab, Rajasthan, Northern
+particularly true in western and northern parts
+Gujarat and Haryana (flash floods) have
+of the country which experience flash-floods.
+serious consequences on the national
+Cyclone centres may provide relief in coastal
+economy and society. Floods do not only
+areas which are hit by a storm surge.
+destroy valuable crops every year but these
+Figure 6.5 : Brahmaputra During Flood
+Rationalised 2023-24
+
+--- PAGE 75 ---
+NATURAL HAZARDS AND DISASTERS 63
+D
+ibang
+R
+L
+. ohit R.
+Figure 6.6 : Flood Hazard Zones
+Rationalised 2023-24
+
+--- PAGE 76 ---
+64 INDIA : PHYSICAL ENVIRONMENT
+Droughts the country and 12 per cent of its total
+population suffer due to drought every year.
+The term ‘drought’ is applied to an extended
+About 30 per cent of the country’s total area is
+period when there is a shortage of water
+identified as drought prone affecting around
+availability due to inadequate precipitation,
+50 million people. It is a common experience
+excessive rate of evaporation and
+that while some parts of the country reel under
+over-utilisation of water from the reservoirs and
+floods, there are regions that face severe
+other storages, including the ground water.
+drought during the same period. Moreover, it
+is also a common sight to witness that one
+Drought is a complex phenomenon as it
+involves elements of meteorology like region suffers due to floods in one season and
+precipitation, evaporation, evapo- experiences drought in the other. This is mainly
+transpiration, ground water, soil because of the large-scale variations and
+moisture, storage and surface run-off, unpredictability in the behaviour of the
+agricultural practices, particularly the monsoon in India. Thus, droughts are
+types of crops grown, socio-economic
+widespread and common phenomena in most
+practices and ecological conditions.
+parts of the country, but these are most
+recurrent and severe in some and not so in
+Types of Droughts others. On the basis of severity of droughts,
+India can be divided into the following regions:
+Meteorological Drought : It is a situation when
+there is a prolonged period of inadequate Extreme Drought Affected Areas : It is evident
+rainfall marked with mal-distribution of the from the Figure 6.7 that most parts of
+same over time and space. Rajasthan, particularly areas to the west of the
+Aravali hills, i.e. Marusthali and Kachchh
+Agricultural Drought : It is also known as soil
+regions of Gujarat fall in this category. Included
+moisture drought, characterised by low soil
+here are also the districts like Jaisalmer and
+moisture that is necessary to support the crops,
+Barmer from the Indian desert that receive less
+thereby resulting in crop failures. Moreover, if
+that 90 mm average annual rainfall.
+an area has more than 30 per cent of its gross
+cropped area under irrigation, the area is Severe Drought Prone Area : Parts of eastern
+excluded from the drought-prone category. Rajasthan, most parts of Madhya Pradesh,
+eastern parts of Maharashtra, interior parts of
+Hydrological Drought : It results when the
+Andhra Pradesh and Karnataka Plateau,
+availability of water in different storages and
+northern parts of interior Tamil Nadu and
+reservoirs like aquifers, lakes, reservoirs, etc.
+southern parts of Jharkhand and interior
+falls below what the precipitation can replenish.
+Odisha are included in this category.
+Ecological Drought : When the productivity of
+Moderate Drought Affected Area : Northern
+a natural ecosystem fails due to shortage
+parts of Rajasthan, Haryana, southern districts
+of water and as a consequence of ecological
+of Uttar Pradesh, the remaining parts of
+distress, damages are induced in the
+Gujarat, Maharashtra except Konkan,
+ecosystem.
+Jharkhand and Coimbatore plateau of Tamil
+Various parts of India experience these
+Nadu and interior Karnataka are included in
+droughts recurrently which result in some
+this category. The remaining parts of India can
+serious socio-economic and ecological problems.
+be considered either free or less prone to the
+Drought Prone Areas in India drought.
+Indian agriculture has been heavily dependent
+Consequences of Drought
+on the monsoon rainfall. Droughts and floods
+are the two accompanying features of Indian Droughts have cascading effects on various
+climate. According to some estimates, nearly other aspects of environment and society. Crop
+19 per cent of the total geographical area of failure leading to scarcity of food grains (akal),
+Rationalised 2023-24
+
+--- PAGE 77 ---
+NATURAL HAZARDS AND DISASTERS 65
+Figure 6.7 : Drought Prone Areas
+Rationalised 2023-24
+
+--- PAGE 78 ---
+66 INDIA : PHYSICAL ENVIRONMENT
+drought-mitigation. Rainwater harvesting can
+also be an effective method in minimising the
+effects of drought.
+Observe the methods adopted for roof-
+top rainwater harvesting in your
+locality and suggest measures to make
+it more effective.
+Landslides
+Have you ever read about the blocking of roads
+to Srinagar or disruption of rail services by
+stones falling on the Konkan Railway track? It
+Figure 6.8 : Drought happens due to landslide, which is the rapid
+sliding of large mass of bedrocks. Disasters
+fodder (trinkal), inadequate rainfall, resulting
+due to landslides, are in general, far less
+in shortage of water (jalkal), and often shortage
+dramatic than due to earthquakes, volcanic
+in all the three (trikal) is most devastating.
+eruptions, tsunamis and cyclones but their
+Large-scale death of cattle and other animals,
+impact on the natural environment and
+migration of humans and livestock are the
+national economy is in no way less severe.
+most common sight to be seen in the drought-
+Unlike other disasters that are sudden,
+affected areas. Scarcity of water compels people
+unpredictable and are largely controlled by
+to consume contaminated water resulting in
+macro or regional factors, landslides are largely
+spread of many waterborne diseases like
+controlled by highly localised factors. Hence,
+gastro-enteritis, cholera, hepatitis, etc.
+gathering information and monitoring the
+Droughts have both immediate as well as
+possibilities of landslide is not only
+long-term disastrous consequences on the
+difficult but also immensely cost-
+social and physical environments.
+intensive.
+Consequently, planning for drought has to
+It is always difficult to define in a precise
+take both aspects into consideration.
+statement and generalise the occurrence and
+Provision for the distribution of safe drinking
+behaviour of a landslide. However, on the
+water, medicines for the victims and
+basis of past experiences, frequency and
+availability of fodder and water for the cattle
+certain causal relationships with the
+and shifting of the people and their livestock
+controlling factors like geology, geomorphic
+to safer places, etc. are some steps that
+agents, slope, land-use, vegetation cover and
+need to be taken immediately.
+human activities, India has been divided into
+Identification of ground water potential in the
+a number of zones.
+form of aquifers, transfer of river water from
+the surplus to the deficit areas, and Landslide Vulnerability Zones
+particularly planning for inter-linking of
+Very High Vulnerability Zone : Highly unstable,
+rivers and construction of reservoirs and
+dams, etc. should be given a serious thought. relatively young mountainous areas in the
+Remote sensing and satellite imageries can be Himalayas and Andaman and Nicobar, high
+useful in identifying the possible river-basins rainfall regions with steep slopes in the Western
+that can be inter-linked and in identifying the Ghats and Nilgiris, the north-eastern regions,
+ground water potential. along with areas that experience frequent
+Dissemination of knowledge about ground-shaking due to earthquakes, etc. and
+drought-resistant crops and proper training areas of intense human activities, particularly
+to practise the same can be some of the those related to construction of roads, dams,
+long-term measures that will be helpful in etc. are included in this zone.
+Rationalised 2023-24
+
+--- PAGE 79 ---
+NATURAL HAZARDS AND DISASTERS 67
+High Vulnerability Zone : Areas that have almost roadblock, destruction of railway lines and
+similar conditions to those included in the very channel-blocking due to rock-falls have far-
+high vulnerability zone are also included in this reaching consequences. Diversion of river
+category. The only difference between these two courses due to landslides can also lead to
+is the combination, intensity and frequency of flood and loss of life and property. It also
+the controlling factors. All the Himalayan states makes spatial interaction difficult, risky as
+and the states from the north-eastern regions well as a costly affair, which, in turn,
+except the plains of Assam are included in the adversely affects the developmental
+activities in these areas.
+high vulnerability zones.
+Moderate to Low Vulnerability Zone : Areas Mitigation
+that receive less precipitation such as Trans-
+It is always advisable to adopt area-specific
+Himalayan areas of Ladakh and Spiti
+measures to deal with landslides. Restriction
+(Himachal Pradesh), undulated yet stable
+on the construction and other developmental
+relief and low precipitation areas in the
+activities such as roads and dams, limiting
+Aravali, rain shadow areas in the Western and
+agriculture to valleys and areas with
+moderate slopes, and control on the
+development of large settlements in the high
+vulnerability zones, should be enforced. This
+should be supplemented by some positive
+actions like promoting large-scale
+afforestation programmes and construction of
+bunds to reduce the flow of water. Terrace
+farming should be encouraged in the
+northeastern hill states where Jhumming
+(Slash and Burn/Shifting Cultivation) is still
+prevalent.
+DISASTER MANAGEMENT
+Figure 6.9 : Landslide
+Disasters due to cyclones, unlike the ones
+Eastern Ghats and Deccan plateau also
+caused by earthquakes, tsunamis and
+experience occasional landslides. Landslides volcanic eruptions are more predictable in
+due to mining and subsidence are most terms of the time and place of their
+common in states like Jharkhand, Odisha, occurrences. Moreover, with the help of
+Chhattisgarh, Madhya Pradesh, development of techniques to monitor the
+Maharashtra, Andhra Pradesh, Karnataka, behaviour of cyclones, their intensity,
+Tamil Nadu, Goa and Kerala. direction and magnitude, it has become
+possible to manage the cyclonic hazard to
+Other Areas : The remaining parts of India,
+some extent. Construction of cyclone-shelters,
+particularly states like Rajasthan, Haryana,
+embankments, dykes, reservoirs and
+Uttar Pradesh, Bihar, West Bengal (except
+afforestation to reduce the speed of the winds
+district Darjiling), Assam (except district Karbi
+are some of the steps that can help in
+Anglong) and Coastal regions of the southern
+minimising the damages. However, increase
+States are safe as far as landslides are
+in the loss of life and property in countries
+concerned.
+like India, Bangladesh, Myanmar, etc. in
+Consequences of Landslides successive storms is largely due to high
+vulnerability of their population residing in
+Landslides have relatively small and
+the coastal areas.
+localised area of direct influence, but
+Rationalised 2023-24
+
+--- PAGE 80 ---
+68 INDIA : PHYSICAL ENVIRONMENT
+(i) Pre-disaster management involves
+Disaster Management Bill, 2005 generating data and information about the
+disasters, preparing vulnerability zoning
+The Disaster Management Bill, 2005,
+maps and spreading awareness among the
+defines disaster as a catastrophe,
+people about these. Apart from these,
+mishap, calamity or grave occurrence
+disaster planning, preparedness and
+affecting any area, arising from
+preventive measures are other steps that
+natural or man-made causes, or by
+need to be taken in the vulnerable areas.
+accident or negligence which results
+(ii) During disasters, rescue and relief
+in substantial loss of life or human
+operations such as evacuation, construction
+suffering or damage to, and
+of shelters and relief camps, supplying of
+destruction of, environment, and is of
+water, food, clothing and medical aids etc.
+such nature or magnitude as to be
+should be done on an emergency basis.
+beyond the coping capacity of the
+(iii)Post-disaster operations should involve
+community of the affected area.
+rehabilitation and recovery of victims. It
+should also concentrate on capacity-
+building in order to cope up with
+CONCLUSION future disasters, if any.
+These measures have special significance to
+On the basis of the above discussion, it can be
+a country like India, which has about two-
+concluded that disasters can be natural or the
+results of human activities, and all hazards third of its geographical area and equal
+need not turn into disasters since it is difficult proportion of its population, vulnerable to
+to eliminate disasters, particularly natural disasters. Introduction of the Disaster
+disasters. Then the next best option is Management Bill, 2005 and establishment of
+mitigation and preparedness. There are three National Institute of Disaster Management are
+stages involved in disaster mitigation and some examples of the positive steps taken by
+management: the Government of India.
+Rationalised 2023-24
+
+--- PAGE 81 ---
+NATURAL HAZARDS AND DISASTERS 69
+EXERCISES
+1. Choose the right answer from the four alternatives given below.
+(i) Which one of the following states of India experiences floods frequently?
+(a) Bihar (c) Assam
+(b) West Bengal (d) Uttar Pradesh
+(ii) In which one of the following districts of Uttaranchal did Malpa Landslide
+disaster take place?
+(a) Bageshwar (c) Almora
+(b) Champawat (d) Pithoragarh
+(iii) Which one of the following states receives floods in the winter months?
+(a) Assam (c) Kerala
+(b) West Bengal (d) Tamil Nadu
+(iv) In which of the following rivers is the Majuli River Island situated?
+(a) Ganga (c) Godavari
+(b) Brahmaputra (d) Indus
+(v) Under which type of natural hazards do blizzards come?
+(a) Atmospheric (c) Terrestrial
+(b) Aquatic (d) Biological
+2. Answer the following questions in less than 30 words.
+(i) When can a hazard become a disaster?
+(ii) Why are there more earthquakes in the Himalayas and in the north-eastern
+region of India?
+(iii) What are the basic requirements for the formation of a cyclone?
+(vi) How are the floods in Eastern India different from the ones in Western India?
+(v) Why are there more droughts in Central and Western India?
+3. Answer the following questions in not more than 125 words.
+(i) Identify the Landslide-prone regions of India and suggest some measures to
+mitigate the disasters caused by these.
+(ii) What is vulnerability? Divide India into natural disaster vulnerability zones
+based on droughts and suggest some mitigation measures.
+(iii) When can developmental activities become the cause of disasters?
+Project/Activity
+Prepare a project report on any one of the topics given below.
+(i) Malpa Landslide (v) Tehri Dam/Sardar Sarovar
+(ii) Tsunami (vi) Bhuj/Latur Earthquakes
+(iii) Odisha and Gujarat Cyclones(vii) Life in a delta/riverine island
+(iv) Inter-linking of rivers (viii) Prepare a model of rooftop rainwater
+harvesting
+Rationalised 2023-24
+
+--- PAGE 82 ---
+70 INDIA : PHYSICAL ENVIRONMENT
+G
+LOSSARY
+Alluvial Plain : A level tract of land made up of alluvium or fine rock material brought
+down by a river.
+Archipelago : A group of islands that lie in fairly close proximity.
+Arid : Denoting any climate or region in which the rainfall is insufficient or barely
+sufficient to support vegetation.
+Backwater : A stretch of water that has become bypassed by the main flow of a
+stream, although still joined to it. It has a very low rate of flow.
+Bedrock : The solid rock lying beneath soil and weathered material.
+Biosphere Reserve : These are multi-purpose protected areas, where every plant
+and animal size is to be protected in its natural habitat. Its major objectives are :
+(i) to conserve and maintain diversity and integrity of the natural heritage in its full
+form, i.e. physical environment, the flora and the fauna; (ii) to promote research on
+ecological conservation and other aspects of environment at preservation; (iii) to provide
+facilities for education, awareness and explaining.
+Bunding : The practice of constructing embankments of earth or stone for conserving
+water and soil to increase crop production.
+Calcareous : Composed of or containing a high proportion of calcium carbonate.
+Catchment Area : The area drained by a major river and its tributaries.
+Climate : The average weather conditions of a sizeable area of the earth’s surface
+over a period of time (usually spread over a span of at least 30 years).
+Coast : The boundary between land and sea. It includes the strip of land that borders
+the sea shore.
+Coastal Plain : It is a flat low lying land between the coast and higher ground inland.
+Conservation : The protection of natural environment and natural resources for the
+future. It includes the management of minerals, landscape, soil and forests to prevent
+their destruction and over exploitation.
+Coral : It is a small calcium secreting marine polyp that occurs in colonies, mainly in
+warm shallow sea water. It forms the coral reefs.
+Depression : In meteorology; it denotes an area of relatively low atmospheric pressure,
+which is found mainly in temperate regions. It is also used as synonym for temperate
+cyclones.
+Estuary : The tidal mouth of a river where fresh and saline water get mixed.
+Fauna : The animal life of a given area or time.
+Fold : A bend in rock strata resulting from compression of an area of the earth’s
+crust.
+Glacier : A mass of snow and ice that moves slowly away from its place of accumulation
+carving gradually a broad and steepsided valley on its way.
+Gneiss : A coarse grained metamorphic rock with a banded structure. It is formed by
+the large scale application of heat and pressure associated with mountain building
+and volcanic activity.
+Gorge : A deep valley with steep and rocky side walls.
+Rationalised 2023-24
+
+--- PAGE 83 ---
+Gully Erosion : It is the erosion of the soil and rock by the concentration of runoff into
+gullies.
+Humus : The dead organic content of the soil.
+Island : A mass of land that is surrounded by water and is smaller than a continent.
+Jet Stream : A very strong and steady westerly wind blowing just below the tropopause.
+Lake : A body of water that lives in a hollow in the earth’s surface and is entirely
+surrounded by land.
+Landslide : A form of mass movement in which rock and debris moves rapidly
+downslope under the influence of gravity as a result of failure along a shear plane.
+Meander : A pronounced curve or loop in the course of a river channel.
+Monsoon : A complete reversal of winds over a large area leading to a change of
+seasons.
+National Park : A National park is an area which is strictly reserved for the protection
+of the wildlife and where activities such as forestry, grazing or cultivation are not
+allowed.
+Pass : A route through a mountain range which follows the line of a col or a gap.
+Peninsula : A piece of land jutting out into the sea.
+Plain : An extensive area of flat or gently undulating land.
+Plateau : An extensive elevated area of relatively flat land.
+Playa : The low flat central area of a basin of inland drainage. Playas occur in areas
+of low rainfall.
+Protected Forest : An area notified under the provisions of Indian Forest Act or the
+State Forest Acts having limited degree of protection. In Protected Forests, all activities
+are permitted unless prohibited.
+Rapids : A stretch of swift flowing water where a river bed suddenly becomes steeper
+due to the presence of hard rocks.
+Reserved Forest : An area notified under the provisions of Indian Forest Act or the
+State Forest Acts having full degree of protection. In Reserved Forests, all activities
+are prohibited unless permitted.
+Sanctuary : A sanctuary is an area, which is reserved for the conservation of animals
+only and operations such as harvesting of timber, collection of minor forest products
+are allowed so long as they do not affect the animals adversely.
+Soil Profile : It is the vertical section of soil from the ground surface to the parent
+rock.
+Subcontinent : A big geographical unit which stands out distinctly from the rest of
+the continent.
+Terai : A belt of marshy ground and vegetation on the lower parts of the alluvial fans.
+Tectonic : Forces originating within the earth and responsible for bringing widespread
+changes in the landform features.
+Unclassed Forest : An area recorded as forest but not included in reserved or protected
+forest category. Ownership status of such forests varies from state to state.
+Rationalised 2023-24
+
+--- PAGE 84 ---
+N
+OTES
+Rationalised 2023-24

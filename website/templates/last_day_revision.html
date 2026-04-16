@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Last-Day Revision — GroupsGuru{% endblock %}
+
+{% block content %}
+<div class="ldr-page">
+  <div class="ldr-header">
+    <a href="/" class="back-link">&larr; Back to Home</a>
+    <h1>&#11088; Last-Day Revision</h1>
+    <p>All paragraphs you pinned as exam-important, grouped by topic.</p>
+    <button class="ldr-print-btn" onclick="window.print()">&#128438; Print / Save as PDF</button>
+  </div>
+
+  <div id="ldr-content">
+    <div class="ldr-empty">Loading your pinned notes&hellip;</div>
+  </div>
+</div>
+
+<script>
+// Map topic_id → human-readable label
+// We attempt to match against known topic IDs from the syllabus structures
+const TOPIC_LABELS = {};
+
+fetch('/api/pins')
+  .then(r => r.json())
+  .then(data => {
+    const pins = data.pins || {};
+    const topicIds = Object.keys(pins);
+    const container = document.getElementById('ldr-content');
+
+    if (!topicIds.length) {
+      container.innerHTML = '<div class="ldr-empty">No pins yet. While studying, hover over a paragraph and click &#9606; to pin it as exam-important.</div>';
+      return;
+    }
+
+    let html = '';
+    topicIds.forEach(topicId => {
+      const topicPins = pins[topicId];
+      if (!topicPins || !topicPins.length) return;
+      const label = TOPIC_LABELS[topicId] || topicId.replace(/-/g, ' ').replace(/:/g, ' → ');
+      html += `<div class="ldr-topic-group">
+        <div class="ldr-topic-title">&#11088; ${label} <span style="font-size:0.75rem;font-weight:500;color:var(--muted)">${topicPins.length} pin${topicPins.length > 1 ? 's' : ''}</span></div>`;
+      topicPins.forEach(pin => {
+        const text = (pin.para_text || '').substring(0, 500);
+        html += `<div class="ldr-pin"><span class="ldr-pin-star">&#9605;</span>${text}</div>`;
+      });
+      html += '</div>';
+    });
+    container.innerHTML = html || '<div class="ldr-empty">No pinned paragraphs found.</div>';
+  })
+  .catch(() => {
+    document.getElementById('ldr-content').innerHTML =
+      '<div class="ldr-empty">Could not load pins. Please try again.</div>';
+  });
+</script>
+{% endblock %}

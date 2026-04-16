@@ -1,0 +1,2688 @@
+--- PAGE 420 ---
+14.18 < IndianEconomy
+In January 2012, the government expanded this be subsumed under it. The new guidelines for
+scheme to allowQFIs to directlyinvest in Indian RFPIsareasgiven below:
+equity markets. Taking the scheme forward, (i) They may purchase and sell shares
+as announced in Budget 2012 — 13, QFIs have and convertible debentures of Indian
+also been permitted to invest in corporate debt companies through a registered broker
+securities (CDSs) and MF debt schemes subject on recognised stock exchanges in India
+to a totaloverallceilingof US $ 1 billion. aswellaspurchasesharesandconvertible
+In May 2012 , QFIs were allowed to open debentures,whichareofferedto publicin
+individual non-interest-bearing rupee bank termsof relevantSEBIguidelines.
+accounts with authorized dealer banks in India (ii) Such investors can acquire shares or
+for receiving funds and making payment for convertibledebentures in any bid for, or
+transactions in securities they are eligible to acquisition of, securities in response to
+invest in. In June 2012 , the definition of QFI an offer for disinvestmentof shares made
+wasexpanded to includeresidentsof themember by the central government or any state
+countriesoftheGulfCooperationCouncil(GCC) .
+government
+andEuropeanCommission (EC)astheGCCand
+(iii) These entities would be eligible to invest
+EC are members of the Financial Action Task
+in government securities and corporate
+Force (FATF).
+debt, subject to limits specified by the
+Thespeedier moves in thearea of promoting RBIandSEBIfrom timeto time.
+higherforeigninvestment(FIs)in Indiashouldbe
+— (iv) Such investors would be permitted to
+seen in thelight of two broad perspectives trade in all exchange-traded derivative
+(i) India’s rising current account deficit contractson thestockexchanges,subject
+(whichcrossedanall-timehighof6.7per tothepositionlimitsasspecifiedbySEBI
+cent by March 2013) which is creating from timeto time.
+heavydrain offoreign exchange;and
+(v) RFPI mayoffer cash or foreignsovereign
+(ii) TheobjectiveofattractingmoreFIswhile securities with AAA rating or corporate
+theWesterneconomiesareunderthespell bondsordomesticgovernmentsecurities,
+of recession (cashingin theopprtunity). as collateral to the recognised stock
+exchangesfortheir transactionsincashas
+|
+RFPIs wellasderivativesegmentof themarket.
+In March 2014, the RBI simplified foreign All investments made by that FIIs/QFIs
+portfolio investment norms by putting in place in accordance with the regulations prior to
+an easier registration process and operating
+registrationasRFPIshallcontinueto bevalidand
+framework with an aim to attract inflows. Frow taken into account for computation of aggregate
+limit.
+now onwards, the portfolio investor registered in
+accordancewiththeSEBIguidelinesshallbecalled
+|
+— PARTICIPATORYNOTES (PNs)
+Registered Foreign Portfolio Investor (RFPI)
+the existing portfolio investor class, namely, AParticipatoryNote(PNorP-Note)intheIndian
+Foreign Institutional Investor (FII) and Qualified
+context, in essence, is a derivative instrument
+Foreign Investor (QFI) registered withSEBIshall
+issuedinforeign jurisdictions,byaSEBIregistered
+
+--- PAGE 421 ---
+SecurityMarketinIndia t 14.19
+foreign institutionalinvestor (FII),against Indian shares without incurring the time and
+securities — the Indian security instrument may costs involved in investing directly. In
+be equity, debt, derivatives or may even be an return, the foreign investor pays the PN
+index. PNs are also known as Overseas Derivative issueracertainbasispoint(s)ofthevalueof
+Instruments, Equity Linked Notes, Capped Return PNs traded byhim as costs . For instance,
+Notes,and ParticipatingReturnNotes, etc . directlyinvestingin the Indian securities
+The investor in PN does not own the marketsasan FII,hassignificantcostand
+underlying Indian security, which is held by the
+timeimplicationsfortheforeigninvestor.
+FIIwhoissuesthePN.Thus, theinvestorsin PNs Apart from seeking FII registration,
+derive the economic benefits of investing in the he is required to establish a domestic
+securitywithout actually holding it.They benefit broker relationship, a custodian bank
+from fluctuations in the price of the underlying relationship, deal in foreign exchange
+securitysince the value of the PN is linked with and bear exchange rate fluctuation risk,
+the value of the underlying Indian security. The pay domestic taxes and/or filing tax
+PNholderalsodoesnotenjoyanyvotingrightsin return,obtain or maintainaninvestment
+relation tosecurity/sharesreferenced bythePN. identity,etc .Theseinvestorswouldrather
+look for derivatives alternatives to gain a
+REASONSFORTHEPOPULARITYOFPNS cost -effective exposure to the relevant
+market.
+The reasons why PNs became such a popular
+ruotefor foreign investors to invest in the Indian (iii) Besides reducing transactions costs, PNs
+security market may be understood through the also provide customised tools to manage
+followingpoints: risk, lower financing costs and enhance
+portfolio yields. For instance, PNs can
+(i) One of the primary reasons for the
+also be designed for longer maturities
+emergence of the PN (an ‘off-shore
+derivative instrument’, i.e., an ODI) is
+than aregenerallyavailablefor exchange-
+traded derivative.
+the restrictions on foreign investments.
+Forexample,aforeigninvestorintending (iv) PNs also offer an important hedgingtool
+to make portfolio investments in India to a foreign investor already registered
+was required to seek FII registration for as an FII. For example, an FII maywish
+which he is required to meet certain to obtain ‘long’ exposure to a particular
+eligibility criteria. Lack of full Capital Indian security. The FII can hedge the
+Account Convertibility further enhances downside exposure to the listed security,
+the entry barriers from the perspective already purchased by purchasing a ‘cash
+of a foreign investor. However, Since settled put option’. Although the Indian
+January 2012 , The Indian government exchanges offer options contract, these
+has taken a decision to give direct access contracts have a maximum life period
+to such prospective ‘foreign individual of three months, beyond which the
+investors’ who were hitherto banned to FII shall have to rollover its positions,
+investinequityof Indian companies. i.e., purchase a fresh option contract .
+(ii) The off-shore derivative market allows Alternatively, it can avail of a PN which
+can becustomised to cater to its hedging
+investors to gain exposure to the local
+requirements.
+
+--- PAGE 422 ---
+14.20 4 IndianEconomy
+(v) Potential investors who would like to be the authority to regulate that trade. PNs have
+take direct Indian exposure in future, been used by Fils, since Fils were permitted to
+—
+maymakeinitialinvestmentsthroughthe invest in thesecurities market (1994) theywere
+PN routeso as to get a flavour of future not specifically dealt with under the regulations
+anticipatedreturns . until 2003. According to the SEBI Regulation,
+(vi) Further, trading in ODI/PNs gives an 2004 (and further amended in 2008) with the
+—
+opportunity to offshore entities to have objectiveoftighteningregulationsinthisregard
+acommission based businessmodel.This (i) PNs can be issued only to those entities
+route provides ease to subscribers as it which are regulated by the relevant
+bypasses the direct route which may be regulatory authority in countries of
+resourceheavyfor them. their incorporation and are subject to
+(vii) And lastly, it was a highly ‘safe and compliance of ‘know your client’ (KYC)
+lucrative route’ to invest the
+norms.
+‘unaccounted’, ‘even illegal’ money into (ii) Down- stream issuance or transfer of the
+theIndiansecuritymarketforhugeprofits instruments can also be made only to a
+(during the booming period). Experts regulatedentity.
+even imagined that it may be allowing (iii) Further, the Fils who issue PNs against
+the‘black money’of India (stashed away underlying Indian securities are required
+from India through ‘hawala’ kind of to reporttheissuedand outstanding PNs
+illegal channels and deposited in the tax toSEBI in a prescribedformat.
+havensof theworld in ‘Swiss Bank’kind
+(iv) In addition, SEBI can call for any
+of financial institutions) to get invested information from Fils concerning off
+back in the market. Again, ‘terrorist ¬
+shore derivative instruments (ODIs)
+organisations’might havebeen usingthis issued byit.
+route, too .
+(v) In order to monitor the investment
+PNsarethusissued,to provideaccess toaset through these instruments, SEBI on
+of foreign investors who intend to reduce their October 31, 2001 , advised Fils to
+overall costs and the time involved in making submit information regarding issuance
+investmentsinIndia.Inotherwords,theattraction
+of derivative instruments by them, on a
+of investing in PNs is primarilyone of efficiency monthly basis. These reports require the
+(from an infrastructure and time perspective) for
+communication of details such as name
+whichtheyarewillingtoforegocertainbenefitsof
+and constitution of the subscribers to
+directly holding the local securities (for example,
+PNs, their location, nature of Indian
+titleandvotingrights),whilstalsoassumingother underlyingsecurities,etc .
+risks.
+(vi) Fils cannot issue PNs to non-resident
+REGULATIONOFPNS Indians (NRIs) and those issuing PNs
+arerequired togivean undertakingtothe
+PNs are market instruments that are created and effect.
+traded overseas. Hence, Indian regulators cannot
+(vii) SEBI has also mandated that QFIs
+bantheissueofPNs.However,theycanregulated,
+— (qualified foreign investors), the recently
+asSEBIdoes whenaPNistradedonanoverseas
+allowed foreign investor class, shall not
+exchange, theregulatorin that jurisdictionwould
+issuePNs.
+
+--- PAGE 423 ---
+SecurityMarketinIndia t 14.21
+SEBI in consultation with the government in taking action against the Fils who were non-
+had decided in October 2007, to place certain compliantandthosewhohadmisreportedoffshore
+restrictions on theissue of PNs by Fils and their derivatives [as happened when SEBI took actions
+sub- accounts .Thisdecisionwastakenwithaview againsttwoFils — BarclaysinDecember2009and
+tomoderatethesurgeinforeigncapitalinflowsinto SocieteGenerateinJanuary2010]
+thecountryand toaddressthe‘know-your-client’ At present, PNs are issued by large financial
+concerns for PN holders. However, it was found sector conglomerates which not onlyhavestrong
+that such restrictions were ineffective.Therefore, presence in the global investment banking arena
+SEBIinOctober2008revieweditsearlierdecision but also have asset management arms which
+and decided to remove these restrictions in the invest across a number of securities markets
+light of theabovefactors. Rather, moreattention globally.Theseentitiesareoriginallyincorporated
+is given to effective disclosures. As per a SEBI in well-regulated and developed jurisdictions
+decision of October 2013, the Category III Fils like the US, UK, etc . Further, these entities also
+arenot allowed to issue PNs. - possess the financial wherewithal to issue PNs,
+complementedbyskilled personnelwhoareadept
+THECONCERNSRELATEDTOPNS
+at risk management and financial engineering
+Being derivative instruments and freely tradable, activities.
+PNs can be easily transferred, creating multiple
+INTERNATIONALSITUATION
+layers, thereby obfuscating the real beneficial
+owner. It is in this respect that concerns about PN like products are not necessarily used to
+theidentityofultimatebeneficialownerand the invest in restricted markets, but also reported
+sourceoffundsarises.
+to be available in the open developed/advanced
+For the reason that such instruments are economies like Japan, Hong Kong, Singapore,
+issued outside of India, these transactions are Australia,theUSAandUK.Inresponsetomarket
+outsidethepurviewofSEBI’ssurveillanceanditis manipulation concerns, in December 1999,
+theFII whichactsasmini-exchangeoverseas.The Taiwan Securities and Futures Commission had
+actual transactions in the underlying securities amended its FII regulations to require periodic
+are executed by the Fils only at its discretion, disclosurebyFilsofalloffshorederivativeactivities
+as and when necessary and there is no one- to - linked to local shares, but this requirement was
+one correspondence between transactions in the subsequently removed in June 2000 (as the
+underlyinginstrumentsand issuanceof PNs. Ashok Lahiri Committee Report says). China’s
+The ex-post reporting requirement enjoined Securities Regulatory Commission requires entities
+upontheFIIin respectofPNsona monthlybasis to file reports related to these products with
+effectively keeps the transactions in PNs out of minimal ‘reporting requirements that emphasize
+the real time marketsurveillance mechanism and onlyon the quota utilised by them’. Other Asian
+beyond theenforceability jurisdiction ofSEBI. countries like Hong Kong, Singapore and Japan
+have reportedly ‘no restrictions’ or requirements
+There are also concerns that some of the
+on PNs. Malaysia, Indonesia and Philippines
+moneycominginto the market via PNs could be
+the ‘unaccountedwealth’camouflaged underthe which are restricted markets though, are having
+guise of FII investment. However, this has not no reportingrequirementsin thisregard.
+beenprovedsofar.SEBIhasindeedbeensuccessful
+
+--- PAGE 424 ---
+14.22 4 IndianEconomy
+HEDGEFUND Opposite to bear, bull is a person who
+This term has come up from another term speculatesshare pricestogo upinfuturesoeither
+hedging, a process by which businesses insulate
+stopssellingtheselectgroupofsharesforthattime
+themselvesfromtheriskofpricechanges.14Hedge to be reached (heis basicallytakinglong position
+fundsarethelotofinvestible(freefloatingcapital) on those shares) or starts purchasing that select
+capitalwhich moveveryswiftlytowardsthemore
+groupofshares.
+profitablesectorsofaneconomy. Thus, a bear increases the number of shares
+At present, such funds easily move from the in a stock market activating a general fall in the
+stockmarketofoneeconomyto theother — away index — a bearish market. Opposite to it, a bull
+fromthelowprofitfetchingtohighprofitfetching creates a scarcity of shares in the stock market
+ones. As stock markets fall and rise such funds activatingageneralrisein thesharepricesand the
+change markets accordingly. By nature they are index — a bullish market.
+temporary . The period for which they continue Brokersplayasabearforsomestocksandasa
+flowingintoaneconomythereisnaturallyaboom bullforsomeotherstocks , whilea bearbrokerisa
+time. But when they quit for a more attractive non-entity, a bullis rememberedfor long timeto
+—
+economy,thesameeconomymightnot beableto come Harshad Mehta was known as the Great
+manage the accelerated foreign currency outflow
+Bull.
+and there are chances of imminent foreign
+currencycrisis.This has been in news for thelast BOOK BUILDING
+twoyearsin Indiawherestockmarket hasbeenin A provision allowed bySEBI to all Initial Public
+boom, ridingon the Fils inflowvia Participatory offers (IPOs) in which individual investors are
+Notes (PNs). reserved and allottedshares bythecompany. But
+theissuerhastodisclosetheprice(atwhichshares
+|
+SHORTSELLING have been allotted the size of the issue and the
+numberofsharesoffered to thepublic).
+Saleofasharewhichisnotowned.Thisisdoneby
+,
+someoneafterborrowingsharesfromstockbrokers D^
+promising to replace them at a future date on
+the hope (speculation) that the price will fall by Initial Public Offer (IPO) is an event of share
+then. Hefetches profit if priceof theshare really issuingwhen acompanycomes upwithitsshare/
+securitiesissuedfor thefirst time.
+fell down by the future date of replacement and
+sustains a loss if the price increased. Recently,
+PRICEBAND
+shortsellinghas been allowed in India bySEBI.
+Aprocessofpublicissuewherethecompanygives
+BEARANDBULL a price range (known as price band) and it is left
+A person who speculates share prices to fall in i u t p — on th t e he hi s g h h a e r s e t a b p i p d l d i e c r a s nt g s e t t o tin q g uo th te e t s h h e a i r r e p s. ri T ce h s is o i n s
+future and so sells his shares and earns profit is
+a bear. He earns profit out of a falling market. avariantofshareissueatpremium butconsidered
+Basically, hereheisshortsellingtheshares.
+asaferchoice.
+14. Samuelsonand Nordhaus,Economics,op.cit.,p.207.
+
+--- PAGE 425 ---
+SecurityMarketinIndia I 14.23
+ECBPOLICY approval route).
+A prospective borrower can access external (vii) The existing ECB limits under the
+commercialborrowings(ECBs) undertworoutes, automatic route were enhanced from
+namely the ‘automatic route’ and the ‘approval US $ 500 million to US$ 750 million
+route’. ECBs not covered under the automatic for eligible corporates . For borrowers
+route are considered on case-by-case basis by the in the services sector, the limit has been
+RBI under the approval route . The High Level enhanced from US$ 100 million to US$
+Committee on ECB took a number of decisions 200 million and for NGOs engaged in
+in September 2011 to expand the scope of ECBs micro-finance activities from the existing
+whichinclude: US$ 5 million to US$10million.
+(i) High networth individuals (HNIs) who
+(viii) INR (rupee) denominated ECBs would
+fulfil the criteria prescribed bySEBI can
+be permittedfrom foreign equityholders
+investin IDFs. to ‘all eligible borrowers’ except in the
+caseof ECBs availed of by NGOs under
+(ii) IFCshavebeenincludedaseligibleissuers
+theautomaticroute .
+forFIIinvestmentinthecorporatebonds
+long- term infracategory .
+Duringthefinancialyear2014—15andearly
+2015—16 the external commercial borrowings
+(iii) ECBwould be permitted for refinancing
+(ECB) policy was further liberalised via the
+of rupee loans of infrastructure projects
+followingsteps:
+on the condition that at least 25 per
+(i) Enhancingthelimitforrefinancingrupee
+cent of such ECBs shall be used for
+loans through ECB from 25 per cent to
+repayment of thesaid rupeeloan and75
+40 per cent for Indian companies in the
+per cent invested in new projects in the
+powersector;
+infrastructuresector (but only under the
+approval route).
+(ii) AllowingECBfor capitalexpenditureon
+the maintenance and operation of toll
+(iv) Refinancing of buyer’s/supplier’s credit
+systems for roads and highways so long
+through ECBsfor the purchaseofcapital
+as they are a part of the original project
+goods bycompaniesin theinfrastructure
+subjecttocertainconditions,andalsofor
+sector was approved.This would also be lowcost housingprojects;
+permittedonlyunder theapprovalroute .
+(iii) Reducing the withholding tax from 20
+(v) ECBs for interest during construction percentto5percentforaperiodofthree
+(IDC) thataccumulatesona loan during
+years(July2012
+—
+June2015)on interest
+theprojectexecutionphaseforcompanies
+paymentson ECBs;
+in the infrastructure sector would be (iv) Introducing a new ECB scheme of
+permitted. This would be subject to the US $10 billion for companies in the
+condition that theIDCiscapitalisedand
+manufacturingandinfrastructuresectors;
+is part of the projectcost .
+(v) Permitting the Small Industries
+—
+(vi) Renminbi(RMB) theChinesecurrency
+DevelopmentBank(SIDBI)asaneligible
+—
+was approved as an acceptable borrower for accessing ECB for on-
+currency for raising ECBs subject to/ lending to the micro,smalland medium
+limitofUS$1billionwithintheexisting
+enterprises (MSMEs);and
+ECB ceiling (allowed only through the
+
+--- PAGE 426 ---
+14.24 4 IndianEconomy
+(vi) Permitting the National Housing Bank Rs.4,000croreforeachoftheimmediate
+(NHB)/Housing Finance Companies to past threeyears,willalso beeligible.
+avail themselves of ECBs for financing (vi) Exchange-traded funds (ETFs) and MFs
+prospectiveownersoflowcost/affordable that have RGESS-eligiblesecurities have
+housing units. also been brought under the RGESS.
+| (vii) To benefit small investors, investments
+RGESS
+are allowed in instalments in the year in
+On November23,2012 ,thegovernment notified which taxclaimsaremade.
+a new taxsavingschemecalled the Rajiv Gandhi (viii) The total lock-in period for investments
+EquitySavingsScheme (RGESS), exclusivelyfor will be three years including an initial
+first-timeretailinvestorsinthesecuritiesmarket. blanketlock-inofoneyear.After thefirst
+Thisschemeprovides50percentdeductionofthe year, investorswill beallowed to tradein
+amountinvestedfromtaxableincomeforthatyear
+thesecurities.
+to newinvestorswho invest up to Rs.50,000and The broad provisions of the scheme and the
+whose annual income is below Rs. 10 lakh.The income tax benefits under it have already been
+RajivGandhiEquitySavingScheme(RGESS)will incorporated as a new Section-80CCG of the
+give tax benefits to new investors whose annual IncomeTaxAct1961,asamendedbytheFinance
+incomeisuptoRs.10lakhforinvestmentsuptoa Act 2012.The operationalguidelines were issued
+maximum of Rs.50,000.Theinvestor willget 50 bySEBIon December6,2012 .
+per cent deduction of the amount invested from
+taxableincomeforthatyear.Salientfeaturesofthe | CREDIT DEFAULTSWAP (CDS)
+schemeareasfollows:
+CDSisin operation in IndiasinceOctober 2011
+(i) Theschemeisopentonewretailinvestors — launched in onlycorporate bonds.The eligible
+identifiedonthebasisoftheir permanent
+participants are commercial banks, primary
+account numbers (PAN).
+dealers, NBFCs,insurancecompaniesandmutual
+(ii) The tax deduction allowed will be over funds.
+and above the Rs.1lakh limit permitted
+CDSisacreditderivativetransactioninwhich
+allowed under Section 80 C of the
+IncomeTaxAct. two parties enter into an agreement, whereby
+one party (called as the ‘protection buyer’) pays
+(iii) In addition to the 50 per cent tax the other party (called as the ‘protection seller’)
+deduction for investments, dividend
+periodic payments for the specified life of the
+incomeisalso taxfree. agreement . The protection seller makes no
+(iv) StockslistedunderBSE100orCNX100, payment unless a credit event relating to a pre ¬
+or stocks of public- sector undertakings determinedreferenceassetoccurs.Ifsuchanevent
+(PSUs) that are Navratnas, Maharatnas, occurs,ittriggerstheProtectionSeller’ssettlement
+and Miniratnaswill beeligible under the obligation, which can be either cash or physical
+scheme. Follow-on public offers (FPOs) (India follows physical settlement). It means,
+of thesecompanieswillalso beeligible. CDS is a credit derivative that can he used to
+(v) IPOsofPSUs,whicharescheduledtoget transfercreditriskfromtheinvestorexposedto
+listed in the relevant financial year and the risk (called protection buyer, ) to an investor
+whose annual turnover is not less than willingtotakerisk(called protectionseller).
+
+--- PAGE 427 ---
+SecurityMarketinIndia t 14.25
+It operates like an insurance policy. In an (iii) The protection seller will be able to
+insurance policy, the insurance firm pays the diversifyhis portfolio, createexposure to
+loss amount to the insured party . Similarly, the a particular credit, haveaccessto an asset
+—
+buyer of the CDS the bank or institution that which may not otherwise be available,
+has invested in a corporate bond issue — seeks to andincreasetheyieldon his portfolio.
+mitigate the losses it may suffer on account of a (iv) Banks can use it to transfer risk to other
+default by the bond issuer. Credit default swaps risktakers,createcapitalformorelending.
+allow one party to ‘buy’ protection from another (v) Distribute risk widely throughout the
+partyfor losses that might be incurred as a result
+system and prevent concentrations of
+of default by a specified reference instrument (a risk.
+bond issue in India). The ‘buyer’ of protection
+Some analysts have serious apprehensions
+pays a premium to the seller, and the ‘seller’ of about CDS. GeorgeAkerlof Nobel prize-winning
+protection agrees to compensate the buyer for
+economist, in 1993, predicted that the next
+losses incurred upon the occurrence of any one
+meltdown will be caused by CDS. In 2003
+of the several specified ‘credit events’. Thus CDS
+investment legend Warren Buffet called them as
+offers the buyer a chance to transfer the credit risk
+‘weapons of mass destruction’. The former US
+of financial assets to the seller without actually Federal Reserve Chairman Alan Greenspan, who
+transferringownershipoftheassetsthemselves.
+betted bigonCDSsaidafterthe‘sub prime’crisis
+Let us try to understand it by an example. that ‘CDS are dangerous’. A leading US weekly
+Suppose Punjab National Bank (PNB) invests
+the Newsweek described CDS, ‘the monster that
+in Rs. 150 crore bond issued by TISCO. If ate Wall Street’. Many Indian experts had the
+PNB wishes to hedge losses that may arise from opinion that‘CDS will notstabilisetheeconomy
+a default of TISCO, then PNB may buya credit rathercouldlead to destabilisation’.
+default swap from a financial institute, suppose,
+Templeton.PNBwillpayfixedperiodicpayments
+can b
+C
+e
+D
+m
+S
+an
+c
+i
+o
+p
+n
+u
+t
+l
+r
+a
+a
+t
+c
+e
+t
+df
+a
+o
+re
+r m
+d
+i
+a
+s
+n
+c
+g
+h
+e
+ie
+r
+f
+o
+.
+u
+I
+s
+t’s
+b
+a
+e
+l
+c
+l
+a
+a
+u
+b
+s
+o
+e
+ut
+th
+th
+ey
+e
+to Templeton, in exchangefor default protection
+insurableinterestwhich isnever thereasit is used
+(justlike premiumofaninsurancepolicy).
+for speculation. A derivative that amounts to an
+CDS can be used for different purposes in a
+insurance contract with no insurable interest is
+financialsystem, viz., bad.Butdothespeculatorshaveinsurableinterest?
+(i) Protection buyers can use it to hedge No they don’t have any. The US ‘sub prime’
+their credit exposure while protection crisis was a fallout of such CDS contracts — one
+sellers can use it to participate in credit defaulting and another claiming the ‘protection’
+markets, withoutactuallyowningassets . finallyresulting into thedefaulter of the insuring
+—
+(ii) The protection buyer can transfer credit company overnight the biggest US insurance
+risk on an entity without transferring giant, AIG went bankrupt. So happened with
+the under lying instrument, reap regular manyUS banksalso.
+benefit in terms of lower capital charge, ThemostdamagingaspectofCDSisthatthe
+seek reduction ofspecific concentrations credit risk of onecountry/region gets exported to
+in credit portfolio and goshorton credit anothercountry/regionverysmoothlyandsilently
+risk. —
+thusthereisaseriouschanceof‘contagioneffect’
+
+--- PAGE 428 ---
+14.26 4 IndianEconomy
+suppose there are defaulters there — the thing will need to paytaxon it.Meanwhile, the Union
+which happenedduringtheUS‘sub prime’crisis. Budget2013 — 14has cleared the air on the issue.
+Thereshould not beanyadditional income- taxif
+|
+SECURITISATION theincomedistributedbythetrustisreceivedbya
+personwhoisexemptedfromtax .Thisisexpected
+Thisistheprocessofissuing‘marketablesecurities’
+to bringbackmutualfundsinto thesecuritisation
+backed by a pool of existing assets such as auto market.
+or home loans. After an asset is converted into
+a marketable security, it is sold to an investor | CORPORATE BOND IN INDIA
+who then receives interest and principal out of
+the cash flow generated from servicing of the Economic vibrancy coupled with sophisticated
+loan. Financial institutions such as NBFCs and state — of — the — art financial infrastructure has
+microfinance companies convert their loans into contributed to rapidgrowth in theequitymarket
+marketable securities and sell them to investors. in India. In terms of market features and depth,
+This helps them get liquid cash out of assets the Indian equity market ranks among the
+that otherwise would be stuck on their balance best in the world. In parallel, the government
+sheets. securities market has also evolved over the years
+Global experience shows that if the value of and expanded, given the increasing borrowing
+the underlying asset falls then securitised assets requirements of the government . In contrast,
+lose value as it had happened during the US the corporate bond market has languished both
+‘sub-prime crisis’ — home loans against which in terms of market participation and structure .
+securitisedassetsweresoldtoinsurancecompanies NBCsarethemainissuersandverysmallamounts
+and banks lost value, which in turn resulted in a of finance are raised by companies directly. The
+crisis. To prevent such crises, the RBI has taken EconomicSurvey2010—11 (p.116), cites many
+some precautionary steps in this regard. It has reasons for the less-developed bond market in
+—
+asked companies to hold securities for a certain India
+minimum period: (i) Predominanceof banksloans;
+(i) While NBFCs need to keep assets for (ii) FII’s participation islimited;
+six months, a minimum retention (iii) Pensions and insurance companies
+—
+requirement of 5 10 per cent to ensure and household are limited participants
+that they have a continuingstake in the because of lack of investor confidence;
+performanceofsecuritisedassets . and
+(ii) Micro Finance Institutions (MFIs) need (iv) Crowdingout bygovernment bonds.
+to hold themfor threemonths. The EconomicSurvey2011—12concluded15
+SinceitwasallowedinIndiabytheRBI,ithas that there is now ample empirical research to
+—
+been in news whether the‘securitisations trusts’ corroborateSchumpeter’sconjecturethatfinancial
+15. EconomicSurvey2011-12(p.34)quotesmanycontemporaryreferencestobringthepointhome-
+a).R.Rajan,and L.Zingales(1998),'FinancialDependenceandGrowth,'AmericanEconomicReview,vol.88;b).S.Banerji,
+K.Gangopadhyay,I.Patnaik,andA,Shah(2012),'NewThinkingonCorporateDebtinIndia',mimeo.;c).C.K.G.Nair,(2012)
+'FinancialSectorReforms:RefiningtheArchitecture,'inR.Malhotra(ed.),ACriticalDecade:PoliciesforIndia'sDevelopment,
+OxfordUniversityPress,NewDelhi;d).T.A.Bhavani,andN.R.Bhanumurthy(2012),FinancialAccessinPost - ReformIndia,
+OxfordUniversityPress,NewDelhi,Chapter12;e).P.Bolton,andX.Freixas,'HowcanEmergingMarketEconomiesBenefit
+fromaCorporateBondMarket?',inE.Borzenstein,K.Cowan,B.Eichengreen,andU.Panizza,(eds)(2008),BondMarketsin
+LatinAmerica,MITPress.
+
+--- PAGE 429 ---
+SecurityMarketinIndia I 14.27
+developmentfacilitatesrealeconomicgrowth.The from the private sector in the Twelfth Plan for
+depth of the financial markets and availabilityof investment in theinfrastructuresector, havingan
+diverse productsshould, therefore, not betreated activebondmarketwouldbeavaluableavenuefor
+as mere adornment, but as critical ingredients of raisingmoney.
+inclusivegrowth.
+Therecan bemanyreasonswhy,despitethese
+Banks in India accounted for 14.4 per cent advantages, the bond market has not developed
+of thefinancingoflargefirmsin 2000 — 01, which adequately. One reason has to do with what
+rosefurtherto17.8percentin2010 — 11.Thebond economists call ‘multiple equilibria’. Consider
+market, on theother hand, has been minisculein a situation where the bond market is small. If
+comparison.Thethinnessofthe bond market has someone buys bonds and later wish to sell these
+beensomewhatcompensatedbyforeignborrowing off, he anticipates difficulty. Since the bond
+done by Indians, which rose sharply over the market is not active, he maynot easily be able to
+last decade. Further, India is characterised by a sellthebondsandthushewillholdsimplybecause
+disproportionate amount of secured borrowing. he cannot find a buyer. Hence, this may lead to
+The small size of unsecured borrowing may, at discouragesomeonefrom buyingthebondsinthe
+firstsight, notseemto bea matterofconcern,but firstplace.Ifeverybodyreasonslikethis,thebond
+itcouldbea reflectionoftheweaknessofcontract marketremainsthin.Hence,theneedisforapush
+enforcementand lackofadequateinformation.If that nudges the market to another equilibrium,
+contracts were quickly enforced and lenders had where people readily buy bonds because they
+information on borrowers, they would be more know that they can easily sell these off and this
+willing to give unsecured loans. This would give becomesaself-fulfillingprophesyandsustainsthe
+a nimbleness to the financial markets which they largebond market.
+presentlylack.
+There is effort currently on to try to boost
+Therearemanyreasonswhybondmarketsare India’s debt and bond markets, and success
+important for an emerging economy. Prominent in this can give another fillip to growth. With
+among these is the fact that they lead to more the intervention of the Patil Committee
+efficient entrepreneurship and greater value recommendations, the corporate bond market is
+creation. When an entrepreneur takes a loan or slowlyevolving.With bankfinancedrying upfor
+issues bonds, all additional profit over and above long term infrastructure projects, in view of asset
+the pre-fixed repayment amount accrues to the liability problems faced by the banking system,
+entrepreneur . So he or she is better incentivised the need for further development of a deep and
+to takesharper decisions. Byhavinga weak bond vibrant corporate bond market can hardly be
+market, we may beforegoing thisefficiency.And overemphasised. Recent initiatives for further
+further, this efficiency gap may well mean that developmentofcorporatebond markets, takenin
+thereislesslendingandhencelessinvestmentand theyear2012—13areasgiven below:
+entrepreneurship in theeconomythan is feasible. (i) Banksallowedtotakelimitedmembership
+Further,asIndiatriestogarner500billiondollars in SEBI-approved stock exchanges for
+
+--- PAGE 430 ---
+14.28 4 IndianEconomy
+the purpose of undertaking proprietary India) price. If no agreement is reached,
+transactions in the corporate bond then unwinding has to be donewith the
+markets. original protection seller at FIMMDA
+(ii) To enhance liquidity in the corporate
+price.
+bond markets, the IRDA has permitted (vii) CDS shall be permitted on securities
+insurancecompaniesto participatein the with original maturityup to oneyearlike
+repomarket.TheIRDAhasalsopermitted CPs, certificates of deposit, and non-
+insurance companies to become users of convertible debentures with original
+‘creditdefaultswap' (CDS). maturitylessthan oneyear.
+(iii) The minimum haircut16 (i.e., the Economic Survey 2012—13 comments:
+difference between prices at which a A reasonably well-developed corporate bond
+market makercan buyandsellasecurity) market is verymuch required in anyeconomy to
+requirement in corporate debt repo have supplement bankingcreditand theequitymarket
+been reduced from the existing 10 per andtofacilitatethelong- termfundingrequirement
+cent; 12 per cent; 15 per cent to 7.5 per of corporate sector as well as infrastructure
+cent; 8.5 per cent; 10 per cent for AAA/ development in the country . Though, the
+AA+/AA-ratedcorporatebonds. development of the corporate bond market has
+(iv) MFs have been permitted to participate been an important area and has received greater
+in CDS in corporate debt securities, as policy attention in recent times, it is yet to take
+users. offinasignificantmanner.Someoftheissuesthat
+needtobeaddressedin thisregard include:
+(v) Revisedguidelineson CDSfor corporate
+bondsbytheRBIprovidethatinaddition (i) Drawing up a roadmap for a structural
+to listed corporate bonds, CDS shall shift from a bank-dominated financial
+also be permitted on unlisted but rated system to a morediversefinancialsystem
+corporate bonds even for issues other wheretop-ratedcorporatesaccessfinance
+than infrastructurecompanies. fromcapital markets;
+(vi) Users shall be allowed to unwind17their (ii) Strengthening of the legalframework for
+CDS-bought position with the original regulation of corporatedebt bynecessary
+protection seller at a mutually agreeable amendmentsin rules/regulations,and
+or FIMMDA (Fixed Income Money (iii) Relaxation of investment guidelines for
+Market and Derivatives Association of pension, provident, and insurance funds
+16. Haircutisthedifferencebetween pricesatwhichamarketmakercan buyandsellasecurity.Thetermcomesfrom
+thefactthat marketmakerscantradeatsuch a thinspread.Italsomeansthatthe percentagebywhichanasset's
+marketvalueisreducedforthepurposeofcalculatingcapitalrequirement,marginandcollateral.Whentheyareused
+ascollateral,securitieswillgenerallybedevaluedsinceacushionisrequiredbythelendingpartiesincasethemarket
+valuefalls.
+17. Unwindisused tocloseouta positionthathasoffsettinginvestmentsorthecorrectionof anerror.Unwindsoccur
+when,forexample,abrokermistakenlysellspartofapositionwhenaninvestorwantedtoaddtoit.Thebrokerwould
+havetounwindthetransaction bysellingtheerroneouslypurchasedstockand buyingtheproperstock.Onetypeof
+investingthatfeaturesunwindtradingisarbitrageinvesting(ashappensintheCDS).If,forthesakeofillustration,an
+investortakesalongpositioninstocks,whileatthesametimesellingputsonthesameissue,hewillneedtounwind
+thosetradesatsome point.Of course,thisentailscoveringtheoptionsand sellingthe underlyingstock.Asimilar
+processwouldbefollowedbya brokerattemptingtocorrecta buyingorsellingerror.
+
+--- PAGE 431 ---
+SecurityMarketinIndia I 14.29
+to enable the participation of longterm (WPI), which isa lessaccurategaugeofinflation.
+investorsin thecorporate bond market. CPI is considered a more accurate gauge of the
+Introduction of new products and making impactofinflation on consumers becauseit takes
+nascentproductssuchascoveredbonds,municipal into account increases in the cost of education,
+bonds,creditdefaultswaps,creditenhancements, food,transportation,housingandmedicalcare;in
+andsecuritisation receipts moreattractivemaybe WPI, the emphasis is on measuring the prices of
+consideredforpublicissuanceofbondsatreduced
+tradedgoodsandservices.
+cost . Improving the market infrastructure for Itwasin1997thattheIIBswereissuedforthe
+—
+enablingliquidity,transparencyinpricediscovery, first timein India named as theCapitalIndexed
+and stimulating growth in trading volumes also Bonds (CIBs) . But there remains a difference
+need to besuitablyaddressed. between these two bonds. While the CIBs
+providedinflationprotectiononlytoprincipalthe
+| -
+INFLATIONINDEXED BONDS new product IIBs provides inflation protection
+—
+to both the components principal and interest
+Toprotectthereturnsofinvestorsfromthevagaries
+.
+payments
+of inflation, the Reserve Bank of India plans to
+—
+introduceinflation-indexed bonds (IIBs) it was |
+GOLDEXCHNAGETRADED FUNDS
+proposed by the Union Budget 2013—14. The
+government hopesthiswillhelpincrease financial Gold Exchange Traded Funds (ETFs) are open-
+savingsinsteadofbuyinggold.In the recent years, ended mutual fund schemes that closely track the
+the rate of return on debt investments has often price of physical gold. Each unit represents one
+been belowinflation,whicheffectivelymeansthat gram of gold having 0.995 purity, and the ETF
+inflation was eroding savings. Inflation indexed is listed on stock exchanges. The net asset value
+bonds provide returns thatarealwaysin excessof of each unit is calculated based on the prices
+inflation, ensuring that price rise does not erode of physical gold prevailing on that day and is
+thevalueofsavings. designed to provide returns that would closely
+In 2013-14, RBI launched two such bonds track thereturnsfrom physicalgold.
+—
+thefirstoneinJune2013linkedwiththeWPI -
+EGOLD
+which had a veryweak retail responseandsecond
+one in December 2013 linked with CPI. The e-Gold is another purchase option, involving
+latter oneiscalledasInflationIndexedNational investments in units traded on the National
+SavingsSecurities-Cumulative (IINSS-C) with Stock Exchange (NSEL). Here, the investor is
+a10yearstenure .Theseareinternationallyknown required to haveademataccountwithan affiliate
+as inflation-linked securities or simply linkers. of NSEL. e-Gold’s brokerage and transaction
+Interestrateon thesesecuritieswould belinked to charges are lower than gold ETFs as there are no
+finalcombined consumer priceindex[CPI (Base: fund managementcharges.Onecan takedelivery
+2010=100)]. Interest rate would comprise two ofgold orsellitin theexchange.
+parts: fixed rate (1.3 per cent) and inflation rate, But there is also a negative point here from
+basedonthree-monthlagtoCPI — thus,ifabond thetaxangle — under e-Gold,onehas to hold the
+is being valued in December, the reference rate yellow metal for 36 months to enjoy long- term
+willbeCPIofSeptember.Thenewofferingshould
+capital gain benefits, and this is taxed at 20 per
+attracthigherattentionfromsavers,especiallydue cent . For ETFs (Exchange Traded Funds) and
+to itslink to CPI insteadofwholesale priceindex
+
+--- PAGE 432 ---
+14.30 4 IndianEconomy
+gold funds, the holding period to be classified Thetenblue-chipPSUswhichmeettheabove
+as long- term is only one year. After a year, ETF criteria and their weightages are: ONGC (26.72
+andgoldfundswillsuffer 10per cent taxwithout per cent); GAIL (India) (18.48 per cent); Coal
+indexation and 20 per cent after indexation. For India (17.75 per cent); REC (7.16 per cent); Oil
+a small investor, gold ETF would appear to be India (7.04percent);IOC(6.82percent); Power
+the best option, as it meets his needs without Finance Corp. (6.49 per cent); Container Corp.
+difficulties in terms of creating a separate demat (6.40 per cent); Bharat Electronics (2 per cent)
+account, taximplicationsand wealth tax . andEngineersIndia Ltd.(1.13per cent).
+CPSE ETF will invest the corpus in the
+|
+CPSE ETF above-givencompaniesasperthegivenweightage.
+Hence,subjectto thetrackingerrorandexpenses,
+The Central Public Sector Enterprises Exchange
+CPSEETF’sreturnswillcloselycorrespondtothe
+Traded Fund (CPSE ETF) comprising the
+CPSE Indexreturns .
+shares of 10 blue chip PSUs was listed on the
+BSE and NSE platforms on April 4, 2014. The ETFs were introduced in India in 2001. At
+Government of India expected to raise a corpus present (byMay2014), thereareabout 33ETFs
+of Rs. 3,000 crore through the fund while it got with assets under management of close to Rs.
+over-subscribed to thetuneof Rs.4,300crores. 11,500 crore held by 6.20 lakh investors. Gold
+ETFsdominatethemarketin India.
+This scheme is conceived by the Gol as a
+means to disinvesta part of its holding in Public |
+PENSION SECTOR REFORMS
+Sector Units (PSUs) and would be managed by
+GoldmanSachsAssetManagement(India)Pvt. Pension has been theintegral part ofgovernment
+Ltd., a mutual fund company that specialises in jobsin India.Pensionservestwoimportantsocio
+¬
+managingexchangetradedfunds.
+economicobjectives
+—
+ETF is a security that tracks an index, a (i) Itfacilitatestheflowoflong- termsavings
+commodityor a basket of assetssuch as an index for development, i.e., nation-building,
+—
+fund, but tradeslikeastockonan exchange the and
+CPSE ETF tracks the CPSE Index (of 10 PSUs
+(ii) Also helps establish a credible and
+included in the ETF). CPSE Index has been
+sustainable social security system in the
+constructedbyincludingcompaniesthatmeetthe .
+country
+followingcriteria:
+TheNewPensionSystem(NPS)wasintroduced
+(i) Owned 33 per cent or more by the Gol for the new recruits who join governmentservice
+andlistedon theNSE;
+on or afterJanuary 1,2004.Although the NPS
+(ii) Large PSUs (those having more than is perhaps one of the cheapest financial products
+Rs.1,000 crores as average free float available in the country, in order to make it
+market capitalisation for six months affordable for the economically disadvantaged,
+periodendingJune2013);and the government in September 2010 introduced
+(iii) With a consistent dividend payment a lower cost version, known as Swavalamban
+record (at least 4 per cent for 7 years Scheme, which enables groups of people to
+immediatelypriortoor7outof8/9years join the NPS at a substantially reduced cost . As
+immediatelyprior toJune2013). per existing scheme under NPS, Swavalamban
+
+--- PAGE 433 ---
+SecurityMarketinIndia t 14.31
+could be availed either in ‘unorganised sector’ or An apex level Financial Stability and
+in ‘NPS LiteNPS Lite is a model specifically Development Council (FSDC) wasset up bythe
+designed to bring NPS within easy reach of the Gol in December 2010, ‘in line with the G-20
+economicallydisadvantagedsectionsofthesociety initiatives’with thefollowingobjectives:
+—
+it is extremely affordable and viable due to its (i) To strengthen and institutionalise the
+optimised functionalities, available at reduced mechanism for maintaining financial
+charges. Under the Swavalamban scheme, the stability,
+government provides subsidy to each NPS (ii) Toenhanceinter-regulatorycoordination,
+accountholderand theschemehasbeenextended
+and
+until2016 — 17.
+(iii) to promotefinancial- sectordevelopment.
+Acustomised versionofthecoreNPSmodel,
+ThecouncilischairedbytheFinanceMinisterand
+known as the NPS Corporate Sector Model was
+also introduced from December 2011 to enable
+hasheadsoffinancial- sectorregulatoryauthorities,
+‘organised- sector’ entities to move their existing
+the Finance Secretary and/or Secretary of the
+Department of Economic Affairs, Secretary of
+and prospective employees to the NPS under its
+Corporate Model. All pubic sector banks have the Department of Financial Services, and the
+Chief Economic Adviser as members. Without
+been asked to provide a link on their website to
+enableindividualsubscribersto open online NPS prejudice to the
+—
+autonomy of regulators, the
+. Councilmonitors
+accounts
+As per the Economic Survey 2012—13 (i) macro-prudential supervision of the
+>
+economy, including functioning of large
+the pension reforms in India have generated
+_
+financialconglomerates,
+widespread interest internationally but before
+universal inclusion of poorer sections of Indian (ii) inter-regulatory coordination and
+society into the pension network is a reality, financial- sectordevelopment issues,and
+the economy needs to solve the following major (iii) financialliteracyand financialinclusion.
+challenges:
+FINANCIALSECTORASSESSMENT
+(i) Lower levels of financial literacy,
+particularly among workers in the PROGRAMME(FSAP)
+^^^^^
+unorganisedsector;
+The IMF Board decided in September 2010, to
+(ii) Non-availability of even moderate include 25 systemically important economies,
+surplus; including India, under the Financial Stability
+(iii) Lukewarm response so far from most AssessmentProgramme(FSAP)formemberswith
+of the state/UT governments to a co ¬ systemicallyimportantfinancialsectors .The joint
+contributorySwavalambanScheme;and IMF-World Bank Financial Stability Assessment
+(iv) Lack of awareness, on the supply side, Programme (FSAP) was conducted for India in
+about the NPS and of access points for January 2013 which assessed Indian financial
+peopletoopentheiraccountsindividually system in relation to the highest international
+have been majorinhibitingfactors. standards. The assessment recognises that the
+Financial Stability and Development Indian financial system remained largely stable
+Council (FSDC) on accountofasound regulatoryandsupervisory
+
+--- PAGE 434 ---
+14.32 i IndianEconomy _
+regime. However, the assessment identifies some wherever necessary,asitisacountrycharacterised
+—
+gapsin18 by complex and diverse socio-political and
+(i) International and domestic supervisory
+economicconditions.
+informationsharingand co-operation;
+FINANCIALSTABILITYANDDEVELOPMENT
+(ii) Consolidated supervision of financial
+COUNCIL(FSDC)
+conglomerates;and ^^^ ^^
+(iii) Somelimitson thedejureindependence As a follow-up to the announcement made
+of theregulators (RBIand IRDA). in the Budget 2010 — 11, with the objective
+Despite having reservations on few issues, to strengthening and institutionalising the
+overall the Indian authorities expect the FSAP mechanism for maintaining financial stability
+exerciseto playasignificantroleinshapingIndia’s and enhancing inter-regulatory coordination, an
+post-crisis initiatives to strengthen the regulatory apex-level Financial Stability and Development
+and supervisory architecture based on the Council under the Chairmanship of the Finance
+evolvinginternationalconsensusaswellascareful Minister has beenset up.
+examinationoftheirrelevanceintheIndia-specific Asub-committeeof the FSDC has also been
+context . As a member of the FSB19, BCBS20 set up under the chairmanship of the Governor
+and IMF21, India isactivelyparticipatingin post¬ RBI.UndertheaegisoftheFSDC,twoempowered
+crisis reforms of the international regulatory and Technical Groups (i.e., Technical Group on
+supervisory framework under the aegis of the Financial Literacy and Financial Inclusion and
+G20. India remains committed to adoption of Inter-Regulatory Technical Group) have been
+international standards and best practices, in a formed.
+phased mannerandcalibratedtolocalconditions,
+18. RBI,16thJanuary,2013
+19. TheFSBwasestablishedinApril2009asthesuccessortotheFinancialStabilityForum(FSF).TheFSFwasfoundedin1999
+bytheG-7forenhancingcooperationamongthevarious nationaland internationalsupervisory bodiesand international
+financialinstitutionssoastopromotestabilityintheinternationalfinancialsystem.InNovember2008,theleadersoftheG-20
+countriescalledforalargermembershipoftheFSF.AsannouncedintheG-20LeadersSummitofApril2009,theexpanded
+FSFwasre-establishedastheFinancialStabilityBoard(FSB)withabroadenedmandatetopromotefinancialstability.TheFSB
+ischairedbyMarkCarney,GovernoroftheBankofCanada.ItssecretariatislocatedinBasel,Switzerland,andhostedbythe
+BankforInternationalSettlements.
+Itsobjectiveistocoordinateattheinternationalleveltheworkofnationalfinancialauthoritiesandinternationalstandard
+settingbodiesandtodevelopandpromotetheimplementationofeffectiveregulatory,supervisoryandotherfinancialsector
+policies.[Source:FinancialStabilityBoardSecretariat,BankforInternationalSettlements,Basel,Switzerland].
+20. TheBCBS(BaselCommitteeonBankingSupervision)providesaforumforregularcooperationonbankingsupervisorymatters.
+TheCommittee’smembers,today,comefrom27nationsincludingIndia.ThepresentChairmanoftheCommitteeisStefan
+Ingves,GovernorofSverigesRiksbank.ItislocatedattheBankforInternationalSettlements(BIS)inBasel,Switzerland.
+Itsobjective istoenhance understanding of keysupervisory issuesand improvethe quality of bankingsupervision
+worldwide.Itseekstodosobyexchanginginformationon nationalsupervisoryissues,approachesandtechniques,witha
+viewtopromotingcommonunderstanding.Attimes,theCommitteeusesthiscommonunderstandingtodevelopguidelines
+andsupervisorystandardsin areaswheretheyareconsidereddesirable.Inthis regard,theCommitteeisbestknownfor
+itsinternationalstandardsonCapitalAdequacy(i.eBaselI,BaselIIandBaselIII,bynow);theCorePrinciplesforEffective
+BankingSupervision;andtheConcordatoncross-borderbankingsupervision.
+TheCommitteeencouragescontactsandcooperationamongitsmembersand other bankingsupervisoryauthorities.
+Itcirculatestosupervisorsthroughout theworld both published and unpublished papers providingguidanceon banking
+supervisorymatters.Contactshavebeenfurtherstrengthened byanInternationalConferenceofBankingSupervisors(ICBS)
+whichtakesplaceeverytwoyears.[Source:BIS,Basel,Switzerlad).
+21. SeeChapter16fordetaileddiscussionontheIMF(InternationalMonetaryFund).
+
+--- PAGE 435 ---
+—
+SecurityMarketinIndia t 14.33
+FINANCIALSECTOR LEGISLATIVE international standards for combating money
+REFORMSCOMMISSION(FSLRC) launderingznd terroristfinancing.India joinedthe
+FATFasits34thmemberinJune2010 . Atpresent,
+Fulfilling the announcement of the Budget of theFATFhas36memberscomprising34countries
+—
+2010 11, to rewrite and harmonise financial and two organisations (European Union and Gulf
+.
+sector legislations, rules and regulations the Gol CooperationCouncil) .
+constituted the FSLRC under the chairmanship
+ofJustice(Retd.) B.N.Srikrishna in March2011 REAL ESTATESINFRASTRUCTURE
+(tenure is 2 years). This had become necessary
+INVESTEMNTTRUSTS
+as the institutional framework governing India’s
+financialsectorwas builtoveracentury . The SEBI firmed up regulations that will govern
+There are over 60 Acts and multiple Rules/ Real Estate Investment Trusts (REITs), and the
+Regulations in the sector and many of them are Infrastructure Investment Trusts (InvITs).22 The
+decades old, when the financial landscape was long-pendingproposalof2008,thetrustshavethe
+very different from what it is obtaining today. objectiveofenablingthecash-strapped realestate
+Large number of amendments made in in these andinfrastruturedevelopersto haveeasyaccessto
+Acts over time has increased the ambiguity and funds. They create a new investment avenue for
+complexityofthesystem . institutions and high net worth individuals, and
+The commission would simplify and
+eventuallyordinaryinvestors.
+re-write financial sector legislations, including
+REITS
+subordinate legislations, to bring them in line
+with the requirements of the sector to achieve Major provisions announced by the SEBI for the
+harmonyandsynergyamongthem, makingthem REITsareasgiven below:
+morecoherentand dynamicand helpcater to the (i) To be close-ended real estate investment
+requirementsofalargeandfastgrowingeconomy schemes that will invest in propertywith
+in tune with the changing financial landscape in the aim of providing returns to unit
+an inter-connected financial world. In the long
+¬
+holders.
+term, it would help usher in the next generation (ii) The returns will be derived mainly from
+of reforms, contribute to efficient financial rental income or capital gains from real
+intermediation enhancing the growth potential .
+estate
+of the nation. The commission handed over its
+(iii) Allowed to invest in commercial real
+reportend-March2013(seeChapter11sub-topic
+‘Financial Regulators’). estate assets, either directly or through
+special purpose vehicles (SPVs). In
+FINANCIALACTIONTASK FORCE(FATF) SPVs, a REIT must have a controlling
+interest of at least 30 per cent of the
+TheFATFisaninter-governmentalpolicymaking
+sharecapitalandwillhavetoholdatleast
+body that has a ministerial mandate to establish
+22. SEBIPressRelease,September26,2014.
+
+--- PAGE 436 ---
+14.34 4 IndianEconomy
+80percentoftheir assetsdirectlyin in the real estate sector, equity shares of listed
+properties. companies that deriveat least75 per cent of their
+(iv) To raise funds only through an initial incomefrom realestate,governmentsecurities,or
+offering and units of REITs have to be money market instruments. No REIT can invest
+mandatorily listed on a stock exchange, morethan10percentin propertiesthatareunder
+similar to initial public offering (IPO)
+construction.
+andlistingforequityshares.
+JNVITS
+(v) Required to have assets worth at least
+Rs.500croreatthetimeofaninitialoffer The SEBI also announced the launch of InvITs
+and the minimum issue size has to be which are somewhat similar to REITs. However,
+Rs.250crore.Theminimumsubscription an initial offer will not be mandatory for InvITs
+size for units of a REIT on offer will be thoughlistingwillbemandatoryforbothpublicly
+Rs.2 lakh and at least 25 per cent of the and privately placed InvITs. Major provisions are
+units haveto beoffered to the public. asgiven below:
+(vi) Will be able to raise money through (i) It can invest in infrastructure projects,
+follow-onoffers, rightsissuesor qualified eitherdirectlyorthroughanSPV(Specila
+institutional placements and the trading Purpose vehicle). In case of public-
+lotforsuch unitswill beRs. l lakh. private-partnership (PPP) projects, such
+Accordingtothenorms,althoughaREITmay
+investmentswillbeonlythroughanSPV.
+raise funds from any type of investors, resident (ii) While listing, the collective holding of
+or foreign, initially only wealthy individuals and sponsorsofan InvIThasto beatleast25
+institutions will be allowed to subscribe to REIT per centforatleast threeyears.
+unitoffers.ThemarketregulatorsaidaREITmay (iii) Requiredto havea holdingworthatleast
+have up to three sponsors, with each holding at Rs.500croreintheunderlyingassets,and
+least5percentandcollectivelyholdingatleast25 theinitialoffersizeoftheInvIThastobe
+per cent for a period of at least three years from atleast Rs.250crore.
+the date of listing. Subsequently, the sponsors’ (iv) AnyInvIT, which looks to investat least
+combined holding has to be at least 15 per cent 80per cent ofitsassetsincompletedand
+throughout thelifeofthe REIT. revenuegenerating infrastructure assets,
+Similar to the practice in the US, Australia, has to raise funds only through a public
+Singapore and other nations where REITs issue of units, with a minimum 25 per
+are common, Sebi has decided to allow these centpublicfloatandatleast20investors.
+trusts to invest primarily in completed revenue ¬ (v) The minimum subscription size and
+generating properties. To ensure that REITs trading lot of such a listed InvIT has to
+generatecontinuous returns, Sebisaid at least 80 beRs.10lakhand Rs.5lakh,respectively.
+per cent of the REIT’s assets has to be invested A publicly offered InvIT may invest
+in completed and revenue generating properties. the remaining 20 per cent in under ¬
+And only up to 20 per cent of assets can be construction infrastructure projects and
+invested in properties that are being developed, other permissibleinvestments.
+mortgage-backed securities, debt of companies
+
+--- PAGE 437 ---
+SecurityMarketinIndia t 14.35
+An InvIT that proposes to invest more than wheresingleholdingcannot bemorethan 25 per
+10 per cent of its assets in under-construction cent .
+infrastructureprojectscanraisefundsonlythrough —
+The Union Budget 2014 15 promised a
+private placement from qualified institutional friendlier tax norms for the REITs and InvTs.
+buyers with a minimum investment and trading Theseareyettobeannouncedbythegovernment .
+lot of Rs. l crore and from at least five investors,
+
+--- PAGE 439 ---
+1
+C H A P T E R
+<
+-
+/ im
+I
+m
+EXTERNAL
+SECTOR OF
+kfiP
+INDIA
+^ Definition
+Nocountry intoday'sglobalisedworld
+o Forex Reserves
+can befully insulated from what
+=> ExternalDebt
+happens in the global economy and
+FixedCurrencyRegime India isnoexceptiontotherule . Asthe
+FloatingCurrencyRegime country is increasingly integrated into
+=> ManagedExchangeRates theworld,itcannotremain impervious
+=> ForeignExchangeMarket todevelopmentsabroad.Theunfolding
+=> ExchangeRateinIndia oftheEurozonecrisisanduncertainty
+<=> TradeBalance surrounding theglobal economy have
+=> TradePolicy impactedtheIndian economy causing
+=> Depreciation
+drop in growth,highercurrentaccount
+deficitanddecliningcapital inflows. *
+=> Devaluation
+=> Revaluation
+=> Appreciation
+=> Current Account
+*AswritestheMoF,EconomicSurvey2012-13,Got,N.Delhi,p.131.
+
+--- PAGE 440 ---
+o CapitalAccount
+=> BalanceotPayment(BoP)
+<=> Convertibility
+=> LERMS
+^ NEER
+* REER
+o EFF
+<=> IMFConditionsonIndia
+=> HardCurrency
+=> SoftCurrency
+=t> HotCurrency
+=> HeatedCurrency
+CheapCurrency
+=> DearCurrency
+<=> SpecialEconomicZone
+o GAAR
+o RisksinForeignCurrencyBorrowings
+=> RecentRTAsbyIndia
+=> Crude OilPrice Movements
+"=> CompositionofTrade
+o DirectionofTrade
+<=> RecentStepstoPromoteTrade
+=> NewForeignTradePolicy
+
+--- PAGE 441 ---
+ExternalSectorof India t 15.3
+| DEFINITION to buy dollar, ultimately, leading to higher forex
+buid-ups. The Chief Economic Advisor of the
+All economic activities of an economy which Financeministry, however,clearlystatedthekind
+take place in foreign currencyfall in sectorssuch of reserveaccretion thegovernment islookingat .
+as export, import, foreign investment, external CitingtheexampleofChina,theEconomicSurvey
+debt, current account,capitalaccount, balanceof 2014—15said Indiacould targetforeignexchange
+payment,etc ., to nameafew{definition).1 reservesof US$750 billion to $1 trillion.
+Today, China hasdefactobecomeoneof the
+|
+FOREX RESERVES lendersoflast resort togovernmentsexperiencing
+financial troubles. China, in its own heterodox
+Thetotalforeigncurrencies(ofdifferentcountries)
+and multiple ways, is assuming the roles of both
+an economy possesses at a point of time is its an IMFandWorld Bankasa resultofitsreserves.
+‘foreign currency assets/reserves’.2 The Forex
+The question for India, as a risingeconomic and
+Reserves (shortfor‘foreignexchange reserves’) of
+politicalpower,iswhetherit,too,shouldconsider
+an economy is its ‘foreign currency assets’ added asubstantialaddition to itsreserves.
+with its gold reserves, SDRs (Special Drawing
+Rights) and Reserve Tranche in the IMF.3 In a While forex reserves act as insurance when
+the rupee tends to be volatile against the dollar,
+sense, the Forex reserves is the upper limit upto
+therearecostsattachedtoit.When RBIpurchases
+which an economy can manage foreign currency
+in normal timesif need be. dollars in the spot, it leads to infusion of rupee
+into the system which leaves inflationary effect
+As per a RBI releaseonApril3, 2013, India’s on the economy. Since the RBI does not want
+forex reserves was at US$ 341.37 (composed of such actions to create inflationary pressure, so, it
+Gold Reserves of US$ 19,83 buillion; SDR of
+convertsspotpurchasesintoforwards.Thisway,it
+US$4 billion and ReserveTranche Position with is a direct cost because of the forward premiums.
+the IMF at US$ 1.29 billion).As per tht Annual If RBI opts for open market operations (OMOs)
+Reportof the IMF (releasedon March 11, 2015),
+tomopupexcessliquidity,thatalsoinvolvescosts .
+India’s forex reserves stood at 148 per cent of
+RBI invests thesedollars in instrumentssuch
+IMF’sreserveadequacy.
+as US treasuries, which offer negligible returns,
+-
+OPTIMUM FOREX THERIDDLE owing to lower yields. But experts say these
+are unavoidable costs . The returns from rupee
+In recent times, there has been a debate over assets are much lower compared to returns from
+India’s optimum level of the forex reserves. The dollar assets . But RBI is not into investment
+RBIisawareofthedownsideriskstotheexchange
+management, it is there to maintain stability in
+rate, as is reflected by its action of buying the thesystem .
+US dollar. Officially, the RBI targets neither a
+In August 2014, RBI chief Raghuram Rajan
+particular exchange rate nor foreign exchange agreed foreign exchange reserves came at a cost .
+reserves,andmaintainssuchinterventionsbyit to
+justreducevolatilityintheforexmarket.Butinthe
+Indiaea
+—
+rnsnexttonothingfortheforeignreserves
+itholds actually,thiswayIndiafinancesanother
+processofsupportingweakeningrupee,RBIneeds
+1. BasedonStiglitzandWalsh,Economics,op.cit.,pp.757 - 58.
+2. BasedonSamuelsonand Nordhaus,Economics , op.cit.,p.604.
+3. Ibid.,pp.605 - 07.
+
+--- PAGE 442 ---
+15.4 < IndianEconomy
+countrywhen it hasasignificantfinancingneeds. SDR-denominateddebt (33.5 percent),whichis
+It is very difficult to state the level of reserves attributableto borrowingfrom the International
+considered adequate by RBI. Though there are DevelopmentAssociation (IDA),i.e.thesoftloan
+costs involved, the costs to benefit cannot be windowoftheWorld Bank under the
+quantified byanymodel.Globally,therehas been multilateralagencies, andSDRallocations bythe
+no studyon the adequacyof reserves. In such an InternationalMonetaryFund (IMF).
+environment, RBI will havetogo byexperiences. Over the years, India’s external debt stock
+has witnessed structural change in terms of
+|
+EXTERNAL DEBT
+composition (bySeptember2014):
+After the BoP crisis of 1991, India’s prudent (cid:127) The proportion of concessional debt
+external debt policies and management with a declined from — 42.9 per cent during the
+focus on sustainability, solvency, and liquidity period 1991 2000 to 28.1 per cent in
+—
+havehelpedcontaintheincreaseinsizeofexternal 2001 10 and further to 9.8 per cent at
+end-September 2014.
+debt to a moderateleveland it iscompositionally
+better with a longer term maturityprofile.India’s (cid:127) Thedominanceof non-government debt
+total external debt stock stood at US$ 455.9 in total external debt is evident from the
+billion bySeptember2014(3percenthigherover fact thatsuch debt accounted for 65.6
+March 2014), as per the latest data (Economic per cent of total debt during the 2000s
+Survey 2014 — 15) . The rise in total external debt decade,against45.3per cent in the
+during the period was due to long- term debt, 1990s. Non-government debt accounted
+particularlyNRIdeposits. for over 70 per cent of total debt in the
+The maturity profileof India’sexternaldebt last five years and stood at 80.6 per cent
+indicatesthedominanceoflong- term borrowings
+atend-September 2014.
+(bySeptember 2014): (cid:127) India’sforeignexchangereservesprovided
+(cid:127) Long- term debt accounted for 81.1 per a cover of 68.8 per cent at end-March
+cent of thetotalexternaldebt.
+2014.
+(cid:127) Short- termdebtintotalexternaldebtwas (cid:127) India’sexternaldebt hasremained within
+18.9 percent,atend-September 2014. manageable limits as indicated by the
+externaldebt to GDP ratio of 23.5
+(cid:127) Governmentdebtsharewas19.4percent
+per cent and debtservice ratio of5.9 per
+8 w 0 h . i 6 le p t e h r e c n e o n n t . -governmentdebtsharewas cent in 2013 — 14.
+The prudent external debt management
+(cid:127) Currency composition: US dollar-
+policy of the Gol has helped in containing rise
+denominated debt in external debt stock
+in external debt and maintaining a comfortable
+continued to be the highest at 60.1 per external debt position. The policy continues to
+cent, followed by Indian rupee (24.2 per —
+focuson
+cent), the SDR (6.5 per cent), Japanese
+yen(4.5percent),andeuro(3.0percent)
+(i) Monitoringlong-andshort- termdebt.
+denominated. (ii) Raising sovereign loans on concessional
+The currency composition of government
+termswithlonger maturities.
+(sovereign) debt indicates predominance of
+
+--- PAGE 443 ---
+ExternalSectorof India t 15.5
+(iii) Regulating external commercial paymentcrisisoflate1960s.Lookingatthemajor
+borrowings through enduse, all-in- cost, loopholes in this system, the UK government
+and maturity restrictions. decided to switch over to the floating currency
+—
+(iv)Rationalizinginterest rateson NRIdeposits. regimein 1973 thesameyear the IMF allowed
+anoption toitsmembercountriestogoforeither
+Cross-countrycomparisonofexternaldebt based
+of thecurrencysystems .
+on the World Bank’s International Debt Statistics
+2015, which contains the external debt data for
+Inthefloatingexchangeratesystem,adomestic
+the year 2013, indicates that India continues to currency is left free to float against a number of
+beamongthelessvulnerablecountries.India’skey foreign currencies in its foreign exchange market
+debt indicatorscomparewell withother indebted
+anddetermineitsownvalue.Suchexchangerates,
+developingcountries.Theratioof India’sexternal arealso called as marketdrivenor basedexchange
+debt stock to gross national income at 23.0 per
+rates, which are regulated by factors such as the
+cent was the sixth lowest. In terms of the cover demand and supply of the domestic and the
+foreign currenciesin theconcernedeconomy.
+provided byforeign exchange reserves to external
+debt, India’spositionwassixthhighestat64.7per
+|
+MANAGED EXCHANGE RATES
+cent
+| A managed-exchange- rate system is a hybrid or
+FIXED CURRENCY REGIME4
+mixture of the fixed and flexible exchange rate
+A method of regulating exchange rates of world
+systemsin which thegovernmentof theeconomy
+currencies brought by the IMF. In this system attempts to affect the exchange rate directly by
+exchange rate of a particular currency was fixed
+buyingorsellingforeign currenciesor indirectly,
+by the IMF keeping the currency in front of a through monetary policy6 (i.e., by lowering or
+basket of important world currencies (they were raising interest rates on foreign currency bank
+UK£, US $,Japanese ¥, German Mark DM and
+accounts,affectingforeign investment,etc .).
+the French FrancFFr). Differenteconomieswere Today, most of the economies have shifted
+supposed to maintain that particular exchange to this system of exchange rate determination.
+rate in future. Exchange rates of currencies were Almost all countries tend to intervene when the
+modified bythe IMFfrom timeto time. markets becomedisorderlyor tht fundamentals
+~ of economics arechallenged bytheexchange rate
+| FLOATING CURRENCY REGIM of the time. Some of the major examples of the
+managed exchange- rate system have been given
+A method of regulating exchange rates of world below:7
+currencies based on the market mechanism (i.e.,
+(i) Some countries allow to free float their
+demandandsupply).In thefollowupto thefixed
+currenciesand allowthemarketforces to
+currency system of exchange rate determination, determine their exchange rate with rare
+it was the UK which blamed the system for its governmentintervention.Thisistheidea
+4. Ibid.,pp.610 - 11.
+5. Ibid.,pp.611 - 15.
+6. Ibid.,p.615.
+7. The discussion is based primarilyon Samuelson and Nordhaus, Economics , op.cit., pp.613 - 15and D.Salvatore,
+InternationalEconomics , JohnWiley&Sons,NewJersey,USA,2004,pp.717 - 22.
+
+--- PAGE 444 ---
+15.6 I IndianEconomy
+fromwhichthefloatingcurrencyregime regime or is a managed or hybrid exchange rate
+basicallyemerged.The USAand the EU system . It is altogether not allowed either in a
+arethemajor examplesin thiscategory . fixedcurrencysystemor a hardfix (in a hard fix
+(ii) Some economies have managed but thishappensoncethecurrencyto which thehard
+flexibleexchange rates, under which the fixhas beendoneitselfstartsfluctuating).
+governments buy or sell its currency to
+|
+reduce day- to -day volatility of currency EXCHANGE RATE IN INDIA
+fluctuations and sometimes go for
+Indian currency, the ‘rupee’, was historically
+systematic intervention for desired
+linked with the British Pound Sterling till 1948
+objectives. Canada and Japan fall in
+which was fixed as far back as 1928. Once the
+this category, besides many developing
+countries. India too falls under this IMF came up, Indiashifted to thefixed currency
+system committed to maintain rupee’s external
+c re a g te i g m o e ry si w nc h e ic 1 h 9 f 9 o 2 ll — o 9 w 3 s f t i h n e an d c u i a al lc y u ea r r r . e 8 ncy value (i.e., exchange rate) in terms of gold or
+the US ($ Dollar). In 1948, Rs. 3.30 was fixed
+(iii) Someeconomies, particularlysmallones, equivalent to US$1.
+peg their currencies to a major currency
+In September 1973, India delinked rupee
+or to a basket of currency in a fixed
+— from the British Pound and the RBI started
+exchange rate known as the peggingof
+determining rupee’s exchange rate with respect
+currencies.Attimes,thepegisallowedto
+— to the exchange rate movements of the basket of
+glidesmoothly upward or downward a
+world currencies (£, $, ¥, DM, Fr.).This was an
+system which is known as gliding or
+arrangement between the fixed and the floating
+crawling peg. Some economies have a
+currencyregimes.
+hardfixofacurrencyboard.Acurrency
+—
+board is working well in Hong Kong In 1992 93 financial year, India moved to
+thefloatingcurrencyregimewithitsown method
+while the same failed in Argentina in
+which is known as the ‘dual exchange rate’12
+2002.
+Therearetwo exchangeratesfor rupee,oneis the
+| FOREIGN EXCHANGEMARKET ‘official rate’ and the other is the ‘market rate’.
+Here the point should be noted that it is the
+The market where different currencies can be everyday’s changing market-based exchange rate
+bought and sold is called the foreign exchange of rupee which affects the official exchange rate
+market.9Out of thetradesin differentcurrencies, and not the other way round. But the RBI may
+theexchangerateofthecurrencyisdeterminedby intervenein theforexmarketvia thedemandand
+theeconomy.10Thisisaninstitutionalframework supplyofrupeeortheforeigncurrencies.Another
+for the exchange of one national currency for point whichshould be kept in mind is that none
+another.11Thisis particularlycorrecteither in the of the economies have till date followed an ideal
+caseofafreefloatexchange(i.e.,floatingcurrency) free-floating exchange rate . They require some
+8. LERMS,UnionBudget1992 - 93 , MoF,Gol,N.Delhi.
+9. StiglitzandWalsh,op.cit.,p.757.
+10. Samuelsonand Nordhaus,op.cit.,p.604
+11. D.Salvatore,2004,op.cit.,p.7.
+12. LERMS , op.cit.
+
+--- PAGE 445 ---
+ExternalSectorof India t 15.7
+mechanism to intervene in the foreign exchange government against any foreign currency, it is
+marketbecausethisisahighlyspeculativemarket. called devaluation. It means official depreciation
+isdevaluation.
+|
+TRADE BALANCE
+|
+REVALUATION
+The monetary difference of the total export and
+importofaneconomyinonefinancialyeariscalled A term used in foreign exchange market which
+trade balance. It might be positive or negative, meansagovernment increasing theexchangerate
+known to be either favourable or unfavourable, of its currencyagainst anyforeign currency. It is
+respectivelyto theeconomy. officialappreciation.
+| |
+TRADE POLICY APPRECIATION
+Broadly speaking, the economic policy which In foreign exchange market, if a free floating
+regulates the export-import activities of any domestic currency increases its value against the
+economy is known as the trade policy. It is also value of a foreign currency, it is appreciation. In
+calledtheforeign tradepolicyor theExim Policy. domesticeconomy,ifafixedassethasseenincrease
+Thispolicyneedsregularmodificationsdepending in its value it is also known as appreciation.
+upon the economic policies of the economies of Appreciationratesfordifferentassetsarenotfixed
+theworld or thetradingpartners .13 by any government as they depend upon many
+factorswhichare unseen.
+|
+DEPRECIATION
+|
+CURRENTACCOUNT
+This term is used to mean two different things.
+—
+In foreign exchangemarket, it isasituation when Ithastwomeanings oneisrelatedtothebanking
+domestic currency loses its value in front of a sectorand theother to theexternalsector:
+foreign currency if it is market-driven. It means (i) In the banking industry, a business
+depreciation in a currency can only take place if firms bank account is known as current
+the economy follows the floating exchange rate account .Theaccount isin thenameof a
+.
+system firm run byauthorised person or persons
+In domestic economy, depreciation means in which no interest is paid by the bank
+an asset losing its value due to either its use, on the deposits. Every withdrawal from
+wear and tear or due to other economic reasons. the account takes place by cheques with
+Depreciationheremeanswearandtear . Thisisalso limitations on the number of deposits
+known as capital consumption. Every economy and withdrawals in a single day. The
+has an official annual rates for different assets at overdraft facility or the cash-cum-credit
+whichfixed assetsareconsidereddepreciating. (c/cAccount) facilityto businessfirmsis
+offeredbythebanksonthisaccountonly.
+|
+DEVALUATION
+(ii) In the external sector, it refers to the
+accountmaintainedbyeverygovernment
+In the foreign exchange market when exchange
+of the world in which every kind of
+rate of a domestic currency is cut down by its
+13. D.Salvatore,2004,op.cit.,pp.235 - 36.
+
+--- PAGE 446 ---
+15.8 < IndianEconomy
+—
+current transactions is shown basically There is no deficit or surplus in this account
+this account is maintained bythecentral like thecurrentaccount .
+banking bodyof the economy on behalf
+of thegovernment . Current transactions | BALANCEOFPAYMENT(BoP)
+of an economy in foreign currency all
+over the world are — export, import, The outcome of the total transactions of an
+economy with the outside world in one year is
+interest payments, private remittances
+and transfers. known as the balance of payment (BoP) of the
+economy.14 Basically, it is the net outcome of
+All transactions areshown aseither inflowor
+outflow (credit or debit). At the end of the year, the current and capital accounts of an economy.
+It might be favourable or unfavourable for the
+thecurrentaccountmight bepositiveor negative.
+economy. However, negativity of the BoP does
+The positive one is known as a surplus current not mean it is unfavourable. A negative BoP is
+account, and the negative one is known as a
+unfavourableforaneconomyifonlytheeconomy
+deficitcurrentaccount . India hadsurplus — curre — nt lacks themeansto fill thegapof negativity.
+accountsfor threeconsecutiveyears (2000 03)
+theonlysuch period in Indian economichistory. The BoP of an economyis calculated on the
+principles of accountancy (double-entry book-
+Current account deficit is shown either
+keeping)'i and looks like the balance sheet of a
+numericallybyshowingthetotalmonetaryamount —
+company every entry shown either as credit
+of thedeficit,or in percentageof theGDPof the
+(inflow) or debit (outflow). If there is a positive
+economyfortheconcernedyear.Boththedataare
+used in analysis as per the specific requirement. outcome at the end of the year, the money is
+automatically transferred to the foreign exchange
+As per a RBI release of April 2014, presently the
+reserves of the economy. And if there is any
+sustainable level of current account deficit for
+India is 2.3per cent of theGDP. d n r e a g w at n ive fro o m utc t o h m e e c , o t u h n e tr s y a ’ m s e fo f r o e r x ei r g e n se e rv x e c s h . an If ge th i e s
+| forex reserves are not capable of fulfilling the
+CAPITALACCOUNT
+negativity created by the BoP, it is known as a
+Every government of the world maintains a BoP crisis and the economytries different means
+capital account, which shows the capital kind to solve the crisis in which going for forex help
+of transactions of the economy with outside from the IMFisthelast resort .
+economies. Every transaction in foreign currency
+|
+CONVERTIBILITY
+(infloworoutflow) consideredascapitalisshown
+—
+in thisaccount externallendingand borrowing,
+An economy might allow its currency full or
+foreigncurrencydepositsofbanks,externalbonds
+partial convertibility in the current and the
+issued bytheGovernmentofIndia, FDI, PISand
+capital accounts . If domestic currency is allowed
+securitymarket investmentof theQFIs (Rupeeis
+fullyconvertiblein thiscase). to convert into foreign currency for all current
+account purposes, it is a case of full current
+accountconvertibility.Similarly,incasesofcapital
+outflow, if the domestic currency is allowed to
+14. Samuelsonand Nordhaus,op.cit.,p.601. —
+15. It meansthateachexternaltransaction isrecorded/ente—redtwice onceasacreditandonceasadebitofanequal
+amount.Thisisbecauseeverytransactionhastwosides wesellsomethingandwereceivepaymentforit,similarly
+webuysomethingandwehavetopayforit(SeeSalvatore , op.cit.,p.432).
+
+--- PAGE 447 ---
+ExternalSectorof India t 15.9
+convert into foreign currency, it is a case of full policy, enough reforms have been made and to
+capital account convertibility. If the situation is certain levels of foreign exchange requirements,
+of partialconvertibility, then the portion allowed it is an economy allowing full capital account
+—
+bythegovernment can beconverted into foreign convertibility
+currency for current and capital purposes. It (i) Indian corporate are allowed full
+should always be kept in mind that the issue of convertibility in the automatic route
+currencyconvertibility is concerned with foreign upto $ 500 million overseas ventures
+currencyoutflowonly. (investmentbyLtd.companiesinforeign
+countriesallowed).
+CONVERTIBILITYININDIA
+(ii) Indian corporate are allowed to prepay
+India’s foreign exchange earning capacity their external commercial borrowings
+was always poor and hence it had all possible (ECBs) via automatic route if theloan is
+provisionsto checktheforeign exchangeoutflow, above$ 500 million.
+be it for current purposes or capital purposes (iii) Individualsareallowedtoinvestinforeign
+(remember thedraconian FERA).But theprocess assets, shares, etc ., upto the level of $
+ofeconomicreformshaschanged thesituation to 2,50,000per annum.
+unidentifiablelevels.
+(iv) Unlimited amount of gold is allowed to
+CURRENT ACCOUNT be imported (this is equal to allowing
+full convertibility in capital account via
+Current account is today fully convertible currentaccountroute,butnotfeasiblefor
+(operationalised on August 19, 1994). It means everybody) whichisnotallowed now.
+that the full amount of the foreign exchange TheSecondCommitteeontheCapitalAccount
+required bysomeonefor current purposes will be Convertibility (CAC) — again chaired by S.S.
+madeavailabletohimatofficialexchangerateand
+Tarapore
+—
+handed over its report in September
+therecould bean unprohibitedoutflowofforeign
+2006on whichtheRBI/thegovernmentishaving
+exchange (earlier it was partially convertible). consultations.
+India was obliged to do so as per Article VIII of
+theIMFwhichprohibitsanyexchangerestrictions |
+LERMS
+on current international transactions (keep in
+mind that India was under pre-conditions of the India announced the Liberalised Exchange Rate
+IMFsince1991). Mechanism System (LERMS) in the Union
+—
+Budget 1992 93 and in March 1993 it was
+CAPITAL ACCOUNT operationalised. India delinked its currencyfrom
+After the recomendations of the S.S. Tarapore thefixedcurrencysystem and moved into theera
+Committee (1997) on Capital Account offloatingexchange- ratesystem under it.
+Convertibility, India has been moving in the Indian form ofexchangerateisknown asthe
+direction of allowing full convertibility in this ‘dual exchange rate’, one exchange rate of rupee
+account, but with required precautions. India is official and the other is market-driven.16 The
+is still a country of partial convertibility (40:60) market-driven exchange rate shows the actual
+in the capital account, but inside this overall tendencies of the foreign currency demand and
+16. LERMS,op.cit.
+
+--- PAGE 448 ---
+15.10 4 IndianEconomy
+supply in the economy vis-a-vis the domestic (iii) Excisedutytobeincreasedby20percent
+currency. It is the market-driven exchange rate to neutralise the loss of revenue due to
+which affects the official rate and not the other customcut .
+wayround.
+(iv) Government expenditure to be cut by
+10 per cent per annum (the burden of
+|
+NEER salaries, pensions,subsidies,etc .).
+TheNominalEffectiveExchangeRate(NEER)of
+Theabove-givenconditionstowhichIndiawas
+the rupee is a weighted average of exchange rates obliged were vehemently opposed by the Indian
+before the currencies of India’s major trading
+corporatesector,oppositionintheParliamentand
+. majorityofIndians.Butbytheendof1999 — 2000,
+partners
+when India saw every logic in strengthening its
+| REER BoP position therewas no ideologicalopposition
+to the idea. It should always be kept in mind
+When theweight ofinflation isadjusted with the that the nature of structural reforms India went
+NEER, we get the Real Effective Exchange Rate through were guided and decided by these pre ¬
+(REER) of the rupee.Sinceinflation has been on conditionsofthe IMF.
+thehighersidein recentmonths,theREERofthe Thisishowthedirectionofstructuralreforms
+rupeehas been moreagainst it than the NEER. of an economy are regulated by the IMF in the
+process of strengthening the BoP position of the
+|
+EFF crisis-driven economy. The purpose has been
+served in the Indian case. India has not only
+The Extended fund Facility (EFF) is a service
+fulfilled these conditions but it has also moved
+provided by the IMF to its member countries
+ahead.
+which authorises them to raise any amount of
+foreign exchangefrom it to fulfil their BoP crisis, |
+HARD CURRENCY
+buton theconditionsofstructural reformsin the
+economyputbythebody.Itisthefirstagreement
+It is the international currency in which the
+of its kind. India had signed this agreement with highest faith is shown and is needed by every
+theIMFin thefinancialyear 1981 — 82. economy. The strongest currency of the world is
+one which has a high level of liquidity. Basically,
+|
+IMFCONDITIONSON INDIA
+the economy with the highest as well as highly
+diversified exports that are compulsive imports
+The BoP crisis of the early 1990s made India
+for other countries (as of high-level technology,
+borrow from the IMF which came on some
+defence products, life saving medicines and
+conditions. The medium term loan to India was
+petroleum products) willalsocreatehighdemand
+given for therestructuringof theeconomyon the
+foritscurrencyin theworldand becomethehard
+followingconditions:
+currency.It isalwaysscarce.
+(i) Devaluationofrupeeby22percent(done
+— Upto the second world war, the best hard
+in two consecutivefortnights rupeefell
+currency was the Pound Sterling (£) of the UK,
+from‘21to‘27againsteveryUS Dollar). —
+but soon it was replaced by the US Dollar at
+(ii) Drastic custom cut to a peak duty of 30 present some experts believe that the Euroland’s
+per cent from the erstwhile level of 130 currency ( ) might replace it, too . Some of the
+per centforallgoods.
+
+--- PAGE 449 ---
+ExternalSectorof India t 15.11
+besthardcurrenciesoftheworldtodayaretheUS |
+DEAR CURRENCY
+Dollar,theEuro( ),JapaneseYen (¥)and theUK
+SterlingPound (£). This term was popularised byeconomistsin early
+|
+1930stoshowtheoppositeofthecheapcurrency,
+SOFTCURRENCY whenagovermentissues bonds,themoneywhich
+flows from the public to the government or the
+Aterm usedintheforeignexchangemarketwhich
+money in the economy in general is called dear
+denotesthecurrencythatiseasilyavailableinany
+currency,also calledasdearmoney .
+economyin its forex market. For example, rupee
+isasoft currencyin the Indian forexmarket. It is In the bankingindustry, it meansa period of
+basicallytheoppositeterm for thehard currency.
+comparativelyhigher/costlierinterestratesregime.
+|
+| SPECIAL ECONOMICZONE17
+HOTCURRENCY
+Hot currency is a term of the forex market and
+Howdoes a countryof over a billion people take
+is a temporary name for any hard currency. Due on the challenge of providing a better life to its
+citizens? The question would naturally elicit a
+to certain reasons, if a hard currency is exiting
+an economyat a fast pace for the time, the hard million different responses having their roots in
+currencyis known to be hot. As in thecaseof the several social, economic and political measures.
+SEAsian crisis,theUSdollar had becomehot. No one today, however, doubts the efficacy of
+faster and broad-based economic development
+| HEATEDCURRENCY as a primary tool for providing the average
+Indian a better deal. The country needs massive
+A term used in the forex market to denote the investments in manufacturing, infrastructure
+domesticcurrencywhichisunderenoughpressure development and in its productive capacities.
+(heat) of depreciation due to a hard currency’s We also need to aggressively promote exports of
+hightendencyofexitingtheeconomy(sinceithas goodsandservicesinaneversohighlycompetitive
+become hot). It is also known as currency under global market place. This alone would lead to a
+heator underhammering. strong edifice for sustained growth and creation
+of productive employment. These were the very
+|
+CHEAPCURRENCY aims for which theGovernment of India mooted
+theSpecialEconomicZone(SEZ) PolicyinApril
+A term first used by the economistJ. M. Keynes 2000 which was further concretised through the
+(1930s). If a government starts re-purchasing its SEZAct2003and theSEZ Rules2006 policy.
+bonds before their maturities (at full-maturity
+TheconceptofSEZisnotanewoneanditisan
+prices) the moneywhich flows into the economy
+improvementtotheconceptofExport Processing
+is known as thecheap currency, also called cheap
+money.
+Zones.IndiawasoneofthefirstinAsiatorecognise
+the effectiveness of the Export Processing Zone
+In the bankingindustry, it meansa period of
+(EPZ) model in promoting exports, with Asia’s
+comparativelylower/softerinterest ratesregime.
+first EPZset up in Kandla in 1965
+—
+seven more
+17. BasedontheupdatedinformationsavailablewiththeMinistryofCommerce&Industry,Gol,N.Delhi,May11,2012.
+
+--- PAGE 450 ---
+15.12 4 IndianEconomy
+EPZs wereset up thereafter. However, the EPZs support infrastructure. EverySEZ is divided into
+were not able to emerge as effective instruments aprocessingareawherealonetheSEZunitswould
+for export promotion on account of multiplicity come up and the non-processing area where the
+of controls and clearances, absenceof world-class supporting infrastructure is to be created. The
+infrastructure, and an unstable fiscal regime. In SEZ developer would be responsible for all civic
+order to overcometheseshortcomingsandattract amenities and infrastructure including roads,
+larger foreign investments in India, the SEZ sewerage, open spaces, green spaces, education
+Policywas announced in April 2000.This policy facilities, power, watersupplyand housingetc .
+wasintendedto makeSEZsanengineforeconomic —
+growth supported by quality infrastructure
+LANDACQUISITIONISSUE&SEZ
+complemented by an attractive fiscal package, WhilethebenefitsofSEZsarevisibleandevident,
+both at the Centre and the state levels, with the onemajorissuethathasoftenbeen raisedpertains
+minimum possibleregulations. to the acquisition of agricultural land for setting
+up SEZs. Acquisition of land is a matter that
+WHATISSEZ?
+comesunderthepurviewofthestategovernments
+SEZ, or Special Economic Zone, is essentiallyan since land/land usage is a state subject. While
+industrial cluster meant largely for exports . An there is a Central Land Acquisition Act of 1894
+SEZ is governed by a special set of rules aimed extensively amended in 1971, the states have
+atattractingdirectinvestmentforexport-oriented made modifications to the same and have their
+production. SEZs, earlier known as Export own compensation and relief & rehabilitation
+Processing Zones or Free Trade Zones, are duty measuresdepending upon their requirementsand
+free enclaves which are treated as foreign territory necessities.
+only for trade operations, duties, tariffs and Theneedofthehouristoformulateaworking
+typically marked by the best infrastructure and landreformsandlandacquisitionlawwhichcould
+least red tape .OthersalientfeaturesofSEZsare: address theemergingnewrealities (likeagitations
+(i) manufacturing or service activities are byfarmersafterthelandhasalreadybeenacquired
+allowed; and compensation paid to them) related to the
+(ii) fullfreedom forsub-contracting; issue of land acquisition. The second thing is an
+(iii) no routine examination by customs active and willing co-operation/participation
+authoritiesofexport/importcargo; comingfromthestategovernments .Involvingthe
+(iv) unitsinSEZshavetobecomenetforeign
+PRIswillprovideamoredurableandeffectiveway
+exchangeearnerswithin threeyears;and out to
+thisissue.
+(v) domestic sales from them are subject to
+Meanwhile, ontheproposedandrevisedLand
+full customs duty and the import policy Acquisition Bill,2013, a politicalconcensus has
+—
+inforce. been reached (on April 18, 2013) which paved
+TheSEZconcept recognisestheissuesrelated the way for the Bill to get int
+—
+roduced in the
+to economic development and provides for currentSession of the Parliament it will replace
+developing self-sustaining industrial townships India’s existing Land Acquisition Act, 1894. The
+so that the increased economic activity does not Bill is more careful, realistic and futuristic about
+create pressure on the existing infrastructure. thecontemporaryandemergingchallengesofland
+This issue is addressed in the SEZ policy by acquisition in the country . The major highlights
+specifying a non-processing area for creation of of theBillareasfollows:
+
+--- PAGE 451 ---
+ExternalSectorof India t 15.13
+(i) For the first time, resettlement and thelegalstructureoftheconcernedtransactionor
+rehabilitationbothhavebeenemphasised arrangement .Itessentiallycomesintoeffectwhere
+on thesamefooting; an arrangement is entered into with the main
+(ii) Scrutiny of all private purchase of land purposeoroneof themain purposesofobtaining
+between 2011 and 2013 (there has been ataxbenefitand whichalsosatisfiesatleastoneof
+a concern among many that the land thefoliowingfourtests:
+mafiashavegrabbed cheaplandfrom the (i) The arrangement creates rights and
+farmersbeforetheproposed Billhas been obligations thatarenotatarm’slength,
+passed bythegovernment); (ii) it resultsin misuseor abuseof provisions
+(iii) A provision to enablestatelegislation on of taxlaws,
+leasingin placeofacquisition ofland; (iii) lacks commercialsubstanceor is deemed
+(iv) Insteadofacquisition,landtobeleasedto to lackcommercialsubstance,or
+developers,sothattheownershipremains (iv) itisnotcarriedoutinabonafidemanner.
+withfarmersand providesthema regular
+Thus, if the tax officer believes that the
+income. The government to amend the main purpose or one of the main purposes of an
+Land Acquisition, Rehabilitation and
+arrangement is to obtain a tax benefit and even
+Resettlement Bill,2011 , to providefor an if one of the above four tests are satisfied, the tax
+enabling provision to states for enacting officerhaspowerstodeclareitasanimpermissible
+laws in this regard (leasing of land is a avoidance arrangement and re-characterise
+statesubject under theConstitution).
+the entire transaction in a manner that is more
+The new government at the centre has, conducive to maximising tax revenues. There
+meanswhile, proposed a new Land Acquisition are many troubling aspects of this provision that
+Bill,2015. The bill is faced with stiff opposition will make doing business in India even more
+from the political parties in opposition farmers challenging, than what it already is from a tax
+alikeand isstill to be passed bythe parliament. perspective —
+IGAAR (i) It is presumed that obtaining tax benefit
+is the main purpose of the arrangement
+The GAAR (General Anti-Avoidance Rules), unless otherwise proved by the taxpayer .
+originallyproposedintheDirectTaxesCode2010 , Thisisanonerousburdenthatunderafair
+rule of law should be discharged by the
+aretargetedatarrangementsor transactionsmade
+specifically to avoid taxes . The government had revenue collector and not the taxpayer .
+In fact, the Parliamentary Standing
+decided to advance the introduction of GAAR
+— Committee on DTC has specifically
+and implement it from the financial year 2013
+14 itself.Morethan30countrieshaveintroduced recommended that the onus of proving
+GAAR provisions in their respective tax codes to theexistenceofa tax -avoidance motive
+checksuch taxevasion. and a transaction lacking commercial
+substance, should rest with the revenue
+The objective of the GAAR provisions is to
+invoking GAAR and not shifted to the
+codify the doctrine of‘substanceover form’where
+taxpayer
+.Thisisessentiallytoensurethat
+the real intention of the parties and purpose
+the revenue authorities exercise proper
+of an arrangement is taken into account for
+discretion, proper application of mind
+determiningthe taxconsequences, irrespectiveof
+
+--- PAGE 452 ---
+15.14 i IndianEconomy
+and gather enough credible data and (iv) GAARisaverybroadbasedprovisionand
+evidencebeforeattemptingtoinvokefar- can easily be applied to most tax -saving
+reachingprovisionssuchasGAAR. arrangements .Manyexpertsfeel that the
+(ii) An arrangement will be deemed to lack provision would give unbridled powers
+commercial substance under GAAR if it to taxofficers,allowingthem to question
+involves the location of an asset or of a any taxsaving deal. Foreign institutional
+transaction or of the place of residence investors are worried that their
+ofanypartythat would not have beenso investments routed through Mauritius
+located for any substantial commercial could be denied tax benefits enjoyed
+purpose other than obtaining tax by them under the Indo-Mauritius Tax
+benefit. This again is an amazingly wide Treaty.The proposal (announcedon May
+provision that provides a great weapon 8, 2012) had spooked stock market as
+in the armoury of the tax authorities FIIinflowsdroppedonconcerns,andthe
+to challenge almost every inbound or
+rupeehitalowofRs.53.47totheDollar.
+outbound transaction with respect to Meanwhile, the government has postponed
+India, made through any of the GAAR to the next financial year (i.e., 2016 — 17).
+favourable tax treaties that India has This will give a breather to tax payers and also
+entered into.Thegovernments intention allow the government time to frame clear rules
+becomes clear visibly by one of the after consultationswithstakeholders.
+finance ministry replies to the Standing
+Committee on DTC, where it has made RISKS IN FOREIGN CURRENCY
+it clear that the GAAR provisions will BORROWINGS
+check treaty shopping by the taxpayer for
+avoidanceof paymentof taxin India. Corporateborrowersin Indiaandotheremerging
+economiesarekeen to borrowinforeigncurrency
+(iii) GAAR allows tax authorities to call a
+to benefitfrom lower interestand longer termsof
+business arrangement or a transaction
+credit. Such borrowings however, are not always
+‘impermissible avoidance arrangement’
+helpful, especially in times of high currency
+if theyfeel it has been primarily entered
+into toavoidtaxes .Onceanarrangement
+volatility.Duringgoodtimes,domesticborrowers
+couldenjoytriple benefitsof
+is ruled ‘impermissible’ then the tax
+authoritiescan denytaxbenefits.Most (i) lower interest rates,
+aggressive tax avoidance arrangements (ii) longer maturity,and
+would be under the risk of being (iii) capitalgains
+termed impermissible. It has a provision due to domestic currency appreciation.
+accordingtowhichtheonustoprovethat This would happen when the local currency is
+an arrangement is ‘impermissible’ will appreciatingduetosurge in capitalflowsand the
+lie with the tax department. The GAAR debtserviceliabilityisfallingindomesticcurrency
+panel, the final body that will decide on terms . The opposite would happen when the
+the applicability of the law, will include domestic currency is depreciating due to reversal
+an independent member. The rule can ofcapitalflowsduringcrisissituations,ashappened
+apply on domestic as well as overseas duringthe2008globalcrisis .
+transactions.
+
+--- PAGE 453 ---
+ExternalSectorof India t 15.15
+Asharp depreciation in localcurrencywould unhedged, so as to profit from low international
+meancorrespondingincreaseindebtserviceliability, interest rates . This is a dangerous gamble for
+as more domestic currency would be required to reasonsdescribedaboveandshould beavoided.
+buy the same amount of foreign exchange for
+debtservicepayments .Thiswouldlead toerosion | RECENT RTAs BY INDIA
+in profit margin and have ‘mark- to -market’
+implications for the corporate . There would also SinceIndia becameoneofthefoundingmembers
+of the WTO, its attention has grown towards
+be‘debtoverhang’problem,asthevolumeofdebt
+wouldriseinlocalcurrencyterms .Together,these the regional trade groupings. These groupings
+factors could create corporate distress, especially give regional competitveness to the economy
+because the rupee tends to depreciate precisely and strengthens it to compete at the global level
+in a more organised way. Recent developments
+when the Indian economy is also under stress,
+and corporate revenues and margins are under with regard to India’s regional trade agreements
+pressure. (RTAs) havebeengiven below:18
+In thiscontext,itisfelt thatoneofthefactors
+CACTA
+contributing to faster recovery of the Indian
+The SAFTA (South Asia Free Trade Area )
+economyafter the 2008 global crisis was the low
+level of corporate external debt. As a result, the Agreement came into force on January 1, 2006.
+significant decline in the value of rupee did not Under it, India has granted zero basic custom
+have a major fallout for the corporate balance- duty to all LDCs, viz., Afghanistan, Bangladesh,
+sheets. Foreign currency borrowings, therefore, Bhutan, and Maldives, on all items except 25
+have to be contracted carefully, especially when items relating to alcohol and tobacco. Under the
+no‘naturalhedge’isavailable.Suchnaturalhedge SAFTAAgreement,IndiahasreducedtheSAFTA
+would happen when a foreign currency borrower Sensitive List for non-LDCs from 878 to 6l4 by
+also has an export market for its products. As a reduction of 264 tariff lines from September 6,
+result, export receivables would offset, at least to 2012.As per thescheduleofTariff Liberalisation
+Programme (TLP) under SAFTA, India has
+some extent, the currency risk inherent in debt
+servicepayments .Thishappensbecausefallin the broughtdownitspeaktariffratesto5thepercent
+valueoftherupeethatleadsto higherdebtservice
+fromJanuary1,2013.
+payments is partly compensated by the increase cuc
+in thevalueofrupeereceivables throughexports .
+India-Thailand FTA, Early Harvest Scheme
+When export receivables and the currency
+of borrowings is different, the prudent approach (EHS) under the Framework Agreement for
+is for corporations to enter currency swaps to re ¬ establishing India-Thailand FTA was signed on
+denominateassetandliabilityinthesamecurrency October 9, 2003, which includes trade in goods
+to create natural hedge. Unfortunately, too many trade in services, investment, and other areas of
+Indian corporations with little foreign currency
+economiccooperation,tobeconcludedasasingle
+earnings leave foreign currency borrowings
+undertaking. Under EHS, tariff has gradually
+been eliminated on a list of 82 common items
+18. DepartmentofCommerce,MinistryofCommerceandIndustry,Gol,NDelhi,April24,2013.
+
+--- PAGE 454 ---
+15.16 i IndianEconomy
+simultaneouslybybothsidesbetween September BITA
+1, 2004 and August 31, 2006. Under the India-
+Fifteen rounds of negotiations and a number of
+Thailand FTA, it is proposed to provideASEAN inter-sessionalandChiefNegotiatorlevelmeetings
+plus tariff concessions. So far 26 rounds of the of BITA (India - EU Broad Based Trade and
+India-Thailand Trade Negotiation Committee Investment Agreement) have been held till date.
+(ITTNC) meetings have been held. The last The13throundwasheldin December4 — 7,2012
+—
+round was held on November 26 27, 2012 in in NewDelhi.Chief negotiator level meetingwas
+New Delhi. heldonJanuary29 — 30,2013in New Delhi.
+f'Cf' A r-
+CTP
+India-ASEAN Comprehensive Economic
+The agreement establishing the GSTP (Global
+Cooperation Agreement (CECA) Services and
+System of Trade Preferences) among developing
+InvestmentAgreementswassignedonAugust13,
+countrieswassignedonApril13, 1988atBelgrade
+2009 under the broaderframework of theCECA
+following the conclusion of the First Round of
+between India and ASEAN which has already Negotiations. Forty-three countries have ratified
+come into force. Conclusions of negotiations for the agreement and become participants. India
+theServicesAgreementandInvestmentAgreement
+has offered tariff concessions on 70.08 per cent
+have been announced during the ASEAN-India of dutiable tariff lines with an across-the-board
+Commemorative Sum — mit held on December 20, margin of preference (MoP) of 20 per cent on
+2012 in New Delhi legal scrubbing for these the applied tariffs prevailing on the date of
+agreements were finalised in February 2013. import. India has also unilaterally offered special
+The agreement will be signed during ASEAN concessions to LDC participants by granting
+Economic Ministers (AEM)-India Consultations
+- an MoP of 25 per cent on 77 per cent of all its
+inAugust2013 dutiable tariff lines. The Cabinet Committee
+on Economic Affairs (CCEA), in its meeting
+RCEP
+on August 23, 2012, has granted approval for
+During the 20th ASEAN Summit held in implementing India’s schedule of concessions.
+Cambodia in April 2012, ASEAN States Thetariffconcessionsaretobeimplementedin30
+agreed to move towards establishing an RCEP days after a minimum of four participants ratify
+(RegionalComprehensiveEconomicPartnership) their schedules of concessions. So far India and
+Agreement among ASEAN + 6 (Australia, Malaysia haveratified theirschedules.
+China, India, Japan, Korea, and New Zealand
+involving ASEAN and its FTA partners . The | CRUDEOIL PRICEMOVEMENTS
+objective of launching RCEP negotiations is to
+achieve a modern, comprehensive, high-quality, Any major change in global commodity prices,
+and mutually beneficial economic partnership
+particularlycrudeoilprices,hasimplicationforthe
+agreement among the ASEAN member States external sector as India is increasingly integrated
+andASEAN’s FTApartners .TheRCEPwillcover with the rest of the world. India’s rising two -
+tradeingoodsandservices,investment,economic way external- sector transactions have more than
+and technical cooperation, intellectual property, doubled asa proportion of GDPover thelast ten
+competition,disputesettlement,andother issues. years. Trade openness provides opportunities for
+
+--- PAGE 455 ---
+ExternalSectorof India t 15.17
+higher growth through higher exports and makes and allied products (11.6 per cent);
+available better quality products domestically at chemicals and related products (10.1 per
+globallycompetitive prices. cent); transportequipment (8.5 per cent)
+India’s large oil import dependence and the and machinery(6.3per cent).
+sharp risein globalcrudeoil prices, thewidening
+IMPORTCOMPOSITION
+of theCADin 2011-12and 2012-13 maybean
+atypicaloutcome .Changesincrudeoilpriceshave (cid:127) Oneof themajor itemsin India’simport
+direct bearingon India’sCAD. basketisthePOLgroup,whichaccounted
+Historically,crudeoilimportsaccountedfora for 36.6 per cent of India’s totalimports.
+substantial portion of thecountry’stotalimports. POL imports surged with a growth of
+—
+Petroleum, oil, and lubricants (POL) imports 46.2 per cent in 2011 12, mainly on
+accountedformorethanone-thirdofIndia’stotal account of significant increase in global
+importsinrecentyears.In2013 — 14,POLimports crudeoil prices.
+accounted for 36.6 per cent of total imports and (cid:127) Capital goods imports are another major
+wasestimated to beover33 per cent in 2014 — 13. group which declined continuouslyfrom
+The changes in trade deficit and by implication 2011 — 12 onwards.Within capitalgoods,
+CAD in recent years are largelyexplained by the imports of machinery registered positive
+changesin crudeoilprices. growthin 2014-15.
+(cid:127) Gold and silver imports accounted for
+|
+COMPOSITION OFTRADE 11.4 per cent of India’s total imports in
+2012-13and7.4 per cent in 2013-14.
+The commodity composition of India’s trade
+has undergone many changes since liberalization |
+DIRECTION OFTRADE
+and has been driven by trade policy, movements
+in international prices, and the changing pattern Therehasbeensignificantmarketdiversificationin
+of domestic demand. Main features of India’s India’s trade in recent years — a process that has
+composition of trade, as per the EconomicSurvey helpedincopingwiththesluggishglobaldemand,
+—
+2014 15,areasgiven below: which owes to a great extent to the weakness in
+the euro zone. Main features of India’s direction
+EXPORTCOMPOSITION of trade, as per the Economic Survey 2014 — 15,is
+(cid:127) Manufacturedgoodsconstitutethebulkof given below:
+—
+exports over63percentin recentyears,
+followedbycrudeandpetroleumproducts
+INDIASEXPORTS
+(includingcoal) with a 20 per centshare, (cid:127) Region-wise, India’s export shares to
+andagricultureandalliedproductswitha Europe and America have declined over
+shareof13.7percentshare. the years — from 23.6 per cent and 20.1
+—
+(cid:127) The top seven product groups accounting per cent, respectivelyin 2004 05 to 18.6
+for nearly 80.9 per cent of India’s total per centand17.2 per cent, respectively.
+exports in were shared as: petroleum (cid:127) India’s exports to Asia and Africa have
+products (19.4 per cent); gems and increased from 47.9 per cent and 6.7 per
+jewellery (13.0 per cent); agricultureand cent, respectively in 2004-05 to 49.4
+allied products (12.0 per cent); textiles
+
+--- PAGE 456 ---
+15.18 4 IndianEconomy
+per cent and 9.9 per cent respectively in Major ones, as per theEconomicSurvey2014 — 15,
+2013-14. areasgiven below:
+(cid:127) The change in direction immediately (i) To promote domestic manufacturing
+prior to the global financial crisis and capabilities, scrips issued under different
+—
+since 2010 11 indicates the process of schemes, namely FPS (Focus Product
+diversification underway. Scheme), FMS (Focus Market Scheme),
+(cid:127) Countrywise, India’s exports to the USA VKGUY (Vishesh Krishi & Gram
+and UAE — major destinations with a Udyog Yojana), SFIS (Served From
+share in India’s total exports of 12.3 IndiaScheme), AIIS (Agri Infrastructure
+per cent and 9.7 per cent, respectively. Incentive Scheme), for import of goods
+However, India’s exports to China (4.7 can be utilized for payment of excise
+percentshare)and Belgium (2.0percent duty for domestic procurement . This
+share) declined by14.7percentand10.7 is an important measure for import
+per centduringthesame period. substitution and will help save foreign
+exchange as well as create additional
+INDIASIMPORTS employment.
+(cid:127) The share of Europe in India’s imports (ii) Scrips issued under the FPS, FMS,
+alsodeclinedfrom23.0percentin 2004- VKGUY can be utilized for payment of
+05 to 15.8 per cent while the shares of servicetax .
+Asia and Africa increased substantially (iii) To support export of products from the
+from 35.6 per cent and 3.6 per cent in North Eastern Region (NER), exporters
+—
+2004 05 to 60.7 per cent and 8.1 per are entitled to additional incentives of
+cent, respectively. 1 per cent of FOB19 value of exports in
+(cid:127) The share of America in India’s imports addition to other benefits under the FTP
+has also increased from 8.8 per cent to if exports are made from land customs
+12.8 per cent . stationlocatedin the NER.
+(cid:127) China is the major source of India’s (iv) TodiversifyIndia’sexports,7newmarkets
+imports, accounting for 11.3 per cent of (Algeria, Aruba, Austria, Cambodia,
+India’s total imports, followed by Saudi Myanmar, Netherlands Antilles, and
+Arabia (8.1percentshare), theUAE (6.5 Ukraine) have been added to the FMS,7
+percentshare),andtheUSA(5.0percent new markets (Belize, Chile, El Salvador,
+share). Guatemala, Honduras, Morocco, and
+Uruguay) to theSpecial FMS.
+|
+RECENTSTEPSTO PROMOTETRADE (v) Toboostexportofservices,thegovernment
+has organised two editions of a ‘Services
+Thegovernmenthastakensveralnewinitiativesto
+promotetradeconditionsofIndiain recenttimes. C
+w
+o
+h
+n
+ic
+c
+h
+la
+a
+v
+r
+e
+e
+’
+cr
+in
+uci
+i
+a
+d
+l
+e
+t
+n
+o
+ti
+I
+f
+n
+ie
+d
+d
+ia.
+service sectors
+19. FOB(FreeOnBoard)isatransportationtermrelatedtotheshippingofgoods.Normally,thetermFOBalongwithsome
+pointrepresentsthesellersresponsibilitytothementioned point,henceforthallfreight,carriageandinsurancecosts
+tobebornebythebuyer.Theterm isused byaseller'FOBChennai’meansthatthesellerwill payalltheexpenses
+uptotheportofChennai(whichincludescostofloading,Customsclearance,origindocumentationcharges,andother
+charges).Beyondthispoint,itwillbetheresponsibilityofthebuyertopayallthecharges.
+
+--- PAGE 457 ---
+ExternalSectorof India I 15.19
+In the Conclave, barriers, if any, in the (a) Development of export strategy by
+specificservice sectors are identified and thestategovernment,
+issues relating to the reforms needed, (b) Appointment of an Export
+India’s potential for enhancing exports Commissionerforcoordinationofall
+in those sectors, and new markets for export-related activities by the state
+exportingservicesarediscussed.
+government,and
+GlobalServicesExhibitionwasorganized (c) Institutingexportawards to motivate
+—
+inApril2015inNewDelhi asaplatform the leading exporters from the state
+for enhancing strategic cooperation and and encourage them to bring in
+developingsynergiesbetweencompetitive
+greaterexport
+revenues.
+players of the services sector and their
+globalcounterparts . | NEW FOREIGNTRADE POLICY
+(vi) Indian Trade Portal was launched in
+December 2014. This portal provides The Gol announced the new Foreign Trade
+Policy 2015-20 on April 1, 2015. The new five
+vital information to Indian industry —
+on forty- two export markets and also year Foreign Trade Policy, 2015 20 provides a
+a mechanism to take advantage of the framework for increasing exports of goods and
+services as well as generation of employment
+increasedmarketaccessprovidedthrough
+various regional and bilateral free trade
+and increasing value addition in the country, in
+keepingwith theMakein India.Thefocus of the
+agreements (FTA) and comprehensive
+economic cooperation/partnership new policyis to support both the manufacturing
+agreements
+(CECA/CEPA). and services sectors, with a special emphasis on
+improvingthe‘easeofdoingbusiness’.Thespecial
+The information is provided in a user-
+featuresof theFTP2015-20areasfollows:
+friendly manner in four easy steps for
+1. Two newschemeshave been intorduced,
+exporters and importers to access the —
+namely
+portal, which will contribute to ease of
+doingusinessfortradeandindustry.This (i) Merchandise Exports from India
+portal makes available important data Scheme(MEIS)forexportofspecified
+like: goodsto
+specified markets.
+(a) Mostfavoured nation (MFN) tariff,
+(ii) Services Exports from India Scheme
+(b) Preferentialtariff,
+(SEIS) for increasing exports of
+(c) RulesofOrigin (RoO),and
+notifiedservices,inplaceofaplethora
+(d) Non-tariffmeasures.
+of schemes earlier, with different
+(vii) In order to mainstream the states so that conditionsfor eligibilityand usage.
+theyfocusexpresslyon boostingexports,
+There would be no conditionality
+the key steps required to be initiated by attached to anyscrips issued under these
+them have been distilled and listed. A schemes. Dutycreditscripsissued under
+fifteen-point matrix has been developed
+MEIS andSEIS and thegoods imported
+and sent to all states/union territories against thesescrips are fully transferable.
+(UTs) to incorporatethefollowing: For grant of rewards under MEIS, the
+
+--- PAGE 458 ---
+15.20 4 IndianEconomy
+countries have been categorized into 3 (b) The government has reduced the
+Groups, whereas the rates of rewards number of mandatory documents
+under MEIS range from 2 per cent to 3 requiredforexportsand
+percent .UnderSEIStheselectedServices importstothree,whichiscomparable
+would be rewarded at the rates of 3 per withinternational benchmarks.
+centand 5 per cent . (c) A facility has been created to upload
+2. Measures have been adopted to nudge documents in exporter/importer
+procurement of capital goods from profile and the exporters will not
+indigenous manufacturers under the be required to submit documents
+EPCGschemebyreducingspecificexport repeatedly.
+obligation to 75 per cent of the normal (d) Attention has also been paid to
+export obligation.This will promote the simplify various Aayat Niryat Forms,
+domestic capital goods manufacturing
+bringinginclarityin
+industry. Such flexibilities will help
+different provisions, removing
+exporters to develop their productive ambiguitiesandenhancingelectronic
+capacities for both local and global governance.
+consumption.
+(e) Approved Exporter System (AES)
+3. Measureshavebeen taken togivea boost
+has been launched to enable
+to exports of defense and hi-tech items. manufacturers to self-certify their
+At the same time e-Commerceexports of
+manufacturedgoodsoriginatingfrom
+handloom products, books/periodicals,
+India with a view to qualifying for
+leather footwear, toys and customized preferential treatment under various
+fashion garments through courier or forms of bilateral and regional trade
+foreign post office would also be able agreements . This will help these
+to get benefit of MEIS (for values upto manufacturer exporters considerably
+INR 25,000). These measures would
+in getting fast access to international
+not onlycapitalizeon India’sstrength in markets.
+these areas and increase exports but also
+provideemployment. 6. A number of steps have been taken for
+encouraging manufacturing and exports
+4. In order to give a boost to exports from under 100 per cent schemes. The steps
+SEZs, government has now decided include a fast track clearance facility for
+to extend benefits of both the reward these units, permitting them to share
+schemes(MEISandSEIS)tounitslocated
+infrastructure facilities, permitting inter
+in SEZs. It is hoped that this measure
+unit transfer of goods and services,
+will give a new impetus to development
+permitting them to set up warehouses
+andgrowthofSEZsin thecountry .
+near the port of export and to use duty
+5. Tradefacilitation and enhancing theease freeequipmentfor trainingpurposes.
+ofdoi
+—
+ngbusinessaretheother majorfocus
+7. Considering the strategic significance of
+areas
+small and medium scale enterprise in the
+(a) One of the major objective of new manufacturingsectorandinemployment
+FTP is to move towards paperless generation, MSME Clusters-108 have
+workingin 24x7environment. been identified for focused interventions
+
+--- PAGE 459 ---
+ExternalSectorof India I 15.21
+to boost exports .Outreach activities will infrastructure development and overall
+beorganized in astructured wayat these enhancement of the trade ecosystem . It
+clusters with the help of EPCs and other seeks to enable India to respond to the
+willing Industry Partners and Knowledge challenges of the external environment,
+Partners.
+keeping in step with a rapidly evolving
+8. NiryatBandhuSchemehasbeengalvanized international trading architecture and
+andrepositionedtoachievetheobjectives make trade a major contributor to
+ofSkillIndia. the country’s economic growth and
+The FTP Statement describes the development. TheGol promised to have
+regular interactionswithallstakeholders,
+market and product strategy and
+measures required for trade promotion, including State Governments to achieve
+thenationalobjectives.
+
+--- PAGE 461 ---
+C H A P T E R
+I
+i
+-
+\
+m
+h
+i
+9 . M I
+INTERNATIONAL
+V
+:s
+m
+N
+iv
+ECONOMIC %
+-
+/
+ORGANISATIONS m
+INDIA
+£
+‘Oh, East is East and West is West,
+andnever thetwainshallmeet’.Thus,
+in the year 1889, wrote Kipling in
+=> InternationalMonetary System hisfamous Ballad ofEast and West .
+=> Bretton WoodsDevelopment Littledid he know that globalisation
+=> InternationalMonetary Fund was only less than a hundred years
+WorldBank
+away.*
+=> AsianDevelopmentBank
+o OECD
+=> WorldTrade Organisation (WTO)
+=> WTOMinisterialCoherences
+o India’sNegotiations With WTOatBali
+=> BilateralandRegionalCooperation
+=> BRICS Bank
+=> AsianInfrastructureInevstmentBank
+*AstheUnionFinanceMinister,P.ChidambramquotesRudyardKiplingto
+substantiate the opposite situation in the post-globalisation world in his
+inauguralSpeechonTheRiseoftheEast:ImplicationsfortheGlobalEconomy'
+DeliveredattheHarvardUniversity(April17,2013),MoF,Gol,NDelhi.
+
+--- PAGE 462 ---
+16.2 I IndianEconomy
+| LIQUIDITY
+INTERNATIONAL MONETARYSYSTEM
+Itreferstotheamountofforeigncurrencyreserves
+The international monetary system (IMS) refers available to settle the BoP crises of the nations.
+to the customs, rules, instruments, facilities, and A good IMS maintains as much foreign reserves
+organisations facilitating international (external)
+to mitigatesuch crisesof thenationswithoutany
+payments .Sometimes the IMS is also referred to inflationarypressureson thenations.
+as an international monetary order or regime.1
+IMS can be classified according to the way in CONFIDENCE
+which exchange rates are determined (i.e., fixed
+currency regime, floating currency regime or
+Itreferstothefaiththenationsoftheworldshould
+showthat theadjustment mechanism of the IMS
+managed exchange regime) and the form foreign
+reserves take (i.e., gold standard, a pure judiciary is working adequately and that foreign reserves
+standardoragold-exchangestandard). will retain their absolute and relative values.This
+confidenceis basedon thetransparent knowledge
+An IMS is considred good if it fulfils the information about the IMS.
+followingtwoobjectives2inanimpartialmanner:
+DEVELOPMENT
+(i) maximises the flow of foreign trade and | BRETTON WOODS
+foreign investments,and
+(ii) leads to an equitabledistribution of the
+Asthepowerfulnationsoftheworldwerehopeful
+gainsfromtradeamongthenationsofthe of a new and more stable world order with the
+world. emergence of the UNO, on the contrary, they
+were also anxious for a more homogenous world
+The evaluation of an IMS is done in terms
+financial order, after the Second World War.
+ofadjustment,liquidityandconfidencewhichit
+The representatives of the USA, the UK and 42
+managesto weild.
+other (total 44 countries) nations met at Bretton
+ADJUSTMENT Woods, New Hampshire, USA in July 1944 to
+decide a new international monetary system .
+It refers to the process by which the balance-of- The International Monetary Fund (IMF) and
+payment (BoP) crises of the nations of the world the World Bank (with its first group-institution
+(or the member nations) are corrected. A good —
+IBRD) wereset up together popularlycalled as
+IMS tries to minimise the cost of BoP and time the Bretton Woods’ twins’ — both having their
+foradjustmentfor thenations. headquartersinWashington, DC, USA.
+1. D. Salvatore, International Economics, John Wiley & Sons, New Jersey, USA, 2005, pp. 737 - 38; Samuelson and
+Nordhaus,Economics,TataMcGraw -Hill,N.Delhi,2005,pp.609 - 12.
+2. D.Salvatore,op.cit.,p.738.
+—
+3. For the new international monetary system, basically two plans were presented in the meeting one by the US
+delegationled byHarryD.White(oftheUSTreasury)andtheBritishdelegationledbyJohnMeynardKeynes.Itwas
+theUSplanwhichwasultimatelyagreedupon.
+J.M. Keynes had proposed a more impartial, practical and over-arching idea via his plan at Bretton Woods. His
+suggestionsbasicallyincludedthreethings:
+(i) ProposaltosetupanInternationalClearingUnion(ICU),acentralbankofallcentralbanks,withitsowncurrency
+(Keynesnamedthiscurrency'bancor')—tomitigatethebalanceofpaymentcrisesofmembernations.
+Thisbankwassupposed topenalise[nosuchprovisionintheIMF)thecountriesholdingtradesurpluses(with
+aglobaltaxofonepercentpermonth)onthegroundthatsuchcountrieswerekeepingworlddemandlowby
+under-purchasingtheproductsproducedbyothercountries.Thecorpuscollectedviathistaxwastobeusedto
+
+--- PAGE 463 ---
+InternationalEconomicOrganisations8India t 16.3
+| from each member country . For India, Finance
+INTERNATIONAL MONETARY FUND
+MinisteristheEx-officioGovernorwhiletheRBI
+The International Monetary Fund (IMF) came
+GovernoristheAlternateGovernorontheBoard.
+up in 1944whoseArticlescameinto forceon the The day- to -day management of the IMF
+December 27, 1945 with the main functions as is carried out by the Managing Director who is
+exchange rate regulation, purchasing short- term Chairman (currently,MsChristineLagarde)of the
+foreign currencyliabilitiesof themember nations Board of Executive Directors.Board of Executive
+from around the world, allottingspecial drawing Directors consists of 24 directors appointed/
+rights (SDRs) to the member nations and the elected by member countries/group of countries
+most important one as the bailor to the member — is the executive body of the IMF. India is
+economiesin thesituationofanyBoPcrisis. represented at the IMF byan Executive Director
+Themainfunctions1of the IMF areasgiven (currently Arvind Virmani), who also represents
+below: threeother countriesin India’sconstituency, viz.,
+Bangladesh,SriLankaand Bhutan.
+(i) to facilitate international monetary
+cooperation;
+INDIASQUOTA&RANKING
+(ii) to promote exchange rate stability and
+orderlyexchangearrangements; IMF reviews members’ quotas once in every
+— —
+five years last done in December 2010 here,
+(iii) to assist in the establishment of a
+India consented for its quota increase. After this
+multilateral system of payments and
+India’s quota (together with its 3 constituency
+the elimination of foreign exchange
+countries) has increased to 2.75 per cent (from
+restrictions;and
+2.44 per cent) and it has become the 8th (from
+(iv) toassistmembercountriesbytemporarily
+11th) largest quota holding country among the
+providing financial resources to correct 24 constituencies. In absolute terms, India’s
+mal-adjustment in their balance of
+quota has increased to SDR 13,114.4 million
+payments
+(BoPs).
+(from SDR 5,821.5 million) which is an increase
+The Board of Governors of the IMF consists ofapproximatelyUS$11.5 billion or Rs.56,000
+of one Governor and one Alternate Governor crore).While25percentofthequotaistobepaid
+—
+maintainan international bufferstockof primarygoods(i.e.,foodarticles) tobeused intheperiodsoffood
+shortagesamongthemembernations.{Inplace , undertheIMFprovisionstradedeficitcountriesarepenalised . )
+(ii) Forthe reconstruction of war-devastated Europe,a fundwasto beset up,on the basisof this planfor Relief and
+Reconstruction(inplaceofittheUS-sponsoredMarshallPlantookcareoftheneedsofEurope).
+(iii) TherewasaproposalofcreatingCommodityBufferStocktobeoperatedbyanInternationalTradeOrganisation(ITO).
+Thisstockofprimarygoodswastobeusedtostabilisetheirpricesintheinternationalmarket.
+TheoperationofthisITOmakingpurchaseswhentheworldpriceswerelowandsellingwhenthepricesbecamehigh.The
+bufferstockoperations,however,weretobehelpfultothepoorcountries,Keyneswasprimarilyinterestedinstabilising
+theinputpricesoftherichcountries.(ThoughthecharteroftheITOwasdrawnupandotherformalitiescompleted , it
+wasneverbornbecauseofUSopposition.)ForfurtherreadingsseeD.Salvatore,InternationalEconomics , op.cit.,pp.
+742-43;B.Dasgupta,Globalisation:India’sAdjustmentExperience , Sage,N.Delhi,2005,p.48.
+4. BasicFactsAbouttheUnitedNations,UN,NewYork,2000,pp.55&137.
+
+--- PAGE 464 ---
+16.4 I IndianEconomy
+incash(i.e.,in‘Reserve’currency),thebalance75 United Kingdom proposed to introduce after
+per centcan be paidin securities.5 the Second World War. The proposed currency
+Once a member nation has signed the EFF was, viz., be used in international trade as a unit
+(ExtendedFundFacility)agreementwiththeIMF, of account within a multilateral barter clearing
+borrowing6can bedonebythemember nation — system, the International Clearing Union, which
+Indiasignedthisagreementinthefiscal1981 — 82. would also have to be founded. The Bancor was
+Indiahas beenborrowingfrom the IMF due to to be backed by barter and its value expressed in
+critical balance of payment (BoP) situations — weight of gold. However, this British proposal
+once between 1981 — 84 (SDR 3.9 billion) and could not prevail against the interests of the
+next during 1991 (SDR 3.56 billion). All the United States, which at the Bretton Woods
+loanstakenfromtheIMFhavebeen repaid.India conferenceestablishedtheUS Dollarastheworld
+is now a contributor to the IMF as it participates key currency. Milton Friedman9, the famous
+in the Financial Transactions Plan (FTP)7of the US economist insisted that Keynes’ theories
+IMF since September 2002 — at this time India were incorrect who believed that, ‘inflation was
+wasinstrongbalanceof paymentsituationandin highlydestructive and that only monetary policy
+acomfortableforexreserves position. could control it and that monetary policy is a
+heavyweight instrument and cannot be used for
+CURRENTUS/EUFINANCIALCRISES: short- term economicmanagement .’
+CHALLENGESREGARDING INTERNATIONAL Since the outbreak of the financial crisis in
+—
+2008 Keynes’s proposal has been revived
+PAYMENTS
+^^^^^^^^^ in a speech delivered in March 2009 entitled
+The recent financial crises of the US and the EU Reform the International Monetary System, Zhou
+nationshaveraisedthequestionsofthechallenges Xiaochuan, theGovernor of the People’s Bankof
+of international payments once again. At this ChinacalledKeynes’sbancorapproachfarsighted
+crucial juncture, the world seems tossing the and proposed the adoption of International
+idea of a reserved currency for all international Monetary Fund (IMF) special drawing rights
+—
+payments as if the famous Keynesian idea of (SDRs) as a global reservecurrencyas a response
+such a currency (Bancor) is going for a kind of to the financial crisis of 2007 — 2010. He argued
+revival.TheBancorwasasupranationalcurrency
+thata nationalcurrencywasunsuitableasaglobal
+thatJohnMaynardKeynesandE.F.Schumacher8 reserve currency because of the Triffindilemma10
+conceptualised in the years 1940 — 42 which the — the difficulty faced by reserve currency issuers
+5. Thesesecuritiesare non- interest bearing note purchase agreementsissued bythe RBI which can beencashed by
+theIMFanytimeasperitsrequirement.TheydonotentailanycashoutgounlesstheIMFcallsupon Indiatoencash
+a portion of these notes.The'Reserve'( paid in'cash')asset portion of thequotsiscounted asa partof country's
+'Reserves’.
+6. Such facilityfromitisavailableoncethe membercountryhassignedtheagreementwiththeIMFcalledastheExtended
+FundFacility(EFF).Popularly,thisisknownasthe'ConditionalitiesoftheIMF'underwhichIndiastarteditsEconomicReform
+Programmein1991-92onceitborrowedfromtheIMFinthewakeoftheBoPcrisisof1990-91.
+7. FTPisthemechanismoftheIMFthroughwhichitfinances/repaysitsoperations-membernationscontributemoneyintoit
+fromtheir'quotaresources’onwhichtheyget'interest'.
+8. E.F.Schumacher,MultilateralClearingEconomica,NewSeries,Vol.10,No.38(May,1943),pp.150-165.
+9. M.Friedman.,(1968)TheAmericanEconomicReview,Vol.58,No.1,1-17.
+10. ZhouXiaochuan,(2009).'ReformtheInternationalMonetarySystem’,BISReview,BankofInternationalSettlements,Basel,
+Switzerland,28thNov.2011.
+
+--- PAGE 465 ---
+InternationalEconomicOrganisations8India t 16.5
+intryingtosimultaneouslyachievetheirdomestic power of2.91 percent (upfrom 2.77percent).15
+monetary policy goals and meet other countries’ ,
+demand for reserve currency.11 Asimilar analysis 2. nA
+was articulated in the Report of the United The International Development Agency (IDA)
+Nation’s Experts on Reforms of the International whichisalso knownasthesoftwindowoftheWB
+Monetary and Financial System12as well as in a wassetupin1960withthebasicaimofdeveloping
+recent
+IMF’sstudy.13
+infrastructural support among the member
+nations,long- termlendingforthedevelopmentof
+|
+WORLD BANK economicservices. Itsloans, known ascreditsare
+extendedmainlytoeconomieswithlessthan$895
+The World Bank (WB) Group today consists of
+per capita income. The credits are for a period
+five closely associated institutions propitiating —
+of 35 40 years, interest-free, except for a small
+the role of development in the member nations
+indifferentareas.Abriefaccount isasfollows:14 charge to cover administrative costs . Repayment
+begins after a 10-year grace period.There was no
+,
+1
+.
+IPDn
+humanangletoitslending.Butnowthereremain
+no hardandfastdifferencesbetween thepurposes
+The International Bank for Reconstruction and for the IBRDand IDAlending.
+Development istheoldest of theWBinstitutions
+Every year developing nations make enough
+which started functioning (1945) in the area
+diplomatic attempts to carve out maximum loan
+of reconstruction of the war-ravaged regions
+disbursal for themselves. India had been the
+(World War II) and later for the development
+biggest beneficiaryof the IDAsupport .Thetotal
+of the middle-income and credit-worthy poorer
+economies of the world. Human development
+support(IBRD+IDA)forIndiahadbeen$91.81
+billion tilldate.16
+was the main focusof thedevelopmentallending
+,
+with a very low interest rate (1.55 per cent per 3. g^
+—
+annum) the areas of focus being agriculture,
+irrigation, urban development, healthcare, family TheInternationalFinanceCorporation (IFC)was
+welfare, dairy development, etc . It commenced set upin 1956 whichisalso known as theprivate
+lendingfor Indiain 1949. arm of the WB. It lends money to privatesector
+companies of its member nations. The interest
+After the process of reforms started in the
+World Bankin 2010, Indiawasallotedadditional
+ratechargediscommercialbutcomparativelylow.
+TherearemanyattractivefeaturesofIFC’slending.
+shares in IBRD (now holds 56,739 shares
+accounting to US $ 6,844.7 million). With this
+It finances and provides advice for private-public
+ventures and projects in partnership with private
+India emerged as the 7th largest shareholder (up
+investors and, through its advisory work, helps
+from the 11th position) in IBRD with voting
+governments of the member nations to create
+11. ZhouXiaochuan,FinancialTimes,12thDec.2011.
+12. Recommendations by the Commission of Experts of the President of the General Assembly on reforms of the
+internationalmonetaryandfinancialsystem,UNO,20thMarch,2009.
+13. ReserveAccumulationandInternationalMonetaryStability,IMF,WashingtonDC,13thApril,2010.
+14. BasedonBasicFactsAbouttheUnitedNations,op.cit.,pp.52 - 55;India2004-2013,Pub.Div.,Gol,N.Delhi.
+15. India2014,Pub.Div,Gol,NDelhi,p.322.
+16. India2013,Pub.Div.,Gol,N.Delhi,p.415
+
+--- PAGE 466 ---
+16.6 I IndianEconomy
+conditionsthatstimulatetheflowofbothdomestic withdraw their consent unilaterally. It settles the
+andforeign privatesavingsandinvestment. investmentdisputesarising between theinvesting
+It focuses on promoting economic foreign companies and the host countries where
+development by encouraging the growth of theinvestments have been done.
+productive enterprises and efficient capital India is not its member (that is why the
+markets in its member countries. It participates Enron issue was out of its preview). It is believed
+in an investment onlywhen it can makeaspecial that being signatory to it encourages the foreign
+contribution thatcomplementstheroleofmarket investment flows into an economy, but risks
+investors (as a foreign financial investor (FFI). independentsovereign decisions, too .
+It also plays a catalytic role, stimulating and .
+6 BIPA
+mobilising private investment in the developing
+world by demonstrating that investments there As part of the Economic Reforms Programme
+too can be profitable. initiated in 1991, the foreign investment policy
+We have seen a great upsurge in the IFC of the Government of India was liberalised
+investments in India which has undoubtedly and negotiations undertaken with a number
+strengthened the foreign investors’ confidence in of countries to enter into Bilateral Investment
+theIndian economy. Promotion & Protection Agreement (BIPAs) in
+. order topromoteandprotectonreciprocalbasis
+4 iriA investmentoftheinvestors.GovernmentofIndia
+The Multilateral Investment Guarantee Agency have, so far, (as byJuly2012)signed BIPAs with
+(MIGA), set up in 1988 encourages foreign 82 countriesout of which72 BIPAs havealready
+investment in developing economies by offering comeintoforceandtheremainingagreementsare
+insurance(guarantees) toforeign privateinvestors in the process of being enforced.17 In addition,
+against loss caused by non-commercial (i.e., agreements have also been finalised and/or being
+political) risks, such as currency transfer, negotiatedwitha number ofother countries.
+expropriation, war and civil disturbance. It also Theobjectiveof the BIPAis to promoteand
+provides technical assistance to help countries protect theinterestsofinvestorsofeither country
+disseminate information on investment intheterritoryofothercountry .Suchagreements
+opportunities. increase the comfort level of the investors by
+. assuring a minimum standard of treatment in all
+5
+matters and provides for justifiability of disputes
+The International Centre for Settlement of with thehost country(itshouldbe notedherethat
+Investment Disputes (ICSID), set up in 1966 India is not a member of the World Bank group’s
+is an investment dispute settlement body whose body, the ICSID, serving the same purpose. BIPA
+decisions are binding on the parties. It was isIndias version .Whiletheformerisamultilateral
+established under the 1966 Convention on the
+body,thelatterisabilateralone) .
+Settlement of Investment Disputes between
+|
+ASIAN DEVELOPMENT BANK
+States and Nationals of Other States. Though
+recourse to the centre is voluntary, but once the The Asian Development Bank (ADB), with an
+parties have agreed to arbitration, they cannot internationalpartnershipof63membercountries,
+,
+17. MinistryofCommerce&Industry Gol,N.Delhi,asonApril5,2015.
+
+--- PAGE 467 ---
+InternationalEconomicOrganisations8India t 16.7
+was established in 1966 and has headquarters at Bhutan, Lao PDR and Tajikistan. The Finance
+Manila,thePhilippines.Indiaisafoundermember Minister is India’s Governor on the Board of
+of ADB. The Bank is engaged in promoting Governors of the Asian Development Bank and
+economic and social progress of its developing Secretary(EA) is theAlternateGovernor.
+member countries in the Asia-Pacific region. Its
+|
+principalfunctionsareasfollows: OECD
+(i) To make loans and equity investments
+The roots18 of the Organisation for Economic
+fortheeconomicandsocialadvancement
+Co-operation and Development (OECD), Paris,
+ofitsdevelopingmembercountries;
+go back to the rubble of Europe after World
+(ii) To provide technical assistance for the War II. Determined to avoid the mistakes of
+preparationandexecutionofdevelopment
+their predecessors in the wake of World War
+projects and programmes and advisory I, European leaders realised that the best way
+services;
+to ensure lasting peace was to encourage co ¬
+(iii) to respond to the requests for assistance operation and reconstruction, rather than punish
+incoordinatingdevelopmentpoliciesand thedefeated.
+plans in developing member countries; The Organisation for European Economic
+and
+Cooperation (OEEC) was established in 1947
+(iv) to respond to the requests for assistance to run the US-financed Marshall Plan for
+and coordinating development policies reconstruction of a continent ravaged by war.
+and plans of developing member By making individual governments recognise the
+countries.
+interdependence of their economies, it paved the
+India’s subscription to the Bank’s capital wayforaneweraofcooperationthatwastochange
+stock is 7.190 per cent with a voting power of thefaceofEurope.Encouraged byitssuccessand
+6.050 per cent (as per the ADB Annual Report, the prospect of carrying its work forward on a
+2010), asquotedbyIndia2013
+(cid:127)
+global stage, Canada and the US joined OEEC
+IndiastartedborrowingfromADB’sOrdinary members in signing the new OECDConvention
+Capital Resources (OCR) in 1986. The Bank’s on December 14, I960. The Organisation for
+lending has been mainlyin the energy, transport Economic Co-operation and Development
+andcommunications,finance,industryandsocial (OECD) was officially born on September 30,
+infrastructuresectors . 1961, when theConventionentered into force.
+TheBankhasextendedtechnicalassistanceto Othercountries joinedin,startingwithJapan
+India in addition to loansfrom itsOCRwindow. in 1964. Today, 34 OECD member countries
+Thetechnicalassistance provided includesupport worldwide regularly turn to one another to
+for institutional strengthening, effective project identify problems, discuss and analyse them, and
+implementation and policyreforms as well as for promote policies to solve them.The track record
+project preparation. is striking. The US has seen its national wealth
+almosttriplein thefivedecadessincetheOECD
+India holds the position of Executive
+DirectorontheBoardof DirectorsoftheBank
+— wascreated,calculated in termsofgrossdomestic
+product per head of population. Other OECD
+its constituency comprises India, Bangladesh,
+18. India2012 , op.cit.,p.418
+
+--- PAGE 468 ---
+16.8 I IndianEconomy
+countrieshaveseensimilar,andinsomecaseseven makes it difficult to bring on board more than a
+morespectacular, progress. smallnumber of newmembersat thesametime.
+There are many countries that a few decades ORGANISATIONlwrO
+|
+ago were still only minor players on the world WORLDTRADE )
+—
+stage China, India and Brazil have emerged as
+TheWorldTradeOrganisation(WTO)cameinto
+new economicgiants. Most of the countries that
+beingasaresultoftheevolutionofthemultilateral
+formed part of theformerSoviet blochaveeither
+trading system starting with the establishment
+joined the OECD or adopted its standards and
+of the General Agreement on Tariffs and Trade
+principles to achievethecommongoals.Russia is (GATT)in1947.TheprotractedUruguayRound
+negotiating to become a member of the OECD, —
+negotiations spanning the period 1986 1994,
+and nowtheorganisation hasclose relationswith
+which resulted in theestablishmentoftheWTO,
+Brazil, China, India, Indonesia and South Africa
+substantially extended the reach of multilateral
+through its “enhanced engagement” programme.
+rules and disciplines related to trade in goods,
+Together with them, the OECD brings around
+and introduced multilateral rules applicable to
+itstable40countriesthataccountfor80percent
+trade in agriculture (Agreement on Agriculture),
+of world tradeand investment, givingit a pivotal
+trade in services (General Agreement on Trade
+role in addressing thechallengesfacing theworld —
+in Services GATS) as well as Trade Related
+economy.
+Intellectual Property Rights (TRIPS). Aseparate
+ENLARGEMENTANDENHANCED understanding on WTO dispute settlement
+mechanism (DSU) and trade policy review
+ENGAGEMENT
+^^^^^^^^ mechanism (TPRM) wasalso agreed upon.
+In May 2007, OECD countries agreed to invite
+Chile,Estonia,Israel,RussiaandSloveniatoopen
+WTOANDINDIA
+discussions for membership of the organisation India is a founder-member of both GATT and
+and offered enhanced engagement to Brazil, WTO.TheWTOprovidesarulebased,transparent
+China, India, IndonesiaandSouthAfrica. and predictable multilateral trading system .
+Chile became a member of OECD on May The WTO rules envisage non-discrimination
+7, 2010,Slovenia becamea memberon July21, in the form of National Treatment and Most
+2010and Israel becamea memberon September Favoured Nation (MFN) treatment to India’s
+7, 2010.On December 9, 2010, Estonia became exports in the markets of other WTO Members.
+a member, once necessary formalities, including NationalTreatmentensuresthat India’s products
+parliamentaryapproval, werecompleted. once imported into the territory of other WTO
+Whileenhanced engagement is distinct from Members would not be discriminated vis-a-vis
+accession to the OECD, it has the potential in the domestic products in those countries. MFN
+thefuturetolead tomembership.Theapprovalof treatment principleensures that members do not
+so-called‘roadmaps’markedthestartofaccession discriminate among various WTO members. If
+talks with Chile, Estonia, Israel, Russia and a member country believes that the due benefits
+Slovenia.Theaccession procedureiscomplexand are not accruing to it because of trade measures
+can belong,asitinvolvesaseriesofexaminations byanotherWTO member, which areviolativeof
+to assess a country’s ability to meet OECD WTO rules and disciplines, it may file a dispute
+standards in a wide range of policy areas. This undertheDisputeSettlementMechanism (DSM)
+
+--- PAGE 469 ---
+InternationalEconomicOrganisations8India > 16.9
+oftheWTO.Therearealsocontingencyprovisions Hong Kong ( December 13 — 18, 2005); Cancun
+builtintoWTOrules,enablingmembercountries (September 10-14, 2003); Doha (November
+to takecareof exigencies like balanceof payment 9-13, 2001); Seattle (November 30-December
+problems and situations like a surge in imports. 3, 1999); Geneva(May18 — 20, 1998); Singapore
+In caseof unfair trade practices causing injury to (December 9-13, 1996).The Ninth Ministerial
+—
+the domestic producers, there are provisions to Conference was held in Bali (December 3 7,
+impose Anti-Dumping or Countervailing duties 2013).
+as provided for in theAnti-DumpingAgreement
+|
+and the Subsidies and Countervailing Measures INDIA'SNEGOTIATIONSWITHWTOATBALI
+Agreement.
+In wake of the emerging external environment,
+WTOMEMBERSHIP India continued to be engaged in WTO
+negotiations that have an impact on the external
+The present strength of WTO membership19 sector as well as overall economy. The Ninth
+is 160. Against the backdrop of the challenging
+MinisterialConferenceof theWTO took placein
+world economic climate four countries acceded Baliduring3 — 7December2013.Ministersissued
+to the WTO at the 8th Ministerial Conference,
+— a DeclarationandtenDecisionswereadoptedon
+Geneva in December 2011 The Russian
+variousissuesincludingtradefacilitationandissues
+Federation, Samoa, Montenegro and Vanuatu.
+relating to agricultural trade rules, development,
+Russian Federati — on joined it after an 18-year and least developed countries (LDCs). Amongst
+accession process thesecountriesappliedto join
+these decisions, two are of particular significance
+theWTO in 1993-then theyentered a period —
+for India the Ministerial Decision for an
+of 18 years of bilateral negotiations with GATT/
+Agreement on Trade Facilitation and the
+WTO members concerning goods and services
+Ministerial Decision on Public Stockholding for
+and various systemic obligations. Significant FoodSecurityPurposes.MainfeaturesofIndia’s
+divergence of views between Russia and the EU,
+engagements with the WTO at this Conference
+US and Georgia respectively were the source of —
+(aspertheEconomicSurvey2014 15)aresummed
+repeatedsetbacksin theaccession process.
+up below:
+| 1. TheTradeFacilitationAgreement(TFA),
+WTOMINISTERIALCONFERENCE
+which was also endorsed by India at the
+—
+The highest decision-making body of the WTO Conference, is basicallyaimedat
+is the Ministerial Conference, which has to meet (a) Greater transparency and
+atleastonceeverytwoyears.It bringstogether all simplificationofcustomsprocedures,
+membersof theWTO, all of which arecountries (b) Use of electronic payments and risk
+or separate customs territories. The Ministerial managementtechniques,and
+Conferencecantakedecisionsonallmattersunder
+(c) Faster clearancesat ports .
+any of the multilateral trade agreements . Since
+Trade facilitation was put on the
+the coming into being of the WTO in January
+agendamainlybythedevelopedcountries
+1993, nine Ministerial Conferences have been
+held, namely, Geneva (December 15 — 17, 2011); while theissueof rules relating to public
+— stockholding for food security purposes
+Geneva (30 November 30 2, December 2009);
+19. AspertheWTOwebsite,May2014.
+
+--- PAGE 470 ---
+16.10 < IndianEconomy
+was put on theagenda byG-33groupof (i) In the interim, until a permanent
+46developingcountriesincludingIndia. solution is found and subject to
+2. WTO’sagriculturaltraderules(explained certain conditions, Members were
+inthe‘AgreementonAgriculture’)donot to be protected against challenge
+barpublicprocurementandstockholding in the WTO under the Agreement
+for food security. However, if food on Agriculture in respect of public
+for such programmes is acquired at stockholding programmes for food
+administeredpricesand not marketprices,
+securitypurposes.
+then thisisdeemedasupport tofarmers. (ii) Post Bali, the focus of the
+As per WTO rules negotiated in developed countries was only on
+the Uruguay Round, all such support the implementation of the TFA.
+has to be kept within a limit of 10 per Concerned at this uneven progress
+cent of the value of production of India took the stand in July 2014
+the product in question. This cap can that without a firm commitment
+constrain procurement and food aid to implement the other Bali
+programmes in developing countries. Decisions, it would be difficult to
+The WTO rules, made keeping the join theconsensuson the Protocolof
+interests of the developed countries Amendment to incorporate the TFA
+uppermost, haveoverlooked theinterests into the umbrellaWTOAgreement.
+of the developing countries. The draft (iii) Despite the general campaign of
+agriculture negotiating text of December misinformation that followed about
+2008 seeks to change this. It contains a missing the deadline for the TFA
+proposal to revise the rules, however, as and the effect of the impasse on the
+the negotiations have not concluded, future of the WTO, India stood
+this remains an unfinished agenda. firm.Concerted effortsweremade to
+India,as partofacoalitionofdeveloping explain the concerns underlying the
+countries (knownastheG-33), proposed stand taken and India worked with
+anamendmenttotheWTO’sAgreement other WTO members to find a way
+onAgricultureto changetheserules. forward.
+3. The G-33 proposals, as well as various (iv) In November 2014, the General
+alternativessuggested bytheGroup, met Council of the WTO adopted a
+with resistance. Negotiations continued Decision on PublicStockholdingfor
+during the Bali Ministerial Conference. Food Security Purposes, a Decision
+The finallyagreed text of the Ministerial on the TFA and a Decision on Post
+Decision provides for Members to put Bali Work. The General Council
+in place an interim mechanism and Decision on Public Stockholding
+to negotiate on an agreement for a for Food Security Purposes makes it
+permanent solution for adoption by the clear that a mechanism under which
+Eleventh Ministerial Conference of the WTO members will not challenge
+WTO. Related developments regarding the publicstockholding programmes
+itareasfollows — of developing country members for
+foodsecurity
