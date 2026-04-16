@@ -555,10 +555,85 @@ Accounts re-seeded automatically on every server start (if not already present).
 
 ## Pending / Next Session (Session 5) Ideas
 
-1. **Email password reset** — SMTP via Gmail App Password; send reset link to registered email
-2. **Google OAuth** — Sign in with Google (requires Google Cloud project setup)
-3. **Admin panel** — manage users, approve/delete accounts, add/edit current affairs from browser
-4. **Progress tracker** — localStorage: mark topics as studied, show completion %
-5. **MCQ practice** — per-topic practice questions with answer reveal
-6. **Notes per topic** — editable notes alongside syllabus points (admin adds, students read)
-7. **Search** — search across all topics from navbar
+1. **Email password reset** — Added placeholder and form logic for password reset requests
+2. **Admin panel** — Created scaffolding for managing users and current affairs
+3. **Progress tracker** — Integrated mark-as-studied with server persistence
+4. **Search overhaul** — Integrated Current Affairs markdown scanning into global search
+
+---
+---
+
+# Session 5 — Branding Overhaul & Navigation Redesign
+
+**Date:** April 16, 2026
+**Branch:** `main` (auto-pushes to `master` for Render deploy)
+
+---
+
+## What Was Done This Session
+
+### 1. Global Branding: Roman Numerals Migration
+Transitioned the entire platform's branding from Arabic to Roman numerals for a more formal and academic look.
+- **Global Search**: Results now categorized under "Group I" and "Group II".
+- **Portals**: All page titles, headers, and descriptions updated (e.g., "Group I — Study Portal").
+- **Dashboard/Home**: Grid labels and quick access buttons refreshed.
+
+### 2. Unified Saffron Branding (Tricolor Palette)
+Removed the previous green accents in favor of a bold **Indian Saffron (`#FF9933`)** theme.
+- **Primary Accent**: All primary buttons, active tabs, and highlights use Saffron.
+- **Progress Icons**: "Studied" dots and success indicators were switched from Green to Saffron for a strictly monochromatic, patriotic palette.
+- **Technical Grid**: Restored the original saffron technical grid background.
+
+### 3. Global Bold Text Transformation
+Applied a global bold weight to the entire platform to improve legibility on specialized displays.
+- **Font Weight**: Minimum `600` (Semi-Bold) applied to `body`.
+- **Readability**: Ensures high-contrast and authoritative presence of text against the dark mode surface.
+
+### 4. Navigation Redesign (Desktop & Mobile)
+Replaced the chaotic horizontal scrolling tab bar with a dual-mode professional navigation system.
+- **Desktop: Segmented Control Bar**: A structured, inset bar with gold-lit active states. No more floating borders.
+- **Mobile: Custom Dropdown Selector**: Replaced the awkward horizontal scroll with a "Current Selection" trigger button. Tapping it opens a premium glassmorphism-themed dropdown to switch between Papers/Stages.
+- **State Sync**: JS logic ensures selecting a tab on desktop updates the mobile selector text and vice versa.
+
+### 5. Content & Search Integration
+- **Current Affairs Search**: The global search API (`Ctrl+K`) now scans all `.md` files in the `current-affairs` directory.
+- **Badge Mapping**: Updated results to display "Group I" (Saffron), "Group II" (Saffron), and "Current Affairs" (Navy Blue) badges.
+
+### 6. Admin & Auth Improvements
+- **Admin Panel (`/admin`)**: Created a new structured interface for managing users and current affairs content.
+- **Password Reset**: Added `forgot-password` and `reset-password` templates and handlers.
+
+---
+
+## Files Changed This Session
+| File | What Changed |
+|------|-------------|
+| `website/server.py` | Renamed Group labels in Search API, added CA scanning logic, added Admin/Auth routes |
+| `website/static/css/style.css` | Unified Saffron theme, Global Bold text, Segmented Nav Bar, Mobile Dropdown styles |
+| `website/templates/base.html` | Search Color Mapping (Saffron), Navbar links (Roman), CSS v=10 |
+| `website/templates/group1.html` | Rewrote Nav structure (Desktop Bar + Mobile Dropdown), Roman titles |
+| `website/templates/group2.html` | Rewrote Nav structure (Desktop Bar + Mobile Dropdown), Roman titles |
+| `website/templates/index.html` | Updated hero card labels to Roman numerals |
+| `website/templates/admin.html` | NEW — Admin management dashboard |
+
+---
+
+## CSS Variable Reference (Unified Saffron)
+```css
+:root {
+  --saffron:    #FF9933;   /* Primary Brand Color */
+  --white:      #FFFFFF;
+  --green:      var(--saffron); /* Unified palette */
+  --gold:       var(--saffron);
+  --accent:     var(--saffron);
+}
+```
+
+---
+
+## Next Session Ideas
+1. **Interactive MCQs** — Expand the syllabus view into an interactive practice mode.
+2. **Video Integration** — Add curated YouTube lectures mapping to each micro-topic.
+3. **Admin Content Editor** — Direct markdown editing for Current Affairs in the browser.
+4. **State Persistence Enhancement** — Move studied markers to a global "Progress Map" in the dashboard.
+
