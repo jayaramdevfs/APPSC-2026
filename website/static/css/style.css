@@ -2033,3 +2033,297 @@ a.nav-user-badge:hover {
     border-radius: 2px;
     padding: 0 2px;
 }
+
+/* =============================================================
+   SESSION 8 — Study Desk
+   ============================================================= */
+
+/* ── Detail header (revision badge) ─────────────────────────── */
+.detail-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+}
+
+/* Revision badge pills */
+.revision-badge { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: flex-end; }
+.rev-pill {
+    font-size: 0.72rem; font-weight: 600; padding: 2px 9px;
+    border-radius: 20px; white-space: nowrap;
+}
+.rev-none     { background: #2a2a2a; color: #888; border: 1px solid #444; }
+.rev-studied  { background: rgba(63,185,80,0.15); color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+.rev-done     { background: rgba(63,185,80,0.2);  color: #3fb950; border: 1px solid rgba(63,185,80,0.4); }
+.rev-upcoming { background: rgba(255,153,51,0.12); color: var(--gold); border: 1px solid rgba(255,153,51,0.3); }
+.rev-soon     { background: rgba(255,153,51,0.2);  color: var(--gold); border: 1px solid rgba(255,153,51,0.5); }
+.rev-overdue  { background: rgba(220,50,50,0.2);   color: #f87171; border: 1px solid rgba(220,50,50,0.4); }
+
+/* ── Desk top-bar ────────────────────────────────────────────── */
+.desk-topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 0; gap: 0.75rem; flex-wrap: wrap;
+}
+.btn-fc, .btn-pins {
+    font-size: 0.78rem; font-weight: 600; padding: 5px 14px;
+    border-radius: 6px; cursor: pointer; text-decoration: none;
+    border: 1px solid var(--border); background: var(--elevated);
+    color: var(--text); transition: all 0.15s;
+}
+.btn-fc:hover, .btn-pins:hover {
+    border-color: var(--gold); color: var(--gold); background: rgba(255,153,51,0.08);
+}
+
+/* ── Study Desk — 3-column layout ───────────────────────────── */
+.topic-study-desk {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin: 0.75rem 0 1rem;
+}
+
+/* TOC panel */
+.desk-toc {
+    width: 180px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 80px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem;
+    font-size: 0.78rem;
+}
+.desk-toc.hidden { display: none; }
+.toc-label {
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted); padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 0.5rem;
+}
+.toc-link {
+    display: block; padding: 3px 6px; color: var(--muted);
+    text-decoration: none; border-radius: 4px; font-weight: 500;
+    line-height: 1.4; margin-bottom: 1px; transition: all 0.12s;
+    border-left: 2px solid transparent;
+}
+.toc-link:hover { color: var(--text); background: var(--elevated); }
+.toc-link.active { color: var(--gold); border-left-color: var(--gold); background: rgba(255,153,51,0.07); }
+.toc-h3 { padding-left: 14px; font-size: 0.73rem; }
+
+/* Notes panel (scrollable) */
+.desk-notes {
+    flex: 1;
+    min-width: 0;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem;
+    scroll-behavior: smooth;
+}
+
+/* My Notes panel */
+.desk-mynotes {
+    width: 260px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.mynotes-header {
+    font-size: 0.75rem; font-weight: 700; color: var(--gold);
+    text-transform: uppercase; letter-spacing: 0.07em;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.save-ind { font-size: 0.7rem; font-weight: 500; color: #3fb950; }
+.mynotes-area {
+    width: 100%;
+    height: 65vh;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    padding: 1rem;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.15s;
+}
+.mynotes-area:focus { border-color: var(--gold); }
+
+/* Mobile: stack desk vertically */
+@media (max-width: 900px) {
+    .topic-study-desk { flex-direction: column; }
+    .desk-toc { width: 100%; position: static; max-height: 200px; }
+    .desk-notes { max-height: 60vh; }
+    .desk-mynotes { width: 100%; }
+    .mynotes-area { height: 200px; }
+}
+
+/* ── Highlight colors ────────────────────────────────────────── */
+mark.hl-yellow { background: #FEF08A; color: #111; border-radius: 2px; padding: 0 1px; }
+mark.hl-green  { background: #BBF7D0; color: #111; border-radius: 2px; padding: 0 1px; }
+mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 0 1px; }
+
+/* ── Highlight toolbar (floating) ───────────────────────────── */
+.hl-toolbar {
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    padding: 5px 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    pointer-events: all;
+}
+.hl-btn {
+    width: 22px; height: 22px; border: none; border-radius: 4px;
+    cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center;
+    background: transparent; transition: transform 0.1s;
+}
+.hl-btn:hover { transform: scale(1.2); }
+.hl-yellow { color: #FEF08A; }
+.hl-green  { color: #BBF7D0; }
+.hl-pink   { color: #FBCFE8; }
+.hl-remove { color: #f87171; font-size: 0.85rem; }
+.hl-fc     { color: var(--gold); font-size: 0.9rem; }
+
+/* ── Paragraph pins ─────────────────────────────────────────── */
+.pin-star {
+    cursor: pointer;
+    margin-right: 4px;
+    font-size: 0.85rem;
+    color: #555;
+    transition: color 0.15s;
+    user-select: none;
+    flex-shrink: 0;
+}
+.pin-star:hover { color: var(--gold); }
+.pinned-para {
+    border-left: 3px solid var(--gold);
+    padding-left: 8px;
+    background: rgba(255,153,51,0.05);
+    border-radius: 0 4px 4px 0;
+}
+.pinned-para .pin-star { color: var(--gold); }
+
+/* ── Flashcard panel ─────────────────────────────────────────── */
+.fc-panel {
+    margin: 0.75rem 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.fc-panel.hidden { display: none; }
+.fc-panel-hdr {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.6rem 1rem; background: var(--elevated);
+    font-size: 0.8rem; font-weight: 700; color: var(--gold);
+}
+.fc-close-btn {
+    background: none; border: none; color: var(--muted); cursor: pointer;
+    font-size: 1rem; padding: 0 4px; transition: color 0.1s;
+}
+.fc-close-btn:hover { color: var(--text); }
+.fc-card {
+    display: flex; align-items: center; gap: 0.75rem;
+    padding: 0.6rem 1rem; border-bottom: 1px solid var(--border);
+}
+.fc-card:last-child { border-bottom: none; }
+.fc-front { flex: 1; font-size: 0.82rem; color: var(--text); font-style: italic; }
+.fc-back-input {
+    flex: 1; background: var(--inset); border: 1px solid var(--border);
+    color: var(--text); font-size: 0.8rem; padding: 4px 8px; border-radius: 5px;
+    outline: none; font-family: inherit;
+}
+.fc-back-input:focus { border-color: var(--gold); }
+.fc-delete-btn {
+    background: none; border: none; color: #f87171; cursor: pointer; font-size: 0.85rem; padding: 2px 5px;
+}
+.fc-empty { padding: 1.2rem; text-align: center; color: var(--muted); font-size: 0.82rem; }
+
+/* ── Bookmark resume banner ─────────────────────────────────── */
+.resume-banner {
+    background: rgba(255,153,51,0.12);
+    border-left: 3px solid var(--gold);
+    color: var(--gold);
+    font-size: 0.78rem; font-weight: 600;
+    padding: 6px 12px; margin-bottom: 1rem;
+    border-radius: 0 6px 6px 0;
+    animation: fadeOut 3s forwards;
+}
+@keyframes fadeOut { 0%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
+
+/* ── Pomodoro widget (floating bottom-right) ─────────────────── */
+.pomo-widget {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    z-index: 8000;
+    display: flex; align-items: center; gap: 6px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 6px 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+.pomo-toggle {
+    background: none; border: none; color: var(--gold);
+    font-size: 0.85rem; font-weight: 700; cursor: pointer;
+    font-family: 'JetBrains Mono', monospace; min-width: 80px;
+}
+.pomo-reset {
+    background: none; border: none; color: var(--muted);
+    font-size: 1rem; cursor: pointer; padding: 0 2px;
+    transition: color 0.1s;
+}
+.pomo-reset:hover { color: var(--text); }
+.pomo-break-banner {
+    position: fixed; top: 80px; left: 50%; transform: translateX(-50%);
+    z-index: 9000;
+    background: rgba(255,153,51,0.95);
+    color: #000; font-weight: 700; font-size: 1rem;
+    padding: 12px 28px; border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    animation: slideDown 0.3s ease;
+}
+@keyframes slideDown { from{transform:translateX(-50%) translateY(-20px);opacity:0} to{transform:translateX(-50%) translateY(0);opacity:1} }
+
+/* ── Last-Day Revision page ─────────────────────────────────── */
+.ldr-page { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+.ldr-header { margin-bottom: 2rem; }
+.ldr-header h1 { font-size: 1.8rem; color: var(--gold); }
+.ldr-header p  { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+.ldr-topic-group { margin-bottom: 2rem; }
+.ldr-topic-title {
+    font-size: 1rem; font-weight: 700; color: var(--gold);
+    border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; margin-bottom: 0.75rem;
+}
+.ldr-pin {
+    display: flex; align-items: flex-start; gap: 0.5rem;
+    padding: 0.5rem 0.75rem; margin-bottom: 0.4rem;
+    background: var(--card); border: 1px solid var(--border);
+    border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0;
+    font-size: 0.85rem; color: var(--text); line-height: 1.5;
+}
+.ldr-pin-star { color: var(--gold); flex-shrink: 0; }
+.ldr-empty { text-align: center; color: var(--muted); padding: 3rem 1rem; }
+.ldr-print-btn {
+    background: var(--gold); color: #000; border: none;
+    padding: 8px 20px; border-radius: 8px; font-weight: 700;
+    cursor: pointer; font-size: 0.85rem; margin-bottom: 1.5rem;
+}
+@media print {
+    .navbar, .pomo-widget, .hl-toolbar, .ldr-print-btn, .back-link { display: none !important; }
+    body { background: #fff; color: #111; }
+    .ldr-pin { border-color: #ccc; background: #fff; }
+    .ldr-topic-title { color: #000; }
+}

@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=11">
+    <link rel="stylesheet" href="/static/css/style.css?v=12">
 </head>
 <body>
 
@@ -25,6 +25,7 @@
     <!-- Desktop horizontal links (hidden on mobile via CSS) -->
     <ul class="nav-links">
         {% if current_user %}<li><a href="/dashboard" class="nav-link {% if request.url.path == '/dashboard' %}active{% endif %}">Dashboard</a></li>{% endif %}
+        {% if current_user %}<li><a href="/last-day-revision" class="nav-link {% if request.url.path == '/last-day-revision' %}active{% endif %}">&#11088; Pins</a></li>{% endif %}
         <li><a href="/" class="nav-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
         <li><a href="/group1" class="nav-link {% if request.url.path == '/group1' %}active{% endif %}">Group I</a></li>
         <li><a href="/group2" class="nav-link {% if request.url.path == '/group2' %}active{% endif %}">Group II</a></li>
@@ -58,6 +59,7 @@
     </div>
     <ul class="nav-drawer-links">
         {% if current_user %}<li><a href="/dashboard" class="nav-drawer-link {% if request.url.path == '/dashboard' %}active{% endif %}">Dashboard</a></li>{% endif %}
+        {% if current_user %}<li><a href="/last-day-revision" class="nav-drawer-link {% if request.url.path == '/last-day-revision' %}active{% endif %}">&#11088; Pins</a></li>{% endif %}
         <li><a href="/" class="nav-drawer-link {% if request.url.path == '/' %}active{% endif %}">Home</a></li>
         <li><a href="/group1" class="nav-drawer-link {% if request.url.path == '/group1' %}active{% endif %}">Group I</a></li>
         <li><a href="/group2" class="nav-drawer-link {% if request.url.path == '/group2' %}active{% endif %}">Group II</a></li>

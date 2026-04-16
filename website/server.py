@@ -116,6 +116,45 @@ def init_db() -> None:
             expires_at  TEXT NOT NULL
         )
     """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS topic_highlights (
+            user_id         INTEGER NOT NULL,
+            topic_id        TEXT NOT NULL,
+            highlights_json TEXT DEFAULT '[]',
+            updated_at      TEXT DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (user_id, topic_id)
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS topic_user_notes (
+            user_id    INTEGER NOT NULL,
+            topic_id   TEXT NOT NULL,
+            content    TEXT DEFAULT '',
+            updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            PRIMARY KEY (user_id, topic_id)
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS flashcards (
+            id         INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id    INTEGER NOT NULL,
+            topic_id   TEXT NOT NULL,
+            front      TEXT NOT NULL,
+            back       TEXT DEFAULT '',
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS paragraph_pins (
+            id         INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id    INTEGER NOT NULL,
+            topic_id   TEXT NOT NULL,
+            para_index INTEGER NOT NULL,
+            para_text  TEXT NOT NULL,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, topic_id, para_index)
+        )
+    """)
     con.commit()
 
     # Admin — password overrideable via ADMIN_PASSWORD env var on Render
@@ -1729,20 +1768,28 @@ async def homepage(request: Request):
 
 
 async def group1(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group1.html", {
         "structure": G1_STRUCTURE,
         "structure_json": json.dumps(G1_STRUCTURE),
         "shared_topics_json": json.dumps(SHARED_TOPICS),
-        "current_user": get_current_user(request),
+        "current_user": user,
+        "user_id": user["id"],
     })
 
 
 async def group2(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group2.html", {
         "structure": G2_STRUCTURE,
         "structure_json": json.dumps(G2_STRUCTURE),
         "shared_topics_json": json.dumps(SHARED_TOPICS),
-        "current_user": get_current_user(request),
+        "current_user": user,
+        "user_id": user["id"],
     })
 
 
@@ -2138,10 +2185,14 @@ APT_STRUCTURE = {
 
 
 async def aptitude(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "aptitude.html", {
         "structure": APT_STRUCTURE,
         "structure_json": json.dumps(APT_STRUCTURE),
-        "current_user": get_current_user(request),
+        "current_user": user,
+        "user_id": user["id"],
     })
 
 
@@ -2604,9 +2655,13 @@ TELUGU_STRUCTURE = {
 
 
 async def telugu(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "telugu.html", {
         "structure_json": json.dumps(TELUGU_STRUCTURE),
-        "current_user": get_current_user(request),
+        "current_user": user,
+        "user_id": user["id"],
     })
 
 
@@ -2627,13 +2682,18 @@ def _ca_days_for_month(year: int, month: int) -> list[int]:
 
 
 async def current_affairs(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "current_affairs.html", {
-        "current_user": get_current_user(request),
+        "current_user": user,
     })
 
 
 async def api_ca_content(request: Request):
     """Return raw markdown for a given date, or 404 if not found."""
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
     date = request.path_params["date"]
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
         return PlainTextResponse("Invalid date format.", status_code=400)
@@ -2645,6 +2705,8 @@ async def api_ca_content(request: Request):
 
 async def api_ca_month(request: Request):
     """Return list of day numbers (int) that have CA content for year/month."""
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
     try:
         year  = int(request.path_params["year"])
         month = int(request.path_params["month"])
@@ -3281,6 +3343,8 @@ async def change_password_post(request: Request):
 # ---------------------------------------------------------------------------
 
 async def api_search(request: Request):
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
     q = (request.query_params.get("q") or "").strip().lower()
     if len(q) < 2:
         return JSONResponse([])
@@ -3392,6 +3456,8 @@ async def api_search(request: Request):
 NOTES_DIR = FILES_DIR / "content" / "topics"
 
 async def api_get_content(request: Request):
+    if not get_current_user(request):
+        return JSONResponse({"error": "Login required"}, status_code=401)
     topic_id = request.path_params["topic_id"]
     if not re.match(r'^[a-z0-9-]+$', topic_id):
         return JSONResponse({"available": False})
@@ -3413,6 +3479,269 @@ async def api_get_content(request: Request):
 
     return JSONResponse({"available": False, "content": None})
 
+
+# ── Highlights API ────────────────────────────────────────────────────────────
+
+async def api_get_highlights(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute(
+        "SELECT highlights_json FROM topic_highlights WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    con.close()
+    return JSONResponse({"highlights": json.loads(row[0]) if row else []})
+
+
+async def api_save_highlights(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    highlights = body.get("highlights", [])
+    con = sqlite3.connect(DB_PATH)
+    con.execute("""
+        INSERT INTO topic_highlights (user_id, topic_id, highlights_json, updated_at)
+        VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+        ON CONFLICT(user_id, topic_id) DO UPDATE SET
+            highlights_json=excluded.highlights_json,
+            updated_at=CURRENT_TIMESTAMP
+    """, (user["id"], topic_id, json.dumps(highlights)))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+# ── Personal Notes API ────────────────────────────────────────────────────────
+
+async def api_get_user_notes(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute(
+        "SELECT content FROM topic_user_notes WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    con.close()
+    return JSONResponse({"content": row[0] if row else ""})
+
+
+async def api_save_user_notes(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    content = body.get("content", "")
+    con = sqlite3.connect(DB_PATH)
+    con.execute("""
+        INSERT INTO topic_user_notes (user_id, topic_id, content, updated_at)
+        VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+        ON CONFLICT(user_id, topic_id) DO UPDATE SET
+            content=excluded.content,
+            updated_at=CURRENT_TIMESTAMP
+    """, (user["id"], topic_id, content))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+# ── Flashcards API ────────────────────────────────────────────────────────────
+
+async def api_get_flashcards(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT id, front, back, created_at FROM flashcards WHERE user_id=? AND topic_id=? ORDER BY id",
+        (user["id"], topic_id)
+    ).fetchall()
+    con.close()
+    return JSONResponse({"cards": [{"id": r[0], "front": r[1], "back": r[2], "created_at": r[3]} for r in rows]})
+
+
+async def api_create_flashcard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    front = (body.get("front") or "").strip()
+    back = (body.get("back") or "").strip()
+    if not front:
+        return JSONResponse({"error": "front is required"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    cur = con.execute(
+        "INSERT INTO flashcards (user_id, topic_id, front, back) VALUES (?, ?, ?, ?)",
+        (user["id"], topic_id, front, back)
+    )
+    card_id = cur.lastrowid
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True, "id": card_id})
+
+
+async def api_update_flashcard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    card_id = int(request.path_params["id"])
+    body = await request.json()
+    back = (body.get("back") or "")
+    con = sqlite3.connect(DB_PATH)
+    con.execute(
+        "UPDATE flashcards SET back=? WHERE id=? AND user_id=?",
+        (back, card_id, user["id"])
+    )
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+async def api_delete_flashcard(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    card_id = int(request.path_params["id"])
+    con = sqlite3.connect(DB_PATH)
+    con.execute("DELETE FROM flashcards WHERE id=? AND user_id=?", (card_id, user["id"]))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+# ── Paragraph Pins API ────────────────────────────────────────────────────────
+
+async def api_get_pins(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT para_index, para_text FROM paragraph_pins WHERE user_id=? AND topic_id=? ORDER BY para_index",
+        (user["id"], topic_id)
+    ).fetchall()
+    con.close()
+    return JSONResponse({"pins": [{"para_index": r[0], "para_text": r[1]} for r in rows]})
+
+
+async def api_toggle_pin(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    body = await request.json()
+    para_index = int(body.get("para_index", -1))
+    para_text = (body.get("para_text") or "").strip()
+    con = sqlite3.connect(DB_PATH)
+    existing = con.execute(
+        "SELECT id FROM paragraph_pins WHERE user_id=? AND topic_id=? AND para_index=?",
+        (user["id"], topic_id, para_index)
+    ).fetchone()
+    if existing:
+        con.execute("DELETE FROM paragraph_pins WHERE user_id=? AND topic_id=? AND para_index=?",
+                    (user["id"], topic_id, para_index))
+        action = "removed"
+    else:
+        con.execute(
+            "INSERT INTO paragraph_pins (user_id, topic_id, para_index, para_text) VALUES (?, ?, ?, ?)",
+            (user["id"], topic_id, para_index, para_text)
+        )
+        action = "added"
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True, "action": action})
+
+
+async def api_all_pins(request: Request):
+    """All pins for the current user across all topics — for Last-Day Revision page."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT topic_id, para_index, para_text, created_at FROM paragraph_pins WHERE user_id=? ORDER BY topic_id, para_index",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+    # Group by topic_id
+    grouped: dict = {}
+    for topic_id, para_index, para_text, created_at in rows:
+        grouped.setdefault(topic_id, []).append({"para_index": para_index, "para_text": para_text})
+    return JSONResponse({"pins": grouped})
+
+
+# ── Topic Status API (for revision badge) ─────────────────────────────────────
+
+async def api_topic_status(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    prog = con.execute(
+        "SELECT first_studied, last_studied, study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
+        (user["id"], topic_id)
+    ).fetchone()
+    revs = con.execute(
+        "SELECT revision_number FROM revision_log WHERE user_id=? AND topic_id=? ORDER BY revision_number",
+        (user["id"], topic_id)
+    ).fetchall()
+    con.close()
+    if not prog:
+        return JSONResponse({"studied": False})
+    from datetime import date as _date, timedelta
+    first_studied = _date.fromisoformat(prog[0])
+    last_studied = _date.fromisoformat(prog[1])
+    today = _date.today()
+    days_since = (today - last_studied).days
+    revs_done = [r[0] for r in revs]
+    # 1-4-7 schedule
+    schedule = {1: first_studied + timedelta(days=1),
+                2: first_studied + timedelta(days=4),
+                3: first_studied + timedelta(days=7)}
+    next_due = None
+    next_rev_num = None
+    for rev_num in [1, 2, 3]:
+        if rev_num not in revs_done:
+            due_date = schedule[rev_num]
+            next_due = due_date.isoformat()
+            next_rev_num = rev_num
+            days_until = (due_date - today).days
+            break
+    else:
+        days_until = None
+    return JSONResponse({
+        "studied": True,
+        "first_studied": prog[0],
+        "last_studied": prog[1],
+        "days_since_studied": days_since,
+        "study_count": prog[2],
+        "revisions_done": revs_done,
+        "next_revision_due": next_due,
+        "next_revision_num": next_rev_num,
+        "days_until_revision": days_until,
+    })
+
+
+# ── Last-Day Revision Page ────────────────────────────────────────────────────
+
+async def last_day_revision(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    return templates.TemplateResponse(request, "last_day_revision.html", {
+        "current_user": user,
+    })
 
 
 # ---------------------------------------------------------------------------
@@ -3456,6 +3785,19 @@ routes = [
     Route("/api/admin/ca/{date}",                 api_admin_ca_delete,     methods=["DELETE"]),
     Route("/api/search",                          api_search),
     Route("/api/content/{topic_id}",              api_get_content),
+    Route("/api/highlights/{topic_id}",           api_get_highlights,       methods=["GET"]),
+    Route("/api/highlights/{topic_id}",           api_save_highlights,      methods=["POST"]),
+    Route("/api/user-notes/{topic_id}",           api_get_user_notes,       methods=["GET"]),
+    Route("/api/user-notes/{topic_id}",           api_save_user_notes,      methods=["POST"]),
+    Route("/api/flashcards/{topic_id}",           api_get_flashcards,       methods=["GET"]),
+    Route("/api/flashcards/{topic_id}",           api_create_flashcard,     methods=["POST"]),
+    Route("/api/flashcards/card/{id}",            api_update_flashcard,     methods=["PUT"]),
+    Route("/api/flashcards/card/{id}",            api_delete_flashcard,     methods=["DELETE"]),
+    Route("/api/pins/{topic_id}",                 api_get_pins,             methods=["GET"]),
+    Route("/api/pins/{topic_id}",                 api_toggle_pin,           methods=["POST"]),
+    Route("/api/pins",                            api_all_pins,             methods=["GET"]),
+    Route("/api/progress/topic-status/{topic_id}", api_topic_status,        methods=["GET"]),
+    Route("/last-day-revision",                   last_day_revision),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]

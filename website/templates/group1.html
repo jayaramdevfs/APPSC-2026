@@ -208,11 +208,38 @@
             <h2 class="g2-detail-title" id="title-{{ key }}"></h2>
             <p class="g2-detail-meta">Official Syllabus &nbsp;&bull;&nbsp; {{ stage.label }}</p>
           </div>
-          <span class="g2-official-tag">APPSC Official</span>
+          <div class="detail-header-right">
+            <div class="revision-badge" id="rev-badge-{{ key }}"></div>
+            <span class="g2-official-tag">APPSC Official</span>
+          </div>
         </div>
         <div class="shared-topic-banner" id="shared-{{ key }}" style="display:none"></div>
         <ul class="g2-syllabus-points" id="points-{{ key }}"></ul>
-        <div class="topic-notes-section" id="notes-panel-{{ key }}"></div>
+        <!-- Desk top-bar: flashcards + pins link -->
+        <div class="desk-topbar">
+          <button class="btn-fc" id="btn-fc-{{ key }}" onclick="toggleFcPanel('{{ key }}')">&#128218; Flashcards (<span id="fc-count-{{ key }}">0</span>)</button>
+          <a href="/last-day-revision" class="btn-pins" target="_blank">&#11088; My Pins</a>
+        </div>
+        <!-- Study desk: TOC | Notes | My Notes -->
+        <div class="topic-study-desk">
+          <div class="desk-toc hidden" id="toc-{{ key }}">
+            <div class="toc-label">Contents</div>
+            <nav id="toc-nav-{{ key }}"></nav>
+          </div>
+          <div class="desk-notes" id="notes-panel-{{ key }}"></div>
+          <div class="desk-mynotes">
+            <div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-{{ key }}"></span></div>
+            <textarea class="mynotes-area" id="user-notes-{{ key }}" placeholder="Take notes while you study&#8230;"></textarea>
+          </div>
+        </div>
+        <!-- Flashcards panel (collapsible) -->
+        <div class="fc-panel hidden" id="fc-panel-{{ key }}">
+          <div class="fc-panel-hdr">
+            Flashcards
+            <button class="fc-close-btn" onclick="toggleFcPanel('{{ key }}')">&#10005;</button>
+          </div>
+          <div id="fc-list-{{ key }}"></div>
+        </div>
         <div class="g2-detail-footer">
           <button class="btn-mark-studied" id="btn-studied-{{ key }}"
                   data-stage="{{ key }}" data-subject="g1">Mark as Studied</button>
@@ -224,153 +251,115 @@
 </div>
 {% endfor %}
 
+<!-- Global floating highlight toolbar -->
+<div class="hl-toolbar" id="hl-toolbar" style="display:none">
+  <button class="hl-btn hl-yellow" data-color="yellow" title="Yellow">&#9608;</button>
+  <button class="hl-btn hl-green"  data-color="green"  title="Green">&#9608;</button>
+  <button class="hl-btn hl-pink"   data-color="pink"   title="Pink">&#9608;</button>
+  <button class="hl-btn hl-remove" data-color="remove" title="Remove">&#10005;</button>
+  <button class="hl-btn hl-fc"     data-action="flashcard" title="Flashcard">&#128204;</button>
+</div>
+
+<!-- Global Pomodoro timer widget -->
+<div class="pomo-widget" id="pomo-widget">
+  <button class="pomo-toggle" id="pomo-toggle">&#9654; 25:00</button>
+  <button class="pomo-reset"  id="pomo-reset"  title="Reset">&#10227;</button>
+</div>
+
 <script>
 const G1 = {{ structure_json | safe }};
 const SHARED = {{ shared_topics_json | safe }};
+const USER_ID = {{ user_id }};
+const LS_KEY = 'appsc_progress_' + USER_ID;
+const SUBJECT = 'g1';
 
-// Collect all topic IDs on page for batch-status fetch
+// ── Collect all topic IDs ────────────────────────────────────────────────────
 const ALL_IDS = [];
-for (const stageKey in G1) {
-  for (const section of G1[stageKey].sections) {
-    for (const t of section.topics) ALL_IDS.push(t.id);
+for (const sk in G1) {
+  for (const sec of G1[sk].sections) {
+    for (const t of sec.topics) ALL_IDS.push(t.id);
   }
 }
 
-const LS_KEY = 'appsc_progress';
 let studiedSet = new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]'));
+ALL_IDS.forEach(tid => { if (studiedSet.has(tid)) markDot(tid); });
 
-// Immediate UI update from LocalStorage
-ALL_IDS.forEach(tid => {
-  if (studiedSet.has(tid)) {
-    const li = document.querySelector(`.g2-topic-item[data-topic-id="${tid}"]`);
-    if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
-  }
-});
-
-{% if current_user %}
 fetch('/api/progress/batch-status?ids=' + ALL_IDS.join(','))
   .then(r => r.json())
   .then(data => {
     let changed = false;
     for (const tid of Object.keys(data)) {
-      if (!studiedSet.has(tid)) {
-        studiedSet.add(tid);
-        changed = true;
-      }
+      if (!studiedSet.has(tid)) { studiedSet.add(tid); changed = true; }
     }
-    
-    // Reverse sync: if Server DB got wiped, push LS data to server
     studiedSet.forEach(tid => {
       if (!data[tid] && ALL_IDS.includes(tid)) {
         const li = document.querySelector(`.g2-topic-item[data-topic-id="${tid}"]`);
         const titleText = li ? li.querySelector('.g2-topic-name').textContent : tid;
         fetch('/api/progress/mark-studied', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ topic_id: tid, subject: 'g1', topic_title: titleText })
+          method: 'POST', headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({topic_id: tid, subject: SUBJECT, topic_title: titleText})
         }).catch(()=>{});
       }
     });
-
     if (changed) {
       localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
-      studiedSet.forEach(tid => {
-        const li = document.querySelector(`.g2-topic-item[data-topic-id="${tid}"]`);
-        if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
-      });
+      studiedSet.forEach(tid => markDot(tid));
     }
-  })
-  .catch(() => {});
-{% endif %}
+  }).catch(()=>{});
 
-// Desktop Tab Click
-document.querySelectorAll('.g2-tab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const tab = btn.dataset.tab;
-    switchTab(tab);
-  });
-});
-
-// Mobile Dropdown Toggle
-const trigger = document.getElementById('mobile-tab-trigger');
-const dropdown = document.getElementById('mobile-tab-dropdown');
-
-if (trigger) {
-  trigger.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('show');
-  });
+function markDot(tid) {
+  const li = document.querySelector(`.g2-topic-item[data-topic-id="${tid}"]`);
+  if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
 }
 
-// Mobile Option Click
-document.querySelectorAll('.select-option').forEach(opt => {
-  opt.addEventListener('click', () => {
-    const tab = opt.dataset.tab;
-    switchTab(tab);
-    dropdown.classList.remove('show');
-  });
-});
+// ── Tab switching ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.g2-tab').forEach(btn =>
+  btn.addEventListener('click', () => switchTab(btn.dataset.tab)));
 
-// Close dropdown on outside click
-window.addEventListener('click', () => {
-  dropdown?.classList.remove('show');
-});
+const trigger  = document.getElementById('mobile-tab-trigger');
+const dropdown = document.getElementById('mobile-tab-dropdown');
+if (trigger) {
+  trigger.addEventListener('click', e => { e.stopPropagation(); dropdown.classList.toggle('show'); });
+}
+document.querySelectorAll('.select-option').forEach(opt =>
+  opt.addEventListener('click', () => { switchTab(opt.dataset.tab); dropdown.classList.remove('show'); }));
+window.addEventListener('click', () => dropdown?.classList.remove('show'));
 
 function switchTab(tab) {
-  // Update Tabs
-  document.querySelectorAll('.g2-tab').forEach(b => {
-    b.classList.toggle('active', b.dataset.tab === tab);
-  });
-  
-  // Update Dropdown Options
-  document.querySelectorAll('.select-option').forEach(o => {
-    o.classList.toggle('active', o.dataset.tab === tab);
-  });
-
-  // Update Panels
-  document.querySelectorAll('.g2-panel').forEach(p => {
-    p.classList.toggle('active', p.id === 'panel-' + tab);
-  });
-
-  // Update Trigger Text
-  const activeOpt = document.querySelector(`.select-option[data-tab="${tab}"]`);
-  if (activeOpt && trigger) {
-    trigger.querySelector('.current-label').textContent = activeOpt.querySelector('.option-label').textContent;
-    trigger.querySelector('.current-sub').textContent   = activeOpt.querySelector('.option-sub').textContent;
+  document.querySelectorAll('.g2-tab').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  document.querySelectorAll('.select-option').forEach(o => o.classList.toggle('active', o.dataset.tab === tab));
+  document.querySelectorAll('.g2-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + tab));
+  const ao = document.querySelector(`.select-option[data-tab="${tab}"]`);
+  if (ao && trigger) {
+    trigger.querySelector('.current-label').textContent = ao.querySelector('.option-label').textContent;
+    trigger.querySelector('.current-sub').textContent   = ao.querySelector('.option-sub').textContent;
   }
 }
+
+// ── Topic click ───────────────────────────────────────────────────────────────
+let currentTopicId = null, currentStageKey = null;
 
 document.querySelectorAll('.g2-topic-item').forEach(li => {
   li.addEventListener('click', () => {
     const stageKey = li.dataset.stage;
     const topicId  = li.dataset.topicId;
-
-    document.querySelectorAll(`.g2-topic-item[data-stage="${stageKey}"]`)
-            .forEach(t => t.classList.remove('selected'));
+    document.querySelectorAll(`.g2-topic-item[data-stage="${stageKey}"]`).forEach(t => t.classList.remove('selected'));
     li.classList.add('selected');
 
     const stage = G1[stageKey];
     let topic = null;
-    for (const section of stage.sections) {
-      topic = section.topics.find(t => t.id === topicId);
-      if (topic) break;
-    }
+    for (const sec of stage.sections) { topic = sec.topics.find(t => t.id === topicId); if (topic) break; }
     if (!topic) return;
 
     document.getElementById('welcome-' + stageKey).classList.add('hidden');
-    const detail = document.getElementById('detail-' + stageKey);
-    detail.classList.remove('hidden');
-
-    document.getElementById('title-' + stageKey).textContent = topic.title;
-
-    const ul = document.getElementById('points-' + stageKey);
-    ul.innerHTML = topic.points
-      .map(p => `<li class="g2-point-item">${p}</li>`)
-      .join('');
+    document.getElementById('detail-'  + stageKey).classList.remove('hidden');
+    document.getElementById('title-'   + stageKey).textContent = topic.title;
+    document.getElementById('points-'  + stageKey).innerHTML =
+      topic.points.map(p => `<li class="g2-point-item">${p}</li>`).join('');
 
     // Shared topic banner
     const banner = document.getElementById('shared-' + stageKey);
-    const twins = SHARED[topicId];
+    const twins  = SHARED[topicId];
     if (twins && twins.length) {
       const links = twins.map(tw => {
         const href = tw.id.startsWith('scr-') || tw.id.startsWith('p1-') || tw.id.startsWith('p2-') ? '/group2' : '/group1';
@@ -378,81 +367,400 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
       }).join(', ');
       banner.innerHTML = `<span>&#128204;</span> <span>Also tested in: <strong>${links}</strong> &mdash; studying once covers both!</span>`;
       banner.style.display = 'flex';
-    } else {
-      banner.style.display = 'none';
-    }
+    } else { banner.style.display = 'none'; }
 
-    // Update Mark as Studied button
+    // Mark-as-studied button
     const btn = document.getElementById('btn-studied-' + stageKey);
     if (btn) {
-      btn.dataset.topicId = topicId;
-      btn.dataset.title   = topic.title;
-      if (studiedSet.has(topicId)) {
-        btn.textContent = 'Studied \u2713';
-        btn.classList.add('studied');
-      } else {
-        btn.textContent = 'Mark as Studied';
-        btn.classList.remove('studied');
-        btn.disabled = false;
-      }
+      btn.dataset.topicId = topicId; btn.dataset.title = topic.title;
+      if (studiedSet.has(topicId)) { btn.textContent = 'Studied \u2713'; btn.classList.add('studied'); }
+      else { btn.textContent = 'Mark as Studied'; btn.classList.remove('studied'); btn.disabled = false; }
     }
 
-    // Load study notes
+    currentTopicId = topicId; currentStageKey = stageKey;
+
+    // Load notes → study desk
     const notesPanel = document.getElementById('notes-panel-' + stageKey);
-    if (notesPanel) {
-      notesPanel.innerHTML = '<div class="notes-loading">Loading notes\u2026</div>';
-      fetch('/api/content/' + topicId)
-        .then(r => r.json())
-        .then(data => {
-          if (data.available) {
-            const srcHtml = data.source
-              ? `<div class="notes-source">Shared notes from: ${data.source}</div>` : '';
-            notesPanel.innerHTML =
-              `<div class="notes-header">Study Notes</div>${srcHtml}` +
-              `<div class="notes-body">${marked.parse(data.content)}</div>`;
-          } else {
-            notesPanel.innerHTML =
-              '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
-          }
-        })
-        .catch(() => { notesPanel.innerHTML = ''; });
-    }
+    notesPanel.innerHTML = '<div class="notes-loading">Loading notes\u2026</div>';
+    fetch('/api/content/' + topicId)
+      .then(r => r.json())
+      .then(data => {
+        if (data.available) {
+          const srcHtml = data.source ? `<div class="notes-source">Shared notes from: ${data.source}</div>` : '';
+          notesPanel.innerHTML =
+            `<div class="notes-header">Study Notes</div>${srcHtml}` +
+            `<div class="notes-body">${marked.parse(data.content)}</div>`;
+          loadStudyDesk(topicId, stageKey);
+        } else {
+          notesPanel.innerHTML = '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
+          loadUserNotes(topicId, stageKey);
+          loadFlashcardCount(topicId, stageKey);
+          loadRevisionBadge(topicId, stageKey);
+        }
+      }).catch(() => { notesPanel.innerHTML = ''; });
 
-    // Scroll to content panel on mobile
     if (window.innerWidth <= 768) {
-      setTimeout(() => {
-        document.getElementById('detail-' + stageKey)
-          .scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 60);
+      setTimeout(() => document.getElementById('detail-' + stageKey)
+        .scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
     }
   });
 });
 
-// Mark as Studied button handler
+// ── Mark as Studied ───────────────────────────────────────────────────────────
 document.querySelectorAll('.btn-mark-studied').forEach(btn => {
   btn.addEventListener('click', () => {
-    const topicId = btn.dataset.topicId;
-    const title   = btn.dataset.title || btn.dataset.topicId;
+    const topicId = btn.dataset.topicId, title = btn.dataset.title || btn.dataset.topicId;
     if (!topicId || btn.classList.contains('studied')) return;
-    
-    // Instant UI Update
-    btn.textContent = 'Studied \u2713';
-    btn.classList.add('studied');
+    btn.textContent = 'Studied \u2713'; btn.classList.add('studied');
     studiedSet.add(topicId);
     localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
-    
-    const li = document.querySelector(`.g2-topic-item[data-topic-id="${topicId}"]`);
-    if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
-
-    {% if current_user %}
+    markDot(topicId);
     fetch('/api/progress/mark-studied', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ topic_id: topicId, subject: 'g1', topic_title: title })
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({topic_id: topicId, subject: SUBJECT, topic_title: title})
     }).catch(()=>{});
-    {% endif %}
   });
 });
+
+// ── Study Desk loader ─────────────────────────────────────────────────────────
+function loadStudyDesk(topicId, stageKey) {
+  buildTOC(stageKey);
+  loadHighlights(topicId, stageKey);
+  loadUserNotes(topicId, stageKey);
+  loadFlashcardCount(topicId, stageKey);
+  loadPins(topicId, stageKey);
+  loadRevisionBadge(topicId, stageKey);
+  resumeBookmark(topicId, stageKey);
+  setupBookmarkSaver(topicId, stageKey);
+}
+
+// ── TOC ───────────────────────────────────────────────────────────────────────
+function buildTOC(stageKey) {
+  const notesPanel = document.getElementById('notes-panel-' + stageKey);
+  const tocPanel   = document.getElementById('toc-' + stageKey);
+  const tocNav     = document.getElementById('toc-nav-' + stageKey);
+  if (!notesPanel || !tocPanel || !tocNav) return;
+  const headings = notesPanel.querySelectorAll('h2, h3');
+  tocNav.innerHTML = '';
+  if (headings.length < 2) { tocPanel.classList.add('hidden'); return; }
+  tocPanel.classList.remove('hidden');
+  headings.forEach((h, i) => {
+    const id = 'h-' + stageKey + '-' + i;
+    h.id = id;
+    const a = document.createElement('a');
+    a.href = '#'; a.textContent = h.textContent;
+    a.className = 'toc-link' + (h.tagName === 'H3' ? ' toc-h3' : ' toc-h2');
+    a.dataset.id = id;
+    a.addEventListener('click', e => { e.preventDefault(); h.scrollIntoView({ behavior: 'smooth' }); });
+    tocNav.appendChild(a);
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocNav.querySelectorAll('.toc-link').forEach(a => a.classList.toggle('active', a.dataset.id === id));
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+  headings.forEach(h => obs.observe(h));
+}
+
+// ── Highlights ────────────────────────────────────────────────────────────────
+const _hlCache = {};
+
+function loadHighlights(topicId, stageKey) {
+  fetch('/api/highlights/' + topicId)
+    .then(r => r.json())
+    .then(data => { _hlCache[topicId] = data.highlights || []; applyHighlights(topicId, stageKey); })
+    .catch(()=>{});
+}
+
+function applyHighlights(topicId, stageKey) {
+  const hl = _hlCache[topicId] || [];
+  if (!hl.length) return;
+  const nb = document.querySelector('#notes-panel-' + stageKey + ' .notes-body');
+  if (!nb) return;
+  let html = nb.innerHTML;
+  hl.forEach(h => {
+    if (!h.text) return;
+    const esc = h.text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    html = html.replace(new RegExp(esc, 'g'), `<mark class="hl-${h.color || 'yellow'}">${h.text}</mark>`);
+  });
+  nb.innerHTML = html;
+  setupPinListeners(topicId, stageKey); // re-attach after innerHTML change
+}
+
+function saveHighlightsToServer(topicId) {
+  fetch('/api/highlights/' + topicId, {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({highlights: _hlCache[topicId] || []})
+  }).catch(()=>{});
+}
+
+// ── Highlight toolbar ─────────────────────────────────────────────────────────
+const hlToolbar = document.getElementById('hl-toolbar');
+let _hlSelText = '';
+
+document.addEventListener('mouseup', e => {
+  if (hlToolbar && hlToolbar.contains(e.target)) return;
+  const sel = window.getSelection();
+  if (!sel || sel.isCollapsed || !sel.toString().trim()) {
+    if (hlToolbar) hlToolbar.style.display = 'none'; return;
+  }
+  let node = sel.anchorNode;
+  let inNotes = false;
+  while (node) { if (node.classList && node.classList.contains('notes-body')) { inNotes = true; break; } node = node.parentNode; }
+  if (!inNotes) { if (hlToolbar) hlToolbar.style.display = 'none'; return; }
+  _hlSelText = sel.toString().trim();
+  const rect = sel.getRangeAt(0).getBoundingClientRect();
+  hlToolbar.style.display = 'flex';
+  hlToolbar.style.top  = (window.scrollY + rect.top - 46) + 'px';
+  hlToolbar.style.left = (window.scrollX + rect.left)     + 'px';
+});
+
+document.addEventListener('mousedown', e => {
+  if (hlToolbar && !hlToolbar.contains(e.target)) hlToolbar.style.display = 'none';
+});
+
+document.querySelectorAll('.hl-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    if (!currentTopicId || !_hlSelText) return;
+    if (btn.dataset.action === 'flashcard') { openFlashcardModal(_hlSelText); hlToolbar.style.display = 'none'; return; }
+    if (!_hlCache[currentTopicId]) _hlCache[currentTopicId] = [];
+    _hlCache[currentTopicId] = _hlCache[currentTopicId].filter(h => h.text !== _hlSelText);
+    if (btn.dataset.color !== 'remove') _hlCache[currentTopicId].push({text: _hlSelText, color: btn.dataset.color});
+    saveHighlightsToServer(currentTopicId);
+    applyHighlights(currentTopicId, currentStageKey);
+    hlToolbar.style.display = 'none';
+    window.getSelection()?.removeAllRanges();
+  });
+});
+
+// ── Personal Notes ────────────────────────────────────────────────────────────
+const _notesDebounce = {};
+
+function loadUserNotes(topicId, stageKey) {
+  const ta = document.getElementById('user-notes-' + stageKey);
+  if (!ta) return;
+  fetch('/api/user-notes/' + topicId)
+    .then(r => r.json())
+    .then(data => { ta.value = data.content || ''; })
+    .catch(()=>{});
+}
+
+document.querySelectorAll('.mynotes-area').forEach(ta => {
+  ta.addEventListener('input', () => {
+    if (!currentTopicId || !currentStageKey) return;
+    const ind = document.getElementById('save-ind-' + currentStageKey);
+    if (ind) ind.textContent = '';
+    clearTimeout(_notesDebounce[currentStageKey]);
+    _notesDebounce[currentStageKey] = setTimeout(() => {
+      fetch('/api/user-notes/' + currentTopicId, {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({content: ta.value})
+      }).then(() => {
+        if (ind) { ind.textContent = 'Saved \u2713'; setTimeout(() => { if (ind) ind.textContent = ''; }, 2000); }
+      }).catch(()=>{});
+    }, 1500);
+  });
+});
+
+// ── Flashcards ────────────────────────────────────────────────────────────────
+const _fcData = {};
+
+function loadFlashcardCount(topicId, stageKey) {
+  fetch('/api/flashcards/' + topicId)
+    .then(r => r.json())
+    .then(data => {
+      _fcData[topicId] = data.cards || [];
+      const el = document.getElementById('fc-count-' + stageKey);
+      if (el) el.textContent = _fcData[topicId].length;
+    }).catch(()=>{});
+}
+
+function toggleFcPanel(stageKey) {
+  const panel = document.getElementById('fc-panel-' + stageKey);
+  if (!panel) return;
+  if (panel.classList.toggle('hidden')) return;
+  renderFcList(currentTopicId, stageKey);
+}
+
+function renderFcList(topicId, stageKey) {
+  const listEl = document.getElementById('fc-list-' + stageKey);
+  if (!listEl || !topicId) return;
+  const cards = _fcData[topicId] || [];
+  if (!cards.length) {
+    listEl.innerHTML = '<div class="fc-empty">No flashcards yet. Select text in notes and click &#128204;.</div>';
+    return;
+  }
+  listEl.innerHTML = cards.map(c => `
+    <div class="fc-card">
+      <div class="fc-front">${c.front}</div>
+      <input class="fc-back-input" value="${(c.back || '').replace(/"/g,'&quot;')}" placeholder="Type answer\u2026"
+             onchange="updateCard(${c.id},this.value)">
+      <button class="fc-delete-btn" onclick="deleteCard(${c.id},'${topicId}','${stageKey}')">&#10005;</button>
+    </div>`).join('');
+}
+
+function openFlashcardModal(text) {
+  const back = prompt('Front: "' + text.substring(0, 80) + (text.length > 80 ? '\u2026' : '') + '"\n\nYour answer (back side):');
+  if (back === null || !currentTopicId || !currentStageKey) return;
+  fetch('/api/flashcards/' + currentTopicId, {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({front: text, back: back || ''})
+  }).then(r => r.json()).then(data => {
+    if (!_fcData[currentTopicId]) _fcData[currentTopicId] = [];
+    _fcData[currentTopicId].push({id: data.id, front: text, back: back || ''});
+    const el = document.getElementById('fc-count-' + currentStageKey);
+    if (el) el.textContent = _fcData[currentTopicId].length;
+  }).catch(()=>{});
+}
+
+function updateCard(id, back) {
+  fetch('/api/flashcards/card/' + id, {
+    method: 'PUT', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({back})
+  }).catch(()=>{});
+}
+
+function deleteCard(id, topicId, stageKey) {
+  fetch('/api/flashcards/card/' + id, {method: 'DELETE'}).then(() => {
+    _fcData[topicId] = (_fcData[topicId] || []).filter(c => c.id !== id);
+    const el = document.getElementById('fc-count-' + stageKey);
+    if (el) el.textContent = _fcData[topicId].length;
+    renderFcList(topicId, stageKey);
+  }).catch(()=>{});
+}
+
+// ── Bookmark / Resume ─────────────────────────────────────────────────────────
+function resumeBookmark(topicId, stageKey) {
+  const saved = localStorage.getItem('bm_' + USER_ID + '_' + topicId);
+  if (!saved) return;
+  const notesEl = document.getElementById('notes-panel-' + stageKey);
+  if (!notesEl) return;
+  setTimeout(() => {
+    notesEl.scrollTop = parseInt(saved, 10);
+    const msg = document.createElement('div');
+    msg.className = 'resume-banner';
+    msg.textContent = '\u21A9 Resumed from where you left off';
+    notesEl.prepend(msg);
+    setTimeout(() => msg.remove(), 3000);
+  }, 120);
+}
+
+let _bmTimer = null;
+function setupBookmarkSaver(topicId, stageKey) {
+  const notesEl = document.getElementById('notes-panel-' + stageKey);
+  if (!notesEl) return;
+  notesEl.addEventListener('scroll', () => {
+    clearTimeout(_bmTimer);
+    _bmTimer = setTimeout(() => {
+      localStorage.setItem('bm_' + USER_ID + '_' + topicId, notesEl.scrollTop);
+    }, 500);
+  }, {passive: true});
+}
+
+// ── Paragraph Pins ────────────────────────────────────────────────────────────
+const _pinsCache = {};
+
+function loadPins(topicId, stageKey) {
+  fetch('/api/pins/' + topicId)
+    .then(r => r.json())
+    .then(data => {
+      _pinsCache[topicId] = new Set((data.pins || []).map(p => p.para_index));
+      setupPinListeners(topicId, stageKey);
+    }).catch(()=>{});
+}
+
+function setupPinListeners(topicId, stageKey) {
+  const nb = document.querySelector('#notes-panel-' + stageKey + ' .notes-body');
+  if (!nb) return;
+  if (!_pinsCache[topicId]) _pinsCache[topicId] = new Set();
+  nb.querySelectorAll('p').forEach((p, i) => {
+    if (p.querySelector('.pin-star')) return; // already set up
+    p.dataset.paraIndex = i;
+    const star = document.createElement('span');
+    star.className = 'pin-star';
+    star.title = 'Pin as exam-important';
+    star.textContent = _pinsCache[topicId].has(i) ? '\u2605' : '\u2606';
+    if (_pinsCache[topicId].has(i)) p.classList.add('pinned-para');
+    star.addEventListener('click', e => {
+      e.stopPropagation();
+      const paraText = p.textContent.replace(star.textContent, '').trim();
+      fetch('/api/pins/' + topicId, {
+        method: 'POST', headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({para_index: i, para_text: paraText})
+      }).then(r => r.json()).then(data => {
+        if (data.action === 'added') { _pinsCache[topicId].add(i); p.classList.add('pinned-para'); star.textContent = '\u2605'; }
+        else { _pinsCache[topicId].delete(i); p.classList.remove('pinned-para'); star.textContent = '\u2606'; }
+      }).catch(()=>{});
+    });
+    p.insertBefore(star, p.firstChild);
+  });
+}
+
+// ── Revision Badge ────────────────────────────────────────────────────────────
+function loadRevisionBadge(topicId, stageKey) {
+  const badge = document.getElementById('rev-badge-' + stageKey);
+  if (!badge) return;
+  badge.innerHTML = '';
+  fetch('/api/progress/topic-status/' + topicId)
+    .then(r => r.json())
+    .then(d => {
+      if (!d.studied) { badge.innerHTML = '<span class="rev-pill rev-none">Not yet studied</span>'; return; }
+      const ds = d.days_since_studied;
+      let html = `<span class="rev-pill rev-studied">${ds === 0 ? 'Studied today' : 'Studied ' + ds + 'd ago'}</span>`;
+      if (d.next_revision_due) {
+        const du = d.days_until_revision;
+        if (du <= 0)    html += `<span class="rev-pill rev-overdue">&#9888; Rev ${d.next_revision_num} overdue</span>`;
+        else if (du===1) html += `<span class="rev-pill rev-soon">Rev ${d.next_revision_num} due tomorrow</span>`;
+        else             html += `<span class="rev-pill rev-upcoming">Rev ${d.next_revision_num} in ${du}d</span>`;
+      } else {
+        html += '<span class="rev-pill rev-done">All revisions done &#10003;</span>';
+      }
+      badge.innerHTML = html;
+    }).catch(()=>{});
+}
+
+// ── Pomodoro Timer ────────────────────────────────────────────────────────────
+(function() {
+  const tb = document.getElementById('pomo-toggle');
+  const rb = document.getElementById('pomo-reset');
+  if (!tb) return;
+  let total = 25 * 60, rem = total, iv = null, running = false;
+  const fmt = s => Math.floor(s/60) + ':' + String(s%60).padStart(2,'0');
+  function tick() {
+    rem--;
+    tb.textContent = '\u23F8 ' + fmt(rem);
+    if (rem <= 0) {
+      clearInterval(iv); iv = null; running = false;
+      tb.textContent = '\u25B6 00:00';
+      beep();
+      const b = document.createElement('div');
+      b.className = 'pomo-break-banner';
+      b.textContent = '\u23F0 Time\'s up! Take a 5-min break.';
+      document.body.appendChild(b);
+      setTimeout(() => b.remove(), 6000);
+    }
+  }
+  tb.addEventListener('click', () => {
+    if (running) { clearInterval(iv); iv = null; running = false; tb.textContent = '\u25B6 ' + fmt(rem); }
+    else { if (rem <= 0) rem = total; running = true; tb.textContent = '\u23F8 ' + fmt(rem); iv = setInterval(tick, 1000); }
+  });
+  rb.addEventListener('click', () => { clearInterval(iv); iv = null; running = false; rem = total; tb.textContent = '\u25B6 ' + fmt(rem); });
+  function beep() {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator(), g = ctx.createGain();
+      osc.connect(g); g.connect(ctx.destination);
+      osc.frequency.value = 660;
+      g.gain.setValueAtTime(0.3, ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1.2);
+      osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 1.2);
+    } catch(e) {}
+  }
+})();
 </script>
 
 {% endblock %}

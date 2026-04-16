@@ -41,10 +41,22 @@
             <h2 class="g2-detail-title" id="title-basics"></h2>
             <p class="g2-detail-meta" id="meta-basics"></p>
           </div>
-          <span class="g2-official-tag telugu-tag">Telugu Basics</span>
+          <div class="detail-header-right">
+            <div class="revision-badge" id="rev-badge-basics"></div>
+            <span class="g2-official-tag telugu-tag">Telugu Basics</span>
+          </div>
         </div>
         <ul class="g2-syllabus-points" id="points-basics"></ul>
-        <div class="topic-notes-section" id="notes-panel-basics"></div>
+        <div class="desk-topbar">
+          <button class="btn-fc" id="btn-fc-basics" onclick="toggleFcPanel('basics')">&#128218; Flashcards (<span id="fc-count-basics">0</span>)</button>
+          <a href="/last-day-revision" class="btn-pins" target="_blank">&#11088; My Pins</a>
+        </div>
+        <div class="topic-study-desk">
+          <div class="desk-toc hidden" id="toc-basics"><div class="toc-label">Contents</div><nav id="toc-nav-basics"></nav></div>
+          <div class="desk-notes" id="notes-panel-basics"></div>
+          <div class="desk-mynotes"><div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-basics"></span></div><textarea class="mynotes-area" id="user-notes-basics" placeholder="Take notes while you study&#8230;"></textarea></div>
+        </div>
+        <div class="fc-panel hidden" id="fc-panel-basics"><div class="fc-panel-hdr">Flashcards <button class="fc-close-btn" onclick="toggleFcPanel('basics')">&#10005;</button></div><div id="fc-list-basics"></div></div>
         <div class="g2-detail-footer">
           <button class="btn-mark-studied" id="btn-tel-basics-studied" data-subject="telugu">Mark as Studied</button>
         </div>
@@ -74,10 +86,22 @@
             <h2 class="g2-detail-title" id="title-appsc"></h2>
             <p class="g2-detail-meta" id="meta-appsc"></p>
           </div>
-          <span class="g2-official-tag">APPSC Official</span>
+          <div class="detail-header-right">
+            <div class="revision-badge" id="rev-badge-appsc"></div>
+            <span class="g2-official-tag">APPSC Official</span>
+          </div>
         </div>
         <ul class="g2-syllabus-points" id="points-appsc"></ul>
-        <div class="topic-notes-section" id="notes-panel-appsc"></div>
+        <div class="desk-topbar">
+          <button class="btn-fc" id="btn-fc-appsc" onclick="toggleFcPanel('appsc')">&#128218; Flashcards (<span id="fc-count-appsc">0</span>)</button>
+          <a href="/last-day-revision" class="btn-pins" target="_blank">&#11088; My Pins</a>
+        </div>
+        <div class="topic-study-desk">
+          <div class="desk-toc hidden" id="toc-appsc"><div class="toc-label">Contents</div><nav id="toc-nav-appsc"></nav></div>
+          <div class="desk-notes" id="notes-panel-appsc"></div>
+          <div class="desk-mynotes"><div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-appsc"></span></div><textarea class="mynotes-area" id="user-notes-appsc" placeholder="Take notes while you study&#8230;"></textarea></div>
+        </div>
+        <div class="fc-panel hidden" id="fc-panel-appsc"><div class="fc-panel-hdr">Flashcards <button class="fc-close-btn" onclick="toggleFcPanel('appsc')">&#10005;</button></div><div id="fc-list-appsc"></div></div>
         <div class="g2-detail-footer">
           <button class="btn-mark-studied" id="btn-tel-appsc-studied" data-subject="telugu">Mark as Studied</button>
         </div>
@@ -87,8 +111,25 @@
   </div>
 </div>
 
+<!-- Global floating highlight toolbar -->
+<div class="hl-toolbar" id="hl-toolbar" style="display:none">
+  <button class="hl-btn hl-yellow" data-color="yellow" title="Yellow">&#9608;</button>
+  <button class="hl-btn hl-green"  data-color="green"  title="Green">&#9608;</button>
+  <button class="hl-btn hl-pink"   data-color="pink"   title="Pink">&#9608;</button>
+  <button class="hl-btn hl-remove" data-color="remove" title="Remove">&#10005;</button>
+  <button class="hl-btn hl-fc"     data-action="flashcard" title="Flashcard">&#128204;</button>
+</div>
+<div class="pomo-widget" id="pomo-widget">
+  <button class="pomo-toggle" id="pomo-toggle">&#9654; 25:00</button>
+  <button class="pomo-reset"  id="pomo-reset"  title="Reset">&#10227;</button>
+</div>
+
 <script>
 const TELUGU = {{ structure_json | safe }};
+const USER_ID = {{ user_id }};
+const LS_KEY = 'appsc_progress_' + USER_ID;
+
+const SUBJECT = 'telugu';
 
 // ── Build sidebar HTML for a given tab key ─────────────────────
 function buildSidebar(tabKey) {
@@ -132,7 +173,6 @@ document.querySelectorAll('.g2-tab').forEach(btn => {
   });
 });
 
-const LS_KEY = 'appsc_progress';
 let studiedSet = new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]'));
 
 const allIdsList = [];
@@ -242,68 +282,71 @@ document.addEventListener('click', function(e) {
     }
   }
 
-  // Load study notes (uses tel-01 for APPSC tab; basics tab will show "preparing")
-  const panelId   = tabKey === 'basics' ? 'notes-panel-basics' : 'notes-panel-appsc';
-  const notesEl   = document.getElementById(panelId);
-  const apiId     = tabKey === 'appsc' ? 'tel-01' : null;
+  // Load study notes
+  const panelId = 'notes-panel-' + tabKey;
+  const notesEl = document.getElementById(panelId);
+  const apiId   = tabKey === 'appsc' ? 'tel-01' : null;
+  currentTopicId = syntheticId; currentStageKey = tabKey;
   if (notesEl) {
     if (apiId) {
       notesEl.innerHTML = '<div class="notes-loading">Loading notes\u2026</div>';
-      fetch('/api/content/' + apiId)
-        .then(r => r.json())
-        .then(data => {
-          if (data.available) {
-            notesEl.innerHTML =
-              `<div class="notes-header">Study Notes</div>` +
-              `<div class="notes-body">${marked.parse(data.content)}</div>`;
-          } else {
-            notesEl.innerHTML =
-              '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
-          }
-        })
-        .catch(() => { notesEl.innerHTML = ''; });
+      fetch('/api/content/' + apiId).then(r => r.json()).then(data => {
+        if (data.available) {
+          notesEl.innerHTML = `<div class="notes-header">Study Notes</div><div class="notes-body">${marked.parse(data.content)}</div>`;
+          loadStudyDesk(syntheticId, tabKey);
+        } else { notesEl.innerHTML = '<div class="notes-unavailable">Notes being prepared for this topic.</div>'; loadUserNotes(syntheticId,tabKey); loadFlashcardCount(syntheticId,tabKey); loadRevisionBadge(syntheticId,tabKey); }
+      }).catch(() => { notesEl.innerHTML = ''; });
     } else {
-      notesEl.innerHTML =
-        '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
+      notesEl.innerHTML = '<div class="notes-unavailable">Notes being prepared for this topic.</div>';
+      loadUserNotes(syntheticId, tabKey); loadFlashcardCount(syntheticId, tabKey); loadRevisionBadge(syntheticId, tabKey);
     }
   }
 
-  // Scroll to content panel on mobile
-  if (window.innerWidth <= 768) {
-    setTimeout(() => {
-      document.getElementById('detail-' + tabKey)
-        .scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 60);
-  }
+  if (window.innerWidth <= 768) setTimeout(() => document.getElementById('detail-'+tabKey).scrollIntoView({behavior:'smooth',block:'start'}), 60);
 });
 
 document.querySelectorAll('.btn-mark-studied').forEach(btn => {
   btn.addEventListener('click', () => {
-    const topicId = btn.dataset.topicId;
-    const title   = btn.dataset.title || topicId;
+    const topicId = btn.dataset.topicId, title = btn.dataset.title || btn.dataset.topicId;
     if (!topicId || btn.classList.contains('studied')) return;
-    
-    // Instant UI update
-    btn.textContent = 'Studied \u2713';
-    btn.classList.add('studied');
-    studiedSet.add(topicId);
+    btn.textContent = 'Studied \u2713'; btn.classList.add('studied'); studiedSet.add(topicId);
     localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
-    
     const parts = topicId.split(':');
-    if (parts.length === 4) {
-      const li = document.querySelector(`.g2-topic-item[data-tab="${parts[1]}"][data-section="${parts[2]}"][data-topic="${parts[3]}"]`);
-      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
-    }
-
-    {% if current_user %}
-    fetch('/api/progress/mark-studied', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ topic_id: topicId, subject: 'telugu', topic_title: title })
-    }).catch(()=>{});
-    {% endif %}
+    if (parts.length === 4) { const li=document.querySelector(`.g2-topic-item[data-tab="${parts[1]}"][data-section="${parts[2]}"][data-topic="${parts[3]}"]`); if(li)li.querySelector('.g2-topic-dot')?.classList.add('studied'); }
+    fetch('/api/progress/mark-studied',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({topic_id:topicId,subject:SUBJECT,topic_title:title})}).catch(()=>{});
   });
 });
+
+let currentTopicId = null, currentStageKey = null;
+
+function loadStudyDesk(tid,sk){buildTOC(sk);loadHighlights(tid,sk);loadUserNotes(tid,sk);loadFlashcardCount(tid,sk);loadPins(tid,sk);loadRevisionBadge(tid,sk);resumeBookmark(tid,sk);setupBookmarkSaver(tid,sk);}
+function buildTOC(sk){const np=document.getElementById('notes-panel-'+sk),tp=document.getElementById('toc-'+sk),tn=document.getElementById('toc-nav-'+sk);if(!np||!tp||!tn)return;const hs=np.querySelectorAll('h2,h3');tn.innerHTML='';if(hs.length<2){tp.classList.add('hidden');return;}tp.classList.remove('hidden');hs.forEach((h,i)=>{const id='h-'+sk+'-'+i;h.id=id;const a=document.createElement('a');a.href='#';a.textContent=h.textContent;a.className='toc-link'+(h.tagName==='H3'?' toc-h3':' toc-h2');a.dataset.id=id;a.addEventListener('click',e=>{e.preventDefault();h.scrollIntoView({behavior:'smooth'});});tn.appendChild(a);});const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const id=e.target.id;tn.querySelectorAll('.toc-link').forEach(a=>a.classList.toggle('active',a.dataset.id===id));}});},{rootMargin:'-10% 0px -80% 0px'});hs.forEach(h=>obs.observe(h));}
+const _hlCache={};
+function loadHighlights(tid,sk){fetch('/api/highlights/'+tid).then(r=>r.json()).then(d=>{_hlCache[tid]=d.highlights||[];applyHighlights(tid,sk);}).catch(()=>{});}
+function applyHighlights(tid,sk){const hl=_hlCache[tid]||[];if(!hl.length)return;const nb=document.querySelector('#notes-panel-'+sk+' .notes-body');if(!nb)return;let html=nb.innerHTML;hl.forEach(h=>{if(!h.text)return;const esc=h.text.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');html=html.replace(new RegExp(esc,'g'),`<mark class="hl-${h.color||'yellow'}">${h.text}</mark>`);});nb.innerHTML=html;setupPinListeners(tid,sk);}
+function saveHighlightsToServer(tid){fetch('/api/highlights/'+tid,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({highlights:_hlCache[tid]||[]})}).catch(()=>{});}
+const hlToolbar=document.getElementById('hl-toolbar');let _hlSelText='';
+document.addEventListener('mouseup',e=>{if(hlToolbar&&hlToolbar.contains(e.target))return;const sel=window.getSelection();if(!sel||sel.isCollapsed||!sel.toString().trim()){if(hlToolbar)hlToolbar.style.display='none';return;}let node=sel.anchorNode,inNotes=false;while(node){if(node.classList&&node.classList.contains('notes-body')){inNotes=true;break;}node=node.parentNode;}if(!inNotes){if(hlToolbar)hlToolbar.style.display='none';return;}_hlSelText=sel.toString().trim();const rect=sel.getRangeAt(0).getBoundingClientRect();hlToolbar.style.display='flex';hlToolbar.style.top=(window.scrollY+rect.top-46)+'px';hlToolbar.style.left=(window.scrollX+rect.left)+'px';});
+document.addEventListener('mousedown',e=>{if(hlToolbar&&!hlToolbar.contains(e.target))hlToolbar.style.display='none';});
+document.querySelectorAll('.hl-btn').forEach(btn=>{btn.addEventListener('click',e=>{e.stopPropagation();if(!currentTopicId||!_hlSelText)return;if(btn.dataset.action==='flashcard'){openFlashcardModal(_hlSelText);hlToolbar.style.display='none';return;}if(!_hlCache[currentTopicId])_hlCache[currentTopicId]=[];_hlCache[currentTopicId]=_hlCache[currentTopicId].filter(h=>h.text!==_hlSelText);if(btn.dataset.color!=='remove')_hlCache[currentTopicId].push({text:_hlSelText,color:btn.dataset.color});saveHighlightsToServer(currentTopicId);applyHighlights(currentTopicId,currentStageKey);hlToolbar.style.display='none';window.getSelection()?.removeAllRanges();});});
+const _notesDebounce={};
+function loadUserNotes(tid,sk){const ta=document.getElementById('user-notes-'+sk);if(!ta)return;fetch('/api/user-notes/'+tid).then(r=>r.json()).then(d=>{ta.value=d.content||'';}).catch(()=>{});}
+document.querySelectorAll('.mynotes-area').forEach(ta=>{ta.addEventListener('input',()=>{if(!currentTopicId||!currentStageKey)return;const ind=document.getElementById('save-ind-'+currentStageKey);if(ind)ind.textContent='';clearTimeout(_notesDebounce[currentStageKey]);_notesDebounce[currentStageKey]=setTimeout(()=>{fetch('/api/user-notes/'+currentTopicId,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({content:ta.value})}).then(()=>{if(ind){ind.textContent='Saved \u2713';setTimeout(()=>{if(ind)ind.textContent='';},2000);}}).catch(()=>{});},1500);});});
+const _fcData={};
+function loadFlashcardCount(tid,sk){fetch('/api/flashcards/'+tid).then(r=>r.json()).then(d=>{_fcData[tid]=d.cards||[];const el=document.getElementById('fc-count-'+sk);if(el)el.textContent=_fcData[tid].length;}).catch(()=>{});}
+function toggleFcPanel(sk){const p=document.getElementById('fc-panel-'+sk);if(!p)return;if(p.classList.toggle('hidden'))return;renderFcList(currentTopicId,sk);}
+function renderFcList(tid,sk){const el=document.getElementById('fc-list-'+sk);if(!el||!tid)return;const cards=_fcData[tid]||[];if(!cards.length){el.innerHTML='<div class="fc-empty">No flashcards yet. Select text in notes and click &#128204;.</div>';return;}el.innerHTML=cards.map(c=>`<div class="fc-card"><div class="fc-front">${c.front}</div><input class="fc-back-input" value="${(c.back||'').replace(/"/g,'&quot;')}" placeholder="Type answer\u2026" onchange="updateCard(${c.id},this.value)"><button class="fc-delete-btn" onclick="deleteCard(${c.id},'${tid}','${sk}')">&#10005;</button></div>`).join('');}
+function openFlashcardModal(text){const back=prompt('Front: "'+text.substring(0,80)+(text.length>80?'\u2026':'')+'"\n\nYour answer:');if(back===null||!currentTopicId||!currentStageKey)return;fetch('/api/flashcards/'+currentTopicId,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({front:text,back:back||''})}).then(r=>r.json()).then(d=>{if(!_fcData[currentTopicId])_fcData[currentTopicId]=[];_fcData[currentTopicId].push({id:d.id,front:text,back:back||''});const el=document.getElementById('fc-count-'+currentStageKey);if(el)el.textContent=_fcData[currentTopicId].length;}).catch(()=>{});}
+function updateCard(id,back){fetch('/api/flashcards/card/'+id,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({back})}).catch(()=>{});}
+function deleteCard(id,tid,sk){fetch('/api/flashcards/card/'+id,{method:'DELETE'}).then(()=>{_fcData[tid]=(_fcData[tid]||[]).filter(c=>c.id!==id);const el=document.getElementById('fc-count-'+sk);if(el)el.textContent=_fcData[tid].length;renderFcList(tid,sk);}).catch(()=>{});}
+function resumeBookmark(tid,sk){const saved=localStorage.getItem('bm_'+USER_ID+'_'+tid);if(!saved)return;const ne=document.getElementById('notes-panel-'+sk);if(!ne)return;setTimeout(()=>{ne.scrollTop=parseInt(saved,10);const msg=document.createElement('div');msg.className='resume-banner';msg.textContent='\u21A9 Resumed from where you left off';ne.prepend(msg);setTimeout(()=>msg.remove(),3000);},120);}
+let _bmTimer=null;
+function setupBookmarkSaver(tid,sk){const ne=document.getElementById('notes-panel-'+sk);if(!ne)return;ne.addEventListener('scroll',()=>{clearTimeout(_bmTimer);_bmTimer=setTimeout(()=>{localStorage.setItem('bm_'+USER_ID+'_'+tid,ne.scrollTop);},500);},{passive:true});}
+const _pinsCache={};
+function loadPins(tid,sk){fetch('/api/pins/'+tid).then(r=>r.json()).then(d=>{_pinsCache[tid]=new Set((d.pins||[]).map(p=>p.para_index));setupPinListeners(tid,sk);}).catch(()=>{});}
+function setupPinListeners(tid,sk){const nb=document.querySelector('#notes-panel-'+sk+' .notes-body');if(!nb)return;if(!_pinsCache[tid])_pinsCache[tid]=new Set();nb.querySelectorAll('p').forEach((p,i)=>{if(p.querySelector('.pin-star'))return;p.dataset.paraIndex=i;const star=document.createElement('span');star.className='pin-star';star.title='Pin as exam-important';star.textContent=_pinsCache[tid].has(i)?'\u2605':'\u2606';if(_pinsCache[tid].has(i))p.classList.add('pinned-para');star.addEventListener('click',e=>{e.stopPropagation();const pt=p.textContent.replace(star.textContent,'').trim();fetch('/api/pins/'+tid,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({para_index:i,para_text:pt})}).then(r=>r.json()).then(d=>{if(d.action==='added'){_pinsCache[tid].add(i);p.classList.add('pinned-para');star.textContent='\u2605';}else{_pinsCache[tid].delete(i);p.classList.remove('pinned-para');star.textContent='\u2606';}}).catch(()=>{});});p.insertBefore(star,p.firstChild);});}
+function loadRevisionBadge(tid,sk){const badge=document.getElementById('rev-badge-'+sk);if(!badge)return;badge.innerHTML='';fetch('/api/progress/topic-status/'+tid).then(r=>r.json()).then(d=>{if(!d.studied){badge.innerHTML='<span class="rev-pill rev-none">Not yet studied</span>';return;}const ds=d.days_since_studied;let html=`<span class="rev-pill rev-studied">${ds===0?'Studied today':'Studied '+ds+'d ago'}</span>`;if(d.next_revision_due){const du=d.days_until_revision;if(du<=0)html+=`<span class="rev-pill rev-overdue">&#9888; Rev ${d.next_revision_num} overdue</span>`;else if(du===1)html+=`<span class="rev-pill rev-soon">Rev ${d.next_revision_num} due tomorrow</span>`;else html+=`<span class="rev-pill rev-upcoming">Rev ${d.next_revision_num} in ${du}d</span>`;}else{html+='<span class="rev-pill rev-done">All revisions done &#10003;</span>';}badge.innerHTML=html;}).catch(()=>{});}
+(function(){const tb=document.getElementById('pomo-toggle'),rb=document.getElementById('pomo-reset');if(!tb)return;let total=25*60,rem=total,iv=null,running=false;const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');function tick(){rem--;tb.textContent='\u23F8 '+fmt(rem);if(rem<=0){clearInterval(iv);iv=null;running=false;tb.textContent='\u25B6 00:00';beep();const b=document.createElement('div');b.className='pomo-break-banner';b.textContent='\u23F0 Time\'s up! Take a 5-min break.';document.body.appendChild(b);setTimeout(()=>b.remove(),6000);}}tb.addEventListener('click',()=>{if(running){clearInterval(iv);iv=null;running=false;tb.textContent='\u25B6 '+fmt(rem);}else{if(rem<=0)rem=total;running=true;tb.textContent='\u23F8 '+fmt(rem);iv=setInterval(tick,1000);}});rb.addEventListener('click',()=>{clearInterval(iv);iv=null;running=false;rem=total;tb.textContent='\u25B6 '+fmt(rem);});function beep(){try{const ctx=new(window.AudioContext||window.webkitAudioContext)(),osc=ctx.createOscillator(),g=ctx.createGain();osc.connect(g);g.connect(ctx.destination);osc.frequency.value=660;g.gain.setValueAtTime(0.3,ctx.currentTime);g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.2);osc.start(ctx.currentTime);osc.stop(ctx.currentTime+1.2);}catch(e){}}})();
 </script>
 
 {% endblock %}
