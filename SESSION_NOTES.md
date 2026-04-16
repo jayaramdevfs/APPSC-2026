@@ -585,55 +585,45 @@ Removed the previous green accents in favor of a bold **Indian Saffron (`#FF9933
 - **Technical Grid**: Restored the original saffron technical grid background.
 
 ### 3. Global Bold Text Transformation
-Applied a global bold weight to the entire platform to improve legibility on specialized displays.
-- **Font Weight**: Minimum `600` (Semi-Bold) applied to `body`.
-- **Readability**: Ensures high-contrast and authoritative presence of text against the dark mode surface.
+Applied a global semi-bold weight to the entire platform to improve legibility and provide a strong visual presence.
+- **Font Weight**: Global `font-weight: 600` applied to the `body` selector.
+- **Readability**: High-contrast text makes the syllabus points and metadata much easier to scan.
 
 ### 4. Navigation Redesign (Desktop & Mobile)
 Replaced the chaotic horizontal scrolling tab bar with a dual-mode professional navigation system.
-- **Desktop: Segmented Control Bar**: A structured, inset bar with gold-lit active states. No more floating borders.
-- **Mobile: Custom Dropdown Selector**: Replaced the awkward horizontal scroll with a "Current Selection" trigger button. Tapping it opens a premium glassmorphism-themed dropdown to switch between Papers/Stages.
+- **Desktop: Segmented Control Bar**: A structured, inset bar with saffron active states.
+- **Mobile: Custom Dropdown Selector**: Tapping the "Section Name" button opens a premium glassmorphism-themed dropdown.
 - **State Sync**: JS logic ensures selecting a tab on desktop updates the mobile selector text and vice versa.
 
 ### 5. Content & Search Integration
 - **Current Affairs Search**: The global search API (`Ctrl+K`) now scans all `.md` files in the `current-affairs` directory.
 - **Badge Mapping**: Updated results to display "Group I" (Saffron), "Group II" (Saffron), and "Current Affairs" (Navy Blue) badges.
 
-### 6. Admin & Auth Improvements
-- **Admin Panel (`/admin`)**: Created a new structured interface for managing users and current affairs content.
-- **Password Reset**: Added `forgot-password` and `reset-password` templates and handlers.
-
 ---
 
 ## Files Changed This Session
 | File | What Changed |
 |------|-------------|
-| `website/server.py` | Renamed Group labels in Search API, added CA scanning logic, added Admin/Auth routes |
+| `website/server.py` | Renamed Group labels in Search API, added CA scanning logic |
 | `website/static/css/style.css` | Unified Saffron theme, Global Bold text, Segmented Nav Bar, Mobile Dropdown styles |
 | `website/templates/base.html` | Search Color Mapping (Saffron), Navbar links (Roman), CSS v=10 |
 | `website/templates/group1.html` | Rewrote Nav structure (Desktop Bar + Mobile Dropdown), Roman titles |
 | `website/templates/group2.html` | Rewrote Nav structure (Desktop Bar + Mobile Dropdown), Roman titles |
 | `website/templates/index.html` | Updated hero card labels to Roman numerals |
-| `website/templates/admin.html` | NEW — Admin management dashboard |
 
 ---
 
-## CSS Variable Reference (Unified Saffron)
-```css
-:root {
-  --saffron:    #FF9933;   /* Primary Brand Color */
-  --white:      #FFFFFF;
-  --green:      var(--saffron); /* Unified palette */
-  --gold:       var(--saffron);
-  --accent:     var(--saffron);
-}
-```
+## Technical Reference
+- **CSS Version**: `?v=10` (Busts browser cache for new Saffron styles)
+- **Primary Color**: `#FF9933` (Indian Saffron)
+- **Base Weight**: `600`
 
 ---
 
-## Next Session Ideas
-1. **Interactive MCQs** — Expand the syllabus view into an interactive practice mode.
-2. **Video Integration** — Add curated YouTube lectures mapping to each micro-topic.
-3. **Admin Content Editor** — Direct markdown editing for Current Affairs in the browser.
-4. **State Persistence Enhancement** — Move studied markers to a global "Progress Map" in the dashboard.
+## Pending / Next Session Ideas
+1. **Interactive MCQs** — Practice mode for individual syllabus topics.
+2. **Video Mappings** — Link YouTube lectures to specific sub-topics.
+3. **Admin Dashboard** — Add current affairs directly from the web UI.
+4. **Offline Mode** — Service worker support for studying without internet.
+
 
