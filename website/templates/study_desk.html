@@ -4,6 +4,8 @@
 {% block content %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad: false, theme: 'dark'});</script>
 
 <!-- Kindle Main Container -->
 <div id="kindle-app" class="theme-dark font-serif size-medium">
@@ -11,15 +13,16 @@
   <!-- Top App Bar -->
   <div class="k-topbar" id="k-topbar">
     <div class="k-topbar-left">
-      <a href="javascript:history.back()" class="k-btn"><i class="icon-back">←</i> <span class="k-back-text">Library</span></a>
+      <a href="javascript:history.back()" class="k-btn-library"><span class="icon">←</span> <span class="text">Back to Library</span></a>
     </div>
     <div class="k-topbar-center">
       <h1 class="k-book-title" id="sd-topic-badge">{{ topic_id }}</h1>
     </div>
     <div class="k-topbar-right">
-      <button class="k-btn" id="btn-aa" title="Appearance (Aa)">Aa</button>
-      <button class="k-btn" id="btn-notebook" title="My Notebook">Notebook</button>
-      <button class="k-btn" onclick="exportPDF('study_notes')" title="Export">↓</button>
+      <button class="k-btn-action highlight" id="btn-coach" title="Intellectual Time Coach">🍅 <span id="coach-time-display">25:00</span></button>
+      <button class="k-btn-action" id="btn-aa" title="Appearance (Aa)">Aa</button>
+      <button class="k-btn-action highlight" id="btn-notebook" title="My Notebook">📝 Notebook</button>
+      <button class="k-btn-action" onclick="exportPDF('study_notes')" title="Export">↓ Export</button>
     </div>
   </div>
 
@@ -88,6 +91,16 @@
     <button class="k-action-btn" data-action="remove">✗ Clear</button>
   </div>
 
+  <!-- Intellectual Coach Overlay -->
+  <div class="k-coach-overlay" id="k-coach-overlay" style="display:none;">
+    <div class="k-coach-modal">
+      <h2 id="coach-title">Take A Break</h2>
+      <p id="coach-message">You've studied closely for 25 minutes. To maximize retention, you must take a 5-minute break. Step away from the screen.</p>
+      <button class="k-coach-btn" id="coach-btn-action">Start 5m Break</button>
+      <button class="k-coach-btn-secondary" id="coach-btn-skip">Skip Request (Not Recommended)</button>
+    </div>
+  </div>
+
 </div>
 
 <style>
@@ -136,9 +149,34 @@ nav.navbar { display: none !important; }
 #kindle-app.font-serif { --k-font-family: var(--k-font-serif); }
 #kindle-app.font-sans { --k-font-family: var(--k-font-sans); }
 
-#kindle-app.size-small { --k-font-size: 16px; --k-line-height: 1.6; }
-#kindle-app.size-medium { --k-font-size: 20px; --k-line-height: 1.8; }
-#kindle-app.size-large { --k-font-size: 26px; --k-line-height: 1.9; }
+#kindle-app.size-small { --k-font-size: 14px; --k-line-height: 1.6; }
+#kindle-app.size-medium { --k-font-size: 17px; --k-line-height: 1.7; }
+#kindle-app.size-large { --k-font-size: 21px; --k-line-height: 1.8; }
+
+/* --- Time Coach UI --- */
+.k-coach-overlay {
+  position: absolute; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.85); z-index: 500;
+  display: flex; justify-content: center; align-items: center;
+  backdrop-filter: blur(5px);
+}
+.k-coach-modal {
+  background: var(--navy, #1A1A1A); border: 1px solid var(--gold, #FF9933);
+  padding: 30px; border-radius: 12px; max-width: 400px; text-align: center;
+  box-shadow: 0 10px 40px rgba(255, 153, 51, 0.2); font-family: var(--k-font-sans); color: white;
+}
+.k-coach-modal h2 { color: var(--gold, #FF9933); margin-top: 0; font-size: 1.5rem;}
+.k-coach-modal p { font-size: 1.05rem; line-height: 1.6; margin-bottom: 25px; color: #E8E8E8;}
+.k-coach-btn {
+  background: var(--gold, #FF9933); color: black; border: none; padding: 12px 24px;
+  font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; width: 100%; transition: 0.2s;
+  margin-bottom: 10px;
+}
+.k-coach-btn:hover { background: #E68A2E; transform: scale(1.02); }
+.k-coach-btn-secondary {
+  background: transparent; color: #888; border: none; font-size: 0.9rem; cursor: pointer; text-decoration: underline;
+}
+.k-coach-btn-secondary:hover { color: white; }
 
 #kindle-app {
   background-color: var(--k-bg);
@@ -149,24 +187,36 @@ nav.navbar { display: none !important; }
 /* --- TOP BAR --- */
 .k-topbar {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 1.5rem; height: 60px;
-  background: var(--k-bg);
-  border-bottom: 1px solid var(--k-border);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 0 1.5rem; height: 64px;
+  background: var(--navy);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   font-family: var(--k-font-sans);
   flex-shrink: 0;
   transition: transform 0.3s ease;
+  z-index: 50;
 }
 .k-topbar.hidden { transform: translateY(-100%); position: absolute; width: 100%; }
 
-.k-btn {
-  background: transparent; border: none; color: var(--k-text);
-  font-size: 1rem; cursor: pointer; padding: 0.5rem 0.8rem;
-  border-radius: 4px; font-family: inherit;
+.k-btn-library {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--surface); color: var(--white);
+  padding: 8px 16px; border-radius: 20px; font-weight: 600; text-decoration: none;
+  font-size: 0.9rem; border: 1px solid var(--border); transition: 0.2s;
 }
-.k-btn:hover { background: rgba(128,128,128,0.1); }
+.k-btn-library:hover { background: var(--card); border-color: var(--gold); color: var(--gold); }
+
+.k-btn-action {
+  background: transparent; border: 1px solid var(--border); color: var(--white);
+  padding: 8px 16px; border-radius: 6px; font-weight: 500; font-size: 0.9rem;
+  cursor: pointer; transition: 0.2s; margin-left: 8px; font-family: inherit;
+}
+.k-btn-action:hover { background: var(--surface); color: var(--gold); border-color: var(--gold); }
+.k-btn-action.highlight { background: rgba(255, 153, 51, 0.1); border-color: var(--gold); color: var(--gold); }
+.k-btn-action.highlight:hover { background: var(--gold); color: #000; }
+
 .k-book-title {
-  margin: 0; font-size: 1.1rem; font-weight: 600; text-align: center;
+  margin: 0; font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--white); letter-spacing: 0.5px;
 }
 
 /* --- FOOTER --- */
@@ -239,10 +289,9 @@ nav.navbar { display: none !important; }
 .k-theme-btn.theme-sepia { background: #FBF0D9; color: #000; }
 .k-theme-btn.theme-dark { background: #1A1A1A; color: #fff; }
 
-#kindle-app.theme-dark .k-topbar,
 #kindle-app.theme-dark .k-menu-aa,
 #kindle-app.theme-dark .k-notebook-drawer {
-    background: #1A1A1A; /* Solid dark panels */
+    background: var(--navy); /* Solid dark panels */
 }
 
 /* --- NOTEBOOK DRAWER --- */
@@ -304,6 +353,50 @@ mark.hl-green  { background: rgba(129, 199, 132, 0.3); border-bottom: 2px solid 
 /* PDF Export styles */
 .pdf-export-mode { background: white !important; color: black !important; padding: 20px !important; }
 .pdf-export-mode * { color: black !important; }
+
+/* --- PREMIUM CONTENT PATTERNS --- */
+
+/* Diagrams / Visuals */
+.mermaid {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 8px; padding: 10px; margin: 2rem 0;
+  display: flex; justify-content: center;
+}
+
+/* Exam Traps / Callouts */
+blockquote.exam-trap {
+  background: rgba(255, 153, 51, 0.1); border-left: 4px solid var(--gold);
+  padding: 1rem; margin: 1.5rem 0; border-radius: 0 4px 4px 0; font-family: var(--k-font-sans);
+}
+blockquote.exam-trap strong { color: var(--gold); }
+
+/* Accordions for Deep Dives */
+details.deep-dive {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+  margin: 1.5rem 0; padding: 0.5rem 1rem; font-family: var(--k-font-sans); box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+details.deep-dive summary {
+  font-weight: 600; cursor: pointer; padding: 0.5rem 0; list-style-type: none; outline: none;
+  font-size: 1.05rem; display: flex; align-items: center; color: var(--k-text);
+}
+details.deep-dive summary::-webkit-details-marker { display: none; }
+details.deep-dive summary::before {
+  content: '▶'; display: inline-block; margin-right: 10px; transition: 0.2s; color: var(--gold); font-size:0.8rem;
+}
+details.deep-dive[open] summary::before { transform: rotate(90deg); }
+details.deep-dive .deep-dive-content {
+  margin-top: 1rem; border-top: 1px dashed var(--border); padding-top: 1rem; font-family: var(--k-font-serif); font-size: 0.95rem; line-height: 1.6;
+}
+
+/* Comparison Tables */
+.k-reader-content table {
+  width: 100%; border-collapse: collapse; margin: 2rem 0; font-family: var(--k-font-sans);
+  background: var(--surface); border-radius: 8px; overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.k-reader-content th { background: var(--inset); color: var(--gold); padding: 12px; text-align: left; border-bottom: 1px solid var(--border); }
+.k-reader-content td { padding: 12px; border-bottom: 1px solid var(--border); }
+.k-reader-content tr:last-child td { border-bottom: none; }
 </style>
 
 <script>
@@ -321,6 +414,24 @@ fetch('/api/content/' + TOPIC_ID)
     const container = document.getElementById('official-notes-container');
     if (data.available) {
       container.innerHTML = marked.parse(data.content);
+      
+      // Post-process custom elements
+      // 1. Convert mermaid code blocks to structural divs
+      container.querySelectorAll('pre code.language-mermaid').forEach(el => {
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = el.textContent;
+        el.parentElement.replaceWith(div);
+      });
+      mermaid.run({ querySelector: '.mermaid' }).catch(e => console.error("Mermaid error:", e));
+      
+      // 2. Identify custom exam trap blockquotes
+      container.querySelectorAll('blockquote').forEach(bq => {
+        if (bq.innerHTML.includes('PRELIMS TRAP') || bq.innerHTML.includes('EXAM TRAP') || bq.innerHTML.includes('💡') || bq.innerHTML.includes('🧨')) {
+          bq.classList.add('exam-trap');
+        }
+      });
+      
       loadAnnotations(); 
     } else {
       container.innerHTML = '<h2 style="text-align:center;">Book Not Available</h2><p style="text-align:center;">The content for this topic is missing or being prepared.</p>';
@@ -581,5 +692,91 @@ function exportPDF(target) {
     element.classList.remove('pdf-export-mode');
   });
 }
+
+// --- INTELLECTUAL TIME COACH ---
+const TimeCoach = {
+  minutesSpent: 0,
+  pomodoroTimeLeft: 25 * 60,
+  interval: null,
+  isActive: false,
+  displayEl: document.getElementById('coach-time-display'),
+  overlay: document.getElementById('k-coach-overlay'),
+  topicKey: 'study_hours_' + TOPIC_ID,
+  
+  init() {
+    this.minutesSpent = parseInt(localStorage.getItem(this.topicKey)) || 0;
+    
+    document.getElementById('btn-coach').addEventListener('click', () => this.toggle());
+    document.getElementById('coach-btn-action').addEventListener('click', () => this.startBreak());
+    document.getElementById('coach-btn-skip').addEventListener('click', () => this.skipBreak());
+    
+    // Log persistence
+    setInterval(() => {
+      if (this.isActive) {
+        // Track roughly 1 minute of active study time
+        this.minutesSpent += 1;
+        localStorage.setItem(this.topicKey, this.minutesSpent);
+      }
+    }, 60000);
+  },
+  
+  updateDisplay() {
+    let m = Math.floor(this.pomodoroTimeLeft / 60);
+    let s = this.pomodoroTimeLeft % 60;
+    this.displayEl.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  },
+  
+  toggle() {
+    if (this.isActive) this.pause();
+    else this.start();
+  },
+  
+  start() {
+    this.isActive = true;
+    this.displayEl.parentElement.classList.add('highlight');
+    this.displayEl.parentElement.style.opacity = '1';
+    clearInterval(this.interval);
+    this.interval = setInterval(() => {
+      if (this.pomodoroTimeLeft <= 0) {
+        this.triggerIntervention();
+      } else {
+        this.pomodoroTimeLeft--;
+        this.updateDisplay();
+      }
+    }, 1000);
+  },
+  
+  pause() {
+    this.isActive = false;
+    this.displayEl.parentElement.classList.remove('highlight');
+    this.displayEl.parentElement.style.opacity = '0.5';
+    clearInterval(this.interval);
+  },
+  
+  triggerIntervention() {
+    this.pause();
+    document.getElementById('coach-title').textContent = "Time Execution Complete";
+    const hrs = (this.minutesSpent / 60).toFixed(2);
+    document.getElementById('coach-message').innerHTML = `You have studied closely for 25 minutes.<br><br><b style="color:var(--gold);">Topic Analytics:</b> You have invested ${hrs} active hours into this specific module.<br><br>To maximize structural retention, you must take a 5-minute break now. Step away from the screen.`;
+    this.overlay.style.display = 'flex';
+  },
+  
+  startBreak() {
+    this.overlay.style.display = 'none';
+    this.pomodoroTimeLeft = 5 * 60; // 5 min break
+    this.updateDisplay();
+    this.start();
+    this.displayEl.parentElement.style.border = '1px dashed var(--gold)'; 
+  },
+  
+  skipBreak() {
+    this.overlay.style.display = 'none';
+    this.pomodoroTimeLeft = 25 * 60; // reset
+    this.updateDisplay();
+    this.start();
+    this.displayEl.parentElement.style.border = '1px solid var(--gold)';
+  }
+};
+TimeCoach.init();
 </script>
 {% endblock %}
