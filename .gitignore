@@ -32,3 +32,6 @@ start.bat
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Secrets
+.env

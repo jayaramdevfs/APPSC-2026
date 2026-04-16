@@ -1,0 +1,1264 @@
+--- PAGE 190 ---
+BIOLOGY
+(ii) organic agriculture; and
+(iii) genetically engineered crop-based agriculture.
+The Green Revolution succeeded in tripling the food supply but yet
+it was not enough to feed the growing human population. Increased yields
+have partly been due to the use of improved crop varieties, but mainly
+due to the use of better management practices and use of agrochemicals
+(fertilisers and pesticides). However, for farmers in the developing world,
+agrochemicals are often too expensive, and further increases in yield with
+existing varieties are not possible using conventional breeding.
+As traditional breeding techniques failed to keep pace with demand and
+to provide sufficiently fast and efficient systems for crop improvement,
+another technology called tissue culture got developed. What does
+tissue culture mean? It was learnt by scientists, during 1950s, that
+whole plants could be regenerated from explants, i.e., any part of a
+plant taken out and grown in a test tube, under sterile conditions in
+special nutrient media. This capacity to generate a whole plant from
+any cell/explant is called totipotency. You will learn how to accomplish
+this in higher classes. It is important to stress here that the nutrient
+medium must provide a carbon source such as sucrose and also
+inorganic salts, vitamins, amino acids and growth regulators like auxins,
+cytokinins etc. By application of these methods it is possible to achieve
+propagation of a large number of plants in very short durations. This
+method of producing thousands of plants through tissue culture is
+called micro-propagation. Each of these plants will be genetically
+identical to the original plant from which they were grown, i.e., they are
+somaclones. Many important food plants like tomato, banana, apple,
+etc., have been produced on commercial scale using this method. Try to
+visit a tissue culture laboratory with your teacher to better understand
+and appreciate the process.
+Another important application of the method is the recovery of
+healthy plants from diseased plants. Even if the plant is infected with a
+virus, the meristem (apical and axillary) is free of virus. Hence, one
+can remove the meristem and grow it in vitro to obtain virus-free plants.
+Scientists have succeeded in culturing meristems of banana, sugarcane,
+potato, etc.
+178
+Scientists have even isolated single cells from plants and after
+digesting their cell walls have been able to isolate naked protoplasts
+(surrounded by plasma membranes). Isolated protoplasts from two
+different varieties of plants – each having a desirable character – can be
+fused to get hybrid protoplasts, which can be further grown to form a
+new plant. These hybrids are called somatic hybrids while the process
+Rationalised 2023-24
+
+--- PAGE 191 ---
+BIOTECHNOLOGY AND ITS APPLICATIONS
+is called somatic hybridisation. Imagine a situation when a protoplast
+of tomato is fused with that of potato, and then they are grown – to form
+new hybrid plants combining tomato and potato characteristics. Well,
+this has been achieved – resulting in formation of pomato; unfortunately
+this plant did not have all the desired combination of characteristics for
+its commercial utilisation.
+Is there any alternative path that our understanding of genetics can
+show so that farmers may obtain maximum yield from their fields? Is
+there a way to minimise the use of fertilisers and chemicals so that their
+harmful effects on the environment are reduced? Use of genetically
+modified crops is a possible solution.
+Plants, bacteria, fungi and animals whose genes have been altered by
+manipulation are called Genetically Modified Organisms (GMO). GM
+plants have been useful in many ways. Genetic modification has:
+(i) made crops more tolerant to abiotic stresses (cold, drought, salt, heat).
+(ii) reduced reliance on chemical pesticides (pest-resistant crops).
+(iii) helped to reduce post harvest losses.
+(iv) increased efficiency of mineral usage by plants (this prevents early
+exhaustion of fertility of soil).
+(v) enhanced nutritional value of food, e.g., golden rice, i.e., Vitamin ‘A’
+enriched rice.
+In addition to these uses, GM has been used to create tailor-made
+plants to supply alternative resources to industries, in the form of starches,
+fuels and pharmaceuticals.
+Some of the applications of biotechnology in agriculture that you will
+study in detail are the production of pest resistant plants, which could
+decrease the amount of pesticide used. Bt toxin is produced by a
+bacterium called Bacillus thuringiensis (Bt for short). Bt toxin gene has
+been cloned from the bacteria and been expressed in plants to provide
+resistance to insects without the need for insecticides; in effect created a
+bio-pesticide. Examples are Bt cotton, Bt corn, rice, tomato, potato and
+soyabean etc.
+Bt Cotton: Some strains of Bacillus thuringiensis produce proteins that
+kill certain insects such as lepidopterans (tobacco budworm, armyworm),
+coleopterans (beetles) and dipterans (flies, mosquitoes). B. thuringiensis
+forms protein crystals during a particular phase of their growth. These
+crystals contain a toxic insecticidal protein. Why does this toxin not kill
+179
+the Bacillus? Actually, the Bt toxin protein exist as inactive protoxins but
+once an insect ingest the inactive toxin, it is converted into an active form
+of toxin due to the alkaline pH of the gut which solubilise the crystals.
+The activated toxin binds to the surface of midgut epithelial cells and
+create pores that cause cell swelling and lysis and eventually cause death
+of the insect.
+Rationalised 2023-24
+
+--- PAGE 192 ---
+BIOLOGY
+Specific Bt toxin genes were isolated from Bacillus thuringiensis and
+incorporated into the several crop plants such as cotton (Figure 10.1).
+The choice of genes depends upon the crop and the targeted pest, as
+most Bt toxins are insect-group specific. The toxin is coded by a gene
+cryIAc named cry. There are a number of them, for example, the proteins
+encoded by the genes cryIAc and cryIIAb control the cotton bollworms,
+that of cryIAb controls corn borer.
+(a)
+(b)
+Figure 10.1 Cotton boll: (a) destroyed by bollworms; (b) a fully mature
+cotton boll
+Pest Resistant Plants: Several nematodes parasitise a wide variety of
+plants and animals including human beings. A nematode Meloidegyne
+incognitia infects the roots of tobacco plants and causes a great reduction
+in yield. A novel strategy was adopted to prevent this infestation which
+was based on the process of RNA interference (RNAi). RNAi takes place
+in all eukaryotic organisms as a method of cellular defense. This method
+involves silencing of a specific mRNA due to a complementary dsRNA
+molecule that binds to and prevents translation of the mRNA (silencing).
+The source of this complementary RNA could be from an infection by
+viruses having RNA genomes or mobile genetic elements (transposons)
+that replicate via an RNA intermediate.
+Using Agrobacterium vectors, nematode-specific genes were
+introduced into the host plant (Figure 10.2). The introduction of DNA
+180
+was such that it produced both sense and anti-sense RNA in the host
+cells. These two RNA’s being complementary to each other formed a double
+stranded (dsRNA) that initiated RNAi and thus, silenced the specific mRNA
+of the nematode. The consequence was that the parasite could not survive
+in a transgenic host expressing specific interfering RNA. The transgenic
+plant therefore got itself protected from the parasite (Figure 10.2).
+Rationalised 2023-24
+
+--- PAGE 193 ---
+BIOTECHNOLOGY AND ITS APPLICATIONS
+(a) (b)
+Figure 10.2 Host plant-generated dsRNA triggers protection against nematode infestation:
+(a) Roots of a typical control plants; (b) transgenic plant roots 5 days after deliberate
+infection of nematode but protected through novel mechanism.
+10.2 B A M
+IOTECHNOLOGICAL PPLICATIONS IN EDICINE
+The recombinant DNA technological processes have made immense impact
+in the area of healthcare by enabling mass production of safe and more
+effective therapeutic drugs. Further, the recombinant therapeutics do not
+induce unwanted immunological responses as is common in case of
+similar products isolated from non-human sources. At present, about
+30 recombinant therapeutics have been approved for human-use the
+world over. In India, 12 of these are presently being marketed.
+10.2.1 Genetically Engineered Insulin
+Management of adult-onset diabetes is possible by taking insulin at
+regular time intervals. What would a diabetic patient do if enough human-
+insulin was not available? If you discuss this, you would soon realise
+that one would have to isolate and use insulin from other animals. Would
+the insulin isolated from other animals be just as effective as that
+secreted by the human body itself and would it not elicit an immune
+response in the human body? Now, imagine if bacterium were available
+that could make human insulin. Suddenly the whole process becomes
+so simple. You can easily grow a large quantity of the bacteria and make
+as much insulin as you need.
+Think about whether insulin can be orally administered to diabetic
+181
+people or not. Why?
+Insulin used for diabetes was earlier extracted from pancreas of
+slaughtered cattle and pigs. Insulin from an animal source, though caused
+some patients to develop allergy or other types of reactions to the foreign
+protein. Insulin consists of two short polypeptide chains: chain A
+and chain B, that are linked together by disulphide bridges (Figure 10.3).
+Rationalised 2023-24
+
+--- PAGE 194 ---
+BIOLOGY
+In mammals, including humans, insulin is synthesised
+as a pro-hormone (like a pro-enzyme, the pro-hormone
+also needs to be processed before it becomes a fully mature
+and functional hormone) which contains an extra stretch
+called the C peptide. This C peptide is not present in the
+mature insulin and is removed during maturation into
+insulin.The main challenge for production of insulin using
+rDNA techniques was getting insulin assembled into a
+mature form. In 1983, Eli Lilly an American company
+prepared two DNA sequences corresponding to A and B,
+chains of human insulin and introduced them in plasmids
+of E. coli to produce insulin chains. Chains A and B were
+Figure 10.3Maturation of
+produced separately, extracted and combined by creating
+pro-insulin into insulin
+disulfide bonds to form human insulin.
+(simplified)
+10.2.2 Gene Therapy
+If a person is born with a hereditary disease, can a corrective therapy
+be taken for such a disease? Gene therapy is an attempt to do this.
+Gene therapy is a collection of methods that allows correction of a
+gene defect that has been diagnosed in a child/embryo. Here genes
+are inserted into a person’s cells and tissues to treat a disease.
+Correction of a genetic defect involves delivery of a normal gene into
+the individual or embryo to take over the function of and compensate
+for the non-functional gene.
+The first clinical gene therapy was given in 1990 to a 4-year old girl
+with adenosine deaminase (ADA) deficiency. This enzyme is crucial for
+the immune system to function. The disorder is caused due to the deletion
+of the gene for adenosine deaminase. In some children ADA deficiency
+can be cured by bone marrow transplantation; in others it can be treated
+by enzyme replacement therapy, in which functional ADA is given to the
+patient by injection. But the problem with both of these approaches that
+they are not completely curative. As a first step towards gene therapy,
+lymphocytes from the blood of the patient are grown in a culture outside
+the body. A functional ADA cDNA (using a retroviral vector) is then
+introduced into these lymphocytes, which are subsequently returned to
+the patient. However, as these cells are not immortal, the patient requires
+periodic infusion of such genetically engineered lymphocytes. However, if
+the gene isolate from marrow cells producing ADA is introduced into cells
+182 at early embryonic stages, it could be a permanent cure.
+10.2.3 Molecular Diagnosis
+You know that for effective treatment of a disease, early diagnosis and
+understanding its pathophysiology is very important. Using conventional
+methods of diagnosis (serum and urine analysis, etc.) early detection is
+Rationalised 2023-24
+
+--- PAGE 195 ---
+BIOTECHNOLOGY AND ITS APPLICATIONS
+not possible. Recombinant DNA technology, Polymerase Chain Reaction
+(PCR) and Enzyme Linked Immuno-sorbent Assay (ELISA) are some of
+the techniques that serve the purpose of early diagnosis.
+Presence of a pathogen (bacteria, viruses, etc.) is normally suspected
+only when the pathogen has produced a disease symptom. By this time
+the concentration of pathogen is already very high in the body. However,
+very low concentration of a bacteria or virus (at a time when the symptoms
+of the disease are not yet visible) can be detected by amplification of their
+nucleic acid by PCR. Can you explain how PCR can detect very low
+amounts of DNA? PCR is now routinely used to detect HIV in suspected
+AIDS patients. It is being used to detect mutations in genes in suspected
+cancer patients too. It is a powerful techqnique to identify many other
+genetic disorders.
+A single stranded DNA or RNA, tagged with a radioactive molecule
+(probe) is allowed to hybridise to its complementary DNA in a clone of
+cells followed by detection using autoradiography. The clone having the
+mutated gene will hence not appear on the photographic film, because
+the probe will not have complementarity with the mutated gene.
+ELISA is based on the principle of antigen-antibody interaction.
+Infection by pathogen can be detected by the presence of antigens
+(proteins, glycoproteins, etc.) or by detecting the antibodies synthesised
+against the pathogen.
+10.3 T A
+RANSGENIC NIMALS
+Animals that have had their DNA manipulated to possess and express an
+extra (foreign) gene are known as transgenic animals. Transgenic rats,
+rabbits, pigs, sheep, cows and fish have been produced, although over
+95 per cent of all existing transgenic animals are mice. Why are these
+animals being produced? How can man benefit from such modifications?
+Let us try and explore some of the common reasons:
+(i) Normal physiology and development: Transgenic animals can
+be specifically designed to allow the study of how genes are
+regulated, and how they affect the normal functions of the body
+and its development, e.g., study of complex factors involved in growth
+such as insulin-like growth factor. By introducing genes from other
+species that alter the formation of this factor and studying the
+biological effects that result, information is obtained about the
+biological role of the factor in the body.
+(ii) Study of disease: Many transgenic animals are designed to increase 183
+our understanding of how genes contribute to the development of
+disease. These are specially made to serve as models for human
+diseases so that investigation of new treatments for diseases is made
+possible. Today transgenic models exist for many human diseases
+such as cancer, cystic fibrosis, rheumatoid arthritis and Alzheimer’s.
+Rationalised 2023-24
+
+--- PAGE 196 ---
+BIOLOGY
+(iii) Biological products: Medicines required to treat certain human
+diseases can contain biological products, but such products are
+often expensive to make. Transgenic animals that produce useful
+biological products can be created by the introduction of the portion
+of DNA (or genes) which codes for a particular product such as
+human protein (α-1-antitrypsin) used to treat emphysema. Similar
+attempts are being made for treatment of phenylketonuria (PKU)
+and cystic fibrosis. In 1997, the first transgenic cow, Rosie, produced
+human protein-enriched milk (2.4 grams per litre). The milk
+contained the human alpha-lactalbumin and was nutritionally a
+more balanced product for human babies than natural cow-milk.
+(iv) Vaccine safety: Transgenic mice are being developed for use in
+testing the safety of vaccines before they are used on humans.
+Transgenic mice are being used to test the safety of the polio vaccine.
+If successful and found to be reliable, they could replace the use of
+monkeys to test the safety of batches of the vaccine.
+(v) Chemical safety testing: This is known as toxicity/safety testing.
+The procedure is the same as that used for testing toxicity of drugs.
+Transgenic animals are made that carry genes which make them more
+sensitive to toxic substances than non-transgenic animals. They are
+then exposed to the toxic substances and the effects studied. Toxicity
+testing in such animals will allow us to obtain results in less time.
+10.4 ETHICAL ISSUES
+The manipulation of living organisms by the human race cannot go on
+any further, without regulation. Some ethical standards are required to
+evaluate the morality of all human activities that might help or harm living
+organisms.
+Going beyond the morality of such issues, the biological significance
+of such things is also important. Genetic modification of organisms can
+have unpredicatable results when such organisms are introduced into
+the ecosystem.
+Therefore, the Indian Government has set up organisations such as
+GEAC (Genetic Engineering Approval Committee), which will make
+decisions regarding the validity of GM research and the safety of
+introducing GM-organisms for public services.
+The modification/usage of living organisms for public services (as food
+and medicine sources, for example) has also created problems with patents
+184
+granted for the same.
+There is growing public anger that certain companies are being
+granted patents for products and technologies that make use of the
+genetic materials, plants and other biological resources that have long
+been identified, developed and used by farmers and indigenous people
+of a specific region/country.
+Rationalised 2023-24
+
+--- PAGE 197 ---
+BIOTECHNOLOGY AND ITS APPLICATIONS
+Rice is an important food grain, the presence of which goes back
+thousands of years in Asia’s agricultural history. There are an estimated
+200,000 varieties of rice in India alone. The diversity of rice in India is
+one of the richest in the world. Basmati rice is distinct for its unique
+aroma and flavour and 27 documented varieties of Basmati are grown
+in India. There is reference to Basmati in ancient texts, folklore and
+poetry, as it has been grown for centuries. In 1997, an American
+company got patent rights on Basmati rice through the US Patent and
+Trademark Office. This allowed the company to sell a ‘new’ variety of
+Basmati, in the US and abroad. This ‘new’ variety of Basmati had
+actually been derived from Indian farmer’s varieties. Indian Basmati
+was crossed with semi-dwarf varieties and claimed as an invention or
+a novelty. The patent extends to functional equivalents, implying that
+other people selling Basmati rice could be restricted by the patent.
+Several attempts have also been made to patent uses, products and
+processes based on Indian traditional herbal medicines, e.g., turmeric
+neem. If we are not vigilant and we do not immediately counter these
+patent applications, other countries/individuals may encash on our
+rich legacy and we may not be able to do anything about it.
+Biopiracy is the term used to refer to the use of bio-resources by
+multinational companies and other organisations without proper
+authorisation from the countries and people concerned without
+compensatory payment.
+Most of the industrialised nations are rich financially but poor in
+biodiversity and traditional knowledge. In contrast the developing and
+the underdeveloped world is rich in biodiversity and traditional
+knowledge related to bio-resources. Traditional knowledge related to
+bio-resources can be exploited to develop modern applications and
+can also be used to save time, effort and expenditure during their
+commercialisation.
+There has been growing realisation of the injustice, inadequate
+compensation and benefit sharing between developed and developing
+countries. Therefore, some nations are developing laws to prevent such
+unauthorised exploitation of their bio-resources and traditional
+knowledge.
+The Indian Parliament has recently cleared the second amendment
+of the Indian Patents Bill, that takes such issues into consideration,
+including patent terms emergency provisions and research and
+development initiative. 185
+Rationalised 2023-24
+
+--- PAGE 198 ---
+BIOLOGY
+SUMMARY
+Biotechnology has given to humans several useful products by using
+microbes, plant, animals and their metabolic machinery. Techniques
+of tissue culture and somatic hybridisation offer vast potential for
+manipulation of plants in vitro to produce new varieties. Recombinant
+DNA technology has made it possible to engineer microbes, plants
+and animals such that they have novel capabilities. Genetically
+Modified Organisms have been created by using methods other than
+natural methods to transfer one or more genes from one organism to
+another, generally using techniques such as recombinant DNA
+technology.
+GM plants have been useful in increasing crop yields, reduce post-
+harvest losses and make crops more tolerant of stresses. There are
+several GM crop plants with improved nutritional value of foods and
+reduced the reliance on chemical pesticides (pest-resistant crops).
+Recombinant DNA technological processes have made immense
+impact in the area of healthcare by enabling mass production of safe
+and more effective therapeutics. Since the recombinant therapeutics
+are identical to human proteins, they do not induce unwanted
+immunological responses and are free from risk of infection as was
+observed in case of similar products isolated from non-human sources.
+Human insulin is made in bacteria yet its structure is absolutely
+identical to that of the natural molecule.
+Transgenic animals are also used to understand how genes
+contribute to the development of a disease by serving as models for
+human diseases, such as cancer, cystic fibrosis, rheumatoid arthritis
+and Alzheimer’s.
+Gene therapy is the insertion of genes into an individual’s cells
+and tissues to treat diseases especially hereditary diseases. It does
+so by replacing a defective mutant allele with a functional one or
+gene targeting which involves gene amplification. Viruses that attack
+their hosts and introduce their genetic material into the host cell as
+part of their replication cycle are used as vectors to transfer healthy
+genes or more recently portions of genes.
+The current interest in the manipulation of microbes, plants, and
+animals has raised serious ethical questions.
+EXERCISES
+1. Which part of the plant is best suited for making virus-free plants and
+why?
+186
+2. What is the major advantage of producing plants by micropropagation?
+3. Find out what the various components of the medium used for
+propagation of an explant in vitro are?
+4. Crystals of Bt toxin produced by some bacteria do not kill the bacteria
+themselves because –
+(a) bacteria are resistant to the toxin
+Rationalised 2023-24
+
+--- PAGE 199 ---
+BIOTECHNOLOGY AND ITS APPLICATIONS
+(b) toxin is immature;
+(c) toxin is inactive;
+(d) bacteria encloses toxin in a special sac.
+5. What are transgenic bacteria? Illustrate using any one example.
+6. Compare and contrast the advantages and disadvantages of production
+of genetically modified crops.
+7. What are Cry proteins? Name an organism that produce it. How has
+man exploited this protein to his benefit?
+8. What is gene therapy? Illustrate using the example of adenosine
+deaminase (ADA) deficiency.
+9. Digrammatically represent the experimental steps in cloning and
+expressing an human gene (say the gene for growth hormone) into a
+bacterium like E. coli?
+10. Can you suggest a method to remove oil (hydrocarbon) from seeds based
+on your understanding of rDNA technology and chemistry of oil?
+11. Find out from internet what is golden rice.
+12. Does our blood have proteases and nucleases?
+13. Consult internet and find out how to make orally active protein
+pharmaceutical. What is the major problem to be encountered?
+187
+Rationalised 2023-24
+
+--- PAGE 200 ---
+Diversity is not only a characteristic of living organisms but
+Chapter 11
+also of content in biology textbooks. Biology is presented either
+Organisms and Populations
+as botany, zoology and microbiology or as classical and
+modern. The latter is a euphemism for molecular aspects of
+Chapter 12
+biology. Luckily we have many threads which weave the
+Ecosystem
+different areas of biological information into a unifying
+principle. Ecology is one such thread which gives us a holistic
+Chapter 13
+perspective to biology. The essence of biological understanding
+Biodiversity and Conservation
+is to know how organisms, while remaining an individual,
+interact with other organisms and physical habitats as a group
+and hence behave like organised wholes, i.e., population,
+community, ecosystem or even as the whole biosphere.
+Ecology explains to us all this. A particular aspect of this is the
+study of anthropogenic environmental degradation and the
+socio-political issues it has raised. This unit describes as well as
+takes a critical view of the above aspects.
+Rationalised 2023-24
+
+--- PAGE 201 ---
+Ramdeo Misra is revered as the Father of Ecology in India. Born on 26 August
+1908, Ramdeo Misra obtained Ph.D in Ecology (1937) under Prof. W. H. Pearsall,
+FRS, from Leeds University in UK. He established teaching and research in
+ecology at the Department of Botany of the Banaras Hindu University,
+Varanasi. His research laid the foundations for understanding of tropical
+communities and their succession, environmental responses of plant
+populations and productivity and nutrient cycling in tropical forest and
+grassland ecosystems. Misra formulated the first postgraduate course in
+ecology in India. Over 50 scholars obtained Ph. D degree under his supervision
+and moved on to other universities and research institutes to initiate ecology
+teaching and research across the country.
+He was honoured with the Fellowships of the Indian National Science
+RAMDEO MISRA
+Academy and World Academy of Arts and Science, and the prestigious Sanjay
+(1908-1998)
+Gandhi Award in Environment and Ecology. Due to his efforts, the
+Government of India established the National Committee for Environmental
+Planning and Coordination (1972) which, in later years, paved the way
+for the establishment of the Ministry of Environment and Forests (1984).
+Rationalised 2023-24
+
+--- PAGE 202 ---
+CHAPTER 11
+ORGANISMS AND POPULATIONS
+11.1 Populations
+Our living world is fascinatingly diverse and amazingly
+complex. We can try to understand its complexity by
+investigating processes at various levels of biological
+organisation–macromolecules, cells, tissues, organs,
+individual organisms, population, communities,
+ecosystems and biomes. At any level of biological
+organisation we can ask two types of questions – for
+example, when we hear the bulbul singing early morning
+in the garden, we may ask – ‘How does the bird sing?’
+Or, ‘Why does the bird sing ?’ The ‘how-type’ questions
+seek the mechanism behind the process while the ‘why-
+type’ questions seek the significance of the process. For
+the first question in our example, the answer might be in
+terms of the operation of the voice box and the vibrating
+bone in the bird, whereas for the second question the
+answer may lie in the bird’s need to communicate with its
+mate during breeding season. When you observe nature
+around you with a scientific frame of mind you will
+certainly come up with many interesting questions of both
+types - Why are night-blooming flowers generally white?
+How does the bee know which flower has nectar? Why
+does cactus have so many thorns? How does the chick
+spures recognise her own mother?, and so on.
+Rationalised 2023-24
+
+--- PAGE 203 ---
+ORGANISMS AND POPULATIONS
+You have already learnt in previous classes that Ecology is a subject
+which studies the interactions among organisms and between the
+organism and its physical (abiotic) environment.
+Ecology is basically concerned with four levels of biological
+organisation – organisms, populations, communities and biomes. In this
+chapter we explore ecology at population levels.
+11.1 P
+OPULATIONS
+11.1.1 Population Attributes
+In nature, we rarely find isolated, single individuals of any species; majority
+of them live in groups in a well defined geographical area, share or compete
+for similar resources, potentially interbreed and thus constitute a
+population. Although the term interbreeding implies sexual reproduction,
+a group of individuals resulting from even asexual reproduction is also
+generally considered a population for the purpose of ecological studies.
+All the cormorants in a wetland, rats in an abandoned dwelling, teakwood
+trees in a forest tract, bacteria in a culture plate and lotus plants in a
+pond, are some examples of a population. In earlier chapters you have
+learnt that although an individual organism is the one that has to cope
+with a changed environment, it is at the population level that natural
+selection operates to evolve the desired traits. Population ecology is,
+therefore, an important area because it links ecology to population genetics
+and evolution.
+A population has certain attributes whereas, an individual organism
+does not. An individual may have births and deaths, but a population has
+birth rates and death rates. In a population these rates refer to per capita
+births and deaths. The rates, hence, expressed are change in numbers
+(increase or decrease) with respect to members of the population. Here is an
+example. If in a pond there were 20 lotus plants last year and through
+reproduction 8 new plants are added, taking the current population to 28,
+we calculate the birth rate as 8/20 = 0.4 offspring per lotus per year. If 4
+individuals in a laboratory population of 40 fruitflies died during a specified
+time interval, say a week, the death rate in the population during that period
+is 4/40 = 0.1 individuals per fruitfly per week.
+Another attribute characteristic of a population is sex ratio. An
+individual is either a male or a female but a population has a sex ratio
+(e.g., 60 per cent of the population are females and 40 per cent males).
+A population at any given time is composed of individuals of
+191
+different ages. If the age distribution (per cent individuals of a given
+age or age group) is plotted for the population, the resulting structure
+is called an age pyramid (Figure 11.1). For human population, the
+age pyramids generally show age distribution of males and females in
+a diagram. The shape of the pyramids reflects the growth status of
+the population - (a) whether it is growing, (b) stable or (c) declining.
+Rationalised 2023-24
+
+--- PAGE 204 ---
+BIOLOGY
+Figure 11.1 Representation of age pyramids for human population
+The size of the population tells us a lot about its status in the habitat.
+Whatever ecological processes we wish to investigate in a population, be
+it the outcome of competition with another species, the impact of a
+predator or the effect of a pesticide application, we always evaluate them
+in terms of any change in the population size. The size, in nature, could
+be as low as <10 (Siberian cranes at Bharatpur wetlands in any year) or
+go into millions (Chlamydomonas in a pond). Population size, technically
+called population density (designated as N), need not necessarily be
+measured in numbers only. Although total number is generally the most
+appropriate measure of population density, it is in some cases either
+meaningless or difficult to determine. In an area, if there are 200 carrot
+grass (Parthenium hysterophorus) plants but only a single huge banyan
+tree with a large canopy, stating that the population density of banyan is
+low relative to that of carrot grass amounts to underestimating the
+enormous role of the Banyan in that community. In such cases, the per
+cent cover or biomass is a more meaningful measure of the population
+size. Total number is again not an easily adoptable measure if the
+population is huge and counting is impossible or very time-consuming.
+If you have a dense laboratory culture of bacteria in a petri dish what is
+the best measure to report its density? Sometimes, for certain ecological
+investigations, there is no need to know the absolute population densities;
+relative densities serve the purpose equally well. For instance, the number
+of fish caught per trap is good enough measure of its total population
+density in the lake. We are mostly obliged to estimate population sizes
+indirectly, without actually counting them or seeing them. The tiger census
+in our national parks and tiger reserves is often based on pug marks and
+fecal pellets.
+11.1.2 Population Growth
+The size of a population for any species is not a static parameter. It keeps
+192
+changing with time, depending on various factors including food
+availability, predation pressure and adverse weather. In fact, it is these
+changes in population density that give us some idea of what is happening
+to the population – whether it is flourishing or declining. Whatever might
+be the ultimate reasons, the density of a population in a given habitat
+during a given period, fluctuates due to changes in four basic processes,
+Rationalised 2023-24
+
+--- PAGE 205 ---
+ORGANISMS AND POPULATIONS
+two of which (natality and immigration) contribute to an increase in
+population density and two (mortality and emigration) to a decrease.
+(i) Natality refers to the number of births during a given period in the
+population that are added to the initial density.
+(ii) Mortality is the number of deaths in the population during a given
+period.
+(iii) Immigration is the number of individuals of the same species that
+have come into the habitat from elsewhere during the time period
+under consideration.
+(iv) Emigration is the number of individuals of the population who
+left the habitat and gone elsewhere during the time period under
+consideration.
+Figure 11.2
+So, if N is the population density at time t, then its density at time t +1 is
+N = N + [(B + I) – (D + E)]
+t+1 t
+You can see from the above equation (Fig. 11.2) that population
+density will increase if the number of births plus the number of immigrants 193
+(B + I) is more than the number of deaths plus the number of emigrants
+(D + E). Under normal conditions, births and deaths are the most
+important factors influencing population density, the other two factors
+assuming importance only under special conditions. For instance, if a
+new habitat is just being colonised, immigration may contribute more
+significantly to population growth than birth rates.
+Rationalised 2023-24
+
+--- PAGE 206 ---
+BIOLOGY
+Growth Models : Does the growth of a population with time show any
+specific and predictable pattern? We have been concerned about unbridled
+human population growth and problems created by it in our country
+and it is therefore natural for us to be curious if different animal
+populations in nature behave the same way or show some restraints on
+growth. Perhaps we can learn a lesson or two from nature on how to
+control population growth.
+(i) Exponential growth: Resource (food and space) availability is
+obviously essential for the unimpeded growth of a population.
+Ideally, when resources in the habitat are unlimited, each species
+has the ability to realise fully its innate potential to grow in number,
+as Darwin observed while developing his theory of natural selection.
+Then the population grows in an exponential or geometric fashion.
+If in a population of size N, the birth rates (not total number but per
+capita births) are represented as b and death rates (again, per capita
+death rates) as d, then the increase or decrease in N during a unit
+time period t (dN/dt) will be
+dN/dt = (b – d) × N
+Let (b–d) = r, then
+dN/dt = rN
+The r in this equation is called the ‘intrinsic rate of
+natural increase’ and is a very important parameter
+chosen for assessing impacts of any biotic or abiotic
+factor on population growth.
+To give you some idea about the magnitude of r
+values, for the Norway rat the r is 0.015, and for
+the flour beetle it is 0.12. In 1981, the r value for
+human population in India was 0.0205. Find out
+what the current r value is. For calculating it, you
+need to know the birth rates and death rates.
+The above equation describes the exponential or
+geometric growth pattern of a population (Figure
+Figure 11.3 Population growth curve
+11.3) and results in a J-shaped curve when we plot
+a when responses are not
+N in relation to time. If you are familiar with basic
+limiting the growth, plot is
+exponential, calculus, you can derive the integral form of the
+b when responses are limiting exponential growth equation as
+the growth, plot is logistic,
+N = N ert
+K is carrying capacity t 0
+where
+194 N = Population density after time t
+t
+N = Population density at time zero
+0
+r = intrinsic rate of natural increase
+e = the base of natural logarithms (2.71828)
+Any species growing exponentially under unlimited resource
+conditions can reach enormous population densities in a short time.
+Rationalised 2023-24
+
+--- PAGE 207 ---
+ORGANISMS AND POPULATIONS
+Darwin showed how even a slow growing animal like elephant could
+reach enormous numbers in the absence of checks. The following is
+an anecdote popularly narrated to demonstrate dramatically how
+fast a huge population could build up when growing exponentially.
+The king and the minister sat for a chess game. The king, confident
+of winning the game, was ready to accept any bet proposed by the
+minister. The minister humbly said that if he won, he wanted only
+some wheat grains, the quantity of which is to be calculated by
+placing on the chess board one grain in Square 1, then two in Square
+2, then four in Square 3, and eight in Square 4, and so on, doubling
+each time the previous quantity of wheat on the next square until all the
+64 squares were filled. The king accepted the seemingly silly bet and
+started the game, but unluckily for him, the minister won. The king felt that
+fulfilling the minister’s bet was so easy. He started with a single
+grain on the first square and proceeded to fill the other squares
+following minister’s suggested procedure, but by the time he covered
+half the chess board, the king realised to his dismay that all the
+wheat produced in his entire kingdom pooled together would still be
+inadequate to cover all the 64 squares. Now think of a tiny
+Paramecium starting with just one individual and through binary
+fission, doubling in numbers every day, and imagine what a mind-
+boggling population size it would reach in 64 days. (provided food
+and space remain unlimited)
+(ii) Logistic growth: No population of any species in nature has at its
+disposal unlimited resources to permit exponential growth. This
+leads to competition between individuals for limited resources.
+Eventually, the ‘fittest’ individual will survive and reproduce. The
+governments of many countries have also realised this fact and
+introduced various restraints with a view to limit human population
+growth. In nature, a given habitat has enough resources to support
+a maximum possible number, beyond which no further growth is
+possible. Let us call this limit as nature’s carrying capacity (K) for
+that species in that habitat.
+A population growing in a habitat with limited resources show
+initially a lag phase, followed by phases of acceleration and
+deceleration and finally an asymptote, when the population density
+reaches the carrying capacity. A plot of N in relation to time (t)
+results in a sigmoid curve. This type of population growth is called 195
+Verhulst-Pearl Logistic Growth (Figure 11.3) and is described by
+the following equation:
+K −N
+dN/dt = rN 
+ K 
+Rationalised 2023-24
+
+--- PAGE 208 ---
+BIOLOGY
+Where N = Population density at time t
+r = Intrinsic rate of natural increase
+K = Carrying capacity
+Since resources for growth for most animal populations are finite
+and become limiting sooner or later, the logistic growth model is
+considered a more realistic one.
+Gather from Government Census data the population figures
+for India for the last 100 years, plot them and check which growth
+pattern is evident.
+11.1.3 Life History Variation
+Populations evolve to maximise their reproductive fitness, also called
+Darwinian fitness (high r value), in the habitat in which they live. Under
+a particular set of selection pressures, organisms evolve towards the most
+efficient reproductive strategy. Some organisms breed only once in their
+lifetime (Pacific salmon fish, bamboo) while others breed many times
+during their lifetime (most birds and mammals). Some produce a large
+number of small-sized offspring (Oysters, pelagic fishes) while others
+produce a small number of large-sized offspring (birds, mammals). So,
+which is desirable for maximising fitness? Ecologists suggest that life
+history traits of organisms have evolved in relation to the constraints
+imposed by the abiotic and biotic components of the habitat in which
+they live. Evolution of life history traits in different species is currently an
+important area of research being conducted by ecologists.
+11.1.4 Population Interactions
+Can you think of any natural habitat on earth that is inhabited just by a
+single species? There is no such habitat and such a situation is even
+inconceivable. For any species, the minimal requirement is one more
+species on which it can feed. Even a plant species, which makes its own
+food, cannot survive alone; it needs soil microbes to break down the organic
+matter in soil and return the inorganic nutrients for absorption. And then,
+how will the plant manage pollination without an animal agent? It is
+obvious that in nature, animals, plants and microbes do not and cannot
+live in isolation but interact in various ways to form a biological
+community. Even in minimal communities, many interactive linkages
+exist, although all may not be readily apparent.
+196
+Interspecific interactions arise from the interaction of populations of
+two different species. They could be beneficial, detrimental or neutral
+(neither harm nor benefit) to one of the species or both. Assigning a ‘+’
+sign for beneficial interaction, ‘-’ sign for detrimental and 0 for neutral
+interaction, let us look at all the possible outcomes of interspecific
+interactions (Table11.1).
+Rationalised 2023-24
+
+--- PAGE 209 ---
+ORGANISMS AND POPULATIONS
+Table 11.1 : Population Interactions
+Species A Species B Name of Interaction
++ + Mutualism
+– – Competition
++ – Predation
++ – Parasitism
++ 0 Commensalism
+– 0 Amensalism
+Both the species benefit in mutualism and both lose in competition in
+their interactions with each other. In both parasitism and predation only
+one species benefits (parasite and predator, respectively) and the interaction
+is detrimental to the other species (host and prey, respectively).
+The interaction where one species is benefitted and the other is neither
+benefitted nor harmed is called commensalism. In amensalism on
+the other hand one species is harmed whereas the other is
+unaffected. Predation, parasitism and commensalism share a common
+characteristic– the interacting species live closely together.
+(i) Predation: What would happen to all the energy fixed by
+autotrophic organisms if the community has no animals to eat the
+plants? You can think of predation as nature’s way of transferring
+to higher trophic levels the energy fixed by plants. When we think
+of predator and prey, most probably it is the tiger and the deer that
+readily come to our mind, but a sparrow eating any seed is no less
+a predator. Although animals eating plants are categorised
+separately as herbivores, they are, in a broad ecological context,
+not very different from predators.
+Besides acting as ‘conduits’ for energy transfer across trophic
+levels, predators play other important roles. They keep prey
+populations under control. But for predators, prey species could
+achieve very high population densities and cause ecosystem
+instability. When certain exotic species are introduced into a
+geographical area, they become invasive and start spreading fast
+because the invaded land does not have its natural predators. The
+197
+prickly pear cactus introduced into Australia in the early 1920’s
+caused havoc by spreading rapidly into millions of hectares of
+rangeland. Finally, the invasive cactus was brought under control
+only after a cactus-feeding predator (a moth) from its natural habitat
+was introduced into the country. Biological control methods adopted
+in agricultural pest control are based on the ability of the predator
+Rationalised 2023-24
+
+--- PAGE 210 ---
+BIOLOGY
+to regulate prey population. Predators also help in maintaining
+species diversity in a community, by reducing the intensity of
+competition among competing prey species. In the rocky intertidal
+communities of the American Pacific Coast the starfish Pisaster is
+an important predator. In a field experiment, when all the starfish
+were removed from an enclosed intertidal area, more than 10 species
+of invertebrates became extinct within a year, because of inter-
+specific competition.
+If a predator is too efficient and overexploits its prey, then the
+prey might become extinct and following it, the predator will also
+become extinct for lack of food. This is the reason why predators in
+nature are ‘prudent’. Prey species have evolved various defenses to
+lessen the impact of predation. Some species of insects and frogs
+are cryptically-coloured (camouflaged) to avoid being detected easily
+by the predator. Some are poisonous and therefore avoided by the
+predators. The Monarch butterfly is highly distasteful to its predator
+(bird) because of a special chemical present in its body.
+Interestingly, the butterfly acquires this chemical during its
+caterpillar stage by feeding on a poisonous weed.
+For plants, herbivores are the predators. Nearly 25 per cent of
+all insects are known to be phytophagous (feeding on plant sap
+and other parts of plants). The problem is particularly severe for
+plants because, unlike animals, they cannot run away from their
+predators. Plants therefore have evolved an astonishing variety of
+morphological and chemical defences against herbivores. Thorns
+(Acacia, Cactus) are the most common morphological means of
+defence. Many plants produce and store chemicals that make the
+herbivore sick when they are eaten, inhibit feeding or digestion,
+disrupt its reproduction or even kill it. You must have seen the
+weed Calotropis growing in abandoned fields. The plant produces
+highly poisonous cardiac glycosides and that is why you never see
+any cattle or goats browsing on this plant. A wide variety of chemical
+substances that we extract from plants on a commercial scale
+(nicotine, caffeine, quinine, strychnine, opium, etc.,) are produced
+by them actually as defences against grazers and browsers.
+(ii) Competition: When Darwin spoke of the struggle for existence and
+survival of the fittest in nature, he was convinced that interspecific
+competition is a potent force in organic evolution. It is generally
+198
+believed that competition occurs when closely related species
+compete for the same resources that are limiting, but this is not
+entirely true. Firstly, totally unrelated species could also compete
+for the same resource. For instance, in some shallow South
+American lakes, visiting flamingoes and resident fishes compete for
+their common food, the zooplankton in the lake. Secondly,
+Rationalised 2023-24
+
+--- PAGE 211 ---
+ORGANISMS AND POPULATIONS
+resources need not be limiting for competition to occur; in
+interference competition, the feeding efficiency of one species might
+be reduced due to the interfering and inhibitory presence of the
+other species, even if resources (food and space) are abundant.
+Therefore, competition is best defined as a process in which the
+fitness of one species (measured in terms of its ‘r’ the intrinsic rate
+of increase) is significantly lower in the presence of another species.
+It is relatively easy to demonstrate in laboratory experiments, as
+Gause and other experimental ecologists did, when resources are
+limited the competitively superior species will eventually eliminate
+the other species, but evidence for such competitive exclusion
+occurring in nature is not always conclusive. Strong and persuasive
+circumstantial evidence does exist however in some cases. The
+Abingdon tortoise in Galapagos Islands became extinct within a
+decade after goats were introduced on the island, apparently due
+to the greater browsing efficiency of the goats. Another evidence for
+the occurrence of competition in nature comes from what is called
+‘competitive release’. A species whose distribution is restricted to a
+small geographical area because of the presence of a competitively
+superior species, is found to expand its distributional range
+dramatically when the competing species is experimentally removed.
+Connell’s elegant field experiments showed that on the rocky sea
+coasts of Scotland, the larger and competitively superior barnacle
+Balanus dominates the intertidal area, and excludes the smaller
+barnacle Chathamalus from that zone. In general, herbivores and
+plants appear to be more adversely affected by competition than
+carnivores.
+Gause’s ‘Competitive Exclusion Principle’ states that two closely
+related species competing for the same resources cannot co-exist
+indefinitely and the competitively inferior one will be eliminated
+eventually. This may be true if resources are limiting, but not
+otherwise. More recent studies do not support such gross
+generalisations about competition. While they do not rule out the
+occurrence of interspecific competition in nature, they point out
+that species facing competition might evolve mechanisms that
+promote co-existence rather than exclusion. One such mechanism
+is ‘resource partitioning’. If two species compete for the same
+resource, they could avoid competition by choosing, for instance,
+199
+different times for feeding or different foraging patterns. MacArthur
+showed that five closely related species of warblers living on the
+same tree were able to avoid competition and co-exist due to
+behavioural differences in their foraging activities.
+(iii) Parasitism: Considering that the parasitic mode of life ensures
+free lodging and meals, it is not surprising that parasitism has
+Rationalised 2023-24
+
+--- PAGE 212 ---
+BIOLOGY
+evolved in so many taxonomic groups from plants to higher
+vertebrates. Many parasites have evolved to be host-specific (they
+can parasitise only a single species of host) in such a way that
+both host and the parasite tend to co-evolve; that is, if the host
+evolves special mechanisms for rejecting or resisting the parasite,
+the parasite has to evolve mechanisms to counteract and neutralise
+them, in order to be successful with the same host species. In
+accordance with their life styles, parasites evolved special
+adaptations such as the loss of unnecessary sense organs, presence
+of adhesive organs or suckers to cling on to the host, loss of
+digestive system and high reproductive capacity. The life cycles of
+parasites are often complex, involving one or two intermediate hosts
+or vectors to facilitate parasitisation of its primary host. The human
+liver fluke (a trematode parasite) depends on two intermediate
+hosts (a snail and a fish) to complete its life cycle. The malarial
+parasite needs a vector (mosquito) to spread to other hosts.
+Majority of the parasites harm the host; they may reduce the
+survival, growth and reproduction of the host and reduce its
+population density. They might render the host more vulnerable
+to predation by making it physically weak. Do you believe that
+an ideal parasite should be able to thrive within the host without
+harming it? Then why didn’t natural selection lead to the
+evolution of such totally harmless parasites?
+Parasites that feed on the external surface of the host organism
+are called ectoparasites. The most familiar examples of this group
+are the lice on humans and ticks on dogs. Many marine fish are
+infested with ectoparasitic copepods. Cuscuta, a parasitic plant
+that is commonly found growing on hedge plants, has lost its
+chlorophyll and leaves in the course of evolution. It derives its
+nutrition from the host plant which it parasitises. The female
+mosquito is not considered a parasite, although it needs our blood
+for reproduction. Can you explain why?
+In contrast, endoparasites are those that live inside the host
+body at different sites (liver, kidney, lungs, red blood cells, etc.).
+The life cycles of endoparasites are more complex because of their
+extreme specialisation. Their morphological and anatomical
+features are greatly simplified while emphasising their reproductive
+200
+potential.
+Brood parasitism in birds is a fascinating example of
+parasitism in which the parasitic bird lays its eggs in the nest of
+its host and lets the host incubate them. During the course of
+evolution, the eggs of the parasitic bird have evolved to resemble
+the host’s egg in size and colour to reduce the chances of the host
+Rationalised 2023-24
+
+--- PAGE 213 ---
+ORGANISMS AND POPULATIONS
+bird detecting the foreign eggs and ejecting them from the nest. Try
+to follow the movements of the cuckoo (koel) and the crow in your
+neighborhood park during the breeding season (spring to summer)
+and watch brood parasitism in action.
+(iv) Commensalism: This is the interaction in which one species benefits
+and the other is neither harmed nor benefited. An orchid growing
+as an epiphyte on a mango branch, and barnacles growing on the
+back of a whale benefit while neither the mango tree nor the whale
+derives any apparent benefit. The cattle egret and grazing cattle in
+close association, a sight you are most likely to catch if you live in
+farmed rural areas, is a classic example of commensalism. The
+egrets always forage close to where the cattle are grazing because
+the cattle, as they move, stir up and flush out insects from the
+vegetation that otherwise might be difficult for the egrets to find
+and catch. Another example of commensalism is the interaction
+between sea anemone that has stinging tentacles and the clown
+fish that lives among them. The fish gets protection from predators
+which stay away from the stinging tentacles. The anemone does not
+appear to derive any benefit by hosting the clown fish.
+(a) (b)
+Figure 11.4 Mutual relationship between fig tree and wasp: (a) Fig flower is pollinated
+by wasp; (b) Wasp laying eggs in a fig fruit
+(v) Mutualism: This interaction confers benefits on both the interacting
+201
+species. Lichens represent an intimate mutualistic relationship
+between a fungus and photosynthesising algae or cyanobacteria.
+Similarly, the mycorrhizae are associations between fungi and the
+roots of higher plants. The fungi help the plant in the absorption of
+essential nutrients from the soil while the plant in turn provides the
+fungi with energy-yielding carbohydrates.
+Rationalised 2023-24
+
+--- PAGE 214 ---
+BIOLOGY
+The most spectacular and evolutionarily fascinating examples
+of mutualism are found in plant-animal relationships. Plants need
+the help of animals for pollinating their flowers and dispersing their
+seeds. Animals obviously have to be paid ‘fees’ for the services that
+plants expect from them. Plants offer rewards or fees in the form of
+pollen and nectar for pollinators and juicy and nutritious fruits for
+seed dispersers. But the mutually beneficial system should also
+be safeguarded against ‘cheaters’, for example, animals that try to
+steal nectar without aiding in pollination. Now you can see why
+plant-animal interactions often involve co-evolution of the
+mutualists, that is, the evolutions of the flower and its pollinator
+species are tightly linked with one another. In many species of fig
+trees, there is a tight one-to-one relationship with the pollinator
+species of wasp (Figure 11.4). It means that a given fig species can
+be pollinated only by its ‘partner’ wasp species and no other species.
+The female wasp uses the fruit not only as an oviposition (egg-laying)
+site but uses the developing seeds within the fruit for nourishing
+its larvae. The wasp pollinates the fig inflorescence while
+searching for suitable egg-laying sites. In return for the
+favour of pollination the fig offers the wasp some of its
+developing seeds, as food for the developing wasp larvae.
+Orchids show a bewildering diversity of floral
+patterns many of which have evolved to attract the right
+pollinator insect (bees and bumblebees) and ensure
+guaranteed pollination by it (Figure 11.5). Not all
+orchids offer rewards. The Mediterranean orchid Ophrys
+employs ‘sexual deceit’ to get pollination done by a
+species of bee. One petal of its flower bears an uncanny
+resemblance to the female of the bee in size, colour and
+markings. The male bee is attracted to what it perceives
+as a female, ‘pseudocopulates’ with the flower, and
+during that process is dusted with pollen from the
+flower. When this same bee ‘pseudocopulates’ with
+Figure 11.5 Showing bee-a pollinator
+another flower, it transfers pollen to it and thus,
+on orchid flower
+pollinates the flower. Here you can see how co-evolution
+operates. If the female bee’s colour patterns change even slightly for any
+reason during evolution, pollination success will be reduced unless the
+orchid flower co-evolves to maintain the resemblance of its petal to the
+202
+female bee.
+Rationalised 2023-24
+
+--- PAGE 215 ---
+ORGANISMS AND POPULATIONS
+SUMMARY
+As a branch of biology, Ecology is the study of the relationships of
+living organisms with the abiotic (physico-chemical factors) and biotic
+components (other species) of their environment. It is concerned
+with four levels of biological organisation-organisms, populations,
+communities and biomes.
+Evolutionary changes through natural selection take place at
+the population level and hence, population ecology is an important
+area of ecology. A population is a group of individuals of a given
+species sharing or competing for similar resources in a defined
+geographical area. Populations have attributes that individual
+organisms do not- birth rates and death rates, sex ratio and age
+distribution. The proportion of different age groups of males and
+females in a population is often presented graphically as age
+pyramid; its shape indicates whether a population is stationary,
+growing or declining.
+Ecological effects of any factors on a population are generally
+reflected in its size (population density), which may be expressed in
+different ways (numbers, biomass, per cent cover, etc.,) depending
+on the species.
+Populations grow through births and immigration and decline
+through deaths and emigration. When resources are unlimited,
+the growth is usually exponential but when resources become
+progressively limiting, the growth pattern turns logistic. In either
+case, growth is ultimately limited by the carrying capacity of the
+environment. The intrinsic rate of natural increase (r) is a measure
+of the inherent potential of a population to grow.
+In nature populations of different species in a habitat do not live
+in isolation but interact in many ways. Depending on the outcome,
+these interactions between two species are classified as competition
+(both species suffer), predation and parasitism (one benefits and
+the other suffers), commensalism (one benefits and the other is
+unaffected), amensalism (one is harmed, other unaffected) and
+mutualism (both species benefit). Predation is a very important
+process through which trophic energy transfer is facilitated and
+some predators help in controlling their prey populations. Plants
+have evolved diverse morphological and chemical defenses against
+herbivory. In competition, it is presumed that the superior
+competitor eliminates the inferior one (the Competitive Exclusion
+Principle), but many closely related species have evolved various
+mechanisms which facilitate their co-existence. Some of the most 203
+fascinating cases of mutualism in nature are seen in plant-pollinator
+interactions.
+Rationalised 2023-24
+
+--- PAGE 216 ---
+BIOLOGY
+EXERCISES
+1. List the attributes that populations possess but not individuals.
+2. If a population growing exponentially double in size in 3 years, what is
+the intrinsic rate of increase (r) of the population?
+3. Name important defence mechanisms in plants against herbivory.
+4. An orchid plant is growing on the branch of mango tree. How do you
+describe this interaction between the orchid and the mango tree?
+5. What is the ecological principle behind the biological control method of
+managing with pest insects?
+6. Define population and community.
+7. Define the following terms and give one example for each:
+(a) Commensalism
+(b) Parasitism
+(c) Camouflage
+(d) Mutualism
+(e) Interspecific competition
+8. With the help of suitable diagram describe the logistic population
+growth curve.
+9. Select the statement which explains best parasitism.
+(a) One organism is benefited.
+(b) Both the organisms are benefited.
+(c) One organism is benefited, other is not affected.
+(d) One organism is benefited, other is affected.
+10. List any three important characteristics of a population and explain.
+204
+Rationalised 2023-24
+
+--- PAGE 217 ---
+CHAPTER 12
+ECOSYSTEM
+12.1 Ecosystem–Structure
+and Function
+An ecosystem can be visualised as a functional unit of
+12.2.Productivity nature, where living organisms interact among themselves
+and also with the surrounding physical environment.
+12.3 Decomposition Ecosystem varies greatly in size from a small pond to a
+large forest or a sea. Many ecologists regard the entire
+12.4 Energy Flow
+biosphere as a global ecosystem, as a composite of all
+local ecosystems on Earth. Since this system is too much
+12.5 Ecological Pyramids
+big and complex to be studied at one time, it is convenient
+to divide it into two basic categories, namely the
+terrestrial and the aquatic. Forest, grassland and desert
+are some examples of terrestrial ecosystems; pond, lake,
+wetland, river and estuary are some examples of aquatic
+ecosystems. Crop fields and an aquarium may also be
+considered as man-made ecosystems.
+We will first look at the structure of the ecosystem, in
+order to appreciate the input (productivity), transfer of
+energy (food chain/web, nutrient cycling) and the output
+(degradation and energy loss). We will also look at the
+relationships – cycles, chains, webs – that are created as
+a result of these energy flows within the system and their
+inter- relationship.
+Rationalised 2023-24
+
+--- PAGE 218 ---
+BIOLOGY
+12.1 E – S F
+COSYSTEM TRUCTURE AND UNCTION
+In earlier classes, you have looked at the various components of the
+environment- abiotic and biotic. You studied how the individual biotic
+and abiotic factors affected each other and their surrounding. Let us look
+at these components in a more integrated manner and see how the flow of
+energy takes place within these components of the ecosystem.
+Interaction of biotic and abiotic components result in a physical
+structure that is characteristic for each type of ecosystem. Identification
+and enumeration of plant and animal species of an ecosystem gives its
+species composition. Vertical distribution of different species occupying
+different levels is called stratification. For example, trees occupy top
+vertical strata or layer of a forest, shrubs the second and herbs and grasses
+occupy the bottom layers.
+The components of the ecosystem are seen to function as a unit when
+you consider the following aspects:
+(i) Productivity;
+(ii) Decomposition;
+(iii) Energy flow; and
+(iv) Nutrient cycling.
+To understand the ethos of an aquatic ecosystem let us take a small
+pond as an example. This is fairly a self-sustainable unit and rather simple
+example that explain even the complex interactions that exist in an aquatic
+ecosystem. A pond is a shallow water body in which all the above
+mentioned four basic components of an ecosystem are well exhibited.
+The abiotic component is the water with all the dissolved inorganic and
+organic substances and the rich soil deposit at the bottom of the pond.
+The solar input, the cycle of temperature, day-length and other climatic
+conditions regulate the rate of function of the entire pond. The autotrophic
+components include the phytoplankton, some algae and the floating,
+submerged and marginal plants found at the edges. The consumers are
+represented by the zooplankton, the free swimming and bottom dwelling
+forms. The decomposers are the fungi, bacteria and flagellates especially
+abundant in the bottom of the pond. This system performs all the functions
+of any ecosystem and of the biosphere as a whole, i.e., conversion of
+inorganic into organic material with the help of the radiant energy of the
+sun by the autotrophs; consumption of the autotrophs by heterotrophs;
+decomposition and mineralisation of the dead matter to release them back
+for reuse by the autotrophs, these event are repeated over and over again.
+206
+There is unidirectional movement of energy towards the higher trophic
+levels and its dissipation and loss as heat to the environment.
+12.2 P
+RODUCTIVITY
+A constant input of solar energy is the basic requirement for any ecosystem
+to function and sustain. Primary production is defined as the amount of
+Rationalised 2023-24
+
+--- PAGE 219 ---
+ECOSYSTEM
+biomass or organic matter produced per unit area over a time period by
+plants during photosynthesis. It is expressed in terms of weight (gm–2) or
+energy (kcal m–2). The rate of biomass production is called productivity.
+It is expressed in terms of gm–2 yr–1 or (kcal m–2) yr–1 to compare the
+productivity of different ecosystems. It can be divided into gross primary
+productivity (GPP) and net primary productivity (NPP). Gross primary
+productivity of an ecosystem is the rate of production of organic matter
+during photosynthesis. A considerable amount of GPP is utilised by plants
+in respiration. Gross primary productivity minus respiration losses (R),
+is the net primary productivity (NPP).
+GPP – R = NPP
+Net primary productivity is the available biomass for the consumption
+to heterotrophs (herbiviores and decomposers). Secondary productivity
+is defined as the rate of formation of new organic matter by
+consumers.
+Primary productivity depends on the plant species inhabiting a
+particular area. It also depends on a variety of environmental factors,
+availability of nutrients and photosynthetic capacity of plants. Therefore,
+it varies in different types of ecosystems. The annual net primary
+productivity of the whole biosphere is approximately 170 billion tons
+(dry weight) of organic matter. Of this, despite occupying about 70 per
+cent of the surface, the productivity of the oceans are only 55 billion tons.
+Rest of course, is on land. Discuss the main reason for the low
+productivity of ocean with your teacher.
+12.3 D
+ECOMPOSITION
+You may have heard of the earthworm being referred to as the farmer’s
+‘friend’. This is so because they help in the breakdown of complex organic
+matter as well as in loosening of the soil. Similarly, decomposers break
+down complex organic matter into inorganic substances like carbon
+dioxide, water and nutrients and the process is called decomposition.
+Dead plant remains such as leaves, bark, flowers and dead remains of
+animals, including fecal matter, constitute detritus, which is the raw
+material for decomposition. The important steps in the process of
+decomposition are fragmentation, leaching, catabolism, humification and
+mineralisation.
+Detritivores (e.g., earthworm) break down detritus into smaller particles.
+This process is called fragmentation. By the process of leaching, water-
+207
+soluble inorganic nutrients go down into the soil horizon and get precipitated
+as unavailable salts. Bacterial and fungal enzymes degrade detritus into
+simpler inorganic substances. This process is called as catabolism.
+It is important to note that all the above steps in decomposition operate
+simultaneously on the detritus (Figure 12.1). Humification and
+mineralisation occur during decomposition in the soil. Humification leads
+Rationalised 2023-24
+
+--- PAGE 220 ---
+BIOLOGY
+Figure 12.1 Diagrammatic representation of decomposition cycle in a terrestrial ecosystem
+to accumulation of a dark coloured amorphous substance called humus
+that is highly resistant to microbial action and undergoes decomposition
+at an extremely slow rate. Being colloidal in nature it serves as a reservoir
+of nutrients. The humus is further degraded by some microbes and release
+of inorganic nutrients occur by the process known as mineralisation.
+Decomposition is largely an oxygen-requiring process. The rate of
+decomposition is controlled by chemical composition of detritus and
+climatic factors. In a particular climatic condition, decomposition rate
+is slower if detritus is rich in lignin and chitin, and quicker, if detritus is
+208
+rich in nitrogen and water-soluble substances like sugars. Temperature
+and soil moisture are the most important climatic factors that regulate
+decomposition through their effects on the activities of soil microbes.
+Warm and moist environment favour decomposition whereas low
+temperature and anaerobiosis inhibit decomposition resulting in build
+up of organic materials.
+Rationalised 2023-24

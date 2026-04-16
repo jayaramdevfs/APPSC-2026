@@ -1,0 +1,2676 @@
+--- PAGE 351 ---
+C H A P T E R
+I
+m , k
+\V
+l
+K
+1
+BANKING IN
+1
+C"
+INDIA -
+/
+M*
+=> Introduction
+=> Bank& Non-BankInstitutions Banksareperhapsthemost important
+^ Non-BankingFinancialCompanies financial intermediary . In the
+(NBFCs) nineteenthcentury ,banksmainly lent
+=> ReserveBankof India money tofirms to helpfinance their
+Base Rate inventories - which were held as
+^ RevisedLMF collateral - in the cases ofdefaulters
+=> NationalisationandDevelopmentof Bank banks seized them. Gradually, banks
+¬
+inginindia expanded their lending activities -
+=> FinancialSector Reforms to finance houses and commercial
+=> Banking Sector Reforms real estates - holding the buildings
+Non-Performing Assets as collateral. Emergence of the
+information technology haspresented
+o WillfulDefaulter
+special problems to these traditional
+=> CapitalAdequacyRatio
+formsoffinance- ifthe idea does not
+=> BaselIIICompliance of thePSBs& RRBs
+panout,thefirmmaygobankrupt,but
+<=> Non-ResidentIndianDeposits
+thereis nocollateral-thereislittleof
+=> Labelsof ATM valuethat thecreditor can seize . *
+*SeeJosephEStiglitzandCarlEWalsh,Economics,WWNorton,NewYok,
+USA,4thEdition,2006,p.205.
+
+--- PAGE 352 ---
+* NIDHI
+=> ChitFund
+o UrjitPatelCommittee
+<=> NachiketMor Committee
+o Small& PaymentBanks
+^ FinancialInclusion
+O ALM of Banks
+o NewInitiativesintheBanking Sector
+
+--- PAGE 353 ---
+BankinginIndia t 12.3
+| INTRODUCTION non-banking financial company (residuary non ¬
+bankingcompany, i.e., RNBC).
+Thesenseinwhichwetodayusetheterm banking NBFCs are doing functions akin to that of
+hasitsoriginin thewestern world to which India banks, however thereareafewdifferences:
+wasintroduced bythe British rulers, way back in (i) AnNBFCcannotacceptdemanddeposits
+the 17th century . Since then, enough water has (which are payable on demand), like the
+flown and today Indian banks are considered savingsand currentaccounts .
+amongthebestbanksinthedevelopingworldand
+(ii) It is not a part of the payment and
+itsattemptstoemergeamongthebestintheworld
+settlementsystemandassuchcannotissue
+isgoingon.
+chequestoitscustomers;and
+-
+| BANK8t NON BANK INSTITUTIONS (iii) Deposit insurancefacilityis not available
+forNBFCdepositorsunlikeinthecaseof
+A financial institution which accepts different banks.(It meansthe publicdepositswith
+formsofdepositsandlendsthemtotheprospective them are ‘unsecured’. In case an NBFC
+borrowers as well as allows the depositors to defaults in repayment of deposit, the
+withdraw their money from the accounts by depositor can approach Company Law
+chequeisa bank. Board or Consumer Forum or filea civil
+If the financial institution has all the same suit to recover thedeposits).
+functions but does not allow depositors to issue Under the RBI Act, 1934, the NBFCs
+cheque and withdraw their moneyfrom deposits have to get registered with the RBI. However,
+thenit isa non-bankinstitution. to obviate dual regulation, certain category of
+NBFCs which are regulated by other regulators
+-
+NON BANKING FINANCIAL COMPANIES areexemptedfromtherequirementofregistration
+(NBFCs) with RBIsuchas:
+(i) venture capital fund, merchant banking
+A non-banking financial company (NBFC) is a companies, stock broking companies
+company1 registered under the Companies Act,
+registerwithSEBI;
+1956 and is engaged in the business of loans
+(ii) insurance company holding a valid
+and advances, acquisition of shares/stock/bonds/
+certificateofregistrationissuedbyIRDA;
+debentures/securities issued by government or
+(iii) nidhi companies under the Companies
+localauthorityorothersecuritiesoflikemarketable
+nature, leasing, hire-purchase,insurance business,
+Act, 1956;
+chitbusiness,butdoesnotincludeanyinstitution (iv) chit companies under the Chit Funds
+whose principal business is that of agriculture Act, 1982;
+activity, industrial activity, sale/purchase/ (v) housing finance companies regulated by
+constructionofimmovable property . National HousingBank (of the RBI).
+Anon-bankinginstitutionwhichisacompany AcompanyincorporatedundertheCompanies
+and which has its principal business of receiving Act, 1956 and desirous of commencing business
+deposits under anyschemeor arrangement or any of the NBFCshould havea minimum net owned
+other manner, or lendingin anymanner isalso a fund (NOF) of Rs.25 lakh (raised to Rs. 2 crore
+1. Thediscussionhereisbasedontheupdatedinformationsreleased bytheRBI , May11,2012.
+
+--- PAGE 354 ---
+12.4 i IndianEconomy
+from April 21, 1999). NBFCs registered with other advantage, by whatever name called by
+RBI have been reclassified (since 2006) as Asset them in respect of deposits received shall not be
+Finance Company (AFC), Investment Company lessthantheamountcalculatedattherateof5per
+(IC), and the Loan Company (LC). Provisions cent(tobecompoundedannually)ontheamount
+foracceptingdepositsare: deposited in lump sum or at monthly or longer
+(i) There is ceiling on acceptance of public intervals; and at the rate of 3.5 per cent (to be
+deposits,an NBFCmaintainingrequired compounded annually) on theamount deposited
+NOF and CRAR, and complying with under daily deposit scheme. Further, an RNBC
+the prudential norms can accept public can accept deposits for a minimum period of
+depositsmaximum upto4timesofNOF; 12 months and maximum period of 84 months
+from thedateof receiptofsuch deposit.Like the
+(ii) Can offer themaximum 11 per cent rate
+ofinterest; NBFCs theycannot accept deposits repayableon
+demand (it means they, too cannot open saving
+(iii) Minimuminvestmentgradecredit rating
+andcurrentaccounts).
+(MIGR) is essential (mayget itself rated
+byanyofthefourratingagenciesnamely, Debenture Redemption: The norms for the
+CRISIL, CARE, ICRA and FITCH NBFCs which raise capital through debentures
+Ratings India Pvt.Ltd.); have becomestricter after the new CompanyAct,
+2013cameintoeffect(w.e.f.April1,2014)which
+(iv) Allowed to accept/renew public deposits
+areasgiven below:
+fora minimum periodof12 monthsand
+maximum period of60months;and (i) They need to create a debenture
+(v) Effectivefrom April 2004, cannotaccept redemptionreserve (DRR) account out
+deposits from NRIs except deposits by
+oftheir profits,tobe usedonlytoredeem
+debentures. The corpus of DRR should
+debit to NROaccountof NRIsprovided
+such amount do not represent inward be at least 50 per cent of the amount
+raised throughdebentures.
+remittanceor transfer from NRE/FCNR
+(B) account, however, the existing NRI (ii) Theyneed to investor deposit asum not
+deposits can be renewed (Note: different lessthan15percentoftheamountinthe
+foreign currency accounts opened by the form ofdepositsin banksor government
+Indian banks have been given as the last or corporate bonds.This amount cannot
+sub-topicofthisChapter) . be used for any purpose other than
+redeemingdebentures.
+There is no ceiling on raising of deposits by
+RNBCs, but every RNBC has to ensure that The norms are aimed at minimising the
+the amounts deposited and investments made risk of debenture buyers in a NBFC and check
+by the company are not less than the aggregate the mishaps like the‘Sahara OFCD’[for Sahara
+amount of liabilities to the depositors.To secure OFCDsee Chapterl4\ .
+the interest of depositors, such companies are
+|
+requiredtoinvestina portfoliocomprisinghighly RESERVE BANK OF INDIA
+liquid andsecured instruments, viz., central/state
+The Reserve Bank of India (RBI) was set up in
+government securities, fixed deposit ofscheduled 1935 (by the RBI Act, 1934) as a private bank
+commercialbanks(SCB),certificateofdepositsof —
+SCB/FIs, unitsofMutualFunds,etc .Theamount with two extrafunctions regulation and control
+of the banks in India and being the banker of
+payable by way of interest, premium, bonus or
+
+--- PAGE 355 ---
+BankinginIndia t 12.5
+thegovernment .After nationalisation in 1949, it RBI keeps modifying this as per the requirement
+emergedasthecentralbankingbodyof Indiaand of the economy, though the practice of the two
+it did not remain a ‘bank’ in the technicalsense. policyannouncementsa yearstillcontinues.
+Since then, the governments have been handing In India, a debate regarding autonomy to
+over different functions2 to the RBI, whichstand the RBI regarding announcement of the policy
+todayasgiven below: started when the Narasimham Committee-I
+(i) It is the issuing agency of the currency recommended on these lines. As the Governor
+and coins other than rupeeonecurrency RBI itwas BimalJalanwho vocallysupported the
+and coin (which are issued by Ministry idea. No such move came from thegovernments
+of Financeitselfwith thesignatureofthe officially, but it is believed that the RBI has been
+FinanceSecretaryon thenote). given almost working autonomy in this area. In
+(ii) Distributingagentforcurrencyandcoins most of the developed economies, the central
+issued bytheGovernmentof India. bank functions with autonomous powers in this
+(iii) Bankerofthegovernment . area (bifurcation of politics from theeconomics).
+Though we lack such kind of officially open
+(iv) Bankof thebanks/Bankoflast resort .
+autonomyfor the RBI, we havelearnt enough by
+(v) Announces the credit and monetary nowandare better offtoday.
+policyfor theeconomy.
+There are many tools by which the RBI
+(vi) Stabilisingtherateofinflation.
+regulates the desired/required kind of the credit
+(vii) Stabilisingtheexchangerateof rupee, and monetary policy — CRR, SLR, Bank Rate,
+(viii) Keeperoftheforeigncurrencyreserves. Repo rate, Reverse Repo rate, PLR, Exim interest
+(ix) Agent of theGovernmentof_India in the rate, SmallSavingSchemes’ interest rates (SSSs),
+IMF. interestchangesfor theinstrumentsofthemoney
+(x) Performing a variety of developmental
+market,etc .
+and promotional functions under which
+^DD
+it did set up institutions like IDBI,
+SIDBI, NABARD, NHB,etc . Thecash reserveratio (CRR) is theratio (fixed by
+the RBI) of the total deposits of a bank in India
+CREDITANDMONETARYPOLICY which is kept with the RBI in the form of cash.
+The policy by which the desired level of money This was fixed to be in the range of 3 to 13 per
+flow and its demand is regulated is known as the cent .3A recent Amendment (2007) has removed
+credit and monetary policy.All over the world it the 3 per cent floor and provided a free hand to
+theRBI in fixingtheCRR.
+is announced by thecentral banking bodyof the
+country — as the RBI announces it in India. In At present it is 4 per cent and a 1 per cent
+India there has been a tradition of announcing it change in it today affects the economy with Rs.
+twice in a financial year — before the starting of 96,000 crore4 — an increase sucks this amount
+the busyand the slack seasons. But in the reform from the economy, while a decrease injects this
+period, this tradition has been broken. Now the amount into theeconomy.
+2. BasedontheRBINationalisationAct,1949andfurtherannouncementsoftheGovernmentofIndia(MoF).
+3. RBIAct,1934,sub- section(1)ofSection42.
+4. AnnualPolicyStatement2013-14,RBI,May3,2013,N.Delhi.
+
+--- PAGE 356 ---
+12.6 I IndianEconomy
+Following the recommendations of the paid by the government, it was being advised.
+NarasimhamCommitteeon theFinancialSystem However, there has been no follow up in this
+(1991) thegovernmentstartedtwomajorchanges regard by the governments . The Government of
+concerningtheCRR: India has removed the 25 per cent floor for the
+(i) reducingtheCRRwassetasthemedium- SLRbyanAmendment(2007) providingtheRBI
+term objective and it was reduced afreehand in fixingit.
+graduallyfrom its peak of 15 per cent in
+BANK RATE
+1992 to 4.5 per cent byjune2003.5
+After the RBI (Amendment) Act has TheinterestratewhichtheRBIchargesonitslong ¬
+been enacted inJune 2006, the RBI can term lendings is known as the Bank Rate. The
+now prescribe CRR for scheduled banks clientswhoborrowthroughthisroutearetheGol,
+without anyfloor or ceiling rate thereby state governments, banks, financial institutions,
+removing the statutory minimum CRR co-operative banks, NBFCs, etc . The rate has
+limitof3per cent .6 direct impact on long- term lending activities of
+(ii) Payment of interest by the RBI on the the concerned lending bodies operating in the
+CRR money to the scheduled banks Indian financial system . The rate was realigned10
+— withtheMSF (MarginalStandingFacility) bythe
+started in financial year 1999 2000 (in
+the wake of the banking slow down). RBI in February2012.
+Though the RBI discontinued interest
+REPORATE
+paymentsfrom mid-2007.7
+TherateofinteresttheRBIchargesfromitsclients
+C1 D on their short - termborrowing is the repo ratein
+The statutory liquidity ratio (SLR) is the ratio India.11 Basically, this is an abbreviated form of
+(fixed bythe RBI) of the total deposits of a bank the‘rateof repurchase’and in western economies
+which is to be maintained bythe bank with itself
+itisknown asthe‘rateofdiscount’.12
+innon-cashformprescribedbythegovernmentto In practiceit is not calledan interest rate but
+bein therangeof25 to 40percent .8 considered a discount on the dated government
+The ratio was cut to 25 per cent (done in securities, which are deposited by institution to
+October 1997 after CFS suggestions).9 It used borrow for the short term . When they get their
+to be as high as 38.5 per cent . The CFS has securities released from the RBI, the value of the
+recommended the government not to use this securities is lost by the amount of the current
+money by handing G-Secs to the banks. In its repo rate . This rate functions as the benchmark
+place a market - based interest on it should be rate for the inter-bank short- term market (i.e.,
+5. EconomicSurvey,2006-07,MoF,Gol,N.Delhi.
+6. RBI(Amendment)Act,2006,Gol,N.Delhi.
+7. CreditandMonetaryPolicy,April1,2007,op.cit.
+8. RBIAct,1934andBankingRegulationAct,1949Section24.
+9. CommitteeonFinancialSystem(CFS)headed bythethenRBIDeputyGovernorM.Narasimhan,1991.
+10. ThroughanRBIannouncementon15thFeb.2012.
+11. RBIAct,1934andBankingRegulationAct,1949.
+12. StiglitzandWalsh,Economics,op.cit.,p.629 - 630.
+
+--- PAGE 357 ---
+BankinginIndia t 12.7
+call Money Market) in India. Banks usually use falling exchange rate, the RBI increased the gap
+this route for one-day borrowing to fulfil their between ‘repo’ and MSF to 3 per cent (lateJuly
+short- term liquiditycrunch. Higher the repo rate 2013).
+costlier theloans banksforward and viceversa. It The MSF would be the last resort for banks
+has direct impact on the nominalinterest rates of oncetheyexhaustall borrowing options including
+the bank’slending.Thereporatewasintroduced the liquidity adjustment facility by pledging
+in December1992. through government securities, which has lower
+rate (i.e., repo rate) of interest in comparison
+REVERSEREPORATE
+with the MSF. The MSF would be a penal rate
+It is therateof interest the RBI pays to its clients for banks and the banks can borrow funds by
+who offer short- term loan to it. At present (July pledging government securities within the limits
+2013) therateisat6.23percent . of the statutory liquidity ratio. The scheme has
+Itisreverseofthereporateandthiswasstarted been introduced by RBI with the main aim of
+inNovember1996aspartofliquidityAdjustment reducing volatility in the overnight lending rates
+Facility (LAF) by the RBI. In practice, financial in the inter-bank market and to enable smooth
+instituions operating in India park their surplus monetarytransmission in thefinancialsystem .
+fundswiththeRBIforshort- termperiodandearn Banks can borrow through MSF on all
+money.Ithasadirect bearingon theinterestrates working days except Saturdays, between 3:30
+chargedbythebanksandthefinancialinstitutions and 4:30 p.m. in Mumbai where RBI has its
+on their differentformsofloans. headquarters. The minimum amount which can
+This tool was utilised bythe RBI in thewake be accessed through MSF is Rs. l crore and in
+of over money supply with the Indian banks multiplesof Rs.1crore.
+and lower loan disbursal to serve twin purposes MSFrepresentstheupperbandoftheinterest
+of cutting down banks losses and the prevailing corridor and reverse repo (7.25 per cent) as the
+interest rate .13It has emergedasa veryimportant lower band and the repo rate in the middle. To
+tool in direction of following cheap interest balance the liquidity, RBI would use the sole
+—
+regime the general policy of the RBI since independentpolicyratewhichisthereporateand
+reform processstarted. the MSF rate automaticallyadjusts to 1 per cent
+abovetherepo rate .
+MARGINALSTANDINGFACILITY(MSF)14
+Similar to India’s MSF the ECB (European
+MSF is a new scheme announced by the RBI in Central Bank) also offers standing facilities
+its Monetary Policy, 2011 — 12 which came into called marginal lending facilities (MLF) and
+effectfrom May, 2011.Under thisscheme, banks the Federal Reserve (the US Central Bank) has
+can borrow overnight upto 1 per cent of their discount window systems (DWS). Like the MSF,
+net demand and time liabilities (NDTL) from thesecondarycreditfacilitymadeavailablebythe
+the RBI, at theinterest rate 1 per cent (100 basis Federal Reserve to the depository institutions in
+points) higher than the current repo rate . In an USA is typically overnight credit on a veryshort
+attempt to strengthen rupee and checking its term basisat ratesabovethe primarycredit rate .
+13. EconomicSurvey2001-02,MoF,Gol,N.Delhi.
+14. Thewrite -up is based on theRBI'sCredit& Monetary Policy,2011-12 (in which theScheme was introduced);and
+theEuropeanCentralBank,Frankfurt,GermanyandFederalReserveSystem(alsoknownastheFederalReserve,and
+informallyastheFed)Washington,DC,USA
+
+--- PAGE 358 ---
+12.8 i IndianEconomy
+Inanattempttostrengthenrupeeandchecking from the RBI and reverse repo rate is the rate at
+itsfallingexchangerate,theRBIincreasedthegap whichbanksparktheirfundswiththeRBI.Under
+between ‘repo’ and MSF to 3 per cent (lateJuly theMSF, banksare permitted to avail themselves
+2013). The effectiveness of standing facilities in offundsfrom the RBIonovernight basis.
+reducing volatility have been examined by many The bank rate acts as the penal rate charged
+scholars and certain studies have pointed out on banks for shortfalls in meeting their reserve
+that in the Federal ReserveSystem in the United requirements (CRR and SLR). The bank rate
+States, thedesignof thefacilitydecreasesa bank’s is also used by several financial institutions as a
+incentive to participate actively in interbank referenceratefor indexation purposes.
+market(i.e.,India’scallmoneymarket)duetothe
+perceivedstigma from usingsuch facility.Thisin | BASE RATE
+turn reduces the effectiveness of standing facility
+in reducinginterest ratevolatility. Base Rate is the interest rate below which
+ScheduledCommercialBanks(SCBs)willlendno
+BANK RATEREALIGNEDWITHMSF, loans to its customers — its means it is like prime
+The RBI on February 13, 2012 increased the lending rate (PLR) and the benchmark prime
+lendingRate (BPLR) ofthe pastand is basicallya
+Bank Rate by 350 basis points from 6 per cent
+floor rateofinterest.It replaced16theexistingidea
+to 9.50 per cent and realigned the Bank Rate
+of BPLRonJuly1, 2010.
+with Marginal Standing Facility (MSF) rate,
+which, in turn, islinked to the policyrepo rate .15 The BPLRsystem (while the existingsystem
+Henceforth, whenever there is an adjustment of was of PLR), introduced in 2003, fell short of
+theMSF rate, the RBI willconsiderand align the its original objective of bringing transparency to
+bank ratewith therevised MSF rate . lending rates . This was mainly because under
+this system, banks could lend below BPLR.
+Beingthediscount rate, the bank rateshould
+technicallybehigherthanthepolicyreporate .The This made a bargaining by the borrower with
+bank- ultimately one borrower getting cheaper
+bankratehas, however, been kept unchangedat6
+percentsinceApril2003.Thiswasmainlyfor the loan than the other, and blurred the attempts of
+bringing in transparencyin the lending business.
+reason that monetary policysignalling was done
+For thesame reason, it was also difficult to assess
+through modulations in the reverse repo rateand
+the repo rate till May 3, 2011, and the policy
+the transmission of policy rates (i.e., repo rate,
+reverse repo rate, bank rate) of the Reserve Bank
+repo rate under the revised operating procedure
+of monetarypolicyfrom May3, 2011onwards. to lending rates of banks. The Base Rate system
+is aimed at enhancing transparency in lending
+Moreover, under the revised operating
+rates of banks and enabling better assessment of
+procedure, MSF, instituted at 100 basis points transmissionofmonetarypolicy.Tolookintothis
+abovethe policyrepo rate, has been in operation,
+matter, theRBIconstitutedaWorkingGroupon
+whichmoreorlessserved thepurposeofthebank
+BenchmarkPrimeLendingRate (chaired Deepak
+rate . At present, the repo rate is 8.50 per cent,
+Mohanty) toreviewthepresentbenchmarkprime
+reserverepo7.50percentandMSF9.50percent .
+lending rate (BPLR) system and suggest changes
+Repo rateistherateatwhich banksborrowfunds —
+to make credit pricing more transparent report
+15. RBIAnnouncement,RBI,MoF,Gol,NewDelhi,Feb.15,2012.
+16. RBIAnnouncement,RBI,MoF,Gol,NewDelhi,Apr.5,2010.
+
+--- PAGE 359 ---
+BankinginIndia I 12.9
+submitted in October 2009 and accordingly the (cid:127) Recognition of the glide path for
+ideaofbase ratewasimplemented. disinflation — the recommendation of
+Now, all categories of loans are priced
+UrjitR.PatelCommitteereporthavebeen
+with reference to the base rate only, except (a) implemented, including adoption of
+differential rate of interest ( DRI) loans (b) loans thenewCPI-Casthekeymeasureof
+to banks’own employees, and (c) loans to banks’
+inflation.
+depositors against their own deposits. Since the (cid:127) A Monetary Policy Framework has been
+—
+base rate will be the minimum rate for all loans, put in place an agreement in this
+banks are not permitted to resort to any lending regard was signed between the Gol and
+below this rate — accordingly, the provision the RBI late February 2015. Under the
+of lending below the BPLR to a customer by framework, the RBI is to‘targetinflation'
+banks if the loan amount is not less than Rs. 2 at 4 per cent with a variations of 2 per
+lakh has been withdrawn. It is expected that the cent . It means, the‘range of inflation’ to
+above deregulation of lending rate will increase be between 2 to6 per cent .
+the credit flow to small borrowers at reasonable (cid:127) Progressivereductioninaccesstoovernight
+rateand direct bankfinancewill provideeffective liquidityatthefixedreporate,andincrease
+competition to other forms of high cost credit. in accesstoliquiditythroughtermrepos
+For export credit, RBI announces the floor rate, (the liquidity provided under 7-day and
+separately. Banks are required to review the base 14-day term repos have been increased
+rateatleastonceinaquarterandpublishthesame from0.5percentofthebankingsystemto
+for thegeneral public. . 0.75 per cent, and theliquidity provided
+- under overnight repos has been decreased
+C&MPOLICY NEWINITIATIVES
+from 0.5 per cent to 0.25 per cent
+Thelast Bi-monthlyCredit&MonetaryPolicyof (done in pursuance of the Urjit R. Patel
+theRBI wasannouncedon February3,2013 — as Committee’s recommendations). This
+per which theratesand ratiosstansasfollows: aimsto improve the transmission of
+Policy Rates: Bank Rate 8.5 per cent; Repo Rate policy impulses across the interest rate
+.
+7.5 per cent; Reverse Repo Rate6.5 per cent and spectrum
+MSF Rate8.5 per cent . (cid:127) Introductionoflonger- tenortermreposas
+wellastermreverserepos.
+Reserve Ratios:CRR4 per cent andSLR21.5 per
+.
+cent | REVISED LMF
+Lenidng /Deposit Rates: Base Rate from 10.00-
+10.25 per cent; Saving Deposit Rate4.0 per cent In August 2014, the RBI announced a revised
+(relatesto 5 major banks)andTerm Deposit Rate Liquidity Management Framework (LMF) as
+from8.00-8.75 per cent . a way to check volatility in the inter-bank call
+The RBI hasstarted some newthingsin the money markets, where banks lend to each other,
+C&MPolicy,in recenttimes
+—
+majoronesareas
+andalsoallowthelenderstomanagetheirliquidity
+needsbetter.MajorfeaturesoftheLMFisasgiven
+given below:
+below:
+(cid:127) Transition to a bi-monthly monetary
+policycycle. (cid:127) RBI started conducting 14-day term
+repurchaseauctionsfourtimesafortnight,
+
+--- PAGE 360 ---
+12.10 4 IndianEconomy
+up to anaggregate amount equal to 0.75 the masses had no access to the banking
+per cent of the system’s deposit base or service;
+net demandand timeliabilities(NDTL). (ii) The government needed to direct the
+(cid:127) Unlike earlier, RBI has announced a resourcesinsuchawaythatgreaterpublic
+fixed schedule for these 14-dayterm repo benefitcould takeplace;
+operations, which are used by banks for (iii) Theplanneddevelopmentoftheeconomy
+their day- to -day liquidity requirements. required a certain degre _ e of government
+One-fourth of the total amount of 0.75 control on the capital generated by the
+per cent of NDTLs would be put up for economy. Nationalisation of banks in
+auction in each of thefour auctions, RBI India took place in the following two
+said inastatement . stages:
+(cid:127) No change in the amount that banks .
+can access from the liquidity adjustment 1 EMERGENCEOFTHESBI
+facility (LAF) window at fixed repo rate The Government of India, with the enactment
+of the time. Banks are currently allowed of the SBI Act, 1955 partially nationalised the
+to borrow upto 0.25 per cent of their three Imperial Banks (mainly operating in the
+deposit base or NDTL from the LAF three past Presidencies with their 466 branches)
+window.
+and named them the State Bank of India
+—
+the
+(cid:127) Additionally, RBI conducts overnight firstpublicsectorbankemergedin India.TheRBI
+variable rate repo auctions based on an had purchased 92 per cent of the shares in this
+assessment of liquidityin thesystem and partial nationalisation.
+government cash balances available for Satisfiedwiththeexperiment,thegovernment
+auction for theday. in a related move partially nationalised eight
+(cid:127) The LMF is aimed at reducing volatility more private banks (withgood regional presence)
+in the call rate . Better interest signalling via SBI(Associates)Act,1959and named them as
+and medium- term stability in the loan theAssociates of theSBI — the RBI had acquired
+marketareother objectivesofit. 92 per cent stake in them as well. After merging
+theState Bank of Bikaner and the State Bank of
+NATIONALISATION AND DEVELOPMENT Jaipur as well, the RBI came up with the state
+OFBANKING IN INDIA Bankof BikanerandJaipur. NowtheSBIGroup
+—
+has a total number of six banks SBI being one
+The development of banking industry in India andfiveofitsassociates.
+has been intertwined with the story of its
+.
+nationalisation. Once the Reserve Bank of India 2 EMERGENCEOFNATIONALISEDBANKS
+(RBI) was nationalised in 1949 and a central
+After successful experimentation in the partial
+bankingwasin place, thegovernment considered
+nationalisations the government decided to go
+the nationalising of selected private banks in the
+for complete nationalisation. With the help
+countrydueto thefollowingmajorreasons:
+of the Banking Nationalisation Act, 1969, the
+(i) As the banks were owned and managed
+government nationalised a total number of 20
+by the private sector the services of the
+—
+privatebanks:
+banking were having a narrow reach
+
+--- PAGE 361 ---
+BankinginIndia t 12.11
+(i) 14 banks with deposits were more than bankcango for capitalisation.
+Rs.50croreofnationalised inJuly1969, (ii) In 1994 the government allowed the
+and nationalised banks to have access to the
+(ii) 6 banks with deposits were more than capital market with a ceiling of 33 per
+Rs. 200 crore of nationalised in April cent sale of shares through the Banking
+1980. Companies(Amendment)Act,1994.
+After the merger of the loss-making New Sincethen manynationalised bankshave
+Bank of India with the Punjab National Bank tappedthecapitalmarketfor theircapital
+—
+(PNB) in September 1993, the total number of enhancement Indian Overseas Bank
+nationalisedbankscamedownto19.Today,there being the first in the row. Though such
+are 27 publicsector banks in India out of which banks could be better called the public
+19 are nationalised (though noneof theso-called sector banks (astheGol holdsmorethan
+nationalisedbankshave100percentownershipof 50 per cent stake in them) they are still
+theGovernmentof India). knownasthenationalised banks.
+After the nationalisation of banks the (iii) In1994itselfthegovernmentallowedthe
+government stopped opening of banks in the opening of private banks in the country .
+privatesector though some foreign private banks The first private bank of the reform era
+wereallowed to operatein thecountryto provide was the UTI Bank. Since then a few
+theexternalcurrencyloans.AfterIndia usheredin dozens Indian and foreign private banks
+theera of theeconomicreforms, thegovernment have beenopened in thecountry .
+started a comprehensive banking system reform Thus, since 1993 — 94 onwards, we see a
+inthefiscal1992 — 93.Threerelateddevelopments reversal of the policies governing banks in the
+allowedthefurtherexpansionofbankingindustry country .As a general principle, the publicsector
+in thecountry: and the nationalised banks are to be converted
+(i) In1993theSBIwasallowedaccesstothe into private sector entities. What would be the
+capital market with permission given to minimum government holding in them is still
+sell its share to the tune of 33 per cent a matter of debate and yet to be decided.17 The
+-
+throughSBI(Amendment)Act,1993 policyofbankconsolidationisstillbeingfollowed
+At present the Government of India by the government, so that these banks could
+has 59.73 per cent shares in the SBI (It broadentheircapitalbaseandemergeassignificant
+was onJuly9,2007thattheentireequity playersintheglobalbankingcompetit — ion.18Every
+stake of the RBI was taken over by the delay in it will hamper their interests, as per the
+Governmentof India. Thus,the RBI is no experts .
+more the holding bank of the SBI and its .
+.. 3 EMERGENCEOFTHERRBs
+Associates ) ^
+OnOctober10,2007thegovernment TheRegionalRuralBanks(RRBs)werefirstsetup
+announced its proposal of selling the onOctober2,1975 (only5in numbers)with the
+shares of the SBI and cutting down its aim to take banking services to the doorsteps of
+stakein it to 53 per cent levelso that the theruralmassesspeciallyin theremoteareaswith
+17. AspertheStrategicDisinvestmentStatementof1999 , theGovernmenthaddecidedtocutitsholdinginthemto26
+percent.Thepolicywasputon holdoncetheUPAGovernmentcametopower.
+18. Y.V.Reddy,LecturesonEconomicandFinancialSectorReformsinIndia , Oxford U.Press,N.Delhi,2002,pp.137 - 57.
+
+--- PAGE 362 ---
+12.12 4 IndianEconomy
+no access to bankingservices with twin duties to After the above-given policy changes, the
+fulfill: RRBs started coming out of the red/losses. The
+(i) to providecredittotheweakersectionsof CFS has recommended to get them merged with
+thesocietyatconcessionalrateofinterest theirmanagingnationalisedorpublicsectorbanks
+who previously depended on private andfinallymakethem partofthewould-bethree-
+moneylendingand tier banking structure of India. At present there
+are 56 RRBs (after amalgamation) functioningin
+(ii) to mobilise rural savings and channelise
+India even though the amalgamation process is
+them forsupportingproductiveactivities
+in theruralareas. goingon (RBI,April2015) .
+TheGol,theconcernedstategovernmentand |
+FINANCIALSECTOR REFORMS
+the sponsoring nationalised bank contribute the
+sharecapitalof the RRBsin the proportion of 50 The process of economic reforms initiated in
+percent,15percentand35percent,respectively.
+1991 had redefined the role of government in
+The area of operation of the RRB is limited to the economy — in coming times the economy
+notifiedfewdistrictsinastate . will be dependent on the greater private
+Following the suggestions of the Kelkar participation for its development.19 Such a
+Committee, the government stopped opening changed view to development required an
+—
+new RRBs in 1987 by that time their total overhauling in the investment structure of the
+number stood at 196. Due to excessive leanings economy. Now the private sector was going
+towards social banking and catering to the to demand high investible capital out of the
+highlyeconomicallyweaker sections, these banks financial system . Thus, an emergent need was
+started incurring huge losses by early 1980s. For felt to restructure the whole financial system of
+restructuring and strengthening of the banks, India.
+—
+the governments set up two committees the The three decades after nationalisation had
+—
+Bhandari Committee (1994 95) and the Basu seen a phenomenalexpansion in thegeographical
+Committee (1995 — 96). Out of the total, 171 coverage and financial spread of the banking
+—
+were running in losses in 1998 99 when the system in the country . As certain weaknesses
+government tooksomeseriousdecisions: were found to have developed in the system
+(i) The obligation of concessional loans during the lateeighties, it was felt that these had
+abolished and the RRBsstarted charging to be addressed to enable the financial system to
+commercialinterest rateson itslendings. play its role ushering in a more efficient
+(ii) Thetarget clientele (rural masses, weaker and competitive economy.20 Accordingly, a high
+sections) wasset free now to lend to any level committee on Financial System (CFS) was
+body. set up onAugust 14, 1991 to examineall aspects
+19. RepeatedbytheGolmanytimesi.e.theNewIndustrialPolicy1991;theUnionBudget1992 - 93;EighthFiveYearPlan
+(1992 - 97)DraftApproach;etc.
+20. Announced bytheGovernmentwhilesettingupthe M. NarasimhamCommitteeonFinacialSystemon August14,
+1991.SeealsoIndia2001 , Pub.Div.,Gol,N.Delhi.
+
+--- PAGE 363 ---
+BankinginIndia t 12.13
+relating to structure , organisation , functionand RECOMMENDATIONOFCFS
+—
+procedures of the financial system based on TheCFSrecommondation23couldbesummedup
+its recommedations, a comprehensive reform of under fivesub-titles:
+the banking system was introduced in the fiscal
+.
+1992-93.21 1 OnDirectedInvestment
+TheCFSbaseditsrecommendationsoncertain
+The RBI was advised not to use the CRR as a
+assumptions22 which are basic to the banking principal instrument of monetary and credit
+industry. And the suggestions of the committee control, in place it should rely on open market
+became logical in light of this assumption, there operations (OMOs) increasingly. Two proposals
+is no second opinion about it. The assumption advised regardingtheCRR:
+says that “theresourcesofthe bankscomefrom
+(i) CRR should be progressively reduced
+thegeneralpublicandareheldbythebanksin
+fromthepresent highlevelof13percent
+trustthattheyaretohedeployedformaximum
+. to3to 5 percent;and
+benefit of the depositors” This assumption
+(ii) RBI should pay interest on the CRR of
+automaticallyimplied:
+banksabovethe basicminimumat a rate
+(i) That even the government had no
+ofinterestequaltothelevelofbanks,one
+business to endanger the solvency, yeardeposit.
+health and efficiency of the nationalised
+banks under the pretext of using banks, Concerning the SLR it was advised to cut it
+resources for economic planning social to the minimum level (i.e., 25 per cent) from the
+hanking povertyalleviation , etc . present high level of 38.5 per cent in the next 5
+years (it was cut down to 25 per cent in October
+(ii) Besides, the government had no right 1997). The government was also suggested
+to get hold of the funds of the banks to progressively move towards market-based
+at low interest rates and use them for
+borrowingprogrammesothatbanksgeteconomic
+financing its consumption expenditure benefitson theirSLRinvestments.
+(i.e., revenueand fiscal deficits) and thus
+defraud thedepositors. These suggestions were directed to the goal
+of making more funds available to the banks,
+The recommendations of the CFS
+convertingidlecashfor use,andcuttingdownthe
+(NarasimhamCommitteeI) wereaimedat:
+interest ratesbankschargeon their loans.
+(i) ensuring a degree of operational
+.
+flexibility; 2 OnDirectedCreditProgramme
+(ii) internal autonomy for public sector Under this sub-title the suggestions revolved
+banks (PSBs) in their decision making around thecompulsion of prioritysector lending
+process;and
+(PSL) bythebanks:
+(iii) greater degree of professionalism in (i) Directed credit programme should
+bankingoperation.
+be phased out gradually. As per the
+21. TheNarasimhamCommitteehandedoveritsreportinrecordtimewithin3monthsafteritwassetup.
+22. CFS , op.cit.
+23. Ibid.
+
+--- PAGE 364 ---
+12.14 4 IndianEconomy
+committee, agriculture and small scale (i) Substantial reduction in the number
+industries (SSIs) had already grown to of the PSBs through mergers and
+—
+a maturestage and they did not require acquisitions to bring about greater
+any special support; two decades of efficiencyin bankingoperations;
+interest subsidywere enough.Therefore, (ii) DualcontrolofRBIandBankingDivision
+concessional rates of interest could be (of the Ministry of Finance) should go
+dispensed with. immediately and RBI to be made the
+(ii) Directed credit should not be a regular primary agency for the regulation of the
+—
+programme it should be a case of bankingsystem;
+extraordinary support to certain weak (iii) ThePSBstobemadefreeandautonomous;
+—
+sections besides,itshouldbetemporary,
+(iv) TheRBItoexaminealltheguidelinesand
+not a permanentone. directions issued to the banking system
+(iii) Concept of PSL should be redefined in the context of the independence and
+to include only the weakest sections of autonomyofthe banks;
+the rural community such as marginal
+(v) Every PSB to go for a radical change in
+farmers, ruralartisans,villageandcottage
+work technology and culture, so as to
+industries, tinysector,etc .
+become competitive internallyand to be
+(iv) The “redefined PSL” should have 10 per at par withthewide rangeofinnovations
+centfixed of theaggregatebankcredit. takingplaceabroad;and
+(v) The composition of the PSL should be (vi) Finally, the appointment of the Chief
+reviewedafter every3years. Executiveof Bank(CMD) wassuggested
+. not to be on political considerations
+3 OntheStructureofInterest Rates
+but on professionalism and integrity.
+The major recommendations on thestructure of An independent panel of experts was
+interest ratesare: suggested whichshould recommend and
+(i) Interestratestobebroadlydeterminedby finalise the suitable candidates for this
+.
+marketforces; post
+(ii) All controls of interest rates on deposits 5 . AssetReconstructionCompanies/Fund
+andlendingto bewithdrawn;
+To tackle the menace of the higher non
+(iii) Concessional rates of interest for PSL of ¬
+smallsizesto bephasedoutandsubsidies performing assets (NPAs) of banks and financial
+institutions, the committee suggested setting up
+on the IRDPloansto bewithdrawn;
+of asset reconstruction companies/funds (taking
+(iv) Bank rate to be the anchor rate and all cluefrom theUSexperience).
+other interest rates to becloselylinked to
+The committee directly blamed the
+it;and
+Government of India (Gol) and the Ministry of
+(v) T si h m e pli R fy BI the to str b u e ctu th re e o s f o i l n e te a re u s t t ho ra r t i e ty s . to Finance for the sad state of affairs of the PSBs.
+These banks were used and abused by the Gol,
+4.OnStructuralReorganisationoftheBank the officials, the bank employees and the trade
+unions, the report adds. The recommendations
+For the structural reorganisation of banks some
+were revolutionary in many respects and were
+majorsuggestionsweregiven:
+
+--- PAGE 365 ---
+BankinginIndia t 12.15
+opposedbythebankunionsandtheleftistpolitical (i) Need for a stronger banking system
+parties. for which mergers of the PSBs and
+There were some other major suggestions of the financial institutions (AIFIs) were
+—
+the committee which made it possible to get the suggested stronger banks and the DFIs
+following24 thingsdone bythegovernment: (development financial institutions, i.e.,
+(i) opening of new private sector banks AIFIs) to be merged while weaker and
+permitted in 1993;
+unviableonesto beclosed.
+(ii) prudential norms relating to income
+(ii) A3-tier bankingstructurewassuggested
+recognition, asset classification and
+after mergers:
+provisioning by banks on the basis of (a) Tier-1 to have 2 to 3 banks of
+objectivecriterialaiddown bythe RBI; internationalorientation;
+(iii) introduction of capital adequacy norms (b) Tier-2 to have 8 to 10 banks of
+(i.e., CAR provisions) with international nationalorientation;and
+standardstarted; (c) Tier-3to have large number of local
+(iv) simplification in the banking regulation
+banks.
+(i.e.,viaboardforfinancialsupervisionin The first and second tiers were to take
+1994);etc . careofthebankingneedsofthecorporate
+sectorin theeconomy.
+| BANKING SECTOR REFORMS (iii) Higher norms of Capital- to -Risk —
+Weighted Adequacy Ratio (CRAR)
+The government commenced a comprehens — ive suggested — increasedto 10percent .
+reform processin thefinancialsystemin 1992 93
+after the recommendations of the CFS in 1991. (iv) Budgetary recapitalisation of the PSBs is
+In December 1997 the government did set up not viableandshould beabandoned.
+anothercommittteeon the bankingsector reform (v) Legalframework of loan recoveryshould
+under the chairmanship of M. Narasimham.25 be strengthened (the government passed
+Theobjectiveofthecommitteeisobjectivelyclear
+theSARFAESI(Act,2002) .
+bythetermsofreferenceitwasgivenwhilesetting (vi) Net NPAs for all banks suggested to be
+up: cut down to below 3 per cent by 2000
+“Toreviewtheprogressofbankingsectorreforms and3 per cent by2002.
+to date and chart a programme of financial sector (vii) Rationalisation of branches and staffs of
+reforms necessary to strengthen India’s financial thePSBssuggested.
+systemandmakeitinternationallycompetitive” (viii) Licencingtonewprivatebanks(domestic
+The Narasimham Committee-II (popularly as well as foreign) was suggested to
+called by the Government of India) handed over continuewith.
+its reports in April 1998 which included the (ix) Banks’ boards should be depoliticised
+followingmajorsuggestions:26 under RBIsupervision.
+24. BasedonY.V.Reddy,2002,op.cit.
+25. EconomicSurvey1998 - 99 , MoF,Gol,N.Delhi.
+26. BasedontheReportoftheCommitteeonBankingSectorReforms , April,1998(Chairman:M.Narasimham).
+
+--- PAGE 366 ---
+12.16 4 IndianEconomy
+(x) Board for financial Regulation and both) of their total lending. There is a
+—
+Supervisions (BFRS) should be set up sub-target also 18 per cent of the total
+for the whole banking, financial and the lendingmustgotoagricultureand10per
+NBFCsin India.27 centofthetotallendingor25 percentof
+the prioritysector lending (whichever be
+,
+DRI
+higher) must be lent out to the weaker
+Thedifferential rateofinterest (DRI) isa lending
+sections.Otherareasoftheprioritysector
+programmelaunched bythegovernment inApril to becovered in theleft amount, i.e., 12
+1972 which makes it obligatory upon all the per centof thetotallending.
+public sector banks in India to lend 1 per cent (ii) Foreign Banks (having less than 20
+of the total lending of the preceding year to ‘the branches) have to fulfil only32 per cent
+poorest amongthe poor’ at an interest rate of 4 PSL target which has sub-targets for
+percentperannum.Thetotallendingin2005 — 06 the exports (12 per cent) and small and
+was Rs.351crores. medium enterprises (10 per cent). It
+meanstheyneedtodisburseotherareasof
+PRIORITYSECTORLENDING the PSL from the remaining 10 per cent
+All Indian banks have to follow the compulsory
+of their totallending(lesserburden).
+target of priority sector lending (PSL). The The committee on financial System (CFS,
+—
+prioritysectorin Indiaareatpresentthesectors 1991) had suggested to immediatelycut it down
+agriculture, small and medium enterprises to10percentforallbanksandcompletelyphasing
+(SMEs), road and water transport, retail trade, outofthispolicyforthebettermentofthebanking
+small business, small housing loans (not more industryin particularandtheeconomyingeneral.
+than Rs. 10 lakhs), software industries, self help Thecommitteealsosuggestedtoshufflethesectors
+groups (SHGs), agro-processing, small and covered under PSL every three years. No follow
+marginal farmers, artisans, distressed urban poor up has been done from the government except
+andindebtednon-institutionaldebtorsbesidesthe cutting down PSL target for the foreign banks
+SCs, STs and other weaker sections of society.28 from40percent to32 percent .Meanwhilesome
+In 2007, the RBI included five minorities — newareas havebeen added to the PSL.
+Buddhists, Christians, Muslims, Parsis and Sikhs
+under the PSL. In its new guidelines of March REVISIONINPSL
+2015,theRBIadded‘mediumenterprise,sanitation The Reserve Bank of India (RBI) panel on
+and renewable energy’ under it.29 The PSL target priority sector lending on February 21, 2012
+must be met by the banks operating in India in proposed that the target (priority sector) for
+thefollowingway: foreign banks to be increased to 40 per cent of
+(i) Indian Banks need to lend 40 per cent net bank credit from the current level of 32 per
+to the priority sector every year (public cent with sub-targets of 15 per cent for exports
+sector as well as private sector banks, and 15 per cent for the medium and small
+27. Anintegratedsystemofr—egulationandsupervisionwassuggestedbytheCommitteesothatsoundnessofthefinancial
+systemcouldbeensured theconceptofafinancialsuper-regulatorgetsvindicated,asopinesY.V.Reddy,2002,op.
+cited,p.38.
+28. India2007,Pub.Div.,Gol,N.DelhiandthefurtherannouncementsbytheRBI.
+29. RBI,NewGuidelinesonthePSL,March2,2015.
+
+--- PAGE 367 ---
+BankinginIndia t 12.17
+enterprises(MSE)sector, withinwhich7percent (v) To encourage construction of dwelling
+may be earmarked for micro enterprises. The units for economically weaker sections
+target of domestic scheduled commercial banks and low income groups, housing loans
+for lending to the priority sector to be retained granted to these individuals may be
+at 40 per cent of net bank credit. The Nair included in theweakersectionscategory .
+Committee, (under the Chairmanship of M. V. (vi) All loans to women under the priority
+Nair, Chairman, Union Bank of India), has re ¬ sector may also be counted under loans
+examined theexistingclassification andsuggested
+to
+weakersections.
+revised guidelines with regard to priority sector (vii) The loans to education sector may
+lending and related issues. Major suggestions by continue to be under the prioritysector .
+thecommitteeareasgiven below:
+The limit under the priority sector for
+(i) The committeesuggested that the sector loansforstudiesinIndiamaybeincreased
+'agriculture and allied activities’ may to Rs. 15 lakh and Rs.25 lakh in caseof
+bea compositesector within the priority studiesabroad,from theexistinglimitof
+sector,bydoingawaywiththedistinction Rs.10lakhand Rs.20lakh, respectively.
+between direct and indirect agriculture.
+(viii) The committee has also recommended
+However, the targets for agriculture and allowing non-tradable priority sector
+alliedactivitieswould beat18 percent .
+lending certificates on a pilot basis with
+(ii) A sub-target for stnall and marginal domestic scheduled commercial banks,
+farmers within agriculture and allied foreign banksand regional rural banksas
+activities is recommended, equivalent to market players.
+9 per cent, which would be achieved in
+-
+stagesby2015 — 16. | NON PERFORMINGASSETS
+(iii) TheMSEsectormaycontinuetobeunder
+the priority sector . Within the MSE
+Non-PerformingAssets(NPAs)arethebadloansoi
+sector, a sub-target for micro enterprises
+thebanks.Thecriteriatoidentifysuchassetshave
+isrecommended,equivalentto7percent, been changing over the time. In order to follow
+whichwouldalso beachievedinstagesby international best practices and to ensure greater
+2013-14.
+transparency,theRBIshiftedtothecurrentpolicy
+in 2004. Under it, a loan is considered NPA if
+(iv) T to he be lo u a n n d s e to r t h h o e u p si r n io g r s i e ty ct s o e t ct m or a . y L c o o a n n t s in f u o e r d it ay h s a ) s .T n h o i t si b s e k e n n ow se n rv a i s ce ‘9 d 0 f d o a r y’ o o n v e er t d e u r e m no ( r i. m e. . , F 9 o 0 r
+constructionor purchaseofonedwelling
+agricultureloanstheperiodistiedwiththeperiod
+unit per individual up to Rs. 25 lakh; —
+l u o r a b n a s n u a p re t a o sa R n s d .2 up lak to h R in s. r 5 ur l a a l kh an i d n s o e t m he i r - s o e f a t s h o e ns c t o o nc o e n r e ne y d ear cr o o v p e s rdu r e an n g o i r n m g .3 f 0 rom two crop
+centres for repair of damaged dwelling
+NPAswereclassified into threetypes:
+units may be granted under the priority (a) Sub-standard: remaining NPAs for less
+sector
+. than or equalto 18 months;
+30. ReserveBankof India,'MasterCircular - Income Recognition,AssetClassification,Provisioning andOther Related
+Matters',July,2013.
+
+--- PAGE 368 ---
+12.18 4 IndianEconomy
+—
+(b) Doubtful: remaining NPAs for more AspertheEconomicSurvey2014 15,thestress
+than 18 months;and tests suggest that the asset quality of banks may
+(c) Loss assets: where the loss has been improveinthenearfutureunderexpectedpositive
+identifiedbythebankorinternal/external developmentsinthemacroeconomicenvironment
+auditors or the RBI inspection but the and banks may be able to meet expected losses
+amount hasnot been written off. with theirexistinglevelof provisions.
+The main reasons for increase in NPAs, in
+CURRENTSCENARIO recent times, areasgiven below (EconomicSurvey
+-
+Asset qualityof the ublicsector banks (PSBs) has
+2013-14&2014-15) .
+comeunderstressinrecenttimes.AspertheRBI’s (i) Switchovertosystem-basedidentification
+Financial Stability Report-December 2014, the of NPAs;
+—
+situationofwas (ii) Current macroeconomicsituation in the
+(cid:127) The gross non-performing assets country;
+(GNPAs)ofscheduledcommercialbanks (iii) Increasedinterest ratesin therecent past;
+asa percentageofthetotalgrossadvances (iv) Lower economicgrowth;and
+increased to 4.5 per cent in September
+(v) Aggressive lending by banks in the past,
+2014from4.1per centin March 2014. especiallyduringgood times.
+(cid:127) Stressed advances increased to 10.7 per
+The RBI came out with a new guidelines31
+cent of the total advances from 10.0 to resolvethe NPAissue byealry2014.Thesteps
+per cent between March and September
+taken under itare:
+2014.
+— (a) Banks have to start acting as soon as a
+(cid:127) Five sub- sectors infrastructure, iron &
+sign of stress is noticed in a borrower’s
+steel, textiles, mining (including coal),
+— actions and not wait for it to become
+and aviation hold 54 per cent of total an NPA. Banks to carve out as special
+stressed advances of PSBs as on June
+categoryofassetstermedspecialmention
+2014.
+accounts (SMAs) in which early signs of
+(cid:127) Among bank groups, exposure of PSBs stressarevisible.
+to infrastructure stood at 17.5 per cent
+(b) Flexibility brought in project loans to
+of their gross advances as of September
+infrastructureand coreindustry projects,
+2014. This was significantly higher than bothexistingand new.
+thatofprivate- sector banks (9.6percent)
+andforeign banks (12.1per cent). (c) Non-cooperative borrowers in NPAs
+resolutionwillhaveto payhigherinterest
+(cid:127) The PSBs continue to be under stress foranyfuture borrowing.Bankswillalso
+on account of their past lending.Taking
+berequired tomakehigherprovisionsfor
+GNPAs and restructured advances
+further loansextended to borrowers who
+together, the stress on PSBs is 12.57 per areconsidered to be‘non-cooperative’.
+cent of total advances as on September
+2014.
+31. RBI,EarlyRecognitionof FinancialDistress,PromptstepsforResolutionandFairRecoveryforLenders:Frameworkfor
+RevitalizingDistressedAssetsintheEconomy,January2014.
+
+--- PAGE 369 ---
+BankinginIndia t 12.19
+(d) Towards strengthening recovery from (i) Takepossession ofsecurityand/or
+non-cooperative borrowers, the norms for (ii) take over the management of the
+asset reconstruction companies (ARC) borrowingconcernand/or
+have been tightened, whereby the
+(iii) appoint a person to manage the
+minimum investmentinsecurityreceipts concern.
+should be 15 per cent, as against the
+(C) If thecaseisalreadybeforetheBIFR,
+earlier norm of 5 percent .
+the proceedings can be stalled if
+(e) Independent evaluation of large-value
+banks/FIs having 75 per cent share
+restructuring(aboveRs.500crore) made
+in the dues have taken any steps to
+mandatory.
+recover thedues under theprovisions
+(f) If a borrower’s interest or principal of theordinance.
+payments are overdue by more than 60 2 . Thebanks/FIscanalsosellthesecurityto
+days,aJointLenders’Forumto beformed
+a securitisation or Asset Reconstruction
+by the bankers for early resolution of
+Company (ARC), established under the
+.
+stress provisions of the Ordinance. [The ARC
+(g) The RBI has set up a central repository issought to beset upon thelinessimilar
+ofinformation on largecreditsto collect,
+to
+theUSA,fewyearsago.]
+store and disseminate credit data to
+lenders. For this, banks need to furnish DEBTRECOVERYTRIBUNALS(DRTS)
+creditinformationon all their borrowers
+Earlier,thegovernmenthadset upDebtRecovery
+withanexposureofRs.5croreandabove.
+Tribunals (DRTs) in 1993 which failed to bring
+(h) Incentives to banks to quickly and about thedesiredchangein thescenario dueto:32
+collectivelyagreeto a resolution plan.
+(i) DRTs are also clogged up with many
+SARFAESIACT ,2002 casesandthejudgementtakestime(many
+months, ifnotyears):
+Golfinallycrackeddownonthewilfuldefaulters
+(ii) The sale of property can be made only
+by passing theSecuritisationand Reconstructionof
+throughcourtappointed officials,adding
+FinancialAssetsandEnforcementofSecurityInterest
+delays;
+(SARFAESI)Act,2002 .
+(iii) The tribunals cannot take up the
+The Act gives far reaching powers to the medium- or large-sized firms if they are
+banks/FIsconcering NPAs:
+under consideration of the BIFR due to
+.
+1 Banks/FIs having75 per cent of thedues sickness.
+owed by the borrower can collectively
+The praiseworthy step regarding recovery
+proceed on the following in theevent of
+of the NPAs and allowing the setting up of the
+theaccount becoming NPA:
+Asset Reconstruction Companies (ARCs) had
+(A) Issue notice of default to borrowers an impact. Improved industrial climate and new
+askingto clear dueswithin 60days. options available to banks for dealing with bad
+(B) On the borrower’sfailureto repay: loanshelpedin recoveringasubstantialamountof
+32 . EconomicSurvey2001 - 02&India2002 , Pub. Div .,Gol,N .Delhi.
+
+--- PAGE 370 ---
+12.20 4 IndianEconomy
+NPAs.The NPAsofscheduledcommercial banks needs to be at least Rs.25 lakh to be included in
+(SCBs) were at 2.3 per cent of total assets as on thecategoryofwilfuldefaults.
+end December2011.33 Ifanentity’sorindividual’snamefiguresinthe
+list of wilful defaulters, the following restrictions
+| WILLFUL DEFAULTER —
+getinaction on them
+(a) Barred from participating in the capital
+There are many people and entities who borrow
+market.
+money from lending institutions but fail to
+repay. However, not all of them are called wilful (b) Barredfromavailinganyfurther banking
+defaulters. As is embedded in the name, a wilful facilitiesand toaccessfinancial
+defaulter is one who does not repay a loan or institutionsfor five years for the purpose
+liability, butapartfrom thisthereareother things ofstartinga newventure .
+that define a wilful defaulter. According to the (c) The lenders can initiate the process of
+—
+RBI,a wilfuldefaulter isonewho recoverywithfullvigour andcan even
+(i) is financially capable to repay and yet initiatecriminal proceedings, ifrequired.
+doesnot doso; (d) The lending institutions may not allow
+(ii) oronewhodivertsthefundsforpurposes anyperson related to thedefaulting
+other thanwhat thefundwasavailedfor; company to become a board member of
+(iii) or with whom funds are not available in
+anyother companyaswell.
+theform ofassetsasfundshave been
+|
+CAPITALADEQUACY RATIO
+siphoned off;
+(iv) or who hassold or disposed the property At first sight bank is a business or industry a
+that was used asasecurityto obtain the segment of the service sector in any economy.
+loan.
+But the failure of a bank may have far greater
+Diversion of fund includes activities such as damagingimpact on an economythan anyother
+using short- term working capital for long- term kindofbusinessorcommercialactivity.Basically,
+purposes, acquiring assets for which theloan was moderneconomiesareheavilydependentonbanks
+—
+not meant for and transferring funds to other todaythaninthepast banksaretodaycalledthe
+entities. Siphoning of funds means that funds backbone of economies. Healthy functioning of
+were used for purposes that were not related to banksistodayessentialfortheproperfunctioning
+the borrower and which could affect thefinancial of an economy. As credit creation (i.eloan
+healthof theentity. disbursals) of banksarehighlyriskybusiness, the
+However, a lending institution cannot term depositors’ moneydepends on the banks’quality
+an entity or an individual a wilful defaulter for
+oflending.Moreimportantly,thewholepayment
+a one-off case of default and needs to take into
+system,publicaswellasprivate,dependsonbanks.
+account the repayment track record. The default Abank’sfailurehasthepotentialofcreatingchaos
+should be established to be intentional and the in an economy. This is why governments of the
+defaultershould beinformedabout thesame.The world pay special attention to the regulatory
+defaulter should also be given a chance to clarify aspects of the banks. Every regulatory provision
+his stand on the issue. Also, the default amount for banks tries to achieve a simple equation, i.e.,
+33. EconomicSurvey2011 - 12 , MoF,Gol,N.Delhi.
+
+--- PAGE 371 ---
+BankinginIndia t 12.21
+“how the hanks should maximise their credit lending. It was in 1988 that the central banking
+creation by minimising the risk and continue bodies of the developed economies agreed upon
+—
+functioning permanently”. In the banking such a provision, the CAR also known as the
+.
+businessrisksarealwaysthereandcannotbemade Basel Accord35 The accord was agreed upon
+—
+‘zero’ as any loan forwarded to any individual at Basel, Switzerland at a meeting of the Bank
+orfirm(irrespectiveoftheircredit-worthiness)has for International Settlements (BIS).36 It was at
+theriskofturningout to bea baddebt(i.e.,NPA this time that the Basel-I norms of the capital
+— —
+in India) the probability of this being 50 per adequacyratio wereagreed upon a requirement
+cent . But banks must function so that economies wasimposed uponthebankstomaintainacertain
+can function. Finally, the central banks of the amountoffreecapital(i.e.,ratio) to theirassets37
+worldstarted devising tools to minimise the risks (i.e., loans and investments by the banks) as a
+of banking at one hand and providing cushions cushionagainstprobablelossesininvestmentsand
+(shock-absorbers) to the banks at the other hand loans.In1988,thisratiocapitalwasdecidedtobe
+so that banks do not go bust (i.e., shut down 8 per cent . It means that if the total investments
+after becoming bankrupt). Providing cushion/ and loans forwarded by a bank amounts
+shock-absorbers to banks has seen three major to Rs. 100, the bank needs to maintain a free
+developments:34 capital38 of Rs. 8 at that particular time. The
+(i) The provision of keeping a cash ratio capitaladequacyratioisthepercentageoftotal
+of total deposits mobilised by the banks capital to the total risk—weighted assets (see
+(known as theCRRin India);
+reference39).
+(ii) the provision of maintainingsome assets CAR, a measure of a bank’s capital, is
+of the deposits mobilised by the banks expressedasa percentageofa bank’sriskweighted
+with the banks themselves in non-cash creditexposures:
+form(known astheSLRin India);and CAR=TotaloftheTier1&Tier 2capitals-s-
+(iii) The provision of the capital adequacy RiskWeightedAssets
+ratio (CAR) norm. Also known as ‘Capital to Risk Weighted
+The capital adequacy ratio (CAR) norm has Assets Ratio (CRAR)’this ratio is used to protect
+been the last provision to emerge in the area of
+depositorsandpromotethestabilityandefficiency
+regulating the banks in such a way that theycan of financialsystemsaround theworld.Two types
+ofcapitalweremeasuredaspertheBaselIInorms
+sustain the probable risks and uncertainties of
+34. Through various legislationssince the RBINationalisationAct,1949and the BankingRegulationAct,1949 were
+enacted-andfurtherAmendmentstotheActs,MoF,Gol,NewDelhi.
+35. SimonCox(ed.),Economics,TheEconomist,2007,op.cit.,p.145.
+36. TheBIS istodaya central bankfor central bankersset up in1930 in a round tower near Basel railwaystation in
+Switzerlandasa privatecompanyowned bya numberof central banks,onecommercial bank(Citibank)and some
+private individuals.Today itfunctionsasa meeting placeforthe bank regulatorsof manycountries,a multilateral
+regulatoryauthorityandaclearinghouseformanynations'reserves(i.e.foreignexchange).SeeTimHindle,Pocket
+Finance,TheEconomist,2007,pp.35 - 36.
+37. Investmentsmadeandloansforwardedbybanksareknownasriskyassets.
+38. ThecapitalofabankwasclassifiedintoTier - 1andTier - ll.WhileTier - 1comprisessharecapitalanddisclosed reserves,
+Tier - llincludesrevaluationreserves,hybridcapitalandsubordinateddebtofabank.As—pertheprovisionTier - llcapital
+shouldnotexceedtheTierIcapital.Therisk-weightingdependsuponthetypeofassets forexampleitis100percent
+onprivatesectorloanswhileonly20percentforshort-termloans.
+
+--- PAGE 372 ---
+12.22 4 IndianEconomy
+— Tier 1 capital, which can absorb losses without WHYTOMAINTAINCAR?
+a bank being required to cease trading, and Tier The basic question which comes to mind is as
+2capital, which can absorb losses in the event of to why do the banks need to hold capital in the
+a winding-up and so provides a lesser degree of form of CAR norms? Two reasons42have been
+protection to depositors. The new norms (Basel generallyforwardedfor thesame:
+III)hasdevisedathirdcategoryofcapital,i.e.,Tier
+(i) Bank capital helps to prevent bank
+3capital.
+failure, which arises in case the bank
+- -
+The RBI introduced the capitalto risk
+cannot satisfy its obligations to pay the
+weighted assets ratio (CRAR) system for the depositors and other creditors. The low
+banks operating in India in 199
+—
+2 in accordance capitalbankhasanegativenetworthafter
+with the standards of the BIS as part of the the loss in its business. In other words,
+financial sector reforms.39 In the coming years it turns into insolvent capital, therefore,
+the Basel norms were extended to term -lending acts as a cushion to lessen the chance of
+institutions, primary dealers and non-banking thebankturninginsolvent.
+financial companies (NBFCs), too . Meanwhile
+(ii) The amount of capital affects returns for
+theBIScame upwithanothersetofCARnorms,
+theowners (equityholders) of the bank.
+popularlyknown as Basel-II.The RBI guidelines
+regarding the CAR norms in India have been as BASELACCORDS
+given below:
+(i) Basel-I norm of the CAR was to be The Basel Accords (i.e., Basel I, II and now III)
+areasetofagreementssetbytheBaselCommittee
+achieved by the Indian banks by March
+on Bank Supervision (BCBS), which provides
+1997.
+recommendations on banking regulations in
+(ii) The CAR norm was raised to 9 per regardstocapitalrisk,marketriskandoperational
+cent with effect from March 31, risk.The purpose of theaccords is to ensure that
+2000 (Narasimham Committee-II had
+financialinstitutionshaveenoughcapitalonaccount
+recommended to raise it to 10 per cent in to meetobligationsandabsorb unexpectedlosses.
+1998)3°
+Theyareofparamountimportancetothebanking
+(iii) Foreign banks as well as Indian banks worldandarepresentlyimplemented byover100
+-
+with foreign presence to follow Basel countriesacross theworld.The BISAccordswere
+II norms , w.e.f. March 31, 2008 while theoutcomeofalong-drawn- outinitiativetostrive
+other scheduled commercial banks to for greater international uniformityin prudential
+follow it not later than March 31, 2009. capital standards for banks’ credit risk. The
+The Basel-II norm for theCARis12 per objectives of the accords could be summed up43
+cent
+.41
+as:
+39. TheRBIisa memberoftheBoardoftheBIS.Thefinancialsectorreformscommenced in India inthefiscal1992 - 93
+afterthereportsubmittedbytheNarasimhamCommitteeonFinancialsystem(CFS).
+40. CommitteeonBankingSectorReforms(M NarasimhanCommittee -II),MoF,Gol,NewDelhi,April1998.
+41. EconomicSurvey2006 - 07 , MoF,Gol,N.Delhi.
+42. D.M.Nachane,Partha RayandSaibalGhosh,IndiaDevelopmentReport 2004 - 05 , Oxford UniversityPress,N.Delhi,
+2005,p.171.
+43. IDR2004 - 05 , op.cit.,p.172.
+
+--- PAGE 373 ---
+BankinginIndia t 12.23
+(i) to strengthen the international banking (i) improve the banking sector’s ability to
+system; absorb shocks arising from financial and
+(ii) to promote convergence of national economicstress, whatever thesource be;
+capitalstandards;and (ii) improve risk management and
+(iii) to iron out competitive inequalities governance;and
+among banks across countries of the (iii) strengthen banks’ transparency and
+world. disclosures.
+The Basel Capital Adequacy Risk-related The capital of the banks has been classified
+Ratio Agreement of 1988 (i.e., Basel I) was not into threetiersasgiven below:
+a legal document. It was designed to apply to Tier1Capital:Aterm usedtodescribethecapital
+internationallyactive banks of member countries —
+adequacyofa bank it can absorb losseswithout
+of the Basel Committee on BankingSupervision a bank being required to cease trading. This is
+(BCBS) of the BIS at Basel, Switzerland. But the the core measure of a bank’s financial strength
+detailsofitsimplementation wereleft to national from a regulator’s point of view (this is the most
+discretion. This is why Basel I looked G10- reliable form of capital). It consists of the types
+centric.44
+of financial capital considered the most reliable
+The first Basel Accord, known as Basel and liquid, primarily stockholders’ equity and
+I focuses on the capital adequacy of financial disclosed reserves of the bank — equity capital
+institutions.The capital adequacy risk (the risk a can’t beredeemedat theoptionoftheholderand
+financial institution faces due to an unexpected disclosed reserves are the liquid assets available
+loss), categorises theassetsof financial institution with thebankitself.
+into five risk categories (0 per cent, 10 per cent,
+20percent,50percent,100percent).Banksthat Tier 2 Capital: A term
+—
+used to describe the
+capital adequacy of a bank it can absorb losses
+operateinternationallyarerequired to havea risk
+weight of8 percentorless. i
+le
+n
+ss
+t
+e
+h
+r
+e
+d
+e
+e
+v
+g
+e
+re
+n
+e
+t o
+o
+f
+f
+a
+pr
+w
+ot
+i
+e
+n
+c
+d
+ti
+i
+o
+n
+n
+g-u
+to
+p
+d
+a
+e
+n
+p
+d
+os
+s
+i
+o
+tor
+p
+s
+r
+.
+ov
+T
+i
+i
+d
+e
+e
+r
+s
+I
+a
+I
+The second Basel Accord, known as Basel
+capital issecondary bank capital (the second most
+II, is to befullyimplemented by2015. Itfocuses reliable forms of capital). This is related to Tier
+on three main areas, including minimum capital 1 Capital. This capital is a measure of a bank’s
+requirements, supervisory review and market
+financial strength from a regulator’s point of
+discipline,whichareknownasthethreepillars.
+The view. It consists of accumulated after- taxsurplus
+focus of thisaccord is tostrengthen international
+of retained earnings, revaluation reserves of fixed
+banking requirements as well as to supervise and assetsand long- term holdingsofequitysecurities,
+enforcetheserequirements.
+general loan-loss reserves, hybrid (debt/equity)
+The third Basel Accord, known as Basel III capital instruments, and subordinated debt and
+is a comprehensiveset of reform measures aimed undisclosed reserves.
+to strengthen the regulation, supervision and
+risk management of the banking sector . These Tier 3 Capital: A term used — to describe the
+capital adequacy of a bank considered the
+measuresaim45to:
+44. G - 10comprisesBelgium,Canada, France,Germany,Italy,Japan,The Netherlands,Sweden, UK,and USA;laterthe
+groupincorporatedLuxembourg,SwitzerlandandrecentlySpaininitsfold.
+45. BankofInternationalSettlemets,Basel,Switzerland,May15,2012.
+
+--- PAGE 374 ---
+12.24 4 IndianEconomy
+tertiary capital of the banks which are used to from 2 to 4.5 per cent starting in phases from
+meet/support market risk, commodities risk and January 2013 to be completed byJanuary 2015.
+foreign currency risk. It includes a variety of In addition, banks will have to set aside another
+debt other than Tier 1 and Tier 2 capitals. Tier 2.5 per cent as a contingency for future stress .
+3 capital debts may include a greater number of Banksthatfailtomeetthebufferwouldbeunable
+subordinated issues, undisclosed reserves and to pay dividends, though theywill not be forced
+general loss reserves compared to Tier 2 capital. to raisecash.
+ToqualifyasTier3capital,assetsmustbelimited The new norms are based on renewed focus
+to 230 per cent of a bank’s Tier 1 capital, be ofcentral bankerson‘macro-prudentialstability’.
+unsecured, subordinated46 and have a minimum Theglobalfinancialcrisisfollowingthecrisisinthe
+maturityof two years. USsub-primemarkethaspromptedthischangein
+Disclosed Reserves are the total liquid cash approach.Theprevioussetofguidelines,popularly
+and theSLRassetsof the banks that maybe used known as Basel II focused on ‘macro-prudential
+anytime.Thiswaytheyare part of itscorecapital regulation’. In other words, global regulators are
+(Tier 1). UndisclosedReservesare the unpublished now focusing on financial stability of the system
+or hidden reserves of a financial institution that as a whole rather than micro regulation of any
+may not appear on publicly available documents individual bank.
+such as a balance sheet, but are nonetheless real Banks in theWest, which are market leaders
+assets,whichareacceptedassuchbymostbanking for the most part, face low growth, an erosion
+institutions but cannot be used at will by the in capital due to sovereign debt exposures and
+bank. That is why they are part of its secondary stiffer regulation. They will have to reckon with
+capital(Tier 2). a permanent decline in their returns on equity
+thanks to enhanced capital requirements under
+BASELIII PROVISIONS47 the new norms. In contrast, Indian banks — and
+Thenewprovisionshavedefinedthecapitalofthe thoseinotheremergingmarketssuchasChinaand
+—
+banks in different way. They consider common Brazil are well-placed to maintain their returns
+equity and retained earnings as the predominant on capital consequent to Basel III. Financial
+component of capital (as the past) but they experts haveopined that Basel III looks changing
+restrict inclusion of items such as deferred tax theeconomiclandscape in which banking power
+assets, mortgage-servicing rights and investments shiftstowards theemergingmarkets.
+in financial institutions to no more than 15 pen
+cent of the common equity component . These BASEL III COMPLIANCEOF
+rules aim to improve the quantity and quality of THE PSBs8C RRBs
+thecapital.
+The capital to risk weighted assets ratio (CRAR)
+Whilethekeycapital ratio has been raised to
+of the scheduled commercial banks of India
+7 per cent of risky assets, according to the new
+was 13.02 per cent by March 2014 (Basel-Ill)
+norms, Tier-I capital that includes common
+fallingto 12.75 per cent bySeptember2014.The
+equityand perpetualpreferredstockwillberaised
+46. Subordinateddebtranksbelowotherdebtswithregardtoclaimsonassetsorearnings(alsoknownasa'juniordebt').Inthe
+caseofdefault,suchcreditorsgetpaidoutuntilaftertheseniordebtholderswerepaidinfull.Thus,suchcapitalsofbanksare
+moreriskythanunsubordinateddebt.
+47. ReserveBankof India , MoF,Gol,NewDelhi,May5,2012.
+
+--- PAGE 375 ---
+BankinginIndia t 12.25
+regulatoryrequirementforCRARis9percentfor InMarch2015,theGolspecifieditsintention
+2015.Thedeclineincapitalpositionsataggregate to bring down its stake in state run banks to 52
+level, however,wasonaccountofdeteriorationin percent togivethem moreavenuestoraisefunds,
+capital positionsof PSBs.WhiletheCRARofthe most banks are expected to approach the market
+scheduled commercial banks (SCB) at 12.75 per to raise capital only next fiscal once the share
+centasofSeptember 2014wassatisfactory,going marketgetsomesynergy.
+forward the banking sector, particularly PSBs
+will requiresubstantial capital to meet regulatory
+STOCKOFMONEY
+requirements with respect to additional capital In every economy it is necessary for the central
+buffers.
+bank to know thestock (amount/level) of money
+InordertomakethePSBsandRRBscompliant available in the economy only then it can go
+to the BaselIIInorms,48thegovernment has been for suitable kind of credit and monetary policy.
+following a recapitalisation programme for them Saying simply, credit and monetary policy of an
+since 2011 — 12. A High Level Committee on the economy is all about changing the level of the
+issue was also set up by the government which money flowing in the economic system . But it
+hassuggested the idea of ‘non-operating holding can be done onlywhen we know the real flow of
+company’ (HoldCo) under a special Act of money.That’swhyitisnecessarytofirstassessthe
+Parliament (actionisyet to comeregardingthis). levelof moneyflowingin theeconomy.
+Meanwhile,thegovernmenthasinfusedthree FollowingtherecommendationsoftheSecond
+tranches of capital into the banks (infused funds WorkingGrouponMoneySupply(SWG)in 1977,
+go to the RRBs, too through the PSBs under RBI has been publishingfour monetaryaggregates
+—
+whom theyfall) upto March 2015: (component of money) M , M , M and M
+2 2 3 4
+(i) Rs.12,000croreinfusedduring2011-12 (are basicallyshort termsfor Money-1, Money-2,
+inseven PSBs. Money-3 and Money-4) besides the Reserve
+(ii) Rs.12,517croreinfusedin2012-13in8
+Money.Thesecomponentsusedtocontainmoney
+PSBs. ofdifferingliquidities:
+(iii) Rs.6,990 crore infused in nine PSBs by Mj = Currency&coinswithpeople+ Demand
+February 2015. But this capital infusion deposits of Banks (Current & Saving
+is based on a new criteria — efficiency Accounts) + Otherdepositsofthe RBI.
+parameters such as return on assets and M = Mj+ Demand depositsof the post offices
+2
+return on equity. Efficient banks are (i.e.,savingschemes’money).
+rewarded with extra capital for their M = M Time/Term deposits of the Banks
+3
+equityso thattheycanfurtherstrengthen (i.e., the money lying in the Recurring
+their position. Deposits&thefixed Deposits).
+48. BaselIIInormsprescribea minimumregulatorycapitalof10.5percentforbanksbyJanuary1,2019.Thisincludesa
+minimumof6percentTierIcapital,plusaminimumof2percentTierIIcapital,anda2.5percentcapitalconservation
+buffer.Forthisbuffer,banksareexpectedtosetasideprofitsmadeduringgoodtimessothatitcan bedrawn upon
+duringperiodsofstress.
+
+--- PAGE 376 ---
+12.26 4 IndianEconomy
+M = M + total deposits of the post offices M = M + All deposits with Post Office
+4 3 4 3
+(both, Demand and Term/Time Savings Banks (excluding National
+Deposits). SavingsCertificates).
+Now the RBI has started49 publishing a set WhiletheWorkingGroupdidnotrecommend
+of new monetary aggregates following the any change in the definition of reserve money
+recommendationsoftheWorkingGrouponMoney and M , it proposed a new intermediatemonetary
+Supply:Analytics and Methodology of Compilation aggregate to be referred to as NM comprising
+2
+(Chairman, Dr. Y. V. Reddy) which submitted currencyand residents’short- term bank deposits
+its report in June 1998. The Working Group with contractual maturity up to and including
+recommended compilation of four monetary one year, which would stand in between narrow
+aggregateson the basisof the balancesheet of the money (which includes only the non-interest-
+banking sector in conformity with the norms of bearingmonetaryliabilitiesofthebankingsector)
+progressive liquidity: M (monetary base), M and broad money (an all-encompassing measure
+(narrow money), M an 0 d M (broad money) | . that includes long- term time deposits). The new
+2 3
+In addition to the monetary aggregates, the broadmoneyaggregate(referredtoasNM forthe
+3
+Working Group had recommended compilation purposeofclarity) in theMonetarySurveywould
+ofthreeliquidityaggregatesnamely,Lj,L andL , comprise,inaddition to NM ,long- termdeposits
+2 3 2
+which include select items of financial liabilities of residents as well as call/term borrowings from
+of non-depository financial corporations such non-bank sources, which have emerged as an
+as development financial institutions and non important source of resource mobilisation for
+¬
+banking financial companies accepting deposits banks.ThecriticaldifferencebetweenM andNM
+3 3
+from the public, apart from post office savings is the treatment of non-resident repatriable fixed
+banks. The New Monetary Aggregates are as foreign currency liabilities of the bankingsystem
+given below: in themoneysupplycompilation.
+Reserve Money (MJ = Currency in There are two basic changes in the new
+circulation + Bankers’ Deposits with the monetaryaggregates . sincethepostofficebank
+RBI + ‘Other’50depositswith theRBI. isnota partofthebankingsector,postaldeposits
+Narrow Money (MJ = Currency with are no longer treated as part of moneysupply, as
+the Public + Demand Deposits with the was the case in the extant M 2 and M 4 . Second,
+Banking System + ‘Other’ deposits with the residency criterion was adopted to a limited
+theRBI. extent for compilation of monetary aggregates .
+The Working Group made a recommendation
+M =MI + Savings Depositsof Post-office
+Sav 2 ings Banks. in favour of compilation of monetary aggregates
+on residency basis. Residency essentially relates
+BroadMoney(MJ = +TimeDeposits
+to the country in which the holder has a centre
+with theBankingSystem. of economic interest. Holdings of currency
+49. Theworkinggroupwassetupin December1997underthechairmanshipofY.V.Reddy(thethen DeputyGovernor,
+RBI)whichsubmitteditsreportinJune1998.
+50. 'Other' depositswith RBI comprise mainly:(i) depositsof quasi -government; other financial institutions including
+primary dealers, (ii) balances in the accounts of foreign Central Banks and Governments, and (iii) accounts of
+internationalagenciessuchastheInternationalMonetaryFund.
+
+--- PAGE 377 ---
+BankinginIndia t 12.27
+and deposits by the non-residents in the rest of NMj= Currency with the Public + Demand
+the world sector, would be determined by their Deposits with the Banking System +
+portfoliochoice.However,thesetransactionsform ‘Other’Depositswith theRBI.
+partof balanceof payments (BoP).Suchholdings NM = NM + Short Term Time Deposits of
+of currency and deposits are not strictly related 2 Resi ] dents (including the contractual
+to thedomesticdemand for monetaryassets . It is maturityofoneyear).
+thereforeargued that thesetransactionsshould be
+NM =NM + Long- term Time Deposits of
+regarded as external liabilities to be netted from 3 Re 2 sidents + Call/Term Funding from
+foreign currency assets of the banking system . FinancialInstitutions.
+However, in the context of developing countries
+Lj = NM + All Depositswith the Post Office
+such as India, which have a large number of 3
+Savings Banks (excluding National
+expatriate workers who remit their savings in the
+SavingsCertificates)
+formofdeposits,itcouldbearguedthatthesenon
+¬
+residentshaveacentreofeconomicinterestintheir L
+2
+= L
+[
++ Term deposits with Term Lending
+countryoforigin.Althoughina macro-economic Institutionsand RefinancingInstitutions
+accounting framework all non-resident deposits (FIs) + Term Borrowing by FIs +
+Certificatesof Deposit issued byFIs
+need to beseparated from domesticdeposits and
+treated as capital flows, the underlyingeconomic L = L + Public Deposits of Non-Banking
+3 2
+realitymaypointotherwise.IntheIndiancontext, FinancialCompanies.
+it maynot beappropriateto excludeallcategories Data on M are published by the RBI on weekly
+of non-residentdepositsfrom domesticmonetary basis, while 0 thosefor and M areavailableon
+aggregates as non-resident rupee deposits are fortnightlybasis.Amongliquidity 3 aggregates, data
+essentially integrated into the domestic financial on Lj and L are published monthly, while those
+system . The new monetary aggregates, therefore, for L are d 2 isseminated quarterly. The working
+exclude only non-resident repatriable foreign group 3 advised for the quarterly publication of
+currency fixed deposits from deposit liabilities FinancialSectorSurveyto capture the dynamic
+and treat thoseasexternalliabilities.Accordingly, linkages between banks and rest of the organised
+fromamongthevariouscategoriesofnon-resident financialsector .
+deposits at present, only Foreign Currency Non-
+Resident Accounts (Banks) [FCNR(B)] deposits LIQUIDITYOFMONEY
+are classified as external liabilities and excluded
+Aswe movefrom M to M theliquidity(inertia,
+from the domestic money stock. Since the bulk [ 4
+stability, spendability) of the money goes on
+of the FCNR(B) deposits are held abroad by
+decreasing and in the opposite direction, the
+commercialbanks,themonetaryimpactofchanges
+liquidityincreases.
+insuchdepositsiscapturedthroughchangesinnet
+foreign exchange assets of the commercial banks. NARROWMONEY
+Thus,nowthenewmonetaryaggregatesNM and
+2 In banking terminology, is called narrow
+NM aswellasliquidityaggregates L ,and L3
+have
+3
+been introduced, the components
+2
+of which
+moneyasitishighlyliquidand bankscannot run
+theirlendingprogrammeswith thismoney.
+areelaboratedasfollows:
+
+--- PAGE 378 ---
+12.28 4 IndianEconomy
+BROADMONEY (i) RBI’snet credit to theGovernment;
+ThemoneycomponentM iscalled broad money (ii) RBI’snet credit to the Banks;
+3
+in the banking terminology , with this money (iii) RBI’snetcredittothecommercialbanks;
+(whichlieswith banksfora known period) banks (iv) netforexreservewith theRBI;
+run theirlendingprogrammes.
+(v) government’s currency liabilities to the
+public;
+MONEYSUPPLY
+(vi) net non-monetaryliabilitiesofthe RBI.
+Ingeneraldiscussionweusuallyusemoneysupply
+RM = l + 2 + 3+ 4 + 5 +6
+to mean money circulation, money flow in the —
+economy. But in banking and typical monetary Asper theEconomicSurvey2014 15,therate
+of growth of reserve money comprising currency
+management terminologythelevelandsupplyof
+M isknownasmoneysupply.Thegrowthrateof in circulation and depositswith the RBI (bankers
+bro 3 admoney(M ),i.e.,moneysupply, wasnotonly and others) decelerated from an average of 17.8
+lowerthantheind 3 icativegrowthsetbytheReserve per cent in 2014-15 to 4.3 per cent in 2013-14.
+Almost the entire increase in the reserve money
+BankofIndiabutitalsowitnessedcontinuousand
+of Rs.3.258 billion between the period consisted
+sequential deceleration in the last 7 quarters and
+moderated to 11.2 per cent by December 2012.
+ofincreasein currencyincirculation. Assourcesof
+Aggregatedepositswith thebankswerethemajor reserve money, net RBI credit to thegovernment
+componentof broad moneycountingfor over85 and increase in net financial assets of the RBI
+per cent remaining almost stable.The sources of contributed to thegrowth of basemoney .
+broadmoneyarenetbankcredittothegovernment
+MONEYMULTIPLIER
+and to thecommercialsector .Thesetwo together
+accounted for nearly 100 per cent of the broad AtendMarch2012,themoneymultiplier(ratioof
+money in 2012 — 13, compared to 89 percent in M to M ) was5.2, higher thanend-March2015,
+3 0
+2009-10. due to cumulative 125 basis point reduction in
+CRR. During 2012 — 13, the money multiplier
+MINIMUM RESERVE generally stayed high reflecting again, the CRR
+The RBI is required to maintain a reserve cuts . As on December 31, 2014, the money
+equivalent of Rs. 200 crores in gold and foreign multiplier was 5.5 compared with 5.2 on the
+currency with itself, of which Rs. 115 crores
+correspondingdateofthepreviousyear(Economic
+should beingold.Against this reserve, the RBI is
+Survey2014-15) .
+empowered to issue currency to any extent . This CREDITCOUNSELLING
+is beingfollowed since1957and is known as the
+Minimum ReserveSystem (MRS). Advisingborrowerstoovercometheirdebtburden
+and improve money management skills is credit
+RESERVEMONEY counselling.Thefirstsuchwell-knownagencywas
+Thegrossamountofthefollowingsixsegmentsof created in the USA when credit granters created
+National Foundation for Credit Counselling
+moneyat any point of time is known as Reserve
+(NFCC) in 1951.51
+Money(RM)fortheeconomyorthegovernment:
+India’s sovereign debt is usually rated bysix
+51. Y.V.Reddy,theRBIGonvernor,TheEconomicTimes , N.Delhi, September 11,2006.
+
+--- PAGE 379 ---
+BankinginIndia t 12.29
+—
+majorsovereigncredit ratingagencies (SCRAs)of rating agency S & P a McGraw Hill
+theworld whichare: GroupofCompanies.
+(i) Fitch Ratings, (ii) ICRA (Investment Information and
+(ii) Moody’s InvestorsService, Credit RatingAgencyof India Ltd.) was
+(iii) Standardand Poor’s (S&P), set up in 1991 by IFCI, LIC, SBI and
+selectbanksaswellasfinancialinstitutions
+(iv) Dominion Bond RatingService(DBRS),
+to
+ratedebtinstruments.
+(v) Japanese Credit Rating Agency (JCRA),
+(iii) CARE (Credit Analyses and Research
+and
+Ltd.) wasset up in 1993 by IDBI, other
+(vi) Ratingand Investment Information Inc.,
+financial institutions, nationalised banks
+Tokyo (R&I).
+and private sector finance companies to
+As onJanuary 15,2013 most of these rating rateall typesofdebt instruments.
+agencies have put India under ‘stable’ category (iv) ONICRA (Onida Individual Credit
+in foreign and local currencies barring Fitch Rating Agency of India Ltd.) was set
+and S&P which have put its foreign currency up by ONIDA finance (a private sector
+in ‘negative’ category . The government is taking financecompany) in 1995 to ratecredit-
+a number of steps to improve its interaction worthiness of non-corporate consumers
+withthemajorSCRAssothattheymakeinformed and their debt instruments, i.e., credit
+decisionsas the EconomicSurvey2012 — 13says.
+cards, hire-purchase, housing finance,
+rentalagreementsand bankfinance.
+CREDITRATING
+(v) SMERA (Small and Medium Enterprises
+To assess the credit worthiness (credit record, RatingAgency) wasset up in September
+integrity, capability) of a prospective (would be) 2005,to ratetheoverallstrengthofsmall
+borrower to meetdebtobligationsiscredit rating. and medium enterprises (SMEs) — the
+Today it is done in the cases of individuals, erstwhile SSIs. It is not a credit rating
+companies and even countries. There are some agency precisely, but its ratings are used
+world-renowned agenciessuch as the Moody’s, S for this purpose, too . A joint venture of
+& P. The concept was first introduced by John SIDBI (the largest share-holder with 22
+Moodyin the USA (1909). Usuallyequityshare
+per cent stake), SBI, ICICI Bank, Dun
+isnot rated here.Primarily, ratingsareaninvestor
+& Bradstreet (an international credit
+service.
+information company), five publicsector
+Credit ratingwasintroducedin India is1988 banks (PNB, BOB, BOI, Canara Bank,
+by the ICICI and UTI, jointly.The major credit UBIwith 28 percentstaketogether)and
+ratingagenciesofIndiaare: CIBIL (Credit Information Bureau of
+(i) CRISIL (Credit Rating Information of India Ltd.).
+India Ltd.) was jointly promoted by A general credit rating service not
+ICICIandUTIwithsharecapitalcoming linked to anydebt issueisalso availed by
+from SBI, LIC, United India Insurance companies — already offered in India by
+CompanyLtd. to ratedebtinstrument — ratingagencies — CRISILcallssuchratings
+.
+debenture. InApril 2005 its 51 per cent as Credit Assessment 52 International
+equity was acquired by the US credit rating agencies such as Moody’s, S &
+52. S.Sundararajan,BookofFinancialTerms,TataMcGraw -Hill,N.Delhi,2004,p.44.
+
+--- PAGE 380 ---
+12.30 4 IndianEconomy
+P also undertake sovereign ratings, i.e., Rateofinterestapplicableto theseaccountsarein
+—
+of countries highly instrumental in accordancewiththedirectivesissuedbyRBIfrom
+external borrowingsofthecountries. timeto time.
+Individualsarealsocoveredbycreditappraisal NRO accounts can be opened by any person
+which is on useful information for the consumer residentoutsideIndiawithanauthoriseddealeror
+creditfirms.To maintainadatabaseon thecredit anauthorisedbankforcollectingtheirfundsfrom
+records of individuals the credit Information local bonafide transactions in Indian Rupees.
+Bureau of India Limited (CIBIL) was set up in When a resident becomes an NRI, his existing
+May 2004 which makes credit informations Rupee accounts are designated as NRO. These
+availableto banksandfinancialinstitutionsabout accounts can be in the form of current, savings,
+prospectiveindividual borrowers.53 recurringorfixed depositaccounts .
+| - " There were two more NRI deposit accounts
+NON RESIDENT INDIAN DEPOSITS
+inoperation,viz., Non-Resident(Non-Repatriable)
+Rupee DepositAccountand Non-Resident (Special)
+Foreign Exchange Management (Deposit)
+—
+Regulations, 2000 permits Non-Resident Indians Rupee Account an amendment to Foreign
+ExchangeManagement (Deposit) Regulations, in
+(NRIs) to have deposit accounts with authorised
+dealersand with banks authorised bythe Reserve 2002, discontinued the acceptance of deposits in
+Bankof India (RBI) whichinclude:54
+thesetwoaccountsfromApril2002 onwards.
+(i) Foreign Currency Non-Resident (Bank) Repatriation of funds in FCNR(B) and
+Account [FCNR(B)Account] NRE accounts is permitted. Hence, deposits in
+(ii) Non-Resident External Account (NRE these accounts are included in India’s external
+debt outstanding. While the principal of NRO
+Account)
+deposits is non-repatriable, current income and
+(iii) Non-Resident Ordinary Rupee Account
+interestearningis repatriable.Account-holdersof
+(NROAccount)
+NROaccountsarepermittedtoannuallyremitan
+FCNR(B) accounts can be opened by NRIs and amount up to US$ 1 million out of the balances
+Overseas Corporate Bodies (OCBs) with an heldintheiraccounts .Therefore,depositsinNRO
+authorised dealer.Theaccountscan beopened in accountstooareincluded in India’sexternaldebt.
+the form of term deposits. Deposits of funds are
+allowed in Pound Sterling, US Dollar, Japanese GUIDELINESFORLICENSINGOF
+Yen and Euro.Rateofinterestapplicableto these
+NEWBANKS
+accounts are in accordance with the directives
+issued byRBIfrom timeto time. The RBI on February 22, 2013 released the
+Guidelines for ‘Licensing of New Banks in the
+NREaccountscan beopened byNRIsandOCBs PrivateSector’.Keyfeaturesoftheguidelinesare:
+withauthoriseddealersandwithbanksauthorised
+by RBI. These can be in the form of savings,
+(i) EligiblePromoters:Aprivatesector/public
+current, recurring or fixed deposit accounts .
+sector/NBFCs/entity/groupeligibletoset
+Deposits are allowed in any permitted currency.
+upabankthroughawholly-owned“Non-
+53. Ibid.
+54. AsperthelatestupdatebytheRBI , May11,2012.
+
+--- PAGE 381 ---
+BankinginIndia t 12.31
+Operative Financial Holding Company not impede effective supervision of the
+(NOFHC)”. bankand the NOFHCbyRBI.
+(it) Fitand Proper’criteria:A past record of (viii) Prudential norms for the NOFHC: The
+sound credentials, integrity and sound prudential norms will be applied to
+financial background with a successful NOFHC on similar lines as that of the
+track record of10yearswillbe required. bank.
+(Hi) Corporate structure of the NOFHC: The (ix) Exposure norms: The Bank/NOFHC
+NOFHC to be wholly owned by the allowed no exposure to the Promoter
+—
+promoter/promoter group which shall Group the bankshall not invest in the
+hold the bank as well as all the other equity/debt capital instruments of any
+financialservicesentitiesof thegroup. financialentitiesheld bythe NOFHC.
+(iv) Minimum voting equity capital (x) Business Plan for the bank:The business
+requirements for banks and shareholding plan should be realistic and viable and
+by NOFHC:The initial minimum paid- shouldaddresshowthebankproposesto
+up votingequitycapitaN for a bankshall achieve financialinclusion.
+be Rs. 5 billion. The NOFHC shall (xi) Additional conditions for NBFCs
+initially hold a minimum of 40 per cent promoting/convertingintoabank:Existing
+of the paid-up voting equity capital of NBFCs, if considered eligible, may be
+the bank which shall be locked in for a permitted to promote a new bank or
+period of five years and which shall be convert themselvesinto banks.
+brought down to 15 per cent within 12 (xii) Otherconditionsforthebank:
+years. Bank’s shares to be listed on the
+(a) To open at least 25 per cent of its
+stock exchanges within threeyears of the
+businesscommencement .
+branchesin un-banked ruralcentres(
+with population of upto 9,999 as per
+(v) Regulatory framework: The bank to be thelatestcensus).
+regulated by the relevant Acts/Statutes/
+(b) To comply with the priority sector
+Directives, issued by the RBI and
+other regulators. The NOFHC shall lending targets applicable to the
+existingdomesticbanks.
+be registered as an NBFC with the RBI
+(c) Bankspromoted bygroupshaving40
+and will be governed bya separateset of
+directionsissued bythe RBI. per cent or more assets/income from
+non-financial business will require
+(vi) Foreignshareholdinginthebank:Foreign
+RBI’s prior approvalfor raisingpaid-
+shareholdingupto49percentforthefirst
+up voting equity capital beyond Rs.
+5 years after which it will be as per the
+10billion.
+extant
+policy.
+(d) Any non-compliance of terms and
+(vii) Corporate governance of NOFHC: At
+conditionswillattractpenalmeasures
+least 50 per cent of the Directors of
+including cancellation of licence of
+the NOFHC should be independent
+the bank.
+directors.Thecorporatestructureshould
+55. Thepartof'Authorised Capital'(thelimituptowhichacompanycan issueshares)which hasbeenactually'paid'by
+theshareholdersisknownasthe'Paid-upCapital'ofacompany,[fordetailedanalysisofdifferentkindof'Capitals'of
+acompanyrefertheChapter14:SecurityMarketinIndia].
+
+--- PAGE 382 ---
+12.32 4 IndianEconomy
+Two new banks get licence: The RBI by early firm).The concerned banks only handle
+April, 2014granted‘in-principle’approval to two part of the process that is‘cash handling’
+applicants,IDFCLimitedandBandhan Financial and ‘back-end server’ connectivity.They
+—
+Services Private Limited, to set up banks ‘in ¬ carry‘logo’ofthebankwhichoutsources
+principle’ approval granted will be valid for 18 theirservice.
+months during which the applicants have to (iii) White Label ATMs (WLAs): These are
+comply with the requirements and fulfil other ‘owned’ and ‘operated’ by a third party
+conditions.Bothareleadingnon-bankingfinance (a non-banking firm). They do not bear
+companies, while IDFC deals in infrastructure ‘logo’ of the banks they serve (that is
+finance, Bandhan is in microfinance business. why such a name). In place, they carry
+A High Level Advisory Committee headed by logo of the firm which own them. They
+former RBI Governor BimalJalan recommended serve customers of all banks and are
+thesetwoapplicantsoutofalistof25applications.
+interconnected with the entire ATM
+Thecaseof India post will bedecided bythe RBI network in the country . The role of the
+in consultation with the Government of India. concernedbankisonlylimitedtoprovide
+The RBI also announced to work on giving accountinformationandback-endmoney
+licences more regularly, that is virtually‘on-tap’. transfers to the third parties managing
+As per the RBI, those applicants who have been these ATM machines. These entities
+denied licences can apply for the ‘differentiated have a mandate to deploy 67 per cent
+licences’ (once RBI invites applications for of ATMs in rural locations (Tier III-VI)
+—
+it) some of them may be better off applying and33percentin urbanlocations(TierI
+for a differentiated licence rather than for a full and II cities).TheTataCommunications
+licence. The so-called differentiated banks will PaymentSolutions became the first such
+be specialised institutions such as the ‘payment firm to get permission of the RBI (by
+banks’ suggested by an RBI panel (headed by mid-2013) to set up such ATMs — its
+Nachiket Mor) on financial inclusion, to widen brand nameis‘Indicash’.
+thespread ofpaymentservicesand depositproducts
+The main objectives of the Brown/White
+tosmallbusinessesand low-incomehouseholds.
+LabelATMsarecuttingoperationcostofrunning
+themandfinancialinclusion.
+|
+LABELSOFATM
+-
+NONOPERATIVEFINANCIALHOLDING
+The automated teller machine (ATM) enetered
+India bylate1980sand haveevolvedinto threeof COMPANY(NOFHC)56 ^^^^
+—
+itstypesbynow The difference between an operating company
+(i) Bank’s own ATMs:These are owned and and a holding company lies in the fundamental
+operatedbytheconcernedbankandcarry structures of the two, in their management and
+the bank’s ‘logo’. They are the costliest their interactions with one another. Business
+way to provide such service to bank’s goals are often different, and both business types
+customers . are after profits, but holding companies can still
+(ii) Brown Label ATMs (BLAs): These are benefit from operating company losses under
+owned by third party (a non-banking certain conditions.
+56. Thoughthissub- topicoriginallybelongstotheChapter14:SecurityMarketinIndia,ithasbeendiscussedheretomake
+thenewguidelinesofsetting -upbanksan'easy-to-understand'thingforthereaders.
+
+--- PAGE 383 ---
+BankinginIndia t 12.33
+The primaryfunction of a holdingcompany can benefit the parent company in the form of
+istoinvestinothercompanies,commonlyknown a business loss when tax time rolls around. This
+assubsidiaries.Holdingcompaniesareusuallynot does not benefit the operating company, as it
+involvedinday- to -dayoperationsoftheoperating is responsible for operating income to run the
+company, but lend initial or ongoing financial business.Ifthelosses becometoogreat,operating
+support via cash reserves or stock sales, and may companiescangooutofbusiness,buttheholding
+assist in restructuring the operational model to company can still benefit because the operating
+ensure profits. Holding companies are normally company can help to balance overall profits and
+structured as corporations (limited liability firms stock prices.
+i.e.,knownasaLtd.companyin India)to protect Therearethreebasictypesofholdingcompanies:
+assetsandabsorbfinanciallosses.
+(i) A pure holding company that is non
+¬
+Operating companies are owned by the operatingandexistssolelytoinvestinand
+holding company, but are responsible for all hold the votingshares of itssubsidiaries.
+day- to -day operations of the company. When a This type of holding company derives
+holdingcompanycreatesorpurchasesanoperating its income from the dividends earned
+company, theyaresometimesallowed to conduct from its ownership of the shares of its
+businessasusual — especially,iftheyareprofitable. subsidiaries and from any gains realised
+Net profitsafterexpensesarethen handedover to fromother investments.
+theholdingcompany.
+(ii) A general or operating holding company
+Ownership of operating companies, even that earns its income from selling goods
+when purchased, revert to the holding company. and services in addition to the income
+Former owners who are kept on-board are often derivedfromitsownershipofsubsidiaries.
+givencontroloftheoperatingcompanyintheform
+(iii) A pyramid holding company that owns
+of executive management responsibility, but have controlling interest in its subsidiaries
+noownershiprights.Allmajordecisionsthatmay
+with less invested capital than the two
+affect profitability or involve large expenditures other categories.
+mustfirst beapproved bytheholdingcompany.
+INIDHI
+Although operating company’s profitability
+should makesensefor the holdingcompany, this
+isnotalwaysthecase.Especiallyforlargerholding Nidhi in the Indian context means ‘treasure’.
+companies with heavy tax burdens, owning one However, in the Indian financial sector it refers
+or more operating companies that lose money to any mutual benefit society’7 notified by the
+57. Mutual Benefit Society (also known globally as 'benefit society' or 'mutual aid society') is an organization, or
+voluntaryassociationformed to provide mutualaid, benefit,orinsurancefor relieffrom common difficulties.Such
+organizationsmaybeformallyorganizedwithchartersandestablishedcustoms,ormayarisead hoctomeetunique
+needsofaparticulartimeandplace.Theymaybeorganizedaroundasharedethnicbackground,religion,occupation,
+geographical region or other basis. Benefits may include moneyor assistanceforsickness, retirement, education,
+birthofa baby,funeraland medicalexpenses,unemployment.Often benefitsocietiesprovideasocialoreducational
+frameworkformembersandtheirfamiliestosupporteachotherandcontributetothewidercommunity.
+A benefitsocietymay havesomecommonfeatures-membershavingequivalentopportunity in theorganization;
+members having equivalent benefits; aid goes to needy (stronger helping the weaker); payment of benefits by
+collectionoffundsfromthemembers;educatingothersaboutagroup'sinterest;preservingculturaltraditions;and
+mutualdefence.
+Examplesof benefitsocietiesinclude trade unions,self-helpgroups,etc. It is believed thatsuch societies predate
+humanculturearefoundaroundtheworld.
+
+--- PAGE 384 ---
+12.34 4 IndianEconomy
+Central/UnionGovernmentasaNidhiCompany. (iii) Mutual benefit company (MBC), i.e.,
+They are created mainly for cultivating the habit potentialnidhicompany;i.e.,acompany
+of thrift and savings amongst its members. The which is working on the lines of a
+companies doing Nidhi business, viz., borrowing Nidhi company, but has not yet been so
+from members and lending to members only, declared by the Central Government;
+are known under different names such as Nidhi, has minimum net owned fund (NOF)
+Permanent Fund, Benefit Funds, Mutual Benefit of Rs.10lakh, hasapplied to the RBI for
+Fundsand MutualBenefitCompany . certificate of registration and also to the
+Nidhis are more popular in South India Department of CompanyAffairs (DCA)
+and are highly localised single office institutions. for being notified as a Nidhi company
+They are mutual benefit societies, because their and has not contravened directions /
+dealings are restricted only to the members; regulationsof RBI/DCA.
+and membership is limited to individuals. The (iv) Miscellaneous non-banking company
+principalsourceoffundsisthecontributionfrom (MNBC), i.e., chitfundcompany.
+themembers.Theloansaregiven to themembers SinceNidhiscomeunderoneclassofNBFCs,
+at relatively reasonable rates for purposessuch as RBI is empowered to issue directions to them
+house construction or repairs and are generally in matters relating to their deposit acceptance
+secured.Thedepositsmobilised byNidhisarenot activities.However,in recognitionofthefactthat
+much when compared to the organised banking theseNidhisdealwiththeirshareholder-members
+.
+sector only, RBI hasexempted the notified Nidhisfrom
+Nidhis are companies registered under the the core provisions of the RBI Act and other
+Companies Act, 1956 and are regulated by the directions applicable to NBFCs. As on date
+Ministry of Corporate Affairs (MCA). Even (February2013) RBI does not have anyspecified
+though Nidhis are regulated by the provisions regulatoryframeworkfor Nidhis.
+of the Companies Act, 1956, they are exempted The Central Government in March 2000
+fromcertainprovisionsoftheAct,asapplicableto constituted a committee to examine the various
+other companies,due to limitingtheir operations aspects of the functioning of Nidhi Companies.
+within members. There was no government notification defining
+Nidhis are also included in the definition of the word ‘Nidhi’. Taking into consideration
+NBFCs,which operate mainlyin the unorganised the manner of functioning of Nidhis and
+moneymarket.However,since1997,NBFCshave the recommendations of the P. Sabanayagam
+been brought increasingly under the regulatory Committee in its report and also to prevent
+ambit of the RBI. Non-bankingfinancialentities unscrupulous persons using the word ‘Nidhi’ in
+partiallyorwhollyregulated bythe RBI include: their name without being incorporated by the
+(i) NBFCs comprising equipment leasing Department of CompanyAffairs (DCA) and yet
+(EL), hire purchase finance (HP), loan doing Nidhi business, the committee suggested
+(LC),investment(IC)[includingprimary thefollowingdefinitionfor Nidhis (a part of this
+dealers (PDs] and residuarynon-banking definition is appearing in the new Companies Bill
+companies RNBC; 2012(Section406):
+(ii) Mutual benefit financial company “Nidhiisacompanyformedwiththeexclusive
+(MBFC), i.e., nidhicompany, objectofcultivatingthehabitofthrift,savingsand
+functioningforthemutualbenefitofmembersby
+
+--- PAGE 385 ---
+BankinginIndia t 12.35
+receiving deposits onlyfrom individuals enrolled them.Functionally,chitfundsareincludedinthe
+as members and by lending only to individuals, definition of NBFCs by the RBI under thesub ¬
+also enrolled as members, and which functions headmiscellaneousnon-bankingcompany(fANB > C) .
+as per Notification and Guidelines prescribed by But RBI has not laid out anyseparate regulatory
+the DCA. The word Nidhi shall not form part frameworkfor them.
+of the name of any company, firm or individual Official Definition:As per the Chit Funds Act,
+engagedinborrowingandlendingmoneywithout
+1982, chit means “a transaction whether called
+incorporation by DCA and such contravention chit,chitfund,chitty,kurior byanyothernameby
+willattract penalaction.”
+or under whicha personentersinto anagreement
+withaspecified numberofpersonsthateveryone
+|
+CHIT FUND
+of them shall subscribe a certain sum of money
+Recently, Chit Fund was in centre of news after (or a certain quantityofgrain instead) bywayof
+the Kolkata-based Saradha ChitFundscam came periodical installments over a definite period and
+tolight.Mostofthemediapeoplewerethemselves that each such subscriber shall, in his turn, as
+not very clear about the ‘finer’ points related determined by lot or by auction or by tender or
+to the idea of ‘chits’ in India, but they kept on in such other manner as may be specified in the
+highlightingchitsastheyneeded to reporton the chit agreement, beentitled to the prizeamount”.
+scam. Let us try understand what ‘chits’ are and Atransactionisnotachit, ifinsuch transaction:
+someothersimilarconceptsin India: (i) Somealone,butnotall,ofthesubscribers
+Chitfunds (also known bytheir other names
+gettheprizeamountwithoutanyliability
+suchas — Chitty,Kuri,MiscellaneousNon-Banking to payfuturesubscriptions;or
+Company) areessentiallysavinginstitutions.They (ii) All the subscribers get the chit amount
+are of various forms and lack any standardised by turns with a liability to pay future
+form.Chitfundshaveregularmemberswhomake subscriptions.
+periodicalsubscriptions to thefund.The periodic
+|
+collection is given to some member of the chit URJIT PATEL COMMITTEE
+funds selected on the basis of previously agreed
+criterion.Thebeneficiaryisselected usuallyonthe An expert committee headed by Urjit R. Patel,
+Deputy Governor of the RBI was appointed in
+basisofbidsor bydrawoflotsorinsomecasesby
+auction or by tender. In any case, each member S M e o p n te e m tar b y er Po 2 li 0 c 1 y 3 Fr t a o me R w e o v r is k e . T a h n e d m S a tr i e n ng o t b h j e e n cti t v h e e
+of the chit fund is assured of his turn before the
+of the committee was to recommend what needs
+second round starts and any member becomes
+entitled to get periodic collection again. Chit to be done to revise and strengthen the current
+monetary policy framework with a view to
+fundsaretheIndianversionsof‘RotatingSavings
+andCreditAssociations’foundacrosstheglobe. making it transparent and predictable.The panel
+submitted its report (January, 2014) made the
+Chit fund business is regulated under the
+followingrecommendations:
+CentralChitFundsAct,1982andtherulesframed
+1. CPI (combined) should be used as the
+under this Act by the various state governments
+nominal anchor for a flexible inflation
+for this purpose. The Central Government has
+targeting (FIT) framework. The choice
+notframedanyrulesofoperationfor them.Thus,
+ofCPIas nominalanchor wasmainlyon
+registrationandregulationofchitfundsarecarried
+account of the fact that the CPI closely
+outbystategovernmentsunder therulesframedby
+
+--- PAGE 386 ---
+12.36 4 IndianEconomy
+reflects cost of living and has larger rangeofinstrumentsat itscommand.
+influences on inflationary expectations With regard to inflows that are
+than otheranchors. excessivein relation to externalfinancing
+2. Target rate of inflation should be 4 requirements and the need for sterilised
+per cent with a tolerance band of 2 per intervention, the RBI should build a
+cent to be achieved in a two -year time sterilisation reserveout of its existing and
+frame. evolvingportfolioofGolsecuritiesacross
+3. The transition path to the target zone the range of maturities, but accentuated
+should be graduated to bring down towards a ‘strike capability’ to rapidly
+inflationfromthecurrentlevelofaround intervene at the short-end. The central
+10percentto8percentoveraperiodnot bank should introduce a remunerated
+exceeding 12 months and to 6 per cent standing deposit facility, which would
+over a period not exceeding the next 24 effectively empower it with unlimited
+months. sterilisationcapability.Asabufferagainst
+4. Administered prices and interest outflows, the RBI’s strategy should be
+rates should be eliminated as they act to build an adequate level of foreign
+exchangereserves.
+as impediments to monetary policy
+transmission and achievement of price 8. The committee asked the Central
+stability. Government to ensure that the fiscal
+3. The monetary policy decision-making deficitasa ratio to GDP (grossdomestic
+should be vested with a monetary policy
+product) is broughtdown to3.0percent
+— by2016-17.
+committee (MPC) the RBI Governor
+asits ChairmanandDeputyGovernor In view of the elevated level of current CPI
+as the Vice-Chairman, the Executive inflation and hardened inflation expectations,
+Director in charge of monetary policy supplyconstraintsandweakoutput performance,
+could be its member and two external the committee said the transition path to the
+members. target zone should be graduated to bringing
+6. All fixed income financial products down inflation from the current level of 10 per
+should be treated on a par with bank cent to 8 per centover a period notexceedingthe
+depositsfor the purposesof taxation and next 12 months and to 6 per cent over a period
+TDS. With a sharp rise in the ratio of not exceeding the next 24 month period before
+agricultural credit to agricultural GDP, formally adopting the recommended target
+the need for subventions on interest rate of 4 per cent inflation with a band of +/- 2 per
+.
+for lending to certainsectors would have cent
+to
+re-visited. Sincefoodandfuelaccountfor morethan57
+7. In view of the cross-country and Indian percentoftheCPIonwhichthedirectinfluenceof
+experience with global spillovers driving
+monetarypolicyislimited,thecommitmenttothe
+episodes of large and volatile capital nominal anchor would need to be demonstrated
+inflowsaswellasoutflows,thecommittee bytimelymonetary policy response to risks from
+second-roundeffectsandinflationexpectationsin
+felt that a flexible setting of monetary
+policy by the RBI in the short-run was
+responsetoshockstofoodandfuel,thecommittee
+warranted.This presages readiness to use pointedout .
+
+--- PAGE 387 ---
+BankinginIndia t 12.37
+|
+enhancements.
+NACHIKETMOR COMMITTEE
+3. Consolidating NBFCdefinitions into two
+The RBI set up the Committee on Comprehensive categories: Core investment companies
+Financial Services for Small Businesses and Low- and other NBFCs. Restore permission
+Income Households (CCFS) in September 2013 of NBFCs-ND to act as business
+under the Chairmanship of Dr Nachiket Mor. correspondents.
+The Committee’s Report was released on 7 6. On priority sector lending, while the
+January2014.
+Committeeacknowledgedthatthecurrent
+Atitscore,theCommittee’srecommendations focus of the policy, on small farmers,
+are that in order to achieve the task of financial small businesses, and weaker sections,
+inclusionina mannerthatenhancesbothfinancial was well placed, it recommended an
+inclusionandstability,thereisneedtomoveaway approach that incentivizes each provider
+from an exclusive focus on any one model to an to specialise in one or more sectors of
+approachwheremultiplemodelsandpartnerships theeconomyand regions of thecountry .
+are allowed to thrive, particularly between Government subsidies to be channelled
+national full-service banks, regional banks of as direct benefit transfers (DBTs) rather
+various types, NBFCs, and financial markets. than assubventionsor waivers.
+The common theme of all the recommendations 7. All financial firms regulated by the RBI
+madebytheCommitteeisthatinsteadoffocusing be required to have an internal process
+onlyonlargegeneralistinstitutions,specialization to assess suitability of products prior to
+and partnerships between specialists must be advisingclientswith regard to them.
+encouraged.Suchanapproach, in itsview,would
+be far more effective at delivering high quality | SMALL8C PAYMENT BANKS
+financial inclusion, without compromising
+financial stability or responsibility towards By mid-July 2014, the RBI issued the draft
+customers . Some of the key recommendations of guidelinesforsetting upsmall banksand payment
+theCCFSinclude: banks.Theguidelinessaid that bothare‘niche’or
+‘differentiated’bankswith thecommon objective
+1. UniversalElectronicBankAccountforevery
+offurtheringfinancialinclusion.Itisin
+pursuance
+resident to be madeavailableat the time
+ofissuingtheAadhaar number. of the announcement made in the Union
+Budget 2014 — 15 (Full) . The details regarding
+2. Licensing,withloweredentrybarriersbut
+the provisions to set up such banks and their
+otherwise equivalent treatment, more
+operationalcriteriaareasgiven below:
+functionally focused banks, including
+payment banks, wholesale consumer T — he guidelines to set up both the banks are
+banks,and wholesaleinvestment banks. same
+3. Developingrisk-basedsupervisionprocesses (cid:127) Theminimumcapitalrequirementwould
+beRs100crore.
+for regional banks and strengthening
+existingonesbeforecreatingnewregional (cid:127) Promoter contribution would be at least
+banks. 40percentfor thefirstfiveyears.Excess
+4. Reorienting the focus of NABARD, shareholdingshould be brought down to
+SIDBI, and NHB to be market-makers 40per cent bytheendoffifthyear, to30
+and providers of risk-based credit per cent by the end of 10th year and to
+
+--- PAGE 388 ---
+12.38 4 IndianEconomy
+26 per cent in 12 years from the date of (cid:127) The area of operations would normally
+commencementof business.
+be restricted to contiguous districts in a
+(cid:127) Foreign shareholding in these banks will homogenous cluster of states or union
+beas percurrent FDI policy. territories so that the Small Bank has
+(cid:127) Voting rights to be linewith theexisting a ‘local feel’ and culture. However, if
+guidelinefor privatebanks. necessary, it would be allowed to expand
+(cid:127) Entitiesother than promoterswill not be its area of operations beyon contiguous
+permitted to haveshareholding in excess districts in one or more states with
+of10percent .
+reasonablegeographicalproximity.
+(cid:127) Thebankshouldcomplywiththecorporate (cid:127) The bankshall primarily undertake basic
+governanceguidelines, including‘fit and banking activities of accepting deposits
+proper’ criteriafor Directorsasissued by
+and lendingto small farmers, small
+RBI. businesses, micro and small industries,
+(cid:127) Operations of the bank should be fully
+and unorganisedsectorentities.Itcannot
+networked and technology driven from set up subsidiaries to undertake non ¬
+the beginning.
+bankingfinancialservices activities.After
+theinitialstabilisationperiodoffiveyears,
+SMALLBANKS and after a review, the RBI mayliberalise
+thescopeofactivitiesforSmallBanks.
+The purposeof thesmall bankswill beto provide
+(cid:127) The promoters’ other financial and non-
+a whole suite of basic banking products such as
+financialservicesactivities, if any,should
+depositsandsupplyof credit,but in a limitedarea
+ofoperation . Theobjectiveof theSmall Banks to m be ing d l i e s d tin w c i t t l h y b r a i n n k g- in fe g n b ce u d sin a e n ss d . not co ¬
+increasefinancialinclusionbyprovisionofsavings
+vehicles to under-served and unservedsectionsof (cid:127) A robust risk management framework
+is required and the banks would be
+the population,supplyof credit tosmallfarmers,
+microandsmallindustries,andother unorganised subject toall prudential norms and
+sector entities through high technology low- cost RBI regulations that apply to existing
+operations. Other features of the small banks are commercialbanks, including
+maintenanceofCRRandSLR.
+asfollows:
+(cid:127) Resident individuals with 10 years of (cid:127) In view of concentration of area of
+experience in banking and finance, operations, theSmall Bankwould need a
+diversified portfolio of loans, spread over
+companiesandSocietieswillbeeligibleas
+promoterstoset upsmallbanks. NFBCs,
+itareaofoperations.
+microfinance institutions (MFIs), and (cid:127) The maximum loan size and investment
+Local Area Banks (LABs) can convert limitexposuretosingle/group borrowers/
+their operations into those of a small issuerswould be restricted to 15 per cent
+bank. Local focus and ability to serve ofcapitalfunds.
+smaller customers will be a key criterion (cid:127) Loansand advancesof up to Rs 25lakhs,
+inlicensingsuch banks. primarily to micro enterprises, should
+(cid:127) For the initial three years, prior approval constituteat least 50 per centof theloan
+will berequiredfor branchexpansion. portfolio.
+
+--- PAGE 389 ---
+BankinginIndia t 12.39
+(cid:127) For the first three years, 25 per cent of (cid:127) NocreditlendingisallowedforPayments
+branches should be in unbanked rural Banks.
+areas.
+(cid:127) Thefloatfundscan beparkedonlyin less
+than oneyear G-Secs.
+PAYMENTSBANKS
+Meanwhile, the RBI has received 72
+The objective of payments banks is to increase applications for small banks and 41 applications
+financial inclusion by providing small savings for payments banks. The applications are, at
+accounts, payment/remittanceservicesto migrant present, under consideration of the RBI. It is
+labour, lowincome households, small businesses, expected thatsoonsomeof them willget thenod
+other unorganised sector entities and other users forsetting uptheseniche banks.
+by enabling high volume-low value transactions
+|
+in depositsand payments/remittanceservicesin a FINANCIAL INCLUSION
+secured technology-driven environment.
+Financial inclusion is an important priority of
+(cid:127) Those who can promote a payments
+banks can be a non-bank PPIs, NBFCs, the government . The objective is to ensure the
+excluded sections, i.e. weaker sections and low
+corporate’s,mobiletelephonecompanies,
+super market chains, real sector
+incomegroups,accesstovariousfinancialservices
+such as a basicsavings bank account, need-based
+cooperativescompaniesand publicsector
+entities. Even banks can take equity in
+credit, remittancefacility, insuranceand pension.
+Payments Banks. The government has recently launched an
+effectiveschemeto promotethecauseoffinancial
+(cid:127) Payments Banks can accept demand —
+inclusion the PMJDY:
+deposits (only current account and
+savingsaccounts).Theywouldinitiallybe
+PRADHANMANTRIJAN
+-
+DHANYOJANA
+restricted to holdinga maximum balance
+of Rs 100,000 per customer . Based on To achieve theobjectiveof financial inclusion by
+performance, the RBI couldenhancethis extending financial services to the large hitherto
+limit. unserved population of the country and to
+unlock its growth potential, the Pradhan Mantri
+(cid:127) The banks can offer payments and
+Jan-DhanYojana (PMJDY) was launched on 28
+remittance services, issuance of prepaid August2014.TheYojanaenvisages —
+payment instruments, internet banking,
+functioningasbusinesscorrespondentfor
+(i) Universalaccesstobankingfacilitieswith
+other banks. at least one basic banking account for
+everyhousehold,
+(cid:127) PaymentsBankscannotsetupsubsidiaries
+to
+undertakeNBFCbusiness. (ii) Financial literacy, access to credit and
+insurance.
+(cid:127) As in the case of Small Banks, other
+financial and non-financial services (iii) The beneficiaries will receive a RuPay
+Debit Card having inbuilt accident
+activitiesofthe promoters should be
+ring-fenced. insurancecover of Rsl lakh.
+(cid:127) The Payments Banks would be required
+(iv) Inaddition,thereisalifeinsurancecover
+to use the word ‘Payments’ in its name of Rs.30,000 to thosewho opened their
+to differentiateitfrom other banks. bank accounts for the first time between
+
+--- PAGE 390 ---
+12.40 4 IndianEconomy
+15 August 2014 and 26 January 2015 (i) Banks allowed to raise fund through
+and meet other eligibility conditions of long- term bonds (with maturity period
+theYojana. of not lessthan 7years),
+The Yojana has entered the Guinness World (ii) Such bonds exempted the mandatory
+Records for opening most bank accounts during regulatory normssuch as the CRR, SLR
+the week starting August 23, 2014 as part of and PSL.
+the financial campaign. As on 28 January 2015, (iii) Such funds to be used to finance long ¬
+12.31 crore bank accounts have been opened, of term projects in infrastructure, core
+which7.36crorearein ruralareasand4.95 crore sectorandaffordablehousing.Affordable
+inurban areas. Under the PMJDY, 67.5 per cent housing means loans eligible under the
+of the accounts as on January 28, 2015 are with priority sector lending (PSL), and loans
+zero balance. upto Rs.50lakhtoindividualsforhouses
+costingupto Rs.65lakhlocatedinthesix
+|
+ALMOFBANKS metropolitan centres . For other areas, it
+coversloansofRs.40lakhforhouseswith
+Banks have been faced with Asset-Liability
+values up to Rs.50lakh.
+Management (ALM) problems in recent times
+dueto theirexistinglong- termloansforwarded to (iv) Banks can extend long term loans with
+certainsectors,viz.,infrastructure,coresectorand flexible structuring to absorb potential
+realestatesector .Again,raisingnewfundsfornew adverse contingencies,knownasthe5/25
+projectsinthesesectorshadbecomequitedifficult structure . Under the 5/25structure, bank
+for the banks.These sectors constitute the major mayfixlonger amortisation period (25
+portionofbanks’non-performingassests . years) with periodic refinancing (every 5
+years.
+Banks have been seeking permission for
+longertenoramortisationoftheloanwithperiodic India is looking at investing US $1 trillion
+refinancingofbalancedebt.Bankshavebeenraising in infrastructure development by 2017, half
+resources in a significant way, issuance of long of which is expected to come from the private
+¬
+term bonds for funding loans to infrastructure sector . The instructions announced by the R — BI
+sector has not picked upat all. Infrastructureand are in pursuance of the Union Budget 2015 16
+.
+core industries projects are characterised by long announcement
+gestation periods and large capital investments.
+|
+NEW INITIATIVES INTHE BANKINGSECTOR
+Thelongmaturitiesofsuchprojectloansconsistof
+the initial construction period and the economic
+In order to strengthen the banking industry ,
+l
+(
+i
+u
+fe
+sua
+o
+l
+f
+ly
+t
+2
+h
+5
+e
+— 3
+a
+0
+ss
+y
+e
+e
+t/
+a
+u
+rs
+n
+)
+d
+.
+erlying concession period impartinggreatertransparencyandaccountability
+together with providing speedier and effective
+In pursuance of the Union Budget 2015-16, legal framework, the Gol took several important
+the RBI announced ‘eased’ norms in July 2015 steps, in the recent times. Majorsteps, as per the
+for the banks to take care of the Asset-Liability EconomicSurvey2014 — 15,areasfollows:
+Management iisues of the banks, which are as
+(a) The RBI issued guidelines for licensing
+follows:
+of new banks in the private sector on
+
+--- PAGE 391 ---
+BankinginIndia t 12.41
+22 February 2013, and in April 2014 repositories and legal entity identifier
+two applicants have been granted ‘in issuer,amendmentshavebeenconsidered
+principle’ approval to set up new banks necessary to make the PSS Act more
+in the private sector within a period of effective.
+eighteen months. The proposed amendments will provide
+—
+(b) Pursuant to the Union Budget 2014 finality to the determination of the
+2015 announcement for setting up payment obligations and settlement
+of differentiated banks serving niche instructions between a central counter
+interests such as local area banks and party (the system provider) and system
+payment banks, the RBI has formulated participants in the event of insolvency,
+and released guidelines in November dissolution, or winding up of a central
+2014 for licensing of payments banks counter party .
+and small finance banks in the private (d) Capital requirement of PSBs: The Gol,
+sector .Subsequently,theRBI hasinvited in December 2014, approved aproposal
+applicationsforsetting upofsmall banks allowingPSBstoraisecapitalfrom public
+and paymentsbanks. markets through FPO (follow on public
+(c) Payment and Settlement Systems offer) or QIP (qualified institutional
+(Amendment) Bill 2014: The Payment placement) by diluting Government
+and Settlement Systems Act 2007 (PSS of India holding upto 32 per cent in a
+Act)wasenactedwithaviewtoproviding phased manner based on their capital
+sound legal basis for the regulation requirement, stock performance,
+and supervision of payment systems liquidity, market appetite and subject to
+in India by the RBI. For establishing a certain conditions.
+legal framework for regulation of trade
+
+--- PAGE 393 ---
+C H A P T E R
+-
+Km
+i
+-
+Sa &
+tr
+C 'm r :' v k
+i
+1
+1
+INSURANCE IN
+*
+INDIA
+-
+'
+r
+a
+=> Definition
+Insurance Industry Insurance is a kind of gambling
+<=> Insurance Reforms in reverse-a major form of ‘risk
+Reinsurance spreading'-one person’s risk which
+=> Deposit Insurance and Credit Guarantee would be large, is spread around to
+Corporation(DICGC) make it smallfor a large number of
+=> ExportCreditGuarantee Corporation people-in this process it serves two
+(ECGC) purposes-providessocialsecurity netto
+=> NationalExportInsurance Account(NEIA) peopleandhelpsinnation-buildingby
+.
+<=> The Challenge Ahead makingavailable investiblecapital *
+=> Insurance Penetration
+<=> NewReformInitiatives
+*See Paul A. Samuelson and William D. Nordhaus, 'Economics', The
+McGraw-Hill Company, N. York, USA, 2005, pp. 210-212. Also see the
+LIBNA,1956andGIBNA,1971oftheGol.
+
+--- PAGE 394 ---
+13.2 < IndianEconomy
+| DEFINITION
+insuranceforgreatersocialsecurityandsecondly,
+to
+mobilise people’ssavings (collected as premiums)
+Ineconomicterms,anythingusedtocutdownthe fornation building.TheLIChad beenthebiggest
+riskisknownasinsurance.Butin familiarterms, investor in the government’s procces of planned
+insurance is provided by an insurance company development purchasing government securities
+which covers a person’s life (called life segment)
+(G-Secs.)andequitiesofthebigassetpublicsector
+or covers loss of assets, property (called non-life undertaking(PSUs).
+or general segment). The insurance policies are
+purchasedatfixed premiums. rjir>
+In 1971, thegovernment nationalised the private
+|
+INSURANCE INDUSTRY sector companies (107 Indian and foreign
+companies) playing in the general insurance
+Insurance has a deep-rooted history in India.
+segmentand a governmentcompanytheGeneral
+It finds mention in the writings of Manu
+InsuranceCorporationofIndia(GIC)wasformed
+(Manusmrithi), Yagnavalkya (Dharmasastra)
+in1972.TheGICstartedoperationonJanuary1,
+and Kautilya (Arthasastra) . The writings talk in
+1973withitsfour holdingcompanies:
+terms of poolingof resources that could be re ¬ (i) National InsuranceCompanyLtd.
+distributed in times of calamities such as fire,
+floods, epidemics and famine.This was probably (ii) NewIndiaAssuranceCompanyLtd.
+a pre-cursor to modern day insurance. Ancient (iii) Oriental Fire and Insurance Comany
+Indian history has preserved the earliest traces of Ltd.
+insurance in the form of marine trade loans and (iv) United India InsuranceCompanyLtd.
+carriers’contracts . Insurancein India hasevolved
+Intheeraofeconomicreforms,twomajorchanges
+over time heavily drawing from other countries, —
+tookplacein thisarea
+England in particular.
+(i) In november 2000 theGICwas notified
+1 asthe Indian Reinsurer1
+(ii) In March 2002 the GIC was withdrawn
+Thelifeinsurancebusiness/industryinthecountry
+from holding company status of the
+was nationalised by the Government of India in
+four public sector general insurance
+1956 and a fully government-owned company,
+companies. Now these four companies
+the life Insurance Corporation of India (LIC)
+aredirectlyownedbytheGovernmentof
+was set up (at that time 245 Indian and foreign India.2
+companies were playing in the life segment of
+insurance). Opening of private life insurance |
+INSURANCE REFORMS
+companies was prohibited at thesame that time.
+The LIC was called an investment institution by Under the process of economic reforms an
+thegovernment . Insurance Reforms Committee (IRC) was set up
+The nationalisation was motivated by twin in April 1993 under the chairmanship of the ex-
+objectives — first, to spread the message of life RBI Governor R. N. Malhotra. The committee
+1. India2002,Pub.Div.,Gol,N.Delhi
+2. EconomicSurvey2002-03,MoF,Gol,N.Delhi.
+
+--- PAGE 395 ---
+InsuranceinIndia t 13.3
+handed over its report (January 1994) with the which have been able to cover 40 million lives
+followingmajorsuggestions:3 in the country . Out of the local life and non ¬
+(i) Decontrolling insurance sector, i.e., life segment, insurance coverage in the rural
+allowingIndian as well as foreign private areas have ashareof 17 per cent and 14 per cent
+sector insurance companies to enter the respectively, still too much needs to be done for
+sector (the government did it in 1999 thedevelopmentofinsuranceinthecountry .(See
+passingtheIRDAAct) . theSelectModelAnswerson thetopic.)
+(ii) Restructuring the LIC and the GIC and
+AICIL
+cutting down the government’s holding
+in them to 50 per cent (no follow up The Agricultural Insurance Company of India
+still, but the privateinsurancecompanies Ltd. (AICIL) was set up in 2002 in the public
+demanding it anxiously. The NDA sector to look after the National Agricultural
+government had taken steps in this area, Insurance Schemes (NAIS) of 1999.4 Till its
+but the UPA government has no such arrival, the responsibility was on the GIC whose
+plans.)Late2012,thegovernmentstarted losses were supposed to be reimbursed by the
+saleoftheLICsharesbutto publicsector
+CentralGovernment.NowtheGICdoesnotplay
+undertakings — seenasa welcomemove. this role.
+(iii) Delinking GIC and its four subsidiaries
+PUBLICSECTORINSURANCECOMPANIES
+(whichwasdonein 2000).
+(iv) Discarding the system of licensing of There are six public sector insurance companies
+—
+surveyors bythecontroller of Insurance. operating in the country one in life segment
+(v) Restructuring the Tariff Advisory
+(LIC),fourinthenon-lifesegmentandoneinthe
+Committee.
+agriculturesector (AICIL).
+(vi) Setting up a regulatoryanthorityfor the |
+REINSURANCE
+insurance industry (the IRDA set up in
+2000). When an insurance company gets insurance
+coverageon itsinsurance policies, it isconsidered
+IRDA a case of reinsurance. For the development
+The Insurance Regulatory and Development of insurance in an economy the presence of
+Authority (IRDA) was set up in 2000 (the Act reinsurance companies is a precondition. It
+was passed in 1999) with one chairman and five becomesanessential preconditioniftheeconomy
+members (two as full time and three as part- istryingtodevelopandexpandinsurancewiththe
+time members) appointed and nominated by the activeparticipationoftheprivatesectorinsurance
+government . The authority is responsible for the companies. This made the government convert
+—
+regulation, development and supervision of the theGICinto a re-insurance companyin 2000
+Indian insuranceindustry. this is thesole re-insurer in India, that too in the
+Thereare29insurancecompaniesinIndia(15 publicsector . (Nobodycan bea better insurer or
+in life segment and 14 in the non-life segment) reinsurer than thegovernmentitself.)
+3. R.N.MalhotraheadedInsuranceReformsCommittee , Gol,N.Delhi,January1994.
+4. EconomicSurvey2002 - 03 , MoF,Gol,N.Delhi.
+
+--- PAGE 396 ---
+13.4 < IndianEconomy
+Guarantee Corporation of India Ltd. (ECGC)
+DEPOSIT INSURANCEAND CREDIT
+under the Ministry of Commerce and Industry,
+GUARANTEECORPORATION (DICGC)
+formedium-andlong- termexports .Butowingto
+DICGC was set up by merging the Deposit
+itsownlimitations,attimesitisdifficultforECGC
+Insurance Corporation (1962) and the Credit to cover pure commercial risksin issues likelong
+Guarantee Corporation (1971) in 1978. While repayment period, the large value of contracts,
+DepositInsurancehadbeenintroducedinIndiaout difficult economicand political conditionsof the
+ofconcernsto protectdepositors,ensurefinancial importing country, together with the fact that
+stability, instill confidence in the bankingsystem reinsurance cover is generally not available for
+and help mobilise deposits, the establishment of such projects.5 Many times such projects look
+theCreditGuaranteeCorporation wasessentially necessary considering the economic and political
+in the realm of affirmative action to ensure that
+relationshipofIndiawiththeproposedimporting
+the credit needs of the hitherto neglected sectors country . It means that in the absence of credit
+and weaker sections were met . The essential insurancecover, theabilityof Indian exporters to
+concern was to persuade banks to make available go forsuchexport projectsishampered.Itshould
+credit to not so creditworthy clients. After the be noted that in many developed economies
+merger,thefocusoftheDICGChadshiftedonto such projects are covered and underwritten on
+credit guarantees . This owed in part to the fact
+governmentaccount6.
+that mostlargebankswerenationalised.Withthe
+NATIONAL EXPORT INSURANCE
+financialsector reforms undertaken in the1990s,
+credit guarantees have been gradually phased out
+ACCOUNT(NEIA)
+and the focus of the Corporation is veering back
+ForfacilitatingtheserviceoftheECGC(discussed
+to itscorefunctionof Deposit Insurancewith the
+above) the Government of India did set up the
+objective of averting panics, reducing systemic
+National Export Insurance Account (NEIA) in
+riskandensuringfinancialstability.
+March2006 to promotemedium-andlong- term
+exportbyprovidingcreditinsurancesupportinthe
+EXPORTCREDITGUARANTEE
+caseswhereECGCwasnot ableto providecredit
+CORPORATION (ECGC)
+cover on its own because of purely commercial
+The overseas projects undertaken by the Indian reasons:7
+companies face many political and commercial (i) The corpus given to the account was Rs.
+risks in the importing countries. To provide 66crore,raisedtoRs.246croreby2007 —
+adequate credit insurance cover to such firms, 08andwasenhancedtoRs.2000crorein
+the government has set up the Export Credit theEleventh Plan (2007 — 12).
+5. Duetoitsunderwritingconstraint,theECGCisunabletocoversuchprojectsonitsown.
+6. Asforexamplethe USA,France,the UKand manyotherEuro- Americaneconomiesunderwwritesuch medium and
+longterm projectsinthegovernments'account.TheSEIAalsocoversonlymedium-and long-term export projects
+only.
+7. AnnouncedwhilesettinguptheNEIA,MinistryofCommerceandIndustry,Gol,N.Delhi,March9,2006.
+
+--- PAGE 397 ---
+InsuranceinIndia t 13.5
+(ii) ResourcesoftheNEIAwillbethecorpus, thenationalre-insurer)in2000to52insurersason
+the premium income, interest income 30September2012operatinginthelife, non-life,
+and recoveryofall theclaimspaid. and re-insurance segments (including specialised
+(iii) As per the provision, an exposure equal insurers, namely the Export Credit Guarantee
+to ten times corpus can be taken by the CorporationandAgriculturalInsuranceCompany
+NEIA. [AIC]). Four of thegeneral insurancecompanies,
+viz.,StarHealthandAllianceInsuranceCompany,
+The NEIAcan cover projectswhich fulfil the
+Apollo Munich Health Insurance Company,
+followingcriteria:8
+Max BUPA Health Insurance Company, and
+(i) The project by itself should be
+Religare Health Insurance Company function as
+commerciallyviable;
+standalonehealthinsurancecompanies.Ofthe23
+(ii) The project should be strategically
+insurance companies that have set up operations
+important for India, with regard to in thelifesegment post opening upof thesector,
+economic and political relationship of 21 are in joint ventures with foreign partners .
+India with theimportingcountry;and
+Of the 21private insurers who have commenced
+(iii) The exporter should be capable of operations in the non-life segment, 18 are in
+executing the contract, as evident from collaborationwith foreign partners .
+his previoustrack record.
+After the state monopoly in the insurance
+The useand benefits of the NEIAneed to be sector was dismantled and private players’ entry
+publicised among its beneficiaries. Meanwhile, allowed, the IRDA has played a crucial role in
+many export projects pertaining to Indonesia, the development and expansion of the sector,
+Vietnam, Iran, Sudan, etc ., are under way. The there is no doubt in it. But still the sector faces
+NEIAwillfacilitate potential project exporters to many challenges which, if only tackled well may
+entertheinternationaltradearea,asitisexpected9 one say that insurance is serving the interests of
+to be so. In the era of globalisation it has been theinsuring companies and the covered alike.As
+praised as a welcomedevelopment by the experts per the concerned experts, the major challenges
+and thetradepeoplealike. Indian insurance is facing today may be seen as
+given below:
+|
+THE CHALLENGEAHEAD
+(i) Aspervariousestimates,only20percent
+Since the opening up of theinsurancesector, the
+of theinsurable Indian populationislife-
+number of participants in the insurance industry insured; the share of India in global life
+has gone up from seven insurers (including the insurance is just 0.66 per cent; and life
+Life Insurance Corporation of India [LIC], four insurance penetration is at present 2.53
+public- sector general insurers, one specialised per cent (2004) in thecountry .10
+insurer,andtheGeneralInsuranceCorporationas
+8. Ibid.
+9. S.Prabhakaran,ExecutiveDirector,ECGC,MumbaiinSurveyof IndianIndustry2007 , TheHindu,p.84.
+10. S.Krishnamurthy,CEO&MD,SBILifeInsuranceCo.Ltd.Surveyof IndianIndustry2007 , op.cit., p.91
+
+--- PAGE 398 ---
+13.6 I IndianEconomy
+The message of life insurance needs to Rs. 9,00,000 crore over the next four to
+be publicised among the population, five years, a better scope for the general
+specially in the rural areas. Moreover, insurance expansion is probable.14 The
+social security schemes should be growth in both commercialand personal
+expanded to cover the poor masses who linesofgeneralinsurancebusinessreflects
+lack the premium-payingcapacity. positivetrends.Over70percentofIndia’s
+(ii) Experts suggest that health insurance population lives in rural areas and along
+couldemergeamongthemost important with organised financial services, general
+factorsofimprovinghumandevelopment insurance companies are also expanding
+in the countryif expanded in a focussed into thesesectors .
+way and via an action plan. It is (iv) People in their lives experience financial
+estimated that around 15 per cent of the difficulties that can affect the entire
+Indian populationiscovered undersome familynegatively, thisismoretrueabout
+formofpre-paymentonhealthcarewhich thepoor massesin India.
+includes employees and beneficiaries This is why experts suggested for
+covered under ESIS, CGHS, Armed the provision of micro insurance. A
+forces, Central Police organisations, relatively new concept, micro insurance
+Railways, employer self-funded schemes, is today provided to the beneficiaries
+the PSUs and pensions covered under of micro finance covering the finance
+health insurance.11 The health insurance amount, reducing the risk of the clients
+penetration is at present at 1.536 per as well as the micro finance institutions
+cent only (2005 — 06). Besides the LIC, (MFIs). - 15
+the private players should be promoted
+The concept of micro insurance has
+to enter the foray, specially in the rural been developed by the private insurance
+areas.
+company Aviva Life Insurance (in
+(iii) After the general insurance industry was partnershipwith MFIs) whichhasforged
+opened up (2000) for the private sector alliances with banks like Canara Bank,
+participation, the experience has been P&SB, RRBs, 23 cooperatives, etc ., to
+positive.12Itsgrowthcomparesfavourably promotemicro finance.
+withthatofmanyotheremergingmarkets
+Micro insurance has evolved in the
+and is in line with global benchmark of
+past two decades of research in micro
+two to threetimes thegrowthin GDP.13 financeand hasseen growth in countries
+As the economy is on a strong growth like Sri Lanka, Philippines in the last
+pathand thecapitalexpenditureplanned decade.16 Here NGOs and people’s
+across industries is estimated to be over
+11. AlokeGupta,HealthInsuranceConsultant,SurveyofIndianIndustry , op.cit.,p.94.
+12. SandeepBakhshi,CEO&MD,ICICILombardGeneralInsuranceCompany,Mumbai,SurveyofIndianIndustry2007,op.
+cit.,p.99.
+13. Ibid.
+14. Ibid.
+15. VivekKhanna,Director,AvivaIndia,SurveyofIndianIndustry2007 , op.cit.,p.102.
+16. Ibid.
+
+--- PAGE 399 ---
+InsuranceinIndia t 13.7
+organisations are allowed to register | INSURANCE PENETRATION
+themselvesasmicro insurancecompanies
+which sell such insurance. As they cover Thegrowthintheinsurancesectorisinternationally
+the risk themselves, they are allowed to measured based on the standard of insurance
+reinsure with one of the large global penetration. Insurance penetration is defined as
+companies like Swiss Re or Munich Re. theratioofpremium underwritteninagiven year
+Same model is suggested for India but to the gross domestic product (GDP). Likewise,
+for this to happen drastic changes in the insurance density is another well recognised
+existinginsurancerulesare required.17 benchmarkandisdefinedastheratioofpremium
+(v) Manyoftheexpertsbelievethatinsurance underwritten in a given year to total population
+industry should benefit the insurers, (measured in US dollars for convenience of
+reinsurers as well as the insured. The comparison). The Indian insurance business has
+socialpurposeof the insurance sector is in the past remained under-developed with low
+never praiseworthyto bemarginalised by levelsofinsurance penetration.
+the corporate interests (be domestic or In India, insurance penetration has grown
+—
+foreign) atleastitdoesnever tastegood from 2.3 per cent (life 1.8 per cent and non-life
+-
+inIndiawhichneedsastrongsocialsafety 0.7 per cent) in 2000 to 39 per cent (life 3.1
+net .18 per cent and non-life 0.8 per cent) in 2013. In
+(vi) Almost all of the private insurance the comparable period, insurance density has
+companiesinIndiahavebeendemanding improvedfrom US$11to US$ 32.20
+that the government-owned insurance Thelifeinsurance penetration levelcompares
+companies (i.e., LIC and the four wellwiththeemergingmarketeconomies.During
+general insurance companies) should be 2013 — 14, the life insurance industry recorded a
+converted into privatesector companies. premiumincomeofRs.3,14,283croreregistering
+Theirreasonsarelogicalasincomparison a growth of 9.4 per cent over the previous year.
+with the government-owned insurance While private- sector insurers posted 1.4 per cent
+companies, private companies are decline in their premium income, LIC recorded
+always ready with highly attractive 13.5 per cent growth during the period. On the
+and lucrative insurance schemes, but basis of total premium income, the market share
+they have not been able to attract the of LIC increased from 72.7 per cent in 2012 — 13
+clients for them. Therefore, the private to75.4per cent in 2013 — 14.
+insurance companies have been fetching
+hugeoperationallossesdueto lackof the POLICYINITIATIVES
+desired level of their expansion and the
+Committed to expand and strengthen, the
+overheadexpenditure.19
+insurance industry in the country (following the
+17. Ithasbeen beautifullyshowntakingexampleoftheSelf-employedWomen'sAssociation(SEWA)byRenanaJhabvala
+andRaviKanburintheKaushikBasueditedIndia'sEmergingEconomy , OxfordUniv.Press,N.Delhi,2005,pp.309 - 11.
+18. BiplabDasgupta,Globalisation:India'sAdjustmentExperience , SagePublication,N.Delhi,2005,pp.221 - 931.
+19. G.V.Rao,CMD,OrientalInsuranceCo.Ltd.,SurveyofIndianIndustry2007 , TheHindu,pp.87 - 90.
+20. AnnualReport2012 - 13 , IRDA,Gol,N.DelhiandtheEconomicSurvey2014 - 15 , Vol.2,p.48,Gol,MoF,N.Delhi.
+
+--- PAGE 400 ---
+13.8 I IndianEconomy
+recommendations of the Malhotra Committee provided a fillip to propagating micro
+Report, 1993), the Gol has taken the following insuranceasaconceptualissue.With the
+policyinitiatives21in recentyears: positiveandfacilitativeapproachadopted
+(i) Health Insurance: The Insurance under the micro insuranceregulations, it
+Regulatory Development Authority is expected that all insurance companies
+(IRDA) has been taking a number of would come out with a progressive
+proactive steps as part of the initiatives business approach and carryforward the
+for the spread of health insurance. It spirit of regulations thereby extending
+had set up a National Health Insurance insurance penetration to all segments of
+WorkingGroupin2003,whichprovided the society. Presently, there are 10,482
+—
+a platform for the various stakeholders micro insurance agents operating in the
+in the health insurance industry to micro — insurancesector .
+work together and suggest solutions
+|
+on various relevant issues in the sector . NEW REFORM INITIATIVES
+The IRDA is also co-ordinating with
+With a view to removing archaic and redundant
+and supporting insurance industry
+provisionsin theinsurancelaws,empoweringthe
+initiatives in standardising certain key
+InsuranceRegulatoryandDevelopmentAuthority
+terminology used in health insurance
+(IRDA) to enable more effective regulation, and
+documents, for better comprehension
+enhancingtheforeignequityinvestmentcapinan
+and in the interest of policyholders.The
+Indian insurance company with the safeguard of
+GeneralInsuranceCouncil,comprising
+Indianownershipandcontrol,thegovernmenthas
+all non-life insurers, evolved a consensus
+implementedtheInsuranceLaws(Ammendment)
+on a uniform definition of ‘pre-existing
+Act, 2013.
+diseases’anditsexclusionwording,which
+The Act paved the way for major reform
+hasearlier been an expression with many
+related amendments in the Insurance Act, 1938,
+definitions, still more interpretations,
+and certainly a whole lot of grievances. theGeneral Insurance Business (Nationalization)
+Act, 1972 and the Insurance Regulatory and
+Such standardisation, effective June 1,
+Development Authority (IRDA) Act, 1999. It
+2008willhelptheinsuredbyminimising
+ambiguityandalsobybettercomparability provides greater powers to the IRDAI by which
+of health insurance products. Also, with the insurance regulatory framework is supposed
+effect from October 1, 2011, portability to become more flexibile, effective and efficient.
+Major changesas per theActaregiven below:
+in health insurance has been started
+in which an insured, if not happy with 1. Promotion of Foreign Investment.in an
+services or the product of the existing Indian Insurance Company increased
+insurer, can change to another insurer from to 49 per cent (from 26 per cent)
+whilst enjoying the benefits (especially with the safeguard of Indian ownership
+that of pre-existing diseases) of her/his
+andcontrol.
+existingpolicy. Greater availability of capital for the
+(ii) Micro Insurance: Micro insurance capital intensive insurance sector would
+regulations issued by the IRDA have lead to greater distribution reach to
+21. EconomicSurvey2011-12,op.cit..
+DD
+.128 - 129.

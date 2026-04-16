@@ -1,0 +1,2900 @@
+--- PAGE 200 ---
+7.16 I IndianEconomy
+REVISEDSERIES:NEWINITIATIVES CONSUMERPRICEINDEX
+There has been a substantial increase, both in OtherthantheWPI,Indiaalsocalculates inflation
+terms of the number of commodities and its attheconsumerlevel,similar toalltheeconomies
+geographical coverage, in the revised series of of the world. As consumers in India show wide
+—
+WPI (base 2004 05=100), as compared to the differentiation of their choice of consumption,
+earlier revisions undertaken so far.41 This would, purchasing powers, etc ., a single consumer price
+undoubtedly, disseminate the more realistic and index (CPI) has not been possible yet which can
+reliable data, facilitating better decision making encompassallthe Indianconsumers.42
+and policyintervention. Depending upon the socio-economic
+—
+TherevisedseriesofWPI(base2004 05=100) differentiations among consumers, India has
+has also addressed the issue of flow of regular four differingsets of CPI with some differentials
+data.TheNICunitoftheOfficeoftheEconomic in the basket of commodities allotted to them.
+Adviserhasdevelopedanonlinedatatransmission Though these four types of CPIs is proposed to
+mechanism, whereby, the manufacturing units bewithdrawn in comingtimes, data for them are
+can supply price data through internet. Also, an still released.Abrief accountof thefour CPIsare
+arrangementhasbeenmadewithNationalSample as under:
+Survey Office (Field Operations Division) to get
+price data on regular basis. These measures have 1. ^PIIW
+improved theflowof pricedata. The Consumer Price Index for the industrial
+ThelaunchofthenewseriesofWPIwithbase workers(CPI-IW)has260items(plustheservices)
+—
+year2004 05hasbeenoneofthemajorinitiatives in itsbasketwith 2001asthe baseyear43(thefirst
+of the Ministry of Commerce & Industry. New base year was 1958 — 59). The data is collected at
+seriesofWPIin likelyto bereleased mid-2015. 76 centres with one month’s frequency and the
+Since November 2009 the WPI data are indexhasa timelagofonemonth.
+alreadybeingreleasedin thefollowingway: Basically, thisindexspecifies thegovernment
+(i) the first set of data of WPI (for the employees (other than banks’ and embassies’
+‘ManufacturingProducts) are released on personnel ). The wages/salaries of the central
+monthlybasis. government employeesare revisedon the basisof
+(ii) the second set of data of WPI (for the the changes occurring in this index, the dearness
+‘Primary Articles’ and ‘Energy and Fuel
+allowance(DA)isannouncedtwice ayear.When
+Group)arereleasedon weeklybasis. the Pay Commission recommends pay revisions,
+thebaseistheCPI (IW).
+41. ThethreemajorclassificationsoftheitemsintheWPIwerefollowedforthefirsttimewhen Indiawentforthethird
+revisionofthe priceswith1970 - 71asthebaseyearwhich wasintroduced inJanuary1977.Thesameclassification
+isfollowedtilldatewithchangesintheassignmentsofweightstotheitems[MoF , EconomicSurvey2006 - 07,Gol N.
+Delhi,p.85).
+42. TheeconomiesoftheEuro- AmericanregionhaveasingleCPIasthemajorityofconsumersshowthesameconsumer
+behaviour (see Rosserand Rosser,Comparative EconomicsinaTransformingWorld Economy , Prentice -Hall, MIT
+Press,Cambridge,USA,2004).
+43. EconomicSurvey2006 - 07 , op.cit,p.90.
+
+--- PAGE 201 ---
+InflationandBusinessCycle t 7.17
+2. rpillMUC Thisindexisusedforrevisingminimumwages
+The Consumer Price Index for the Urban Non-
+foragriculturallabourersindifferentstates .Asthe
+Manual Employees (CPI-UNME) has 1984-85 consumption pattern ofagriculturallabourershas
+—
+(first baseyear was1958
+—
+59) asthebaseyearand
+changedsince1986 87(itsbaseyear),theLabour
+146 — 365 commodities in the basket for which Bureau proposes to revise the existing base year
+data is collected at 59 centres in the country — of this index. For the revision, the consumer
+expenditure data collected by the NSSO during
+data collection frequency is monthly with two
+weekstimelag.44 its61st NSS Round (2004-05) is proposed to be
+used.
+This price index has limited use and is
+basicallyusedfordeterminingdearnessallowances The governments at the Centre and states
+(DAs) of employees of some foreign companies
+remainvigilantregardingthechangesinthisindex
+operatingin India(i.e.,airlines,communications, asitshowsthepriceimpactonthemostvulnerable
+banking,insurance,embassies,andotherfinancial
+segmentofthesociety,thissegmentspendsalmost
+services). It is also used under the Income Tax 75 per centofitstotalincomeon the purchaseof
+Act to determine capitalgains and by the CSO
+foodarticles.Governments’failuretostabilisethe
+(Central Statistical Organisation) for deflating
+indexin thelongrangecan makethem politically
+selectedservicesector’s contribution to the GDP volatile and be translated into political debacles.
+at factor cost and current prices to calculate the
+ThatiswhytheFCIisalwayskeptreadytosupply
+correspondingfigureatconstant prices. cheaper foodgrains in thesituations of any price
+rise.
+On the advice of its governing council the
+NSSO (NationalSampleSurveyOrganisation) is . -
+4 CPIRL
+atpresentconductingaFamilyLivingSurvey(FLS)
+to obtain the profile of the present consumption
+ThereisyetanotherConsumerPriceIndexforthe
+pattern of urban non-manual employees so that Rural Labourers (CPI-RL) with 1983 as the base
+theCPI (UNME) could beshifted to the present year, data is collected at 600 villages on monthly
+baseyear. frequency with three weeks time lag, its basket
+contains260commodities.
+Presently, the CSO is also examining the
+possibilityofconstructingaconsumerpriceindex The agricultural and rural labourers in India
+for the urban employees (a new index which createan overlap, i.e., thesamelabourerswork as
+might belikeCPI-UE). therurallabourersoncethefarmsector haseither
+lowornoemploymentscope.Probably,duetothis
+.
+3 ^DI AI reason thisindexwasdropped bythegovernment
+in2001-02.45Butafter thegovernmentchangeat
+The Consumer Price Index for Agricultural
+theCentretheindexwasrevivedagain.46
+Labourers (CPI-AL) has 1986-87asits base year
+with 260 commodities in its basket. The data is
+REVISIONINTHECPI
+collectedin600villageswithamonthlyfrequency
+and has threeweekstimelag. It wasin 2011 that thegovernment announced a
+newConsumer Price Index (CPI)-CPI (Rural);
+44. EconomicSurvey2001 - 02 , op.cit,p.90.
+45. EconomicSurvey , 2001 - 02 , op.cit.,p.91.
+46. EconomicSurvey , 2006 - 07 , op.cit.,p.90.
+
+--- PAGE 202 ---
+7.18 < IndianEconomy
+CPI (Urban) and bycombiningthem a‘national’ This has been done to makeit consistent
+CPI-C (where ‘C’ stands for ‘Combined’). with the internationalpractice of shorter
+Menawhile, the data for the existing four CPIs reference period for most of the food
+werealso being published by theCSO.The Base itemsand longer reference periodfor the
+Year was also revised from the existing 2004 — 05 items of infrequent consumption. The
+to 2010-11. weighing diagrams of old series of CPI
+In February 2015 » the CPI was again were based on the Uniform Re — ference
+revised bytheCSO.Together with changing the Period (URP) data of CES, 2004 05, of
+BaseYear, in this revision, many methodological the61st Round of NSS.
+changes have been incorporated, in order to With this change in the weighing
+maketheindicesmorerobust.Themajorchanges diagrams, the gap between Weight
+introducedintherevisedseriesareasgiven below: ReferenceYear and Price ReferenceYear
+1. The Base Year has been changed from (BaseYear),whichwassixyearsintheold
+2010=100 to 2012=100. series,hasnowbeenreducedtosixmonths
+2. The basket of items and their weighing only. Due to change in the consumption
+— —
+diagrams have been prepared using pattern from 2004 05 to 2011 12, the
+weighing diagrams (share of expenditure
+the Modified Mixed Reference Period
+(MMRP) dataofConsumerExpenditure to total expenditure) have changed. A
+comparison of weighing diagrams of the
+Survey (CES), 2011—12, of the 68th
+RoundofNationalSampleSurvey(NSS). oldand revisedseriesisgiven below:
+ComparisonofweighingdiagramsoftheexistingandrevisedseriesofCPI
+GroupDescription OldSeriesofCPI RevisedSeriesofCPI
+(Weightscomputedonthebasis (Weights computed on the basis
+CES2004-05) CES2011-12)
+Rural Urban Combd. Rural Urban Combd.
+Foodandbeverages 56.39 35.81 47.58 34.18 36.29 45.86
+Pan.tobaccoandintoxicants 2.72 1.34 2.13 3.26 1.36 2.35
+Clothingand Foodwear 5.36 3.91 4.73. 7.36 5.57 6.53
+- -
+Housing 22.54 9.77 21.67 10.07
+Fueland Light 10.42 8.40 9.49 7.94 5.50 6.84
+Miscellaneous 24.91 28.00 26.31 27.26 29.53 28.32
+Total 100.00 100.00 100.00 100.00 100.00 100.00
+Source:CSO,February2015.Flere,Combd. standsforCombinedwhile - standsfor notavailable.
+3. The number of Groups, which was five andTobacco’has beenchanged to‘Food
+in theoldseries, has now been increased and beverages’.
+to six. ‘Pan, tobacco and intoxicants’, 4. Egg, which was part of the Sub-group
+whichwasaSub-group under theGroup ‘Egg,fishand meat’in theoldseries, has
+‘Food, beverages and Tobacco’, has now been madeasaseparateSub-group.
+now been made as a separate Group. Accordingly, the earlier Sub-group has
+Accordingly,theGroup‘Food, beverages been modifiedas‘Meatandfish’.
+
+--- PAGE 203 ---
+InflationandBusinessCycle t 7.19
+5. The elementary/item indices are now 7. Sample size for collection of house rent
+being computed using Geometric Mean dataforcompilationofHouseRentIndex,
+(GM) of the Price Relatives of Current which was 6,684 rented dwellings in
+Prices with respect to Base Prices of the old series, has now been doubled to
+different marketsin consonancewith the 13,368 rented dwellings in the revised
+international practice. In the old series, series.
+ArithmeticMean (AM) was usedfor that 8. ApartfromAll-IndiaCPIs(Rural,Urban,
+purpose. The advantage of using GM Combined) for Sub-group, Group and
+is that it moderates the volatility of the General Index (All-Groups), which were
+indices as GM is less affected byextreme released for the old series, all India Item
+values. CPIs (Combined) willalso beavailable.
+6. Prices of PDS items under Antyodaya 9. TheConsumerFoodPriceIndices(Rural,
+Anna Yojana (AAY) have also been Urban, Combined) will be compiled
+included for compilation of indices of as weighted average of the indices of
+PDSitems, inaddition toAbovePoverty followingSub-groups,as practicedearlier
+Line (APL) and Below Poverty Line in the old series (only the weights have
+(BPL) pricesbeingtakenintheoldseries. been revised):
+AllIndiaWeightsofdifferentSub-groupswithinConsumerFoodPriceIndex
+Sub - Group Sub-groupDescription Rural Urban Combined
+Code
+d) (2) (3) (4) (5)
+1.1.01 Cerealsand products 26.14 22.24 24.77
+1.1.02 Meatandfish 9.26 9.23 9.25
+1.1.03 Egg 1.05 1.21 1.10
+1.1.04 Milkand products 16.34 17.98 16.92
+1.1.05 Oilsandfats 8.90 9.49 9.11
+1.1.06 Fruits 6.10 9.80 7.40
+1.1.07 Vegetables 15.78 14.88 15.46
+1.1.08 Pulsesand products 6.25 5.84 6.11
+1.1.09 Sugarandconfectionery 3.61 3.28 3.49
+1.1.10 Spices 6.57 6.05 6.39
+AllSub-groupsofCFPI 100.00 100.00 100.00
+Source:CSO,February2015.Here,CPFIstandsforConsumerFoodPriceIndex.
+TRENDSININFLATION Centre and state levels due to price rise of the
+Inflation has been a highly sensitive issue in commodities such as edible oil, onion, potato,
+India right since Independence and it has been etc .Insuchsituations thegovernment ingeneral
+so during the ongoing reforms process period,
+has been takingrecourseto tighter moneysupply
+too . It has an incessant tendency of resulting tocontainthestateleveldisturbancesdueto price
+into ‘double digits’, taking politically explosive
+riseof thecommoditiessuch asedibleoil,onion,
+proportions like governments falling at the potato, etc ., although it has contained inflation,
+
+--- PAGE 204 ---
+7.20 < IndianEconomy
+but at the cost of higher growth. Price rise got in the global market (specially, food
+rooted in India’s political psyche in such a way articles), costlier fodder, costlier energy
+that the government did check frequent famines and fuel, etc . By late 2010, India had
+quicklyat the cost of long- term endemic hunger the phenomenon of ‘skewflation’ with
+andsustained malnutrition.47 inflation being in the range of 9 — 10 per
+.
+Decadal inflation in India looks cent
+comparatively normal with reference to many (vii) During 2010s: Headline inflation
+developing economies.48 But it has sporadic remained persistently high at 6-9 per
+—
+incidences of double-digit tendencies mainly cent during 2011 13 (Economic Survey
+due to supply-side shortfalls caused by droughts 2014 — 15) .Itstarted moderatingbymid-
+(monsoon failures), price rise of crude oil in the 2014.ByMarch2015it wasin negative
+—
+international market or fund diversions due to (-2.06percent) remaingin negativefor
+wars (the Chinese war of 1962 and the Pakistan thefourthstraight month.Thesoftening
+warsof1965 — 66and1971).Thedecadalinflation in inflation was primarily led by fall in
+in India has beenasgiven below:49 thepricesofoil,food articles (vegetables,
+(i) During1950s:remainedat1.7per cent . fruits).51 It gave the RBI aspacefor ‘rate
+(ii) During1960s:remainedat6.4per cent . cut’ aimed at promoting investment in
+theeconomy.
+(iii) During1970s:remainedat9.0per cent .
+An analysis of inflationary trends in India
+(iv) During1980s:remainedat8.0per cent . does not pin-point any one reason behind it.
+(v) During 1990s: remained at 9.5 per cent Economists have pointed out all possible reasons
+(though it reached 0.5 per cent by the (the so-called ‘good’ and ‘bad) behind the
+—
+fourthquarterofthefiscal1998 99)
+inflationarypressuresintheeconomyofwhichwe
+(vi) During2000s:Inflationwasatlowerlevels mayhavea briefreview:
+between 2000 — 08 (from3to 5 percent).
+.
+Butfrom2009onwardsitstartedmoving 1 STRUCTURALINFLATION
+upward with ‘sttuborn’ tendencies.50
+—
+With few exceptional years, India has been
+Between 2009 13, theheadlineinflation
+facing thetypical problem of bottleneck inflation
+remained stuck at uncomfortable levels, (i.e., structural inflation) which arises out of
+primarily due to ‘food articles’ (food shortfalls in the supply of goods, a general crisis
+inflation) led by protein-rich items
+ofa developingeconomy, risingdemand but lack
+(protein inflation) in the consequence of
+of investiblecapital to produce the required level
+shift in dietary habit, income effect (via of goods.52 Whenever the government managed
+MGNREGAkind ofschemes), increased
+to go for higher growths by managing higher
+wages, increase in prices of commodities
+47. Pranab Bardhan agreestoAmartyaSen (Howis Indiadoing?,NewYork Reviewof Books, Dec.1982) in A Political
+EconomyPerspectiveonDevelopmentinBimalJalaned.IndianEconomy;ProblemsandProspects,Penguin Books,N.
+Delhi,1992,p.369.
+49. Rosser,J.BandRosser,M.V,op.cit.
+49. BasedonRangarajan,C.,1998,op.cit.,p.63;Jalan,Bimal,2004,op.cit.,pp.182 - 191.
+50. EconomicSurvey2013-14,MoF,Gol,N.Delhi,pp.75-77.
+51. EconomicSurvey2014-15,MoF,Gol,N.Delhi,Vol.2,pp.69 -75.
+52. Desai,Meghnad,'Development Perspectives'inI . J.Ahluwalia and I.M.D.Little,Ed., India's EconomicReformsand
+Development , Oxford University.Press,N.Delhi,1998,p.41.
+
+--- PAGE 205 ---
+InflationandBusinessCycle t 7.21
+investible capital it had inflationary pressures aroundtheworld) thegovernmentsstartedtaking
+on the economy (seen during 1970s and 1980s, recourse to heavy internal borrowings as well as
+especially) and growth was sacrificed at the altar printingoffreshcurrencytoo .Amajorpartofthe
+of lower inflation (which was politically more government’s internal borrowing is contributed
+justified).53 Thus, the supply-side mismatch by the Reserve Bank of India (RBI) which leads
+remained a long-drawn problem in India for to price rise.57 For anygovernment deficit if the
+higher inflation. After some time even if the Central Bank (RBI) is purchasing primary issues
+government managed higher expenditure, most of the Government securities or creating fresh
+of it went to the non-developmental areas which advances to the government the combined effect
+did show lowgrowth with higher inflation — signs has to be higher inflation, lowersavings ratesand
+—
+ofastagnatingeconomy. lower economicgrowth58 the vices of unsound
+fiscal policy. The higher fiscal deficit tends to
+2 . COST-PUSHINFLATION bring about higher interest rates as demand for
+fundsrise,excessdemandraisesexpectedinflation
+Due to ‘inflation tax’ the price of goods and andexpecteddepreciationofthecurrency59.Once
+servicesinIndiahavebeenrisingasthegovernment
+the foreign exchange (Forex) reserves started
+took alternative recourse to increase its revenue increasingwithafaster pacebytheearly2000 — 01
+receipts.54 We see it taking place due to higher fiscal, its cost of maintenance has been translated
+import duties on the raw materials also.55 The intohigherprices,astheRBIpurchasestheforeign
+non-value-added tax (non-VAT) structure of currencies it supplies into equivalent rupees into
+India in the past was also having cascadingeffect theeconomywhichcreatesextrademand and the
+onthepricesofcommoditiesinthecountry .56The pricesgo up.60
+government needed higher revenuesto financeits The higher revenue deficits (driven by high
+planneddevelopmentthustheabovegivenfactors
+interestpayments,subsidies,salariesandpensions,
+looked inescapable.
+basically) andfiscaldeficits makethegovernment
+. supply more money which push the inflation in
+3 FISCALPOLICY
+theupwarddirection.OncetheFiscalandBudget
+Tofinancethedevelopmentalrequirementsofthe Management Act came into force in 2003, the
+economy,thegovernmentsbecametrappedinthe scenario improved in the coming times.Though
+cyclicalprocessofover-moneysupply.Atfirstitwas the period from 1999 to 2003 did show high
+donebyexternalborrowings,butbythelate1960s growth with low inflation and the lowest interest
+onwards (once deficit financinggot acceptance ratesin India.
+53. JalanBimal,India'sEconomicPolicy , PenguinBooks,N.Delhi,1992,pp.52 - 58.
+54. Rangarajan,C.,'Development,Inflationand MonetaryPolicy',inAhluwaliaandLittle,Ed.,India'sEconomicReforms
+andDevelopment,op.cit.,pp.56 - 57.
+55. Jalan,Bimal,pp.191 - 203.
+56. ChelliahCommitteeReport , 1993.
+57. Dandekar,V.M.'FortyYearsAfterIndependence', India's EconomicPolicy , inthe BimalJalan Ed., IndianEconomy:
+ProblemsandProspects , pp.84 - 88.
+58. Reddy,Y.V.,LecturesonEconomicandFinancialSectorReformsinIndia , OxfordUniversityPress,N.Delhi,2002,pp.
+176 - 177.
+59. Goyal,Ashima,'PuzzlesinIndianPerformance:DeficitswithoutDisasters',inKiritS.Parikhand R.Radhakrishna(Eds.)
+IGIDR'sIndiaDevelopmentReport , 2004 - 05,Oxford UniversityPress,N.Delhi,2005,p.191 - 208.
+60. Basu,Kaushik,India'sEmerging Economy:PerformanceandProspectsinthe1990sandBeyond , Oxford University
+Press.N. Delhi.2004.pp.89 - 103.
+
+--- PAGE 206 ---
+_
+7.22 < IndianEconomy
+HEALTHYRANGEOFINFLATION price rise will facilitate the purpose of
+Higher inflation and higher growth as a
+attractinginvestmentforthedesiredlevel
+trade-ofF was questioned in the late-1980s by
+ofgrowth.
+the developed economies as the economic and (ii) The Government of India accepted
+social costs of higher inflation also needed policy a range of 4 to 6 per cent inflation as
+attention — acostly‘trade-off.61Incomingtimes, acceptable for the economy citing the
+most of theworld economies went in favour of a world average of 0 to 3 per cent at the
+stable inflation (i.e., inflationtargeting) though time (1997-98).64
+the idea has been protested,62 India also started (iii) The RBI Governor C. Rangarajan
+,
+inflation targeting by the early 1970s. It was in advocated that inflation rate must come
+1973 that the inflation crossed 20 per cent mark down initially to 6 to 7 per cent and
+on account of the international oil price rise and eventuallyto5to6percentonanaverage
+thegovernment (theIndiraGandhiGovernment) over theyears.65
+devised a severe anti-inflation package which (iv) The Tarapore Committee on Capital
+includeddirectlyrestrictingthedisposableincomes Account Convertibility recommended
+of the people (this measure was used for the first an acceptable range of 3 to 5 per cent
+time in India63).The package had an impact and inflationforthethreeyear period (1997 —
+byMarch 1973 theinflation calmeddown to 5.7 98 to 1999-2000).66
+per cent . This was the time when the RBI was In the recent times (June 2003 onwards) the
+given a new function ‘inflation stabilization’ and
+government/the RBI has maintained a general
+India entered the era of monetary controls for policy of keeping inflation below 5 per cent
+inflation.With inflation targeting therestarted a — —
+mark atanycost asiffixing4 to 5 per cent as
+debate concerning the healthy range of inflation thehealthyrangeofinflation for theeconomy.67
+for the Indian economy, i.e., by mid-1970s. We
+The medium- term objective (i.e., target) of
+may have some official and non-official versions —
+thegovernment is to keep inflation in the 4 4.5
+ofthesuitablerangeofinflation pointedoutfrom
+per cent range.68 One thing should be kept in
+timeto time:
+mind that inflation has always been a political
+(i) The Chakravarty Committee (1985) matterinthecountry .EverytimetheRBItried to
+treated4percentinflation acceptablefor
+check the rising inflation via monetary measures
+theeconomyinitsreportonthemonetary
+a majority of experts objected to it by calling it
+system . He also added that this level of
+61. Fischer,S.,'ModernCentral Banking',in F.Capie,C.Goodhart,S.Fischerand N.Schnadt,Eds,TheFutureofCentral
+Banking , TheTercentenarySymposiumof theBankof England , Cambridge UniversityPress,Cambridge,1994, pp.
+262 - 308.
+62. Krugman,P.,'StablePricesandFastGrowth:JustSayNo',Economist31,1996,pp.15 - 18.
+63. AhluwaliaandLittle,IndiaEconomicReformsandDevelopment , p.2.
+64. MoF , EconomicSurvey1997 - 98 , Gol,p.92.
+65. Rangarajan,C.,1998,op.cit.,pp.xii&.61 - 63.
+66. WemayrefertoalmostalltheCreditandMonetaryPoliciesannouncedbytheRBIduringthisperiod.
+67. AstheRBIputitinitsCreditandMonetaryPolicyReviewofJuly31,2007.
+68. Itshould benoted herethatthelevelof inflationwasbelow5percenttillthenewGovernmentcametopowerand
+theoutgoingGovernmentwasblamedtofreezetheinflationdatatoa morepoliticallydigestablelevel(i.e.,below5
+percent).ThenewGovernmentintheprocessof preparinga producerpriceindex(PPI)hasalsocommittedtomake
+theinflationdataautomatedliketheshareindices.
+
+--- PAGE 207 ---
+InflationandBusinessCycle I 7.23
+a move to sacrifice growth for lower price levels. producer while the consumer price index (CPI)
+A tighter monetary policy decelerates investment measures it from the consumers’ perspective.
+andgrowth, hampers thegrowth prospectsof the Wholesellers charge higher prices to retailers, in
+middle class in general and the entrepreneurs in turn retailers charge higher prices to consumers
+particular while the wage-earners as well as the and thepriceincreaseistranslatedinto thehigher
+—
+poor segment of society feels relieved (at least in consumer prices thusthePPIis usefulin having
+short term). an idea of theconsumer prices in thefuture.69 In
+ByFebruary2015, theGol did put in place PPI, only basic prices are used while taxes, trade
+a mechnaism to ‘target’ inflation (Agreement margins and transport costs are excluded. This
+on Monetary Policy Framework) under which index is considered a better measure of inflation
+the Consumer Price Index (Combined) is to be as price changes at primary and intermediate
+targeted by the RBI between the range of 2 to 6 stages can be tracked before it gets built into the
+per cent on the annual basis. Thus, the focus is finished goodsstage .70 Dueto its better use many
+—
+shifting to theCPI from WPI.Thisway, in place economies have switched over to the PPI the
+of the WPI-based inflation, the CPI-C inflation oldest such series is maintained by the Bureau
+—
+has been made the ‘anchor’ rate of inflation for of Labor Statistics (BLS) for the US economy
+mentarypolicypurpose. the index is capable of measuring prices at the
+—
+wholesaler or the producerstage widely used by
+PRODUCERPRICEINDEX privatebusinesshousesin their pricetargetting.71
+A working group was set up in mid-2003 — 04 Once India shifts from the WPI to the
+under the chairmanship of Prof. Abhijit Sen, upcoming PPI, theeconomyissupposed to have
+Member, PlanningCommission to fulfil thetwin a better ideaabout thetrendsofinflation.
+tasksof:
+HOUSINGPRICEINDEX
+(i) revising the current series of WPI (i.e.,
+base1993-94) and India’s official Housing Price Index (HPI) was
+launched bytheFinanceMinister on9July2007
+(ii) recommending a producer price index
+in Mumbai. Basically developed by the Indian
+(PPI) for India which could replace the
+WPI. home loans regulator, the National Housing
+The sub-groups of the working group have
+Bank (NHB) the index is named NHB Residex.
+Presently,theindexhasbeenintroducedasapilot
+submittedtheirreportsandtheproceesofrevision —
+project for five cities Bangalore, Bhopal, Delhi,
+in the base year for WPI is at thefinalstage .The
+Kolkata and Mumbai, which covers different
+new series {base year) for the WPI has been
+localities in each of these cities for the five-year
+revised to 2004-05. period (2001-05).
+The proposal of switching over to the PPI
+There are various concepts of housing
+(from the WPI) came up from the government
+price indices, and many sources and ways for
+by mid-2003 and the working group has been compilling price data — both private and public.
+gettinginputsfromtheIMFregardingit.ThePPI
+The methodology of constructing such indices
+measurespricechangesfromtheperspectiveofthe
+69. StiglitzandWalsh,op.cit.,p.517.
+70. EconomicSurvey2006-07,op.cit.,p.92.
+71. Samuelsonand Nordhaus,op.cit.,p.441.
+
+--- PAGE 208 ---
+7.24 < IndianEconomy
+varies from country to country depending offing with the general level of inflation
+upon the use and purpose as well as the data (i.e.,atWPI) in thecountry,or has been
+availability. ATechnical AdvisoryGroup (TAG) scaled up disproportionately.Other than
+wasset up under the chairmanship of an adviser quotes from brokers, there are no means
+—
+from the Ministryof Finance in 2006 07 which atpresenttoevaluatethechangesin price
+had members and experts from public and in this sector . At present the only index
+private bodies of the concerned field, i.e., NHB, that gave some idea of housing price
+CSO, RBI, HDFC, HUDCD, LIC Housing changeswastheCPI (IW) which beinga
+Finance Ltd., Labour Bureau, Dewan Housing nationalindexdid notshowtheregional
+Finance Corporation Ltd., and the Society for variations.)
+Development Studies (SDS). After reviewing In the next phase, the NHB will compile
+internationalbest practicesand themethodology, indices for 35 cities/towns with a population of
+sampling techniques, collection of price data for morethanamillion(asperthecensus2001).These
+constructionofrealestatepriceindicesintheUSA indicesareplannedtobepreparedonahalf-yearly
+(indexdevelopedbytheofficeof FederalHousing basis, to be subsequently expanded to cover 63
+Enterprise Oversight), Canada (New Housing cities/towns covered under theJawaharlal Nehru
+price Index) and the UK (Halifax Index), the National Urban RenewalMission (JNNURM).
+TAG suggested a proper methodologyfor India.
+The TAG decided to take 2001 as the base SERVICEPRICEINDEX
+yearfor the indexwhich was consistent with the The contribution of the tertiarysector in India’s
+base period of theother indices, i.e., 2001for the GDPhas beenstrengtheningfor thepast10years
+revised CPI (IW), 2000-01 for the revised WPI and today it stands above 60 per cent .The need
+and 1999-2000 for the revised GDP series. The foraservicepriceindex(SPI)inIndiaiswarranted
+baseyearwasrevised to 2007in March 2014. by the growing dominance of the sector in the
+With an overall objective of bringing economy.72There is no index, so far, to measure
+transparencyin the Indian realestate market, the thepricechangesintheservicesector .Thepresent
+index is expected to servesome highlyimportant inflation (at the WPI) only shows the price
+and timelypurposes: movements of the commodity-producing sector,
+(i) Whether a broker is quoting too high a
+i.e.,itincludesonlytheprimaryandthesecondary
+—
+pricefor housesin thecities. sectors the tertiarysector is not represented by
+(ii) Banks/housingfinancebodieswillbeable
+it.
+to estimate only if the loan applications Theneedforsuchanindexwasrecommended
+arerealisticfor theproperties. by the working group (under the Chairmanship
+of Prof. Abhijit Sen, Member, Planning
+(iii) This will also show the level of non
+¬
+performingassetsin thehousingsector . Commission) set up to revise the WPI (1993-
+94) series which was reiterated by the National
+(iv) And most importantly it will serve as a
+StatisticalCommission(headedbyC.Rangarajan).
+realistic price index for the buyers. (At
+The office of the Economic Adviser, Ministry
+present a buyer has no means, to judge
+of Commerce and Industry has been making an
+whetherariseinpropertypricewasinthe
+efforttodevelopsector -specificservicepriceindex
+72. EconomicSurvey2006 - 07 , op.cit.,p.94.
+
+--- PAGE 209 ---
+InflationandBusinessCycle t 7.25
+forthecountrywiththetechnicalassistancebeing Inflation in 2015—16 is closely linked to the
+receivedundertheWorldBankAssistedEconomic followingfactors,as per thesurvey:
+Reforms Projects (WBAERPs).At present,efforts (a) Crude oil prices may correct and start
+are being made to develop service price indices moving upward;
+for selected services initially on an experimental
+(b) Supply pressures due to lower oilseeds
+basis (covering road transport, railways, airways,
+and pulsesacerage;
+business, trade, port, postal telecommunications,
+(c) Capacityconstraints in warehousingand
+bankingand insuranceservicesonly).
+cold-storage;and
+The basic studies of index construction are
+(d) Seasonalcommodities.
+complete. Before formal launching of the index,
+the complete study is supposed to be discussed GOVERNMENTSTEPSTOCONTROL
+with academicians, practitioners and the users
+INFLATION
+of the services. The need to construct a service
+price index for the economy was felt more The stubborn inflation of the last three years
+after the OECD-Eurosat Report of 2005 on the (particularly,the‘food inflation’) cooleddown by
+subject.73 late2014.Thedeclinein inflation wassubstantial
+—
+in commodities the government took a series
+|
+HOUSEHOLD INFLATION EXPECTATIONS
+of measures to improve availabilityof foodgrains
+and de-clog the distribution channel.The major
+Since September 2005, the RBI has been —
+steps (Economic Survey 2014 15) taken by the
+conducting quarterly inflation expectation
+surveys of households. The results of the latest government in recenttimesareasfollows:
+survey covering 5,000 urban households across (a) Allocation ofadditional 5 million tonnes
+16 cities were released in December 2014. The of rice to BPLand APLfamilies pending
+implementation of the National Food
+survey captures the inflation expectations for the
+next three-month and one-year period. The Security Act (NFSA), and allocation of
+current inflation perceptions and inflation 10 million tonnes of wheat under open
+expectations have moderated in the latest round market sales for domestic market in
+(38th Round). 2014-15;
+The median inflation expectations over the (b) Moderation in increases in the MSPs
+next three months and one year have corrected duringthelastand currentseason;
+sharply during the latest survey to 8.3 per cent (c) Advisory to the states to allow free
+from 14.6 per cent and to 8.9 per cent from 16 movement of fruits and vegetables by
+per cent in the previous quarter, respectively. delisting them from the Agricultural
+73. The numberof NationalStatistical Agenciescollectingservice producer pricesdata,though growing,isstillsmall',
+pointsouttheOECO - Eurosat , 2005InquiryonNationalCollectionof ServicesProducerPricesPreliminaryReport ,
+givinginformationon45suchcountries.Thereportfurtheraddsthatwhilesomesuchagencieshavefocusedexclusively
+on the price of services provided to enterprises, others have approached the subject more broadly through the
+developmentofservicesproducerpriceindiceswithvaryingapproachesandcoverage.Asperthereport,atpresent,
+30countriescollectservicesproducerpriceswhileprelimilaryworkshavestarted intheothercountries,particularly
+theEuropeancountriesundertheauspicesoftheEurosat.OtherthanthedevelopedEuro- Americaneconomiessome
+othercountrieswhichworkedasinspirationforIndiawhichhavesuchanindexareChina,HongKong,CzechRepublic,
+SlovakRepublic,Poland,Lithuania,IsraelandVietnam.
+
+--- PAGE 210 ---
+7.26 I IndianEconomy
+ProduceMarketingCommittee(APMC) the psychological level of 0 per cent by
+Act; end- November 2014 and remained in
+—
+(d) Bringing onions and potatoes under the ‘negative’ upto March 2015 ( 2.06 per
+purview of the Essential Commodities
+cent).
+Act 1955, thereby allowing state 2. Consumer price inflation released by
+governments to impose stock limits to the CSO (base 2012=100) reached 5.1
+dealwithcartelizationand hoarding,and per cent in January 2015. This is lower
+making violation of stock limits a non- than the targets of 8 per cent set for
+bailableoffence; January2015 and 6 per cent forJanuary
+(e) Imposingaminimumexportprice(MEP) 2016 given by the Reserve Bank of
+of US$ 450 per MT for potatoes with India in its report on the new Monetary
+effect from June 2014 and US$ 300 per Policy Framework. Prices of the major
+MT for onions with effect from August commodity groups contributing to high
+2014. inflation, namely ‘eggs, meat, and fish’,
+As per the Survey,for keeping food inflation fruits and vegetables, and fuel, have all
+softened.
+lowinasustainablemanner,moreradicalmeasures
+will have to be taken to revamp agriculture and 3. The major developments driving the
+food sector production, storage, marketing, and stubborninflationdown were:
+—
+distribution including the public distribution (a) Falling global commodity prices,
+system (PDS) and NFSA. especiallyofcrudeoil,
+(b) Decline in the growth rate of rural
+|
+CURRENTSCENARIO wages,
+After remaining high for a prolonged period, (c) Moderation in the increase in
+inflation has finallystarted trending down. India minimumsupport pricesasalso
+is supposed to see comfortable inflation levels (d) Economicslowdown.
+during 2015 — 16. As per the Economic Survey Structuralshiftin the inflationary processis
+2014-15: underway(aselaboratedintheMid-YearEconomic
+—
+1. The Wholesale Price Index inflation Analysis 2014 15) by lower oil prices and
+declined toacomfortablelevelofaround
+decelerationinagriculturepricesandwages.These
+3percentbyNovember2014.Itbreached aresimultaneouslybeingreflected in dramatically
+improved household inflation expectations.
+-
+SECTION B
+BUSINESS CYCLE
+| INTRODUCTION quality of life in an economyis to be enhanced,
+there is a need of conscious public policywhich
+The discussion on growth and development has canspendandinvestinareaslikefood, nutrition,
+shown their internal interdependence. If the health, education, shelter, social security, etc .
+
+--- PAGE 211 ---
+InflationandBusinessCycle t 7.27
+But for such expenditures and investments, the |
+DEPRESSION
+economy needs equitable level of income, too .
+The income enhancement in any economy takes Thoughdepression hasvisitedtheworldeconomy
+placevia increasing thelevel of production in the onlyonce in 1929, economists have pin-pointed
+economy, i.e., realgrossnational product (GNP). enough number of traits to recognise it. The
+It means, development requires higher growth, majortraitsofdepressioncouldbeasgivenbelow:
+i.e., higher levels of economic activities. With
+(i) anextremelylowaggregatedemandinthe
+the help of suitable kind of economic policies,
+economycausesactivitiesto decelerate;
+the government of an economy keeps trying to
+(ii) theinflation beingcomparativelylower;
+maintain a higher levelof economicactivity.But,
+at times, economy keeps failing in this objective. (iii) the employment avenues start shrinking
+And, thus economies fluctuate between the best
+forcing unemployment ratetogrowfast;
+and the worst levels of economicactivities which (iv) to keep the business going, production
+is known in economics as boomand depression, houses go for forced labour-cuts or
+respectively. They can be called different phases retrenchment (to cut down production
+of the economic activities of the economies. In costand becompetitiveinthemarket,)
+.
+between boom and depression, there might be etc
+manyother situations of the economicactivities, The economic situations become so chaotic
+—
+such as stagnation, slowdown, recession and in the phaseof depression that governments have
+recovery.Thefluctuationsinthelevelofeconomic almost no control over the economy. The Great
+activity between the depressions and booms has Depressionof192976gaverisetotheideasofstrong
+beencalled bytheeconomistsas businesscycleor governmentintervention77in theeconomy,such
+tradecyclewithrecessionandrecoveryasthemain asdeficitfinancing, monetarymanagement,etc .
+intermediatestages .74Stagnation75andslowdown What the governments maydo if depression
+maybeconsideredasother intermediatestagesof visits the economy?Thesimple answer the world
+the business cycle.Weintend here to understand hasbeenabletofindistorepeatthepolicymeasures
+the actual meanings of each of the stages . of 1929.The best way to avoid depression is not
+Economists have pointed out that the business to letit visit.Thisiswhyeverymodern economy
+cycle is characterised byfour phases or stages in keeps extra -vigil on the major symptoms of its
+whicheconomiesalternate: economyso that the prevention-measures can be
+(i) Depression takenin timeand depression isavoided.
+(ii) Recovery
+|
+RECOVERY
+(iii) Boom
+(iv) Recession Aneconomytriestocomeoutofthelowproduction
+phasetosurvive.Thelowproduction phasemight
+74. Collinsinternet-linkedDictionaryofEconomics,Glasgow,2006&OxfordBusinessDictionary,N.Delhi,2004.
+75. Cox,Simoned.Economics,TheEconomist,London;2007,p.60.
+76. AverylivelydescriptionoftheGreatDepressionhas—beenpresentedbyLeelacoccainhisautobiography.Thisisknown
+astheGreatDepressionduetoitslengthanddepth theeconomiescouldrecoverfullyoutofitonlybythemid- 1940s
+(Stigiitz&Walsh,op.cit;p.495).
+77. Suggested byJohn Meynard Keynesin hisseminal work TheGeneralTheoryof Employment,Interestand Money
+(Harcourt,NewYork,firstpublishedin1935).
+
+--- PAGE 212 ---
+7.28 < IndianEconomy
+be depression, recession or slowdown with the |
+BOOM
+former being the worst and rare, governments
+take many new fiscal and monetary measures to A strong upward fluctuation in the economic
+boost demand and production and ultimately a activities is called boom.79 As economies try to
+recoveryinaneconomyismanaged.Thebusiness
+recover out of the phases of slowdown, recession
+cycle of recovery mayshow the following major and depression at times the measures taken by
+economytraits: the governments as well as the private sector
+(i) an upturn in aggregate (total) demand might put economic activities as such which the
+whichhasto beaccompanied byincrease economicsystems fail to digest.This is the phase
+in thelevelof production; of the boom.Themajoreconomictraitsof boom
+(ii) production process expands and new maybelistedasgiven below:
+investmentsbecomeattractive; (i) an accelerated and prolonged increase in
+(iii) as demand goes upward, inflation also thedemand;
+moves upward making borrowing (ii) demandpeaksuptosuchahighlevelthat
+cheaperfor investors; it exceedssustainable output/production
+(iv) with an upturn in production, new levels;
+employment avenues are created and (iii) the economy heats up and a demand-
+unemployment ratestartsdeclining;etc . supplylagisvisible;
+With the above symptoms, people’s income (iv) themarketforcesmismatch(i.edemand
+go for a certain increase which creates new and supply disequilibrium) and tend
+demand and a cycle of demand and production to create asituation whereinflationstart
+(supply)startsplayinghand-in-handtorecoverthe goingupward;
+economy. To recover an economy, governments (e) the economy might face structural
+usuallygofor tax -breaks,interestcuts,anincrease problems like shortage of investible
+in salaries of its employees, etc . Assimilation of capital, lowersavings, fallingstandard of
+innovations by the entrepreneurs and search for living,creation ofasellers’market.
+newfrontiersofenterprisedo playaveryvitalrole
+The phase of recoveryis considered good for
+intheprocessofrecoveryprovidedtheseactivities
+theeconomyanditreachesthestageofboomwhich
+areatfirst incentivesbythegovernments . isconsideredbetter.Buttheboom hasitsnegative
+The Euro-American economies recovered sidealso.Boom is usuallyfollowed bypricerise.80
+out of the Great Depression with the help of As a boom is a strong upward fluctuation in an
+the measures cited above. Such recoveries have economy, thesupply-sidepattern of theeconomy
+been seen many times around the world when starts lagging behind the pace of the accelerated
+economies recovered from slowdown or the aggregatedemand.81 But thedilemmaof recovery
+recessionary phases. The best example of recent puts every economy on the path to boom — this
+times could becited from India of 1997 to 2002 has been the experience in the developed world
+when the economy suffered severe bouts of during the 1990s, especiallyin the US economy.
+slowdownand recession.78 The same scenario developed in India after the
+78. EconomicSurveys , 1996 - 97to2002 - 03 , MoF,Gol,N.Delhi.
+79. Stiglitz8tWalsh,op.cit.,p.945.
+80. Samuelsonand Nordhaus,op.cit.pp.680 - 84.
+81. StiglitzandWalsh,op.cit.pp.495 - 796.
+
+--- PAGE 213 ---
+InflationandBusinessCycle I 7.29
+economy recovered from the recessionary period criseswhich followed theUS‘sub-primecrisis’in
+of 1996-97 by the year 2002-03 when the rate almost the whole Euro-American economies has
+of inflation peaked to almost8 per cent for a few basically brought in ‘severe recessionary’ trends
+months. Majority of the experts felt that Indian there. Major traits of recession, to a great extent,
+economyatthattimewaspassingthrougha phase aresimilartothatof‘depression’[exceptthepoint
+—
+of boom and we have seen how the government (iv) oftheDepression, discussedearlier] maybe
+has been facing difficulty in containing inflation summed upasfollows:
+aroundthe3percentmark.Eventhegovernment
+(i) there is a general fall in demand as
+accepted that the economy was over-heating by economicactivitiestakesadownturn;
+mid-2007. The symptoms of overheating are as
+(ii) inflation remains lower or/and shows
+follows:
+furthersignsoffallingdown;
+(i) There is a downturn in the aggregate (iii) emloyment ratefalls/unemployment rate
+demandon overallfallin thedemand;
+grows;
+(ii) as demand falls, the level of production
+(iv) Industries resort to ‘pricecuts’tosustain
+(output) in theeconomyalso falls; their business.
+(iii) as producers cut down their production In the financial year 1996 — 97, the Indian
+levels,newemploymentopportunitiesare —
+economywastaken up bythecycleofrecession
+—
+not created thus employment growth basically due to a general downturn in domestic
+ratefalls;
+aswellasforeigndemands, initiated bytheSouth
+(iv) as demand keeps on falling, usually East Asian Currency Crisis of mid-1990s.82 The
+producersstartcuttingdowntheirlabour whole plan of economic reforms in India was
+forcetoadjusttheiroverheadexpenditure derailed and it was only by the end of 2001 — 02
+and the cost of production (labour- cut that theeconomywas able to recover.What may
+—
+is not ‘forced’ here but, ‘voluntary’) agovernmentdo to rescuetheeconomyfrom the
+resultinginincreaseintheunemployment phase of recession? The usual remedies are given
+rate; below:
+(v) if the government fails to rescue the (i) Direct and indirect taxes should be cut
+economyfrom thephaseofrecession,the down,so that theconsumershave higher
+dangerous stage of depression remains disposable incomes (income after paying
+thelogicalfollow up; direct tax, i.e., income tax) on the one
+(vi) the rate of inflation always remains hand and the goods should become
+—
+at lower levels discouraging new cheaper on the other hand, thus there is
+investmentsand lending. hopethat thedemand might pick up.
+~ (ii) The burden of direct taxes, especiallythe
+|
+RECESSION
+income tax, divdend tax, interest tax are
+slashed toenhancethedisposableincome
+Thisissomewhatsimilartothephaseof‘depression’
+— — {i.e,incomeafterdirecttaxpayment)—
+we may call it a mild form of depression
+(iii) Salaries and wages should be revised by
+fatalfor economiesas thismaylead to depression
+ifnothandledwithcareandintime.Thefinancial the government to encourage general
+82. EconomicSurvey , 1996 - 97,MoF,Gol,N.Delhi.
+
+--- PAGE 214 ---
+7.30 < IndianEconomy
+spending by the consumers (as the 2002 and 2003, the United States’ economywas
+Government of India implemented in a growth recession. In fact, at several points
+the recommendations of the fifth pay over the past 23yearstheU.S.economyissaid to
+commission without much deliberation have experienced a growth recession. That is, in
+in1996-97). spiteofgains in realGDP, job growth waseither
+(iv) Indirecttaxessuchascustomduty,excise non-existentorwasbeingdestroyedatafasterrate
+duty (cenvat), sales tax, etc ., should be than new jobswere beingadded.
+cut down so that produced goods reach Experts have revived this term in thewakeof
+themarketat cheaper prices. theongoingfinancialcrisesin theEuro-American
+(v) Thegovernmentusuallygoesontofollow economies since 2010. The situation is better
+a cheap moneysupply policy byslashing described bytheterm ‘double-diprecession’.
+down interest rates across the board and -
+|
+thelendingprocedureisalso liberalised. DOUBLE DIP RECESSION
+(vi) Tax breaks are announced for new The concept of ‘recession’ in the USA and
+investmentsin the productiveareas,etc . Euro Zone is quite precise and technical — ‘two
+Alltheabove-givenmeasuresweretakenupby consecutive quarters of falling GDP’ — is how it
+—
+theUnitedFrontGovernmentin1996 97to pull is defined in these economies. And the idea of
+theeconomyoutofthemenaceoftherecession.83 the ‘double-dip recession’ is an extension of it.
+The forthcoming government took several other A double-dip recession refers to a recession
+—
+such measures by the end of 1998 99 onwards followed by a short-lived recovery, followed by
+(theNDAGovernment).Ultimately,themeasures
+another recession
+—
+the GDP growth sliding
+taken up by the governments acompanied by back to negativeafter a quarter or two of positive
+a general recovery in the world economy, the growth.The causes for such a recession vary but
+Indian economystarted recoveringfrom thebout often include a slowdown in the demand for
+of recession. Manyexperts had already predicted goodsandservicesbecauseoflayoffsandspending
+apossibilityofdepressionwithazero percentrate cutbacks done in the previous downturn. A
+ofinflation.84Although thisdid not happen.85 double-dip (which may be even ‘triple-dip’) is a
+—
+worst -casescenario fear/speculation of it moves
+|
+GROWTH RECESSION
+the economy into a deeper and longer recession
+and recovery becomes too difficult. As the world
+Anexpressioncoinedbyeconomiststodescribean —
+sawinthecaseoftheEuroZonecrisis therewas
+e
+m
+c
+o
+o
+r
+n
+e
+o
+j
+m
+ob
+y
+s
+t
+a
+h
+r
+a
+e
+t
+b
+i
+e
+s
+i
+g
+n
+r
+g
+o
+l
+w
+os
+in
+t
+g
+th
+a
+a
+t
+n
+s
+a
+u
+r
+c
+e
+h
+b
+a
+ei
+s
+n
+lo
+g
+w
+ad
+p
+d
+a
+e
+c
+d
+e
+.
+t
+T
+h
+h
+a
+e
+t afear ofsucha recession byfirstquarter of2013.
+For discussion on ‘Retrocession’see Chapter
+lackofjobcreationmakesit“feel”asiftheeconomy
+isin a recession, even though theeconomyisstill
+22.
+advancing.Manyeconomistsbelievethatbetween
+83. EconomicSurvey , 1996 - 97,MoF,Gol,N.Delhi.
+84. Itshouldbenoted herethatasanimpactof recessiontherateofinflation(atWPI)hadbeenfallingdownthroughout
+themid1998 - 99fiscalfinallytothelevelof0.5percentforafortnight(EconomicSurvey , 1998 - 99 , Gol,N.Delhi).
+85. The literature of Economicsand the empirical world experiencessuggest that the phase of recession has all the
+symptoms of depression except one. Every thing being the sam—e till producers are cutting the labour by force
+..
+'involuntarily(ie forcedl—abourcut)itisthestartingofdepression tobecompetitiveinthemarketeveryproducer
+starts'forcedlabourcuts' ultimatelyputtingtheeconomyintothegripofafullgrowndepression.
+
+--- PAGE 215 ---
+InflationandBusinessCycle t 7.31
+| higher levels of inflation (which plays a
+ABENOMICS
+major rolein thegrowth process).
+Thisnewtermhasbeeninnewsforsometimenow. (iii) StructuralReforms:Under thismeasure
+ThetermoriginatesfromthenameoftheJapanese the government has promised a variety
+PrimeMinisterShinzoAbeand indicates the‘set of deregulations in the economy, mainly
+of economic measures’ he took to rejuvenate the aimed at increasing ‘competitiveness’ of
+sluggish Japanese economy from the spells of the economy and attaining a sustained
+recession-likesituation — afterhisDecember2012 growthpath.Thisarrowstillremainsleast
+re-election tothepost helast heldin2007.Thisis concrete . By now, the government has
+—
+also known as the‘ThreeArrowsofAbenomics’ set upa Group ofExperts(mainlyformed
+thethreeeconomicmeasures under itare: of CEOs of large, medium and small
+(i) Fiscal Stimulus: The government has companies) that is supposed to propose
+initiated a massive fiscal stimulus to suitable measures to the government in
+encouragepublicandprivateinvestments the next three years regarding required
+in the desired areas of the economy — set of ‘structural’ reforms needed by the
+investmentinpublicworks/infrastructure economy. This measure also includes
+(whichare bynow50yearsoldand need Japaneseplanto‘join’TPP(TransPacific
+heavy investments), fiscal, concessions Partnership) and to go for a new FTA
+to privatesector companies which invest (Free Trade Agreement) between the
+in research & development, create jobs, countriesintheAsis-Pacificregionaimed
+increasesalary,etc . atincreasingitsexport potential.
+(ii) QuantitativeEasing:TheBankofJapan The Three Arrows of Abenomics are a suite
+(its Central bank) has been maintaining of economic measures which any economy may
+theofficialinterest rate(likeIndia’s Repo try in situations of any of the bad stages in the
+Rate) nearsub-zero to encouragelending ‘EconomicCycle’.Such economicmeasureswere
+by the banks. The aim is to double the suggested byJ. M. Keynes for the first time (in
+amountof moneyin circulation by2014 wake of the Great Depression of 1929). Today,
+and reach the annual inflation target itsmostfamousexponentistheNobelEconomist
+of 2 per cent . This makes the Japanese Paul Krugman. Meanwhile, experts have mixed
+currency (Yen) to depreciate, too . Thus, opinions on the success possibilities of the
+this measure is intended to boost both
+Abenomics.
+domesticandexternaldemandsto propel
+|
+the growth prospects of the economy. CONCLUSION
+This measure, whileat onehand increase
+Business cycles are basically fluctuations in the
+thegovernmentexpenditures,attheother
+production levels of economies above and below
+— itc l u ea ts di t n h g eg to ove h r i n g m he e r nt f ’ i s sc t a a l x d re e v fi e c n it u . e, T t h o i o s the trend of the equilibirium levels.86 But why
+do economies fluctuate? There are many factors
+measure revolves around the current
+which aresaid to be responsible for it, as per the
+strength of the economy to ‘absorb’
+experts:
+86. Cox,Simon,op.cit.,p.58.
+
+--- PAGE 216 ---
+7.32 < IndianEconomy
+(i) Economic instability and uncertainty (iii) Anti-inflationary government policies
+(due to logical or illogical expectations) (especially when general elections are
+may discourage investments thereby nearing ) may direct the attraction of
+reducinggrowth in thelong- term . investorsin theeconomy.
+(ii) A lack of the creative destruction (i.e. (iv) Unforseendisastersmaycauseeconomies
+innovation) may put the economy to
+fluctuate.
+in a slump or slowdown in its overall
+production.
+
+--- PAGE 217 ---
+C H A P T E R
+Km
+i
+-
+Sa & C ' r :' v k
+ft
+It I
+.
+I
+1
+AGRICULTURE *
+AND FOOD -
+'
+a T
+MANAGEMENT
+Between 2000 and 20JO, the
+contribution of cereals and pulses
+=> Introduction in the overall per capita food
+Kharif & Rabi expenditure reducedfrom 40 per
+=> FoodPhilosophyof India cent to 28 per cent, while that of
+=> LandReforms animal-based products andfruits
+=> GreenRevolution and vegetables rosefrom 36 per
+=> CroppingPatterns cent to 42per cent-this change in
+^ AnimalRearing consumptionpattern has improved
+productivity ofIndianfarmers as
+=> FoodManagement
+wellandstudiesshow agricultural
+Buffer Stock
+output per worker increased two
+<=> Storage
+.
+times between 2000 and 2010
+Food Subsidy
+Barring this small tract, however,
+FarmSubsidies
+India’sagriculturepresentsadismal
+Restructuringof FCI
+scenariowith stagnatingyieldand
+o AgricultureMarketing lowfarmers income . *
+(cid:127)
+See Third Food and Agriculture Integrated Development Action
+Report titled'IndiaasanAgricultureandHigh-valueFoodPowerhouse:
+ANewVisionfor2030',preparedjointlybyCllandMcKinsey&Company,
+N . Delhi,Releasedon12thApril2013 .
+
+--- PAGE 218 ---
+o AgriculturalCredit
+=> CommodityFuturesMarket
+=> Upstream& DownstreamRequirements
+=> Supply ChainManagement
+^ FarmWaste Debate
+=> Irrigation
+=> NationalFoodSecurityMission (NFSM)
+=> MacroManagementof Agriculture (MMA)
+* RashtriyaKrishi VikasYojana (RKVY)
+o ISOPOM
+=> NationalHorticultureMission(NHM)
+=> NationalBambooMission (NBM)
+=> NationalAgriculturalPolicy,2000
+=> AgriculturalInsurance
+=> ResearchandExtension
+FarmMechanization
+=> National Mission For Sustainable Agriculture
+(NMSA)
+o SecondGreenRevoution
+=> WTO and the Indian Agriculture: Prospects and
+Challenges
+=> WTOandAgriculturalSubsidies
+=> NationalFood SecurityAct
+o FoodProcessing
+!=> CurrentAgriculturalScenario
+
+--- PAGE 219 ---
+AgricultureandFoodManagement i 8.3
+|
+INTRODUCTION
+withonly2percentpeopledependenton
+thissectorfor their livelihood.
+Agriculture remains the most important sector (iii) Agricultureis not onlythe biggestsector
+of the Indian economy, whether it be the pre of the economy, but also the biggest
+¬
+independence or the post-independence periods. privatesectortoo .Itistheonlyprofession
+This fact is emphatically proved by the large whichstillcarriesnoburdenofindividual
+number of people who depend on it for their incometax .
+livelihood. Before starting any discussion on (iv) Thisis the biggest unorganisedsectorof
+Indian agriculture, we must look into its special the economy accounting for more than
+features-
+. 90percentshareinthetotalunorganised
+(i) From the monetary point of view the labour-force (93 per cent of the total
+share of the agriculture sector in the labour force of the economy, i.e., 39.7
+economyremainsat 14.1percentofthe crores is employed in the unorganised
+GDP.' In the fiscal 1950 — 51 agriculture sector)3.
+accountedfor 55.4per centin theGDP. (v) India has emerged as a significant agri
+(ii) The share of agriculture has been falling exporter in a few crops, viz., cotton, rice,
+in the country’s gross income, while meat,oilmeals,pepperandsugar.Asperthe
+industrial and services sectors’ shares WorldTradeOrganizationsTradeStatistics,
+have been on a rise constantly. But from the shares of India’s agricultural exports
+—
+the livelihood point of view still 55 per and imports in world trade in 2013 14
+cent people of India depend on the were 2.69 and 1.31 per cent respectively.4
+agriculture2 sector .This makes it a more Agricultural exports as a percentage of
+important sector than the industry and agricultural GDP have increased from
+—
+theservices (for Nepaland Tanzania the 9.10 per cent in 2008 09 to 14.05 per
+dependencyfor livelihood on agriculture centin 2013 — 14.Duringthesameperiod,
+is still higher at 93 per cent and 81 per agricultural imports as a percentage of
+cent, respectively). It means that 55 per agriculturalGDPalso increased from 3.94
+cent of the population liveswith only18 percentto5.50percent .
+percentofthetotalincomeoftheIndian (vi) Accordingtotheexportfigures,agriculture
+—
+economy this fact clearly substantiates isdeeplyrelated to industrialgrowthand
+the reason why the people who depend thenationalincomein India — 1percent
+on agricultureare poor.In thedeveloped increase in the agricultural growth leads
+economies such as the USA, France, to 0.5 per cent increase in industrial
+Norway, the UK and Japan, agriculture output(growth)and0.7percentincrease
+contributesonly2 percent of theirGDP in thenationalincomeof India.5
+1. EconomicSurvey2014 - 15 , MoF,Gol,N.Delhi,pp.76 -77.
+2. India2015,Pub.Div.,N.Delhi,p.86
+3. LabourBureau , Gol,N.Delhi,March2012.
+4. EconomicSurvey2014 - 15,MoF,Gol,N.Delhi,Vol.2,p.89.
+5. ThiscorelationhasbeenpointedoutbymanygreateconomistsinIndiasince1960s,forexample,byProf . RajKrishna
+, . - . ,
+(1976) S Chakravarty(1974 79)andC Rangarajan 1982toquotesomeofthemostimportantnames.
+
+--- PAGE 220 ---
+8.4 < IndianEconomy
+(vii) The industrialsector wasselected as the (xi) Nearly 66 per cent of the cropped area
+‘primemovingforce’of the economyin in the economy still depends on the
+thelate1940s. But due to marketfailure uncertainties of monsoon for their
+the sector failed to lead the economy. irrigationalrequirements.10
+Without increasing the income of the
+|
+people who depend on agriculture for KHARIF8CRABI
+theirlivelihood,themarketwasnotgoing
+to support the industries. As a result, Therearecertainspecialtermsused to understand
+the cropping seasons of India. The agricultural
+the Government of India announced
+cropyearin
+IndiaisfromJulytoJune.
+TheIndian
+agriculture as the prime movingforce of
+theeconomyin 2002.6
+croppingseasonisclassifiedintotwomainseasons-
+(i) kharifand (ii) rabibasedon themonsoon.The
+(viii) With 1 per cent increase in the share of
+kharif cropping season is from July to October
+agriculture in India’s total exports, the
+during the South-West/Summer Monsoon and
+money which flows puto agriculture is
+therabicroppingseason isfrom OctobertoMarch
+calculated to beRs.8,500crores.7 (North-East/Returning/Winter Monsoon). The
+(ix) In 2014—15, totalfoodgrainsproduction
+cropsgrownbetweenMarchandJunearesummer
+in the country is estimated at 257.07 crops, known aso{jayads.
+million tonnes (AE).8 As compared to
+PakistanandBangladesharetwoothercountries
+last year’s production of 265.57 million
+thatareusingtheterm‘kharif and‘rabi’todescribe
+tonnes, current year’s production of abouttheircroppingpatterns .Theterms‘kharif and
+foodgrains is lower by 8.5 million
+‘rabi’ originate from Arabic language where kharif
+tonnes . This decline has occurred on .
+meansautumnandrabimeansspring
+account of lower production of rice,
+Thekharifcropsincluderice,maize,sorghum,
+coarse, cereals and pulses due to erratic
+pearlmillet/bajra,fingermillet/ragi(cereals),arhar
+rainfall conditions during the monsoon
+season-2014. (pulses), soyabean, groundnut (oilseeds), cotton,
+(x) Productivity Gap between on-the-field etc . The rabi crops include wheat, barley, oats
+(cereals),chickpea/gram(pulses),linseed,mustard
+andidealfarmpracticesdecreasing.
+As per
+(oilseeds) etc .
+therecent releaseof theGol, theaverage
+productivity of rice, wheat and pulses |
+FOODPHILOSOPHYOFINDIA
+which was 2,202 kg, 2,802 kg and 625
+—
+kg per hectare in 2007 08 increased Indianfood philosophy11isgenerallyseendivided
+to 2,346 kg, 3,026 kg and 649 kg per into three phases with their own objectives and
+—
+hectareduring2011 13.9 challenges:
+6. ApproachPapertotheTenthFiveYearPlan , PlanningCommission,Gol,N.Delhi,2002.
+7. Thiswasthegeneralopinionoftheexpertsthroughout1990sbuttheofficialdocumentwhichacceptedthiscontention
+wastheForeignTradePolicy2002 - 07 , MinistryofCommerce,Gol,N.Delhi.Theviewhasbeencontinuedwithbythe
+Golinallofitsforthcomingtradepolicies.
+8. EconomicSurvey2014-15,MoF,Gol,N.Delhi,Vol.2,p.77.
+9. PressRelease , MinistryofAgriculture,Gol,N.Delhi,May22,2013.
+10. EconomicSurvey2011 - 12 , op.cit.,p.191.
+11. IndianCouncilofAgriculturalResearch(ICAR) , N.Delhi,1998.
+
+--- PAGE 221 ---
+AgricultureandFoodManagement t 8.5
+THEFIRSTPHASE To fight the situation there should have been a
+This phase continued for the first three decades
+time-bound and target-oriented macro-economic
+afterIndependence.Themainaimandthestruggle policysupport, which could deliver comparative
+ofthisphasewasproducingasmuchfoodgrainsas increase in the purchasing capacityof the masses
+required bythe Indian population, i.e.,achieving to make food affordable for them. India badly
+physicalaccesstofood. failed in it. The crisis was managed by throwing
+higher and higher subsidies ultimately affecting
+The idea of the Green Revolution at theend
+government expenditure on the infrastructural
+of this phaseat least gave India theconfidenceof
+realising the objective. At the end of the 1980s,
+shortcomingsin theagriculturesector .Even after
+providing higher food subsidies, some people
+India wasaself-sufficientcountryregardingfood.
+failedto purchasefoodand theywereleftwith no
+THESECONDPHASE option but to dieof hunger.
+India isstill in this phase and trying to solve
+MeanwhileIndiawascelebratingitssuccessofthe
+— thecrisisthroughtwinapproachfirstly,bycreating
+first phase, a new challenge confronted India
+maximum number of gainful employment and
+achieving economicaccess to food.Thesituation
+secondly by cutting cost of foodgrains (via the
+went on worsening and by early 2000 there was secondgreen revolution basedon biotechnology).
+a paradoxical situation in the country when it
+was having more than three times buffer stocks It must be kept in mind that the food self-
+of foodgrains in the central pool, but in several sufficiency happiness was a temporary thing for
+— India. By the mid 1990s, India realised that its
+states people were dying due to lack of food a
+foodgrain production was lagging behind its
+completemockeryofthelogicbehindmaintaining
+buffer stock, success of green revolution and
+populationincrease.ItmeansIndiaisstillfightingto
+the concept of India being a welfare state .12 The
+achievephysicalreachtotherequiredleveloffood.
+Supreme Court intervened after a PIL was filed
+THETHIRDPHASE
+bythe People’sUnionforCivilLiberties (PUCL) ^^^
+and a national level Food for Work Programme By the end of the 1980s, world experts started
+came up (to be merged with the National Rural questioning the very way world was carrying on
+Employment Guarantee Scheme). The courts with different modes of production. Agricultural
+took the governments on task if foodgrains rot activitiywasoneamong them which had become
+either in godowns or destroyed in oceans to hugely based on industries (chemical fertilizers,
+manage market pricefor thefoodgrains, or if the pesticides,tractors,etc .).Alldevelopedeconomies
+Centre had to go for exportingwheat at verylow had declared their agricultureto bean industry.13
+price.InthisprocessIndiaemergedastheseventh It was time to look back and introspect. By
+largest exporter of wheat (2002). Basically, we the early 1990s, several countries started going
+were exporting the share of wheat which was for ecologically friendly methods and techniques
+not consumed by many Indians due to lack of of industrial, agricultural and services sectors
+economicreach to food. development.Themuch-hypedGreenRevolution
+As the inputs of the Green Revolution were wasdeclaredecologicallyuntenableandtheworld
+costlier, its output naturally were to be costlier. headedfor organicfarming,green farming,etc .
+12. India2000andEconomicSurvey2000 - 01 , Gol,N.Delhi.
+13. BrundtlandReportonSustainableDevelopmentafterthedeliberationsatthesummit"OurCommonfuture" , 1987.
+
+--- PAGE 222 ---
+8.6 I IndianEconomy
+Itmeantthatachievingphysicalandeconomic the past which obstructed increasing
+—
+reachtofoodwasnottheonlychallengeIndiawas agriculturalproduction,suchas thesize
+facing, butsuchaimsshouldnotberealisedat the of agricultural holding, land ownership,
+—
+cost of the precious ecology and biodiversity a land inheritance, tenancy reforms,
+new challenge!India needed a new kind of green abolition of intermediaries, introduction
+revolution which could deliver it the physical, of modern institutional factors to
+economic as well as ecological access to food — agriculture,etc .
+—
+the Second Green Revolution an all-in-one (ii) The other objective of the land reforms
+approach towardstheagriculturesector . in India was related to theissueofsocio ¬
+economicinequalityin thecountry .The
+|
+LAND REFORMS
+highinequalityinlandownershipnotonly
+hadaitsnegativeeconomicimpactonthe
+The officialstance and emphasis on land reforms
+economy; but it was badly intertwined
+inIndiahavebeenchangingoverthetimeinwake
+with the caste system in India and the
+of theemergingissues, which maybeseen in two
+allocation ofsocial prestigeandstatus by
+phases:
+the society at large.14 More than 80 per
+-
+PHASE1
+centofthepopulationfromitslivelihood
+inherited the agrarian system which had
+Thisphasecommences justafter Independence. inequitable ownership of the asset, i.e.,
+All economies were agrarian before they land to earn income. The government
+wereindustrialised,onlytheir periods vary.Once wanted to go for a restructuring of
+democraticsystems developed, the first thing the the land ownership in the economy
+developedcountriesof todaydid wasto complete on logical grounds and with public
+the agrarian reforms in a time-bound way. As welfare approach. This objective of the
+land remains the means of livelihood for the land reforms got enough socio-political
+larger section of society in an agrarian economy, attention asit tried to dismantletheage-
+the successful completion of agrarian reforms old agrarian structure in the country . It
+benefitted the maximum number of people becamesuchahotissuethatlandreforms
+thereby improving their economic conditions. in India got a ‘bad-name’, synonymous
+At the time of Independence, India was a typical to land-grabbing bythegovernment and
+agrarian economy and had inherited a very allottingthem to thelandless masses.
+inequitableagrariansystem .Land reformswill be
+(iii) The third objective of the land reforms
+a major plank of independent India and as part in India was highly contemporary in
+of the agrarian reforms it was made clear by the nature, which did not get enough socio ¬
+pledge of the Indian National Congress in 1935 —
+political attention it was the objective
+itself. Land reforms in India had three objectives of increasing agricultural production
+similar to theother economieswhich opted for it for solving the inter-related problems
+in the past: of poverty, malnutrition and food
+(i) Removing institutional discrepancies insecurity.
+of the agrarian structure inherited from
+14. Rudolph, L.l and S.H.Rudolph, InPursuitof Lakshmi:The Political Economyof the IndianState,Orient Longman,
+Bombay,1987, pp.45 - 50.
+
+--- PAGE 223 ---
+AgricultureandFoodManagement i 8.7
+To realise the objectives of the land reforms, (iii) Cooperative farming, which has a high
+thegovernment took three main stepswhich had socio-economic moral base, was only
+manyinternalsub-steps: usedbythebigfarmerstosavetheirlands
+from thedraconianceilinglaws.
+1.AbolitionofIntermediaries
+Thewholeattemptofland reformsin Indiais
+Under this step, the age-old exploitative land consideredabigfailurebythemajorityofexperts .
+tenuresystems of the Zamindari, Mahalwari and Manyconsider theissue of land reforms in India
+Ryotwariwerefullyabolished. as the most complexsocio-economic problem of
+human history.15 Data regarding the numerical
+2.TenancyReforms
+achievements of land reforms have been highly
+Under this broader step, three inter-related discouraging.16
+—
+reformsprotectingtheland tenantswereeffected: (i) Tenancyreformsmadetenantshavetheir
+(i) Regulation of rent so that a fixed and rights but onlyon 4 per cent of the total
+rational rateof rent could be paid bythe operated areas of India (14.4 million
+share-croppersto theland owners; hectares of operated area by 11 million
+(ii) Securityoftenureso that a share-cropper
+tenantsby1992).
+could be feel secure about his future (ii) Redistribution of ownership rights of
+incomeand hiseconomicsecurity;and land took place but on only2 percentof
+(iii) Ownership rights to tenants so that the
+thetotaloperatedareaofthecountry(less
+landless masses (i.e., the tenants, the than 2 million hectares among the 4.76
+share-croppers) could get the final rights million people by1992).
+for the land they plough — “land to the (iii) Taken together, the whole process of
+tillers land reforms could benefit only 6 per
+cent of the operated area of the country
+3 (cid:127) ReorganisationofAgriculture witha negligiblesocio-economicpositive
+Thisstepagain has manyinter-related and highly
+impact.
+logical provisions in the direction of rational It was the failure of land reforms which
+agrarian reforms: made the government easily attracted towards
+(i) Redistributionoflandamong thelandless the new policy of the Green Revolution in the
+—
+poor masses after promulgating timely comingtimes landreformshadfailedtoincrease
+—
+ceilinglaws themovefailed badlywith agricultural production thus the government
+few exceptions, such as West Bengal, opted the route of increasing the productivity to
+Keralaand partiallyinAndhra Pradesh. reach thesamegoal, i.e., theinitiation of thenew
+techiquesofagriculture.
+(ii) Consolidation oflandcould onlysucceed
+in the regions of the Green Revolution
+REASONSFORFAILUREOFLANDREFORMS
+(i.e., Haryana, Punjab and western Uttar
+Pradesh) and remained marred with Out of many reasons forwarded by the experts
+manyloopholesand corruption. responsible for the failure of the land reforms in
+15. Thiswastheviewofthemajorityoftheexpertsaroundtheworldbythelate1960s.
+16. P.S.Appu,LandReformsinIndia:ASurveyofPolicy , LegislationandImplementation , LandReformsUnit,LaiBahadur
+ShastriNationalAcademyofAdministration,Mussouri,1995, pp.232 - 33.
+
+--- PAGE 224 ---
+8.8 i IndianEconomy
+India,thefollowingthreecould beconsideredthe (v) International pressure as well as the
+most importantones: suggestions from theworld Bank besides
+(i) Land in India is considered a symbol of thesuccessstoriesoftheGreenRevolution
+social prestige, status and identity unlike fromthecountrieswhereithadincreased
+the other economies which succeeded in
+theyieldofwheat.
+theirland reform programmeswhereitis -
+PHASE11
+seenasjustaneconomicassetforincome
+¬
+earning. The second phase of land reforms can be traced
+(ii) Lack of political will which was required in the process of economic reforms. Economic
+to affect land reforms and make it a reforms exposed the economy to the new and
+successful programme. emerging realities, such as, land acquisition and
+(iii) Rampant corruption in public life, leasing, food-related issues and the agricultural
+political hypocricyand leadership failure provisions of the World Trade Organization
+in the Indiandemocraticsystem . (WTO). We see a shift (Economic Survey 2012-
+13)in theGol thinking towards theissueof land
+—
+LANDREFORMS&GREEN REVOLUTION reforms aclearthreesteppolicylooksemerging:
+(i) Mapping land carefully and assigning
+Once the government launched the Green
+conclusivetitle,
+Revolution, the issue of land reforms almost got
+marginaliseddueto thefollowingreasons: (ii) Devisingafairbutspeedyprocessofland
+acquisition,and
+(i) Thereisan inherentdiabolicrelationship
+between the Green Revolution and the (iii) Putting in place a transparent and
+land reforms as the former suits bigger effectiveland leasingpolicy.
+and economic land holdings, while the Land is probably the single most valuable
+latter intended to fragment the land assetin thecountrytoday. Notonlycouldgreater
+amonga largenumberofthemasses. liquidity for land allow more resources to be
+(ii) The land reforms were socially opposed redeployed efficientlyin agriculture, it could ease
+by the land-owning caste lobbies, while the way for land-utilizing businesses to set up.
+there was no such opposition to the Perhaps,asimportant,itcouldallowlandtoserve
+Green Revolution. ascollateralfor credit.
+(iii) The level of legislative attempts taken TheNationalLandRecordsModernization
+by the governments regarding the land Programme (NLRMP), started in 2008, aims at
+reforms till date had almost no positive updatinganddigitizinglandrecordsbytheendof
+socio-economic impact on the country, the 12th Plan. Eventually, the intent is to move
+while the GRwas having all potentialof frompresumptivetitle(whereregistrationofa title
+provinghigher yieldsoffoodgrains. doesnotimplytheowner’stitleislegallyvalid) to
+conclusive title (where it does). Important points
+(iv) The subsidised supplies of foodgrains
+under PL480werehamperingIndiafrom related to this process may be summarised as
+carvingoutitsindependentdiplomacy,as
+follows:
+wellastherehasalwaysremainedadoubt (a) Digitisation will help enormously in
+about theregularsuppliesofwheat. lowering the costs of land transactions,
+
+--- PAGE 225 ---
+AgricultureandFoodManagement t 8.9
+while conclusive title will eliminate (f) Given thatthe peoplecurrentlylivingon
+legal uncertainty and the need to use the identified land will suffer significant
+the government as an intermediary for costsincluding theloss of propertyand
+acquiringlandso asto‘cleanse’title. livelihoods, a balance has to be drawn
+(b) Giventheimportanceofthisprogramme, between the need for economic growth
+its rollout in various states needs to be and thecostsimposedon
+thedisplaced.
+—
+accelerated easier and quicker land Moving onwards, the Gol passed the Land
+transactionswillespeciallyhelpsmalland AcquisitionBill,2013 . The bill, besides proposing
+medium enterprises that do not have the to amend the LandAcuisition, Rehabilitationand
+legalsupportorthemanagementcapacity Resettlement Act, 2011 proposed to put in place
+that largeenterpriseshave. a transparent, effectiveandspeedylaws reagrding
+(c) Prohibitory land leasing norms raises the the need of land reforms related to leasing and
+cost to rural-urban migration as villagers acquisition. By 2015, the new government at
+are unable to lease their land, and often the Centre proposed a new land bill (Right to
+have to leave the land untilled or leave a Fair Compensation and Transparency in Land
+family member behind to work on the Acquisition, Rehabilitation and Resettlement Bill,
+land. Lifting these restrictions can help 2015)aimed at removing theinadequacies of the
+—
+thelandless(ormoreefficientlandowners) Land Act of 2013 the Bill is being opposed by
+get land from those who migrate, even the political parties belonging to the opposition
+while it will allow landowners with (it isstill to be passed by the Parliament, though
+education and skills to move to industry thegovernmenthasdonearoundtenamendments
+orservices. to it).The country cannot afford to compromise
+theeconomicsecurityofland owners (farmers) in
+(d) Compulsoryregistrationofleaseholdsand
+the process of evolving a speedier process of land
+oftheowner’stitlewouldprovidetenants
+—
+and landowners protection. For such a acquisition the law dealing with it should be
+leasingmarketto takeoff,ownersshould
+transparent, justified,effectiveandspeedier,too .
+be confident that long-term tenancy Finerpointsof this PHASEcan besummed
+would notlead to theirlosingownership. upin thefollowingway:17
+With a vibrant leasing market, and clear (a) Leasing seems a better choice in face of
+title, thereshould belittle reason for not the opposition India has seen in recent
+strengtheningownershiprights. timesfrom thefarmersin differentstates
+(e) For large projects with a public purpose, toward attempts of land acuisition.
+such as the National Industrial and Again, if the country needs to attract
+Manufacturing Zones, which will investment from the organised private
+facilitate the setting up of small and sector (domestic or foreign) land leasing
+medium enterprises — large-scale land seemsa betteroption thanacquisition.
+acquisition maybe necessary.
+17. ThediscussionisbasedonseveralvolumesoftheEconomicSurveyandIndiabetweentheperiod 2010to2015and
+the12thPlan.
+
+--- PAGE 226 ---
+8.10 i IndianEconomy
+(b) Corporate farming has not taken place (f) Theissueoflandacquisitionistoestablish
+in the countryat a bigscale, speciallyin a logical equation with ‘environmental
+theareasoffoodgrainsproductionwhich issue’, in order to make the process of
+India needs to ensure food security and development sustainable (NITI Aayog
+compete in the global grain market in givesa right callfor it).
+particular and the agrimarket in general. It should be noted that while the Gol has
+Thishas becomeeven moreimportantin changed its orientation towards the issue of
+wakeoftheRighttoFoodgiventoalarge land reforms, the states of India are still trying
+segmentof the population. to accelerate and continue the process of land
+(c) Giving primacy to ‘leasing’ will solve reformsofPHASE/(butduetoenoughresistance
+severalproblems: from theland-owningsection in thecountry, the
+(i) It will keep land ownership in the processdoesnotseem happening, politically).
+handsoftheexistingfarmers;
+AGRICULTUREHOLDINGS
+(ii) It will prevent mass landlessness and
+unemploymentamongthefarmers; The average size of land holding in India is
+(iii) Farmers will get a permanent source continuously decreasing due to rapid and high
+of income (in the meantime, they population growth. The continuous division
+and fragmentation of holdings has increased the
+might be impartedskills and provide
+better employment in industries);
+number of holdings, obviouslyofsmallersize.As
+—
+and per thelatest (9th)AgricultureCensus2010 11:
+(iv) It will make land easily available for
+(i) Thetotalnumberofoperationalholdings
+theuseofpublicandprivatepurposes. in the country has increased from
+129 million in 2005-06 to 138 million
+(d) In wakeof the process ofglobalisation if 2010 — 11 (an increaseof6.61 per cent).
+thecountryintendstobringinbenefitsto
+agriculturesector it needs to enhance its (ii) There is a marginal increase in the
+agricultureproductiontosurpluslevels — operated area from 158.32 million
+and for this India needs to garner in the hectare (ha) in 2005-06 to 159.18
+investmentpotentialoftheprivatesector . million ha in 2010-11 (an increase of
+This cannot happen till the country is 0.54 per cent). The operated area has
+primarily increased because the State of
+ableto bringoutan effectiveland leasing
+andacquisition policies. Jharkhand participated for the first time
+—
+inAgricultureCensus2010 11(sincethe
+(e) The recent emphasis on the promotion
+statecameinto beingin theyear 2000).
+of the‘manufacturingsector’ and ‘smart
+cities’arehugelydependentonsmoother
+(iii) The average size of operational holding
+and speedier process of land acquisition. has declined to 1.16 ha in 2010-11 as
+Without expanding the industrial sector
+compared to1.23in 2005-06.
+to its optimum levels, the agriculture (iv) Thepercentageshareoffemaleoperational
+sector can emerge a remunerative holders has increased from 11.70 in
+profession — thecountryneedstomigrate 2005-06 to 12.79 in 2010-11, with the
+the extra labour force of the agriculture corresponding operated area of9.33and
+sector to
+industry,smoothly. 10.36.
+
+--- PAGE 227 ---
+AgricultureandFoodManagement t 8.11
+(v) The small and marginal holdings taken 2.FamilyHolding
+together (below 2.00 ha) constitute
+Family holding is that holding which gives work
+84.97percentin 2010-11against83.29
+toanaveragesizefamilyhavingoneplough under
+in 2003-06 with a share of 44.31 per traditionalfarmingsystem .Inotherwords,family
+cent in the operated area in the current
+holding is a ‘plough unit’ which is neither less
+Census as against the corresponding
+nor morefor an averagesizefamilyto cultivateit
+figureof41.14percentin 2005-06.
+properly.
+(vi) The large holdings (10.00 ha & above)
+were 0.73 per cent of the total number 3. OptimumHolding
+—
+of holdings in 2010 11 with a share of
+Maximum size of the holding which must be
+10.92 per cent in the operated area as
+possessedandownedbyafamilyiscalledoptimum
+against 0.85 per cent and 11.82 per cent holding.
+respectivelyfor 2005 — 06 Census.
+(vii) Share of different social groups in | GREEN REVOLUTION
+—
+operational holdings stands as 12.40
+per cent forSCs, 8.71 per cent forSTs, It is the introduction of new techniques of
+0.18 per cent for institutionaland78.72 agriculturewhich became popular bythe — nameof
+per centforothers. Green Revolution (GR) in early 1960s at first
+(viii) In a total of 137 - 76 million operational for wheat and by the next decade for rice, too .
+holdings in the country, the highest
+It revolutionised theverytraditional idea of food
+number belonged to Uttar Pradesh production by giving a boost by more than 250
+(22.93 million) followed by Bihar per cent to the productivity level.18The Green
+(16.19 million) and Maharashtra (13.70
+RevolutionwascentredaroundtheuseoftheHigh
+YieldingVariety(HYV)ofseedsdeveloped bythe
+million).
+USagro-scientistNorman Borlaugdoingresearch
+(ix) Out of a total of 159.18 million
+onaBritish RockfellorFoundationScholarshipin
+hectares operated area in the country,
+Mexico by the early1960s.The new wheat seeds
+the highest contribution was made by
+which hedevelopedinvivoclaimedtoincreaseits
+Rajasthan (21.14 million ha) followed
+productivitybymorethan 200percent .By1965,
+by Maharashtra (19.84 million ha) and
+Uttar Pradesh (17.09 million ha). theseeds weresuccessfully tested and were being
+usedbyfarmersinfooddeficientcountriessuchas
+Agriculturalholdingshavebeenclassifiedinto
+Mexico,Taiwan.
+threecategories:
+COMPONENTSOFTHEGREEN REVOLUTION
+1.EconomicHolding
+The Green Revolution was based on the timely
+It is that holding which ensures a minimum
+andadequatesupplyofmanyinputs/components .
+satisfactorystandardoflivinginafamily.Inother
+A brief review on the Green Revolution is given
+words, economicholdingis a minimum essential
+below:
+areafor profitableagriculture.
+18 . ConsultativeGrouponInternationalAgriculturalResearch(CGIAR),WorldBank,WashingtonDC,1971 .
+
+--- PAGE 228 ---
+8.12 < IndianEconomy
+1.TheHYVSeeds to local pests, germs and diseases than the
+established indigenous varieties, use of pesticides
+Theywere popularlycalled the‘dwarf varietyof
+and germicides became compulsory for result-
+seeds, with the help of repeated mutations, Mr.
+orientedandsecured yields.
+Borlaug had been able to develop a seed which
+was raised in its nature of nutrients supplied to 5 . ChemicalHerbicidesandWeedicides
+—
+thedifferent partsofthewheat plant againstthe
+leaves,stem and infavour of thegrain.Thismade To prevent costlier inputs of fertilisers not being
+the plant dwarf and the grain heavier — resulting consumed by the herbs and the weeds in the
+into high yield.19 farmlands, herbicides and weedicides were used
+whilesowingthe HYVseeds.
+These seeds were non-photosynthetic, hence
+non-dependentonsun raysfor targetedyields.
+6.Credit,Storage, Marketing/Distribution
+2.TheChemicalFertilizers Forfarmerstobecapableofusingthenewandthe
+The seeds were to increase productivity provided
+costlierinputsoftheGreenRevolution,availability
+theygotsufficientlevelofnutrientsfromtheland. of easy and cheaper credit was a must . As the
+The level of nutrients they required could not be farmlands suitable for this new kind of farming
+supplied with the traditional compostes because
+wasregion-specific(asitwasonlyHaryana,Punjab
+theyhave low concentration of nutrients content
+andwesternUttarPradeshin India)storageofthe
+and required bigger area whilesowing
+—
+it meant
+harvestedcropswasto bedonein theregion itself
+it will be shared by more than one seed. That is till theyweredistributed throughout thecountry .
+why a high concentration fertilizer was required Again, the countries which went for the Green
+which could begiven to the tragetedseed only — Revolution were food-deficient and needed the
+theonlyoptionwasthechemicalfertilizers
+—
+urea
+newyieldtobedistributedthroughoutthecountry
+(N), phosphate(P) and potash (K).20 anda properchainofmarketing,distributionand
+transport connectivity was necessary. All these
+3 (cid:127) TheIrrigation peripheral infrastructure were developed by the
+countries going for the Green Revolution with
+For controlled growth of crops and adequate —
+softerloanscomingfrom theWorld Bank India
+dilution offertilizers, acontrolled meansofwater
+beingthe biggest beneficiary.22
+supply was required. It made two important
+—
+compulsions firstlytheareaofsuchcropsshould
+IMPACTOFTHEGREENREVOLUTION
+beat least freeof floodingandsecondly, artificial
+watersupplyshould bedeveloped.21 The Green Revolution had its positive as well as
+negative socio-economic and ecological impacts
+4. ChemicalPesticidesandGermicides on the countries around the world, we will
+As the newseeds were new and non-acclimatised
+speciallystudyIndia here:
+19. InternationalMaizeandWheatImprovementCentre(CIMMYT),Mexico,1971.
+20. Thismadeitcompulsorytousehighlyconcentratechemicalfertilisers,pushingthetraditionalorganicfertilisers(i.e.,
+composte)outoffashion.
+21. ThiswasthereasonwhytheGRwasimplementedfirstlyintherainfalldeficientregionsof Indiai.e.,Haryana,Punjab
+andwesternUttarPradesh.
+22. India2002 , Pub.Div.,Gol,N.Delhi.
+
+--- PAGE 229 ---
+AgricultureandFoodManagement i 8.13
+1.Socio-economicImpact combination and the crop intensity,
+etc
+.).
+Food production increased in such a way (wheat
+in 1960sand rice, by1970s) that manycountries (b) Water table fallingdown (as the new
+becameself-sufficient(selfsufficiencyoffoodmust HYV seeds required comparatively
+notbeconfusedwiththeideaoffoodsecurity)and very high amount of water for
+—
+someevenemergedasfoodexportingcountries. irrigation 5 tonnesof water needed
+to
+produce1kgofrice.
+But the discrepancy in farmers’ income, it
+brought with itself increased the inter-personal (c) Environmental degradation due
+as well as inter-regional disparities/inequalities in to excessive and uncontrolled use
+India.23 Rise in the incidence of malaria due to of chemical fertilizers, pesticides
+water -logging, a swing in the balanced cropping and herbicides have degraded the
+patternsinfavourofwheatandriceputtingpulses, environment by increasing pollution
+oilseeds, maize, barleyon the margins, etc ., were levels in land, water and air. In India
+negativeimpacts. it is more due to deforestation and
+extensionofcultivationinecologically
+2.EcologicalImpact fragile areas. At thesame time, there
+is an excessive pressureof animals on
+T
+G
+h
+re
+e
+en
+m
+R
+os
+e
+t
+vo
+d
+l
+e
+u
+v
+ti
+a
+o
+s
+n
+ta
+w
+tin
+as
+g
+th
+n
+e
+eg
+e
+a
+c
+t
+o
+iv
+lo
+e
+gi
+i
+c
+m
+al
+p
+o
+a
+n
+ct
+e.
+o
+W
+f
+h
+t
+e
+h
+n
+e forests — mainlybygoatsandsheeps).
+theissuesrelatedwithitwereraised bythemedia,
+(ii) ToxicLevelin FoodChain:Toxiclevel
+scholars, experts and environmentalists, neither
+inthefoodchainofIndiahasincreasedto
+thegovernmentsnorthemasses(whattosayofthe such a high level that nothing produced
+farmersoftheGRregion — theywerenoteducated in India is fit for human consumption.
+enoughtounderstandthesideeffectsoftheinputs Basically, unbridled use of chemical
+oftheGR)wereconvinced.Butatimecamewhen pesticides and weedicides and their
+industrial production combined together
+the government and other government agencies
+both started doing studies and surveys focused had polluted the land, water and air to
+—
+around the ecological and environmental issues. such an alarmingly high level that the
+The major ones among them may be glanced in
+wholefoodchainhad beenapreyofhigh
+theirchronologicalorder:
+toxicity.
+(i) Critical Ecological Crisis: On the basis CONCLUSION
+^^^^^^^^
+of on-field studies24 it was found that critical
+ecological crises in the GR region are showing
+Theabovestudiesandthereportswereeye-openers
+— in theareaofecologicallynon-sustainablekindof
+up
+agriculture as well as a big question mark on it.
+(a) soilfertilitybeingdegraded(dueto the
+This was the time when agro-scientistssuggested
+repetitive kind of cropping pattern
+fora really‘green’(eco-friendly)green revolution,
+being followed by the farmers as
+which is today known among the experts with
+well as the excessive exploitation —
+many more names the evergreen revolution, the
+of the land; lack of a suitable crop second — green revolution thegreenfarming.
+23. VariousEconomicSurveys,specially1985 - 86to1994 - 86to1994 - 95,Gol,N.Delhi.
+24. Basedonvariousempiricalstudiesinthe1990sconductedseparatelybyVandanaShiva,C.H.HanumanthaRao,ICAR,
+PlanningCommission,etc.
+
+--- PAGE 230 ---
+8.14 < IndianEconomy
+| fodder, fuel, fibre and finance, labour
+CROPPING PATTERNS
+availability,etc .
+Theset and combination of crops which farmers (v) Technologicalfactors:Improvedvarieties
+opt for in a particular region, in their farm ofseedsand plants, mechanisation, plant
+practices, is cropping pattern of the region. protection,accessto information,etc .
+Multiplicity of cropping systems has been one
+of main features of Indian agriculture and it is PREVALENTCROPPINGSYSTEMS
+attributed to rainfed agriculture and prevailing Multiplicityof croppingsystems has been oneof
+socio-economicsituationsoffarmingcommunity.
+the main featuresof Indian agriculture.This may
+Thecropping pattern in India has undergone beattributed tofollowingtwo majorfactors:
+significant changes over time. As the cultivated (i) Rainfed agriculture still accounts for
+area remains more or less constant, the increased over 92.8 million hectare or 65 per cent
+demandforfood,becauseofincreaseinpopulation of the cropped area. A large diversity of
+and urbanisation, puts agricultural land under croppingsystemsexistsunderrainfedand
+stress resulting in crop intensification and crop drylandareaswithanover-ridingpractice
+substitutionoffood cropswith commercialcrops. of intercropping, due to greater risks
+Croppingsystemsofaregionaredecidedbyand involved in cultivating larger area under
+large,byanumberofsoilandclimaticparameters, a particularcrop.
+which determine overall agro-ecological setting (ii) Due to prevailing socio-economic
+for nourishment and appropriateness of a crop situations (such as, dependency of large
+or set of crops for cultivation. Nevertheless, population on agriculture, small land-
+at farmers’ level, potential productivity and holding size, very high population
+monetary benefits act as guiding principles while pressureonland resource,etc .).
+optingfor a particularcrop or a croppingsystem .
+Improving household food security has
+These decisions with respect to choice of crops been an issue of supreme importance to many
+and croppingsystemsarefurther narrowed down
+million farmersof India, with thefollowingfarm
+under influence of several other forces related —
+holdings
+to infrastructure facilities, socio-economic and
+(a) 56.15 million marginal (<1.0hectare),
+technologicalfactors,alloperatinginteractivelyat
+micro-level.Thesefactorsare: (b) 17.92 million small (1.0-2.0 hectares),
+and
+(i) Goegraphical factors: Soil, landforms,
+precipitation, moisture,altitude,etc . (c) 13.25 million semi-medium (2.0-4.0
+hectares).
+(ii) Socio-cultural factors: Food habits,
+festivals,tradition,etc . Theytogetherare90percentof97.15million
+operational holdings.An important consequence
+(iii) Infrastructure factors: Irrigation,
+of this has been that crop production in India
+transport, storage, trade and marketing,
+post-harvest handling and processing, remained to be considered, by and large, a
+subsistencerather than commercialactivity.Oneof
+.
+etc
+thetypicalcharacteristicsofsubsistencefarmingis
+(iv) Economic factors: Financial resource
+that most of thefarmers resort to growa number
+base, land ownership, size and type of ofcropson theirfarm holdings, primarilyto fulfil
+land holding, household needs of food,
+their household needs and follow the practice
+
+--- PAGE 231 ---
+AgricultureandFoodManagement t 8.15
+of rotating a particular crop combination over a Green Revolution period: Under the spell
+—
+period of 3 4 year interchangeably on different of the New Agricultural Strategy (NAS), more
+farm fields. popular as the Green Revolution (GR), since
+Underinfluenceofallabovefactors,cropping 1965 onwards, we see a major shift in the
+systemsremaindynamicintimeandspace,making cropping pattern of Indian farmers. The main
+it difficult to precisely determine their spread forces of change were economic, infrastructural
+usingconventionalmethods,overalargeterritory. and technological. Initiation of high yeilding
+However,ithasbeenestimatedthatmorethan250 varieties of seeds, financial supports of chemical
+doublecroppingsystemsarefollowedthroughout and other inputs together with the provisions of
+thecountry .Basedon rationaleofspreadofcrops minimum support price (MSP) gave major shift
+in each district in the country, 30 important to
+thefarmers’choicesofcrops.InGRregionswe
+cropping systems have been identified — see a highly repetitive kind of cropping pattern
+rice-wheat,rice-rice,rice-gram,rice-mustard,rice- with the ‘wheat-rice’ having predominance. In
+groundnut, rice-sorghum, pearlmillet-gram, pearl comingtimes, theGolstartedannouncingMSPs
+millet-mustard, pearl millet-sorghum, cotton - for manyother crops, which had its own impact
+wheat, cotton -gram, cotton -sorghum, cotton - on thefarmers’choicesof cropsin their cropping
+.
+safflower, cotton -groundnut, maize-wheat, systems
+maize-gram, sugarcane-wheat, soybean-wheat, This period was primarily guided by the
+sorghum-sorghum, groundnut-wheat, sorghum- singular objective of attaining self-sufficiency
+groundnut, groundnut-rice, sorghum-wheat, in food, which may lead the nation to attain
+sorghum-gram, pigeonpea-sorghum, groundnut, food security. By the late 1980s, India was able
+sorghum-rice, groundnut-sorghum and soybean- to manage self-sufficiecy in foodgrains. We see
+gram. emergence of big farmers in the GR regions for
+whom at least farmingdid not remainsubsitence
+CHANGESINTHECROPPING PATTERNS — commercial dimension enters the Indian farm
+Due to various reasons, the cropping pattern of practices,for thefirst time.
+Indian farmers have undergone changes over the This is the period when the traditional
+—
+time wecanseetheminfollowingthreephases: cropping pattern of India got exposed to new
+Pre-Green Revolutionperiod:In this phasewe inputsoffarmingandgeographicaldimensionsof
+see Indian farmersgoingin for a croppingsystem cropselection were undermined.Soon (by1996 —
+(generally), which was primarily decided by the 97), the government came to know that the GR
+socio-culturalandeconomicfactors — moreorless farm practices were ecologically damaging and
+they were closer to being sustainable as they had unsustainable. The Gol officially adopts the idea
+developedthroughthelongprocessofthetrialand of sustainableagriculture by1997.
+error process of their forefathers. A combination Reform period: Another wave of change in
+ofcropsweseebeinggrown byfarmersacrossthe cropping pattern comes with the process of
+country with judicious mixture of crops till the economic reforms commencing in 1991, which
+GreenRevolution.Thiswasaperiodofsubsistence brings in new opprotunities together with the
+farming with high dependency of population challengesin theareaoffarmsector:
+for livelihood on it. The nature of the cropping (cid:127) The issue of food security continued to
+patternwastoostubborn to change byincentives. give in pressure on policymakers as the
+foodgrains production was not able to
+
+--- PAGE 232 ---
+8.16 I IndianEconomy
+keep pace with the population growth negative global competition and enable
+rate . The situation becomes even more to expandexports .
+seriouswithFoodRights(NFSA)givento (iii) Bringing in proper labour laws, land
+alargepopulationofthecountryrecently.
+leasing and acquisition policies to
+(cid:127) Globalisation brought in new encouragetheentryofIndianandforeign
+opportunitiesoffarmexportstogetherwith privatesector in the agriculturesector of
+the challenge of cheap production (need thecountry .
+of farm mechanisation and commercial (iv) Keep pressurising the WTO so that
+farmingso that Indianfarm productscan a neutral and judicious regime of
+competein theglobal market) in wakeof agricultural provisions are evolved
+the agricultural provisions of the World by it accepting the realities of India’s
+TradeOrganisation. It made India think susbsistence farming and issues related
+of mobilising huge investments in the withthehighagriculturesubsidies,which
+sector . India accepts agriculture as an developedcountriesforwardtotheirfarm
+industry (2000) giving green signal to sector .
+corporateandcontractfarmings.
+(v) Evolvingtherightenvironmentof policy
+(cid:127) Ecologicallysustainablefarmingbecomes frameworkfor theinitiation of GMFsin
+theneedofthehourduetoensuingdanger farm sector and promotion to the non-
+of climate change and environment GMF related reasearch and development
+relatedconstraints.
+in the country
+—
+by encouraging the
+(cid:127) The Gol proposes for the Second Green corporatesector .
+Revolution in 2002 with inclusion of the (vi) Factoring in the issue of environment
+geneticallymodifiedfoods (GMFs). and climate change in the domain of
+In wake of the above-cited factors, experts agricultural policyframework.
+and the governments expect a major change (vii) Emphasising the need of farmers’
+coming in the cropping patterns of the country . awarenessandeducationforthechanging
+Now, theissueis,as howto face up theemerging times.For thisthePRIsinvolvementwill
+challenges together with making farm practices becrucial.
+—
+and cropping patterns sustainable experts (viii) Attending to issueslike plant protection,
+suggested the following steps (by late 1990s), checkingfarmwastage,pestmanagement,
+which werediscussed and almost accepted bythe
+commercial production and commercial
+PlanningCommission togetherwith theMinistry availalityof thegreen inputs.
+ofAgriculture:
+(ix) Evolving the right kind of credit and
+(i) Putting in place the right kind of
+insurance policies for the farm sector at
+agricultural policywith the provisionsof macro and microlevels.
+prize and punishment inclining farmers
+(x) Immediate inclusion of other factos in
+to go for the right kind of cropping
+. the farm sector like, a national market
+pattern
+for agricultural products, upstream and
+(ii) Evolvingtherighttradepolicy,whichcan
+downstreamrequirements, propersupply
+protect Indian farm products from the chain management, logistics, agro
+¬
+processingindustries,storage,etc .
+
+--- PAGE 233 ---
+AgricultureandFoodManagement t 8.17
+| Dairy Sector: India ranks first in the world in
+ANIMAL REARING
+milkproductionwitha productionofaround133
+Theeconomicsofanimal rearingplaysaveryvital million tonne and the per capita availabilty (pea)
+roleinthecountry .Theagriculturesectorin India of297grams (world peais290grams) bytheend
+ispredominantlya mixedcrop-livestock(animals, of2014-15.
+birds and fishes) farmingsystem . Animal rearing SomeoftheimportantGolprogrammes!schemes
+hasalwaysremainedan integral part ofit.Animal formeetingthegrowingdemandofmilk:
+rearing (which includes rearing of cows, camels, (cid:127) IntensiveDairyDevelopmentProgramme.
+buffaloes, goats, pigs,ships, etc .), besides directly (cid:127) Strengthening Infrastructure for Quality
+contributing to the national income and socio ¬ and Clean Milk Production, Assistance
+economic development plays the following vital
+to
+Cooperatives.
+functionsin thecountry:
+(cid:127) Dairy Entrepreneurship Development
+(i) Supplementsfamilyincomeandgenerates Scheme.
+gainfulemploymentin theruralsector;
+(cid:127) National Project for Cattle and Buffalo
+(ii) Particularly helps the landless labourers, Breeding.
+smalland marginalfarmersandwomen
+A new scheme, the National Dairy Plan, Phase
+(economicempowermentofwomen);
+I, has been launched in March 2012 with the
+(iii) Providescheapnutrititionalfood;
+followingobjectives:
+(iv) Functions as the best insurance against
+(cid:127) improvingproductivityofmilchanimals,
+drought, famine and other natural
+(cid:127) strengtheningandexpandingvillage-level
+calamities;
+infrastructurefor milk procurement,and
+(v) It ismoreinclusivein nature;and
+(cid:127) providing producersgreater access to the
+(vi) Promotes the cause of sustainable
+agriculture.
+marketin thedairysector .
+Pig Rearing Scheme: This scheme is aimed to
+Thesignificanceof thissector can beseen bythe
+assistfarmers/landlesslabourers/co-operativesand
+followingfacts:
+the tribals particularlyin North-Eastern states by
+(a) Thelivestocksectorasa wholeachievedan
+raering pigs under stall fed condition for quality
+averagegrowth rateof4.8 per cent during pork production and organised pork marketing
+the 11th Plan which is higher than the in rural areas and semi-urban areas. The main
+farm sector growth (3.5 per cent) and the objectivesoftheshcemeare:
+foodgrainsgrowth(around1percent).
+(cid:127) Encouraging commercial rearing
+(b) The livestock population of India is
+by adopting scientific methods and
+around 530 million. It accounts for infrastructurecreation;
+about26percentofthetotalagricultural,
+(cid:127) Productionandsupplyofimprovedgerm
+fishingandforestrysector .
+plasm;
+(c) Meat production has a growth rate of
+(cid:127) Organizing stakeholders to popularize
+5.7 per cent with a total production of
+scientificpractices;
+4.8 million tonne (still this sector has
+huge demand-supply gap and scope of
+(cid:127) Createsupplychainforthemeatindustry;
+expansion istoo much there). (cid:127) Encouragingthevalueadditionfor better
+income.
+
+--- PAGE 234 ---
+8.18 i IndianEconomy
+Adequate availability of feed and fodder for 30 to 75 per cent of total household
+livestock is vital for increasing milk production income of the rural population.Support
+andsustaining theongoinggeneticimprovement to these massive and highly diverse
+programme.Greenfoddershortageinthecountry livestock populations in these regions is
+is estimated at about 34 per cent . The central lacking.
+government hasputin placea modifiedCentrally (cid:127) Raising the capability of the rural poor
+Sponsored Fodder and Feed Development to conserve and manage their livestock
+Scheme since 2010 to supplement the efforts of resources, and enables them to derive
+thestates to improvefodder production. Besides, sustainableincomesfrom theseresources.
+theAccelerated FodderDevelopment Programme
+(cid:127) Decentralisation and convergence of
+was launched as a component
+—
+of the Rashtriya policysupportfor theseoptionsiscrucial
+Krishi Vikas Yojana in 2011 12 to promote for diversificationoflivelihoodsinsmall
+production offodder. holderfarming. ¬
+Animal Health: With the improvement in the
+|
+qualityoflivestockthroughlaunchingofextensive FOOD MANAGEMENT
+cross-breeding programmes, the susceptibility
+Managing enough food in the domestic market
+to various diseases including exotic diseases has
+increased. In order to reduce morbidity and
+hasbeentheprimefocusofthegovernementsince
+mortality,effortsarebeing made bythestate/UT
+Independence.Meetingthephysicaltargetoffood
+together with the challenge of enabling Indians
+governmentstoprovidebetterhealthcarethrough
+Polyclinics/Veterinary Hospitals/Dispensaries/ to procure food for their consumption was also
+First-Aid Centres including Mobile Veterinary there. Over the year, we see the government
+Dispensaries. For the prevention of various devising various ways and means to handle the
+diseases 27 veterinary vaccine production units twin challenges. Once, the country joined the
+—
+WTO, a new need was felt producing surplus
+are working with dominance of the publicsector
+(20 are public sector and rest in private sector). and competing with the world out there so that
+the benefits of globalisation could be reaped by
+The‘LivestockHealth&DiseaseControl’isbeing
+run as a centrallysponsored scheme to assist the the agriculture sector, too . This section mainly
+attemptsofthestatesand UTsin thearea. discusses thechallengeoffood.
+Suggestions for further development of the MINIMUMSUPPORTPRICE
+sector:
+MinimumSupportPrice(MSP)isaformofmarket
+(cid:127) Developing progeny tested semen for
+intervention by the Gol to insure agricultural
+artificialinsemination.
+producers against any sharp fall in farm prices
+(cid:127) Expansion of fodder availability through —
+a guarantee price to save farmers from distress
+innovativemeans.
+sale. The MSPs are announced at the beginning
+(cid:127) Facilities of animal health centres need ofthesowingseasonforcertaincropson thebasis
+to be upgraded and the disease control of the recommendations of the Commission for
+systems made more effective on the AgriculturalCostsand Prices (CACP, 1985).The
+veterinaryside.
+major objectives are to support the farmers from
+(cid:127) Inthedrylandsandmountainecosystems, distresssalesand to procurefoodgrainsfor public
+livestock contribute anywhere between distribution. In case the market price for the
+
+--- PAGE 235 ---
+AgricultureandFoodManagement i 8.19
+commodityfalls below theannounced minimum or10percentdecreasein therulingratesover the
+price due to bumper production and glut in the previousnormalyear.ProposalofMISisapproved
+market, government agencies purchase the entire on thespecificrequest ofState/UTgovernments,
+quantityoffered bythefarmersat theannounced if the state/UT governments is ready to bear 50
+minimum price. percentloss(25percentincaseof North-Eastern
+Commencing with ‘wheat’ for the 1066- states) incurredon itsimplementation.
+67, currently the MSPs are announced for 24
+commodities including seven cereals (paddy, PROCUREMENTPRICES
+wheat, barley, jowar, bajra, maize and ragi); five In 1966 — 67, the Gol announced a ‘procurement
+pulses (gram, arhar/tur, moong, urad and lentil);
+price’ for wheat, too
+—
+a bit higher than its MSP
+eight oilseeds (groundnut, rapeseed/mustard,
+(the purpose beingsecurityof food procurement
+toria, soyabean, sunflower seed, sesamum, for requirement of the PDS). The MSP was
+safflower seed and nigerseed); copra, raw cotton, announced beforesowing,whiletheprocurement
+raw jute and Virginia flu cured (VFC) tobacco. price was announced before harvesting — the
+The MSPs are fixed at incentivelevel, to fulfil the purpose was encouraging thefarmers to sell a bit
+followingpurposes: more and get encouraged to produce more. But
+(a) toinducemoreinvestmentbythefarmers this increased price hardly served the purpose
+in thefarmsector, as a suitable incentive to farmers — it would
+(b) to motivate farmers to adopt improved have been better had it been announced before
+crop production technologies,and sowingand notafter harvesting.Thatiswhysince
+—
+(c) to enhance production and thereby the fiscal 1968 69 the government announced
+farmersincome. only the MSP, which is considered the effective
+In the absence of such a guaranteed price, procurement price, too .26
+there is a concern that farmers mayshift to other
+ISSUEPRICE
+cropscausingshortagein thesecommodities.The
+agricultural price policy in India emerged in the The price at which the Gol allows offtake of
+backdrop of food scarcity and price fluctuations foodgrains from the FCI (the price at which
+provoked by drought, floods and international the FCI sells its foodgrains). The FCI has been
+pricesfor exportsandimports.25 fetchinghugelossesintheformoffoodsubsidies.27
+The foodgrains procured are transported to the
+MARKETINTERVENTIONSCHEME godowns of the FCI located across the country
+(counted in the buffer stock). From here they
+TheMarket InterventionScheme(MIS)issimilar
+—
+to MSP which is implemented on the request of head to thesalecounters to theTPDS or Open
+Market Sale. The transportaion, godowning,
+state governments for procurement of perishable
+and horticulturalcommoditiesin theeventoffall the cost of maintaining the FCI, carriage losses,
+inmarketprices.Theschemeisimplementedwhen etc ., make the foodgrains costlier (the additional
+expenses other than the MSP is known as the
+thereisat least 10percentincreasein production
+‘economic cost of foodgrains’). To make the
+25. NewAgriculturalStrategy,1965;ReportsoftheCACPandMinistryofAgriculture,Gol,N .Delhi.
+26. NewAgriculturalStrategy,1965;theCACP,1967andMinistryofAgriculture,Gol,N.Delhi.
+27. NewAgriculturalStrategy,1965;ReportsoftheCACPandMinistryofAgriculture,Gol,N .Delhi.
+
+--- PAGE 236 ---
+8.20 i IndianEconomy
+foodgrains affordable to the consumers, the issue DECENTRALIZEDPROCUREMENTSCHEME
+prices for foodgrains are set lower than the total The decentralised procurement (DCP) scheme
+—
+cost of procurement and distribution the gap wasoperationalised bytheGol in 1997 (together
+convertsinto the‘foodsubsidy’.
+with the Centre some states also procure
+foodgrains from the farmers, locally). Under this
+|
+BUFFER STOCK
+scheme, the designated states procure, store and
+also issuefoodgrains underTPDS.Thedifference
+Indiahasapolicyofmaintaingaminimumreserve
+offoodgrains(onlyforwheatandrice)sothatfood between the economic cost of the states and the
+is available throughout the country at affordable central issue price (CIP) is passed on to thestates
+pricesround theyear.Themainsupplyfrom here
+bytheGolassubsidy.Thedecentralizedsystemof
+goes to the TPDS (the PDS was restructured as procurement, helps to cover more farmers under
+the MSP operations, improves efficiency of the
+theTargeted PDS in 1997) and at timesgoes for
+PDS, providesvarietiesoffoodgrains moresuited
+Open Market Sale to check the rising prices, if
+needed. tolocaltaste,and reducesthetransportationcosts
+of theFCI.29
+The Buffer Stocking norms (of 2005) was
+revised28bythegovernment(bymid-2014)inthe The Gol urged allstates to adopt the DCP
+backdrop of increased requirement of foodgrains schemeso that costs of distribution can besaved
+toruntheTPDSinthelastfewyearsandwiththe and outreach of pricesupport mechanism to the
+farmersin hithertoweakerareascan beimproved.
+coming into force of the National Food Security
+Act(NFSA).Thenewnormsareasgiven belowin To overcome the problem of gaps in the flow
+thetable: of information about procurement operations
+on day- to -day basis, an Online Procurement
+REVISEDBUFFERSTOCK Monitoring System (OPMS) has been evolved
+for reporting and monitoring on a daily basis,
+Ason ExistingsinceApril,2005 Revised procurement operations for wheat, paddy and
+(inMillionTonnes) coarsegrainsin thecountry .
+1stApril 21.2 21.04
+Two decisions30 of the Gol that will impact
+1stJuly 31.9 41.12
+procurement and stocks of rice and wheat from
+1stOct 21.2 30.77
+are:
+1stJan 25.0 21.41
+(i) Tolimitprocurementfromstatesthatare
+As income levels of the BPL segment grows, in declaringbonusoverandabovetheMSP
+future, the buffer norms for the foodgrains are to theextentoftargetedTPDSandother
+supposed to be revised downward. But the logic welfare schemes (OWS) requirements.
+of maintainingsuchstockswill remain over there In the case of non-DCP states declaring
+for the purpose of market intervention by the bonus,theFCIwillnottakepartin MSP
+.
+government operationsin thosestates .
+28 . EconomicSurvey2014-15,MoF,Gol,N .Delhi,Vol. 2,p . 85 .
+29 . EconomicSurvey2011-12,MoF,Gol,N .Delhi.
+30 . EconomicSurvey2014-15,MoF,Gol,N .Delhi,Vol. 2,p . 84 .
+
+--- PAGE 237 ---
+AgricultureandFoodManageme.nt t 8.21
+(ii) To cap the percentage of levy on rice at ECONOMICCOSTOFFOODGRAINS
+25 percent . Theeconomiccost offoodgrainsconsistsof three
+|
+components, namely the MSP including central
+STORAGE
+bonus (the price paid to farmers), procurement
+Thetotalcapacityavailableforstorageoffoodgrains incidentals, and the cost of distribution. The
+asby2014was727lakhMT,comprisingcovered
+economiccost for both wheat and rice witnessed
+significant increase during the last few years due
+godownsof 567lakh MTcapacityand cover and
+plinth (CAP) facilities of 160 lakh MT capacity. to increase in MSPs and proportionate increase
+The existing warehousing facility is limited not in incidentals as well — as other costs . As per the
+onlyintermsofcapacity,butalsotocertaincrops. Economic Survey2014 1
+—
+5, the economiccosts of
+Thestockholdingcapacityhas not kept pacewith wheat and rice in 2014 15 are estimated to be
+over Rs. 28 and Rs. 20 per kg, respectively (they
+theincreasein productionand demandfora long
+time.Thechallengesofstoragehavebeenoutlined werearound Rs.20and Rs15 in 2010-11).
+bythe EconomicSurvey2014 — 15in thefollowing High economic cost necessitated a detailed
+way: review of the open-ended procurement policy,
+(a) TheCAPof160lakhMTcapacitycannot especially in states that offer high bonus on top
+betreatedasscientificstorage . of MSP and those that impose high taxes and
+statutorylevies,aswellasstockinganddistribution
+(b) Public agencies do not have warehouses policies. In this regard, the govern_ment set up a
+for proper storage of even half of the
+High Level Committee (HLC) in August 2014
+wheatand riceprocured bythem.
+(Shanta Kumar asitsChairman) tosuggest inter-
+(c) Inthewakeofpersistentseasonalinflation
+alia restructuring or unbundling of the FCI with
+in perishables like fruits and vegetables,
+a view to improve its operational efficiency and
+there was no effectivestrategy to control financial management .
+inflation on asustainable basis.
+(d) Coldstoragecapacityfor all typeof food OPEN MARKETSALESCHEME
+itemsisjust29MT(PlanningCommission
+The FCI has been undertaking sale of wheat at
+2012).The production of potato aloneis
+predetermined prices (reserve prices) in the open
+about35MT.
+market from time to time, known as the Open
+(e) Cold storage facility is available for Market Sale Scheme (OMSS). This is aimed at
+only10 per cent of fruits and vegetables servingthefollowingobjectives:
+produced in India (PlanningCommission
+(a) to enhancemarketsupplyoffoodgrains;
+2011).
+(b) to exercise a moderating influence on
+To bridge the gap between the requirement
+open market prices;and
+andavailabilityofscientificstoragecapacityisthe
+immediateneedofthehour.Forthisitisadvisable (c) to offloadsurplusstocks.
+Under the Open Market Sale Scheme
+to promote the policies by which private sector
+investmentcan beattracted to it. (Domestic), during the year 2014-15, 100 lakh
+tonnes of wheat was been allocated for sale in
+
+--- PAGE 238 ---
+8.22 < IndianEconomy
+the domestic market. Deviating from the earlier kept unchangedsince1July2002.Onaccountof
+practice,thisyear (i.e., 2015 — 16) thegovernment implementation of the NFSA, the Central Issue
+has adopted a policy of differential prices to Price (CIP) has further gone down for the APL
+encouragesaleofolderstockfirst — stickingtothe and BPL categories. The government, therefore,
+followingpolicystance: continues to provide large and growing amounts
+(i) Keeping the reserve price above MSP, of subsidy on foodgrains for distribution under
+but reasonably below the acquisition the TPDS/NFSA and other nutrition-based
+cost or economic cost of wheat, so that welfare schemes and open market operations.
+the buyers remain attracted to purchase The food subsidy bill has increased substantially
+of wheat from the mandis during the in the past few years puttingseverestrain on the
+harvest season and the mar _ ket remains publ.ic exchequer which is estimated to cross Rs.
+competitive. 1.20000 crores by 2015—16 (from around Rs.
+23.000croresof2005 — 06).
+ii) Maintainingthat the market pricein the
+lean season does not increase much and |
+FARM SUBSIDIES
+inflation remains under check.
+Farm subsidies form an integral part of the
+PRICESTABILISATION FUND
+^^ government’s budget. In the case of developed
+The Gol, by late March 2015, launched the countries, the agricultural or farm subsidies
+Price Stabilisation Fund (PSF) as a Central composenearly40percentofthetotalbudgetary
+Sector Scheme to support market interventions outlay while in India’s case it is much lower
+for price control of perishable agri-hoticultural (around 7.8 per cent of GDP) and of different
+commodities. The cost to be borne between the nature .
+centre and states in equal ratio (in case of the
+Direct farm subsidies: These are the kinds of
+North Eastern states, the respectiveshare will be
+subsidies in which direct cash incentives are paid
+75:25).Theschemewillcommencewithonlytwo
+to the farmers in order to make their products
+crops, viz.,onion and potato . more competitive in the global markets. The
+| developed countries (USA and Europe) spend
+FOOD SUBSIDY
+huge amounts of their annual budgets on the
+Foodsecuritysystem of thegovernment has been agriculture, farm and fisheries subsidies. Direct
+-
+aimedattwinobjectives. farmsubsidiesarehelpfulastheyprovidetheright
+(i) Provision of minimum nutritional levels of purchasing power to the farmer and can
+significantlyhelpin raisingthestandardsofliving
+support to the poor through subsidized
+of the rural poor.Theyalso help in checking the
+foodgrains,and
+misuseof publicfunds as theyhelp in the proper
+(ii) ensuringpricestabilityindifferentstates .
+identification of the beneficiaries.
+In fulfilling its obligation towards distributive
+Indirectfarm subsidies:These are the farm subsidies
+justice, the government incurs food subsidy.
+which are provided in the form of cheaper credit
+The programme covers over 65 million BPL
+facilities, farm loan waivers, reduction in irrigation
+households serviced through 4,50,000 fair price
+and electricity bills, fertilizers, seeds and pesticides
+shops.Whiletheeconomiccost ofwheatand rice
+subsidy as well as the investments in agricultural
+hascontinuouslygone up,theissuepricehasbeen
+
+--- PAGE 239 ---
+AgricultureandFoodManagement i 8.23
+research, environmental assistance, farmer training, sincemanufacturers have no incentive to
+etc .Thesesubsidiesarealso provided to makefarm increase efficiency. This will also play a
+productsmorecompetitiveintheglobalmarket. big part in bringingdown India’soverall
+The subsidies provided on the fertilizers as subsidy bill. For instance, according to
+‘input’subsidiesareintheformofindirectsubsidies . industry estimates, the money spent on
+But if the government does not incentivize the poor farmers could potentially come
+farmer byan effective cost reduction in prices of down to Rs. 37,000 crore from the
+the fertilizers, but provides direct cash incentives current
+Rs.100,000crore.
+after the produce, isknownasadirectsubsidy. (iii) Another advantage of cash subsidies is
+The World Trade Organization (WTO) has thatitwillfreeupthedistributionsystem
+put some ceilings on the amount of direct and and allow the people who receive the
+indirect subsidies being provided by the various subsidy to choose where they buy their
+developingand developed nationsdueto thefact goods from. The complexity is not so
+that these subsidies distort the free market forces much in the transfer of funds, as it is in
+which havetheir own implications. theidentification of thebeneficiaries.
+First thoughts are encouraging. A panel Other Countries: The idea of disbursing
+headed by Montek Singh Ahluwalia (the then subsidies directlyto the beneficiaries is becoming
+Deputy Chairman, Planning Commission) popular among the development thinkers and
+recommendedthat the power ministry, insteadof policymakers.It’salreadya partofpolicyinmany
+—
+paying power-distribution companies, hand out parts of the world predominantly, in Latin
+electricitysubsidiesdirectlyto farmers through a America where 16 countries have this practice,
+smartcard linked to the uniqueidentitynumber. and also in other countries such as Jamaica,
+India spends about Rs. 1,60,000 crore Philippines,Turkeyand Indonesia.
+every year or roughly 2 per cent of its GDP The biggest and most cited of such
+on subsidies, all indirectly. For example, in programmesis Brazil’s BolsaFamilia.Itstarted in
+fertilizers, which accounts for two -thirds of total 2001, with a programme aimed at education. It
+subsidies, the government fixes a low selling expanded in 2003 to include a range of services
+price and compensates the producers by paying like food and fuel, and now covers 2.6 million
+the difference between the selling price and the familiesin thatcountry .Thegovernmenttransfers
+actual production costs (plus a pre-decided profit cashstraighttoafamily,subjecttoconditionssuch
+margin) as subsidy. Important issues related to asschoolattendance,nutritionalmonitoring, pre ¬
+farmsubsidiesareasgiven below: natal and post-natal tests . By many measures,
+(i) The indirect subsidy has been blamed the programme is a success. Brazil’s poverty
+for benefiting big farmers more than the levels dropped by 13 percentage points between
+smallandmediumfarmers,forwhomthe 2003 and 2009, at least a sixth, thanks to Bolsa
+subsidy is intended. This is because the Familia (economicgrowth playeda bigpart,too .)
+bulkof thesubsidisedfertilizersis picked Millenium Development Goals initiative, which
+up bytherichfarmers, becausethesmall in 2000sought to halve povertyby2015,doesn’t
+and marginalfarmersaccountfor just37 even mention cash transfers. But, Brazilachieved
+per centof thefarm land. thegoals10 yearsahead of thedeadline.And the
+(ii) Indirect subsidy has also discouraged cost of these transfers has been 0.4 per cent of
+GDP.
+improvements in production processes
+
+--- PAGE 240 ---
+8.24 < IndianEconomy
+The big question is not whether a direct cash issue price and subsidise from their own
+transfer is the perfect solution, but whether it’s budgets (tillApril4,2013,when theGol
+an improvement over the existing systems . The ‘decontrolled’ the sugar industry from
+— —
+evidence itssuccessinotherpartsoftheworld the burden of ‘levy’ to the tune of 10
+and the poor performanceofindirectsubsidiesso per cent of their total production, there
+far would suggest so. Looking at it, the Gol has wasan implicit cross-subsidyon account
+alreadystarted a pan-Indiascheme to disburseall of the levy as sugar mills were under a
+forms of subsidies derectly, through the Direct transition). The report suggested some
+BenefitTransfer(DBT)since2015-16onwards. levelofcentralsupporttohelpstatesmeet
+the cost to be incurred on this account
+SUGARSECTORREFORMS
+may be provided for a transitory period
+India is the largest consumer and second largest (which has been announced on April 4,
+producerofsugarafterBrazil.Sugarandsugarcane 2013).
+are notified as essential commodities under the (v) dispensing with the regulated release
+Essential Commodities Act 1955. However, mechanism (of non-levy)sugar
+the Indian sugar sector suffers from policy (vi) stabletrade policy
+inconsistency and unpredictability. The sugar (vii) no quantitativeor movement restrictions
+industry in India is over-regulated and prone to on by-product likemolassesandethanol,
+cyclicalitydueto priceinterventions.Deregulation
+and dispensing with compulsory jute
+ofthesugarindustryhasbeenwidelydebatedfora packing.
+longtime.Froma purelyeconomicpointofview,
+(viii) astable, predictableandconsistentpolicy
+greaterplayofmarketforceswould providebetter
+reforms to be brought about in a fiscally
+prices and serve the interests of all stakeholders.
+neutral mannerand issuesconsideredfor
+Thegovernmentshouldcomeintothepictureonly
+implementationina phased manner.
+in situations where absolutely necessary. Export
+In the meanwhile, following on the path
+bans and controls could be replaced with small
+variableexternaltariffstostabilizeprices.Areport of ongoing factor market reforms’ the G
+—
+ol
+decontrolled the sugar industry in April 2013
+on‘RegulationoftheSugarSectorinIndia:TheWay
+—
+effective for the ‘sugar year’ September 2012
+Forward’has been submitted by the Committee
+under the chairmanship of Dr. C. Rangarajan,
+August2013.Itabolishedthedecades-oldpractice
+of regulating ‘how much sugar a mill can sell in
+Chairman of the EconomicAdvisory Council to
+the Prime Minister.The measuressuggested31are theopen market’and the‘levy’system in whicha
+asfollows:
+companyisforcedtosell10percentoftheoutput
+at a loss to the FCI forsupplies through the PDS
+(i) phasingoutcanereservationarea —
+(Public Distribution System) they will be no
+(ii) dispensing with minimum distance more under the levy obligation. The next move
+criteria of reform may be ‘linking sugar and sugarcane
+(iii) dispensingwith thelevysugarsystem prices’.Tocontinuesubsidisedsupplytothepoor,
+(iv) states that want to provide sugar under states will now have to buysugar at market rates
+the PDS mayprocureitfrom themarket and maintain theexistingPDSsaleprice.
+according to their requirement, fix the
+31. EconomicSurvey2012-13,MoF,Gol,p.177
+
+--- PAGE 241 ---
+AgricultureandFoodManagement i 8.25
+|
+RESTRUCTURING OF FCI
+packagefor thenext three-fiveyears).
+(iv) The Government of India must provide
+The Gol did set up a High Level Committee better pricesupport operationsfor pulses
+(Shanta Kumar as its Chairman) to suggest and oilseeds and dovetail their MSP
+restructuring or unbundling of the Food policy with trade policy so that their
+CorporationofIndia(FCI)withaviewtoimprove landed costsarenot belowtheir MSP.
+itsoperationalefficiencyand financialmanagement . (v) Cash transfers in TPDS should be
+Someof the recommendations havealready been gradually introduced, starting with large
+implemented by the Gol by now. The subject- citieswithmorethan1millionpopulation
+wise recommendations of the committee are as — extendingit tograinsurplusstatesand
+given below: thengivingdeficitstatesfor theoptionof
+cashor physicalgraindistribution.
+ONFCI
+(vi) The newface ofthe FCIwill be akin to
+(i) The FCI should hand over all an agency for innovations in the food
+procurement operations of wheat, managementsystemwiththeprimaryfocus
+paddyand rice to states that havegained of creatingcompetition in everysegment
+sufficient experience in this regard and of the foodgrain supply chain, from
+havecreated reasonableinfrastructurefor
+procurement to stocking to movement
+procurement . The FCI will accept only andfinallydistribution under theTPDS,
+thesurplus (after deducting the needs of
+so that overall costs of the system are
+the states under the NFSA) from these substantially reduced and leakages
+state governments (not millers) to be plugged and it serves a larger number of
+moved to deficit states . The FCI should farmersand consumers.
+move on helping those states where
+farmers suffer from distress sales (prices ONTPDSAND NFSA
+below MSP), and which are dominated
+(i) Given that leakages in the TPDS range
+bysmall holdings.
+from 40 to 30 per cent, the Gol should
+(ii) Centre should make it clear to states defer implementation of the NFSA in
+that in case of any bonus beinggiven by states that have not done end- to -end
+them on top of MSP, it will not accept computerisation; have not put the list of
+grains under thecentral pool beyond the beneficiaries online for anyone to verify;
+quantity needed by the state for its own and havenotset upvigilancecommittees
+TPDS and Other WelfareSchemes.This to check pilferagefromTPDS.
+advice has already been notified by the
+(ii) Coverage of population should be
+Gol.
+broughtdown to around40percent .
+(iii) The statutory levies including (iii) BPLfamiliesandsomeevenabovethatbe
+commissions need to be brought down given7kg/person.
+uniformlyto3 per cent, or at most4 per
+(iv) On central issue prices (CIP), while
+centofMSP,andthisshouldbeincluded
+Antyodya householdscan begivengrains
+in the MSP itself (states losing revenue
+at Rs. 3/2/1/kg for the time being, but
+due to this rationalisation of levies can
+pricing for priority households must be
+becompensatedthroughadiversification
+linked to MSP.
+
+--- PAGE 242 ---
+_
+8.26 I IndianEconomy
+ONSTOCKINGANDMOVEMENT
+|
+AGRICULTUREMARKETING
+(i) FCI should outsource its stocking
+operationsto variousagencies. India’s grimarket is presently regulated by the
+(ii) Coveredandplinth(CAP)storageshould AgriculturalProduceMarketCommittee(APMC)
+be gradually phased out with no grain Act enacted by the state governments . There
+stocks remaining in CAP for more than are about 2,477 principal regulated agrimarkets
+3months. and 4,843 sub-market yards regulated by the
+(iii) Silo bag technology and conventional respective APMCs in India. Thus, India has not
+storageswherever possibleshould replace one, not 29 (number of states) but thousands of
+CAP. agriculturalmarkets.ThisAct notifiesagricultural
+commodities produced in the region such as
+ONBUFFERSTOCKINGOPERATIONSAND cereals, pulses,edibleoilseed,fruitsandvegetables
+and even chicken, goat, sheep, sugar, fish, etc .,
+LIQUIDATIONPOLICY
+^^ ^^ and provides that first sale in these commodities
+(i) The Department of Food and Public
+can be conducted only under the aegis of the
+Distribution (DFPD)/FCI have to work APMC through the commission agents licensed
+in tandem to liquidate stocks in Open bytheAPMCsset up under theAct.
+MarketSaleScheme(OMSS)orinexport
+The typical amenities available in or around
+markets, whenever stocks go beyond
+the APMCs are: auction halls, weigh bridges,
+the buffer stock norms. A transparent
+godowns, shops for retailers, canteens, roads,
+liquidation policy is the need of hour,
+lights, drinking water, police station, post-
+whichshouldautomaticallykick-inwhen
+office, bore-wells, warehouse, farmers amenity
+FCI is faced with surplus stocks than
+center, tanks, water treatment plant, soil-testing
+buffer norms.
+laboratory, toilet blocks, etc . Various taxes, fees/
+(ii) Greater flexibility to FCI with business chargesandcessleviedonthetradesconductedin
+orientation to operate in OMSS and themandisarealso notified under theAct.
+export marketsis needed. As per the Economic Survey 2014 — 15, the
+ONDIRECTSUBSIDYTOFARMERS APMCs of the states levy multiples fees of
+substantial magnitudewhich are non-transparent
+(i) Farmers be given direct cash subsidy (of andhenceworkasasourceofpoliticalpower.The
+about Rs 7000/ha) and fertilizer sector functioning of the APMCs have always been a
+can then bederegulated.
+matterofdebateamongexpertsand policymakers
+- - alike—majorissuesbeingthefollowing:
+ONENDTOENDCOMPUTERIZATION
+(cid:127) They charge a market fee of buyers,
+(i) Togofortotalend- to -endcomputerisation
+and they charge a licensing fee from
+of the entire food management system,
+the commissioning agents who mediate
+startingfrom procurementfrom farmers,
+between buyersandfarmers.
+to stocking, movement, and finally
+distribution through theTPDS. (cid:127) They also charge small licensing fees
+from a whole range of functionaries
+(warehousingagents,loadingagents,etc .).
+
+--- PAGE 243 ---
+AgricultureandFoodManagement t 8.27
+Inaddition,commissioningagentscharge but thesmall number of licencesgranted
+commission feeson transactions between createsapremium,whichisbelievedtobe
+buyersandfarmers. paid incash.
+The levies and other market charges (cid:127) Thereisa perception that thepositionsin
+imposed by states vary widely. Statutory the market committee (at thestate level)
+levies/mandi tax, VAT, etc ., are a major and the market board — whichsupervises
+sourceof marketdistortion. the market committee — are occupied by
+Suchhightaxesatthefirstleveloftrading the politically influential persons. They
+have significant cascading effects on enjoyacosyrelationshipwiththelicensed
+commodity prices, as the commodities commission agents who wield power by
+passesthroughthesupplychain. Forrice, exercising monopoly power within the
+these charges can be as high as 14.5 per notified area, at times byformingcartels.
+cent in Andhra Pradesh (excluding the The resistance to reforming APMCs is
+state VAT) and close to 10 per cent in perceived to be emanating from these
+Odishaand Punjab.
+factors.
+Even the model APMC Act (described The scope of the Essential Commodities Act,
+below) treats the APMC as an arm of 1955 (ECAct) is much broader than theAPMC
+the state, and, the market fee, as the
+Act.Itempowersthecentralandstategovernments
+tax levied by the state, rather than fee concurrently to control production, supply and
+charged for providing services. This is a distribution of certain commodities, including
+crucial provision which acts as a major pricing, stock-holding and the period for which
+impediment to creating national common thestocks can be kept and to impose duties.The
+market in agricultural commodities. APMCAct on the other hand, controls only the
+Removal of this provision will pave first sale of the agricultural produce. Apart from
+the way for creating competition and a food-stuffs which are covered under the APMC
+nationalcommon marketfor agricultural Act, the commodities covered under the ECAct
+commodities. generally are: drugs, fertilisers, and textiles and
+coal.
+Moreover, though the market fee is
+collected just like a tax, the revenue
+MODELAPMCACT
+earned by the APMCs does not go to
+the state exchequer and hence does not Since the State APMC Acts created fragment
+requiretheapprovalofStatelegislatureto marketsforagriculturalcommoditiesandcurtailed
+utilisethefundssocollected.ThusAPMC the freedom of farmers to sell their produce
+operationsare hidden fromscrutiny. other than through the commission agents and
+other functionaries licensed by the APMCs, the
+The rate of commission charged by the
+licensed commission agentsisexorbitant, Ministryof Agriculture (Gol) developed a Model
+because, unlike direct taxes, which are APMCAct,2003and has been pursuing thestate
+levied on net income, the commission is
+governmentstomodifytheirrespectiveActsalong
+chargedontheentirevalueoftheproduce
+it.The ModelAPMCAct provides the following
+sold.Thelicensefeechargedfromvarious newthings:
+market licensed operators is nominal, (i) Directsaleoffarm producebythefarmer
+to contractfarmingsponsors;
+
+--- PAGE 244 ---
+8.28 < IndianEconomy
+(ii) Setting up ‘Special markets’ for main market yards and 354 sub-yards into a
+‘specified agricultural commodities’ — singlelicensingsystem .Rashtriyae-marketServices
+mostlyperishables; Ltd. (ReMS), a joint venture created by thestate
+(iii) Permits private persons, farmers and government and NCDEXSpot Exchange, offers
+consumers toestablish newmarketsfor automated auction and post auction facilities
+agricultural producein anyarea; (weighting, invoicing, market fee collection,
+accounting), assaying facilities in the markets,
+(iv) Asinglelevyof market fee on thesaleof
+facilitate warehouse-based sale of produce,
+notifiedagriculturalcommoditiesin any
+facilitatecommodityfunding,pricedissemination
+marketarea;
+byleveraging technology.Thewidergeographical
+(v) Replaces licensing with registrations of
+scopeaffordedbybreakingupfragmentedmarkets
+market functionaries which would allow
+hasenabledprivatesectorinvestmentinmarketing
+them to operate in one or more infrastructure.
+different marketareas;
+The provisions of the Model APMC Act do
+(vi) Establishment of consumers’ and
+notgofarenoughtocreateanationalorevenstate
+farmers’ markets to facilitate direct sale
+levelcommonmarketforagriculturalcommodities
+of agriculturalproduceto consumers;
+asit hasseveralinadequacies.Theseinadequacies
+(vii) Creation of marketing infrastructure
+have been highlighted by the Economic Survey
+from therevenueearned bytheAPMC;
+2014
+—
+15in thefollowingway:
+(viii) Providessomefreedom to thefarmers to (cid:127) The model APMC Act retains the
+selltheirproducedirectlytothecontract -
+mandatory requirement of the buyers
+sponsorsorinthemarketsetupbyprivate
+having to payAPMCcharges even when
+individuals,consumersor producers;
+the produce is sold directly outside the
+(ix) Increases the competitiveness of the APMCarea,say,to thecontractsponsors
+market of agri-produce by allowing orinamarketsetupbyprivateindividuals
+common registration of market even though no facilities provided bythe
+intermediaries. APMCis used.
+Manyof thestates have partiallyadopted the (cid:127) The relevant provision in the model
+provisionsofmodelAPMCActsandamendedtheir APMCAct is, ‘power to levymarket fee’
+APMCActs.Some of thestates have not framed (single point levy) — “every market shall
+rulestoimplementtheamendedprovisions,which levy market fee on the sale or purchase
+indicatehesitancyonthepartofstategovernments of notified agricultural produce, whether
+to liberalise thestatutory compulsion on farmers brought from within the State or from
+to sell their produce through APMCs. Some outsidetheStateinto themarketarea.”
+states(suchasKarnataka)32havehoweveradopted
+(cid:127) The model APMC Act bars the APMCs
+chan — ges to create greater competition within the and commission agents from deducting
+state popularlyknownastheKarnatakaModel. the market fee/commission from the
+Karnataka has integrated its 51 of the 155 seller, but the incidence of these fees/
+32. OtherstateslikeMaharshtra,TamilNaduandAndhraPradeshdidalsogoforreformsintheirAPMCstakingcluesfrom
+theModelAPMCAct - makingthesestatesalsotohavesomesynergycomingintotheiragriculturemarket.
+
+--- PAGE 245 ---
+AgricultureandFoodManagement i 8.29
+commission falls on the farmers since (ii) To promote development of a common
+buyers would discount their bids to the national market for agricultural
+extentof thefees/commission charged by commodities through e - platforms, a
+theAPMCand theCommission agents . central- sector scheme for Promotion of
+(cid:127) The model APMC Act provides for National Agricultural Market through
+setting up of markets by private sector, Agri-Tech Infrastructure Fund (ATIF)
+—
+but this provision is not adequate to has been lauched to be implemented
+createcompetitionforAPMCsevenwithin
+by2016-17.
+the state, since the owner of the private (iii) Ontherequestofthecentralgovernment,
+market will have to collect the APMC a number of state governments have
+fees/taxes,forandonbehalfoftheAPMC, exempted the marketing of fruits and
+from the buyers/sellers in addition to the vegetablesfromthepurviewoftheAPMC
+fee that he wants to chargefor providing Act. The NCT of Delhi has put fruits
+trading platform and otherservices, such and vegetables outside its APMC. The
+as loading, unloading, grading, weighing Small Farmers Agribusiness Consortium
+etc . (SFAC) has taken the initiative for
+The Economic Survey 2014 — 15 goes to the developinga KisanMandiin Delhiwith
+extent of using Constitutional provisions to set aviewtoprovidingaplatformtoFPOsfor
+up a common agrimarket — in a way, suggesting directsaleoftheirproduceto prospective
+theCentre to use its power to overridethestates’ buyers totally obviating or reducing
+power on the APMC as the subject falls in the unnecessary layers of intermediation in
+Concurrent List.But thisapproachcould beseen theprocess.TheSFACplan toscaletheir
+as heavyhanded on the part of the Centre and activities in other states based on the
+contrarytothenewspiritofcooperativefederalism. outcome of the experience of the Delhi
+kisan mandi.
+The central government is closely working
+withstategovernmentsto re-orientstates’APMC
+|
+AGRICULTURALCREDIT
+Actstoprovideforestablishmentofprivatemarket
+yards/privatemarkets.Asper theEconomicSurvey
+— Three types33 of loans are provided to Indian
+2014 15,someof the recentinitiatives taken in farmers to meettheirfinancial requirements —
+this regardareasfollows:
+(i) Short- termloans
+(i) Acomprehensiveadvisoryissuedtostates
+(ii) Medium- termloans
+togo beyondtheprovisionsoftheModel
+Act and declare the entire state a single (iii) Long- term loans
+market with one licence valid across the -
+SHORTTERM LOANS
+entirestate and removing all restrictions
+on movement of agricultural produce Short- term loansare provided for a period of less
+within thestate . than 15 months to meet out expenses of routine
+farming and domestic consumptions. This type
+33. RakeshMohan,'AgriculturalCreditinIndia:Status,IssuesandFutureAgenda',fromhislecturedeliveredatthe17th
+NationalConferenceofAgriculturalMarketing,IndianSocietyofAgriculturalMarketing,Hyderabad,February5,2004
+[RakeshMohanwasthethenDeputyGovernor,ReserveBankofIndia]
+
+--- PAGE 246 ---
+8.30 i IndianEconomy
+of loan is demanded by farmers for purchasing (up to December 2014), with food items (refined
+seeds, fertilizers and for meeting out family soyaoil,soyabean,chana,corianderand rapeseed/
+requirements. mustard seed) contributing over 50 per cent
+- of it. The remaining (81.63 per cent) turnover
+MEDIUMTERM LOANS was contributed by bullion, metals and energy
+.
+Medium- term loans are provided for a period contracts
+of 15 months to 5 years to purchase agricultural A Committee set up by the Ministry of
+equipment,animalsandfor land improvement. Finance, which submitted its report in April
+- 2014 has observed that hedging efficiency of the
+LONGTERMLOANS commodity futures markets is low. In order to
+Long- term loans are provided for a period of ensure that forward markets in commodities are
+more than 5 years. This type of loan is taken well regulated and the Indian commodityfutures
+by the farmers to purchase land and expensive
+market iscompliantwith internationalregulatory
+agricultural equipment and for repayment of old
+requirements, the regulatory framework for
+loans. the commodity futures market needs to be
+strengthened at the earliest. The Gol decided
+SOURCESOFAGRICULTURALLOANS to merge the commodity market regulator, the
+Forward Market Commission (FMC) with the
+The Indian farmer can acquire theabovetypes of
+Security & Exchange Board of India (SEBI) in
+loansfrom twosources:
+2015—16with enhanced and effectiveregulatory
+(i) Non-institutional sources like powergiven to it.
+moneylenders, landlords, big
+businessmen,etc .34
+UPSTREAMSC DOWNSTREAM
+(ii) Institutional sources like commercial REQUIREMENTS
+banks, co-operative banks and
+governmentsources. ‘Upstream’ and ‘downstream’ are business terms
+Policyonagriculturecreditaimsatprogressive applicable to the production processes that exist
+within several industries. Upstream, downstream
+institutionalisationofcreditagenciesforproviding
+credittofarmersforraisingagriculturalproduction and midstream make up the stages of the
+and productivity. Agricultural credit is disbursed production processfor different industries.
+througha multi-agencynetworkconsistingofco ¬ Upstream:The upstream stageof the production
+operatives, commercial banks and regional rural process involves searching for and extracting
+banks (RRBs). raw materials — it does not do anything with the
+material itself, such as processing the materials.
+| 7"
+COMMODITY FUTURES MARKET In upstream firms simply find and extract the
+raw material. Thus, any industry that relies on
+Bymid-2015,outofthe113commoditiesnotified
+the extraction of raw materials commonly has
+for futures trading, 43 were actively traded in 4 an upstream stage in its production process. In
+national exchanges and 6 commodity-specific
+a more general sense, upstream can also refer to
+exchanges. Share of agricultural commodities in
+— anypart of the production process relatingto the
+thetotalturnoverwasover18percentin2014 15
+extractionstages .
+34. KnownastheUnregulatedCreditMarket.
+
+--- PAGE 247 ---
+AgricultureandFoodManagement i 8.31
+Downstream: The downstream stage in the chain members business as if they were
+production process involves processing the theirown.
+materialscollectedduringthe upstreamstageinto (ii) Integration of business processes
+a finished product. It further includes the actual throughout a supply chain depends on
+sale.End userswillvarydependingonthefinished cooperation of members. For example,
+product. Regardless of the industry involved, a manufacturer who decides to sole-
+the downstream process has direct contact with source a component with one supplier
+customers through thefinished product. can control and integrate with the
+Midstream: Several points in between the two supplier tostreamline business processes.
+points (the place where raw is extracted and till Technologycanbeimplementedtomake
+it reaches thefinal consumer asfinished product) business processes between companies
+are taken as the midstream. It depends on the easierto perform.Forexample,asupplier
+reference point as how many or which stage is can change from requiring a purchase
+consideredas themidstream byan industry. orderforeverydeliverytohavinganopen
+purchaseorder thatsimplykeepstrackof
+Whetheranactivityisupstreamordownstream
+shipmentsbasedonmaterialrequirements
+depends on the point of analysis in a supply
+chain. A manufacturer considers suppliers as plans from the manufacturing resource
+upstreamandcustomersasdownstream.Withina planning software of a manufacturer.
+manufacturer,controloveractivitiesinthesupply This type of integration becomes less
+chainissubjecttoacompany’smanagement .Even likely when suppliers serve many
+manufacturers.
+so, a manufacturing activity that occurs prior to
+anotherisconsideredanupstreamactivity.Control (iii) Manufacturers in a supply chain make
+over activities outside the company is subject to ‘make-or-buy’ decisions that affect the
+inter-company negotiations, cooperation and chain. They do this based on cost and
+technology. The firms involved in the chain of scheduling improvements available.
+upstream and downstream processes keep their Manufacturers may also begin using
+eyesonseveralotherdimensions,suchasstrategies, distributors to capture additional
+integrationandimprovement: markets or decide to concentrate on
+(i) Itisimportanttounderstandthestrategies larger customers whom they can serve
+of supply chain partners . A supplier directly. All of these types of potential
+improvements depend on understanding
+may have a strategy to grow and begin
+the motivations and incentives of the
+to perform manufacturing functions
+companiesin asupplychain.
+infringingonothersupplychainmember’s
+markets.Understandingtheincentivesof Industries,tohaveasmoothand uniterrupted
+suppliers, as well as customers, helps to fuctioning, depend heavily on the upstream and
+plan for these types of changes. In order downstream requirements. In case of India, we
+to remain a powerful player in a supply findseveral bottlenecksin both the processes:
+chain,acompanycan nolongerafford to (a) In case of the private sector, the
+focus on its own business or those of its downstream processseems better. But it
+competitors, it must understand supply isnotso.Uptothelevelof‘wholesale’itis
+
+--- PAGE 248 ---
+8.32 < IndianEconomy
+somewhatorganised,buttheretailtrading |
+SUPPLYCHAIN MANAGEMENT
+isquitefragmented.India’s retailbusiness
+remains least organised. Organised retail A supply chain is a network of facilities and
+is yet to evolve in the country, thus, distribution options that performs the functions
+the levels of uncertainities, potential of of procurement of materials, transformation of
+marketaccess,monitoringandregulation these materials into intermediate and finished
+of retail marketaretoo weak. products, and the distribution of these finished
+(b) Upstream processes are also not up- to - products to customers . Supply chains exist in
+the-mark. From the stage where the both service and manufacturing organisations,
+wholesalecomesinto picture,thingslook although the complexity of the chain may vary
+better. But outsourcing the raw from greatlyfromindustrytoindustryandfirmtofirm.
+the local producers is an uphill task in Traditionally, marketing, distribution,
+the country . Due to this the upstream planning, manufacturing, and the purchasing
+segment of the economy has remained organisations along the supply chain operated
+too weakandfrgamented. independently. These organisations have their
+(c) The industrial and manufactured sectors own objectives and these are often conflicting.
+have been managing their upstream and Marketing’s objective of high customer service
+downstream requirements, but their and maximum sales conflict with manufacturing
+heavy depenence on the unorganised and distribution goals. Many manufacturing
+sector is a challenging issue infront of operations are designed to maximise throughput
+India. and lower costs with little consideration for the
+(d) In case of the agricultural products, the impact on inventory levels and distribution
+situationisevenworse.Regulation ofthe capabilities. Purchasing contracts are often
+agrimarkets by the APMCs of states has negotiated with very little information beyond
+notallowedIndiatoemrgewithacommon historical buying patterns . The result of these
+andsinglemarket.Thishashamperednot factorsisthat thereisnotasingle, integrated plan
+—
+only the growth and business prospects for theorganisation therewereasmanyplansas
+ofthebusinessesinvolvedinthissegment
+businesses.Clearly,thereisaneedforamechanism
+but it has also crippled the agricultural through which these different functions can be
+sector in a veryserious way. It has taken integrated together.Supplychain management is
+the heaviest tollon theagriculturesector a strategythrough whichsuch an integration can
+which still remains a non-remunerative
+beachieved.
+profession. Supplychain managementistypicallyviewed
+(e) As India is to compete in the global to lie between fully vertically integrated firms,
+market,itimmediatelyneedstostregthen where the entire material flow is owned by a
+it upstreamanddownstream process.For singlefirm,andthosewhereeachchannelmember
+this, India is advised to pick the best operates independently. Therefore, coordination
+practices from around the world and between the various players in the chain is
+integrate itself with the developed world key in its effective management . Supply chain
+with the betterwaysand thestate -of-the- managementcan becompared to a well-balanced
+—
+art toolsand means. and well-practiced ‘relay team’ such a team is
+
+--- PAGE 249 ---
+AgricultureandFoodManagement t 8.33
+morecompetitivewheneachplayerknowshowto aspects of it — storage, grading, packaging, etc . It
+be positioned for the hand-off.The relationships is believed that this field needs huge investments
+arethestrongestbetweenplayerswhodirectlypass from the corporate sector . The corporate sector
+the baton, but the entire team needs to make a has not been much attracted to thissector . Main
+coordinatedeffort towin therace. factors for the unwillingness among the private
+Supply chain management, then, is the sector to put in their money in it are, scarcityof
+active management of supply chain activities to capital, logistics, experience and non-conducive
+maximisecustomervalueandachieveasustainable policy framework of the agriculture market.
+competitive advantage. It represents a conscious This is the reason why the Gol has allowed more
+effort by the supply chain firms to develop and freedom to Foreign Direct Investment in retail
+run supply chains in the most effective and chain development.It isexpected that thewilling
+efficient ways possible. Supply chain activities foreign firms will not only bringing the needed
+covereverything: fund to the sector but with them India will get
+internationalexperienceand best practices.
+(i) Productdevelopment,
+(ii) Sourcing,
+To competein theglobalisingworld markets
+andtogaineconomicbenefitsoutofglobalisation,
+(iii) Production,
+India needs the following features in its supply
+(iv) Logistics,and
+chain management:
+(v) Information systems (for proper (i) Anorganised retainsector
+coordination).
+(ii) Proper levelsoflogistics
+The organisations that make up the supply
+(iii) Fully updated data of raw materials,
+chain are‘linked’ together through physicalflows
+and information flows. Physical flows involve
+production,croppingpattern,etc .
+the transformation, movement, and storage of (iv) International class packaging, care to
+goods and materials. They are the most visible wards phyto-sanitaryaspects .
+piece of the supply chain. But just as important It is felt that the above-cited features will
+are information flows — information flows allow be easier to manage for the top global players as
+the various supply chain partners to coordinate they have fund, experience and a willingness to
+their long- term plans, and to control the day- to - expand their businesses in thegrowing regionsof
+dayflow of goods and material up and down the
+theworld.
+supplychain. To strengthen and broad base the market,
+Upstream &downstream requirementsandthe theForwardMarketsCommission (FMC),which
+supply chain management: Indian scenario & the is the regulator for commodity futures trading
+issuesofallowingFDIinit . under the provisions of the Forward Contracts
+(Regulation)Act1952, hastaken manyinitiatives
+ThissegmentofIndia hasseenleastorganised
+development, even in the reforms period. Due suchas:35
+to lack of proper ‘market reforms’ in the area of (i) Conducted awareness programmes in
+agriculturalproducts(asAPMCsofdifferentstates 2011, such as a media campaign under
+havefailed to develop) which hamperedso many theJagoGrahakJagoProgrammeabout
+35. EconomicSurvey2011-12,op.cit.,p.199.
+
+--- PAGE 250 ---
+8.34 < IndianEconomy
+the Dos and Don’ts of trading in the andvegetableswasthehighestatupto18percent
+commodityfutures market; of thetotal produce.
+(ii) Police training programmes in the states Attendingthecausesofstorageandprocessing
+of Madhya Pradesh,Chhattisgarh,Tamil facilities, something the Gol is emphasising, this
+Nadu and Delhi with regard to dabba levelcouldcomedownsignificantlyandcanserve
+trading/ illegaltrading; great purpose in helping the economy to fight
+(iii) A massive awareness and capacity the repeated priceshocks of the past two years in
+¬
+building programme for various caseoffruits, vegetablesand foodgrains to a great
+.
+stakeholder groups, with primary focus extent
+on farmers. The losses take place in almost all stages of
+(iv) On the regulatory front, the FMC farming but the study looked at harvesting,
+undertookmeasuresfor thedevelopment collection, grading, cleaning, packaging,
+of thecommodityfutures market, which transportation andstorage . If cultivation wasalso
+includeensuringmoreeffectiveinspection
+includedthelossfigurewouldbemuchhigher.The
+of members of the exchanges on regular Gol hassaid thatavailabilityof better technology
+basis and in a comprehensive manner and theiradoption hasbroughtabouta reduction
+covering all aspects of the regulatory in losses.
+regime.
+|
+IRRIGATION
+(v) Bringing out a guidance manual for
+improving audit practices, prescribing
+The Planning Commission37 classified irrigation
+penalty structure for client code projects/schemesin Indiaon thefollowinglines :
+modification andforexecutingtrade. —
+(i) Major Irrigation Schemes those with
+(vi) Grantingexemptions for short hedgefor
+cultivable command areas (CCA) of
+soyabean/oil futures, issuing directives morethan 10,000hectares.
+forsegregation ofclientaccounts . —
+(ii) Medium Irrigation Schemes those
+| with cultivable command areas (CCA)
+FARMWASTE DEBATE
+between 2,000and 10,000 hectares.
+—
+A recent study,36 undertaken by the Central (iii) Minor Irrigation Schemes those with
+Institute of Post-Harvest Engineering and cultivable command area (CCA) upto
+Technology (CIPHET), a government-run 2,000 hectares. Expansion of irrigation
+institute, hasestimated thevalueoffarmwastein facilities, alongwith consolidation of the
+India at Rs.44,000 crore (at the prices of 2009), existing systems, has been the main part
+that is around 7 per cent of the total produce, of thestrategyfor increasing production
+which is much lower than the oft-stated 40 per offoodgrains.
+cent level. Although cereals, such as wheat and With a view to ensuring early completion of
+rice, pulses and oil seeds accounted for around projects for providing irrigation benefits to the
+two -thirdsof thewastage,thelossin caseoffruits farmers, Rural Infrastructure Development Fund
+36. CentralInstituteof Post - HarvestEngineeringandTechnology(CIPHET) , ICAR,MinistryofAgriculture,Gol,Ludhiana,
+StudyreleasedinSeptember,2011.
+37. PlanningCommission,Gol,N.Delhi,1961.

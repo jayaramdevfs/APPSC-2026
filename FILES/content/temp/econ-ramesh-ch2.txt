@@ -1,0 +1,1662 @@
+--- PAGE 50 ---
+1.16 I IndianEconomy
+market mechanism in front ofaforeign currency, asa tool of economicpolicymaking, which is the
+itisthesituationof‘depreciation’in thedomestic thirdwayhowdepreciationis usedineconomics.
+currency,calculatedintermsoflossinvalueofthe
+domesticcurrency. ^K1D
+Thus, NDP= GDP-Depreciation. Gross National Product (GNP) is the GDP of
+This way, NDP of an economy has to be a country added with its ‘income from abroad’.
+always lower than its GDP for the same year, Here, the trans -boundary economic activities of
+since there is no way to cut the depreciation to an economyisalso taken into account .Theitems
+zero.But mankind hasachieved too much in this which are counted in the segment ‘Income from
+areathroughdevelopments,suchas‘ball-bearing’, Abroad’are:
+‘lubricants’, etc ., all innovated to minimise the (i) Trade Balance: the net outcome at the
+levelsofdepreciation. year end of thetotalexportsand imports
+Thedifferentusesoftheconceptof NDPare of a country may be positive or negative
+asgiven below: accordingly added with the GDP (in
+(a) For domestic use only: to understand India’s case it has always been negative
+the historicalsituation of the loss due to except the three consecutive years 2000-
+depreciation to the economy. Also used 03whenitwaspositive,duetohighlevels
+to understand and analyse the sectoral
+of‘servicessector’exportduringtheyears,
+situation of depreciation in industryand
+courtseytheboomingBPOindustry).
+tradeincomparativeperiods. (ii) InterestofExternalLoans:thenetoutcome
+(b) Toshowtheachievementsoftheeconomy
+onthefrontoftheinterestpayments,i.e.,
+in thearea of research and development,
+balanceoftheinflow(on themoneylend
+which have tried cutting the levels of
+outbytheeconomy)and theoutflow(on
+depreciationin a historicaltimeperiod. themoneyborrowed bytheeconomy) of
+the external interests. In India’s case it
+However, NDP is not used in comparative
+economics, i.e., to compare theeconomies of the
+has always been negativeas theeconomy
+world. Why this is so? This is due to different
+has been a‘net borrower’from theworld
+economies.
+rates of depreciation which isset by the different
+economies of the world. Rates of depreciation (iii) Private Remittances: the net outcome of
+may be based on logic (as it is in the case of the money which inflows and outflows
+houses in India — the cement, bricks, sand and on account of the ‘private transfers’ by
+iron rodswhich are used to build housesin India
+IndiannationalsworkingoutsideIndia(to
+India) and theforeign nationals working
+can sustain it for the coming 100 years, thus
+the rate of depreciation is fixed at 1 per cent per in India (to their home countries). On
+annum). But it maynot be based on logicall the thisfront India has been alwaysagainer-
+time, for example, upto February 2000 the rate till theearly1990s from theGulf region
+of depreciation for heavy vehicles (vehicles with (which fell down afterwards in the wake
+6-wheels and above) was 20 per cent whileit was of the heavy country-bound movements
+raisedto40percentafterwards — toboostthesales of Indians working there due to the
+of heavy vehicles in the country . There was no GulfWar) and afterwardsfrom the USA
+logicin doubling the rate . Basically, depreciation and other European nations. Today,
+anditsratesarealso usedbymoderngovernments India is the highest recipient of private
+
+--- PAGE 51 ---
+Introduction t 1.17
+—
+remittances in the world as per the for the same (numerically shown by
+World Bank projected at $71 billion in the size and net flow of its ‘balance of
+2014 (in 2013 it was $70 billion, the trade’);whatisthestandardofitshuman
+year’s highest). China falls second ($ 64 resourceininternationalparlance(shown
+billion) in 2014. bythesizeand thenetflowofits‘private
+Ultimately, the balance of all the three remittances’); what position it holds
+componentsofthe‘IncomefromAbroad’segment regarding financial support from and to
+mayturnout to bepositiveor negative.In India’s the world economies (shown by the net
+case it has always been negative (due to heavy flow of ‘interests’ on external lending/
+outflows on account of trade deficits and interest
+borrowing).
+payments on the foreign loans). It means, the
+NNP
+‘Income from Abroad’ issubtracted from India’s
+GDP tocalculateitsGNP. NetNationalProduct(NNP)ofaneconomyisthe
+ThenormalformulaisGNP= GDP + Income
+GNPafterdeductingthelossdueto‘depreciation’.
+from Abroad. But it becomes GNP = GDP + ( — Theformula to deriveit maybewritten like:
+— —
+Income from Abroad) = GDP Income from NNP = GNP Depreciation
+Abroad, in the case of India. This means that
+or,
+India’sGNPisalwayslower thanitsGDP. —
+NNP = GDP + Income from Abroad
+ThedifferentusesoftheconceptGNPareas
+Depreciation.
+given below:
+Thedifferentusesoftheconceptof NNPare
+(i) This is the ‘national income’ according
+asgiven below:
+to which the IMF ranks the nations of
+— (i) Thisis the‘NationalIncome’(NI) ofan
+the world in terms of the volumes at
+economy. Though, the GDP, NDP and
+Purchasing Power Parity (at PPP). For a
+GNP, all are ‘national income’ they are
+detailed discussion on PPP readers may
+search for italphabeticallyin Chapter 24. not written withcapitalised‘N’and‘I’.
+Indiaisrankedasthe4thlargesteconomy (ii) Thisis thepurestformof theincomeof a
+of the world (after the USA, China
+nation.
+and Japan), while as per the nominal/ (iii) When we divide NNP by the total
+prevailing exchange rate of rupee, India population of a nation we get the ‘per
+isthe 11thlargesteconomy. capita income’ (PCI) of that nation,
+(ii) It is the more exhaustive concept of i.e., ‘income per head per year’. A very
+basic point should be noted here that
+national income than the GDP as it
+indicatestowardsthe‘quantitative’aswell this is the point where the rates of
+asthe‘qualitative’aspectsoftheeconomy,
+dipreciationfollowedbydifferentnations
+i.e., the‘internal’as well as the‘external’ make a difference. Higher the rates of
+strengthof theeconomy. depreciation lower the PCI of thenation
+(whatever be the reason for it logical or
+(iii) It enables us to learn several facts about
+artificial as in the case of depreciation
+the production behaviour and pattern
+being used as a tool of policymaking).
+of an economy, such as, how much the
+Though, economies are free to fix any
+outsideworldisdependentonitsproduct
+rate of depreciation for different assets,
+and how much it depends on the world
+
+--- PAGE 52 ---
+1.18 < IndianEconomy
+the rates fixed by them make difference market, i.e., showrooms (these are the
+when theNIofthenationsarecompared cenvat/centralexciseand theCSTwhich
+bytheinternationalfinancialinstitutions are paid by the producers to the central
+likethe IMF,WB,ADB,etc . governmentin India).Thisisalso known
+The1BaseYear’togetherwiththe‘Methodology’ as the‘ex-factoryprice’. Theweightof the
+forcalculatingtheNationalAccountswererevised state taxes are then added to it, to finally
+bytheCentralStatistics Office (CSO) inJanuary derive the‘market cost’. In general, they
+2015, which is given in the forthcoming pages. are also called factor price’ and ‘market
+So that readers are able to understand the ‘main
+price’.
+differences’intheaccountingprocess,theliterature In India, income is calculated at factor
+relatedto the‘old methodology’isleft unchanged cost, and so is the case with most of the
+in thisedition.Wemayexpectquestionson their developing countries (but among the
+comparativeaspectsin thefutreexaminations. developed economies it is calculated at
+themarketcost).Thereasonsare, lackof
+COSTANDPRICEOFNATIONALINCOME uniformityintaxes,goodsarenotprinted
+While calculating national income the issues with their prices,etc .In present time, we
+related to ‘cost’ and ‘price’ also needs to be
+seeagreatdegreeoftax -relateduniformity
+decided. Basically, thereare two sets of costs and coming to India upto the extent of the
+prices;andan economyneeds to chooseat which central taxes only, but thestate taxes are
+of thetwo costsand two pricesit willcalculateits still neither single nor uniform. Once
+nationalincome.Let us understand theconfusion the GST is implemented this abberation
+and therelevanceof thisconfusion.14 will end.Though forstatistical purposes,
+(i) Cost:Incomeofaneconomy,i.e.,valueof income at market cost is also released
+by the Central Statistical Organisation
+itstotalproducedgoodsandservicesmay
+(CSO).
+becalculated at either the‘factor cost’or
+the‘market cost’.What is the difference (ii) Price:Incomecanbederivedattwoprices
+between them? Basically, ‘factor cost’ is constant and current . The difference in
+the‘inputcost’theproducer hasto incur the constant and current prices is only
+in the process of producing something that
+oftheimpactofinflation.Inflationis
+(such as cost of capital, i.e., interest on consideredstandstillata year of thepast
+loans, rawmaterials, labour, rent, power, (thisyear of the past isalso known asthe
+etc .).This is also termed as‘factoryprice’ ‘base year’) in the case of the constant
+or‘productioncost/price’.Thisisnothing price while in the current price the
+but ‘price’ of the commodity from the present day inflation is added. Current
+producer’sside.While the ‘market cost’ price is, basically, the maximum retail
+is derived after adding the indirect taxes price(MRP) whichweseeprintedonthe
+to thefactorcostoftheproduct,itmeans goodssellingin themarket.
+the cost at which the goods reach the
+14. Theinformationsontheissueslike'cost','price','taxes'and'subsidies'arebasedonthedifferentDiscussionPapersreleased
+bytheCentralStatisticalOrganisation(Gol)fromtimetotime.
+
+--- PAGE 53 ---
+Introduction i 1.19
+As per the new guidelines the base year in income at current prices. They get more reliable
+India has been revised from the 1993 — 94 to and realisticdataof their income).
+—
+2004 03(thedatabasedonthenewconstantyear
+is presentlyknown as the‘newseries’of data)
+— TAXES&NATIONALINCOME
+announced in September, 2010. India calculates While accounting/calculating national income
+—
+its national income at constant prices so is the the taxes, direct and indirect, collected by the
+situation among other developing economies, governments, needs to beconsidered. In the case
+while the developed nations calculate it at the ofIndia, to theextentthedirecttaxes(individual
+current prices. Though, for statistical purposes income tax, corpoarate income tax, i.e., the
+the CSO releases the national income data at corporate tax, divident tax, interest tax, etc .) are
+the current prices, too . Why? Basically, inflation concerned,thereisnoneedofadjustmentwhether
+has been a challengingaspect of policymaking in thenationalincomeisaccountedatfactor costor
+India because of its level (i.e., range in which it market cost .This isso becauseat both the‘costs’
+dwindles) and stability (how stable it has been). they have to be the same; besides these taxes are
+Insuchsituationsthegrowthin theincomelevels collected at theincomes of the concerned person
+of the population living below the poverty level orgroup.
+(BPL) can never be measured accurately (due
+But the amount of indirect taxes (cenvat,
+to higher inflation the section will show higher customs,centralsalestax,salestax/vat,stateexcise,
+income)and thegovernmentwill never beableto etc .) needs to be taken care of if the national
+measurethe realimpactof the povertyalleviation
+income is accounted at ‘factor cost’ (which is
+programmesit runsfor thepopulation. the case with India). If the national income is
+Here, one important aspect of income calculated at factor cost then the corpus of the
+needs to be understood. Income of a person has total indirect taxes needs to be deducted from it.
+—
+three forms the first form is nominal income Why so? This is because, they have been added
+(the wage someone gets in hand per day or per twice: once in the hands of the people/group
+month), the second form is real income (this is who paythem (because theypayfor it from their
+nominal income minus the present day rate of ‘disposable income’ while puchasing things) and
+—
+inflation adjusted in percentage form), and the other in the hands of the governments (as their
+last one is the disposable income (the net part income receipts). Collection/source of indirect
+of wage one is free to use which is derived after taxesarethe‘disposableincome’(whichindividuals
+deducting the direct taxes from the real/nominal and companies have with them after paying their
+income,depending upon theneedofdata).What direct taxes — from which theydo anypurchasing
+happens in practice is that while the nominal and finally, the indirect taxes reach the various
+income might have increased byonly 5 per cent, governments). Thus, if the national income is
+it looks 15 per cent if the inflation is at the 10 calculatedatfactorcost,theformulatoseekitwill
+percentlevel.UnlikeIndia,amongthedeveloped
+be:
+nations, inflation has been around 2 per cent for National Income at Factor Cost = NNP at
+manydecades (it meansit has beenatlower levels
+MarketCost
+—
+IndirectTaxes
+andstable,too .Thisiswhythedifferencebetween
+However, if the national income is being
+theincomesatconstantandcurrent pricesamong
+derived at ‘market cost’, the indirect taxes do
+them arenarrowand theycalculatetheir national
+not need to bededucted from it. In thiscase, the
+
+--- PAGE 54 ---
+1.20 < IndianEconomy
+governments need not add their incomeaccruing REVISIONINTHEBASEYEARANDMETHOD
+from indirect taxes to the national incomeeither. OFNATIONALINCOMEACCOUNTING
+Itmeans,thattheconfusioninthecaseofnational
+The Central Statistics Office (CSO), in January
+income accounting at factor cost is only related
+2015, released the new and revised data of
+withindirecttaxes .
+NationalAccounts,effectingtwo changes:
+SUBSIDIES&NATIONALINCOME 1. The Base Yearwas revisedfrom 2004 — 05
+to2011 — 12.Thiswasdoneinaccordance
+Similar to theindirect taxes, thevarioussubsidies
+withtherecommendationoftheNational
+which areforwarded bythegovernments need to Statistical Commission (NSC), which
+be adjusted while calculating national income.
+had advised to revise the base year of all
+Theyareadded to the national incomeat market economicindiceseveryfiveyears.
+cost, in case of India. Subsidies are added in the
+2. This time, the methodologyof calculating
+national income at market cost to derive the
+the National Accounts has also been
+nationalincomeatfactorcost .Thisisbecausethe
+revised in line with the requirements
+priceatwhichthesubsidisedgoodsandservicesare
+of the System of National Accounts
+made available by the governments are not their
+(SNA)-2008,an internationallyaccepted
+real factor costs (subsidies are forwarded on the
+standard.
+factor costs of the goods and services) otherwise
+we will have a distorted value (which will be less The majorchangesincorporated in this revision
+than itsrealvalue).Thustheformula will be: areasgiven below:
+National Income at Factor Cost = NNP at (i) Headline growth rate will now be
+MarketCost + Subsidies
+measuredbyGDPatconstantmarketprices,
+Ifthenationalincomeisderivedatthemarket which will henceforth be referred to as
+cost and governments forward no subsidies there
+‘GDP’(asisthepracticeinternationally).
+is no need of adjustments for the subsidies, but Earlier,growthwas measured in termsof
+afterallthereisnotasingleeconomyintheworld growth rate in GDPat factor costandat
+.
+todaywhichdoes notforwardsubsidiesin oneor
+constantprices
+theotherform. (ii) Sector-wise estimates of Gross Value
+Putting ‘indirect taxes’ and ‘subsidies’ Added (GVA)15 will now be given at
+together, India’s National Incomewill bederived basic prices16instead of factor cost . The
+with the following formula (as India does it at
+relationship between GVAatfactor cost,
+factor cost):
+GVAatbasicprices,andGDP(atmarket
+prices) isgiven below:
+National Income at Factor Cost = NNP at
+—
+MarketCost IndirectTaxes + Subsidies
+15. GVA,whichmeasuresthedifferenceinvaluebetweenthefinalgoodandthecostofingredien—tsusedinitsproduction,
+widensthescopeofcapturingmoreeconomicactivitythantheearlier'factorcost'approach asumofthetotalcost
+ofallfactorsusedtoproduceagoodorservice,netoftaxesandsubsidies.
+16. Thebasicpriceistheamountreceivablebytheproducerfromthepurchaserforaunitofagoodorserviceproduced
+asoutput minusanytax payable(suchassalestaxorVATthebuyerpays),and plusanysubsidyreceivable,onthat
+unitasaconsequenceofitsproductionorsale;itexcludesanytransportchargesinvoicedseparatelybytheproducer.
+Inotherwords,thebasicpriceiswhatthesellercollectsforthesale,asopposedtowhatthebuyerpays.
+
+--- PAGE 55 ---
+Introduction I 1.21
+GVAat basic prices = CE + OS/MI + activities other than manufacturing
+CFC + production taxes less production undertaken bythesecompanies.
+subsidies.
+(iv) Comprehensive coverage of the financial
+GVA at factor cost = GVA at basic sector by inclusion of information from
+—
+prices production taxesless production the accounts of stock brokers, stock
+subsidies. exchanges,assetmanagementcompanies,
+GDP = GVA at basic prices + product mutual funds and pension funds, and
+taxes
+— productsubsidies. the regulatory bodies including the
+Securities and Exchange Board of India
+[Where,CE:compensationofemployees;
+(SEBI), Pension Fund Regulatory and
+OS: operating surplus; MI: mixed
+Development Authority (PFRDA) and
+income; and CFC:consumption of fixed
+capital.Productiontaxesorproduction Insurance Regulatory and Development
+Authority(IRDA).
+subsidiesarepaidorreceivedwithrelation
+to production and are independent of (v) Improved coverage of activities of local
+the volume of actual production. Some bodies and autonomous institutions,
+examples of production taxes are land coveringaround60percentofthegrants/
+revenues, stamps and registration fees and transfers provided to theseinstitutions.
+tax on profession. Some production Owing to these changes, estimates of GVA
+subsidiesaresubsidiesto Railways,input bothataggregateandsectorallevelshaveundergone
+subsidies to farmers, subsidies to village changes.Thesector -wisesharesinaggregateGVA
+and small industries, administrative have undergone significant revision especially in
+subsidiesto corporationsor cooperatives, the case of manufacturing and services. Changes
+etc . Product taxes or subsidies are paid have also been observed in the growth rates in
+or receivedon per unit of product.Some GVAs of individual sectors and contribution of
+examples of product taxes are excise eachsector to overallGVAdueto useofsales tax
+tax, sales tax, service tax and import and service tax data for estimation in the years
+and export duties. Product subsidies 2012-13 and 2013-14. Caution needed to be
+include food, petroleum and fertilizer exercised while comparing estimates and growth
+subsidies, interest subsidies given to rates from the earlier series to the new series, as
+farmers, households,etc ., through banks, per theCSO.
+and subsidies for providing insurance to Thelatesset of data for the National Income
+householdsatlower rates]. of India for 2014—15 (asperthe revisedBase Year
+(iii) Comprehensivecoverageof the corporate and new Methodology of the CSO, announced in
+sectorbothin manufacturingandservices January2015)areasgiven below:
+by incorporation of annual accounts of (i) GDP (at Constant Market Price): Rs.
+companies as filed with the Ministry of 1,06,56,925andGrowthRateat7.4percent .
+Corporate Affairs (MCA) under their
+(ii) GVAat Basic Price (at 2011-12 prices):
+e-governance initiative, MCA21. Use Rs. 98, 57, 672 and Growth Rate at 7.5
+of MCA21 database for manufacturing per cent .
+companies has helped account for
+(iii) Per Capita Net National Income (at
+Current Market Prices):Rs.88,533.
+
+--- PAGE 56 ---
+1.22 < IndianEconomy
+— —
+|
+UNIQUENESSOFTHE INDIAN ECONOMY
+(v) Inthelastdecade(2003 04to2014 15),
+growth has increasingly come from the
+Indian economy did show some traits17 which servicessector,whosecontribution to the
+were unique: overall growth of the economy has been
+(i) Thecontributionoftheprimarysectorin
+64 per cent, while that of the industry
+the GDP has fallen down regularly and
+and agriculturesectors have been 26 per
+todayitstands at 14.1 per cent, which is centand10 per cent, respectively.
+sufficient to conclude that it is no more (vi) India has been basically the first case
+anagrarian economy. which directly had either over 50 per
+(ii) Theshareofitstertiarysectorincreasedto
+centofitsGDPcomingfrom
+—
+theprimary
+over66percentintheGDPby2014 — 15. sector or the tertiarysector an agrarian
+ThisprovesIndia isaserviceeconomy. economy shifting directly to the service
+economy (at least partially, if we forget
+(iii) The dependency of population on the
+the dependency ratio of the population
+primary sector for its employment still on the sectors). It means India jumped
+remainsatover 56.8 percent,asymptom
+ofanagrarianeconomy.Theexpansionof the stage of being a fully-developed
+industrialeconomy.
+industrieswasnotsufficienttoattractthe
+labour force from the primary activities. Without fully realising the industrial and
+India isstilllaggingon thisfront badly. manufacturing potential and directly converting
+intoaserviceeconomy,hascreatedtoughermacro
+(iv) The share of the secondarysector in the
+and micro challengesfor policymakersin India.
+GDPisat18.4percentandnevercrossed
+40percent .
+, -
+17. AsperinformationmadeavailablebytheCentralStatisticalOrganisation Feb.2014,Gol,NewDelhi;EconomicSurvey2014
+15 , MoF,Gol,NewDelhiandtheIndia201S , Pub.Div.,MolB,Gol,NewDelhi.
+
+--- PAGE 57 ---
+C H A P T E R
+Ct
+%
+I
+i
+I
+m
+w
+1 J
+'
+GROWTH
+,,
+i
+s'v
+—
+DEVELOPMENT
+AND HAPPINESS
+Since 1971, Bhutan has rejected GDP as the
+only way to measureprogress-in itsplace, it has
+o Introduction championed a new approach to development,
+=> Progress which measures prosperity through formal
+=> EconomicGrowth principlesofgrossnationalhappiness(GNH)and
+Economic Development the spiritual,physical,social and environmental
+=> Happiness health of its citizens and natural environment.
+Fordecades , thisbeliefthatwellbeingshouldtake
+preference over material growth has remained a
+globaloddity . Now , ina worldbeset bycollapsing
+financial systems, gross inequity and wide-scale
+environmental destruction , this tiny Buddhist
+.
+state's approach is attracting a lot of interest In
+2011,theUNadoptedBhutan’scallforaholistic
+approachtodevelopment ,a moveendorsed by 68
+countries . A UN panel is now considering ways
+thatBhutan’sGNHmodelcanbereplicatedacross
+.
+theglobe*
+*AsAnnieKellywritesinTheGuardian,Washington,DC,1stDecember.2012.
+
+--- PAGE 58 ---
+2.2 < IndianEconomy
+| |
+INTRODUCTION ECONOMIC GROWTH
+Similartoseersand philosopherseconomistswere Aterm comingfrom thelifesciences,‘growth’in
+alsopartytohuman’squestforabettertomorrow . economics means economic growth. An increase
+—
+We have been a witness to a number of notions in economic variables over a period of time is
+cominginfromtheliteratureofEconomicsinthis economic growth. The term can be used in an
+—
+area starting with a very humble and layman’s individualcaseorinthecaseofaneconomyorfor
+wordlike‘progress’totechnicaltermslike‘growth’, the whole world. The most important aspect of
+‘development’ and ‘human development’. With growth is its quantifiability,i.e., one can measure
+greater dependence on the idea of the‘economic itinabsoluteterms .2Alltheunitsofmeasurement
+man’, the world created immense wealth in may be applied to show it, depending upon the
+the post-War decades. It was in the 1980s that economic variable, where the growth is being
+socialscientistsstarted finerstudiesin thearea of studied.Wehaveafewexamples:
+mankind’s actions, finally challenging the very (i) An economy might have been able to
+idea of the‘economicman’ (‘rational man’).And see growth in food production during
+therestarts mankind’s urgeto introspect thelives a decade which could be measured in
+of humanity on the planet earth. Meanwhile, .
+tonnes
+humanity was faced with an unique riddle of
+(ii) The growth of road network in an
+climate change. By now, courtesy the UNO, the economymightbemeasuredforadecade
+world hastheWorld Happiness Report. or anyperiod in milesor kilometres.
+| (iii) Similarly,thevalueofthetotalproduction
+PROGRESS
+of an economy might be measured in
+Progress is a general term frequently used by currencytermswhichmeanstheeconomy
+experts to denote betterment or improvement
+isgrowing.
+in anything. In economics, the term was used (iv) Per capita incomefor an economymight
+for a long time to show the positive movement be measured in monetary terms over a
+in the lives of people and in an economy. It had period.
+both quantitative and qualitative aspects to it. We may say that economic growth is a
+After a point of time, some economists started quantitativeprogress.
+—
+using all the three terms progress, growth and To calculate thegrowthrateof an economic
+—
+development interchangeably to mean almost variable the difference between the concerned
+the same thing. But it was only during the period is converted into percentage form. For
+1960s, 1970s and 1980s that a clear meaningsof
+example,ifadairyfarmowner produced100litre
+these terms really evolved.1 The term ‘progress’ of milklast month and 105 litrein thefollowing
+became a general term with no specific meaning month, his dairyhas a growth rate of 5 per cent .
+in economics or denoting both growth and
+Similarly, we maycalculate thegrowth rateof an
+development. But growth and development were economyforanygivensuccessiveperiods.Growth
+allotted their clear- cut meanings. rate is an annual concept which may be used
+1. BasedontheanalysesinMichaelP.TodaroandStephenC.Smith,EconomicDevelopment , PearsonEducation,8thEd.,
+NewDelhi,2004,pp.9 - 11.
+2. AstheIMFandtheWBconsideredthisyardstickofdevelopmentasquotedinGerald M.MeierandJamesE.Rauch,
+LeadingIssuesinEconomicDevelopment , Oxford UniversityPress,NewDelhi,2006,pp.12 - 14.
+
+--- PAGE 59 ---
+Growth,DevelopmentandHappiness t 2.3
+otherwise with the clear reference to the period higher, but the quality of life was comparatively
+forwhichit is used. low. The time had come to define economic
+Thoughgrowth isa valueneutralterm, i.e., it development differently from what the world
+might be positiveor negativefor an economyfor meant by economic growth. For economists,
+a period, wegenerallyuse it in the positivesense. development indicates the quality of life in the
+Ifeconomistssayaneconomyisgrowingitmeans economywhichmightbeseeninaccordancewith
+theeconomyishavingapositivegrowthotherwise theavailabilityofso manyvariablessuchas:
+theyusetheterm‘negativegrowth'. (i) Thelevelof nutrition
+Economic growth is a widely used term in (ii) Theexpansionandthereachofhealthcare
+—
+economics which is useful in not only national facilities hospitals, medicines, safe
+level economic analyses and policymaking but drinking water, vaccination, sanitation,
+also highly useful in the study of comparative etc .
+economics. International level financial and (iii) Thelevelofeducationamongthepeople
+commercial institutions go for policymaking
+(iv) Other variables on which the quality of
+and future financial planning on the basis of the
+lifedepends
+growthratedataavailablefortheeconomiesofthe
+world. Here, one basic thing must be kept in mind
+that if the masses are to be guaranteed with a
+| basicminimum level of quality-enhancing inputs
+ECONOMIC DEVELOPMENT
+(above-given variables such as food, health,
+For a comparatively longer period of time after education, etc .) in their life, a minimum level of
+the birth of economics, economists remained incomehas to beguaranteed for them. Incomeis
+focused on aspects of expanding the quantity of
+generatedfromproductiveactivities.Itmeansthat
+production and income of a country’s economy. before assuring development we need to assure
+The main issue economists discussed was — how growth. Higher economic development requires
+toincreasethequantityofproductionandincome
+highereconomicgrowth.Butitdoesnotmeanthat
+ofacountryora nation- state .Itwas believed that a higher economic growth automatically brings
+—
+onceaneconomyisabletoincreaseitsproduction in higher economic development a confusion
+its income will also increase and there will be an the early economists failed to clear.We may cite
+automatic betterment (quality increase) in the an example to understand the confusion: two
+lives of the people of the economy. There was familieshavingsamelevelsofincomebutspending
+no conscious discussion over the issue of quality differing amounts of money on developmental
+expansion in the lives of the people. Economic aspects . One might be giving little attention to
+growth was considered as a cause and effect for health, education and going for saving and the
+the betterment of lives of the people. This was other mightnotbesavingbut takingpossiblecare
+the reason why economists till the 1950s failed of the issues of health and education. Here the
+to distinguish between growth and development latter necessarily will have higher development
+though they knew the difference between these in comparison to theformer.Thus, we mayhave
+terms
+. somediversecasesofgrowthand development:
+It was during the 1960s and in the later (i) Highergrowthand higherdevelopment
+decades that economists came across many (ii) Highergrowth but lowerdevelopment
+countries where the growth was comparatively (iii) Lowergrowth but higherdevelopment
+
+--- PAGE 60 ---
+_
+2.4 < IndianEconomy
+The above-given combinations, though theconceptofwelfarestateand theimmediacyof
+comparativein naturemakeonethingclear, that, development.
+just as for higher income and growth we need
+consciousefforts,sameistrueabouttheeconomic MEASURING DEVELOPMENT
+developmentand higher economicdevelopment. Although economists were able to articulate the
+Without a conscious public policy, differences between growth and development
+development has not been possible anywhere in (Mahbub ul Haq, a leading Pakistani economist
+the world. Similarly, we can say, that without had done it by the early 1970s), it took some
+growth therecannot bedevelopmenteither. more time when the right method of measuring
+The first such instance of growth without development could be developed. It was an
+development, which the economists saw, was in established fact that the goal of progress goes
+theGulfcountries.Theseeconomies,thoughthey beyond mere ‘increase in income’. International
+had far higher levels of income and growth, the bodies such as the UNO, IMF and WB were
+levels of development were not of comparable concerned about the development of the
+levels.Herestartedthebranchofeconomicswhich comparatively underdeveloped regions of the
+will be known as ‘development economics’. After world. Butanyattempt in thisdirection wasonly
+the arrival of the WB and the IMF, conscious possibleoncetherewasatooltoknowandmeasure
+economic policies were framed and prescribed the developmental level of an economy and the
+for thegrowthanddevelopmentoflessdeveloped determinants which could be considered as the
+economies. traits of development. The idea of developing a
+We can say that economic development is formula/method to measurethedevelopmentwas
+quantitativeaswellasqualitativeprogressinan
+basicallyfacingtwo kindsofdifficulties:
+economy.3Itmeans,whenweusethetermgrowth (i) At one level it was difficult to define
+we mean quantitative progress and when we use as to what constitutes development.
+the term development we mean quantitative as Factors which could show development
+well as qualitative progress. If economic growth might bemany,suchaslevelsofincome/
+is suitably used for development, it comes back consumption, quality of consumption,
+to accelerate the growth and ultimately greater healthcare,nutrition,safedrinkingwater,
+and greater population brought under the arena literacy and education, social security,
+of development. Similarly, high growth with peaceful community life, availability of
+low development and ill-cared development social prestige, entertainment, pollution-
+finally results in fall in growth. Thus, there is free environment, etc . It has been a real
+a circular relationship between growth and difficult tasktoachieveconsensusamong
+development. This circular relationship broke the experts on these determinants of
+downwhen theGreatDepressionoccurred.Once development.
+the concept of the‘welfare state’got established, (ii) At the second level it looked highly
+development became a matter of high concern difficult to quantify a concept as
+for the governments of the world, policymakers development constitutes quantitative
+and economists alike. A whole new branch of as well as qualitative aspects . It is easy
+—
+economics welfare economics has its origin in to compare qualitative aspects such as
+3. WorldBank , WorldDevelopmentReport1991,Oxford UniversityPress,NewYork,1991,p.4.
+
+--- PAGE 61 ---
+Growth,DevelopmentandHappiness i 2.5
+beauty, taste, etc ., but to measure them UNESCOInstituteforStatisticsdatabase
+wedon’t haveanymeasuringscale. and BarroandLee(2010) methodology.
+(ii) Expectedyearsofschooling(forchildren
+HUMAN DEVELOPMENTINDEX
+of school entering age): These estimates
+Thedilemmabehindcomparativelymeasuringthe arebasedonenrolmentbyageatalllevelsof
+developmentallevelofeconomieswassolvedonce educationandpopulationofofficialschool
+the United Nations Development Programme age for each level of education. Expected
+(UNDP) publisheditsfirstHuman Development yearsofschoolingiscappedat18years.
+Report (HDR) in 1990.The report had a human These indicators are normalised using a
+development index (HDI) which was the first minimum valueof zero and maximum valuesare
+attempt to define and measure the levels of settotheactualobservedmaximumvalueofmean
+development.The‘index’was a product ofselect years ofschoolingfrom the countries in the time
+teamofleadingscholars,developmentpractioners series,1980 — 2012,thatis13.3yearsestimatedfor
+andmembersoftheHumanDevelopmentReport the UnitedStates in 2010.Theeducationindexis
+office of the UNDP. The first such team which thegeometricmean of two indices.
+developed the HDI was led by Mahbub ul Haq The Health component is measured by the
+andIngeKaul.Theterm‘humandevelopment’is
+lifeexpectancyatbirthcomponentoftheHDIand
+acorollaryof‘development’in theindex.
+is calculated using a minimum value of 20 years
+The HDR measures development by and maximum value of 83.57 years. This is the
+—
+combining three indicators Health, Education observed maximum value of the indicators from
+and Standard of Living — converted into a thecountriesinthetimeseries,1980 — 2012.Thus,
+composite human development index, the HDI. thelongevitycomponent for a countrywherelife
+The creation of a single statistic in HDI was a expectancybirthis55 yearswould be0.551.
+real breakthrough which was to serve as a frame The Standard of Living component is
+of reference for both ‘social’ and ‘economic’
+measured by GNI (Gross National Income/
+development. The HDI sets a minimum and a Product) percapitaat‘PurchasingPowerParityin
+maximum for each dimension, called goalposts, USDollars’(PPP$)insteadofGDPpercapita(PPP
+and then shows where each country stands in $) of past .Thegoalposttakenfor minimum income
+relation to these goalposts, expressed as a value is $100 (PPP) and the maximum is US $87,478
+between0and1(i.e.,theindexispreparedonthe
+(PPP), estimated for Qatar in 2012.The HDI uses
+scaleofone) . Thethreeindicators4 used to develop thelogarithm of income, to reflect thediminishing
+thecompositeindexareasgiven below: importanceofincomewithincreasingGNI.
+The Education component of the HDI is The scores for the three HDI dimension
+now (since HDR-2010) measured by two other indices are then aggregated into a composite
+—
+indicators index usinggeometric mean.The HDI facilitates
+(i) Meanofyearsofschooling (foradults instructivecomparisonsof theexperienceswithin
+aged 25 years): This is estimated based and between differentcountries.
+on educational attainment data from The UNDP ranked5 the economies in
+censuses and surveys available in the accordance of their achievements on the above-
+4. HumanDevelopmentReport , 2013andHumanDevelopmentReport , 2010 , UnitedNationsDevelopmentProgramme,
+NewYork,USA,2013.
+5. TodaroandSmith,EconomicDevelopment,p.58.
+
+--- PAGE 62 ---
+2.6 I IndianEconomy
+given three parameters on the scale of one (i.e., attempts were not prescriptions for an alternative
+0.000 — 1.000). As per their achievements the developmentindex, but theywerebasicallytrying
+countries were broadly classified into three to show the incompleteness of the HDI, via
+categorieswitha rangeof pointson theindex: intellectual satires. One such attempt was made
+(i) High Human Development Countries: by the economists and scholars of the London
+0.800 — 1.000 pointson theindex. School of Economics in 1999 which concluded
+(ii) Medium Human Development Bangladesh as the most developed countryin the
+— worldwiththeUSA,Norway,Swedengettingone
+Countries: 0.500 0.799 points on the
+index. of thelowest ranksin theindex.
+(iii) Low Human Development Countries: Basically, it is very much possible to come
+0.000 — 0.499 pointson theindex. out with such an index. As for example, we may
+say that peace of mind is a necessary element of
+The Human Development Report, 2013 is
+developmentandbettermentin human lifewhich
+discussed in Chapter 22 together with India’s
+relativepositionin theworld. depends heavilyon thefactas to howmuchsleep
+we get everyday. Housetheft and burglary are
+THEDEBATECONTINUES major determinants of a good night sleep which
+in turn depends on the fact as how assured we
+Though the UNDP commissioned team had go to sleep in our homes at night from burglars
+evolved a consensus as to what constitutes and thieves. It meanswemaytryto knowa good
+development, academicians and experts around sleepbythedataoftheftsandburglariesin homes.
+the world have been debating this issue. By
+Sinceminor housetheftsand burglariesareunder
+¬
+1995 economies around the world had officially reported in policestations, thesurveyor, suppose
+accepted the concept of human development tried to knowsuch cases with data as how much
+propounded bytheUNDP.Basically,theUNDP ‘locks’weresold in a countryin a particular year.
+designedHDRwasused bytheWorldBanksince
+In this way a country where people hardly have
+the1990stoquantifythedevelopmentaleffortsof
+anything to bestolen or no risk of being burgled
+the member countries and cheap developmental mightbeconsideredhavingthebestsleepinnight,
+funds were allocated in accordance. Naturally, thus the best peace of mind and that is why this
+the member countries started emphasising on will bethemost developedcountry .
+the parameters of income, education and life
+Basically,theHDIcouldbeconsideredasone
+expectancy in their policymaking and in this
+possiblewayofmeasuringdevelopmentwhichwas
+way the idea of HDI got obligatory or voluntary
+evolved by the concerned group of experts with
+acceptancearound theworld.
+themaximum degreeof consensus. But theindex
+For manyyears,expertsandscholarscame up which calculates the development of economies
+with their own versionsof definingdevelopment. on certain parameters might be overlooking
+Theygave unequalweightageto thedeterminants
+many other important factors which affect the
+defining development, as well as selected some development of an economy and standard of
+completely different parameters which could living. As per experts, such other determinants
+also denote development in a more suitable way affectingour livingconditions might be:
+according to them. Since quality is a matter of
+(i) Culturalaspectsof theeconomy,
+value judgement and a normative concept, there
+was scope for this representation. Most of such
+(ii) Outlook towardsaestheticsand purityof
+theenvironment,
+
+--- PAGE 63 ---
+Growth,DevelopmentandHappiness i 2.7
+(iii) Aspects related to the rule and been declared the developed countries having
+administration in theeconomy, top twenty ranks on the HDI, social scientists
+(iv) People’sideaof happinessand prestige, started evaluating the conditons of life in these
+(v) Ethicaldimension of human life,etc . economies. Most of such studies concluded that
+life in the developed world is every thing but
+INTROSPECTINGDEVELOPMENT6 happy. Crime, corruption, burglaries, extortion,
+drugtrafficking,fleshtrade,rape,homicide,moral
+Confusionabouttherealmeaningofdevelopment
+degradation, sexual perversion, etc
+.—
+all kinds of
+did start only after the World Bank and the theso-called vices were thrivingin thedeveloped
+International Monetary Fund came into being,
+world. It means development had failed to
+i.e., post-war. As experts were studying the
+deliver them happiness, peace of mind, a general
+development process of the developing world,
+well-being and a feeling of being in good state .
+theywere also surveying the performance reports
+Scholarsstartedquestioningtheveryeffortsbeing
+of thedeveloped world.Asthewestern world had
+madefordevelopmentaround theworld.Mostof
+— —
+6. There were diverse opinions about the real meaning of—'development' by mid 1940s upto almost the whole
+1950sit meant5 - 7 percentgrowth ratein aneconomy even bythe IMFand WB.Bythe late1960snewviews
+of development started emerging.Arthur Lewis had seen development in thesense of human freedom in 1963
+itselfwhenheconcludedthat"theadvantageofeconomicgrowthisnotthatwealthincreasesh—appiness,butthatit
+increasestherangeof humanchoice."Forhimdevelopment meansafreedomfrom'servitude' mankindcould be
+freetohavechoicestoleadalifefullofmaterialgoodsorinspiritualcontemplation(W.ArthurLewis,TheTheoryof
+EconomicGrowth , Allen&Unwin,London,1963,p.420).
+ForDudleySeersdevelopment meantmoreemploymentandequality besidesafallingpoverty[TheMeaningof
+Development , a paperpresentedatthe11thWorld ConferenceoftheSocietyforInternationalDevelopment, New
+Delhi,1969, p.3). DudleySeerswas latersupported by manyother economistssuch asDenisGoulet(TheCruel
+Choice:ANewConceptintheTheoryof Development , Atheneum,NewYork,1971,p.23),Richard Brinkman(1995),
+P.JegadishGandhi(1996)andmanyothers.
+TheInternationalLabourOrganization(ILO)hadalsoarticulatedbythemid- 1970sthateconomicdevelopmentmust
+beabletodelivertheeconomicabilitythatpeoplecanmeettheirbasicneeds(theconceptof'sustenance')besides
+the elimination of absolute poverty, creating more employment and lessening income inequalities(Employment ,
+GrowthandBasicNeeds , ILO,Geneva,1976).AmartyaSenarticulatedasimilarviewviahisideasof'capabilities'and
+'entitlements'("Development:WhichWayNow?",EconomicJournal93 , December1983,pp.754 - 57.).
+By1994,theUnitedNationslookedtoincludingtheelementof'capabilities'initsideaofdevelopmentwhenit
+concludesthathumanbeingsarebornwithcertainpotentialcapabilitiesandthepurposeofdevelopmentisto
+.
+createanenvironmentinwhichallpeoplecanexpandtheircapabilitiesinpresenttimesandinfuture Wealth
+isimportant forhumanlife . Buttoconcentrateexclusivelyonitiswrong fortworeasons . First , accumulating
+wealthisnotnecessaryforthefulfillmentofsomeimportanthumanchoices .... Second , humanchoicesextend
+farbeyondeconomicwell - being(HumanDevelopmentReport1994 , UNDP , Oxford UniversityPress,NewYork,
+1994,pp.13 - 15).
+The WorldBank by1991had alsochanged itsviewabout development and had concluded thatfor improving
+qualityoflifeweshould included education,health,nutrition,lessproverty,cleanerenvironment,equality,greater
+freedomand richerculturallifeasthegoalsofdevelopment.
+Amartya Sen, a leading thinker on the meaning of development attracted attention for articulating human
+goalsof development.Heopined thatenhancingthe livesand thefreedoms,weenjoyshould betheconcernsof
+development known asthe'capabilities'approach todevelopment (see hisCommoditiesandCapabilities,North
+Holland,Amsterdam,1985andDevelopmentasFreedom . AlfredKnopf.NewYork,1999.).
+
+--- PAGE 64 ---
+2.8 < IndianEconomy
+themhavesuggestedare-definingofdevelopment Somehow a very small kingdom had been
+whichcould deliver happinessto mankind. ableto definedevelopment in itsown way,which
+Why development has not delivered included material as well as non-material aspects
+happiness to the developed world?The answer to of life into it and named it the Gross National
+thisquestiondoesnotlieinanyoneobjectivefact Happiness (GNH).Thiscountryis Bhutan.
+but touches so many areas of human life. First, Gross National Happiness: Bhutan, a small
+whenevereconomistsfromtheoutsettalkedabout Himalayankingdomandaneconomicnon-entity,
+progress they meant overall happiness of human developedanewconceptofassessingdevelopment
+life.
+intheearly1970s
+—
+theGrossNationalHappiness
+Social scientists, somehow have been using (GNH). Without rejecting the idea of human
+terms such as progress, growth, development, development propounded by the UNDP, the
+well-being, welfare as synonyms of ‘happiness kingdom has been officially following the targets
+Happinessisa normativeconceptaswellasastate set by the GNH. Bhutan has been following up
+of mind.Therefore, its idea might varyfrom one the GNH since 1972 which has the following
+economyto theother. parametersto attain happiness/development:
+Second,theperiodinwhichdevelopmentwas (i) Higher real percapitaincome
+defined, it wasconsidered that with thesupplyof (ii) Goodgovernance
+someselectedmaterialresourceshumanlifecanbe
+(iii) Environmental protection
+improved.These resourceswere pin-pointed as, a
+(iv) Cultural promotion (i.e., inculcation of
+better level of income, proper level of nutrition,
+ethicaland spiritualvaluesin lifewithout
+healthcare facilities, proper levels of literacy and
+which, it says, progress may become a
+education,etc .
+curserather thana blessing)
+Happinessisabroaderthingthandevelopment.
+At the level of real per capita income, the
+The so-called ‘development’ for which the world
+GNH and the HDI are the same. Though the
+has been striving hard for the last many decades
+HDI is silent on the issue of ‘good governance’,
+is capable of delivering material happiness to
+todayit should be considered as being promoted
+mankind. Happiness has its non-material side
+around the world once the World Bank came
+also. It means while the world has been trying
+to maximise its developmental prospects, i.e., w th i e th m it e s m re b p e o r rt st o a n te i s t . in O 1 n 99 th 5 e an is d su e e nf o o f rce p d ro i t t e u ct p i o n n g
+m
+m
+a
+a
+t
+t
+e
+e
+r
+r
+i
+i
+a
+a
+l
+l p
+h
+a
+a
+r
+p
+t
+p
+o
+in
+f
+e
+h
+s
+a
+s
+p
+,
+p
+it
+in
+c
+e
+o
+s
+u
+s.
+ld
+Th
+n
+e
+ot
+no
+a
+n
+tt
+-
+e
+m
+nd
+ate
+th
+ri
+e
+al
+n
+p
+o
+a
+n
+r
+¬
+t
+environment, though the HDI didn’t say
+anythingdirectly, theWorld Bankand theUNO
+ofourlifeisrootedinethics, religion,spiritualism
+hadalreadyacceptedtheimmediacyofsustainable
+and cultural values. As development or human
+developmentbythenandbyearly1990stherewas
+development was defined in material terms, it
+aseperate UN Convention on the matter (follow
+could onlydeliver us material happiness which is
+upon thisconvention has been reallyverylowtill
+visibly available in the developed world. Due to datewhich isadifferentissue).
+partial definition of development the developed
+world has been able to achievedevelopment, i.e., ItmeansthebasicdifferencebetweentheGNH
+happiness but only of material kind and for the
+and the HDI looksat thelevelofassimilatingthe
+non-material partof happiness, we naturallyneed ethical and spiritual aspects into our (UNDP’s)
+ideaofdevelopment.
+to redefine our ‘ideas’ of development today or
+tomorrow.
+
+--- PAGE 65 ---
+Growth,DevelopmentandHappiness i 2.9
+Animpartialanalysissufficientlysuggeststhat is in the process of globalisation at one hand has
+material achievements are unable to deliver us started introspecting whether multicultural co ¬
+happiness devoid of some ethics at its base. And existence is possible. The Human Development
+ethicsarerootedinthereligiousandspiritualtexts . Report of 2004 was titled as Cultural Liberty
+But the newworld isguided byits own scientific in Today’s Diverse World. We may conclude
+and secular interpretation of life and the world that mankind is passing through a phase of
+has always been suspicious about recognising serious introspection and transition where the
+the spiritual factor in the human life. Rather dominant view in the world may metamorphose
+the western idea of secularism was defined after into redefining the very idea of development
+rejecting the veryexistence of anything like God by including ethical values and spiritualism as
+andalsorejectingthewholetraditionalhypothesis important parts . But till now the proponents of
+of spiritualism as instances of ignorance and development lookshyin believingand accepting
+orthodoxy. And there should not be any doubt that thereexistsa non-material part oflife, which
+in accepting it that the western ideology in the needs to be realised to make our development
+name of development has ultimately, dominated resultinto happiness.
+the modern world and its way of life. The idea
+|
+of development which was followed bythelarger HAPPINESS
+part of the world has been cent per cent ‘this-
+worldly’.Andanybodycanassesstodaywhatkind The World Happiness Report2013 was published
+by the United NationsSustainable Development
+of happiness the world has been able to have for
+itselfat theend. Solutio
+—
+ns Network, in Sept
+—
+ember 2013. The
+report a 156-nation survey is second of its
+Arecentstudybyasenioreconomistfromthe
+kind(aftertheWHR2012)releasedbyacoalition
+UNDPontheBhutanesedevelopmentexperience
+ofresearchers.8Thereportmeasureshappinessand
+under the GNH has vindicated the idea of ‘gross
+well-beingin countries around the world to help
+happiness’ which development must result into.
+— guidepublicpolicy.The Happinessreport ranks
+As per the study, the period 1984 98 has been
+nationson the basisofsixkeyfactors:
+spectacular in terms of development with life
+(i) GDP per capita,
+expectancyincreasingbyahopping19years,gross
+schoolenrolmentreaching72percentandliteracy (ii) Healthylifeexpectancy,
+touching47.5 percent (from just 17per cent).7 (iii) Someoneto counton,
+After the terror attack on the World Trade (iv) Perceivedfreedom to makelifechoices,
+CentreintheUSAthewholeworldhasgonefora (v) Freedomfrom corruption,and
+psychic metamorphosis and at least the euphoria (vi) Generosity.
+ofdevelopmentfrom thisworld to thatworld has
+The happiest nation was Denmark followed
+been shaken from its very base.The world which
+by Norway, Switzerland, Netherlands, Sweden,
+7. StefanPriesner,asenioreconomistwiththeUNDPconductedthestudyfortheJohnHopkinsUniversity,USA,in2005.
+8. BoththeWHRshavethreeeditors:1.JohnF.Helliwell,VancouverSchoolofEconomics,UniversityofBritishColumbia,
+andtheCanadianInstituteforAdvancedResearch(CIFAR);2.RichardLayard,Director,Well- BeingProgramme,Centre
+forEconomicPerformance,LondonSchoolof Economics;3.JeffreyD.Sachs,Director,TheEarth Institute—,Columbia
+University.[Thereportswerewrittenbyagroupofindependentexpertsactingintheirpersonalcapacities anyviews
+expressedinthisreportdonotnecessarilyreflecttheviewsofanyorganisation,agencyorprogrammeoftheUnited
+Nations]
+,
+
+--- PAGE 66 ---
+2.10 < IndianEconomy
+Canada, Finland, Austria, Iceland and Australia measures of happiness might tell us very little.
+in thetop10 positions, respectively.Interestingly Changesinreportedhappinessusedtotracksocial
+andironically,theUSwasrankednumber17, just progress would perhaps reflect little more than
+behind Mexico.Last year, theUS was ranked 23. transient changes in emotion. Or impoverished
+India is ranked 111. persons who express happiness in terms of
+The world is now in the midst of a major emotion might inadvertently diminish society’s
+policy debate about the objectives of public will to fight poverty . Fortunately, respondents
+policy. What should be the world’s Sustainable to the happiness surveys do not tend to make
+DevelopmentGoalsfor the period 2013 — 2030 — such confusing mistakes. Both the WHRs did
+the World Happiness Report (WHR) of 2013 is show that the respondents of the surveys clearly
+offeredasacontributionto thatcrucialdebate.As recognise the difference between happiness as an
+perJefferySachs,‘thereisnowa risingworldwide
+emotionandhappinessinthesenseoflifesatisfaction.
+demand that policy be more closelyaligned with The responses of individuals to these different
+what really matters to people as they themselves questions are highly distinct. Avery poor person
+characterizetheir well-being’. might report himself to be happy emotionally at
+aspecifictime, whilealso reportinga muchlower
+THEMEANINGOFHAPPINESS senseofhappinesswithlifeasawhole;andindeed,
+Theword‘happiness’isquitecomplexand is not people living in extreme poverty do express low
+used lightly. Happiness is an aspiration of every levels of happiness with life as a whole. Such
+human being, and can also bea measureofsocial answersshould spur our societies to work harder
+progress.Yet,arethecitizensofdifferentcountries, to endextreme poverty .
+happy?Iftheyarenot,whatifanythingcanbedone The WHR2013 is based on the primary
+about it? The key to proper measurement must measures of subjective well-being;9 life
+begin with the meaning of the word ‘happiness.’ evaluations;10 life satisfaction;11 and happiness
+As per theWHR2013, the problem,ofcourse, is with life as a whole.12 Thus, happiness, appears
+that happinessis used in at leasttwoways: twice, once as an emotional report, and once
+as part of a life evaluation, giving considerable
+(i) As an emotion [‘Were you happy
+yesterday?’],and
+evidenceaboutthenatureandcausesofhappiness
+in bothits majorsenses.
+(ii) As an evaluation [‘Are you happy with
+yourlifeasa whole?’]. TrendsinHappiness
+If individuals were to routinely mix up their
+The report presents data for the world showing
+responses to these very different questions, then
+the levels, explanations, changes and equality
+9. GuidelinesonMeasuringSubjectiveWell - being,OECD,Paris,2013.
+10. UsedintheWorldValuesSurvey,theEuropeanSocialSurveyandmanyothernationalandinternationalsurveys.Itis
+thecore'lifeevaluation'questionrecommendedbytheOECD(2013),andinthefirstWorldHappinessReport.
+11. TheGallupWorldPoll(GWP) - theGWPincludesthe'lifesatisfaction'questionon0to10scaleonanexperimental
+basis,givingasamplesufficientlylargetoshowthatwhen used withconsistentsamplesthetwoquestionsprovide
+mutuallysupportiveinformationonthesizeandrelativeimportanceofthecorrelates.
+12. The EuropeanSocialSurveycontainsquestionsabout 'happinesswith life as a whole', and about lifesatisfaction,
+bothonthesame0to10numericalscale.TheresponsesprovidethescientificbasetosupporttheWHRfindingsthat
+answerstothetwoquestionsgiveconsistent(and mutuallysupportive)informationaboutthecorrelatesofagood
+life.
+
+--- PAGE 67 ---
+Growth,DevelopmentandHappiness i 2.11
+of happiness. The world has become a slightly Conclusion
+happier and more generous place over the
+At the end, it may be concluded that there is
+past five years despite the obvious detrimental
+now a rising worldwide demand that policy be
+happiness impacts of the financial crisis (2007-
+more closely aligned with what really matters
+OS), as per the report . Because of continuing
+to people as they themselves characterise their
+improvements in most supports for better lives. In past few years, more and more world
+lives in Sub-Saharan Africa, and of continued
+leaders (such as the German Chancellor Angela
+convergence in the quality of the social fabric
+Merkel, South Korean President Park Geun-hye
+within greater Europe, there has also been some
+andBritish PrimeMinisterDavidCameron) have
+progress toward equality in the distribution of
+been talking about the importance of well-being
+well-beingamongglobalregions.Therehavebeen
+as a guide for their nations and the world. The
+important continental crosscurrents within this
+2013 WorldHappiness Reporthas been published
+broader picture. Improvements in quality of life
+in support of these efforts to bring the study of
+have been particularly notable in Latin America happinessintopublicawarenessandpublicpolicy.
+and the Caribbean, while reductions have been
+Thisreportoffersrichevidencethatthesystematic
+the norm in the regions most affected by the
+measurement and analysis of happinesscan teach
+financialcrisis,WesternEuropeandotherwestern
+us much about ways to improve the world’s
+industrial countries; or by some combination of well-being and sustainable development. Now
+financialcrisis,and politicalandsocialinstability,
+it depends on the nations as how they use the
+asin theMiddleEastand NorthAfrica. findingsof theWHR .
+TheHDRLinkage
+THEBACKGROUND
+The WHR 2013 investigates the conceptual
+InJuly 2011 the UN General Assembly passed a
+and empirical relationships between ‘human
+historicresolution.13 It invited member countries
+development’ (the UNDP idea used in the
+tomeasurethehappinessoftheirpeopleandtouse
+Human Development Report) and ‘life evaluation’
+approaches to understanding human progress. It this to help guide their public policies. This was
+followedinApril2012 bythefirstUN high-level
+arguesthat bothapproacheswere, at least in part,
+meetingon happiness and well-being, chaired by
+motivated by a desire to consider progress and the Prime Minister of Bhutan. At the same time
+developmentinwaysthatwentbeyondGDP,and
+thefirst World Happiness Reportwas published,14
+to put people at the centre . And while ‘human
+followed some months later by the OECD
+development’ is at heart a conceptual approach,
+Guidelines setting an international standard for
+and ‘life evaluation’ an empirical one, there is
+—
+themeasurementofwell-being.15
+considerable overlap in practice many aspects
+of humandevelopmentarefrequentlyused askey
+REIMAGININGTHEIDEAOFHAPPINESS
+variablestoexplainsubjectivewell-being.Thetwo
+approaches provide complementary lenses which Search for a ‘happier’ life for humanity has been
+enrich our ability to assess whether life is getting the ultimate aim of not only saints, seers, and
+better. philosophers but of economists too . The whole
+13. UNGeneralAssembly,Happiness:TowardsaHolisticApproachtoDevelopment,19July2011.
+14. J.F.Helliwell,R.Layard&J.Sachs(Eds.),WorldHappinessReport2012,EarthInstitute,NewYork,USA,2012.
+15. GuidelinesonMeasuringSubjectiveWell-being,OECD,Paris,2013.
+
+--- PAGE 68 ---
+2.12 < IndianEconomy
+gamut of economics literature on progress, modern life.These contradictions would
+growth, development is ultimately aimed at not comeas ashock to thegreatestsages
+bringingmore‘happiness’into thelivesofhuman of humanity, includingAristotleand the
+beings.Overthetime,diverseideologicalcurrents Buddha, who taught humanity, time
+impressed upon the humanity to take variety and again, that material gain alone will
+of ‘meanings’ out of the highly subjective term not fulfil our deepest needs.Material life
+—
+‘happiness’ and finally, the humanity is where must be harnessed to meet these human
+itistoday. needs, most importantly to promote the
+A time also came when many scholars and end of suffering, social justice and the
+world leaders raised the ultimate question — attainmentof happiness.
+are we happier today? And in the wake of this (ii) The WHR 2012 takes one key example
+—
+increased‘scrutiny’around theworld, therecame from the USA the world’s economic
+—
+theUNresolutionof2011whichinvitedmember superpower whichhasachievedstriking
+countries to measure the happiness of their economicandtechnologicalprogressover
+people and to use this to help guide their public thepast halfcenturywithoutgainsin the
+policies. The WHR 2012 itself provides a very self-reported happiness of the citizenry
+interestingand eye-openinginquiryinto thestate with the following serious ‘concerns’ of
+of human happinessin theworld.To understand today:
+the‘shift’ which is expected to take place among (a) uncertaintiesand anxietiesare high,
+policymakers around the world in coming years,
+(b) socialandeconomicinequalitieshave
+it will be better to lift some ideasfrom the first widenedconsiderably,
+WHR
+.'6
+(c) social trustisin decline,and
+(i) This is an age of stark contradictions.
+(d) confidenceingovernmentisatanall-
+While at the one hand the world timelow.
+enjoys technologies of unimaginable
+Perhapsfor thesereasons, lifesatisfaction
+sophistication at the other hand, at least
+one billion people ae living without
+in theUSAhasremained nearlyconstant
+enough to eat . The world economy during the decades of rising Gross
+National Product (GNP) percapita.
+is propelled to soaring new heights
+of productivity through ongoing (iii) The realities of poverty, anxiety,
+technological and organisational environmental degradation, and
+advances; yet it is relentlessly destroying unhappiness in the midst of great plenty
+the natural environment in the process. shouldnotberegardedasmerecuriosities.
+Countries achieve great progress in They require our urgent attention, and
+economicdevelopmentasconventionally especially so at this juncture in human
+measured; yet along the way countries history.Forwehaveentereda new phase
+succumbtonewcrisesofobesity,smoking, of the world, termed the Anthropocene17
+diabetes, depression, and other ills of
+bytheworld’sEarthsystemscientists.The
+16. J.F.Helliwell,R.Layard&J.Sachs(Eds.),WorldHappinessReport-2012,EarthInstitute,NewYork,USA,2012.
+17. TheAnthropoceneisa newlyinventedtermthatcombinestwoGreekwords:'anthropo'for human;and 'cene'for
+new,asina newgeologicalepoch.TheAnthropoceneisthenewepochinwhichhumanity,throughitstechnological
+prowessandpopulationof7billion,hasbecomethemajordriverofchangesofEarth'sphysicalsystems,includingthe
+climate,carboncycle,watercycle,nitrogencycleandbiodiversity.
+
+--- PAGE 69 ---
+Growth,DevelopmentandHappiness i 2.13
+Anthropocene will necessarily reshape On the opposite end of the income
+our societies. If we continue mindlessly spectrum, for most individuals in the
+alongthecurrenteconomictrajectory,we high-incomeworld,thebasicdeprivations
+risk underminingtheEarth’slifesupport have been vanquished. There is enough
+—
+systems food supplies, clean water and food, shelter, basic amenities (such as
+—
+stable climate necessary for human clean water andsanitation),and clothing
+health and even survival in some places. to meet their daily needs. In fact, there
+Inyearsordecades,conditionsoflifemay is a hugesurfeit of amenities above basic
+become dire in several fragile regions of needs.Poor peoplewouldswapwith rich
+the world. We are already experiencing people in a heartbeat. Yet all is not well.
+deterioration of life support systems in Theconditionsofaffluencehavecreated
+the dry lands of the Horn of Africa and theirownsetoftraps.
+partsofCentralAsia.
+Most importantly, the lifestyles of
+On the other hand, if we act wisely, the rich imperil thesurvival of the poor.
+we can protect the Earth while raising Human-induced climate change is
+qualityof life broadlyaround the world. already hitting the poorest regions and
+Wecan do this byadopting lifestylesand claiminglivesandlivelihoods.Itistelling
+technologies that improve happiness (or that in much of the rich world, affluent
+life satisfaction) while reducing human populationsaresoseparatedfromthepoor
+damage to the environment.Sustainable that there is little recognition, practical
+Development is the term given to the or moral, of the adverse spillovers (or
+combination of human well-being, ‘externalities’) from their own behaviour.
+social inclusion and environmental (v) Affluence has also created its own set of
+sustainability. There is no doubt in afflictions and addictions (problems) —
+concluding that the‘quest for happiness’ obesity, adult- onset diabetes, tobacco-
+is intimately linked to the ‘quest for related illnesses, eating disorders such
+sustainabledevelopment’.
+as anorexia and bulimia, psychosocial
+(iv) In an impoverished society, the urge disorders, and addictions to shopping,
+for material gain typically makes a lot TV and gambling, are all examples
+of sense. Higher household income (or of disorders of development. So too
+higherpercapitaGNP)generallysignifies is the loss of community, the decline
+an improvement in the life conditions of social trust and the rising anxiety
+of the poor. The poor suffer from dire levels associated with the vagaries of the
+deprivations of various kinds: lack of modern globalised economy, including
+adequate food supplies, remunerative thethreatsof unemploymentor episodes
+jobs, access to health care, safe homes, ofillnessnot covered byhealthinsurance
+safewaterandsanitation,andeducational in the United States (and many other
+opportunities.As incomes rise from very countries).
+low levels, human well-being improves. (vi) Higher average incomes do not
+Notsurprisingly, the poor report a rising necessarily improve average well-being,
+satisfactionwiththeirlivesastheirmeager the US being a clear case in point, as
+incomesincrease.
+noted famously by Professor Richard
+
+--- PAGE 70 ---
+2.14 < IndianEconomy
+—
+Easterlin18 where GNP per capita has rises, but then at least partly return
+risen by a factor of three since I960, to earlier levels as theyadaptto their
+while measures of average happiness newhigher income.
+have remained essentially unchanged (vii) These phenomena put a clear limit on
+over the half-century . The increased US the extent to which rich countries can
+outputhascausedmassiveenvironmental become happier through the simple
+damages, notably through greenhouse device of economicgrowth. In fact, there
+gas concentrations and human-induced arestillothergeneralreasonstodoubtthe
+climate change, without doing much formula of ever rising GNP per person
+at all to raise the well-being even of as the route to happiness. While higher
+Americans. Thus, we don’t have a trade income may raise happiness to some
+offbetweenshort-rungainstowell-being extent, the quest for higher income may
+versuslong-runcoststotheenvironment; actuallyreduce one’s happiness. In other
+we have a pure loss to the environment words,itmaybenicetohavemoremoney
+withoutoffsettingshort- termgains. but notso niceto craveit.Psychologists
+The paradox that Easterlin noted in the have found repeatedly that individuals
+US was that at any particular time richer who put a high premium on higher
+individualsare happier than poorer ones, incomes generally are less happy and
+but over timethesocietydid not become more vulnerable to other psychological
+happierasitbecamericher.Thisisdueto ills than individuals who do not crave
+fourreasons: higherincomes.AristotleandtheBuddha
+(a) Individuals compare themselves to advisedhumanitytofollowamiddlepath
+others. They are happier when they between asceticism on the one side and
+are higher on the social (or income) cravingmaterialgoodson theother.
+ladder. Yet when everybody rises (viii) Another problem is the creation of new
+together, relative status remains material ‘wants’ through the incessant
+unchanged. advertising of products using powerful
+(b) Thegainshavenotbeenevenlyshared, imagery and other means of persuasion.
+but have gone disproportionately to Since the imagery is ubiquitous on all
+those at the top of the income and of our digital devices, the stream of
+educationdistribution. advertising is more relentless than ever
+(c) Theothersocietalfactors — insecurity, before. Advertising is now a business of
+around US$500billion peryear.Itsgoal
+loss of social trust, declining
+confidence in government — have is to overcomesatiety bycreatingwants
+and longings where none previously
+counteracted any benefits felt from
+higher incomes. existed. Advertisers and marketers do
+this in part by preying on psychological
+(d) Individuals mayexperience an initial
+weaknesses and unconscious urges.
+jumpinhappinesswhentheirincome
+18. Amongtheforemost contributor tothe Happiness Economics, Easterlin is particularly known for his1974 article
+'DoesEconomicGrowthImprovetheHumanLot?SomeEmpiricalEvidence'(hisidea,todayknownastheEasterlin
+Paradox,wasproposedbyhiminthisarticle).Hereheconcludedthatcontrarytoexpectation,happinessatanational
+leveldoesnotincreasewithwealthoncebasicneedsarefulfilled.
+
+--- PAGE 71 ---
+Growth,DevelopmentandHappiness i 2.15
+Cigarettes, caffeine, sugar, and trans¬ individual’s preferences as consumers
+fats all cause cravings if not outright are a given or change in ways actually
+addictions. Fashions are sold through anticipatedin advance bytheindividuals
+increasingly explicit sexual imagery. themselves. Some economists even say
+Product lines are generally sold by that drug addicts have acted ‘rationally’,
+associating the products with high social consciously trading off the early benefits
+statusrather thanwith real needs. of drug use with the later high toll of
+(ix) The thinking of becoming happier by
+addiction.
+becoming richer is challenged by the (xi) We understand that we need a very
+law of diminishing marginal utility of different model of humanity, one in
+—
+income19 after a certain point, thegains which we are a complicated interplay
+are very small. This means that poor of emotions and rational thought,
+people benefit far more than rich people unconscious and conscious decision
+¬
+froman addeddollarofincome.Thisisa making, fast and slow thinking. Many
+goodreasonwhytax -and-transfersystems of our decisions areled byemotions and
+among high-income OECD countries instincts, and only later rationalised by
+on balance take in net revenues from conscious thought. Our decisions are
+high-income households and make net easily“primed” byassociations, imagery,
+transfers to low-income households. Put social context and advertising. We are
+another way, theinequalityof household inconsistent or “irrational” in sequential
+income is systematically lower net of choices,failingto meetbasicstandardsof
+taxes and transfers than before taxes and rational consistency. And we are largely
+transfers.20 unaware of our own mental apparatus,
+(x) The Western economist’s logic of ever so we easily fall into traps and mistakes.
+higherGNPisbuiltonavisionofhumanity Addicts do not anticipate their future
+completely at variance with the wisdom pain; we spend now and suffer the
+ofthesages,theresearchofpsychologists, consequences of bankruptcy later; we
+and the practices of advertisers. The break our diets now because we aren’t
+economist assumes that individuals are thinking clearlyabout the consequences.
+‘rational decision-makers’ who know We also understand (again!) that we are
+what they want and how to get it, or socialanimalsthroughand through.We
+to get as close to it as possible given learn through imitation, and gain our
+their budget. Individuals care largely happiness through meeting social norms
+about themselves and derive pleasure and having a sense of belonging to the
+.
+mainly through their consumption. The community
+19. SupposethatapoorhouseholdatRs.1,000incomerequiresanextraRs.100toraiseitslifesatisfaction(orhappiness)
+byonenotch.Arich householdatRs.1,000,000income(onethousandtimesasmuchasthepoorhousehold)would
+needonethousandtimesmoremoney,orRs.100,000,toraiseitswell-beingbythesameonenotch.Gainsinincome
+havetobeofequalproportionstohouseholdincometohavethesamebenefitin unitsoflifesatisfaction.
+20. OnanaverageacrosstheOECDcountries,cashtransfersand incometaxesreduceinequalitybyonethird.Poverty
+isaround60percentlowerthan itwould bewithouttaxesand benefits.Evenamongtheworking-agepopulation,
+governmentredistributionreducespovertybyabout50percent(OECD,2008).
+
+--- PAGE 72 ---
+2.16 I IndianEconomy
+(xii) Human beings feel the pain of others, tiny fraction of the $500 billion or so
+and react viscerally when others are sad spent on advertising each year to help
+or injured.Weeven haveaset of‘mirror individuals and families to understand
+neurons’thatenableustofeelthingsfrom better their own motivations, wants and
+thepointofviewofothers.Allofthisgives needs as consumers? Should we consider
+us a remarkable capacity to cooperate some parts of our society to be “off
+evenwithstrangers,andeven when there bounds” to the profit motive, so that
+is little chance of reward or reciprocity, we can foster the spirit ofcooperation,
+and to punish ‘non-cooperators’, even trust,andcommunity?Arecentanalyst21
+when imposing punishment on others is of Finland’s school system, for example,
+costlyor puts usat riskourselves. writes that Finland’s excellence (ranking
+Of course there are limits to such nearthetopofinternationalcomparisons
+cooperation and fellow feeling. We also instudentperformance)hasbeenachieved
+cheat, bluff, deceive, break our word, by fostering a spirit of community and
+and kill members of an out -group. We equality in the schools. This is in sharp
+engageinidentitypolitics,actingascruel contrasttotheeducationreformstrategy
+to outsiders as we are loving to our own atworkin theUS, wheretheemphasisis
+group.All theselessons of human nature put on testing, measurement, and teacher
+matter more than ever, more even than
+payaccordingtostudenttestperformance.
+whentheBuddhataughthumanityabout
+ATTHEEND
+theillusionsoftransientpleasures,andthe
+Greeks warned us against the tempting TheintrospectingstudiesoftheWHR2012simply
+Sirensongsthatcouldpullusoffourlife’s conclude that thereareenough reasons to believe
+course. For today we have more choices that we need to re-think the economic sources
+than ever before. In the ancient world, of well-being, moreso even in the rich countries
+thechoicefacingmost of humanitymost than in the poor ones. High-income countries
+—
+of the time was little choice indeed to havelargelyendedthescourgesofpoverty,hunger
+work hard to secure enough to eat, and anddisease.Poorcountriesrightlyyearn todoso.
+even then to face the risk of famine and But after the end of poverty, what comes next?
+deathfrom bad weather or bad luck. What are the pathways to well-being when basic
+(xiii) Today, we face a set of real choices. economic needs are no longer the main drivers
+Should the world pursue GNP to the of social change? What will guide humanity in
+point of environmental ruin, even the Anthropocene: advertising, sustainability,
+when incrementalgains in GNP are not community or something else? What is the path
+increasing much (or at all) the happiness to happiness?
+of affluent societies? Should we cravefor Most peopleagreethatsocietiesshouldfoster
+for higher personal incomes at the cost the happiness of their citizens. The founding
+of the community and social trust? fathers of the US recognised theinalienable right
+Should our governments spend even a to the pursuit of happiness. British philosophers
+21 . PasiSahlberg,‘EducationPoliciesforRaisingStudentLearning:TheFinnishApproach;Journalof EducationPolicy,
+22(2),March2007,WorldBank,WashingtonDC,pp . 147-171 .
+
+--- PAGE 73 ---
+Growth,DevelopmentandHappiness t 2.17
+talked about the greatest good for the greatest to overall satisfaction or frustration with one’s
+number. Bhutan has famously adopted the goal place in society. Higher income, better health
+of Gross National Happiness (GNH) rather of mind and body, and a high degree of trust in
+than Gross National Product. China champions one’scommunity(‘socialcapital’)allcontributeto
+a harmonious society. Yet most people probably high lifesatisfaction; poverty, ill health and deep
+believethathappinessisintheeyeofthebeholder, divisions in the communityall contribute to low
+an individual’s choice, something to be pursued lifesatisfaction.
+individually rather than as a matter of national Happiness differs systematically across
+policy. Happiness seems far too subjective, too societies and over time, for reasons that are
+vague,toserveasatouchstoneforanation’sgoals, identifiable,andevenalterablethroughthewaysin
+muchlessitspolicycontent .Thatindeedhasbeen which public policies are designed and delivered.
+the traditional view. Yet the evidence is rapidly It makessense, in other words, to pursue policies
+changingthisview.
+toraisethepublic’shappinessasmuchasitdoesto
+A generation of studies by psychologists, raise the public’s national income. Bhutan is on
+economists, pollsters,sociologistsandothershave tosomethingpathbreakinganddeeplyinsightful.
+shown that happiness, thoughindeed asubjective And the world is increasingly taking notice. A
+experience,can beobjectivelymeasured,assessed, household’s income counts for life satisfaction,
+—
+correlated with observable brain functions, and but only in a limited way other things matter
+related to the characteristics of an individual more:
+and the society. Asking people whether they (i) communitytrust,
+are happy or satisfied with their lives, offers (ii) mentaland physical health,and
+important information about the society. It can
+(iii) thequalityofgovernanceand ruleoflaw
+signalunderlyingcrisesorhiddenstrengths.Itcan
+suggesttheneedforchange.Suchistheideaofthe
+Raisingincomescanraisehappiness,especially
+in poor societies, but fostering cooperation and
+emergingscientificstudyofhappiness,whetherof
+community can do even more, especially in rich
+individualsandthechoicestheymake,orofentire
+societiesthathavealowmarginalutilityofincome.
+societiesand thereportsofthecitizenryregarding
+— Itisnoaccidentthatthehappiestcountriesin the
+life satisfaction the WHR2012summarises the
+fascinatingandemergingstoryofthesestudieson world tend to be high-income countries that also
+two broad measurementsof happiness: have a high degree of social equality, trust and
+quality of governance. In recent years, Denmark
+(i) the upsanddownsofdailyemotionsand
+hasbeentoppingthelist.Andit’snoaccidentthat
+(ii) an individual’soverallevaluation oflife
+the US has not experienced riseoflifesatisfaction
+The former is sometimes called ‘affective for halfa century,aperiodin whichinequality has
+happiness,’and thelatter‘evaluativehappiness.’ soared, socialtrust hasdeclined,andthepublic has
+This is important to know that both kinds lostfaithinitsgovernment .
+of happiness have predictable causes that reflect It is, of course, one thing to identify the
+variousfacetsofour human natureand oursocial correlates of happiness, and quite another to use
+life.Affectivehappinesscapturestheday- to -dayjoy public policies to bring about a society-wide
+of friendship, time with family, and sex, or the rise in happiness (or lifesatisfaction).That is the
+downsides of long work commutes and sessions goal of Bhutan’s GNH, and the motivation of
+with one’s boss. Evaluative happiness measures an increasing number of governments dedicated
+very different dimensions of life, those that lead to measuring happiness and life satisfaction in a
+
+--- PAGE 74 ---
+2.18 < IndianEconomy
+reliable and systematic way over time. The most threetimeslesslikelywithasimplechange
+basic goal is that by measuring happiness across in the periodicity of meetings between
+a society and over time, countries can avoid microfinanceclientsand their repayment
+1happiness traps' such as in the USA in recent groups to weeklyrather than monthly.
+decades, where GNP may rise relentlessly while (cid:127) Researchshowedthatboysfrombackward
+lifesatisfactionstagnatesor evendeclines. classeswere justasgoodatsolvingpuzzles
+The idea of GNH in Bhutan tells a story of as boys from the upper castes when caste
+exploration and progress since its King declared identity was not revealed. However, in
+(1972) the goal of happiness over the goal of mixed- caste groups, revealing the boys’
+wealth. For Bhutan happiness became much castes before puzzle-solving sessions
+more than a guidepost or inspiration; it became created a significant “caste gap” in
+an organising principle for governance and achievementwiththeboysfrombackward
+policymaking as well. The ‘GNH Index’ is the classes underperforming by 23 per cent
+firstofitskindin theworld,aserious,thoughtful (making caste salient to the test takers
+andsustained attempt to measure happiness, and invoked identities, whichin turn affected
+use those measurements to chart the course of performance,as per thereport).
+public policy. It is believed that in coming years The Reporthas recommended that the
+many more countries in the world will be taking presence of a stereotype can contribute
+cluesfrom Bhutanandtherecentlypublishedtwo to measured abilitydifferences, which in
+World Happiness Reports. turn reinforce the stereotype and serve
+BEHAvioUR asa basis for exclusion, in a vicious cycle
+| INSIGHTS INTOHUMAN — finding ways to break this cycle could
+increase the well-being of marginalised
+The World Bank in its latest report (World
+individualsenormously.
+Development Report 2015: Mind, Society, and
+Behaviour) said that development policies SOCIALNORMS ,CULTUREAND
+become more effective when combined with
+DEVELOPMENT
+insights into human behaviour. It further adds
+that policy decisions informed by behavioural Economic development depends not only on
+economics can deliver impressive improvements gettingfiscalpolicy,monetarypolicyand taxation
+in promoting development and well-being in right; but it is also rooted in human psychology,
+—
+society. It sitessome examples from India in the sociology, culture and norms in the economics
+areasof healthcareandeducation: profession, there has been a bit of resistance to
+(cid:127) Open defecation dropped 11 per cent this because it is sort of giving ground to the
+fromveryhighlevelsafteraCommunity- neighbouring disciplines.22 The recent World
+LedTotalSanitation (CLTS) programme Development Report (WDR) of 2013 focuses
+was combined in some chosen villages on the behavioural and social foundations of
+with the standard approach of subsidies development,and has been verywell received.
+for toilet construction and information Government documents (generally, hard-
+on thetransmission ofdiseases. nosed), usually, make no mention of the role of
+(cid:127) Thelikelihoodofdefaultonloansbecame socialnormsandcultureinpromotingdevelopment
+22. KaushikBasu,ChiefEconomist,WorldBank,Livemint,N.Delhi,February3,2015.
+
+--- PAGE 75 ---
+Growth,DevelopmentandHappiness i 2.19
+and economic efficiency. However, there is now
+by cleaning up the city and removing
+a growing body of literature that demonstrates graffitifrom thewalls. NewYork’s police
+how certain social norms and cultural practices
+department took a decision to deter
+are vital ingredients for economic efficiency and
+vandalism and graffiti that scar public
+growth. Groups and societies that are known to spaces. This act of making the cityscape
+be honest and trustworthytend to do better than more aesthetic somehow made potential
+societies that do not have this reputation. There criminalsless proneto crime.
+have been broad cross-country studies and also
+(cid:127) One sees casual evidence of this in the
+laboratory experiments that illustrate this. More
+behaviour of Delhites using themetro . It
+generally, what is being argued is that a nation’s
+hasbeenwidelynoted that peoplebehave
+successdependsofcourseonitsresources, human
+better when theytravelon Delhi’swell-
+capital and economic policies, for instance fiscal
+maintained metro (postponing their bad
+and monetary policies, but also on the cultural
+and social norms that permeatesociety.Societies behaviour to when they come up to the
+surfaceagain,somewouldadd).
+that are endowed with personal integrity and
+trustworthiness have the natural advantage that
+Allthisisinkeepingwiththeinfluentialbroken
+no third party is required to enforce contracts . windows theory in sociology, which maintains
+For outsiders the mere knowledge that a
+that, ifwecontrollowlevel, anti-social behaviour
+particular society is trustworthy is reason to do
+and takesmallstepsto improvetheenvironment,
+more business and tradewith it.One reason why this will have a natural deterrent effect on larger
+these ‘social’ causes of development do not get criminal behaviour and acts of corruption. Also,
+enough recognition in theliteratureon economic the sheer recognition and awareness that some
+policyis that thescienceof howtheseeconomics-
+collectivequalitiesofcitizens,suchashonestyand
+friendly social qualities are acquired is not yet trustworthiness, enable the entire society to do
+fully understood. Fortunately, the new discipline well prompts individuals to adopt those qualities
+ofbehaviouraleconomicsisbeginningtogive us
+andovercomethe ubiquitousfree-rider problem.
+some insights into the formation of customs and There is a growing literature24 in economics
+behaviour:23 arguing that pro-social behaviour, which
+(cid:127) It is, for instance, known that buildings includes altruism and trustworthiness, is innate to
+and office spaces which are cleaner and human beings and, moreover, forms an essential
+ingredient for the efficient functioning of
+aesthetically better maintained result
+in individuals being more honest and economies. In other words, human beings have a
+desisting corrupt activity. It is almost as naturalabilitytoforego personalgainsforthesake
+if we have a mental inclination not to
+ofother peopleor becausethatiswhatisrequired
+defile a good ambience through acts of because of a promise the person had made. This
+corruption. trait may well have evolutionary roots but its
+existence is now well demonstrated in laboratory
+(cid:127) New York city’s notorious high crime
+testsbyrecentstudies.
+was controlled, among other things,
+23. EconomicSurvey2009 - 10 , MinistryofFinance,Gol,NDelhi,p.34 - 35.
+24. Overhalfadozencontemporaryworkshavebeencited asreferencesbytheEconomicSurvey2010 - 11 , Ministryof
+Finance,Gol,NDelhi,p.40)
+
+--- PAGE 76 ---
+2.20 < IndianEconomy
+VALUESANDECONOMICS people believe in. That is what electoral politics
+Thereisresearch25in psychologyandevolutionary is all about.An important reason whythisgotso
+biologywhichshowsthatmorality,altruism,and little attention in the past is because so much of
+other-regarding values are an innate part of the traditionaleconomicswaswrittenasif thesenon ¬
+human mind, even though the social setting in
+economicfacetsoflifedidnotmatter .Butwenow
+which a person lives can nurture or stunt these know that a market economy cannot function if
+traits.However,therecognitionthatthesehuman people are totallyself serving. While self-interest
+and moral qualities can have a large impact is a major driver of economic growth, it is
+on economic development came relatively late
+importanttorecognisethathonesty,integrity,and
+to economics. Hence, the literature on this is trustworthiness constitute the cement that binds
+relativelyrecent and brief. In fact, recent research society. At times economists treated these social
+shows that having a few ‘good’ human beings in norms, preferences and customs as unalterable. If
+society can give rise to dynamics through which that were so, there would not be much point in
+weend up with an overall bettersociety.Thereis analysing their effect. But wedo know that these
+also evidence thatsocial normsand habits that at qualities in a people can be changed. Honesty
+first sight seem ingrained in a societycan change and integrity can be nurtured and aversion to
+over short periods of time. By this argument it is corruptioncan beshored up.
+possiblefor a countryto nurtureand develop the If these traits are absent or inadequate in a
+kinds ofsocial norms that enable a more vibrant nation, it is likely that that nation will stagnate
+economy. and remain in a chaotic poverty trap . Take for
+Intalkingaboutanation’seconomicprogress, instance, contracts which enable markets to
+allattention,includingbothpraiseandcriticism,is develop and form the basis of economic life. If
+usuallyfocusedonthegovernment .Itis,however, thecontractualsystem in a nation isso weak that
+importanttorecognisethatmuchalsodependson whena bankgivesa 20-year mortgageto a person
+civilsociety, the firms, the farmers, and ordinary for buying a house, there is high risk of default,
+citizens. The social norms and collective beliefs the implication of this is not that banks in this
+that shape the behaviour of these agents play an country will make large losses. The implication
+important rolein howa nationdoes. is that banks will not give loans; and the housing
+marketwillremainseverelyunderdevelopedandthe
+Honesty, punctuality, the propensityto keep
+totalnumberofhouseswillbefewandfarbetween.
+promises, the attitude towards corruption are
+mattersshaped in great part by norms and social Enforcing complicated or large contracts,
+beliefs and the behaviour patterns can become especially ones protracted over a long period of
+habitual. Moreover, in a democracy like India, time, is the responsibility of the state . The state
+whatcanbedonebygovernmentdependsingreat provides the laws and enforcement to enable
+measure on how ordinary people think and what people to sign contracts . However, economiclife
+25. SeveralrecentliteraturehavebeenquotedbytheEconomicSurvey2011-12,Ministryof Finance,Gol,NDelhi,p.44:
+(i) Fukuyama,F.(1996),Trust:TheSocialVirtuesandtheCreationofProsperity,FreePress,NewYork.
+(ii) Guha,A.S.andB.Guha,'ThePersistenceofGoodness,'JournalofInstitutionalandTheoreticalEconomics,2012.
+(iii) Hauser,M.D.,MoralMinds,HarperCollins,NewYork,2012.
+(iv) Hashimoto,T.,'JapaneseClocksandtheHistoryofPunctualityinModernJapan,'EastAsianScience,Technology,
+andSociety,vol.2,2008.
+
+--- PAGE 77 ---
+Growth,DevelopmentandHappiness > 2.21
+isfullofeveryday‘contracts’(forexample, youlet —
+the economy like running the stock market or
+me ride in your taxi, and I payyou at theend of settingtherulesof marketcompetition.
+it; I payyou moneynowandyou paint myhouse
+Further, basic literacy and better education
+over the next two days; or you paint my house
+are helpful since people can then, on their own,
+over the next two days and I payyou after that).
+reason and reach these conclusions. Literacy has
+In theseeverydaysituationsit is too cumbersome
+the added value that it implies ordinary people
+to bring in the state and the law courts . Here
+willdemand policieswhicharetrulybetter, rather
+the main guarantor has to be people’s personal
+than those that merelylook good on thesurface.
+integrityandtrustworthiness.Societiesthathave
+And, in a democraticsetting like India, this will
+successfully nurtured these qualities have done
+incentivise politicians to adopt better policies.
+well;societiesthathavedonepoorlyonthese,tend
+Finally, if the political leaders and policymakers
+to do poorlyin termsofeconomicprogress.
+act as role models in terms of these qualities of
+It is not known precisely how these values honesty, integrity and trustworthiness, that can
+can be inculcated in society. But, hopefully, set the ball rolling. Inclusion of the behavioural
+writing about their importance will catalyse
+dimension of human existence in policymaking
+change, as ordinary people realise that for
+has potential to play a huge role in promoting
+economicadvancement these socialqualities areas well-being.
+important as policies that concern directly with
+
+--- PAGE 79 ---
+C H A P T E R
+I
+-
+Sa & C ' r :' \ , v k
+ft
+It i
+. *
+1
+EVOLUTION
+*
+i
+OF THE INDIAN
+M
+-
+ECONOMY
+After 1757,whentheEastIndiaCompany
+took over the governance ofBengal, the
+<=> TheBackground
+British relationship with India, became
+^ PrimeMovingForce-Agriculture exploitative, as exports to Britain and
+vs.Industry
+opium exports to China werefinanced
+Planned andMixedEconomy
+out of the tax revenue from Bengal .
+<=t> Emphasisonthe PublicSector
+There is not much evidence ofsignificant
+transferofEuropeantechnologytoAsia . To
+understandwhy, it is useful to scrutinise
+theexperienceofChinaandIndia,asthey
+accountedfor three-quarters ofthe Asian
+.
+population and GDPin 1500AD *
+*SeeAngusMaddison,GrowthandInteractionintheWorldEconomy:
+TheRootsofModernity,TheAEIPress,WashingtonDC,2005,p.60.
+
+--- PAGE 80 ---
+3.2 < IndianEconomy
+India remained a continent of illiterate peasants
+|
+THE BACKGROUND under British rule. At the time of Independence,
+itsliteracywasonly17percentwith32.5yearsof
+The economic profile of India was in complete
+distress at the time of independence. Being a
+lifeexpectancyat birth.3
+IndustrialisationofIndiawasalsoneglectedby
+typical case of colonial economy, India was —
+serving a purpose of development not for herself
+thecolonisers theinfrastructurewasnotbuiltto
+but a foreign land — the United Kingdom. Both industrialiseIndia but toexploititsrawmaterials.
+Indian capitalists who did emerge were highly
+agriculture and industry were having structural
+dependent on British commercial capital and
+distortions while the state was playing not even
+a marginal role. During the half century before manysectors of the industry were dominated by
+British firms, e.g., shipping, banking, insurance,
+India becameindependent, theworld was having
+coal, plantation cropsand jute.4
+accelerated development and expansion in its
+agriculture and industry on the shoulders of the The pre-independence period was altogether
+active role being played by the states, with the a period of near stagnation showing almost no
+samehappeningin theUKitself.1 change in the structure of production or in the
+—
+There was not only the unilateral transfer of levels of productivity the aggregate real output
+investible capital to Britain by the colonial state
+duringthefirst halfofthe20thcenturyestimated
+(the‘drain of wealth’), but the unequal exchange atless than 2 per cent a yearor less.5
+wasdaybydaycripplingIndia’scommerce, trade The overall economic performance of India
+and the thriving handloom industry, too . The under the British rule was very low. According
+colonialstate practiced policies which were great to economic statistian Angus Maddison, there
+impediments in the process of development in was no per capita growth in India from 1600 to
+—
+the country . Throughout the colonial rule, the 1870 per capita growth was a meagre 0.2 per
+economicvision thatthestatehad wastoincrease
+centfrom1870to1947,comparedwith1percent
+India’s capacity to export primary products, in the UK.6The per capita incomes of Rs.18 for
+and increase the purchase/import of the British 1899 and Rs.39.5 for 1895 in current pricessay
+manufactured goods and raise revenues to meet thetruestoryof theabject povertyIndian masses
+the drain of capital as well as meet the revenue
+werefacedwith.7Therepeatedfaminesanddisease
+requirementsoftheimperialdefence.2 epidemicsduringthesecondhalfofthenineteenth
+Thesocialsector was a neglected area for the
+centuryand thefirst halfofthetwentiethcentury
+British rulerswhich had a negativeimpact on the
+show thegreatest socio-economic irresponsibility
+production and productivity of the economy. and neglectof the Britishgovernment in India at
+1. BipanChandra,MridulaMukherjeeandAdityaMukherjee,IndiaAfterIndependence , PenguinBooks,N.Delhi,p.341.
+2. Bipan Chandra,'TheColonialLegacy’in BimalJalan (Ed.) The Indian Economy:Problemsand Prospects,Penguin
+Books,N.Delhi,RevisedEdition,2004,p.5.
+3. B.R.Tomlinson,TheEconomyof ModernIndia1860 - 1970 , CambridgeUniversityPress,Cambridge,1993,p.7.
+4. AngusMaddison,TheWorldEconomy:AMillennialPerspective , OECD,Paris,2001,p.116.
+5. A. Vaidyanathan, 'The Indian Economy Since Independence (1947 - 90)' in Dharma Kumar (ed.), The Cambridge
+EconomicHistoryof India , Vol.il,CambridgeUniversityPress,Cambridge,England,ExpandedEdition,2005,p.947.
+6. AngusMaddison, TheWorldEconomyp.116.
+7. Therespectivedataof DigbyandAtkinson havebeenquoted bySumitSarkar,ModernIndia1885 - 1947 , Macmillan,
+N.Delhi,1983,p.42.

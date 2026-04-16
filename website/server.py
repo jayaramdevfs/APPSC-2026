@@ -19,6 +19,11 @@ from starlette.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 from starlette.requests import Request
 import uvicorn
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 BASE_DIR      = Path(__file__).parent
 ROOT_DIR      = BASE_DIR.parent
@@ -3049,9 +3054,21 @@ async def login_page(request: Request):
     if get_current_user(request):
         return RedirectResponse("/", status_code=302)
     registered = request.query_params.get("registered") == "1"
+    
+    err_code = request.query_params.get("error")
+    error_msg = None
+    if err_code == "oauth_not_configured":
+        error_msg = "Google login is currently disabled. Please use username/password."
+    elif err_code == "oauth_failed":
+        error_msg = "Google login failed. Please try again."
+    elif err_code == "invalid_state":
+        error_msg = "Invalid session state. Please try again."
+    elif err_code == "no_email":
+        error_msg = "Google account did not provide an email address."
+        
     return templates.TemplateResponse(request, "login.html", {
         "current_user": None,
-        "error": None,
+        "error": error_msg,
         "registered": registered,
     })
 
@@ -3215,8 +3232,10 @@ async def reset_password_post(request: Request):
 
 async def login_google(request: Request):
     if not GOOGLE_CLIENT_ID:
-        return PlainTextResponse("Google OAuth is not configured on this server.", status_code=500)
+        return RedirectResponse("/login?error=oauth_not_configured", status_code=302)
     
+    state = secrets.token_urlsafe(16)
+    request.session["oauth_state"] = state
     redirect_uri = str(request.base_url).rstrip("/") + "/auth/google/callback"
     params = {
         "client_id": GOOGLE_CLIENT_ID,
@@ -3224,7 +3243,8 @@ async def login_google(request: Request):
         "response_type": "code",
         "scope": "openid email profile",
         "access_type": "online",
-        "prompt": "select_account"
+        "prompt": "select_account",
+        "state": state
     }
     url = "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode(params)
     return RedirectResponse(url)
@@ -3232,8 +3252,11 @@ async def login_google(request: Request):
 
 async def auth_google_callback(request: Request):
     code = request.query_params.get("code")
-    if not code:
-        return RedirectResponse("/login", status_code=302)
+    state = request.query_params.get("state")
+    saved_state = request.session.pop("oauth_state", None)
+
+    if not code or not state or state != saved_state:
+        return RedirectResponse("/login?error=invalid_state", status_code=302)
         
     redirect_uri = str(request.base_url).rstrip("/") + "/auth/google/callback"
     

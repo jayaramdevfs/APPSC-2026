@@ -1,0 +1,1245 @@
+--- PAGE 1 ---
+McGRAWHILLEDUCATION SERIES
+COCK
+INDIAN
+ECONOMY
+For CivilServices Examinations
+S E V E N T H E D I T I O N
+
+--- PAGE 2 ---
+ABOUT THEAUTHOR
+DrRameshSingh,aDelhiSchoolofEconomicsalumnusisanEducationalConsultantwithovertwo
+decadesofexperienceinprovidingguidancetoaspirantsforanarrayofcompetitiveandprofessional
+examinations. He hasauthored booksin Hindiand Englishwith McGraw HillEducation,India,
+the popular ones beingIndianEconomy, BharatiyaArthavyavastha, BharatkaBhugol, Bhaugolik
+Models,ObjectiveEconomicandSocialDevelopment,1000PlusQuestionsonGeneralScienceand
+ContemporaryEssays.
+
+--- PAGE 3 ---
+McGRAWHILLEDUCATION SERIES
+.
+EDGE
+INDIAN
+ECONOMY
+For Civil Services Examinations
+S E V E N T H E D I T I O N
+Ramesh Singh
+Me
+Graw
+Hill
+Education
+McGraw Hill Education (India) Private Limited
+NEWDELHI
+McGrawHillEducationOffices
+NewDelhi NewYork StLouisSan Francisco Auckland Bogota Caracas
+KualaLumpur Lisbon London Madrid Mexico City Milan Montreal
+San Juan Santiago Singapore Sydney Tokyo Toronto
+
+--- PAGE 4 ---
+Me
+Graw
+Hill
+Educ McGrawHillEducation(India)PrivateLimited
+PublishedbyMcGrawHillEducation(India)PrivateLimited,
+P-24,GreenParkExtension,NewDelhi-110016
+IndianEconomy,7e
+Copyright©2015,bytheMcGrawHillEducation(India)PrivateLimited.
+NoPartofthispublicationmaybereproducedordistributedinanyformorbyanymeans,electronic,mechanical,photocopying,
+recording,orotherwiseorstoredinadatabaseorretrievalsystemwithoutthepriorwrittenpermissionofthepublishers.Theprogram
+listings(ifany)maybeentered,storedandexecutedinacomputersystem,buttheymaynotbereproducedforpublication.
+ThiseditioncanbeexportedfromIndiaonlybythepublishers.
+McGrawHillEducation(India)PrivateLimited
+PRINTEDITION
+ISBN(13):978-93-392-2129-4
+ISBN(10):93-392-2129-X
+E- BOOKEDITION
+ISBN(13):978-93-392-2274-1
+ISBN(10):93-392-2274-1
+ManagingDirector:KaushikBellani
+DeputyGeneralManager—TestPrepandSchool:TanmoyRoychowdhury
+ManagerProductDevelopment—ShuktiMukheijee
+Asst.SponsoringEditor—BhavnaMalhotra
+Asst.Manager(DevelopmentEditing)—AnubhaSrivastava
+SeniorProductionExecutive—DharmenderSharma
+GeneralManager—Production:RajenderP.Ghansela
+ProductionManager—RejiKumar
+InformationcontainedinthisworkhasbeenobtainedMcGrawHillEducation(India),fromsourcesbelievedtobereliable
+.
+However,neither,McGrawHillnoritsauthorsguaranteetheaccuracyorcompletenessofanyinformationpublishedherein,
+andneitherMcGrawHillEducation(India)noritsauthorsshallberesponsibleforanyerrors
+,
+omissions,ordamagesarising
+outofuseofthisinformation.Thisworkispublishedwiththe understandingthatMcGrawHillEducation(India)andits
+authorsaresupplyinginformationbutarenotattemptingtorenderengineeringorotherprofessionalservices.Ifsuchservices
+arerequired,theassistanceofanappropriateprofessionalshouldbesought.
+TypesetatKaushikLaserPoint&Printers,TisHazariCourt,Delhi-110053andprintedat
+Coverprintedat:
+CoverDesign:RajeshPandey
+Visitusat:www.mheducation.co.in
+
+--- PAGE 5 ---
+To my parents for whom
+educated children were better
+thanhefty bank deposits—they really are
+visionaries in human
+resource management and
+pure applied economics
+
+--- PAGE 7 ---
+Preface to the Seventh Edition
+Tt feelsgreat to present theseventhedition of the book IndianEconomyto thereader at a timewhen
+XIndiais breakinginto thehighestgrowth ratein theworld.Economicsystemsaretoodynamicto be
+captured in words, pagesand thewriter’simagination.
+In case of India, the last few months have been quite imaginative and dynamic. Starting with a
+governmentgettingadecisivemajorityattheCentre,itseemedasifthetimesofcoalitiongovernments
+withtheiraccompanyingcompulsionsareover.Withthismandate,wefinda renewedsynergytowards
+meaningfulreforms.Mostimportantofthestepspromised bythenewgovernment has beenitscallto
+increasethe‘easeof doingbusiness’in thecountry . In thisregard, the PM himselfgavea call to make
+—
+thingseasier inaway,apromiseandanattempttogetequatedwiththetop-rankingeconomiesinthe
+WorldBank’sDoingBusinessReport.Business,media,expertsandthepoliticianshavemixedreactions
+to thegovernment’s one year peformance.A more balanced response comes from the RBI Governor
+Raghuram Rajan when hesaysthat peoplehad‘unrealisticexpectations’from theModigovernment .
+Meanwhile,asubtlechangeensuedintheschemeoftheCivilServicesExamination.Paper2,thatis
+popularastheCSAT,hasbeenannouncedtobeofqualifyingnature .Becauseofthis,therelevanceand
+—
+importanceof Paper 1hasincreased in an unprecedented manner now, GeneralStudieswill decide
+the selection in the Preliminary Examination. As the questions on Economic andSocial Development
+area bit tougherfortheaspirants,itwillbeadvisableto takecareofthissegment moreseriously.More
+questionsareexpectedconcerningtheIndianeconomyintheMainExamination,asitssignificancehas
+—
+increased manifold in thegovernment policy-making rightfrom welfaremeasuresandforeign policy
+issuesto theneedforsustainabledevelopment.
+The Main Examination of 2014 has indicated that unlike previous years, the aspirants might be
+asked few questions on the ‘basic understanding’ of Economics as a subject. The question on the
+dilemma of picking between ‘manufacturing’ and ‘services’ sectors in the case of India to promote
+growthanddevelopmentwasonesuchchallenge.Sothattheaspirantsareabletohandlesuchquestions,
+afundamental understandingofEconomicsand Indian Economyisadvisable. Nowthataspirantsare
+expected not to just‘write’but‘create’answers, answer writingpracticehasstarted playinga hugerole.
+Thisseventhedition hasbeendulyrevisedand updated tosuit therequirementsoftheaspirantsin
+theirforthcomingUPSCand other relatedexaminations.
+Whatisnewinthisedition?
+(cid:127) Other than a comprehensive revision of existing chapters, a new chapter titled Services Sector
+has been included.
+(cid:127) Thechapter on Human DevelopmentinIndiahas been re-written to incorporatethechanging
+dimensionsofhuman development,especiallyin the Indian context .
+(cid:127) TheNew NationalAccountSystem, Insight into Human Behaviour havebeenadded.
+
+--- PAGE 8 ---
+viii I IndianEconomy
+—
+(cid:127) Topics such as An Epitaph to the Planning Commission; Inclusive Growth; Resource
+Mobilisation; Investment Models; Programme Evaluation Organisation; NITI Aayog have
+been added in thechapter on
+PlanninginIndia.
+(cid:127) ThechapteronInflationandBusinessCyclehasbeenexpandedbyaddingtopicssuchasInflation
+Targeting; NewCPI;GovernmentSteps toControl Inflation.
+(cid:127) ThechapteronAgriculture&FoodManagementhasbeenexpandedbyaddingseveralnewtopics
+—
+revised Land Reforms; Cropping Patterns; Animal Rearing; Food Management; Market
+Intervention Scheme; new Buffer Stock; Decentralised Procurement System; Storage; Open
+MarketSaleScheme; PriceStabilisation Fund; Food Subsidy; Farm Subsidies; Restructuring
+of FCI (Shanta Kumar Committee); Agricultural Marketing; Upstream and Downstream
+Requirements;SupplyChain Management; Farm Mechanisation; Food Processing.
+(cid:127) The chapter on Indian Industry &Infrastructure has been further expanded byadding topics
+—
+such as New Steps to Boost Industry; Make in India; Restructuring the PPP; Boosting
+EnergySector; RailwaysasaGrowth Engine; BoostingPublicInvestment.
+(cid:127) Severalnewtopicsareadded to thechapteron FinancialSectorsuchasLiquidityManagement
+Framework;AssetLiabilityManagement;WillfulDefaulter; Urjit PatelCommittee; Nachiket
+MorCommittee;Small&PaymentBanks;PradhanMantriJan-DhanYojana; NewInitiatives
+in Banking Sector; Reform Initiatives in Insurance Sector; Real Estate Investment Trusts
+(REITs); InfrastructureInvestmentTrusts (InvITs).
+(cid:127) ThechapteronExternalSectorhasbeenexpandedbyaddingnewtopicssuchasOptimumForex,
+the Riddle; External Debt; CrudeOil PriceMovements; Composition ofTrade; Direction of
+Trade; RecentStepsto PromoteTrade; New ForeignTrade Policy(2015 — 20).
+(cid:127) TopicssuchasTheBaliConferenceofWTO;BRICSBank(NewDevelopmentBank-NDB);
+Asian InfrastructureInvestment Bank (AIIB) have been added in thechapter on International
+Organisations&India.
+(cid:127) Thechapteron TaxStructurehasbeenexpandedbyaddingtopicssuchasMinimumAlternate
+Tax; Recommendations of the 14th Finance Commission; Concepts Related to the Finance
+Commission.
+(cid:127) The chapter on Public Finance &Government Budgetinghas been enhanced with topics like
+Expenditure Management Commission; Fiscal Performance of States; Consolidated General
+Government; Major Issuesin 2015-16; Need & Roleof PublicInvestment.
+(cid:127) The chapter on Climate Change and Sustainability in India has been expanded by addition
+topicssuchasCOP20atLima;17SustainableDevelopmentGoals(Rio+20);FifthAssessment
+Report of the IPCC.
+(cid:127) Topics such as Human & Gender Development; Population Policy, Women & Child Sex
+Ratio; PovertyEstimates;Strengtheningthe PRIs; Demographics;Socio-EconomicandCaste
+Census;EducationalIssues;PISA;ASER;EmploymentIssues;LabourReforms;HealthSector;
+Social Sector Expenditure; Restructuring of the CSSs (Complete List) have been added and
+updatedin thechapter on
+HumanDevelopmentinIndia.
+
+--- PAGE 9 ---
+PrefacetotheSeventhEdition t ix
+(cid:127) Besides revision, Bullet Repayment; Khilji Effect; Net Worth are new topics added to the
+chapteron
+Concepts&Terminologies.
+(cid:127) Sixnew ModelAnswersareadded, together with revision and updation of theanswers in the
+chapterModelAnswerstoSelectedQuestions .
+— —
+(cid:127) At theend, the new Union Budget2015 16;Railway Budget2015 16and asynopticviewof
+the EconomicSurvey2014 — 15have been provided.
+Withthehopethat thiseditionservesits purposeto thereaders, Iwishallthebest to theaspirants
+appearingfor their examinationsin theforthcomingmonths!
+Constructivesuggestionsfrom thereadersarealwayswelcome.
+RameshSingh
+www.facebook.com/IndianEconomyMHE
+dr.rmsh@gmail.com
+
+--- PAGE 11 ---
+Preface to the First Edition
+Tfelt my first serious inclination towards writing when myfirst article was published in the journal
+1.Mainstream way back in 1988 while pursuing my post graduation studies at the Delhi School of
+Economics. My interaction with students inside and outside the classroom in 1990 — 91, when India
+faced aseriousfinancialcrisis, mademerealisethat therewasan immediateneed of a bookon Indian
+economy, which could educate the students about the various aspects and challenges of the Indian
+economyin asimpleand lucid manner.It took nearlytwo decadesto fulfil thisdream of mine.
+The book has been designed to cater to therequirementsof theGeneralStudies paperfor various
+CivilServicesExaminations (Union as well as theStates), and the optional Economics. It would also
+be useful for graduate and postgraduate courses in Economics of various universities. Adequate and
+required notes and references have been given after consulting and referring to an array ofsources. I
+havetakencareofboththeobjectiveaswellasthesubjectiveaspectsbasedon myclassroomexperience
+ofinteractingwith thestudents.
+Iamgratefulto Prof.MajidHusainfortheinspirationand motivation Igotfrom himtocomplete
+this work. I haveespeciallylearnt the art and importance of work, punctualityand honestyin a very
+practicalwayfrom him.
+ThanksarealsoduetoMr.RajeshKumarBaghel,Mr.RakeshKumar,Md.Ishtiaq,andMrVikash.
+Iamindebtedto mywife, Mrs IlaSingh,for herfullsupportand mytwolittledaughters, Medhaand
+Smiti,for providingthesparkleinanotherwisemonotonouswork.
+Finally, myspecial thanks to the team from McGraw-Hill, who took great pains to finalise the
+project and complete it in a record time with all the possible expertise. I welcome from the readers
+constructiveadvice,and comments, whichcouldguidemein further revisionofthisbook.
+RAMESHSINGH
+
+--- PAGE 13 ---
+ABOUT THE CIVIL SERVICES EXAMINATION
+The Civil Services examination comprises two successive stages:
+(i) CivilServices(Preliminary)Examination(ObjectiveType) fortheselectionof candidatesforMain
+Examination;and
+(ii) CivilServices (Main) Examination (Writtenand Interview) for theselectionof candidates for the
+variousservicesand posts.
+SchemeandsubjectsforthePreliminaryandMainExamination.
+A. PRELIMINARYEXAMINATION
+The Examinationshallcompriseof twocompulsoryPapersof 200markseach.
+Note:
+(i) Boththequestionpaperswillbeof theobjectivetype(multiplechoicequestions).
+(ii) The question papers will be set both in Hindi and English. However,questions relating to English
+LanguageComprehensionskillsof ClassXlevelwillbetestedthroughpassagesfromEnglishlanguage
+onlywithoutprovidingHinditranslationthereof inthequestionpaper.
+B. MAINEXAMINATION
+Thewrittenexaminationwillconsistof thefollowingpapers:
+Qualifying Papers:
+PaperA:(Oneof theIndianLanguagetobeselectedbythecandidatefromtheLanguagesincluded
+in the EighthSchedule to theConstitution).300Marks
+PaperB:English300Marks
+The papers on Indian Languages and English (Paper A and Paper B) will be of Matriculation or
+equivalentstandardand willbeof qualifyingnature.The marks obtained in these papers will not
+becounted for ranking.
+Paperstobecountedformerit
+PaperI:Essay250Marks
+PaperII:GeneralStudies-I 250Marks
+(IndianHeritageandCulture,HistoryandGeographyof theWorldandSociety)
+PaperIII:GeneralStudies-II 250Marks
+(Governance,Constitution,Polity,SocialJusticeand International relations)
+PaperIV:GeneralStudies-III 250Marks
+(Technology, Economic Development, Bio-diversity, Environment, Security and Disaster
+Management)
+PaperV:GeneralStudies-IV 250Marks
+(Ethics,IntegrityandAptitude)
+
+--- PAGE 14 ---
+xiv i IndianEconomy
+PaperVI:OptionalSubject-Paper 1 250Marks
+PaperVII:OptionalSubject-Paper2 250Marks
+SubTotal(Writtentest):1750Marks
+PersonalityTest:275Marks
+GrandTotal:2025Marks
+Candidates may choose any one of the optional subjects from amongst the list of subjects
+givenbelow:
+List of optional subjects for Main Examination:
+(i) Agriculture
+(ii) AnimalHusbandryandVeterinaryScience
+(iii) Anthropology
+(iv) Botany
+(v) Chemistry
+(vi) CivilEngineering
+(vii) CommerceandAccountancy
+(viii) Economics
+(ix) ElectricalEngineering
+(x) Geography
+(xi) Geology
+(xii) History
+(xiii) Law
+(xiv) Management
+(xv) Mathematics
+(xvi) MechanicalEngineering
+(xvii) MedicalScience
+(xviii) Philosophy
+(xix) Physics
+(xx) PoliticalScienceand InternationalRelations
+(xxi) Psychology
+(xxii) PublicAdministration
+(xxiii) Sociology
+(xxiv) Statistics
+(xxv) Zoology
+(xxvi) Literatureof anyoneof the following
+Assamese,Bengali,Bodo,Dogri,Gujarati,Hindi,Kannada,Kashmiri,Konkani,Maithili,Malayalam,
+Manipuri,Marathi,Nepali,Oriya,Punjabi,Sanskrit,Santhali,Sindhi,Tamil,Telugu,UrduandEnglish.
+
+--- PAGE 15 ---
+TABLE OF CONTENTS
+PrefacetotheSeventhEdition (vii) RevisionintheBaseYearandMethod 1.20
+ofNationalIncomeAccounting
+PrefacetotheFirstEdition (xi)
+UniquenessoftheIndianEconomy 1.22
+AbouttheCivilServicesExamination (xiii)
+.
+. 2 GROWTH , DEVELOPMENT 2.1-2.21
+1 INTRODUCTION 1.1
+-1.22
+ANDHAPPINESS
+—
+Economics theDiscipline 1.2
+Introduction 2.2
+AWorkingDefinition 1.3
+Progress 2.2
+EconomicsandTheEconomy 1.3
+EconomicGrowth 2.2
+FocusofEconomics 1.4
+ChallengeoftheEconomies 1.4 EconomicDevelopment 2.3
+DistributionNetworkModels 1.5 MeasuringDevelopment 2.4
+HumanDevelopmentIndex 2.5
+OrganisinganEconomy 1.5
+TheDebateContinues 2.6
+1. CapitalisticEconomy 1.5
+IntrospectingDevelopment 2.7
+2. StateEconomy 1.6
+3. MixedEconomy 1.6 HAPPINESS 2.9
+TheMeaningofHappiness 2.10
+RoleofTheStateinanEconomy 1.10
+TheBackground 2.11
+WashingtonConcensus 1.12
+ReimaginingtheIdeaofHappiness 2.11
+SectorsofanEconomy 1.13
+AttheEnd 2.16
+1. PrimarySector 1.13
+InsightsintoHumanBehaviour 2.18
+2. SecondarySector 1.13
+SocialNorms,CultureandDevelopment 2.18
+3. TertiarySector 1.13
+ValuesandEconomics 2.20
+TypesofEconomies 1.13
+.
+1. AgrarianEconomy 1.13 3 EVOLUTIONOFTHE 3.1-3.12
+2. IndustrialEconomy 1.14 INDIANECONOMY
+3. ServiceEconomy 1.14
+TheBackground 3.2
+TheIdeaofNationalIncome 1.14 — .
+PrimeMovingForce Agriculturevs Industry 3.3
+GDP 1.15
+PlannedandMixedEconomy 3.8
+NDP 1.15
+GNP 1.16 EmphasisonthePublicSector 3.9
+NNP 1.17 1. InfrastructuralNeeds 3.10
+CostandPriceofNationalIncome 1.18 2. IndustrialNeeds 3.10
+Taxes&NationalIncome 1.19 3. EmploymentGeneration 3.11
+Subsidies&NationalIncome 1.20 4. ProfitandDevelopmentofthe 3.12
+Social Sector
+5. RiseofthePrivateSector 3.12
+
+--- PAGE 16 ---
+xvi 4 IndianEconomy
+. NinthPlan 5.24
+4 ECONOMICPLANNING 4.1-4.9
+TenthPlan 5.25
+Introduction 4.2 EleventhPlan 5.25
+Definition 4.2 EleventhPlan:Performance 5.26
+TwelfthPlan 5.27
+OriginandExpansionofPlanning 4.4
+B.Twenty-PointProgramme 5.29
+1. RegionalPlanning 4.5
+C. MPLADS 5.29
+2. NationalPlanning 4.5
+Multi-LevelPlanning 5.31
+TypesofPlanning 4.5
+FirstStrata:CentreLevelPlanning 5.31
+1. ImperativePlanning 4.6
+SecondStrata:StateLevelPlanning 5.31
+2. IndicativePlanning 4.7
+ThirdStrata:DistrictLevelPlanning 5.31
+.
+5 PLANNINGININDIA 5.1-5.68 FourthStrata:BlockLevelPlanning 5.31
+FifthStrata:LocalLevelPlanning 5.31
+Introduction 5.2
+WaytoDecentralisedPlanning 5.32
+Background 5.2
+ThePlanningCommission&TheFinance 5.33
+TheVisvesvarayaPlan 5.2
+Commission
+TheFICCIProposal 5.3
+TheChangingNatureandThe 5.35
+TheCongressPlan 5.3
+RoleofPlanning
+TheBombayPlan 5.5
+1. TheRoleofTheStateinPlanned 5.35
+TheGandhianPlan 5.6
+Development
+ThePeople’sPlan 5.6
+2. AgriculturalSectorAcceptedas 5.36
+TheSarvodayaPlan 5.6 theDrivingForceoftheEconomy
+SomeArea-wiseReports 5.7 3. GovernanceRecognised theMost 5.36
+MajorObjectivesofPlanning 5.8
+ImportantFactorofDevelopment
+4. NewStepsforEconomicReforms 5.37
+PlanningCommission 5.12
+tobeTakenbytheState
+FunctionsofthePC 5.14
+5. MonitorableTargetsof 5.37
+AnEpitaphtothePC 5.16 DevelopmentSetfortheFirstTime
+NationalDevelopmentCouncil 5.17 6. DifferentialDevelopment 5.37
+StrategyAdopted
+CentralPlanning 5.19
+7. MonitoringtheProgressof 5.38
+A. TheFive-YearPlans 5.19
+VariousCentralMinistries
+FirstPlan 5.19
+8. RelevanceofPlanningto 5.38
+SecondPlan 5.19 Economic Reforms
+ThirdPlan 5.20 9. ReformingthePlanningProcess 5.38
+ThreeAnnualPlans 5.20
+MonitorableTargetsSetbyTheTwelfthPlan 5.38
+FourthPlan 5.20
+EconomicGrowth 5.39
+FifthPlan 5.20
+PovertyandEmployment 5.39
+SixthPlan 5.22
+Education 5.39
+SeventhPlan 5.22
+Health 5.39
+TwoAnnualPlans 5.23
+Infrastructure,IncludingRural 5.39
+EighthPlan 5.23 Infrastructure
+
+--- PAGE 17 ---
+Content t xvii
+EnvironmentandSustainability 5.39 StructureoftheNITI 5.67
+ServiceDelivery 5.40 SpecialisedWingsintheAayog 5.67
+ACriticalEvaluation 5.40 VehicleofGoodGovernance 5.68
+1. Lackof'Perspective’inPlanning 5.40
+6. ECONOMICREFORMS 6.1-6.15
+2. FailureinPromotingaBalanced 5.41
+GrowthandDevelopment Introduction 6.2
+3. HighlyCentralisedNatureof 5.42
+EconomicReforms 6.2
+Planning
+1. PlanningModel 6.2
+4. Lop-sidedEmploymentStrategy 5.42
+2. WashingtonConsensus 6.2
+5. ExcessiveEmphasisonPSUs 5.43
+3. MixedEconomy 6.3
+6. AgricultureOvershadowedbythe 5.43
+Industry EconomicReformsinIndia 6.4
+7. FaultyIndustrialLocationPolicy 5.43 ObligatoryReform 6.5
+8. WrongFinancialStrategy 5.43 ReformMeasures 6.6
+9. PoliticisationofthePlanning 5.44 1. MacroeconomicStabilisation 6.6
+Process Measures
+2. StructuralReformMeasures 6.6
+InclusiveGrowth 5.44
+TheLPG 6.7
+ResourceMobilisation 5.46
+Liberalisation 6.7
+InvestmentModels 5.48
+Phase-I(1951-69) 5.48 Privatisation 6.8
+Phase-ll(1970-73) 5.48 Globalisation 6.9
+Phase-I11(1974-90) 5.48
+GenerationsofEconomicReforms 6.10
+Phase-IV(1991onward) 5.50
+FirstGenerationReforms(1991-2000) 6.10
+CentralSectorScheme and 5.52 (i) PromotiontoPrivateSector 6.11
+CentrallySponsoredSchemes
+(ii) PublicSectorReforms 6.11
+CentralPlanAssistance 5.52
+(iii) ExternalSectorReforms 6.11
+Gadgil-MukherjeeFormula 5.53
+(iv)FinancialSectorReforms 6.11
+CSSsRestructured 5.54
+(v) TaxReforms 6.11
+CompositeDevelopmentIndexofStates 5.56 SecondGenerationReforms 6.11
+IndependentEvaluationOffice 5.56 (i) FactorMarketReforms 6.11
+(ii) PublicSectorReforms 6.12
+ProgrammeEvaluationOrganisation 5.59
+(iii)ReformsintheGovernmentand 6.12
+OrganisationalStructure 5.59
+Public Institutions
+EvaluationasPlanScheme 5.60
+(iv)LegalSectorReforms 6.12
+NITIAAYOG 5.60
+(v) ReformsintheCriticalAreas 6.12
+TransformingIndia 5.60
+ThirdGenerationReforms 6.13
+ChangingcontoursofIndia 5.61
+FourthGenerationReforms 6.13
+Changemustcome 5.62
+Note 6.13
+FunctionsofNITIAayog 5.63
+CurrentScenario 6.14
+TheGuidingPrinciple 5.66
+
+--- PAGE 18 ---
+xviii I IndianEconomy
+. 3. OnAggregateDemand 7.11
+7 INFLATIONANDBUSINESS 7.1-7.32
+4. OnInvestment 7.11
+CYCLE
+5. OnIncome 7.11
+Section-A 7.2 - 7.26 6. OnSaving 7.12
+Introduction 7.2 7. OnExpenditure 7.12
+8. OnTax 7.12
+Definition 7.2
+9. OnExchangeRate 7.13
+Whyinflationoccurs 7.3
+10. OnExport 7.13
+1. Pre-1970s 7.3
+11. OnImport 7.13
+(a) Demand-PullInflation 7.3
+12. OnTradeBalance 7.13
+(b) Cost-PushInflation 7.3
+13. OnEmployment 7.13
+2. Post-1970s 7.3
+14. OnWages 7.13
+(a) Demand-PullInflation 7.3
+15. OnSelf-employed 7.13
+(b) Cost-PushInflation 7.3
+16. OnEconomy 7.13
+3. MeasurestoCheckInflation 7.4
+InflationinIndia 7.14
+TypesofInflation 7.5
+WholesalePriceIndex 7.14
+1. LowInflation 7.5
+NewSeriesofWPI 7.14
+2. GallopingInflation 7.5
+FeaturesoftheRevisedSeries 7.15
+3. Hyperinflation 7.5 ofWPI
+OtherVariantsofInflation 7.6 RevisedSeries:NewInitiatives 7.16
+I. BottleneckInflation 7.6 ConsumerPriceIndex 7.16
+II. CoreInflation 7.6 1. CPI-IW 7.16
+2. CPI-UNME 7.17
+OtherImportantTerms 7.6
+3. CPI-AL 7.17
+InflationaryGap 7.6
+4. CPI-RL 7.17
+DeflationaryGap 7.6
+InflationTax 7.6
+RevisioninTheCPI 7.17
+TrendsinInflation 7.19
+InflationSpiral 7.7
+1. StructuralInflation 7.20
+InflationAccounting 7.7
+2. Cost-PushInflation 7.21
+InflationPremium 7.7
+3. FiscalPolicy 7.21
+PhillipsCurve 7.7
+HealthyRangeofInflation 7.22
+Reflation 7.8
+ProducerPriceIndex 7.23
+Stagflation 7.8
+HousingPriceIndex 7.23
+InflationTargeting 7.9
+ServicePriceIndex 7.24
+Skewflation 7.10
+GDPDeflator 7.10 HouseholdInflationExpectations 7.25
+BaseEffect 7.10 GovernmentStepstoControlInflation 7.25
+EffectsofInflation 7.11 CurrentScenario 7.26
+1. OnCreditorsandDebtors 7.11 Section - B:BysinessCycle 7.26 - 7.32
+2. OnLending 7.11
+Introduction 7.26
+
+--- PAGE 19 ---
+Content t xix
+Depression 7.27 RevisedBufferStock 8.20
+Recovery 7.27 DecentralizedProcurementScheme 8.20
+Boom 7.28 Storage 8.21
+EconomicCostofFoodgrains 8.21
+Recession 7.29
+OpenMarketSaleScheme 8.21
+GrowthRecession 7.30
+PriceStabilisationFund 8.22
+Double-DipRecession 7.30
+FoodSubsidy 8.22
+Abenomics 7.31
+FarmSubsidies 8.22
+Conclusion 7.31 SugarSectorReforms 8.24
+8. AGRICULTUREANDFOOD 8.1-8.61 RestructuringofFCI 8.25
+MANAGEMENT OnFCI 8.25
+OnTPDSandNFSA 8.25
+Introduction 8.3
+OnStockingandMovement 8.26
+Kharif&Rabi 8.4 OnBufferStockingOperationsand 8.26
+LiquidationPolicy
+FoodPhilosophyofIndia 8.4
+OnDirectSubsidytoFarmers 8.26
+TheFirstPhase 8.5
+Onend-to-endComputerization 8.26
+TheSecondPhase 8.5
+TheThirdPhase 8.5 AgricultureMarketing 8.26
+ModelAPMCAct 8.27
+LandReforms 8.6
+Phase-I 8.6 AgriculturalCredit 8.29
+ReasonsforFailureofLandReforms 8.7 Short-TermLoans 8.29
+LandReforms&GreenRevolution 8.8 Medium-TermLoans 8.30
+Phase-II 8.8 Long-TermLoans 8.30
+AgricultureHoldings 8.10 SourcesofAgriculturalLoans 8.30
+GreenRevolution 8.11 CommodityFuturesMarket 8.30
+ComponentsoftheGreenRevolution 8.11 Upstream&DownstreamRequirements 8.30
+ImpactoftheGreenRevolution 8.12
+SupplyChainManagement 8.32
+Conclusion 8.13
+FarmWasteDebate 8.34
+CroppingPatterns 8.14
+Irrigation 8.34
+PrevalentCroppingSystems 8.14
+NationalFoodSecurityMission(NFSM) 8.35
+ChangesintheCroppingPatterns 8.15
+MacroManagementofAgriculture(MMA) 8.35
+AnimalRearing 8.17
+RashtriyaKrishiVikasYojana (RKVY) 8.35
+FoodManagement 8.18
+MinimumSupportPrice 8.18 ISOPOM 8.36
+MarketInterventionScheme 8.19 NationalHorticultureMission(NHM) 8.36
+ProcurementPrices 8.19
+NationalBambooMission(NBM) 8.36
+IssuePrice 8.19
+NationalAgriculturalPolicy,2000 8.37
+BufferStock 8.20
+
+--- PAGE 20 ---
+xx < IndianEconomy
+AgriculturalInsurance 8.37 IndustrialPolicyStatement,1977 9.6
+ResearchandExtension 8.39 IndustrialPolicyResolution,1980 9.6
+IndustrialPolicyResolution,1985&1986 9.7
+FarmMechanization 8.40
+NewIndustirialPolicy,1991 9.8
+NationalMissionForSustainable 8.41
+1.De-reservationoftheIndustries 9.9
+Agriculture(NMSA)
+2.De-licencingoftheIndustries 9.9
+SecondGreenRevoution 8.42
+3.AbolitionoftheMRTPLimit 9.9
+SecondGreenRevolutioninIndia 8.42
+4.PromotiontoForeignInvestment 9.10
+SumminguptheSecondGreen 8.42
+5.FERAReplacedbyFEMA 9.10
+Revolution
+ImpactofSecondGreenRevolution 8.45
+6.LocationofIndustries 9.10
+SecondPushtoAgriculture 8.46
+7. CompulsionofPhasedproduction 9.10
+Abolished
+WTOandtheIndianAgriculture: 8.46
+8. CompulsiontoConvertLoansinto 9.11
+ProspectsandChallenges
+SharesAbolished
+TheProspects 8.47
+Disinvestment 9.12
+TheChallenges 8.48
+TypesofDisinvestment 9.13
+WTOandAgriculturalSubsidies 8.51
+CurrentDisinvestmentPolicy 9.14
+AMS 8.51
+ProceedsofDisinvestment:Debate 9.15
+TheBoxes 8.51 ConcerningtheUse
+AmberBox 8.51
+InvestmentChallenge 9.17
+BlueBox 8.52
+NewStepstoBoostManufacturing 9.18
+GreenBox 8.52
+NationalManufacturingPolicy(NMP) 9.18
+S&DBox 8.53
+DMICProject 9.18
+ExportSubsidies 8.53
+FDIPolicy 9.19
+SanitaryandPhytosanitaryMeasures 8.53
+Thee-BizProject 9.19
+NAMA 8.53
+NewStepstoBoostIndustry 9.19
+SwissFormula 8.54
+MakeinIndia 9.21
+NationalFoodSecurityAct 8.54
+IndianScenario&theRightWay 9.22
+FoodProcessing 8.55
+IndianInfrastructure 9.23
+OutlookfortheFuture 8.60
+AnIntroduction 9.23
+CurrentAgriculturalScenario 8.60
+OfficialIdeology 9.24
+.
+9 INDUSTRY&INFRASTRUCTURE 9.1-9.40 SectoralSituation&Initiatives 9.25
+EnergyPricing 9.29
+Introduction 9.2
+DedicatedFreightCorridor 9.30
+ReviewofIndustrialPoliciesUpto1986 9.2
+IndustrialPolicyResolution,1948 9.2 RestructuringThePPP 9.31
+Flawsinexistingdesign 9.31
+IndustrialPolicyResolution,1956 9.3
+Importance 9.4
+RestructuringtheExistingContracts 9.32
+IndustrialPolicyStatement,1969 9.4 BoostingEnergySector 9.33
+IndustrialPolicyStatement,1973 9.5 RailwaysasGrowthEngine 9.34
+
+--- PAGE 21 ---
+Content t xxi
+StateDiscoms 9.35 .
+12 BANKINGININDIA 12.1-12.41
+ImportantIssues 9.35
+Introduction 12.3
+BoostingPublicInvestment 9.39
+StepsandSuggestions 9.39
+Bank&Non-BankInstitutions 12.3
+-
+NonBankingFinancialCompanies(NBFCs) 12.3
+.
+10 SERVICESECTOR 10.1-10.16
+ReserveBankofIndia 12.4
+Introduction 10.2 CreditandMonetaryPolicy 12.5
+InternationalComparison 10.2 CRR 12.5
+SLR 12.6
+India’sServicesSector 10.3
+BankRate 12.6
+GDPandGCF 10.4
+RepoRate 12.6
+State-wiseComparison 10.4
+ReverseRepoRate 12.7
+FDIinServicesSector 10.4
+MarginalStandingFacility(MSF) 12.7
+India’sServicesTrade 10.5
+BankRaterealignedwithMSF 12.8
+WTONegotiations 10.6
+BaseRate 12.8
+BilateralAgreements 10.6
+C&MPolicy-NewInitiatives 12.9
+ServicesEmployment 10.7
+RevisedLMF 12.9
+ServicesPerformance 10.7
+NationalisationandDevelopment 12.10
+RestrictionsandRegulations 10.12 ofBankinginindia
+TheNeedforReforms 10.14 1.EmergenceoftheSBI 12.10
+2.EmergenceofNationalisedBanks 12.10
+.
+11 INDIANFINANCIAL 11.1-11.15 3. EmergenceoftheRRBs 12.11
+MARKET
+FinancialSectorReforms 12.12
+Introduction 11.2 RecommendationofCFS 12.13
+IndianMoneyMarket 11.2 BankingSectorReforms 12.15
+1. UnorganisedMoneyMarket 11.3 DRI 12.16
+2. OrganisedMoneyMarket 11.4 PrioritySectorLending 12.16
+RevisioninPSL 12.16
+MutualFunds 11.6
+-
+DFHI 11.8
+NonPerformingAssets 12.17
+CurrentScenario 12.18
+IndianCapitalMarket 11.8
+SARFAESIAct,2002 12.19
+ProjectFinancing 11.9
+DebtRecoveryTribunals(DRTs) 12.19
+A. FinancialInstitutions 11.9
+WillfulDefaulter 12.20
+B. BankingIndustry 11.12
+C.InsuranceIndustry 11.12 CapitalAdequacyRatio 12.20
+D. SecurityMarket 11.12
+WhytomaintainCAR? 12.22
+BaselAccords 12.22
+MonetaryPolicyTools 11.13
+BaselIIIProvisions 12.24
+RecentChangesinMonetaryPolicy 11.13
+BASELIIIComplianceofThePSBs&RRBs 12.24
+FinancialRegulators 11.14
+
+--- PAGE 22 ---
+xxii < IndianEconomy
+StockofMoney 12.25 DepositInsuranceandCreditGuarantee 13.4
+LiquidityofMoney 12.27 Corporation(DICGC)
+NarrowMoney 12.27 ExportCreditGuaranteeCorporation(ECGC) 13.4
+BroadMoney 12.28
+NationalExportInsuranceAccount(NEIA) 13.4
+MoneySupply 12.28
+TheChallengeAhead 13.5
+MinimumReserve 12.28
+InsurancePenetration 13.7
+ReserveMoney 12.28
+PolicyInitiatives 13.7
+MoneyMultiplier 12.28
+CreditCounselling 12.28 NewReformInitiatives 13.8
+CreditRating 12.29
+.
+14 SECURITYMARKETININDIA 14.1-14.35
+Non-ResidentIndianDeposits 12.30
+GuidelinesforLicensingof 12.30 Definition 14.3
+NewBanks PrimaryandSecondaryMarkets 14.3
+LabelsofATM 12.32 StockExchange 14.3
+Non-OperativeFinancialHolding 12.32 NSE 14.4
+Company(NOFHC)
+OTCEI 14.4
+NIDHI 12.33 ISE 14.4
+ChitFund 12.35 BSE 14.4
+IndoNext 14.4
+UijitPatelCommittee 12.35
+SMEExchanges:BSESME 14.5
+NachiketMorCommittee 12.37
+andEmerge
+Small&PaymentBanks 12.37 PlayersintheStockExchanges 14.6
+SmallBanks 12.38
+SEBI 14.7
+PaymentsBanks 12.39
+CommodityTrading 14.8
+FinancialInclusion 12.39
+FMC 14.9
+PradhanMantriJan-DhanYojana 12.39
+SpotExchanges 14.9
+ALMofBanks 12.40
+RaisingCapitalinthePrimaryMarket 14.11
+NewInitiativesInBankingSector 12.40
+ImportantTermsofStockMarket 14.11
+. ScripShare 14.11
+13 INSURANCEININDIA 13.1-13.10
+SweatShare 14.11
+Definition 13.2 RollingSettlement 14.11
+InsuranceIndustry 13.2 Badla 14.11
+LIC 13.2 UndhaBadla 14.11
+GIC 13.2 Futures 14.11
+InsuranceReforms 13.2 Depositories 14.11
+IRDA 13.3 Spread 14.12
+AICIL 13.3 KerbDealings 14.12
+PublicSectorInsuranceCompanies 13.3 NSCC 14.12
+Demutualisation 14.12
+Reinsurance 13.3
+
+--- PAGE 23 ---
+Content t xxiii
+AuthorisedCapital 14.12 FinancialSectorAssessment 14.31
+Paid-upCapital 14.12 Programme(FSAP)
+SubscribedCapital 14.12 FinancialStabilityandDevelopment 14.32
+Council(FSDC)
+IssuedCapital 14.12
+FinancialSectorLegislative 14.33
+GreenshoeOption 14.12
+ReformsCommission(FSLRC)
+PennyStocks 14.12
+FinancialActionTaskForce(FATF) 14.33
+ESOP 14.12
+RealEstate&Infrastructure 14.33
+SBT 14.13
+InvestemntTrusts
+OFCDs 14.13
+REITs 14.33
+Derivatives 14.13
+InvITs 14.34
+IndianDepositoryReceipts(IDRs) 14.14
+Shares'atPar’and'atPremium’ 14.15 15. EXTERNALSECTOROFINDIA 15.1-15.21
+ForeignFinancialInvestors 14.15
+Definition 15.3
+NewRulesforForeignInvestment 14.16
+ForexReserves 15.3
+AngelInvestor 14.17
+OptimumForex-TheRiddle 15.3
+QFIsScheme 14.17
+ExternalDebt 15.4
+RFPIs 14.18
+FixedCurrencyRegime 15.5
+ParticipatoryNotes(PNs) 14.18
+FloatingCurrencyRegime 15.5
+ReasonsforthepopularityofPNs 14.19
+ManagedExchangeRates 15.5
+RegulationofPNs 14.20
+TheConcernsrelatedtoPNs 14.21 ForeignExchangeMarket 15.6
+InternationalSituation 14.21 ExchangeRateinIndia 15.6
+HedgeFund 14.22 TradeBalance 15.7
+ShortSelling 14.22 TradePolicy 15.7
+BearandBull 14.22
+Depreciation 15.7
+BookBuilding 14.22
+Devaluation 15.7
+IPO 14.22
+PriceBand 14.22 Revaluation 15.7
+ECBPolicy 14.23 Appreciation 15.7
+RGESS 14.24 CurrentAccount 15.7
+CreditDefaultSwap(CDS) 14.24 CapitalAccount 15.8
+Securitisation 14.26 BalanceofPayment(BoP) 15.8
+CorporateBondinIndia 14.26 Convertibility 15.8
+ConvertibilityinIndia 15.9
+Inflation-IndexedBonds 14.29
+Current Account 15.9
+GoldExchnageTraded Funds 14.29
+Capital Account 15.9
+e-Gold 14.29
+LERMS 15.9
+CPSEETF 14.30
+NEER 15.10
+PensionSectorReforms 14.30
+
+--- PAGE 24 ---
+xxiv < IndianEconomy
+REER 15.10 BrettonWoodsDevelopment 16.2
+EFF 15.10 InternationalMonetaryFund 16.3
+IMFConditionsonIndia 15.10
+India'sQuota&Ranking 16.3
+CurrentUS/EUFinancialCrises: 16.4
+HardCurrency 15.10
+WorldBank 16.5
+SoftCurrency 15.11
+1. IBRD 16.5
+HotCurrency 15.11
+2. IDA 16.5
+HeatedCurrency 15.11 3. IFC 16.5
+Cheapcurrency 15.11 4. MIGA 16.6
+DearCurrency 15.11 5. ICSID 16.6
+6.BIPA 16.6
+SpecialEconomicZone 15.11
+WhatisSEZ? 15.12 AsianDevelopmentBank 16.6
+LandAcquisitionIssue&SEZ 15.12 OECD 16.7
+EnlargementandEnhancedEngagement 16.8
+GAAR 15.13
+RisksinForeignCurrencyBorrowings 15.14 WorldTradeOrganisation(WTO) 16.8
+WTOandIndia 16.8
+RecentRTAsbyIndia 15.15
+WTOMembership 16.9
+SAFTA 15.15
+EHS 15.15 WTOMinisterialConferences 16.9
+CECA 15.16 India’sNegotiationswithWTOatBali 16.9
+RCEP 15.16 BilateralandRegionalCooperation 16.11
+BITA 15.16
+BRICSBank 16.11
+GSTP 15.16
+AsianInfrastructureInvestmentBank 16.12
+CrudeOilPriceMovements 15.16
+.
+CompositionofTrade 15.17 17 TAXSTRUCTUREININDIA 17.1-17.18
+ExportComposition 15.17
+Tax 17.3
+ImportComposition 15.17
+IncidenceofTax 17.3
+DirectionofTrade 15.17 ImpactofTax 17.3
+India’sExports 15.17 DirectTax 17.3
+India'sImports 15.18 IndirectTax 17.3
+RecentStepstoPromoteTrade 15.18 MethodsofTaxation 17.3
+NewForeignTradePolicy 15.19 ProgressiveTaxation 17.4
+RegressiveTaxation 17.4
+.
+16 INTERNATIONALECONOMIC 16.1-16.15
+ProportionalTaxation 17.4
+ORGANISATIONS&INDIA
+AGoodTaxSystem 17.4
+InternationalMonetarySystem 16.2
+MethodsofExpenditure 17.5
+Adjustment 16.2
+ValueAddedTax 17.5
+Liquidity 16.2
+NeedofVATinIndia 17.6
+Confidence 16.2
+ImplementationExperienceofVAT 17.7
+
+--- PAGE 25 ---
+Content 9 xxv
+GoodsandServicesTax 17.7 CapitalReceipts 18.7
+RecentAttemptstoImplementGST 17.8 CapitalExpenditure 18.7
+AdditionalExciseDuty 17.8 CapitalDeficit 18.8
+FiscalDeficit 18.8
+CSTReforms 17.9
+PrimaryDeficit 18.9
+ServiceTax 17.9
+MonetisedDeficit 18.9
+VoluntaryComplianceEncouragement 17.9 DeficitandSurplusBudget 18.9
+Scheme
+DeficitFinancing 18.10
+CommoditiesTransactionTax 17.9
+CompositionofFiscalDeficit 18.12
+SecuritiesTransactionTax 17.10
+FiscalPolicy 18.13
+CapitalGainsTax 17.11 DeficitFinancinginIndia 18.14
+MinimumAlteranateTax 17.11 TheFirstPhase(1947-1970) 18.14
+TheSecondPhase(1970-1991) 18.14
+InvestmentAllowance 17.12
+TheThirdPhase(1991onwards) 18.15
+CollectionRates 17.12
+IndianFiscalSituation:ASummary 18.15
+TaxExpenditure 17.12
+FRBMAct,2003 18.17
+14thFinanceCommission 17.13
+Follow-uptotheFRBMA 18.18
+FFCRecommendations 17.14
+LimitingGovernmentExpenditure 18.19
+ConceptsRelatedtoFC 17.16
+FiscalConsolidationinIndia 18.20
+-
+DirectTaxCode 2013 17.17
+Zero-BaseBudgeting 18.22
+18 . PUBLICFINANCEININDIA 18.1-18.33 ResuIts-FrameworkDocument(RFD) 18.23
+ChargedExpenditure 18.25
+Introduction 18.2
+TypesofBudgets 18.25
+Budget 18.2
+GoldenRule 18.25
+DataintheBudget 18.2
+BalancedBudget 18.25
+DevelopmentalandNon-developmental 18.3
+Expenditure GenderBudgeting 18.26
+PlanandNon-PlanExpenditure 18.3 OutcomeandPerformanceBudget 18.26
+Revenue 18.5 CutMotion 18.26
+Non-revenue 18.5
+Trilemmas 18.27
+Receipts 18.5
+TreasuryComputerisationofState 18.28
+RevenueReceipts 18.5
+Governments 18.28
+TaxRevenueReceipts 18.5
+CRISofIndia 18.28
+Non-taxRevenueReceipts 18.5
+RevenueExpenditure 18.5 DirectBenefitTransfer(DBT) 18.29
+RevenueDeficit 18.6 ExpenditureManagementCommission 18.29
+EffectiveRevenueDeficit 18.6
+FiscalPerformanceofStates 18.30
+RevenueBudget 18.7
+ConsolidatedGeneralGovernment 18.31
+CapitalBudget 18.7
+-
+MajorIssuesin2015 16 18.31
+
+--- PAGE 26 ---
+xxvi < IndianEconomy
+NeedofPublicInvestment 18.31 II. LabourRegulations 20.15
+RoleofPublicInvestment 18.32
+InformalityofEmployment inIndia 20.17
+. LabourLawsasImpediment 20.20
+19 SUSTAINABILITYAND 19.1-19.19
+CLIMATECHANGE:INDIA ServicesNotCreatingEnoughJobs 20.22
+ANDTHEWORLD NeedofFormalApprenticeships 20.23
+Introduction 19.2 WaytoEvidence-BasedBetterPolicy 20.25
+SchoolInputs 20.25
+SustainableDevelopmentandClimate 19.4
+Pedagogy 20.26
+ChangeintheIndianContext
+Governance 20.26
+InternationalCollaborationAndEfforts 19.7
+WaytoPolicy 20.27
+Rio+20 19.7
+CautionstoPreparedness 20.28
+COP20atLIMA 19.9
+India'sstandatLima 19.10 .
+21 HUMANDEVELOPMENT 21.1-21.27
+IPCCAssessmentReport 19.11 ININDIA
+FinancingClimateChange 19.12
+Introduction 21.2
+DomesticResourcesandMechanism 19.12
+Human&GenderDevelopment 21.3
+InternationalSourcesandIssues 19.15
+PopulationPolicy,Women&ChildSexRatio 21.5
+CarbonMarketsandPrivateSector 19.16
+PovertyEstimates 21.6
+Problems&Prospects 19.17
+PromotingInclusiveGrowth 21.6
+Epilogue 19.18
+StrengtheningthePRIs 21.6
+.
+20 PREPARINGFORTHE 20.1-20.29 Demographics 21.8
+DEMOGRAPHICDIVIDEND
+Socio-EconomicandCasteCensus 21.9
+Introduction 20.2 EducationalIssues 21.10
+OptimismvsPessimism 20.2
+EmploymentIssues 21.12
+ComparingGrowthandTrade 20.3
+EmploymentGrowth 21.13
+SourcesofGrowth 20.4
+LabourReforms 21.14
+LabourProductivity&Its 20.5
+Reallocation HealthSector 21.16
+ChancesofMissingJobs 20.7 SocialSectorExpenditure 21.18
+ReasonsBehindLessCreativeJobs 20.8 RestructuringofTheCSSS 21.18
+I. ImpedimentsToBusinessGrowth 20.8
+FuturePolicyActions 21.26
+RegulatoryEnvironment 20.8
+DifficultFunding 20.9 22 . ECONOMICCONCEPTS 22.1-22.65
+LackofQualityInfrastructure 20.10 AND TERMINOLOGIES
+LandReforms 20.10
+Accrualbasis 22.2
+TheDMIC 20.12
+Activityrate 22.2
+StepstoImproveBusinessClimate 20.14
+
+--- PAGE 27 ---
+Content I xxvii
+ADRs 22.2 BudgetLine 22.8
+ADSConversionOffer 22.2 BulletRepayment 22.8
+AdverseSelection 22.3 Bullion 22.8
+AgriculturalExtension 22.3 BusinessCycle 22.8
+AgriculturalLabourer 22.3 Busy&SlackSeasons 22.8
+AgriculturalMarkets 22.3 Buyer’sMarket 22.9
+Alpineconvertiblebond 22.3 Buyouts 22.9
+Ammortisation 22.3 Camels 22.9
+AndeanPact 22.4 Capital 22.9
+AnimalSpirit 22.4 CapitalAdequacyRatio 22.10
+Antitrust 22.4 CapitalConsumption 22.10
+Appreciation 22.4 Capital-OutputRatio 22.10
+Arbitrage 22.4 CarbonCredit 22.10
+ARCS 22.4 CarryTrade 22.11
+Asset 22.5 CashCow 22.12
+AssignedRevenue 22.5 CaveatEmptor 22.12
+Autarky 22.5 CeterisParibus 22.12
+Backwardation 22.6 ChineseWall 22.12
+Back-to-BackLoan 22.6 CircuitLimit 22.12
+BadDebt 22.6 ClassicalEconomics 22.12
+Badla 22.6 CleanCoal 22.12
+BalancedBudget 22.6 ClosedShop 22.12
+BalanceofPayments 22.6 CollectiveProducts 22.12
+BalloonPayment 22.6 CommoditiesTransactionTax 22.12
+BasingPointPriceSystem 22.6 CommodityMoney 22.13
+BellwetherStock 22.6 Communitisation 22.13
+BFS 22.6 ComparativeAdvantage 22.13
+Black-Scholes 22.7 Consols 22.13
+Bond 22.7 Consortium 22.13
+BookBuilding 22.7 ConsumerDurables 22.13
+BracketCreep 22.7 ConsumerNon-Durables 22.13
+BroadBasedFund 22.7 ConspicuousConsumption 22.13
+BrownfieldLocation 22.8 Contagion 22.13
+Bubble 22.8 Contrarian 22.13
+
+--- PAGE 28 ---
+xxviii < IndianEconomy
+CoreInvestmentCompanies (CICS) 22.14 EconomiesofScope 22.19
+CorporateSustainibilityIndex 22.14 Edgeworth Box 22.19
+Correction 22.14 EffectiveRevenueDeficit 22.19
+CreativeDestruction 22.14 Engel’sLaw 22.19
+CronyCapitalism 22.14 EnvironmentalAccounting 22.19
+CrossSubsidy 22.14 EnvironmentalAudit 22.19
+-
+CrowdingOutEffect 22.14 EnvironmentalTaxes 22.20
+CSR 22.14 EquityLinkedSavingScheme 22.20
+Debenture 22.14 EquityShare 22.20
+DebtRecoveryTribunal(DRT) 22.15 EscrowAccount 22.20
+DebtSwapScheme 22.15 ESOPS 22.21
+DecouplingTheory 22.16 ExplodingArms 22.21
+Deindustrialisation 22.16 Externalities 22.21
+DematAccount 22.16 FCCB 22.21
+Demerger 22.16 FederalFundRate 22.21
+Derivatives 22.16 FiduciaryIssue 22.21
+DIIS 22.16 FinancialClosure 22.21
+DirectCost 22.17 FinancialStabilityBoard(FSB) 22.22
+DirectInvestment 22.17 FiscalDrag 22.22
+DirtyFloat 22.17 FiscalNeutrality 22.22
+DiscountHouse 22.17 FisherEffect 22.22
+Disgorgement 22.17 FlagofConvenience 22.22
+DismantlingofTextileQuota 22.17 ForcedSaving 22.23
+Dissaving 22.17 FOB 22.23
+DominoEffect 22.17 FormofALifeInsuranceFirm 22.23
+-
+DowJonesIndex 22.18 ForwardContract 22.23
+DrugPriceControl 22.18 ForwardTrading 22.23
+Dumping 22.18 FractionalBanking 22.23
+DutchDisease 22.18 FreeGoods 22.23
+DutyDrawbackScheme 22.18 FreeTrade 22.24
+DutyEntitlementPassbook Scheme 22.19 FreePort 22.24
+-
+E Business 22.19 FringeBenefitTax 22.24
+-
+ECommerce 22.19 GallupPoll 22.24
+EconomiesofScale 22.19 GameTheory 22.25
+
+--- PAGE 29 ---
+Content I xxix
+GDRS 22.25 InsiderTrading 22.30
+GiffenGood 22.25 Insolvency 22.30
+GiniCoefficient 22.25 Inventory 22.30
+GoldenHandshake 22.26 InvisibleHand 22.30
+GoldenHandcuff 22.26 IPO 22.30
+GoldenHello 22.26 l-SSchedule 22.30
+GoldenRule 22.26 IslamicBanking 22.30
+Goodhart’sLaw 22.26 IsocostLine 22.32
+Go-GoFund 22.26 IsocostCurve 22.32
+GreaterFoolTheory 22.26 J-CurveEffect 22.32
+GreenfieldInvestment 22.26 Jobber 22.32
+GreenfieldLocation 22.26 JunkBond 22.32
+GreenRevolution&Institutions 22.26 KerbDealings 22.32
+GreenshoeOption 22.27 KhiljiEffect 22.32
+Gresham’sLaw 22.27 Kleptocracy 22.32
+GreenspanPut 22.27 KondratieffWave 22.32
+GreyMarket 22.27 LAF 22.33
+GrowthRecession 22.27 LafferCurve 22.33
+3GTechnology 22.27 LiarLoans 22.33
+HedgeFunds 22.28 Libor 22.33
+HerfindahlIndex 22.29 Life-CycleHypothesis 22.33
+HiddenPriceReduction 22.29 LifeInsurance:SomeImportantTerms 22.33
+EndowmentPolicy 22.33
+HiddenPriceRise 22.29
+Beneficiary 22.33
+HiddenTax 22.29
+TermLifeInsurance 22.34
+HistoricCost 22.29
+WholeLifeInsurance 22.34
+Hoarding 22.29 VariableUniversalLife 22.34
+InsurancePolicy
+HogCycles 22.29
+Premium 22.34
+ImpossibleTrinity 22.29
+2234
+India’sSovereignRating 22.29
+GroupLifeInsurance 22.34
+IndifferenceCurve 22.29 Lapse 22.34
+InducedInvestment 22.29 LumpSum 22.34
+IIFCL 22.30 Liquidation 22.34
+InferiorProduct 22.30 LiquidAsset 22.34
+Inflation 22.30 Liquidity 22.34
+
+--- PAGE 30 ---
+xxx < IndianEconomy
+-
+LiquidityPreference 22.34 NeoclassicalEconomics 22.41
+LiquidityTrap 22.34 NetWorth 22.41
+-
+LMSchedule 22.35 NewPensionScheme 22.41
+LocalAreaBank 22.35 Ninja 22.41
+LocomotivePriniciple 22.35 NominalValue 22.42
+-
+LorenzCurve 22.35 NonWorkers 22.42
+LumpofLabourFallacy 22.35 Norka 22.42
+Macro&MicroEconomics 22.35 NormalGoods 22.42
+MarginalStandingFacility (MSF) 22.35 NullHypothesis 22.42
+MarginalUtility 22.36 Numeraire 22.43
+MarketCapitalisation 22.36 NVS 22.43
+MarketMaker 22.36 OilBonds 22.43
+MASCS 22.36 Okun’sLaw 22.43
+MarshallPlan 22.36 Open MarketOperation 22.43
+MenuCost 22.36 OpportunityCost 22.43
+-
+Mid CapFunds 22.36 OutcomeBudget 22.43
+MFBS 22.37 OverTheCounter 22.45
+-
+Mid CapShares 22.37 ParallelImporting 22.45
+MerchantBanking 22.37 ParetoPrinciple 22.45
+MezzanineFinancing 22.37 Parkinson’sLaw 22.45
+MIBID 22.38 PennyStocks 22.45
+MIBOR 22.38 PhillipsCurve 22.45
+MiddleClass 22.38 PiggybackLoan 22.45
+Microcredit 22.38
+Pigou Effect 22.45
+Miseryindex 22.38
+PFRDA 22.45
+MonetaryNeutrality 22.38
+PreferenceShares 22.46
+Moneyillusion 22.38
+-
+PriceEarningRatio 22.46
+Moralhazard 22.38
+PrimaryandSecondaryMarket 22.46
+MostFavouredNation 22.39
+- PrimaryDealer 22.46
+MultifibreArrangement(MFA) 22.39
+Prisoner’sDilemma 22.47
+MutualFunds 22.40
+PopulationTrap 22.47
+NarrowBanking 22.41
+PovertyTrap 22.47
+NASDAQ 22.41
+PredatoryPricing 22.47
+Nash Equilibrium 22.41
