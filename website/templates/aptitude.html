@@ -126,7 +126,7 @@ document.querySelectorAll('.apt-topic-item').forEach(li => {
     currentTopicId = topic.id;
     const btnDesk = document.getElementById('btn-open-desk-apt');
     if (btnDesk) {
-      btnDesk.href = '/study-desk/' + topic.id;
+      btnDesk.href = '/study-desk/' + topic.id + '?title=' + encodeURIComponent(topic.title);
     }
     loadRevisionBadge(topic.id, 'apt');
     if (window.innerWidth <= 768) setTimeout(() => document.getElementById('apt-detail').scrollIntoView({behavior:'smooth',block:'start'}), 60);

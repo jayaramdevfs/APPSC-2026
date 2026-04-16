@@ -266,7 +266,7 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
     currentTopicId = topicId; currentStageKey = stageKey;
     const btnDesk = document.getElementById('btn-open-desk-' + stageKey);
     if (btnDesk) {
-      btnDesk.href = '/study-desk/' + topicId;
+      btnDesk.href = '/study-desk/' + topicId + '?title=' + encodeURIComponent(topic.title);
     }
     
     // We don't fetch notes content here anymore; it's handled by Study Desk.

@@ -9,7 +9,7 @@
   <div class="sd-nav-left">
     <a href="javascript:history.back()" class="sd-back-btn">&larr; Back to Syllabus</a>
     <div class="sd-topic-info">
-      <h1 class="sd-title">Study Desk <span class="sd-topic-badge">{{ topic_id }}</span></h1>
+      <h1 class="sd-title">Study Desk: <span class="sd-topic-badge" id="sd-topic-badge">{{ topic_id }}</span></h1>
       <div class="sd-save-indicator" id="sd-auto-save">All changes saved locally</div>
     </div>
   </div>
@@ -32,14 +32,21 @@
 
   <!-- RIGHT PANE: RICH TEXT MY NOTES -->
   <div class="sd-pane sd-right-pane">
-    <div class="sd-pane-header">
-      <h2>My Interactive Notes</h2>
-      <span class="sd-tip">Tip: You can paste images from Google directly here!</span>
+    <div class="sd-pane-header" style="justify-content: space-between;">
+      <h2>My Personal Notes</h2>
+      <button class="sd-btn-fc" id="sd-btn-open-fc" onclick="toggleFCModal()">&#128218; Flashcards</button>
     </div>
     <div class="sd-pane-body">
       <div class="sd-rich-editor" id="my-notes-editor" contenteditable="true" placeholder="Start typing your structured notes or paste images here..."></div>
     </div>
   </div>
+</div>
+
+<!-- Simple Flashcard Modal -->
+<div id="sd-fc-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#1a1e24; border:1px solid #ff9800; border-radius:12px; padding:2rem; z-index:2000; box-shadow:0 10px 40px rgba(0,0,0,0.8); width: 400px;">
+  <h2 style="color:#ff9800; margin-top:0;">Official Flashcards</h2>
+  <div id="sd-fc-list" style="max-height: 400px; overflow-y:auto; margin: 1rem 0;"></div>
+  <button onclick="toggleFCModal()" style="background:#444; color:#fff; border:none; padding:10px 20px; border-radius:4px; cursor:pointer;">Close</button>
 </div>
 
 <!-- Floating Annotation Toolbar -->
@@ -53,34 +60,39 @@
 
 <style>
 /* Study Desk Specific Styles */
-body { margin: 0; background: #0b0c10; color: #c5c6c7; font-family: 'Inter', sans-serif; }
+body { margin: 0; background-color: #191919; color: #E8E8E8; font-family: 'Inter', system-ui, sans-serif;
+  background-image: linear-gradient(to right, rgba(255, 153, 51, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 153, 51, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px; 
+}
 nav.navbar { display: none !important; } /* Hide the main navigation inside Study Desk */
-.sd-navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #121417; border-bottom: 2px solid #ff9800; position: sticky; top: 0; z-index: 100; }
-.sd-nav-left { display: flex; align-items: center; gap: 1.5rem; }
-.sd-back-btn { color: #ffb74d; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border: 1px solid #ffb74d; border-radius: 4px; transition: 0.2s; }
+.sd-navbar { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 2rem; background: #121417; border-bottom: 2px solid #ff9800; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+.sd-nav-left { display: flex; align-items: center; gap: 1rem; }
+.sd-back-btn { color: #ffb74d; text-decoration: none; font-size: 0.8rem; font-weight: 600; padding: 0.35rem 0.7rem; border: 1px solid rgba(255,183,77,0.5); border-radius: 4px; transition: 0.2s; }
 .sd-back-btn:hover { background: #ffb74d; color: #121417; }
-.sd-title { margin: 0; font-size: 1.4rem; color: #ffffff; display: flex; align-items: center; gap: 10px; }
-.sd-topic-badge { background: #ff9800; font-size: 0.8rem; padding: 0.2rem 0.6rem; border-radius: 12px; color: #0b0c10; font-weight: bold; }
-.sd-save-indicator { font-size: 0.8rem; color: #888; font-style: italic; margin-top: 4px;}
-.sd-btn-export { background: transparent; color: #ffb74d; border: 1px dashed #ff9800; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; margin-left: 0.5rem; transition: background 0.2s; }
+.sd-title { margin: 0; font-size: 1.1rem; color: #ffffff; display: flex; align-items: center; gap: 10px; }
+.sd-topic-badge { background: transparent; font-size: 1.1rem; padding: 0; border-radius: 0; color: #ffb74d; font-weight: bold; margin-left: 5px; }
+.sd-save-indicator { font-size: 0.75rem; color: #888; font-style: italic; margin-left: 1rem;}
+.sd-btn-export { background: transparent; color: #ffb74d; border: 1px dashed #ff9800; padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 4px; cursor: pointer; margin-left: 0.5rem; transition: background 0.2s; }
 .sd-btn-export:hover { background: rgba(255, 152, 0, 0.1); }
+.sd-btn-fc { background: rgba(255, 153, 51, 0.1); border: 1px solid #ff9800; color: #ff9800; padding: 0.3rem 0.6rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem; cursor: pointer; }
+.sd-btn-fc:hover { background: #ff9800; color: #000; }
 
-.sd-container { display: flex; width: 100%; min-height: 100vh; }
-.sd-pane { display: flex; flex-direction: column; padding: 0 1rem; }
-.sd-left-pane { width: 70%; border-right: 1px solid #1f2833; padding-right: 0; }
-.sd-right-pane { width: 30%; padding-left: 0; }
+.sd-container { display: flex; width: 100%; min-height: 100vh; gap: 2rem; padding: 2rem; box-sizing: border-box; }
+.sd-pane { display: flex; flex-direction: column; background: transparent; }
+.sd-left-pane { width: 65%; }
+.sd-right-pane { width: 35%; }
 
-.sd-pane-header { background: #121417; padding: 1rem 2rem; position: sticky; top: 73px; z-index: 10; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #222; }
-.sd-pane-header h2 { margin: 0; font-size: 1.1rem; color: #ff9800; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.sd-pane-header { background: #1a1e24; padding: 0.8rem 1.5rem; position: sticky; top: 60px; z-index: 10; display: flex; justify-content: space-between; align-items: center; border: 1px solid #3A3A3A; border-bottom: none; border-radius: 8px 8px 0 0; }
+.sd-pane-header h2 { margin: 0; font-size: 1rem; color: #ff9800; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
 .sd-tip { font-size: 0.8rem; color: #777; }
 
-.sd-pane-body { padding: 2rem; width: 100%; box-sizing: border-box; }
+.sd-pane-body { width: 100%; box-sizing: border-box; }
 
 /* Official Notes Styling (PDF Feel) */
-#official-notes-container { background: #1a1e24; box-shadow: 0 4px 15px rgba(0,0,0,0.5); min-height: 100%; padding: 3rem 4rem; border-radius: 4px; }
-.sd-rich-editor { outline: none; min-height: 100%; padding: 3rem 4rem; background: #1a1e24; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border-radius: 4px; line-height: 1.6; }
+#official-notes-container { background: transparent; padding: 2rem 3rem; border: 1px solid #3A3A3A; border-top: none; border-radius: 0 0 8px 8px; line-height: 1.7; font-size: 1rem; }
+.sd-rich-editor { outline: none; min-height: 600px; padding: 1.5rem; background: rgba(20,20,20,0.8); border: 1px solid #3A3A3A; border-top: none; border-radius: 0 0 8px 8px; line-height: 1.6; }
 .sd-rich-editor img { max-width: 100%; border-radius: 8px; margin: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-[contenteditable="true"]:empty:before { content: attr(placeholder); color: #555; display: block; }
+[contenteditable="true"]:empty:before { content: attr(placeholder); color: #777; pointer-events: none; display: block; }
 
 /* Annotation Styles */
 mark.hl-yellow { background: rgba(255, 235, 59, 0.4); color: inherit; padding: 2px 0; border-radius: 2px; }
@@ -109,6 +121,11 @@ mark.hl-green { background: rgba(76, 175, 80, 0.4); color: inherit; padding: 2px
 <script>
 const TOPIC_ID = "{{ topic_id }}";
 
+// Fetch Topic Title from URL
+const urlParams = new URLSearchParams(window.location.search);
+const topicTitle = urlParams.get('title') || TOPIC_ID;
+document.getElementById('sd-topic-badge').textContent = topicTitle;
+
 // 1. Load Official Content
 fetch('/api/content/' + TOPIC_ID)
   .then(r => r.json())
@@ -131,6 +148,24 @@ fetch('/api/user-notes/' + TOPIC_ID)
       editor.innerHTML = data.content;
     }
   });
+
+// Flashcards Modal
+function toggleFCModal() {
+  const modal = document.getElementById('sd-fc-modal');
+  if (modal.style.display === 'none') {
+    modal.style.display = 'block';
+    fetch('/api/flashcards/' + TOPIC_ID).then(r=>r.json()).then(d => {
+      const list = document.getElementById('sd-fc-list');
+      if(d.cards && d.cards.length > 0) {
+        list.innerHTML = d.cards.map(c => `<div style="background:#2a3441; padding:10px; margin-bottom:10px; border-left:3px solid #ff9800; border-radius:4px;"><b>${c.term}</b><br><span style="color:#aaa; font-size:0.9em">${c.definition}</span></div>`).join('');
+      } else {
+        list.innerHTML = '<p>No flashcards created for this topic yet.</p>';
+      }
+    });
+  } else {
+    modal.style.display = 'none';
+  }
+}
 
 // Auto-save Rich Editor
 let saveTimeout;
