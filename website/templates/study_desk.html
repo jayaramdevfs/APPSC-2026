@@ -707,8 +707,6 @@ const TimeCoach = {
     this.minutesSpent = parseInt(localStorage.getItem(this.topicKey)) || 0;
     
     document.getElementById('btn-coach').addEventListener('click', () => this.toggle());
-    document.getElementById('coach-btn-action').addEventListener('click', () => this.startBreak());
-    document.getElementById('coach-btn-skip').addEventListener('click', () => this.skipBreak());
     
     // Log persistence
     setInterval(() => {
@@ -718,6 +716,34 @@ const TimeCoach = {
         localStorage.setItem(this.topicKey, this.minutesSpent);
       }
     }, 60000);
+    
+    // Immediately assert control and instruct the student on load
+    setTimeout(() => this.triggerWelcome(), 500);
+  },
+  
+  triggerWelcome() {
+    document.getElementById('coach-title').textContent = "Time Management Coach";
+    const hrs = (this.minutesSpent / 60).toFixed(2);
+    document.getElementById('coach-message').innerHTML = `You have invested ${hrs} active hours into this module so far.<br><br>I am your Time Coach. To maximize retention, you must follow the 25-minute Pomodoro rule. Begin your focus session now.`;
+    
+    const actionBtn = document.getElementById('coach-btn-action');
+    const skipBtn = document.getElementById('coach-btn-skip');
+    
+    actionBtn.textContent = "Start 25m Focus Block";
+    actionBtn.onclick = () => {
+      this.overlay.style.display = 'none';
+      this.pomodoroTimeLeft = 25 * 60;
+      this.updateDisplay();
+      this.start();
+      
+      // Reset for break time next
+      actionBtn.textContent = "Start 5m Break";
+      skipBtn.style.display = 'inline-block';
+      actionBtn.onclick = () => this.startBreak();
+    };
+    
+    skipBtn.style.display = 'none'; // Enforce starting
+    this.overlay.style.display = 'flex';
   },
   
   updateDisplay() {
@@ -758,6 +784,15 @@ const TimeCoach = {
     document.getElementById('coach-title').textContent = "Time Execution Complete";
     const hrs = (this.minutesSpent / 60).toFixed(2);
     document.getElementById('coach-message').innerHTML = `You have studied closely for 25 minutes.<br><br><b style="color:var(--gold);">Topic Analytics:</b> You have invested ${hrs} active hours into this specific module.<br><br>To maximize structural retention, you must take a 5-minute break now. Step away from the screen.`;
+    
+    const actionBtn = document.getElementById('coach-btn-action');
+    const skipBtn = document.getElementById('coach-btn-skip');
+    actionBtn.textContent = "Start 5m Break";
+    skipBtn.style.display = 'inline-block';
+    
+    actionBtn.onclick = () => this.startBreak();
+    skipBtn.onclick = () => this.skipBreak();
+    
     this.overlay.style.display = 'flex';
   },
   
