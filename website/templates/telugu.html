@@ -46,9 +46,7 @@
         <ul class="g2-syllabus-points" id="points-basics"></ul>
         <div class="g2-detail-footer">
           <span>&#9998;</span> More examples, practice exercises and audio will be added here.
-          {% if current_user %}
           <button class="btn-mark-studied" id="btn-tel-basics-studied" data-subject="telugu">Mark as Studied</button>
-          {% endif %}
         </div>
       </div>
     </div>
@@ -81,9 +79,7 @@
         <ul class="g2-syllabus-points" id="points-appsc"></ul>
         <div class="g2-detail-footer">
           <span>&#9998;</span> Notes &amp; study material for this topic will be added here.
-          {% if current_user %}
           <button class="btn-mark-studied" id="btn-tel-appsc-studied" data-subject="telugu">Mark as Studied</button>
-          {% endif %}
         </div>
       </div>
     </div>
@@ -136,7 +132,69 @@ document.querySelectorAll('.g2-tab').forEach(btn => {
   });
 });
 
-const studiedSet = new Set();
+const LS_KEY = 'appsc_progress';
+let studiedSet = new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]'));
+
+const allIdsList = [];
+for (const [tabKey, tabData] of Object.entries(TELUGU)) {
+  for (const [sectionKey, section] of Object.entries(tabData.sections)) {
+    for (const [topicKey, topic] of Object.entries(section.topics)) {
+      allIdsList.push(`telugu:${tabKey}:${sectionKey}:${topicKey}`);
+    }
+  }
+}
+
+// Immediate UI update, after sidebar is naturally built
+allIdsList.forEach(tid => {
+  if (studiedSet.has(tid)) {
+    const parts = tid.split(':');
+    if (parts.length === 4) {
+      const li = document.querySelector(`.g2-topic-item[data-tab="${parts[1]}"][data-section="${parts[2]}"][data-topic="${parts[3]}"]`);
+      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+    }
+  }
+});
+
+{% if current_user %}
+fetch('/api/progress/batch-status?ids=' + allIdsList.join(','))
+  .then(r => r.json())
+  .then(data => {
+    let changed = false;
+    for (const tid of Object.keys(data)) {
+      if (!studiedSet.has(tid)) {
+        studiedSet.add(tid);
+        changed = true;
+      }
+    }
+    
+    studiedSet.forEach(tid => {
+      if (!data[tid] && allIdsList.includes(tid)) {
+        const parts = tid.split(':');
+        if (parts.length === 4) {
+          const li = document.querySelector(`.g2-topic-item[data-tab="${parts[1]}"][data-section="${parts[2]}"][data-topic="${parts[3]}"]`);
+          const titleText = li ? li.querySelector('.g2-topic-name').textContent : tid;
+          fetch('/api/progress/mark-studied', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ topic_id: tid, subject: 'telugu', topic_title: titleText })
+          }).catch(()=>{});
+        }
+      }
+    });
+
+    if (changed) {
+      localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
+      studiedSet.forEach(tid => {
+        const parts = tid.split(':');
+        if (parts.length === 4) {
+          const li = document.querySelector(`.g2-topic-item[data-tab="${parts[1]}"][data-section="${parts[2]}"][data-topic="${parts[3]}"]`);
+          if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+        }
+      });
+    }
+  })
+  .catch(() => {});
+{% endif %}
 
 // ── Topic click ────────────────────────────────────────────────
 document.addEventListener('click', function(e) {
@@ -167,7 +225,6 @@ document.addEventListener('click', function(e) {
     .map(p => `<li class="g2-point-item">${p}</li>`)
     .join('');
 
-  {% if current_user %}
   // Synthetic ID for tracking: telugu:tab:section:topic
   const syntheticId = `telugu:${tabKey}:${sectionKey}:${topicKey}`;
   const btnId = tabKey === 'basics' ? 'btn-tel-basics-studied' : 'btn-tel-appsc-studied';
@@ -184,7 +241,6 @@ document.addEventListener('click', function(e) {
       btn.disabled = false;
     }
   }
-  {% endif %}
 
   // Scroll to content panel on mobile
   if (window.innerWidth <= 768) {
@@ -195,29 +251,33 @@ document.addEventListener('click', function(e) {
   }
 });
 
-{% if current_user %}
 document.querySelectorAll('.btn-mark-studied').forEach(btn => {
   btn.addEventListener('click', () => {
     const topicId = btn.dataset.topicId;
     const title   = btn.dataset.title || topicId;
     if (!topicId || btn.classList.contains('studied')) return;
-    btn.disabled    = true;
-    btn.textContent = '…';
+    
+    // Instant UI update
+    btn.textContent = 'Studied \u2713';
+    btn.classList.add('studied');
+    studiedSet.add(topicId);
+    localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
+    
+    const parts = topicId.split(':');
+    if (parts.length === 4) {
+      const li = document.querySelector(`.g2-topic-item[data-tab="${parts[1]}"][data-section="${parts[2]}"][data-topic="${parts[3]}"]`);
+      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+    }
+
+    {% if current_user %}
     fetch('/api/progress/mark-studied', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ topic_id: topicId, subject: 'telugu', topic_title: title })
-    })
-    .then(r => r.json())
-    .then(() => {
-      btn.textContent = 'Studied \u2713';
-      btn.classList.add('studied');
-      studiedSet.add(topicId);
-    })
-    .catch(() => { btn.disabled = false; btn.textContent = 'Mark as Studied'; });
+    }).catch(()=>{});
+    {% endif %}
   });
 });
-{% endif %}
 </script>
 
 {% endblock %}

@@ -6,7 +6,7 @@
 <div class="g2-header">
   <a href="/" class="back-link">&larr; Back to Home</a>
   <h1 class="page-title">Aptitude &amp; Reasoning</h1>
-  <p class="page-subtitle">General Mental Ability &nbsp;&bull;&nbsp; Group 1 (Prelims) &nbsp;&bull;&nbsp; Group 2 (Screening)</p>
+  <p class="page-subtitle">General Mental Ability &nbsp;&bull;&nbsp; Group I (Prelims) &nbsp;&bull;&nbsp; Group II (Screening)</p>
 </div>
 
 <div class="portal-wrap">
@@ -38,7 +38,7 @@
     <div class="g2-welcome" id="apt-welcome">
       <div class="g2-welcome-icon">&#129488;</div>
       <p>Select a topic from the sidebar to see its official syllabus.</p>
-      <p style="font-size:0.85rem;color:var(--muted);margin-top:0.5rem;">Topics drawn from Group 1 Prelims (Paper II) and Group 2 Screening Test.</p>
+      <p style="font-size:0.85rem;color:var(--muted);margin-top:0.5rem;">Topics drawn from Group I Prelims (Paper II) and Group II Screening Test.</p>
     </div>
     <div class="g2-topic-detail hidden" id="apt-detail">
       <div class="g2-detail-header">
@@ -54,9 +54,7 @@
       <ul class="g2-syllabus-points" id="apt-points"></ul>
       <div class="g2-detail-footer">
         <span>&#9998;</span> Notes &amp; practice questions for this topic will be added here.
-        {% if current_user %}
         <button class="btn-mark-studied" id="btn-apt-studied" data-subject="aptitude">Mark as Studied</button>
-        {% endif %}
       </div>
     </div>
   </div>
@@ -72,17 +70,49 @@ APT.sections.forEach(sec => {
   sec.topics.forEach(t => { topicMap[t.id] = t; });
 });
 
-const studiedSet = new Set();
+const LS_KEY = 'appsc_progress';
+let studiedSet = new Set(JSON.parse(localStorage.getItem(LS_KEY) || '[]'));
+const allIdsList = Object.keys(topicMap);
+
+// Immediate UI update from LocalStorage
+allIdsList.forEach(tid => {
+  if (studiedSet.has(tid)) {
+    const li = document.querySelector(`.apt-topic-item[data-topic-id="${tid}"]`);
+    if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+  }
+});
 
 {% if current_user %}
-const allIds = Object.keys(topicMap).join(',');
-fetch('/api/progress/batch-status?ids=' + allIds)
+fetch('/api/progress/batch-status?ids=' + allIdsList.join(','))
   .then(r => r.json())
   .then(data => {
+    let changed = false;
     for (const tid of Object.keys(data)) {
-      studiedSet.add(tid);
-      const li = document.querySelector(`.apt-topic-item[data-topic-id="${tid}"]`);
-      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+      if (!studiedSet.has(tid)) {
+        studiedSet.add(tid);
+        changed = true;
+      }
+    }
+    
+    // Reverse sync: if Server DB got wiped, push LS data to server
+    studiedSet.forEach(tid => {
+      if (!data[tid] && allIdsList.includes(tid)) {
+        const li = document.querySelector(`.apt-topic-item[data-topic-id="${tid}"]`);
+        const titleText = li ? li.querySelector('.g2-topic-name').textContent : tid;
+        fetch('/api/progress/mark-studied', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ topic_id: tid, subject: 'aptitude', topic_title: titleText })
+        }).catch(()=>{});
+      }
+    });
+
+    if (changed) {
+      localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
+      studiedSet.forEach(tid => {
+        const li = document.querySelector(`.apt-topic-item[data-topic-id="${tid}"]`);
+        if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+      });
     }
   })
   .catch(() => {});
@@ -112,7 +142,6 @@ document.querySelectorAll('.apt-topic-item').forEach(li => {
       .map(p => `<li class="g2-point-item">${p}</li>`)
       .join('');
 
-    {% if current_user %}
     const btn = document.getElementById('btn-apt-studied');
     if (btn) {
       btn.dataset.topicId = topic.id;
@@ -126,7 +155,6 @@ document.querySelectorAll('.apt-topic-item').forEach(li => {
         btn.disabled = false;
       }
     }
-    {% endif %}
 
     // Scroll to content panel on mobile
     if (window.innerWidth <= 768) {
@@ -138,32 +166,31 @@ document.querySelectorAll('.apt-topic-item').forEach(li => {
   });
 });
 
-{% if current_user %}
 const btnApt = document.getElementById('btn-apt-studied');
 if (btnApt) {
   btnApt.addEventListener('click', () => {
     const topicId = btnApt.dataset.topicId;
     const title   = btnApt.dataset.title || topicId;
     if (!topicId || btnApt.classList.contains('studied')) return;
-    btnApt.disabled    = true;
-    btnApt.textContent = '…';
+    
+    // Instant UI Update
+    btnApt.textContent = 'Studied \u2713';
+    btnApt.classList.add('studied');
+    studiedSet.add(topicId);
+    localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
+    
+    const li = document.querySelector(`.apt-topic-item[data-topic-id="${topicId}"]`);
+    if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
+
+    {% if current_user %}
     fetch('/api/progress/mark-studied', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ topic_id: topicId, subject: 'aptitude', topic_title: title })
-    })
-    .then(r => r.json())
-    .then(() => {
-      btnApt.textContent = 'Studied \u2713';
-      btnApt.classList.add('studied');
-      studiedSet.add(topicId);
-      const li = document.querySelector(`.apt-topic-item[data-topic-id="${topicId}"]`);
-      if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied');
-    })
-    .catch(() => { btnApt.disabled = false; btnApt.textContent = 'Mark as Studied'; });
+    }).catch(()=>{});
+    {% endif %}
   });
 }
-{% endif %}
 </script>
 
 {% endblock %}

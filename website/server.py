@@ -4,7 +4,11 @@ import os
 import re
 import secrets
 import sqlite3
-from datetime import date, timedelta
+import smtplib
+import httpx
+import urllib.parse
+from email.message import EmailMessage
+from datetime import date, timedelta, datetime
 from pathlib import Path
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
@@ -26,6 +30,11 @@ DB_PATH       = BASE_DIR / "users.db"
 
 SECRET_KEY     = os.environ.get("SECRET_KEY", "dev-secret-groupsguru-2026")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "GroupsGuru@2026")
+
+EMAIL_USER = os.environ.get("EMAIL_USER", "")
+EMAIL_PASS = os.environ.get("EMAIL_PASS", "")
+GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
+GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
 
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
@@ -100,6 +109,13 @@ def init_db() -> None:
             UNIQUE(user_id, topic_id, revision_number)
         )
     """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS password_resets (
+            token       TEXT PRIMARY KEY,
+            user_id     INTEGER NOT NULL,
+            expires_at  TEXT NOT NULL
+        )
+    """)
     con.commit()
 
     # Admin — password overrideable via ADMIN_PASSWORD env var on Render
@@ -116,6 +132,14 @@ def db_get_user_by_username(username: str):
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
     row = con.execute("SELECT * FROM users WHERE username = ?", (username,)).fetchone()
+    con.close()
+    return dict(row) if row else None
+
+
+def db_get_user_by_email(email: str):
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    row = con.execute("SELECT * FROM users WHERE email = ? COLLATE NOCASE", (email,)).fetchone()
     con.close()
     return dict(row) if row else None
 
@@ -164,7 +188,7 @@ def get_current_user(request: Request):
     }
 
 # ---------------------------------------------------------------------------
-# Group 2 — Official Syllabus Structure
+# Group II — Official Syllabus Structure
 # Source: APPSC Group II Syllabus PDF (5_PDFsam_APPSC_GROUP2_SYLLABUS.pdf)
 # points = exact bullet points extracted from the official syllabus
 # ---------------------------------------------------------------------------
@@ -629,7 +653,7 @@ G2_STRUCTURE = {
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
-# Group 1 — Official Syllabus Structure
+# Group I — Official Syllabus Structure
 # Source: APPSC Group I Syllabus PDF (4_PDFsam_APPSC_GROUP 1 SYLLABUS.pdf)
 # ---------------------------------------------------------------------------
 G1_STRUCTURE = {
@@ -2157,7 +2181,7 @@ TELUGU_STRUCTURE = {
                     },
                     "consonants_ka": {
                         "title": "Velar Group — కంఠ్యాలు (K sounds)",
-                        "meta": "Consonants • Group 1 of 7",
+                        "meta": "Consonants • Group I of 7",
                         "points": [
                             "క (ka) — as in 'k' in 'kite' | కమలం = lotus",
                             "ఖ (kha) — aspirated 'k' | ఖాళీ = empty",
@@ -2168,7 +2192,7 @@ TELUGU_STRUCTURE = {
                     },
                     "consonants_cha": {
                         "title": "Palatal Group — తాలవ్యాలు (Ch sounds)",
-                        "meta": "Consonants • Group 2 of 7",
+                        "meta": "Consonants • Group II of 7",
                         "points": [
                             "చ (cha) — as in 'ch' in 'chair' | చంద్రుడు = moon",
                             "ఛ (chha) — aspirated 'ch' | ఛత్రం = umbrella",
@@ -2859,6 +2883,100 @@ async def dashboard(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Admin Panel
+# ---------------------------------------------------------------------------
+
+async def admin_page(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return RedirectResponse("/", status_code=302)
+    return templates.TemplateResponse(request, "admin.html", {
+        "current_user": user
+    })
+
+async def api_admin_users(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    rows = con.execute("SELECT id, username, display_name, email, role, created_at FROM users ORDER BY created_at DESC").fetchall()
+    con.close()
+    return JSONResponse([dict(r) for r in rows])
+
+async def api_admin_delete_user(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    uid = request.path_params["id"]
+    con = sqlite3.connect(DB_PATH)
+    con.execute("DELETE FROM users WHERE id = ?", (uid,))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+async def api_admin_role_user(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    uid = request.path_params["id"]
+    body = await request.json()
+    new_role = str(body.get("role", "student")).strip()
+    
+    con = sqlite3.connect(DB_PATH)
+    con.execute("UPDATE users SET role = ? WHERE id = ?", (new_role, uid))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+async def api_admin_ca_list(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    files = []
+    if CA_DIR.exists():
+        for f in CA_DIR.glob("*.md"):
+            files.append(f.name)
+    files.sort(reverse=True)
+    return JSONResponse({"files": files})
+
+async def api_admin_ca_save(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    body = await request.json()
+    date_str = str(body.get("date", "")).strip()
+    content = str(body.get("content", ""))
+    
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date format"}, status_code=400)
+        
+    CA_DIR.mkdir(parents=True, exist_ok=True)
+    ca_file = CA_DIR / f"{date_str}.md"
+    ca_file.write_text(content, encoding="utf-8")
+    return JSONResponse({"ok": True})
+
+async def api_admin_ca_delete(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+        
+    date_str = request.path_params["date"]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date format"}, status_code=400)
+        
+    ca_file = CA_DIR / f"{date_str}.md"
+    if ca_file.exists():
+        ca_file.unlink()
+    return JSONResponse({"ok": True})
+
+
+# ---------------------------------------------------------------------------
 # Auth route handlers
 # ---------------------------------------------------------------------------
 
@@ -2948,7 +3066,170 @@ async def logout(request: Request):
 async def forgot_password_page(request: Request):
     return templates.TemplateResponse(request, "forgot_password.html", {
         "current_user": get_current_user(request),
+        "error": None,
+        "success": None,
     })
+
+
+async def forgot_password_post(request: Request):
+    form = await request.form()
+    email_addr = str(form.get("email", "")).strip()
+    
+    user = db_get_user_by_email(email_addr)
+    if user and EMAIL_USER and EMAIL_PASS:
+        token = secrets.token_urlsafe(32)
+        expires = (datetime.utcnow() + timedelta(hours=1)).isoformat()
+        
+        con = sqlite3.connect(DB_PATH)
+        con.execute("INSERT INTO password_resets (token, user_id, expires_at) VALUES (?, ?, ?)", (token, user['id'], expires))
+        con.commit()
+        con.close()
+        
+        reset_url = str(request.base_url).rstrip("/") + "/reset-password?token=" + token
+        
+        msg = EmailMessage()
+        msg.set_content(f"Hi {user['display_name']},\n\nClick the link below to reset your password:\n\n{reset_url}\n\nThis link expires in 1 hour.")
+        msg['Subject'] = 'GroupsGuru Password Reset'
+        msg['From'] = EMAIL_USER
+        msg['To'] = email_addr
+        
+        try:
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+                smtp.login(EMAIL_USER, EMAIL_PASS)
+                smtp.send_message(msg)
+        except Exception as e:
+            print(f"Failed to send email: {e}")
+            
+    # Always return success to prevent email enumeration
+    return templates.TemplateResponse(request, "forgot_password.html", {
+        "current_user": get_current_user(request),
+        "error": None,
+        "success": "If an account exists with that email, a password reset link has been sent.",
+    })
+
+
+async def reset_password_page(request: Request):
+    token = request.query_params.get("token")
+    return templates.TemplateResponse(request, "reset_password.html", {
+        "current_user": None,
+        "error": None,
+        "token": token,
+    })
+
+
+async def reset_password_post(request: Request):
+    form = await request.form()
+    token = str(form.get("token", ""))
+    new_pwd = str(form.get("new_password", ""))
+    confirm_pwd = str(form.get("confirm_password", ""))
+    
+    def fail(msg):
+        return templates.TemplateResponse(request, "reset_password.html", {
+            "current_user": None,
+            "error": msg,
+            "token": token,
+        })
+        
+    if new_pwd != confirm_pwd:
+        return fail("Passwords do not match.")
+    if len(new_pwd) < 8:
+        return fail("Password must be at least 8 characters.")
+        
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    row = con.execute("SELECT * FROM password_resets WHERE token = ?", (token,)).fetchone()
+    
+    if not row or datetime.fromisoformat(row['expires_at']) < datetime.utcnow():
+        con.close()
+        return fail("Invalid or expired reset link.")
+        
+    con.execute("UPDATE users SET password_hash = ? WHERE id = ?", (hash_password(new_pwd), row['user_id']))
+    con.execute("DELETE FROM password_resets WHERE token = ?", (token,))
+    con.commit()
+    con.close()
+    
+    return RedirectResponse("/login?reset=1", status_code=302)
+
+
+async def login_google(request: Request):
+    if not GOOGLE_CLIENT_ID:
+        return PlainTextResponse("Google OAuth is not configured on this server.", status_code=500)
+    
+    redirect_uri = str(request.base_url).rstrip("/") + "/auth/google/callback"
+    params = {
+        "client_id": GOOGLE_CLIENT_ID,
+        "redirect_uri": redirect_uri,
+        "response_type": "code",
+        "scope": "openid email profile",
+        "access_type": "online",
+        "prompt": "select_account"
+    }
+    url = "https://accounts.google.com/o/oauth2/v2/auth?" + urllib.parse.urlencode(params)
+    return RedirectResponse(url)
+
+
+async def auth_google_callback(request: Request):
+    code = request.query_params.get("code")
+    if not code:
+        return RedirectResponse("/login", status_code=302)
+        
+    redirect_uri = str(request.base_url).rstrip("/") + "/auth/google/callback"
+    
+    async with httpx.AsyncClient() as client:
+        token_resp = await client.post("https://oauth2.googleapis.com/token", data={
+            "client_id": GOOGLE_CLIENT_ID,
+            "client_secret": GOOGLE_CLIENT_SECRET,
+            "code": code,
+            "grant_type": "authorization_code",
+            "redirect_uri": redirect_uri
+        })
+        token_data = token_resp.json()
+        access_token = token_data.get("access_token")
+        
+        if not access_token:
+            return RedirectResponse("/login?error=oauth_failed", status_code=302)
+            
+        user_resp = await client.get("https://www.googleapis.com/oauth2/v2/userinfo", headers={
+            "Authorization": f"Bearer {access_token}"
+        })
+        user_info = user_resp.json()
+        
+    email = user_info.get("email")
+    if not email:
+        return RedirectResponse("/login?error=no_email", status_code=302)
+        
+    # Check if user exists by email
+    user = db_get_user_by_email(email)
+    
+    # If not, auto-create account based on google email
+    if not user:
+        username_base = email.split("@")[0].lower()
+        username_base = re.sub(r'[^a-z0-9_-]', '', username_base)
+        username = username_base
+        
+        con = sqlite3.connect(DB_PATH)
+        # Ensure unique username
+        suffix = 1
+        while con.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone():
+            username = f"{username_base}{suffix}"
+            suffix += 1
+            
+        display_name = user_info.get("name", username)
+        
+        con.execute(
+            "INSERT INTO users (username, display_name, email, password_hash) VALUES (?,?,?,?)",
+            (username, display_name, email, hash_password(secrets.token_urlsafe(20))), # random password
+        )
+        con.commit()
+        con.close()
+        
+        user = db_get_user_by_email(email)
+        
+    request.session["user_id"]  = user["id"]
+    request.session["username"] = user["username"]
+    request.session["role"]     = user["role"]
+    
+    return RedirectResponse("/dashboard", status_code=302)
 
 
 async def change_password_page(request: Request):
@@ -2996,6 +3277,118 @@ async def change_password_post(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Global Search
+# ---------------------------------------------------------------------------
+
+async def api_search(request: Request):
+    q = (request.query_params.get("q") or "").strip().lower()
+    if len(q) < 2:
+        return JSONResponse([])
+
+    results = []  # list of {subject, stage, topic_title, topic_id, snippet, url}
+
+    def match_points(points, query):
+        """Return first matching point as a snippet, or None."""
+        for p in points:
+            if query in p.lower():
+                return p
+        return None
+
+    # --- G1 ---
+    for stage_key, stage in G1_STRUCTURE.items():
+        for section in stage["sections"]:
+            for topic in section["topics"]:
+                title_match = q in topic["title"].lower()
+                snippet = match_points(topic["points"], q)
+                if title_match or snippet:
+                    results.append({
+                        "subject": "Group I",
+                        "stage": stage["label"],
+                        "topic_title": topic["title"],
+                        "topic_id": topic["id"],
+                        "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                        "url": "/group1",
+                    })
+
+    # --- G2 ---
+    for stage_key, stage in G2_STRUCTURE.items():
+        for section in stage["sections"]:
+            for topic in section["topics"]:
+                title_match = q in topic["title"].lower()
+                snippet = match_points(topic["points"], q)
+                if title_match or snippet:
+                    results.append({
+                        "subject": "Group II",
+                        "stage": stage["label"],
+                        "topic_title": topic["title"],
+                        "topic_id": topic["id"],
+                        "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                        "url": "/group2",
+                    })
+
+    # --- Aptitude ---
+    for section in APT_STRUCTURE["sections"]:
+        for topic in section["topics"]:
+            title_match = q in topic["title"].lower()
+            snippet = match_points(topic["points"], q)
+            if title_match or snippet:
+                results.append({
+                    "subject": "Aptitude",
+                    "stage": topic.get("exam", "General"),
+                    "topic_title": topic["title"],
+                    "topic_id": topic["id"],
+                    "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                    "url": "/aptitude",
+                })
+
+    # --- Telugu ---
+    for tab_key, tab_data in TELUGU_STRUCTURE.items():
+        for sec_key, sec in tab_data["sections"].items():
+            for topic_key, topic in sec["topics"].items():
+                title_match = q in topic["title"].lower()
+                snippet = match_points(topic["points"], q)
+                if title_match or snippet:
+                    results.append({
+                        "subject": "Telugu",
+                        "stage": sec["label"],
+                        "topic_title": topic["title"],
+                        "topic_id": f"telugu:{tab_key}:{sec_key}:{topic_key}",
+                        "snippet": snippet or topic["points"][0] if topic["points"] else "",
+                        "url": "/telugu",
+                    })
+    # --- Current Affairs (markdown files) ---
+    if CA_DIR.exists():
+        for md_file in sorted(CA_DIR.glob("*.md"), reverse=True):
+            try:
+                content = md_file.read_text(encoding="utf-8")
+            except Exception:
+                continue
+            date_str = md_file.stem  # e.g. "2026-04-14"
+            lines = content.split("\n")
+            heading = ""
+            for line in lines:
+                stripped = line.strip()
+                if stripped.startswith("## "):
+                    heading = stripped[3:].strip()
+                elif q in stripped.lower() and stripped and not stripped.startswith("#"):
+                    # Clean up the bullet text for display
+                    clean = stripped.lstrip("-*• ").strip()
+                    results.append({
+                        "subject": "Current Affairs",
+                        "stage": heading or date_str,
+                        "topic_title": date_str,
+                        "topic_id": f"ca:{date_str}",
+                        "snippet": clean,
+                        "url": "/current-affairs",
+                    })
+            # Stop after scanning last 30 CA files to keep it fast
+            if len([f for f in CA_DIR.glob("*.md")]) > 30:
+                break
+
+    return JSONResponse(results[:50])  # cap at 50
+
+
+# ---------------------------------------------------------------------------
 # Routing table
 # ---------------------------------------------------------------------------
 
@@ -3009,10 +3402,15 @@ routes = [
     Route("/telugu",                              telugu),
     Route("/login",                               login_page,              methods=["GET"]),
     Route("/login",                               login_post,              methods=["POST"]),
+    Route("/login/google",                        login_google,            methods=["GET"]),
+    Route("/auth/google/callback",                auth_google_callback,    methods=["GET"]),
     Route("/register",                            register_page,           methods=["GET"]),
     Route("/register",                            register_post,           methods=["POST"]),
     Route("/logout",                              logout),
-    Route("/forgot-password",                     forgot_password_page),
+    Route("/forgot-password",                     forgot_password_page,    methods=["GET"]),
+    Route("/forgot-password",                     forgot_password_post,    methods=["POST"]),
+    Route("/reset-password",                      reset_password_page,     methods=["GET"]),
+    Route("/reset-password",                      reset_password_post,     methods=["POST"]),
     Route("/change-password",                    change_password_page,    methods=["GET"]),
     Route("/change-password",                    change_password_post,    methods=["POST"]),
     Route("/api/ca/content/{date}",               api_ca_content),
@@ -3022,6 +3420,14 @@ routes = [
     Route("/api/progress/due-today",              api_due_today),
     Route("/api/progress/batch-status",           api_batch_status),
     Route("/api/progress/summary",                api_progress_summary),
+    Route("/admin",                               admin_page),
+    Route("/api/admin/users",                     api_admin_users),
+    Route("/api/admin/users/{id}",                api_admin_delete_user,   methods=["DELETE"]),
+    Route("/api/admin/users/{id}/role",           api_admin_role_user,     methods=["POST"]),
+    Route("/api/admin/ca",                        api_admin_ca_list),
+    Route("/api/admin/ca",                        api_admin_ca_save,       methods=["POST"]),
+    Route("/api/admin/ca/{date}",                 api_admin_ca_delete,     methods=["DELETE"]),
+    Route("/api/search",                          api_search),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]

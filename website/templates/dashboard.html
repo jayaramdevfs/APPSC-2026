@@ -59,12 +59,12 @@
 <div class="dash-plan-grid">
     <a href="/group1" class="dash-plan-card">
         <span class="plan-icon">📘</span>
-        <span class="plan-label">Group 1</span>
+        <span class="plan-label">Group I</span>
         <span class="plan-sub" id="plan-g1">Prelims · Mains</span>
     </a>
     <a href="/group2" class="dash-plan-card">
         <span class="plan-icon">📗</span>
-        <span class="plan-label">Group 2</span>
+        <span class="plan-label">Group II</span>
         <span class="plan-sub" id="plan-g2">Screening · Paper 1 · 2</span>
     </a>
     <a href="/telugu" class="dash-plan-card">
@@ -95,10 +95,14 @@ const TODAY = {{ today | tojson }};
 })();
 
 // ---- Load progress summary ----
+const LS_KEY = 'appsc_progress';
+const localStudied = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
 fetch('/api/progress/summary')
     .then(r => r.json())
     .then(data => {
-        document.getElementById('stat-studied').textContent  = data.total_studied ?? 0;
+        const serverStudied = data.total_studied ?? 0;
+        const totalStudied = Math.max(serverStudied, localStudied.length);
+        document.getElementById('stat-studied').textContent  = totalStudied;
         document.getElementById('stat-mastered').textContent = data.mastered ?? 0;
         document.getElementById('stat-streak').textContent   = (data.streak_days ?? 0) + 'd';
         // plan subject studied counts
@@ -106,7 +110,9 @@ fetch('/api/progress/summary')
         if (bs.g1) document.getElementById('plan-g1').textContent = bs.g1 + ' topics done';
         if (bs.g2) document.getElementById('plan-g2').textContent = bs.g2 + ' topics done';
     })
-    .catch(() => {});
+    .catch(() => {
+        document.getElementById('stat-studied').textContent = localStudied.length;
+    });
 
 // ---- Load revisions due today ----
 fetch('/api/progress/due-today')

@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% block title %}Admin Panel — GroupsGuru{% endblock %}
+
+{% block content %}
+<style>
+  .admin-dashboard {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media(min-width: 900px){
+    .admin-dashboard { grid-template-columns: 1fr 1fr; }
+  }
+  .admin-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .admin-panel h2 {
+    color: var(--accent);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+  .admin-table th, .admin-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  .admin-table th {
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .admin-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+  }
+  .admin-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .admin-btn-danger {
+    color: #ff4d4d;
+    border-color: #ff4d4d;
+  }
+  .admin-btn-danger:hover {
+    background: #ff4d4d;
+    color: var(--bg);
+  }
+  .ca-editor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ca-input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-family: inherit;
+  }
+  .ca-textarea {
+    min-height: 300px;
+    resize: vertical;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .ca-file-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .ca-file-badge {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  .ca-file-badge:hover {
+    border-color: var(--accent);
+  }
+</style>
+
+<div class="admin-dashboard">
+  <!-- Users Management -->
+  <div class="admin-panel">
+    <h2>
+      User Management
+      <button class="admin-btn" onclick="loadUsers()">Refresh</button>
+    </h2>
+    <div style="overflow-x: auto;">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Role</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="users-tbody">
+          <tr><td colspan="4">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- CA Editor -->
+  <div class="admin-panel">
+    <h2>
+      Current Affairs Editor
+      <button class="admin-btn" onclick="loadCAFiles()">Refresh Files</button>
+    </h2>
+    
+    <div class="ca-file-list" id="ca-file-list"></div>
+    
+    <form class="ca-editor" onsubmit="saveCA(event)">
+      <div style="display: flex; gap: 1rem;">
+        <input type="text" id="ca-date" class="ca-input" placeholder="YYYY-MM-DD" required pattern="\d{4}-\d{2}-\d{2}" style="flex: 1;">
+        <button type="button" class="admin-btn admin-btn-danger" style="display:none;" id="ca-delete-btn" onclick="deleteCA()">Delete</button>
+      </div>
+      <textarea id="ca-content" class="ca-input ca-textarea" placeholder="# Markdown Content Here" required></textarea>
+      <button type="submit" class="auth-btn">Save Current Affairs</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// --- Users ---
+async function loadUsers() {
+  const tbody = document.getElementById('users-tbody');
+  tbody.innerHTML = '<tr><td colspan="4">Loading...</td></tr>';
+  try {
+    const res = await fetch('/api/admin/users');
+    if (!res.ok) throw new Error('Unauthorized');
+    const users = await res.json();
+    tbody.innerHTML = '';
+    users.forEach(u => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${u.id}</td>
+        <td>
+          <div style="font-weight:600">${u.username}</div>
+          <div style="font-size:0.8rem; color:var(--muted)">${u.email || 'No email'}</div>
+        </td>
+        <td>
+          <select onchange="updateRole(${u.id}, this.value)" style="background:var(--bg); color:var(--text); border:1px solid var(--border); padding:0.25rem;">
+            <option value="student" ${u.role==='student'?'selected':''}>student</option>
+            <option value="admin" ${u.role==='admin'?'selected':''}>admin</option>
+          </select>
+        </td>
+        <td>
+          <button class="admin-btn admin-btn-danger" onclick="deleteUser(${u.id}, '${u.username}')">Delete</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  } catch (e) {
+    tbody.innerHTML = '<tr><td colspan="4" style="color:#ff4d4d">Failed to load users</td></tr>';
+  }
+}
+
+async function deleteUser(id, username) {
+  if (!confirm(`Are you sure you want to delete user ${username}?`)) return;
+  await fetch(`/api/admin/users/${id}`, {method: 'DELETE'});
+  loadUsers();
+}
+
+async function updateRole(id, role) {
+  await fetch(`/api/admin/users/${id}/role`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({role})
+  });
+}
+
+// --- Content Affairs ---
+async function loadCAFiles() {
+  const list = document.getElementById('ca-file-list');
+  list.innerHTML = 'Loading...';
+  try {
+    const res = await fetch('/api/admin/ca');
+    const obj = await res.json();
+    list.innerHTML = '';
+    obj.files.forEach(f => {
+      const dateStr = f.replace('.md', '');
+      const badge = document.createElement('div');
+      badge.className = 'ca-file-badge';
+      badge.textContent = dateStr;
+      badge.onclick = () => loadCASingle(dateStr);
+      list.appendChild(badge);
+    });
+  } catch (e) {
+    list.innerHTML = '<div style="color:#ff4d4d">Failed to load files</div>';
+  }
+}
+
+async function loadCASingle(dateStr) {
+  document.getElementById('ca-date').value = dateStr;
+  document.getElementById('ca-delete-btn').style.display = 'block';
+  document.getElementById('ca-content').value = 'Loading...';
+  
+  try {
+    const res = await fetch(`/api/ca/content/${dateStr}`);
+    if(res.ok){
+        const text = await res.text();
+        document.getElementById('ca-content').value = text;
+    } else {
+        document.getElementById('ca-content').value = '';
+    }
+  } catch (e) {
+    document.getElementById('ca-content').value = 'Error loading content';
+  }
+}
+
+async function saveCA(e) {
+  e.preventDefault();
+  const dateStr = document.getElementById('ca-date').value;
+  const content = document.getElementById('ca-content').value;
+  
+  const res = await fetch('/api/admin/ca', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({date: dateStr, content})
+  });
+  if (res.ok) {
+    alert('Saved successfully!');
+    loadCAFiles();
+  } else {
+    alert('Failed to save');
+  }
+}
+
+async function deleteCA() {
+  const dateStr = document.getElementById('ca-date').value;
+  if (!dateStr || !confirm(`Delete ${dateStr}?`)) return;
+  
+  const res = await fetch(`/api/admin/ca/${dateStr}`, { method: 'DELETE' });
+  if (res.ok) {
+    document.getElementById('ca-date').value = '';
+    document.getElementById('ca-content').value = '';
+    document.getElementById('ca-delete-btn').style.display = 'none';
+    loadCAFiles();
+  } else {
+    alert('Failed to delete');
+  }
+}
+
+// Init
+window.addEventListener('DOMContentLoaded', () => {
+  loadUsers();
+  loadCAFiles();
+});
+</script>
+{% endblock %}
