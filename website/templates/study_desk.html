@@ -71,7 +71,11 @@
   <div class="k-notebook-drawer" id="k-notebook-drawer">
     <div class="k-notebook-header">
       <h2>My Notebook</h2>
-      <button class="k-btn-close" id="btn-close-notebook">×</button>
+      <div>
+        <label for="img-upload-input" class="k-btn-image" title="Insert Image">&#128247;</label>
+        <input type="file" id="img-upload-input" accept="image/*" style="display:none;">
+        <button class="k-btn-close" id="btn-close-notebook">×</button>
+      </div>
     </div>
     <div class="k-notebook-body">
       <p class="k-notebook-desc">Type your personal notes here. They are saved automatically.</p>
@@ -336,6 +340,9 @@ nav.navbar { display: none !important; }
   padding: 1rem; line-height: 1.6; font-size:0.95rem; background: rgba(128,128,128,0.05);
   overflow-y:auto;
 }
+.k-rich-editor img { max-width: 100%; border-radius: 6px; margin: 10px 0; border: 1px solid var(--k-border); display: block; }
+.k-btn-image { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--k-text); margin-right: 15px; opacity: 0.8; }
+.k-btn-image:hover { opacity: 1; color: var(--gold); }
 
 /* --- CONTEXT MENU (HIGHLIGHTING) --- */
 .k-context-menu {
@@ -554,6 +561,54 @@ editor.addEventListener('input', () => {
       saveIndicator.textContent = 'Notes saved ✓';
     });
   }, 1000);
+});
+
+// --- IMAGE UPLOAD LOGIC ---
+function insertImageToEditor(file) {
+  if (!file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const img = new Image();
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const MAX_WIDTH = 800; // Cap width for performance/storage
+      let w = img.width, h = img.height;
+      if (w > MAX_WIDTH) { h = Math.round((h * MAX_WIDTH) / w); w = MAX_WIDTH; }
+      canvas.width = w; canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, w, h);
+      const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.85);
+      
+      editor.focus();
+      document.execCommand('insertImage', false, compressedDataUrl);
+      
+      // Auto-save manually
+      saveIndicator.textContent = 'Saving image...';
+      fetch('/api/user-notes/' + TOPIC_ID, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: editor.innerHTML })
+      }).then(() => { saveIndicator.textContent = 'Image saved ✓'; });
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+document.getElementById('img-upload-input').addEventListener('change', e => {
+  if (e.target.files && e.target.files[0]) insertImageToEditor(e.target.files[0]);
+  e.target.value = '';
+});
+
+editor.addEventListener('paste', e => {
+  const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+  for (let index in items) {
+    const item = items[index];
+    if (item.kind === 'file' && item.type.startsWith('image/')) {
+      e.preventDefault();
+      insertImageToEditor(item.getAsFile());
+    }
+  }
 });
 
 // --- HIGHLIGHTING LOGIC ---
