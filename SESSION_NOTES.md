@@ -626,4 +626,31 @@ Replaced the chaotic horizontal scrolling tab bar with a dual-mode professional 
 3. **Admin Dashboard** — Add current affairs directly from the web UI.
 4. **Offline Mode** — Service worker support for studying without internet.
 
+---
+---
 
+# Session 6 — Google OAuth Authentication
+
+**Date:** April 16, 2026
+**Branch:** `main` (auto-pushes to `master` for Render deploy)
+
+---
+
+## What Was Done This Session
+
+### 1. Google OAuth Secure Implementation
+- **CSRF Protection:** Upgraded the raw OAuth flow to include standard `state` validation, securing the authentication loop against man-in-the-middle and CSRF attacks.
+- **Callback Verification:** Modified `auth_google_callback` to enforce matching states between the `request.session` and the redirected query parameters.
+
+### 2. Environment Variables & dotenv Support
+- **python-dotenv:** Integrated `dotenv` into the boot cycle of `server.py` to seamlessly parse `.env` files locally. Added `python-dotenv>=1.0.0` to `requirements.txt`.
+- **Git Ignore Updates:** Explicitly configured `.gitignore` to block the `.env` file, ensuring API credentials remain entirely private and local.
+- **Template Configuration:** Created a `.env.example` mapping out the basic structure required for `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET`.
+
+### 3. Graceful UI Error Handling
+- Prevented unhandled 500 exceptions from firing when OAuth isn't configured yet.
+- Integrated query parameter parsing into the `login_page` route.
+- Mapped error codes (`oauth_not_configured`, `oauth_failed`, `invalid_state`, `no_email`) explicitly to user-friendly messages displayed natively within the `<div class="auth-error">` block in `login.html`.
+
+## Technical Reference
+- **Render Deployment Note:** Secret Keys are blocked by `.gitignore`. The `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` must be uploaded directly via the Environment Variables tab in the Render Dashboard in order for Google Login to work on production infrastructure.
