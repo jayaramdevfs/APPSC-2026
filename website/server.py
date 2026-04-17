@@ -691,7 +691,6 @@ G2_STRUCTURE = {
     },
 }
 
-
 # ---------------------------------------------------------------------------
 # Page routes
 # ---------------------------------------------------------------------------
@@ -2008,7 +2007,7 @@ SHARED_TOPICS = {
                  {"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"}],
     "m4-ec-06": [{"id": "pre-ec-03", "label": "G1 Prelims: Agriculture, Industry & Economic Reforms"},
                  {"id": "p2-eco-03", "label": "G2 Paper 2: Agriculture, Industry & Services"}],
-    "m4-ec-07": [{"id": "m4-ap-05",  "label": "G1 Mains P4: Infrastructure Development in AP"},
+    "m4-ec-07": [{"id": "m4-ap-05",  "label": "G1 Mains P4: Infrastructure in AP"},
                  {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
     "m4-ap-01": [{"id": "pre-ec-05", "label": "G1 Prelims: Andhra Pradesh Economy"},
                  {"id": "p2-eco-04", "label": "G2 Paper 2: AP Economy & Public Finance"}],
@@ -2597,7 +2596,7 @@ TELUGU_STRUCTURE = {
                         "points": [
                             "మనుచరిత్ర — Allasani Peddana; first Telugu Prabandha; story of Manu and Varuthini",
                             "అముక్తమాల్యద — Krishna Devaraya; story of Andal (Godadevi); greatest Telugu kavya",
-                            "రాఘవపాండవీయం — Errana; dvyartha kavya describing both Ramayana and Mahabharata simultaneously",
+                        "రాఘవపాండవీయం — Errana; dvyartha kavya describing both Ramayana and Mahabharata simultaneously",
                             "కాళహస్తి మాహాత్మ్యం — Dhurjati; devotional Shaiva prabandha",
                             "పాండురంగ మాహాత్మ్యం — Tenali Ramakrishna; Vaishnava devotional work",
                             "కళాపూర్ణోదయం — Pingali Suranna; early realistic novel-like prabandha",
@@ -2731,7 +2730,7 @@ def _progress_con():
 
 
 async def api_mark_studied(request: Request):
-    """POST {topic_id, subject, topic_title} — upsert topic_progress + auto-link shared twins."""
+    """POST {topic_id, subject, topic_title, action} — upsert topic_progress or delete if action='unmark'."""
     user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Not logged in"}, status_code=401)
@@ -2743,11 +2742,29 @@ async def api_mark_studied(request: Request):
     topic_id    = str(body.get("topic_id", "")).strip()
     subject     = str(body.get("subject", "")).strip()
     topic_title = str(body.get("topic_title", "")).strip()
+    action      = str(body.get("action", "")).strip().lower()
+
     if not topic_id or not subject:
         return JSONResponse({"error": "topic_id and subject required"}, status_code=400)
 
-    today_str = date.today().isoformat()
     con = _progress_con()
+    
+    if action == "unmark":
+        targets = [topic_id]
+        twins = SHARED_TOPICS.get(topic_id, [])
+        for twin in twins:
+            # Handle both string IDs and dictionary records
+            tid = twin["id"] if isinstance(twin, dict) else twin
+            targets.append(tid)
+            
+        for tid in targets:
+            con.execute("DELETE FROM topic_progress WHERE user_id=? AND topic_id=?", (user["id"], tid))
+            con.execute("DELETE FROM revision_log WHERE user_id=? AND topic_id=?", (user["id"], tid))
+        con.commit()
+        con.close()
+        return JSONResponse({"status": "unmarked", "topic_id": topic_id})
+
+    today_str = date.today().isoformat()
 
     def _upsert(uid, tid, subj, title):
         existing = con.execute(
@@ -2769,19 +2786,17 @@ async def api_mark_studied(request: Request):
 
     first_studied = _upsert(user["id"], topic_id, subject, topic_title)
 
-    # Auto-link shared twins — mark them studied too (same first_studied date)
+    # Twins for marking
     twins = SHARED_TOPICS.get(topic_id, [])
     for twin in twins:
-        twin_subj = "g2" if twin["id"].startswith(("scr-", "p1-", "p2-")) else "g1"
-        _upsert(user["id"], twin["id"], twin_subj, twin["label"])
+        twin_id = twin["id"] if isinstance(twin, dict) else twin
+        twin_label = twin.get("label", topic_title) if isinstance(twin, dict) else topic_title
+        twin_subj = "g2" if twin_id.startswith(("scr-", "p1-", "p2-")) else "g1"
+        _upsert(user["id"], twin_id, twin_subj, twin_label)
 
     con.commit()
-    existing_row = con.execute(
-        "SELECT study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
-        (user["id"], topic_id)
-    ).fetchone()
     con.close()
-    return JSONResponse({"ok": True, "first_studied": first_studied, "study_count": existing_row["study_count"]})
+    return JSONResponse({"status": "success", "topic_id": topic_id})
 
 
 async def api_mark_revised(request: Request):
@@ -2961,6 +2976,32 @@ async def api_progress_grid(request: Request):
 
     extract_topics(G2_STRUCTURE, "Group II")
     extract_topics(G1_STRUCTURE, "Group I")
+
+    # --- Aptitude ---
+    for section in APT_STRUCTURE.get("sections", []):
+        section_title = section.get("title", "Aptitude")
+        for topic in section.get("topics", []):
+            topics.append({
+                "id": topic["id"],
+                "title": topic["title"],
+                "exam": "Aptitude",
+                "area": section_title,
+                "section": section_title
+            })
+
+    # --- Telugu ---
+    for cat_key, cat in TELUGU_STRUCTURE.items():
+        cat_label = cat.get("label", cat_key.title())
+        for sec_key, sec in cat.get("sections", {}).items():
+            sec_label = sec.get("label", sec_key.title())
+            for topic_key, topic in sec.get("topics", {}).items():
+                topics.append({
+                    "id": f"telugu:{cat_key}:{sec_key}:{topic_key}",
+                    "title": topic["title"],
+                    "exam": "Telugu",
+                    "area": cat_label,
+                    "section": sec_label
+                })
 
     # 2. Get User Progress
     con = _progress_con()

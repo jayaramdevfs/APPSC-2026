@@ -13,12 +13,17 @@
   <!-- Top App Bar -->
   <div class="k-topbar" id="k-topbar">
     <div class="k-topbar-left">
-      <a href="javascript:history.back()" class="k-btn-library"><span class="icon">←</span> <span class="text">Back to Library</span></a>
+      <a href="/" class="nav-brand" style="text-decoration: none;">
+        <span class="nav-title" style="font-size: 1.1rem; letter-spacing: 0.5px;">GroupsGuru</span>
+      </a>
     </div>
     <div class="k-topbar-center">
       <h1 class="k-book-title" id="sd-topic-badge">{{ topic_id }}</h1>
     </div>
     <div class="k-topbar-right">
+      <button class="k-btn-action" id="btn-mark-studied" title="Mark as Studied">
+        <span class="icon">✓</span> <span class="text">Mark as Finished</span>
+      </button>
       <button class="k-btn-action" id="btn-aa" title="Appearance (Aa)">Aa</button>
       <button class="k-btn-action highlight" id="btn-notebook" title="My Notebook">📝 Notebook</button>
       <button class="k-btn-action" onclick="exportPDF('study_notes')" title="Export">↓ Export</button>
@@ -232,6 +237,14 @@ nav.navbar { display: none !important; }
 .k-btn-action.highlight:hover {
   background: var(--gold); color: #111;
 }
+
+#btn-mark-studied.studied {
+  background: var(--gold); color: #111; border-color: var(--gold);
+}
+#btn-mark-studied.studied:hover {
+  background: #E68A2E;
+}
+#btn-mark-studied .icon { font-weight: 800; font-size: 1rem; }
 
 /* --- FOOTER (Kindle Refined) --- */
 .k-footer {
@@ -534,6 +547,53 @@ fetch('/api/user-notes/' + TOPIC_ID)
       document.getElementById('my-notes-editor').innerHTML = data.content;
     }
   });
+
+// Check Study Status
+const btnMarkStudied = document.getElementById('btn-mark-studied');
+let isTopicStudied = false;
+
+function refreshStudyStatus() {
+  fetch('/api/progress/topic-status/' + TOPIC_ID)
+    .then(r => r.json())
+    .then(data => {
+      isTopicStudied = !!data.studied;
+      if (isTopicStudied) {
+        btnMarkStudied.classList.add('studied');
+        btnMarkStudied.querySelector('.text').textContent = 'Finished ✓';
+      } else {
+        btnMarkStudied.classList.remove('studied');
+        btnMarkStudied.querySelector('.text').textContent = 'Mark as Finished';
+      }
+    });
+}
+refreshStudyStatus();
+
+btnMarkStudied.addEventListener('click', () => {
+  const action = isTopicStudied ? 'unmark' : 'mark';
+  const topicTitleBadge = document.getElementById('sd-topic-badge');
+  const actualTitle = topicTitleBadge ? topicTitleBadge.textContent : TOPIC_ID;
+  
+  fetch('/api/progress/mark-studied', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ 
+      topic_id: TOPIC_ID, 
+      subject: 'Group I', 
+      topic_title: actualTitle,
+      action: action 
+    })
+  }).then(r => {
+    if (!r.ok) throw new Error('Server error');
+    return r.json();
+  })
+    .then(() => {
+      refreshStudyStatus();
+    })
+    .catch(err => {
+      console.error('Progress sync failed:', err);
+      alert('Could not update progress. Please check your connection.');
+    });
+});
 
 // --- UI INTERACTIONS ---
 const app = document.getElementById('kindle-app');
