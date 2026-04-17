@@ -202,35 +202,35 @@ nav.navbar { display: none !important; }
   flex-shrink: 0;
   z-index: 50;
 }
+.k-book-title {
+  margin: 0; font-size: 1.25rem; font-weight: 800; color: var(--gold) !important;
+  text-align: center; letter-spacing: 0.5px;
+}
 .k-btn-library {
   display: flex; align-items: center; gap: 8px;
   background: var(--surface); color: var(--gold);
-  padding: 8px 16px; border-radius: 20px; font-weight: 600; text-decoration: none;
-  font-size: 0.9rem; border: 1px solid var(--gold); transition: all 0.3s ease;
+  padding: 8px 16px; border-radius: 20px; font-weight: 700; text-decoration: none;
+  font-size: 0.85rem; border: 1px solid var(--gold); transition: all 0.3s ease;
 }
-.k-btn-library:hover { background: var(--gold); color: #000; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255, 153, 51, 0.3); }
+.k-btn-library:hover { background: var(--gold); color: #000; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255,153,51,0.3); }
 
 .k-btn-action {
-  background: var(--navy); border: 1px solid var(--border); color: var(--gold);
-  padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.9rem;
+  background: var(--surface); border: 1px solid var(--border); color: var(--white);
+  padding: 8px 16px; border-radius: 6px; font-weight: 600; font-size: 0.85rem;
   cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   margin-left: 8px; font-family: inherit;
-  display: inline-flex; align-items: center; gap: 6px;
+  display: inline-flex; align-items: center; gap: 8px;
 }
 .k-btn-action:hover {
-  background: var(--surface);
-  border-color: var(--gold);
+  background: var(--elevated); border-color: var(--gold); color: var(--gold);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4), 0 0 8px rgba(255, 153, 51, 0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4), 0 0 10px rgba(255,153,51,0.2);
 }
 .k-btn-action.highlight {
-  background: rgba(255, 153, 51, 0.1);
-  border-color: var(--gold);
-  color: var(--gold);
+  background: rgba(255, 153, 51, 0.1); border: 1.5px solid var(--gold); color: var(--gold);
 }
 .k-btn-action.highlight:hover {
-  background: var(--gold);
-  color: #000;
+  background: var(--gold); color: #111;
 }
 
 /* --- FOOTER (Kindle Refined) --- */
@@ -243,24 +243,26 @@ nav.navbar { display: none !important; }
 /* --- FAB TIMER --- */
 .k-fab-timer {
   position: fixed; bottom: 30px; right: 30px;
-  background: var(--navy); border: 2px solid var(--gold);
-  color: var(--gold); padding: 12px 22px; border-radius: 50px;
+  background: var(--navy); border: 2.5px solid var(--gold);
+  color: var(--gold); padding: 12px 24px; border-radius: 50px;
   display: flex; align-items: center; gap: 12px;
   font-family: var(--k-font-sans); font-weight: 800;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.7);
   cursor: pointer; z-index: 1100;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .k-fab-timer:hover {
-  transform: scale(1.1) translateY(-5px);
+  transform: scale(1.1) translateY(-6px);
   background: var(--surface);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 20px rgba(255, 153, 51, 0.3);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 25px rgba(255, 153, 51, 0.4);
 }
-.k-fab-timer .icon-saffron { width: 22px; height: 22px; color: var(--gold); }
+.k-fab-timer .icon-saffron { width: 24px; height: 24px; color: var(--gold); transition: transform 0.3s ease; }
+.k-fab-timer:hover .icon-saffron { transform: rotate(15deg) scale(1.1); }
 .k-fab-timer.highlight {
   background: var(--gold); color: #000;
   animation: pulse-gold 2s infinite;
 }
+.k-fab-timer.highlight .icon-saffron { color: #000; }
 
 @keyframes pulse-gold {
   0% { box-shadow: 0 0 0 0 rgba(255, 153, 51, 0.6); }
