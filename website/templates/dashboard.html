@@ -26,6 +26,99 @@
     <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label">Due Today</span></div>
 </div>
 
+<!-- Curriculum Heatmap (The Heart) -->
+<div class="curriculum-container">
+    <div class="curriculum-header">
+        <h3 class="curriculum-title">Curriculum Heatmap</h3>
+        <span class="curriculum-subtitle">Super-Interactive Syllabus Progress</span>
+    </div>
+    <div id="syllabus-grid-belt" class="syllabus-belt">
+        <!-- JS populated groups of tiles -->
+        <div class="syllabus-loading">Generating Grid...</div>
+    </div>
+</div>
+
+<style>
+.curriculum-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.curriculum-header { margin-bottom: 1.25rem; }
+.curriculum-title { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin: 0; letter-spacing: 0.05em;}
+.curriculum-subtitle { font-size: 0.75rem; color: var(--muted); display: block; margin-top: 0.2rem; }
+
+.syllabus-belt {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.syllabus-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.syllabus-exam-label {
+    font-size: 0.7rem; font-weight: 700; color: var(--gold);
+    margin-bottom: 0.5rem; width: 100%; border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem; opacity: 0.8;
+}
+
+.ctile {
+    width: 14px;
+    height: 14px;
+    background: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+}
+.ctile:hover {
+    transform: scale(2.0);
+    z-index: 100;
+    border-color: var(--gold);
+    box-shadow: 0 0 15px rgba(255,153,51,0.5);
+}
+.ctile.done {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 8px rgba(255,153,51,0.2);
+}
+.ctile.done:hover {
+    background: #FFF;
+}
+
+/* Tooltip wrapper info */
+.ctile::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    border: 1px solid var(--gold);
+    z-index: 200;
+}
+.ctile:hover::after {
+    opacity: 1;
+    bottom: 180%;
+}
+</style>
+
 <!-- CA + Revision row -->
 <div class="dash-grid">
 
@@ -112,6 +205,43 @@ fetch('/api/progress/summary')
     })
     .catch(() => {
         document.getElementById('stat-studied').textContent = localStudied.length;
+    });
+
+// ---- Load Curriculum Grid ----
+fetch('/api/progress/grid')
+    .then(r => r.json())
+    .then(data => {
+        const belt = document.getElementById('syllabus-grid-belt');
+        if (!data || !data.length) {
+            belt.innerHTML = '<div class="syllabus-loading" style="color:var(--faint)">No data found.</div>';
+            return;
+        }
+
+        // Group by Exam + Section (Subject)
+        const categories = {};
+        data.forEach(t => {
+            const key = `${t.exam} - ${t.area}`;
+            if (!categories[key]) categories[key] = [];
+            categories[key].push(t);
+        });
+
+        let html = '';
+        for (const [key, topics] of Object.entries(categories)) {
+            html += `<div class="syllabus-exam-label">${key}</div>`;
+            html += `<div class="syllabus-group">`;
+            topics.forEach(t => {
+                const doneClass = t.completed ? 'done' : '';
+                html += `<div class="ctile ${doneClass}" 
+                             data-title="${t.title}" 
+                             onclick="window.location='/study-desk/${t.id}'"></div>`;
+            });
+            html += `</div>`;
+        }
+        belt.innerHTML = html;
+    })
+    .catch(err => {
+        console.error("Grid load failed", err);
+        document.getElementById('syllabus-grid-belt').innerHTML = '<div class="syllabus-loading" style="color:var(--faint)">Failed to load syllabus grid.</div>';
     });
 
 // ---- Load revisions due today ----

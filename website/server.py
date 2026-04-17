@@ -2935,6 +2935,59 @@ async def api_progress_summary(request: Request):
     })
 
 
+async def api_progress_grid(request: Request):
+    """GET — Returns a flattened list of all syllabus topics and their completion status."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse([])
+
+    # 1. Gather all topic IDs from Group 2 and Group 1
+    topics = []
+    
+    # helper to traverse syllabus structures
+    def extract_topics(structure, exam_label):
+        for area_key, area in structure.items():
+            area_label = area.get("label", area_key.title())
+            for section in area.get("sections", []):
+                section_title = section.get("title", "Other")
+                for topic in section.get("topics", []):
+                    topics.append({
+                        "id": topic["id"],
+                        "title": topic["title"],
+                        "exam": exam_label,
+                        "area": area_label,
+                        "section": section_title
+                    })
+
+    extract_topics(G2_STRUCTURE, "Group II")
+    extract_topics(G1_STRUCTURE, "Group I")
+
+    # 2. Get User Progress
+    con = _progress_con()
+    prog_rows = con.execute(
+        "SELECT topic_id, study_count FROM topic_progress WHERE user_id=?",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+
+    done_ids = {r["topic_id"]: r["study_count"] for r in prog_rows}
+
+    # 3. Merge
+    results = []
+    for t in topics:
+        results.append({
+            "id": t["id"],
+            "title": t["title"],
+            "exam": t["exam"],
+            "area": t["area"],
+            "section": t["section"],
+            "completed": t["id"] in done_ids,
+            "count": done_ids.get(t["id"], 0)
+        })
+
+    return JSONResponse(results)
+
+
 # ---------------------------------------------------------------------------
 # Dashboard
 # ---------------------------------------------------------------------------
@@ -3812,6 +3865,7 @@ routes = [
     Route("/api/progress/due-today",              api_due_today),
     Route("/api/progress/batch-status",           api_batch_status),
     Route("/api/progress/summary",                api_progress_summary),
+    Route("/api/progress/grid",                   api_progress_grid),
     Route("/admin",                               admin_page),
     Route("/api/admin/users",                     api_admin_users),
     Route("/api/admin/users/{id}",                api_admin_delete_user,   methods=["DELETE"]),
