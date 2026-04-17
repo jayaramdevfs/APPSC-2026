@@ -32,9 +32,9 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `scr-geo-01` | General & Physical Geography | pre-ge-01, pre-ge-02, m2-ge-01, m2-ge-04 |
-| ⬜ | `scr-geo-02` | Economic Geography of India & AP | pre-ge-04, m2-ge-02 |
-| ⬜ | `scr-geo-03` | Human Geography of India & AP | pre-ge-03, m2-ge-03 |
+| ✅ | `scr-geo-01` | General & Physical Geography | pre-ge-01, pre-ge-02, m2-ge-01, m2-ge-04 | (Gemini, 2026-04-17) |
+| ✅ | `scr-geo-02` | Economic Geography of India & AP | pre-ge-04, m2-ge-02 | (Gemini, 2026-04-17) |
+| ✅ | `scr-geo-03` | Human Geography of India & AP | pre-ge-03, m2-ge-03 | (Gemini, 2026-04-17) |
 
 ---
 
@@ -158,8 +158,8 @@
 
 | Batch | Notes to Write | Topics Covered (via twins) | Status |
 |-------|---------------|---------------------------|--------|
-| 1 — History | 3 | ~15 | ⬜ |
-| 2 — Geography | 3 | ~7 | ⬜ |
+| 1 — History | 3 | ~15 | ✅ |
+| 2 — Geography | 3 | ~7 | ✅ |
 | 3 — Society | 3 | ~5 | ⬜ |
 | 4 — Polity | 6 | ~10 | ⬜ |
 | 5 — Economy | 5 | ~12 | ⬜ |
@@ -170,4 +170,4 @@
 | 10 — AP Economy | 1 | ~3 | ⬜ |
 | 11 — Languages | 2 | — | ⬜ |
 | 12 — CA/Essay | 3 | ~2 | ⬜ |
-| **Total** | **43 notes** | **~71 twin IDs** | 0/43 |
+| **Total** | **43 notes** | **~71 twin IDs** | 6/43 |

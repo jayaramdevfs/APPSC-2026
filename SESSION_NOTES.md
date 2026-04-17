@@ -1,5 +1,13 @@
 # APPSC 2026 — Session Notes & Handoff Doc
 
+## The Heart: Student Desk Philosophy
+The **Student Desk** (Kindle-style reader) is the absolute core of the GroupsGuru platform. It is not just a viewer; it is a focus-enforcement machine. 
+1. **Focus First**: All "raw data" (percentages, save flags) are secondary or hidden to ensure a clean, distraction-free environment.
+2. **Branding Integrity**: The **Saffron** accent and **Grid Background** are non-negotiable branding tokens that must be maintained across all content.
+3. **Intellectual Discipline**: The **Pomodoro Coach** isn't a leisure tool; it's an assertive instructor that guides the student's study rhythm (25m Focus / 5m Break).
+
+---
+
 ## What Was Built
 A full-stack study portal for APPSC 2026 exam preparation.
 - **Live URL**: https://appsc.groupsguru.in

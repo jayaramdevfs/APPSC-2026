@@ -19,7 +19,6 @@
       <h1 class="k-book-title" id="sd-topic-badge">{{ topic_id }}</h1>
     </div>
     <div class="k-topbar-right">
-      <button class="k-btn-action highlight" id="btn-coach" title="Intellectual Time Coach">🍅 <span id="coach-time-display">25:00</span></button>
       <button class="k-btn-action" id="btn-aa" title="Appearance (Aa)">Aa</button>
       <button class="k-btn-action highlight" id="btn-notebook" title="My Notebook">📝 Notebook</button>
       <button class="k-btn-action" onclick="exportPDF('study_notes')" title="Export">↓ Export</button>
@@ -60,11 +59,15 @@
     </div>
   </div>
 
-  <!-- Bottom Progress Footer -->
+  <!-- Bottom Progress Bar (Super Subtle Saffron) -->
   <div class="k-footer" id="k-footer">
-    <div class="k-footer-left" id="k-footer-text">Loc 1 • 0%</div>
-    <div class="k-footer-center" id="sd-auto-save">All changes saved locally</div>
-    <div class="k-footer-right">15 mins left in chapter</div>
+    <div id="k-progress-bar" style="width: 0%; height: 3px; background: var(--gold); transition: width 0.3s ease;"></div>
+  </div>
+
+  <!-- Floating Pomodoro Coach -->
+  <div class="k-fab-timer" id="btn-coach" title="Intellectual Time Coach">
+    <span class="icon">🍅</span>
+    <span id="coach-time-display">25:00</span>
   </div>
 
   <!-- Notebook Slide-in Drawer -->
@@ -95,14 +98,11 @@
     <button class="k-action-btn" data-action="remove">✗ Clear</button>
   </div>
 
-  <!-- Intellectual Coach Overlay -->
-  <div class="k-coach-overlay" id="k-coach-overlay" style="display:none;">
-    <div class="k-coach-modal">
-      <h2 id="coach-title">Take A Break</h2>
-      <p id="coach-message">You've studied closely for 25 minutes. To maximize retention, you must take a 5-minute break. Step away from the screen.</p>
-      <button class="k-coach-btn" id="coach-btn-action">Start 5m Break</button>
-      <button class="k-coach-btn-secondary" id="coach-btn-skip">Skip Request (Not Recommended)</button>
-    </div>
+  <!-- Break Lock Overlay -->
+  <div class="k-break-lock" id="k-break-lock">
+    <h2>Mandatory Break</h2>
+    <p>Focus is a limited resource. Step away from the screen for 5 minutes.</p>
+    <div id="break-timer-display" style="font-size: 3rem; font-weight: 800; color: var(--gold);">05:00</div>
   </div>
 
 </div>
@@ -191,53 +191,52 @@ nav.navbar { display: none !important; }
 /* --- TOP BAR --- */
 .k-topbar {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 1.5rem; height: 64px;
+  padding: 0 1.5rem; height: 60px;
   background: var(--navy);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  border-bottom: 2px solid var(--border);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
   font-family: var(--k-font-sans);
   flex-shrink: 0;
-  transition: transform 0.3s ease;
   z-index: 50;
 }
-.k-topbar.hidden { transform: translateY(-100%); position: absolute; width: 100%; }
 
-.k-btn-library {
-  display: flex; align-items: center; gap: 8px;
-  background: var(--surface); color: var(--white);
-  padding: 8px 16px; border-radius: 20px; font-weight: 600; text-decoration: none;
-  font-size: 0.9rem; border: 1px solid var(--border); transition: 0.2s;
-}
-.k-btn-library:hover { background: var(--card); border-color: var(--gold); color: var(--gold); }
-
-.k-btn-action {
-  background: transparent; border: 1px solid var(--border); color: var(--white);
-  padding: 8px 16px; border-radius: 6px; font-weight: 500; font-size: 0.9rem;
-  cursor: pointer; transition: 0.2s; margin-left: 8px; font-family: inherit;
-}
-.k-btn-action:hover { background: var(--surface); color: var(--gold); border-color: var(--gold); }
-.k-btn-action.highlight { background: rgba(255, 153, 51, 0.1); border-color: var(--gold); color: var(--gold); }
-.k-btn-action.highlight:hover { background: var(--gold); color: #000; }
-
-.k-book-title {
-  margin: 0; font-size: 1.15rem; font-weight: 700; text-align: center; color: var(--white); letter-spacing: 0.5px;
-}
-
-/* --- FOOTER --- */
+/* --- FOOTER (Kindle Refined) --- */
 .k-footer {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 1.5rem; height: 40px;
-  font-family: var(--k-font-sans);
-  font-size: 0.85rem; color: var(--k-text); opacity: 0.7;
-  flex-shrink: 0;
+  position: fixed; bottom: 0; left: 0; right: 0;
+  height: 4px; background: rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
-/* --- READER CONTENT MODE --- */
+/* --- FAB TIMER --- */
+.k-fab-timer {
+  position: fixed; bottom: 30px; right: 30px;
+  background: var(--navy); border: 2px solid var(--gold);
+  color: var(--gold); padding: 12px 18px; border-radius: 50px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--k-font-sans); font-weight: 800;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  cursor: pointer; z-index: 1100;
+  transition: transform 0.2s, background 0.2s;
+}
+.k-fab-timer:hover { transform: scale(1.05); background: var(--surface); }
+.k-fab-timer .icon { font-size: 1.2rem; }
+.k-fab-timer.highlight { background: var(--gold); color: #000; }
+
+/* Break Lock */
+.k-break-lock {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); z-index: 1500;
+    display: none; flex-direction: column; justify-content: center; align-items: center;
+    backdrop-filter: blur(10px); color: white; text-align: center;
+}
+.k-break-lock h2 { color: var(--gold); font-size: 2rem; margin-bottom: 1rem; }
+
+/* Reader Scroll adjustments */
 .k-reader-scroll {
   flex-grow: 1; overflow-y: auto; overflow-x: hidden;
   display: flex; justify-content: center;
   scroll-behavior: smooth;
-  padding-bottom: 50px;
+  padding-bottom: 80px; /* space for bar */
 }
 .k-reader-scroll::-webkit-scrollbar { width: 8px; }
 .k-reader-scroll::-webkit-scrollbar-thumb { background: var(--k-border); border-radius: 4px; }
@@ -547,15 +546,15 @@ btnCloseNotebook.addEventListener('click', () => {
   notebookDrawer.classList.remove('open');
 });
 
-// Scroll Progress
+// Scroll Progress (Subtle Saffron Bar)
 const readerScroll = document.getElementById('k-reader-scroll');
-const pgtxt = document.getElementById('k-footer-text');
+const pgtxt = document.getElementById('k-progress-bar');
 readerScroll.addEventListener('scroll', () => {
   const scrollTop = readerScroll.scrollTop;
   const scrollHeight = readerScroll.scrollHeight - readerScroll.clientHeight;
   if(scrollHeight > 0) {
     const pct = Math.round((scrollTop / scrollHeight) * 100);
-    pgtxt.textContent = `Page ${Math.ceil((pct/100)*20) || 1} • ${pct}%`;
+    pgtxt.style.width = pct + '%';
   }
 });
 
@@ -814,7 +813,16 @@ const TimeCoach = {
   triggerWelcome() {
     document.getElementById('coach-title').textContent = "Time Management Coach";
     const hrs = (this.minutesSpent / 60).toFixed(2);
-    document.getElementById('coach-message').innerHTML = `You have invested ${hrs} active hours into this module so far.<br><br>I am your Time Coach. To maximize retention, you must follow the 25-minute Pomodoro rule. Begin your focus session now.`;
+    document.getElementById('coach-message').innerHTML = `
+      <div style="text-align:left; border-left: 3px solid var(--gold); padding-left: 15px;">
+        <b>Structural Persistence:</b> You have invested ${hrs} active hours into this module.
+      </div>
+      <br>
+      As your Time Coach, I am here to enforce the <b>25-minute Pomodoro rule</b>. 
+      Scientific studies prove that focus drops sharply after 25 minutes. 
+      <br><br>
+      <b>Instruction:</b> Start your focus block now.
+    `;
     
     const actionBtn = document.getElementById('coach-btn-action');
     const skipBtn = document.getElementById('coach-btn-skip');
@@ -825,81 +833,72 @@ const TimeCoach = {
       this.pomodoroTimeLeft = 25 * 60;
       this.updateDisplay();
       this.start();
-      
-      // Reset for break time next
-      actionBtn.textContent = "Start 5m Break";
-      skipBtn.style.display = 'inline-block';
-      actionBtn.onclick = () => this.startBreak();
     };
     
-    skipBtn.style.display = 'none'; // Enforce starting
+    skipBtn.style.display = 'none'; 
     this.overlay.style.display = 'flex';
   },
-  
+
   updateDisplay() {
     let m = Math.floor(this.pomodoroTimeLeft / 60);
     let s = this.pomodoroTimeLeft % 60;
-    this.displayEl.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    const timeStr = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    this.displayEl.textContent = timeStr;
+    if (this.isBreak) {
+        document.getElementById('break-timer-display').textContent = timeStr;
+    }
   },
-  
+
   toggle() {
     if (this.isActive) this.pause();
     else this.start();
   },
-  
+
   start() {
     this.isActive = true;
     this.displayEl.parentElement.classList.add('highlight');
-    this.displayEl.parentElement.style.opacity = '1';
     clearInterval(this.interval);
     this.interval = setInterval(() => {
       if (this.pomodoroTimeLeft <= 0) {
-        this.triggerIntervention();
+        if (!this.isBreak) this.triggerIntervention();
+        else this.endBreak();
       } else {
         this.pomodoroTimeLeft--;
         this.updateDisplay();
       }
     }, 1000);
   },
-  
+
   pause() {
     this.isActive = false;
     this.displayEl.parentElement.classList.remove('highlight');
-    this.displayEl.parentElement.style.opacity = '0.5';
     clearInterval(this.interval);
   },
-  
+
   triggerIntervention() {
     this.pause();
-    document.getElementById('coach-title').textContent = "Time Execution Complete";
-    const hrs = (this.minutesSpent / 60).toFixed(2);
-    document.getElementById('coach-message').innerHTML = `You have studied closely for 25 minutes.<br><br><b style="color:var(--gold);">Topic Analytics:</b> You have invested ${hrs} active hours into this specific module.<br><br>To maximize structural retention, you must take a 5-minute break now. Step away from the screen.`;
+    this.isBreak = true;
+    document.getElementById('k-break-lock').style.display = 'flex';
+    this.pomodoroTimeLeft = 5 * 60; 
+    this.start();
+  },
+
+  endBreak() {
+    this.pause();
+    this.isBreak = false;
+    document.getElementById('k-break-lock').style.display = 'none';
     
+    // Prompt to restart focus
+    document.getElementById('coach-title').textContent = "Break Complete";
+    document.getElementById('coach-message').textContent = "Your brain is refreshed. Start your next 25-minute focus block.";
     const actionBtn = document.getElementById('coach-btn-action');
-    const skipBtn = document.getElementById('coach-btn-skip');
-    actionBtn.textContent = "Start 5m Break";
-    skipBtn.style.display = 'inline-block';
-    
-    actionBtn.onclick = () => this.startBreak();
-    skipBtn.onclick = () => this.skipBreak();
-    
+    actionBtn.textContent = "Start Next Focus Block";
+    actionBtn.onclick = () => {
+        this.overlay.style.display = 'none';
+        this.pomodoroTimeLeft = 25 * 60;
+        this.start();
+    };
     this.overlay.style.display = 'flex';
-  },
-  
-  startBreak() {
-    this.overlay.style.display = 'none';
-    this.pomodoroTimeLeft = 5 * 60; // 5 min break
-    this.updateDisplay();
-    this.start();
-    this.displayEl.parentElement.style.border = '1px dashed var(--gold)'; 
-  },
-  
-  skipBreak() {
-    this.overlay.style.display = 'none';
-    this.pomodoroTimeLeft = 25 * 60; // reset
-    this.updateDisplay();
-    this.start();
-    this.displayEl.parentElement.style.border = '1px solid var(--gold)';
   }
 };
 TimeCoach.init();
