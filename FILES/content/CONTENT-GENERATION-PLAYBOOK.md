@@ -1,6 +1,13 @@
 # GroupsGuru — Content Generation Playbook
-## Universal Instructions for Claude / Gemini / ChatGPT
-### Version 1.0 | 2026-03-24
+
+## 0. GLOBAL GOVERNANCE RULES (URGENT/NON-NEGOTIABLE)
+
+1.  **Language Governance**: Regardless of the user's input language, the agent **MUST** respond only in **English**. Documentation and project tracking must be uniform.
+2.  **Branding Integrity**: 
+    - **Primary Accent**: Saffron (#FF9933) / `var(--gold)`.
+    - **Theme**: Dark Luxury (Anthropic Claude-Code style). 
+    - **Rule**: Do NOT introduce secondary colors (Blue, Green, etc.) for UI elements unless explicitly requested.
+3.  **Visual Interaction**: Standardize use of **Mermaid.js** for all complex sequences and administrative hierarchies.
 
 ---
 
