@@ -213,16 +213,16 @@ fetch('/api/progress/batch-status?ids=' + ALL_IDS.join(','))
   .then(r => r.json())
   .then(data => {
     let changed = false;
-    for (const tid of Object.keys(data)) { if (!studiedSet.has(tid)) { studiedSet.add(tid); changed = true; } }
-    studiedSet.forEach(tid => {
-      if (!data[tid] && ALL_IDS.includes(tid)) {
-        const li = document.querySelector(`.g2-topic-item[data-topic-id="${tid}"]`);
-        const titleText = li ? li.querySelector('.g2-topic-name').textContent : tid;
-        fetch('/api/progress/mark-studied', { method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({topic_id:tid, subject:SUBJECT, topic_title:titleText}) }).catch(()=>{});
+    for (const tid of Object.keys(data)) {
+      if (!studiedSet.has(tid)) { 
+          studiedSet.add(tid); 
+          changed = true; 
+          markDot(tid);
       }
-    });
-    if (changed) { localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet))); studiedSet.forEach(tid => markDot(tid)); }
+    }
+    if (changed) {
+      localStorage.setItem(LS_KEY, JSON.stringify(Array.from(studiedSet)));
+    }
   }).catch(()=>{});
 
 function markDot(tid) { const li = document.querySelector(`.g2-topic-item[data-topic-id="${tid}"]`); if (li) li.querySelector('.g2-topic-dot')?.classList.add('studied'); }

@@ -25,8 +25,14 @@
         <span class="icon">✓</span> <span class="text">Mark as Finished</span>
       </button>
       <button class="k-btn-action" id="btn-aa" title="Appearance (Aa)">Aa</button>
-      <button class="k-btn-action highlight" id="btn-notebook" title="My Notebook">📝 Notebook</button>
-      <button class="k-btn-action" onclick="exportPDF('study_notes')" title="Export">↓ Export</button>
+      <button class="k-btn-action" onclick="confirmExport()" title="Export PDF">
+        <svg viewBox="0 0 24 24" fill="none" class="icon-tiny" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3M12 15L8 11M12 15L16 11M2 17V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="text">Export</span>
+      </button>
+      <button class="k-btn-action logout" id="btn-sd-logout" title="Save & Logout">
+        <svg viewBox="0 0 24 24" fill="none" class="icon-tiny" xmlns="http://www.w3.org/2000/svg"><path d="M15 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H15M19 12L15 8M19 12L15 16M19 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="text">Log Out</span>
+      </button>
     </div>
   </div>
 
@@ -243,6 +249,34 @@ nav.navbar { display: none !important; }
 }
 #btn-mark-studied.studied:hover {
   background: #E68A2E;
+}
+
+.k-btn-action.logout:hover {
+  border-color: #f87171;
+  color: #f87171;
+}
+
+.icon-tiny {
+  width: 14px; height: 14px;
+}
+
+/* Resume Banner */
+.k-resume-banner {
+  position: fixed; top: 70px; left: 50%; transform: translateX(-50%);
+  background: rgba(25, 25, 25, 0.95); border: 1.5px solid var(--gold);
+  color: var(--gold); padding: 8px 16px; border-radius: 30px;
+  font-family: var(--k-font-sans); font-size: 0.9rem; font-weight: 600;
+  z-index: 2000; box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+  display: flex; align-items: center; gap: 8px;
+  animation: slideDownFade 0.5s ease-out, fadeOut 0.5s ease-in 3.5s forwards;
+}
+
+@keyframes slideDownFade {
+  from { opacity: 0; transform: translate(-50%, -20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
 }
 #btn-mark-studied .icon { font-weight: 800; font-size: 1rem; }
 
@@ -535,6 +569,7 @@ fetch('/api/content/' + TOPIC_ID)
       });
       
       loadAnnotations(); 
+      attemptResume();
     } else {
       container.innerHTML = '<h2 style="text-align:center;">Book Not Available</h2><p style="text-align:center;">The content for this topic is missing or being prepared.</p>';
     }
@@ -872,9 +907,15 @@ ctxMenu.addEventListener('click', e => {
 });
 
 // Export PDF
-function exportPDF(target) {
+function confirmExport() {
+  if (confirm("Would you like to export the primary study material as a high-fidelity PDF? (This will include your highlights)")) {
+    exportPDF();
+  }
+}
+
+function exportPDF() {
   let element = document.getElementById('official-notes-container');
-  let filename = `APPSC_StudyDesk_${TOPIC_ID}.pdf`;
+  let filename = `APPSC_GroupsGuru_${TOPIC_ID}.pdf`;
   element.classList.add('pdf-export-mode');
   
   const opt = {
@@ -888,6 +929,61 @@ function exportPDF(target) {
   html2pdf().set(opt).from(element).save().then(() => {
     element.classList.remove('pdf-export-mode');
   });
+}
+
+// --- PERSISTENCE & SESSION MANAGEMENT ---
+function saveAllSessionData(isClosing = false) {
+  // 1. Save Notes
+  const notesContent = document.getElementById('my-notes-editor').innerHTML;
+  fetch('/api/user-notes/' + TOPIC_ID, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ content: notesContent })
+  });
+
+  // 2. Save Annotations
+  fetch('/api/highlights/' + TOPIC_ID, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ highlights: _annotations })
+  });
+  
+  // 3. Save Scroll Position
+  const scrollTop = document.getElementById('k-reader-scroll').scrollTop;
+  localStorage.setItem('sd_scroll_' + TOPIC_ID, scrollTop);
+}
+
+// Auto-save on window close
+window.addEventListener('beforeunload', () => {
+    saveAllSessionData(true);
+});
+
+// Logout Button Logic
+document.getElementById('btn-sd-logout').addEventListener('click', () => {
+    saveAllSessionData();
+    setTimeout(() => {
+        window.location.href = '/logout';
+    }, 100);
+});
+
+// Auto-Resume Logic
+function attemptResume() {
+    const savedPos = localStorage.getItem('sd_scroll_' + TOPIC_ID);
+    if (savedPos && parseInt(savedPos) > 100) {
+        const reader = document.getElementById('k-reader-scroll');
+        setTimeout(() => {
+            reader.scrollTo({ top: parseInt(savedPos), behavior: 'smooth' });
+            showResumeBanner();
+        }, 800);
+    }
+}
+
+function showResumeBanner() {
+    const banner = document.createElement('div');
+    banner.className = 'k-resume-banner';
+    banner.innerHTML = `<span>⟲</span> <span>Resumed where you left off</span>`;
+    document.body.appendChild(banner);
+    setTimeout(() => banner.remove(), 4500);
 }
 
 // --- INTELLECTUAL TIME COACH ---
