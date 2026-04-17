@@ -66,7 +66,10 @@
 
   <!-- Floating Pomodoro Coach -->
   <div class="k-fab-timer" id="btn-coach" title="Intellectual Time Coach">
-    <span class="icon">🍅</span>
+    <svg class="icon-saffron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:24px; height:24px;">
+      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5"/>
+      <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
     <span id="coach-time-display">25:00</span>
   </div>
 
@@ -253,7 +256,7 @@ nav.navbar { display: none !important; }
   background: var(--surface);
   box-shadow: 0 15px 40px rgba(0,0,0,0.8), 0 0 20px rgba(255, 153, 51, 0.3);
 }
-.k-fab-timer .icon { font-size: 1.4rem; position: relative; top: -1px; }
+.k-fab-timer .icon-saffron { width: 22px; height: 22px; color: var(--gold); }
 .k-fab-timer.highlight {
   background: var(--gold); color: #000;
   animation: pulse-gold 2s infinite;

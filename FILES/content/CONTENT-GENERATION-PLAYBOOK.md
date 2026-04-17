@@ -6,8 +6,11 @@
 2.  **Branding Integrity**: 
     - **Primary Accent**: Saffron (#FF9933) / `var(--gold)`.
     - **Theme**: Dark Luxury (Anthropic Claude-Code style). 
+    - **Premium Interaction**: "Basic" HTML styles (default buttons/borders) are forbidden. All interactive elements MUST feature hover transitions, transforms (lifts), and subtle glows to maintain a high-fidelity feel.
     - **Rule**: Do NOT introduce secondary colors (Blue, Green, etc.) for UI elements unless explicitly requested.
 3.  **Visual Interaction**: Standardize use of **Mermaid.js** for all complex sequences and administrative hierarchies.
+4.  **Workflow Shortcuts**:
+    -   **Git C**: When the user types or says "Git C", the agent MUST automatically execute a full `git add .`, `git commit`, and `git push` sequence. A specialized `gitc.ps1` script is available in the root for this purpose.
 
 ---
 

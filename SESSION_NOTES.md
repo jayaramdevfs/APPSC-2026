@@ -3,9 +3,10 @@
 ## The Heart: Student Desk Philosophy
 The **Student Desk** (Kindle-style reader) is the absolute core of the GroupsGuru platform. It is not just a viewer; it is a focus-enforcement machine. 
 1. **Focus First**: All "raw data" (percentages, save flags) are secondary or hidden to ensure a clean, distraction-free environment.
-2. **Branding Integrity (MANDATORY)**: The **Saffron** (#FF9933) accent and **Claude-Code** Dark theme are global constants. No other colors (Blue, Green, etc.) are permitted unless explicitly requested.
+2. **Branding Integrity (MANDATORY)**: The **Saffron** (#FF9933) accent and **Claude-Code** Dark theme are global constants. No other colors (Blue, Green, etc.) are permitted. **Premium Interaction** is required: avoid "basic" HTML; use smooth transitions, hover transforms, and golds/dark-grays exclusively.
 3. **Intellectual Discipline**: The **Pomodoro Coach** isn't a leisure tool; it's an assertive instructor that guides the student's study rhythm (25m Focus / 5m Break).
-4. **Goverance - Language**: Regardless of the user's input language, the agent **MUST** respond only in English to maintain professional documentation standards.
+4. **Governance - Language**: Regardless of the user's input language, the agent **MUST** respond only in English to maintain professional documentation standards.
+5. **Git C Shortcut (MANDATORY)**: Typing "Git C" (case insensitive) mandates an immediate `git add .`, `git commit`, and `git push`. This is automated via `gitc.ps1`.
 
 ---
 

@@ -1,0 +1,1276 @@
+--- PAGE 1 ---
+INDIA
+PHYSICAL ENVIRONMENT
+TEXTBOOK IN GEOGRAPHY FOR CLASS XI
+Rationalised 2023-24
+
+--- PAGE 3 ---
+INDIA
+PHYSICAL ENVIRONMENT
+TEXTBOOK IN GEOGRAPHY FOR CLASS XI
+Rationalised 2023-24
+
+--- PAGE 4 ---
+First Edition
+March 2006  Phalguna 1927
+Reprinted
+November 2006 , December 2007,
+December 2008, January 2010,
+January  2011, January  2013,
+January  2014, December 2014,
+February 2016, February 2017,
+January 2018, January 2019,
+January 2020, January 2021,
+July 2021 and November 2021
+Revised Edition
+February 2022, Phalguna 1944
+PD 150T RSP
+© National Council of Educational
+Research and Training, 2006, 2022
+` 70.00
+Printed on 80 GSM paper with NCERT
+watermark
+Published at the Publication Division
+by the Secretary, National Council of
+Educational Research and Training,
+Sri Aurobindo Marg, New Delhi 110 016 and
+printed at Sita Fine Arts (P.) Ltd., A-16,
+Naraina Industrial Area, Phase-II, New
+Delhi - 110 028
+ALL RIGHTS RESERVED
+q No part of this publication may be reproduced, stored in a retrieval system or
+transmitted, in any form or by any means, electronic, mechanical, photocopying,
+recording or otherwise without the prior permission of the publisher.
+q This book is sold subject to the condition that it shall not, by way of trade,  be lent,  re-
+sold, hired out or otherwise disposed of without the publisher’s consent, in any form
+of binding or cover other than that in which it is published.
+q The correct price of this publication is the price printed on this page, Any revised
+price indicated by a rubber stamp or by a sticker or by any other means is incorrect
+and should be unacceptable.
+Publication Team
+Head, Publication
+:
+Anup Kumar Rajput
+Division
+Chief Production
+:
+Arun Chitkara
+Officer
+Chief Business Manager :
+Vipin Dewan
+Chief Editor (In charge)
+:
+Bijnan Sutar
+Editor
+:
+R.N. Bhardwaj
+Production Assistant
+:
+Om Prakash
+Cover
+Shweta Rao
+Illustration
+Dilip Kumar
+Cartography
+Cartographic Design
+Agency
+OFFICES OF THE PUBLICATION
+DIVISION, NCERT
+NCERT Campus
+Sri Aurobindo Marg
+New  Delhi 110 016
+Phone :  011-26562708
+108, 100 Feet Road
+Hosdakere Halli Extension
+Banashankari III Stage
+Bengaluru 560 085
+Phone : 080-26725740
+Navjivan Trust Building
+P.O.Navjivan
+Ahmedabad 380 014
+Phone :  079-27541446
+CWC Campus
+Opp. Dhankal Bus Stop
+Panihati
+Kolkata 700 114
+Phone :  033-25530454
+CWC Complex
+Maligaon
+Guwahati 781 021
+Phone :  0361-2674869
+ISBN  81-7450-538-5
+11094 – INDIA: PHYSICAL ENVIRONMENT
+Textbook in Geography for Class XI
+Rationalised 2023-24
+
+--- PAGE 5 ---
+FOREWORD
+The National Curriculum Framework (NCF), 2005, recommends that children’s
+life at school must be linked to their life outside the school. This principle marks
+a departure from the legacy of bookish learning which continues to shape our
+system and causes a gap between the school, home and community. The syllabi
+and textbooks developed on the basis of NCF signify an attempt to implement
+this basic idea. They also attempt to discourage rote learning and the
+maintenance of sharp boundaries between different subject areas. We hope these
+measures will take us significantly further in the direction of a child-centred
+system of education outlined in the National Policy on Education (1986).
+The success of this effort depends on the steps that school principals and
+teachers will take to encourage children to reflect on their own learning and to
+pursue imaginative activities and questions. We must recognise that, given space,
+time and freedom, children generate new knowledge by engaging with the
+information passed on to them by adults. Treating the prescribed textbook as
+the sole basis of examination is one of the key reasons why other resources and
+sites of learning are ignored. Inculcating creativity and initiative is possible if we
+perceive and treat children as participants in learning, not as receivers of a fixed
+body of knowledge.
+These aims imply considerable change in school routines and mode of
+functioning. Flexibility in the daily time-table is as necessary as rigour in
+implementing the annual  calendar so that the required number of teaching
+days are actually devoted to teaching. The methods used for teaching and
+evaluation will also determine how effective this textbook proves for making
+children’s life at school a happy experience, rather than a source of stress or
+boredom. Syllabus designers have tried to address the problem of curricular
+burden by restructuring and reorienting knowledge at different stages with
+greater consideration for child psychology and the time available for teaching.
+The textbook attempts to enhance this endeavour by giving higher priority and
+space to opportunities for contemplation and wondering, discussion in small
+groups, and activities requiring hands-on experience.
+The National Council of Educational Research and Training (NCERT)
+appreciates the hard work done by the textbook development committee
+responsible for this book. We wish to thank the Chairperson of the advisory
+committee for textbooks in Social Sciences, at the higher secondary
+level, Professor Hari Vasudevan and the Chief Advisor for this book,
+Professor M.H. Qureshi for guiding the work of this committee. Several teachers
+contributed to the development of this textbook; we are grateful to their principals
+for making this possible. We are indebted to the institutions and organisations
+Rationalised 2023-24
+
+--- PAGE 6 ---
+which have generously permitted us to draw upon their resources, material and
+personnel. We are especially grateful to the members of the National Monitoring
+Committee, appointed by the Department of Secondary and Higher Education,
+Ministry of Human Resource Development under the Chairpersonship of
+Professor Mrinal Miri and Professor G.P. Deshpande, for their valuable time and
+contribution. As an organisation committed to systemic reform and continuous
+improvement in the quality of its products, NCERT welcomes comments and
+suggestions which will enable us to undertake further revision and refinement.
+Director
+New Delhi
+ National Council of Educational
+20 December 2005
+     Research and Training
+vi
+Rationalised 2023-24
+
+--- PAGE 7 ---
+RATIONALISATION OF CONTENT IN THE TEXTBOOKS
+In view of the COVID-19 pandemic, it is imperative to reduce content load on
+students. The National Education Policy 2020, also emphasises reducing the
+content load and providing opportunities for experiential learning with creative
+mindset. In this background, the NCERT has undertaken the exercise to
+rationalise the textbooks across all classes. Learning Outcomes already developed
+by the NCERT across classes have been taken into consideration in this exercise.
+Contents of the textbooks have been rationalised in view of the following:
+•
+Overlapping with similar content included in other subject areas in the same
+class
+•
+Similar content included in the lower or higher class in the same subject
+•
+Difficulty level
+•
+Content, which is easily accessible to students without much interventions
+from teachers and can be learned by children through self-learning or peer-
+learning
+•
+Content, which is irrelevant in the present context
+This present edition, is a reformatted version after carrying out the
+changes given above.
+Rationalised 2023-24
+
+--- PAGE 9 ---
+TEXTBOOK DEVELOPMENT COMMITTEE
+CHAIRPERSON, ADVISORY COMMITTEE FOR TEXTBOOKS IN SOCIAL SCIENCES AT THE HIGHER
+SECONDARY LEVEL
+Hari Vasudevan, Professor, Department of History, University of Calcutta,
+Kolkata
+CHIEF ADVISOR
+M. H. Qureshi, Professor, Centre for the Study of Regional Development,
+Jawaharlal Nehru University, New Delhi
+MEMBERS
+Aparna Pandey, Lecturer, DESSH, NCERT, New Delhi
+Ashok Diwakar, Lecturer,  Government P.G College, Sector 9, Gurgaon
+B. S. Butola, Professor, Centre for the Study of Regional Development, Jawaharlal
+Nehru University, New Delhi
+Beena Srikumar, PGT, CRPF Public School, New Delhi
+Noor Mohammad, Professor, Delhi School of Economics, Delhi University, Delhi
+MEMBER-COORDINATOR
+Tannu Malik, Lecturer, DESSH, NCERT, New Delhi
+Rationalised 2023-24
+
+--- PAGE 10 ---
+ACKNOWLEDGEMENTS
+The National Council of Educational Research and Training acknowledges the
+contribution of Bhagirathy Jhingran, Teacher, Pathways World School, Gurgaon
+in the development of this textbook; the National Bureau of Soil Survey and Landuse
+Planning (under ICAR), Government of India, for providing input for the chapter
+on Soils. Special thanks are due to Savita Sinha, Professor and Head, Department
+of Education in Social Sciences and Humanties for her valuable support at every
+stage of preparation of this textbook.
+The Council is thankful to the Survey of India for Certification of Maps given
+in the textbook. It also gratefully acknowledges the support of individuals and
+organisations as listed below for providing various photographs used in this
+textbook — M.H. Qureshi, Professor, CSRD, JNU for Figure 5.4 and 5.5; B.S. Butola,
+Professor, CSRD, JNU for Figure 6.1, 6.5, 6.7 and 6.9; M.V. Srinivasan, Lecturer,
+DESSH, NCERT for Figure 6.3; ITDC/Ministry of Tourism, Government of India
+for Figure 2.1, 2.3, 2.8, 2.5, 2.6, 2.7, 2.8, 3.1, 3.3, 4.4, 5.7; Ministry of Environment
+and Forest, Government of India for Figure 5.1 and 5.6; Social Science Textbook
+for Class VII, Part II (NCERT, 2005), for Figure 5.3 and Social Science Textbook
+for Class VIII, Part II (NCERT, 2005), for Figure 2.10.
+The Council also gratefully acknowledges the contributions of Anil Sharma
+and Arvind Sharma, DTP Operators;  Sameer Khatana and Amar Kumar Prusty,
+Copy Editors; Bharat Sanwaria, Shreshtha and Deepti Sharma, Proof Readers;
+Dinesh Kumar, Computer Incharge, who have helped in giving a final shape to
+this book. The contribution of the Publication Department, NCERT is also duly
+acknowledged.
+The following are applicable to all the maps of India used in this book
+© Government of India, Copyright 2006
+1.
+The responsibility for the correctness of internal details rests with the publisher.
+2.
+The territorial waters of India extend into the sea to a distance of twelve nautical miles measured
+from the appropriate base line.
+3.
+The administrative headquarters of Chandigarh, Haryana and Punjab are at Chandigarh.
+4.
+The interstate boundaries amongst Arunachal Pradesh, Assam and Meghalaya shown on this map
+are  as interpreted from the “North-Eastern Areas (Reorganisation) Act.1971,” but have yet to be
+verified.
+5.
+The external boundaries and coastlines of India agree with the Record/Master Copy certified by
+Survey of India.
+6.
+The State boundaries between Uttaranchal and Uttar Pradesh, Bihar and Jharkhand, and
+Chhattisgarh and Madhya Pradesh have not been verified by the Governments concerned.
+7.
+The spellings of names in this map, have been taken from various sources.
+Rationalised 2023-24
+
+--- PAGE 11 ---
+CONTENTS
+FOREWORD
+v
+RATIONALISATION OF CONTENT IN THE TEXTBOOKS
+vii
+UNIT I : INTRODUCTION
+1-6
+1.
+India — Location
+2
+UNIT II : PHYSIOGRAPHY
+7-26
+2.
+Structure and Physiography
+8
+3.
+Drainage System
+17
+UNIT III : CLIMATE AND VEGETATION
+27-51
+4.
+Climate
+28
+5.
+Natural Vegetation
+42
+UNIT IV : NATURAL HAZARDS AND DISASTERS: CAUSES,
+52-69
+     CONSEQUENCES AND MANAGEMENT
+6.
+Natural Hazards and Disasters
+53
+GLOSSARY
+70-72
+Rationalised 2023-24
+
+--- PAGE 12 ---
+CONSTITUTION OF INDIA
+Part III (Articles 12 – 35)
+(Subject to certain conditions, some exceptions
+and reasonable restrictions)
+guarantees these
+Fundamental Rights
+Right to Equality
+• before law and equal protection of laws;
+• irrespective of religion, race, caste, sex or place of birth;
+• of opportunity in public employment;
+• by abolition of untouchability and titles.
+Right to Freedom
+• of expression, assembly, association, movement, residence and profession;
+• of certain protections in respect of conviction for offences;
+• of protection of life and personal liberty;
+• of free and compulsory education for children between the age of six and fourteen years;
+• of protection against arrest and detention in certain cases.
+Right against Exploitation
+• for prohibition of traffic in human beings and forced labour;
+• for prohibition of employment of children in hazardous jobs.
+Right to Freedom of Religion
+• freedom of conscience and free profession, practice and propagation of religion;
+• freedom to manage religious affairs;
+• freedom as to payment of taxes for promotion of any particular religion;
+• freedom as to attendance at religious instruction or religious worship in educational
+institutions wholly maintained by the State.
+Cultural and Educational Rights
+• for protection of interests of minorities to conserve their language, script and culture;
+• for minorities to establish and administer educational institutions of their choice.
+Right to Constitutional Remedies
+• by issuance of directions or orders or writs by the Supreme Court and High
+Courts for enforcement of these Fundamental Rights.
+Rationalised 2023-24
+
+--- PAGE 13 ---
+INTRODUCTION
+This unit deals with
+• Location — space relations and India’s place in the world
+UNIT
+I
+Rationalised 2023-24
+
+--- PAGE 14 ---
+Y
+ou have already seen the map of India
+in the previous classes. Now you closely
+examine the  map of India (Figure 1.1).
+Mark the southernmost and northernmost
+latitudes and the easternmost and
+westernmost longitudes.
+The mainland of India, extends from
+Kashmir in the north to Kanniyakumari in the
+south and  Arunachal Pradesh in the east to
+Gujarat in the west. India’s territorial limit
+further extends towards the sea upto 12
+nautical miles (about 21.9 km) from the coast.
+(See the box for conversion).
+Statute mile
+=
+63,360 inches
+Nautical mile
+=
+72,960 inches
+1 Statute mile
+=
+about 1.6 km (1.584 km)
+1 Nautical mile
+=
+about 1.8 km (1.852 km)
+Our southern boundary extends upto
+6°45' N latitude in the Bay of Bengal.  Let us
+try to analyse the implications of having such
+a vast longitudinal and latitudinal extent.
+If you work out the latitudinal and
+longitudinal extent of India, they are roughly
+about 30 degrees, whereas the actual distance
+measured from north to south extremity is
+3,214 km, and that from east to west is only
+2,933 km. What is the reason for this
+difference? Consult Chapter 3 on the topic
+Latitude, Longitude and Time in the book
+Practical Work in Geography – Part I (NCERT,
+2006) to find out.
+This difference is based on the fact that the
+distance between two longitudes decreases
+towards the poles whereas the distance
+between two latitudes remains the same
+everywhere. Find out the distance between two
+latitudes?
+From the values of latitude, it is understood
+that the southern part of the country lies
+within the tropics and the northern part lies in
+the sub-tropical zone or the warm temperate
+zone. This location is responsible for large
+variations in land forms, climate, soil types and
+natural vegetation in the country.
+Now, let us observe the longitudinal extent
+and its implications on the Indian people. From
+the values of longitude, it is quite discernible
+that there is a variation of nearly 30 degrees,
+which causes a time difference of nearly two
+hours between the easternmost and the
+westernmost parts of our country. You are
+familiar with the concept of Indian Standard
+Time (IST).  What is the use of the standard
+meridian? While the sun rises in the
+northeastern states about two hours earlier as
+compared to Jaisalmer, the watches in
+Dibrugarh, Imphal in the east and Jaisalmer,
+Bhopal or Chennai in the other parts of India
+show the same time.  Why does this happen?
+INDIA – LOCATION
+C H A P T E R
+There is a general understanding among the countries of the world to select the standard
+meridian in multiples of 7°30' of longitude. That is why 82°30' E  has been selected as the
+‘standard meridian’ of India. Indian Standard Time is ahead of Greenwich Mean Time by
+5 hours and 30 minutes.
+There are some countries where there are more than one standard meridian due to
+their vast east-to-west extent. For example, the USA has seven time zones.
+Do you Remember?
+Rationalised 2023-24
+
+--- PAGE 15 ---
+3
+INDIA – LOCATION
+Figure 1.1 : India : Administrative Divisions
+Rationalised 2023-24
+
+--- PAGE 16 ---
+4
+INDIA : PHYSICAL ENVIRONMENT
+Figure 1.2 : Location of India in the Eastern World
+Rationalised 2023-24
+
+--- PAGE 17 ---
+5
+INDIA – LOCATION
+Name a few places in India through which the
+standard meridian passes?
+India with its area of 3.28 million sq. km
+accounts for 2.4 per cent of the world’s land
+surface area and stands as the seventh
+largest country in the world.  Find out the
+names of the countries which are larger than
+India.
+SIZE
+The size of India has endowed her with great
+physical diversity.  Thus, you may appreciate
+the presence of lofty mountains in the north;
+large rivers such as Ganga, Brahmaputra,
+Mahanadi, Krishna, Godavari and Kaveri;
+green forested hills in northeast and south
+India; and the vast sandy expanse of
+Marusthali.  You may further appreciate that
+bounded by the Himalayas in the north,
+Hindukush and Sulaiman ranges in the north-
+west, Purvachal hills in the north-east and by
+the large expanse of the Indian ocean in the
+south, it forms a great geographic entity known
+as the Indian subcontinent. It includes the
+countries — Pakistan, Nepal, Bhutan,
+Bangladesh and India. The Himalayas,
+together with other ranges, have acted as a
+formidable physical barrier in the past.  Except
+for a few mountain passes such as the Khyber,
+the Bolan, the Shipkila, the Nathula, the
+Bomdila, etc. it was difficult to cross it.  It has
+contributed towards the evolving of a unique
+regional identity of the Indian subcontinent.
+By referring to the physical map of India
+you can now describe the physical variations
+which you would come across while travelling
+from Kashmir to Kanniyakumari and from
+Jaisalmer in Rajasthan to Imphal in Manipur.
+Peninsular part of India extends towards
+the Indian Ocean.  This has provided the
+country with a coastline of 6,100 km in the
+mainland and 7,517 km in the entire
+geographical coast of the mainland plus the
+island groups Andaman and Nicobar located
+in the Bay of Bengal and the Lakshadweep in
+the Arabian Sea.  Thus India, as a country, is
+a physically diverse land providing occurrence
+of varied resources.
+INDIA AND ITS NEIGHBOURS
+Examine the location map of India (Figure 1.2).
+You will notice that India is located in the
+south-central part of the continent of Asia,
+bordering the Indian ocean and its two arms
+extending in the form of Bay of Bengal and the
+Arabian Sea. This maritime location of
+Peninsular India has provided links to its
+neighbouring regions through the sea and air
+routes.
+Prepare a list of India’s neighbouring
+countries by consulting the map.
+Sri Lanka and Maldives are the two island
+countries located in the Indian Ocean, which
+are our neighbours.  Sri Lanka is separated from
+India by the Gulf of Mannar and Palk Strait.
+Differentiate between a Gulf and a Strait.
+Do you think that physical barrier is a
+hindrance in interaction with our neighbouring
+countries in modern times?  Give some
+examples how we have overcome these
+difficulties in the present day.
+Do you Remember?
+School Bhuvan NCER T is a portal
+providing map-based learning to bring
+awareness among the students about
+country’s 
+natural 
+resources,
+environment and their role in
+sustainable development. It is an
+initiative of Bhuvan-NRSC/ISRO,
+based 
+on 
+NCER T 
+syllabus.
+You can explore various maps of India
+on http://bhuvan-app1.nrsc.gov.in/
+mhrd_ncert/
+Activity: Observe the map of India on an atlas/School Bhuvan NCERT portal
+and collect information about states/districts/villages located near the
+international border of India.
+Rationalised 2023-24
+
+--- PAGE 18 ---
+6
+INDIA : PHYSICAL ENVIRONMENT
+1.
+Choose the right answer from the four alternatives given below.
+(i)
+Which one of the following latitudinal extent is relevant for the extent of
+India’s area?
+(a)
+8°41'N - 35°7'N
+(c)
+8°4'N - 35°6'N
+(b)
+8°4'N - 37°6'N
+(d)
+6°45'N - 37°6'N
+(ii)
+Which one of the following countries shares the longest land frontier with
+India?
+(a) Bangladesh
+(c)
+Pakistan
+(b) China
+(d) Myanmar
+(iii)
+Which one of the following countries is larger in area than India?
+(a) China
+(c) France
+(b) Egypt
+(d) Iran
+(iv)
+Which one of the following longitudes is the standard meridian for India?
+(a) 69°30'E
+(c) 75°30'E
+(b) 82°30'E
+(d) 90°30'E
+2.
+Answer the following questions in about 30 words.
+(i)
+Does India need to have more than one standard time?  If yes, why do you
+think so?
+(ii)
+What are the implications of India having a long coastline?
+(iii)
+How is the latitudinal spread of India advantageous to her?
+(iv)
+While the sun rises earlier in the east, say Nagaland and also sets earlier,
+how do the watches at Kohima and New Delhi show the same time?
+Project/Activity
+Activity based on Appendix I  (Teachers may help in the exercises by explaining
+and getting it done by the students).
+(i) On a graph paper, plot the number of districts in Madhya Pradesh,
+Karnataka, Meghalaya, Goa, Kerala, Haryana.  Do the number of districts
+have some relationship with the area of the state?
+(ii) Which state amongst Uttar Pradesh, West Bengal, Gujarat, Arunachal
+Pradesh, Tamil Nadu, Tripura and Rajasthan is the most thickly populated
+and which one is the least densely populated?
+(iii) Find out the relationship between the area of the state and the number of
+districts.
+(iv) Identify the states with coastal boundaries.
+(v) Arrange the states from west to east which have only land boundary.
+Activity based on Appendix II
+(i) List the Union Territories which have coastal location.
+(ii) How do you explain the variation in the area and population of NCT Delhi
+and the Andaman and Nicobar Islands?
+(iii) On a graph paper, draw a bar diagram to show the area and population of
+all the Union Territories.
+EXERCISES
+Rationalised 2023-24
+
+--- PAGE 19 ---
+PHYSIOGRAPHY
+This unit deals with
+• Structure and Relief; physiographic divisions
+• Drainage systems: concept of water sheds — the Himalayan
+and the Peninsular
+UNIT
+II
+Rationalised 2023-24
+
+--- PAGE 20 ---
+D
+o you know that our earth also has  a
+history.  The earth and its landforms
+that we see today have evolved over a
+very long time. Current estimation shows that
+the earth is approximately 460 million years old.
+Over these long years, it has undergone many
+changes brought about primarily by the
+endogenic and exogenic forces. These forces have
+played a significant role in giving shape to various
+surface and subsurface features of the earth.  You
+have already studied  about the Plate Tectonics
+and the movement of the Earth’s plates in the
+book Fundamentals of Physical Geography
+(NCERT, 2006).  Do you know that the Indian
+plate was to the south of the equator millions of
+years ago? Do you also know that it was much
+larger in size and the Australian plate was a part
+of it?  Over millions of years, this plate broke into
+many parts and the Australian plate moved
+towards the southeastern direction and the
+Indian plate to the north. Can you map
+different phases in the movement of the
+Indian plate?  This northward movement
+of the Indian plate is still continuing and it
+has significant consequences on the
+physical 
+environment 
+of 
+the 
+Indian
+subcontinent.  Can you name some important
+consequences of the northward movement
+of the Indian plate?
+It is primarily through the interplay of
+these endogenic and exogenic forces and
+lateral movements of the plates that the
+present geological structure and geomorphologic
+processes active in the Indian subcontinent came
+into existence.  Based on the variations in its
+geological structure and formations, India can  be
+divided into three geological divisions. These
+geological regions broadly follow the physical
+features:
+(i) The Penisular Block
+(ii) The Himalayas and other Peninuslar
+Mountains
+(iii) Indo-Ganga-Brahmaputra Plain.
+THE PENINSULAR BLOCK
+The northern boundary of the Peninsular
+Block may be taken as an irregular line
+running from Kachchh along the western
+flank of the Aravali Range near Delhi and
+then roughly parallel to the Yamuna and
+the Ganga as far as the Rajmahal Hills
+and the Ganga delta. Apart from these,
+the Karbi Anglong and the Meghalaya
+Plateau in the northeast and Rajasthan
+in the west are also extensions of this
+block. The northeastern parts are
+separated by the Malda fault in West
+Bengal from the Chotanagpur plateau.  In
+Rajasthan, the desert and other desert–
+like features overlay  this block.
+The Peninsula is formed essentially by
+a great complex of very ancient gneisses
+and granites, which constitutes a major
+part of it. Since the Cambrian period, the
+Peninsula has been standing like a rigid
+block with the exception of some of its
+western coast  which is submerged
+beneath the sea and some other parts
+changed due to tectonic activity without
+affecting the original basement. As a part of
+the Indo-Australian Plate, it has been subjected
+to various vertical movements and block
+faulting.  The rift valleys of the Narmada, the
+Tapi and the Mahanadi and the Satpura block
+STRUCTURE AND PHYSIOGRAPHY
+C H A P T E R
+Rationalised 2023-24
+
+--- PAGE 21 ---
+9
+STRUCTURE AND PHYSIOGRAPHY
+mountains are some examples of it.  The
+Peninsula mostly consists of relict and residual
+mountains like the Aravali hills, the Nallamala
+hills, the Javadi hills, the Veliconda hills, the
+Palkonda range and the Mahendragiri hills, etc.
+The river valleys here are shallow with low
+gradients.
+You are aware of the method of
+calculating the gradient as a part of your
+study of the book Practical Work in
+Geography– Part I  (NCERT, 2006).  Can
+you calculate the gradient of the
+Himalayan and the Peninsular rivers and
+draw the comparisons?
+Most of the east flowing rivers form
+deltas before entering  into the Bay of
+Bengal.  The deltas formed by the
+Mahanadi, the Krishna, the Kaveri and the
+Godavari  are important examples.
+THE HIMALAYAS AND OTHER
+PENINSULAR MOUNTAINS
+The Himalayas along with other Peninsular
+mountains are young, weak and flexible in their
+geological structure unlike the rigid and stable
+Peninsular Block. Consequently, they are still
+subjected to the interplay of exogenic and
+endogenic forces, resulting in the development
+of faults, folds and thrust plains. These
+mountains are tectonic in origin, dissected by
+fast-flowing rivers which are in their youthful
+stage. Various landforms like gorges, V-shaped
+valleys, rapids, waterfalls, etc. are indicative of
+this stage.
+INDO-GANGA-BRAHMAPUTRA PLAIN
+The third geological division of India
+comprises the plains formed by the river
+Indus, the Ganga and the Brahmaputra.
+Originally, it was a geo-synclinal
+depression which attained its maximum
+development during the third phase of
+the Himalayan mountain formation
+approximately about 64 million years ago.
+Since then, it has been gradually filled
+by the sediments brought by the
+Himalayan 
+and 
+Peninsular 
+rivers.
+Average depth of alluvial deposits in
+these plains ranges from 1,000-2,000 m.
+It is evident from the above discussion
+that there are significant variations
+among the different regions of India in
+terms of their geological structure, which
+has far-reaching impact upon other
+related aspects.  Variations in the
+physiography and relief are important
+among these. The relief and physiography
+of India has been greatly influenced by
+the geological and geomorphological
+processes 
+active 
+in 
+the 
+Indian
+subcontinent.
+PHYSIOGRAPHY
+‘Physiography’ of an area is the outcome
+of structure, process and the stage of
+development. The land of India is
+characterised by great diversity in its
+physical features. The north has a vast
+expanse of rugged topography consisting
+of a series of mountain ranges with varied
+peaks, beautiful valleys and deep gorges.
+The south consists of stable table land
+with highly dissected plateaus, denuded
+rocks and developed series of scarps. In
+between these two lies the vast north Indian
+plain.
+Based on these macro variations, India
+can be divided into the following
+physiographic divisions:
+(1) The Northern and North-eastern
+Mountains
+(2) The Northern Plain
+Figure 2.1 : A Gorge
+Rationalised 2023-24
+
+--- PAGE 22 ---
+10
+INDIA : PHYSICAL ENVIRONMENT
+Figure 2.2 : India : Physical
+Rationalised 2023-24
+
+--- PAGE 23 ---
+11
+STRUCTURE AND PHYSIOGRAPHY
+(3) The Peninsular Plateau
+(4) The Indian Desert
+(5) The Coastal Plains
+(6) The Islands.
+The North and Northeastern Mountains
+The North and Northeastern Mountains consist
+of the Himalayas and the Northeastern hills.
+The Himalayas consist of a series of parallel
+mountain ranges. Some of the important
+ranges are the Greater Himalayan range,
+which includes the Great Himalayas and
+the Shiwalik. The general orientation of these
+ranges is from northwest to the southeast
+direction in the northwestern part of India.
+Himalayas in the Darjiling and Sikkim regions
+lie in an eastwest direction, while in Arunachal
+Pradesh they are from southwest to the
+northwest direction. In Nagaland, Manipur and
+Mizoram, they are in the northsouth direction.
+The approximate length of the Great Himalayan
+range, also known as the central axial range, is
+2,500 km from east to west, and their width varies
+between 160-400 km from north to south. It  is
+also evident from the map that the Himalayas
+stand almost like a strong and long wall between
+the Indian subcontinent and the Central and East
+Asian countries.
+Himalayas are not only the physical barrier,
+they are also a climatic, drainage and cultural
+divide.  Can you identify the impact of Himalayas
+on the geoenvironment of the countries of South
+Asia?  Can you find some other examples of
+similar geoenvironmental divide in the world?
+The Northern Plains
+The northern plains are formed by the
+alluvial deposits brought by the rivers –
+the Indus, the Ganga and the Brahmaputra.
+These plains extend approximately 3,200 km
+from the east to the west. The average width
+of these plains varies between 150-300 km.
+The maximum depth of alluvium deposits
+varies between 1,000-2,000 m. From the
+north to the south, these can be divided into
+three major zones: the Bhabar, the Tarai and
+the alluvial plains. The alluvial plains can be
+further divided into the Khadar and the
+Bhangar.
+Bhabar is a narrow belt ranging between
+8-10 km parallel to the Shiwalik foothills at
+the break-up of the slope. As a result of this,
+the streams and rivers coming from the
+mountains deposit heavy materials of rocks
+and boulders, and at times, disappear in this
+zone. South of the Bhabar is the Tarai belt, with
+an approximate width of 10-20 km where most
+of the streams and rivers re-emerge without
+having any properly demarcated channel,
+thereby, creating  marshy and swampy
+conditions known as the Tarai. This has a
+luxurious growth of natural vegetation and
+houses a varied wildlife.
+The south of Tarai is a belt consisting of
+old and new alluvial deposits known as the
+Bhangar and Khadar respectively. These
+plains have characteristic features of mature
+stage of fluvial erosional and depositional
+landforms such as sand bars, meanders, ox-
+bow lakes and braided channels. The
+Brahmaputra plains are known for their
+riverine  islands and sand bars. Most of
+these areas are subjected to periodic floods
+Figure 2.3 : The Himalayas
+Figure 2.4 : Northern Plain
+Rationalised 2023-24
+
+--- PAGE 24 ---
+12
+INDIA : PHYSICAL ENVIRONMENT
+and shifting river courses forming braided
+streams.
+The mouths of these mighty rivers also form
+some of the largest deltas of the world, for
+example, the famous Sunderbans delta.
+Otherwise, this is a featureless plain with a
+general elevation of 50-150 m above the mean
+sea level. The states of Haryana and Delhi form
+a water divide between the Indus and the
+Ganga river systems.  As opposed to this, the
+Brahmaputra river flows from the northeast to
+the southwest direction before it takes an
+almost 90° southward turn at Dhubri before
+it enters into Bangladesh. These river valley
+plains have a fertile alluvial soil cover which
+supports a variety of crops like wheat, rice,
+sugarcane and jute, and hence, supports a
+large population.
+The Peninsular Plateau
+Rising from the height of 150 m above the river
+plains up to an elevation of 600-900 m is the
+irregular triangle known as the Peninsular
+plateau. Delhi ridge in the northwest, (extension
+of Aravalis), the Rajmahal hills in the east, Gir
+range in the west and the Cardamom hills in
+the south constitute the outer extent of the
+Peninsular plateau. However, an extension of
+this is also seen in the northeast, in the form of
+Shillong and Karbi-Anglong plateau. The
+Peninsular India is made up of a series of
+patland plateaus such as the Hazaribagh
+plateau, the Palamu plateau, the Ranchi
+plateau, the Malwa plateau, the Coimbatore
+plateau and the Karnataka plateau, etc. This
+is one of the oldest and the most stable
+landmass of  India. The general elevation of the
+plateau is from the west to the east,  which is
+also proved by the pattern of the flow of rivers.
+Name some rivers of the Peninsular plateau
+which have their confluence in the Bay of
+Bengal and the Arabian sea and mention some
+landforms which are typical to the  east flowing
+rivers but are absent in the west flowing rivers.
+Some of the important physiographic features
+of this region are tors, block mountains, rift
+valleys, spurs, bare rocky structures, series of
+hummocky hills and wall-like quartzite dykes
+offering natural sites for water storage. The
+western and northwestern part of the plateau
+has an emphatic presence of black soil.
+This Peninsular plateau has undergone
+recurrent phases of upliftment and
+submergence accompanied by crustal faulting
+and fractures. (The Bhima fault  needs special
+mention, because of its recurrent seismic
+activities).  These spatial variations have
+brought in elements of diversity in the relief
+of the Peninsular plateau. The northwestern
+part of the plateau has a complex relief of
+ravines and gorges. The ravines of Chambal,
+Bhind and Morena are some of the well-known
+examples.
+On the basis of the prominent relief
+features, the Peninsular plateau can be
+divided into three broad groups:
+(i) The Deccan Plateau
+(ii) The Central Highlands
+(iii) The Northeastern Plateau.
+The Deccan Plateau
+This is bordered by the Western Ghats in the
+west, Eastern Ghats in the east and the
+Satpura, Maikal range and Mahadeo hills in
+the north.  Western Ghats are locally known
+by different names such as Sahyadri in
+Maharashtra, Nilgiri hills in Karnataka and
+Tamil Nadu and Anaimalai hills and
+Cardamom hills in Kerala.  Western Ghats are
+Figure 2.5 : A Part of Peninsular Plateau
+Rationalised 2023-24
+
+--- PAGE 25 ---
+13
+STRUCTURE AND PHYSIOGRAPHY
+comparatively higher in elevation and more
+continuous than the Eastern Ghats. Their
+average elevation is about 1,500 m with the
+height increasing from north to south.
+‘Anaimudi’ (2,695 m), the highest peak of
+Peninsular plateau is located on the
+Anaimalai hills of the Western Ghats followed
+by Dodabetta (2,637 m) on the Nilgiri hills.
+Most of the Peninsular rivers have their origin
+in the Western Ghats. Eastern Ghats
+comprising the discontinuous and low hills
+are highly eroded by the rivers such as the
+Mahanadi, the Godavari, the Krishna, the
+Kaveri, etc. Some of the important ranges
+include the Javadi hills, the Palconda range,
+the Nallamala hills, the Mahendragiri hills, etc.
+The Eastern and the Western Ghats meet each
+other at the Nilgiri hills.
+The Central Highlands
+They are bounded to the west by the Aravali
+range. The Satpura range is formed by a
+series of scarped plateaus on the south,
+generally at an elevation varying between
+600-900 m above the mean sea level.  This
+forms the northernmost boundary of the
+Deccan plateau. It is a classic example of the
+relict mountains which are highly denuded
+and form discontinuous ranges. The
+extension of the Peninsular plateau can be
+seen as far as Jaisalmer in the West, where it
+has been covered by the longitudinal sand
+ridges and crescent-shaped sand dunes
+called barchans. This region has undergone
+metamorphic processes in its geological
+history, which can be corroborated by the
+presence of metamorphic rocks such as
+marble, slate, gneiss, etc.
+The general elevation of the Central
+Highlands ranges between 700-1,000 m
+above the mean sea level and it slopes
+towards the north and northeastern
+directions. Most of the tributaries of the river
+Yamuna have their origin in the Vindhyan
+and Kaimur ranges. Banas is the only
+significant tributary of the river Chambal that
+originates from the Aravalli in the west.  An
+eastern extension of the Central Highland is
+formed by the Rajmahal hills, to the south of
+which lies a large reserve of mineral resources
+in the Chotanagpur plateau.
+The Northeastern Plateau
+In fact it is an extension of the main Peninsular
+plateau. It is believed that due to the force
+exerted by the northeastward movement of the
+Indian plate at the time of the Himalayan
+origin, a huge fault was created between the
+Rajmahal hills and the Meghalaya plateau.
+Later, this depression got filled up by the
+deposition activity of the numerous rivers.
+Today, the Meghalaya and Karbi Anglong
+plateau stand detached from the main
+Peninsular Block.  The Meghalaya plateau is
+further sub-divided into three: (i) The Garo
+Hills; (ii) The Khasi Hills; (iii) The Jaintia Hills,
+named after the tribal groups inhabiting this
+region.  An extension of this is also seen in the
+Karbi Anglong hills of Assam.  Similar to the
+Chotanagpur plateau, the Meghalaya plateau
+is also rich in mineral resources like coal, iron
+ore, sillimanite, limestone and uranium.  This
+area receives maximum rainfall from the south
+west monsoon. As a result, the Meghalaya
+plateau has a highly eroded surface.
+Cherrapunji displays a bare rocky surface
+devoid of any permanent vegetation cover.
+The Indian Desert
+To the northwest of the Aravali hills lies the
+Great Indian desert. It is a land of undulating
+topography dotted with longitudinal dunes
+and barchans. This region receives low rainfall
+below 150 mm per year; hence, it has arid
+climate with low vegetation cover. It is because
+of these characteristic features that this is also
+known as Marusthali. It is believed that
+during the Mesozoic era, this region was
+under the sea. This can be corroborated
+by the evidence available at wood fossils
+park at Aakal and marine deposits around
+Brahmsar, 
+near 
+Jaisalmer 
+(The
+approximate age of the wood-fossils is
+estimated to be 180 million years). Though
+the underlying rock structure of the desert
+is an extension of the Peninsular plateau,
+yet, due to extreme arid conditions, its surface
+Rationalised 2023-24
+
+--- PAGE 26 ---
+14
+INDIA : PHYSICAL ENVIRONMENT
+features have been carved by physical
+weathering and wind actions. Some of the well
+pronounced desert land features present here
+are mushroom rocks, shifting dunes and oasis
+(mostly in its southern part). On the basis of
+the orientation, the desert can be divided into
+two parts: the northern part is sloping towards
+Sindh and the southern towards the Rann of
+Kachchh. Most of the rivers in this region are
+ephemeral.  The Luni river flowing in the
+southern part of the desert is of some
+significance.  Low precipitation and high
+evaporation makes it a water deficit region.
+There are some streams which disappear after
+flowing for some distance and present a typical
+case of inland drainage by joining a lake or
+playa.  The lakes and the playas have brackish
+water which is the main source of obtaining salt.
+The Coastal Plains
+You have already read that India has a long
+coastline . On the basis of the location and
+active geomorphological processes, it can be
+broadly divided into two: (i) the western
+coastal plains;  (ii) the eastern coastal plains.
+The western coastal plains are an example
+of submerged coastal plain. It is believed that
+the city of Dwaraka which was once a part of
+the Indian mainland situated along the west
+coast is submerged under water. Because of
+this submergence it is a narrow belt and
+provides natural conditions for the
+development of ports and harbours. Kandla,
+Mazagaon, JLN port Navha Sheva, Marmagao,
+Mangalore, Cochin, etc. are some of the
+important natural ports located along the
+west coast. Extending from the Gujarat coast
+in the north to the Kerala coast in the south,
+the western coast may be divided into
+following divisions – the Kachchh and
+Kathiawar coast in Gujarat, Konkan coast in
+Maharashtra, Goan coast and Malabar coast
+in Karnataka and Kerala respectively.  The
+western coastal plains are narrow in the
+middle and get broader towards north and
+south. The rivers flowing through this coastal
+plain do not form any delta. The Malabar
+coast  has got certain distinguishing features
+in the form of ‘Kayals’ (backwaters), which are
+used for fishing, inland navigation and also
+due to its special attraction for tourists. Every
+year the famous Nehru Trophy Vallamkali
+(boat race) is held in Punnamada Kayal in
+Kerala.
+As compared to the western coastal plain,
+the eastern coastal plain is broader and is an
+example of an emergent coast.  There are well-
+developed deltas here, formed by the rivers
+flowing eastward in to the Bay of Bengal. These
+include the deltas of the Mahanadi, the
+Godavari, the Krishna and the Kaveri. Because
+of its emergent nature, it has less number of
+ports and harbours. The continental shelf
+extends up to 500 km into the sea, which
+makes it difficult for the development of
+good ports and harbours. Name some ports
+on the eastern coast.
+Figure 2.6 : The Indian Desert
+Can you identify the type of sand
+dunes shown in this picture?
+Figure 2.7 : Coastal Plains
+Rationalised 2023-24
+
+--- PAGE 27 ---
+15
+STRUCTURE AND PHYSIOGRAPHY
+The Islands
+There are two major island groups in India –
+one in the Bay of Bengal and the other in the
+Arabian Sea. The Bay of Bengal island groups
+consist of about 572 islands/islets. These are
+situated roughly between 6°°N-14°°N and
+92°°E -94°°E. The two principal groups of islets
+include the Ritchie’s archipelago and the
+Labrynth island. The entire group of island is
+divided into two broad categories – the
+Andaman in the north and the Nicobar in
+the south. They are separated by a
+waterbody which is called the Ten degree
+channel. It is believed that these islands are
+an elevated portion of submarine mountains.
+However, some smaller islands are volcanic in
+origin. Barren island, the only active volcano
+in India is also situated in the Nicobar islands.
+Some important mountain peaks in
+Andaman and Nicobar Islands are Saddle
+peak (North Andaman – 738 m), Mount
+Diavolo (Middle Andaman – 515 m), Mount
+Koyob (South Andaman – 460 m) and Mount
+Thuiller (Great Nicobar – 642 m).
+The coastal line has some coral deposits,
+and beautiful beaches. These islands receive
+convectional rainfall and have an equatorial
+type of vegetation.
+On  26 December 2004, the Andaman and Nicobar Islands experienced one of the most
+devasting natural calamity. Can you name the calamity and identify some other areas
+which were adversely affected by the same calamity?  What was its major consequence?
+Figure 2.8 : An Island
+The islands of the Arabian sea include
+Lakshadweep and Minicoy.  These are
+scattered between 8°°N-12°°N  and 71°°E -74°°E
+longitude. These islands are located at a
+distance of 280 km-480 km off the Kerala
+coast. The entire island group is built of
+coral deposits. There are approximately 36
+islands of which 11 are inhabited. Minicoy is
+the largest island with an area of 453 sq. km.
+The entire group of islands is broadly divided
+by the Ten degree channel, north of  which is
+the  Amini Island and to the south of the
+Canannore Island. The Islands of this
+archipelago have storm beaches consisting of
+unconsolidated pebbles, shingles, cobbles and
+boulders on the eastern seaboard.
+Rationalised 2023-24
+
+--- PAGE 28 ---
+16
+INDIA : PHYSICAL ENVIRONMENT
+1.
+Choose the right answer from the four alternatives given below.
+(i) Which one of the water bodies separates the Andaman from the Nicobar?
+(a) 11°° Channel
+(c) 10°° Channel
+(b) Gulf of Mannar
+(d) Andaman Sea
+(ii) On which of the following hill range is the ‘Dodabeta’ peak situated?
+(a) Nilgiri hills
+(c) Cardamom hills
+(b) Anaimalai hills
+(d) Nallamala hills
+2.
+Answer the following questions in about 30 words.
+(i) If a person is to travel to Lakshadweep, from which coastal plain does he
+prefer and why?
+(ii) Where in India will you find a cold desert?  Name some important
+ranges of this region.
+(iii) Why is the western coastal plain is devoid of any delta?
+3 . Answer the following questions in not more than 125 words.
+(i) Make a comparison of the island groups of the Arabian Sea and the
+Bay of Bengal.
+(ii) What are the important geomorphological features found in the river
+valley plains?
+(iii) If you move from Badrinath to Sunderbans delta along the course of
+the river Ganga, what major geomorphological features will you come
+across?
+Project/Activity
+(i)
+Make a list of major Himalayan peaks from the west to the east with the
+help of an atlas.
+(ii)
+Identify the major landforms of your state and analyse the major economic
+activity practised by the people in each landform.
+EXERCISES
+Rationalised 2023-24
+
+--- PAGE 29 ---
+Y
+ou have observed water flowing through
+the rivers, nalas and even channels
+during rainy season which drain the
+excess water. Had these channels not been
+there, large-scale flooding would have
+occurred. Wherever channels are ill-defined or
+choked, flooding is a common phenomenon.
+The flow of water through well-defined
+channels is known as ‘drainage’ and the
+network of such channels is called a
+‘drainage system’. The drainage pattern
+of an area is the outcome of the geological
+time period, nature and structure of
+rocks, topography, slope, amount of
+water flowing and the periodicity of
+the flow.
+Do you have a river near your village or city?
+Have you ever been there for boating or bathing?
+Is it perennial (always with water) or ephemeral
+(water during rainy season, and dry, otherwise)?
+Do you know that rivers flow in the same
+direction? You have studied about slopes in the
+other two textbooks of geography (NCERT,
+2006) in this class . Can you, then, explain the
+reason for water flowing from one direction to
+the other? Why do the rivers originating from the
+Himalayas in the northern India and the Western
+Ghat in the southern India flow towards the east
+and discharge their waters in the Bay of Bengal?
+A river drains the water collected from a
+specific area, which is called its ‘catchment area’.
+An area drained by a river and its tributaries
+is called a drainage basin. The boundary line
+DRAINAGE SYSTEM
+C H A P T E R
+Figure 3.1 : A River in the Mountainous Region
+Important Drainage Patterns
+(i)
+The drainage pattern resembling the branches of a tree is known as “dendritic” the examples
+of which are the rivers of northern plain.
+(ii)
+When the rivers originate from a hill and flow in all directions, the drainage pattern is known
+as ‘radial’. The rivers originating from the Amarkantak range present a good example of it.
+(iii)
+When the primary tributaries of rivers flow parallel to each other and secondary tributaries
+join them at right angles, the pattern is known as ‘trellis’.
+(iv)
+When the rivers discharge their waters from all directions in a lake or depression, the
+pattern is know as ‘centripetal’.
+Find out some of the patterns in the topo sheet given in Chapter 5 of Practical Work in
+Geography– Part I (NCERT, 2006).
+Rationalised 2023-24
+
+--- PAGE 30 ---
+18
+INDIA : PHYSICAL ENVIRONMENT
+Figure 3.2 : Major Rivers of India
+Rationalised 2023-24
