@@ -3,9 +3,54 @@
 {% block title %}APPSC 2026 — Exam Preparation{% endblock %}
 
 {% block content %}
-<section class="hero">
-    <h1 class="hero-title">APPSC 2026 Exam Preparation</h1>
-    <p class="hero-subtitle">Andhra Pradesh Public Service Commission</p>
+<section class="command-center">
+    <div class="cc-header">
+        <div class="cc-brand-title">APPSC MISSION CONTROL 2026</div>
+        <div class="cc-status" id="live-status">● SYSTEM ACTIVE</div>
+    </div>
+
+    <div class="cc-dashboard-row">
+        <!-- COUNTDOWN 1: GROUP I -->
+        <div class="cc-widget countdown-widget">
+            <div class="cw-label">GROUP I PRELIMS</div>
+            <div class="cw-timer" id="timer-g1">
+                <div class="timer-unit"><span class="val">--</span><span class="unit">DAYS</span></div>
+                <div class="timer-unit"><span class="val">--</span><span class="unit">HRS</span></div>
+                <div class="timer-unit"><span class="val">--</span><span class="unit">MIN</span></div>
+            </div>
+            <div class="cw-target">MISSION DATE: AUG 16, 2026</div>
+        </div>
+
+        <!-- RECENT ACTIVITY (Quick Resume) -->
+        <div class="cc-widget resume-widget" id="resume-widget" style="display: none;">
+            <div class="cw-label">COMMAND RESUME</div>
+            <div class="resume-content">
+                <div class="resume-title" id="resume-topic-title">--</div>
+                <div class="resume-meta" id="resume-topic-time">LAST ACCESSED: --</div>
+                <a href="#" id="resume-link" class="resume-btn">RE-ENGAGE &rarr;</a>
+            </div>
+        </div>
+
+        <!-- COUNTDOWN 2: GROUP II -->
+        <div class="cc-widget countdown-widget">
+            <div class="cw-label">GROUP II SCREENING</div>
+            <div class="cw-timer" id="timer-g2">
+                <div class="timer-unit"><span class="val">--</span><span class="unit">DAYS</span></div>
+                <div class="timer-unit"><span class="val">--</span><span class="unit">HRS</span></div>
+                <div class="timer-unit"><span class="val">--</span><span class="unit">MIN</span></div>
+            </div>
+            <div class="cw-target">MISSION DATE: NOV 22, 2026</div>
+        </div>
+    </div>
+
+    <!-- COVERAGE PULSE BAR -->
+    <div class="cc-coverage-panel">
+        <div class="cp-header">
+            <span>Syllabus Coverage Pulse</span>
+            <span id="cp-stats">0/0 Topics Completed</span>
+        </div>
+        <div class="cp-bar-bg"><div class="cp-bar-fill" id="cp-fill" style="width: 0%"></div></div>
+    </div>
 </section>
 
 <!-- Syllabus Heatmap 2.0 (The Heart of the Home) -->
@@ -58,10 +103,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (g1Grid) g1Grid.innerHTML = g1Html || '<div class="syllabus-loading">No topics mapped.</div>';
             if (g2Grid) g2Grid.innerHTML = g2Html || '<div class="syllabus-loading">No topics mapped.</div>';
+            
+            // Update Coverage Pulse
+            const total = data.length;
+            const done = data.filter(t => t.completed).length;
+            const pct = (done / total * 100).toFixed(1);
+            document.getElementById('cp-stats').textContent = `${done}/${total} Topics Completed (${pct}%)`;
+            document.getElementById('cp-fill').style.width = pct + '%';
         })
         .catch(err => {
             console.error("Heatmap load failed:", err);
         });
+
+    // --- COUNTDOWN LOGIC ---
+    function updateTimers() {
+        const dates = {
+            g1: new Date("2026-08-16T09:00:00").getTime(),
+            g2: new Date("2026-11-22T09:00:00").getTime()
+        };
+
+        const now = new Date().getTime();
+
+        ['g1', 'g2'].forEach(id => {
+            const diff = dates[id] - now;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+            const container = document.getElementById('timer-' + id);
+            if (container) {
+                const vals = container.querySelectorAll('.val');
+                vals[0].textContent = d.toString().padStart(2, '0');
+                vals[1].textContent = h.toString().padStart(2, '0');
+                vals[2].textContent = m.toString().padStart(2, '0');
+            }
+        });
+    }
+    updateTimers();
+    setInterval(updateTimers, 60000);
+
+    // --- QUICK RESUME LOGIC ---
+    const lastId = localStorage.getItem('gg_last_studied_id');
+    const lastTitle = localStorage.getItem('gg_last_studied_title');
+    const lastTime = localStorage.getItem('gg_last_studied_time');
+    
+    if (lastId && lastTitle) {
+        document.getElementById('resume-widget').style.display = 'block';
+        document.getElementById('resume-topic-title').textContent = lastTitle;
+        const timeAgo = new Date(parseInt(lastTime)).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'short' });
+        document.getElementById('resume-topic-time').textContent = 'LAST ACCESSED: ' + timeAgo;
+        document.getElementById('resume-link').href = '/study-desk/' + lastId + '?title=' + encodeURIComponent(lastTitle);
+    }
 });
 </script>
 {% endif %}

@@ -1118,5 +1118,12 @@ const TimeCoach = {
   }
 };
 TimeCoach.init();
+
+// --- COMMAND CENTER SYNC ---
+(function() {
+    localStorage.setItem('gg_last_studied_id', TOPIC_ID);
+    localStorage.setItem('gg_last_studied_title', TOPIC_TITLE);
+    localStorage.setItem('gg_last_studied_time', new Date().getTime());
+})();
 </script>
 {% endblock %}
