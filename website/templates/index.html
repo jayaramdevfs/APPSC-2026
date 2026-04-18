@@ -3,6 +3,7 @@
 {% block title %}APPSC 2026 — Exam Preparation{% endblock %}
 
 {% block content %}
+{% if current_user %}
 <section class="command-center">
     <div class="cc-header">
         <div class="cc-brand-title">APPSC MISSION CONTROL 2026</div>
@@ -54,13 +55,13 @@
 </section>
 
 <!-- Syllabus Heatmap 2.0 (The Heart of the Home) -->
-{% if current_user %}
 <div class="home-heatmap-section">
     <div class="curriculum-header">
         <h3 class="curriculum-title" style="margin:0; font-size:1.1rem; color: var(--gold);">Curriculum Coverage Map</h3>
         <span class="curriculum-subtitle" style="font-size:0.85rem; color:var(--muted);">Strategic Tracking for Group I & II</span>
     </div>
     
+    <link rel="stylesheet" href="/static/css/style.css?v=16">
     <div class="heatmap-row" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
         <div class="heatmap-exam-block" style="flex: 1; min-width: 300px;">
             <div class="exam-mini-label" style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; letter-spacing: 0.05em; opacity: 0.7;">Group I — Prelims & Mains Coverage</div>
@@ -156,6 +157,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
+{% else %}
+<section class="public-hero">
+    <div class="ph-container">
+        <div class="ph-badge">THE PREMIER PREPARATION HUB</div>
+        <h1 class="ph-title">Master the APPSC 2026 Mission</h1>
+        <p class="ph-subtitle">High-fidelity study frameworks, Kindle-style immersive reading, and precision tracking designed for Group I & II aspirants.</p>
+        
+        <div class="ph-actions">
+            <a href="/register" class="ph-btn-primary">Start Your Journey</a>
+            <a href="/login" class="ph-btn-secondary">Resume Mission</a>
+        </div>
+
+        <div class="ph-features">
+            <div class="ph-feature">
+                <span class="phf-icon">📖</span>
+                <span class="phf-text">Kindle Desk Context</span>
+            </div>
+            <div class="ph-feature">
+                <span class="phf-icon">⏱️</span>
+                <span class="phf-text">Pomodoro Coaching</span>
+            </div>
+            <div class="ph-feature">
+                <span class="phf-icon">🎯</span>
+                <span class="phf-text">Precision Tracking</span>
+            </div>
+        </div>
+    </div>
+</section>
 {% endif %}
 
 <section class="cards-grid">
