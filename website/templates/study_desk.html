@@ -8,7 +8,7 @@
 <script>mermaid.initialize({startOnLoad: false, theme: 'dark'});</script>
 
 <!-- GroupsGuru Desktop Main Container -->
-<div id="gg-desktop" class="theme-dark font-serif size-medium">
+<div id="kindle-app" class="theme-dark font-serif size-medium">
   
   <!-- Top App Bar -->
   <div class="k-topbar" id="k-topbar">
@@ -87,7 +87,7 @@
   <!-- Notebook Slide-in Drawer -->
   <div class="k-notebook-drawer" id="k-notebook-drawer">
     <div class="k-notebook-header">
-      <h2>My Notebook</h2>
+      <h2>My Notebook <span id="sd-auto-save" style="font-size:0.8rem; font-weight:normal; color:var(--muted); margin-left: 10px;"></span></h2>
       <div>
         <label for="img-upload-input" class="k-btn-image" title="Insert Image">&#128247;</label>
         <input type="file" id="img-upload-input" accept="image/*" style="display:none;">
@@ -152,6 +152,13 @@
     </div>
   </div>
 
+  <!-- Mandatory Break Lock Screen -->
+  <div id="k-break-lock" class="k-break-lock">
+    <h2>Mandatory Break</h2>
+    <p>Please step away from the screen to consolidate your learning.</p>
+    <div id="break-timer-display" style="font-size:4rem; font-weight:bold; margin-top:2rem;">05:00</div>
+  </div>
+
 </div>
 
 <style>
@@ -174,7 +181,10 @@
 }
 
 body { 
-  margin: 0; padding: 0; overflow: hidden; 
+  margin: 0; padding: 0; 
+  height: 100vh;
+  min-height: -webkit-fill-available;
+  overflow: hidden; 
   background-color: var(--base, #191919);
   background-image: linear-gradient(to right, rgba(255, 153, 51, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 153, 51, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
@@ -183,12 +193,12 @@ nav.navbar { display: none !important; }
 
 /* The App Container */
 #kindle-app {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
+  height: 100vh;
+  height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   transition: background 0.3s ease, color 0.3s ease;
-  z-index: 1000; /* overlay everything */
 }
 
 /* Base Theme Applications */
@@ -385,17 +395,22 @@ nav.navbar { display: none !important; }
 
 /* Reader Scroll adjustments */
 .k-reader-scroll {
-  flex-grow: 1; overflow-y: auto; overflow-x: hidden;
-  display: flex; justify-content: center;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto; overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  padding-bottom: 80px; /* space for bar */
+  padding-bottom: 120px; 
+  z-index: 1;
 }
 .k-reader-scroll::-webkit-scrollbar { width: 8px; }
 .k-reader-scroll::-webkit-scrollbar-thumb { background: var(--k-border); border-radius: 4px; }
 
 .k-reader-content {
-  width: 94%; max-width: none; margin: 0 auto;
-  padding: 3rem 0;
+  width: 90%; 
+  max-width: 850px; 
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
   font-size: var(--k-font-size);
   line-height: var(--k-line-height);
   text-align: justify;
@@ -765,7 +780,7 @@ const saveIndicator = document.getElementById('sd-auto-save');
 const editor = document.getElementById('my-notes-editor');
 
 editor.addEventListener('input', () => {
-  saveIndicator.textContent = 'Saving...';
+  if (saveIndicator) saveIndicator.textContent = 'Saving...';
   clearTimeout(saveTimeout);
   saveTimeout = setTimeout(() => {
     fetch('/api/user-notes/' + TOPIC_ID, {
@@ -773,7 +788,7 @@ editor.addEventListener('input', () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ content: editor.innerHTML })
     }).then(() => {
-      saveIndicator.textContent = 'Notes saved ✓';
+      if (saveIndicator) saveIndicator.textContent = 'Notes saved ✓';
     });
   }, 1000);
 });
@@ -868,13 +883,13 @@ function renderAnnotations() {
 }
 
 function saveAnnotations() {
-  saveIndicator.textContent = 'Saving annotations...';
+  if (saveIndicator) saveIndicator.textContent = 'Saving annotations...';
   fetch('/api/highlights/' + TOPIC_ID, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ highlights: _annotations })
   }).then(() => {
-    saveIndicator.textContent = 'Highlights saved ✓';
+    if (saveIndicator) saveIndicator.textContent = 'Highlights saved ✓';
   });
 }
 
@@ -1064,11 +1079,17 @@ const TimeCoach = {
         // Load Pomodoro Settings
         const sResp = await fetch('/api/pomodoro/settings');
         const sData = await sResp.json();
-        document.getElementById('set-work-min').value = sData.work_min;
-        document.getElementById('set-break-min').value = sData.break_min;
+        const workInput = document.getElementById('set-work-min');
+        const breakInput = document.getElementById('set-break-min');
+        if (workInput) workInput.value = sData.work_min;
+        if (breakInput) breakInput.value = sData.break_min;
     } catch(e) { console.error("Coach data fetch failed:", e); }
 
-    document.getElementById('btn-coach').addEventListener('click', () => this.toggle());
+    const coachBtn = document.getElementById('btn-coach');
+    if (coachBtn) coachBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        this.toggle();
+    });
     
     // 2. Proactive Mastery Notification
     setTimeout(() => this.triggerWelcome(), 1000);
@@ -1112,7 +1133,13 @@ const TimeCoach = {
       this.start();
     };
     
-    document.getElementById('coach-btn-skip').style.display = 'none';
+    const skipBtn = document.getElementById('coach-btn-skip');
+    skipBtn.style.display = 'inline-block';
+    skipBtn.onclick = () => {
+        this.overlay.style.display = 'none';
+        this.pause();
+    };
+    
     this.overlay.style.display = 'flex';
   },
 
