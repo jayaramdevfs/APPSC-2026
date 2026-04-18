@@ -2618,6 +2618,29 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
     overflow: hidden;
 }
 
+/* ---- GroupsGuru Desktop Branding ---- */
+#gg-desktop {
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+}
+
+.ph-badge {
+    animation: gold-pulse 3s infinite;
+}
+
+@keyframes gold-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(217, 119, 6, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+}
+
+.ph-title {
+    background: linear-gradient(135deg, var(--white) 30%, var(--gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .ph-container {
     max-width: 1000px;
     margin: 0 auto;
