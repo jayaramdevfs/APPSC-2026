@@ -705,5 +705,36 @@ Replaced the chaotic horizontal scrolling tab bar with a dual-mode professional 
 - Injected a Saffron (`#FF9933`) color selector into the floating context menu.
 - Added native `<mark>` click detection directly on the DOM so returning users can select and hit `✗ Clear` without tediously dragging their mouse to reselect precise string matches.
 
-### 4. Code Cleanup & Removal
 - Cleanly deleted the unused/distracting Flashcards feature. Focus remains exclusively on immersive reading and integrated Markdown note generation.
+
+---
+---
+
+# Session 8 — GroupsGuru Mastery Activation & Auth Redesign
+
+**Date:** April 18, 2026
+**Branch:** `main` (auto-pushes to `master` for Render deploy)
+
+---
+
+## What Was Done This Session
+
+### 1. Unified Auth Command Center
+- **Tabbed UI:** Unified the Login and Register pages into a single **"Auth Glass"** component. Students can now toggle between "Sign In" and "Create Account" instantly, resolving all confusion about how to join the platform.
+- **Navbar "Join Now":** Added a high-visibility, Saffron-themed "Join Now" button to the header for guest users, making the path to registration unmistakable.
+- **Premium Social Login:** Upgraded the Google OAuth button to a premium glassmorphic style with improved tactile feedback and clearer labeling.
+
+### 2. Modular Subject Dashboard (Heatmap 3.0)
+- **Modular Subject Cards:** Replaced the infinite long-scrolling heatmap with organized **"Subject Cards"** (e.g., History, Economy, Polity).
+- **Subject-Wise Analytics:** Each card now displays "Mastery Stats" (e.g., 12/45 modules completed), providing students with instant visibility into their preparation status per subject.
+- **Grid Layout:** Implemented a responsive subject-card grid that scales from mobile cards to professional desktop layouts.
+
+### 3. Persistent "Intellectual Time Coach"
+- **Database Study Tracking:** Study time is no longer volatile. Added `minutes_spent` to the `topic_progress` schema and implemented a minute-by-minute database heartbeat. 
+- **19-Hour Mastery Gauge:** Integrated a real-time progress gauge (e.g., "1.25 / 19 Hours Mastered") that calculates mastery based on actual study duration, not just manual clicks.
+- **Enforced Pomodoro Discipline:** Fully activated the "Focus Lock" mechanism. After a 25-minute focus session, the platform locks for a mandatory 5-minute rest period to maximize long-term retention.
+
+### 4. Backend Infrastructure & Deployment
+- **API Engine:** Created `POST /api/study/log` for real-time tracking and enhanced the Topic Status API to serve persistent duration metrics.
+- **Cache Invalidation:** Bumped the global CSS to **v=23** to ensure all students receive the new modular layout and coach logic instantly.
+- **GroupsGuru Identity:** Renamed all remaining legacy "Kindle" references to the proprietary **GroupsGuru Desktop** identity.
