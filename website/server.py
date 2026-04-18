@@ -255,6 +255,27 @@ def seed_mcqs(con) -> None:
        "100 days", "120 days", "150 days", "200 days",
        "A", "MGNREGA guarantees 100 days of unskilled manual work to every rural household.")
 
+    # Constitution & Polity (pre-cp-01)
+    _q(con, "pre-cp-01", "Which Act first introduced 'Separate Electorates' for Muslims in India?",
+       "Indian Councils Act 1861", "Indian Councils Act 1892", "Indian Councils Act 1909", "Government of India Act 1919",
+       "C", "The Indian Councils Act of 1909 (Morley-Minto Reforms) introduced communal representation by providing separate electorates for Muslims.")
+
+    _q(con, "pre-cp-01", "Who moved the 'Objective Resolution' in the Constituent Assembly?",
+       "Dr. B.R. Ambedkar", "Jawaharlal Nehru", "Sardar Patel", "Dr. Rajendra Prasad",
+       "B", "Jawaharlal Nehru moved the Objective Resolution on December 13, 1946, which later became the Preamble of the Constitution.")
+
+    _q(con, "pre-cp-01", "The concept of 'Directive Principles of State Policy' (DPSP) was borrowed from which Constitution?",
+       "USA", "Ireland", "Canada", "UK",
+       "B", "The DPSP in the Indian Constitution were inspired by the Irish Constitution.")
+
+    _q(con, "pre-cp-01", "Which Amendment Act added the words 'Socialist, Secular and Integrity' to the Preamble?",
+       "24th Amendment", "42nd Amendment", "44th Amendment", "52nd Amendment",
+       "B", "The 42nd Constitutional Amendment Act (1976) is known as the 'Mini Constitution' and added these three words.")
+
+    _q(con, "pre-cp-01", "The 'Regulating Act of 1773' designated the Governor of Bengal as the Governor-General of Bengal. Who was the first person to hold this office?",
+       "Lord Clive", "Warren Hastings", "Lord Cornwallis", "Lord Wellesley",
+       "B", "Warren Hastings became the first Governor-General of Bengal under the 1773 Act.")
+
 
 def _q(con, topic_id, q, a, b, c, d, correct, exp) -> None:
     """Helper to insert a question if it doesn't exist."""

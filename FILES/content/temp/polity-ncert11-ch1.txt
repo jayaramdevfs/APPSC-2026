@@ -1,0 +1,1388 @@
+Indian Constitution
+at Work
+Textbook in Political Science for Class XI
+
+Rationalised 2023-24
+
+11102 – INDIAN CONSTITUTION AT WORK
+
+ISBN 81-7450-550-4
+
+Textbook for Class 11
+First Edition
+March 2006 Chaitra 1928
+
+ALL RIGHTS RESERVED
+q
+
+Reprinted
+February 2007 Magha 1928
+December 2007 Pausa 1929
+December 2008 Pausa 1930
+January 2010 Magha 1931
+November 2010 Kartika 1932
+November 2013 Kartika 1935
+December 2014 Pausa 1936
+December 2015 Agrahayana 1937
+January 2017 Pausa 1938
+January 2018 Magha 1939
+February 2019 Magha 1940
+January 2020 Magha 1941
+August 2021 Shravana 1943
+November 2021 Agrahayana 1943
+October 2022 Kartika 1944
+
+q
+
+q
+
+No part of this publication may be reproduced, stored in a retrieval system or
+transmitted, in any form or by any means, electronic, mechanical, photocopying,
+recording or otherwise without the prior permission of the publisher.
+This book is sold subject to the condition that it shall not, by way of trade, be lent,
+re-sold, hired out or otherwise disposed of without the publisher’s consent, in any
+form of binding or cover other than that in which it is published.
+The correct price of this publication is the price printed on this page, Any revised price
+indicated by a rubber stamp or by a sticker or by any other means is incorrect and
+should be unacceptable.
+OFFICES OF THE PUBLICATION
+DIVISION, NCERT
+
+PD 50T RPS
+© National Council of Educational
+Research and Training, 2006
+
+` 145.00
+
+NCERT Campus
+Sri Aurobindo Marg
+New Delhi 110 016
+
+Phone : 011-26562708
+
+108, 100 Feet Road
+Hosdakere Halli Extension
+Banashankari III Stage
+Bangaluru 560 085
+
+Phone : 080-26725740
+
+Navjivan Trust Building
+P.O.Navjivan
+Ahmedabad 380 014
+
+Phone : 079-27541446
+
+CWC Campus
+Opp. Dhankal Bus Stop
+Panihati
+Kolkata 700 114
+
+Phone : 033-25530454
+
+CWC Complex
+Maligaon
+Guwahati 781 021
+
+Phone : 0361-2674869
+
+Publication Team
+
+The cartoons on the cover have
+been taken from the works of –
+Shankar
+R.K. Laxman
+
+Printed on 80 GSM paper with
+NCERT watermark
+Published at the Publication Division
+by the Secretary, National Council of
+Educational Research and Training,
+Sri Aurobindo M arg, New Delhi
+110 016 and printed Taj Printers,
+69/6A Najafgarh Road Industrial
+Area, Near Kirti Nagar Metro Station,
+New Delhi - 110 015
+
+Head, Publication
+Division
+
+: Anup Kumar Rajput
+
+Chief Production
+Officer
+
+: Arun Chitkara
+
+Chief Business
+Manager
+
+: Vipin Dewan
+
+Chief Editor
+(In charge)
+
+: Bijnan Sutar
+
+Assistant Editor
+
+: Shashi Chadha
+
+Assistant Production : Deepak Jaiswal
+Officer
+
+Rationalised 2023-24
+
+Cover and Layout
+Shweta Rao
+Sketches
+Rajeev Kumar
+Cartoons
+Irfaan
+
+FOREWORD
+The National Curriculum Framework (NCF), 2005, recommends that
+children’s life at school must be linked to their life outside the school.
+This principle marks a departure from the legacy of bookish learning
+which continues to shape our system and causes a gap between the
+school, home and community. The syllabi and textbooks developed
+on the basis of NCF signify an attempt to implement this basic idea.
+They also attempt to discourage rote learning and the maintenance
+of sharp boundaries between different subject areas. We hope these
+measures will take us significantly further in the direction of a childcentred system of education outlined in the National Policy on
+Education (1986).
+The success of this effort depends on the steps that school principals
+and teachers will take to encourage children to reflect on their own
+learning and to pursue imaginative activities and questions. We must
+recognise that given space, time and freedom, children generate new
+knowledge by engaging with the information passed on to them by
+adults. Treating the prescribed textbook as the sole basis of
+examination is one of the key reasons why other resources and sites
+of learning are ignored. Inculcating creativity and initiative is possible
+if we perceive and treat children as participants in learning, not as
+receivers of a fixed body of knowledge.
+These aims imply considerable change in school routines and
+mode of functioning. Flexibility in the daily time-table is as necessary
+as rigour in implementing the annual calendar so that the required
+number of teaching days is actually devoted to teaching. The methods
+used for teaching and evaluation will also determine how effective
+this textbook proves for making children’s life at school a happy
+experience, rather than a source of stress or boredom. Syllabus
+designers have tried to address the problem of curricular burden by
+restructuring and reorienting knowledge at different stages with
+greater consideration for child psychology and the time available for
+teaching. The textbook attempts to enhance this endeavour by giving
+higher priority and space to opportunities for contemplation and
+wondering, discussion in small groups, and activities requiring
+hands-on experience.
+The National Council of Educational Research and Training
+(NCERT) appreciates the hard work done by the textbook development
+committee responsible for this book. We wish to thank the
+
+Rationalised 2023-24
+
+iv
+Chairperson of the advisory group in Social Sciences, Professor Hari
+Vasudevan and the Chief Advisors for this book, Professor Suhas
+Palshikar and Professor Yogendra Yadav for guiding the work of this
+committee. Several teachers contributed to the development of this
+textbook; we are grateful to their principals for making this possible.
+We are indebted to the institutions and organisations which have
+generously permitted us to draw upon their resources, material and
+personnel. We are especially grateful to the members of the National
+Monitoring Committee, appointed by the Department of Secondary
+and Higher Education, Ministry of Human Resource Development
+under the Chairmanship of Professor Mrinal Miri and
+Professor G.P. Deshpande, for their valuable time and contribution.
+As an organisation committed to systemic reform and continuous
+improvement in the quality of its products, NCERT welcomes
+comments and suggestions which will enable us to undertake further
+revision and refinement.
+
+New Delhi
+20 December 2005
+
+Director
+National Council of Educational
+Research and Training
+
+Rationalised 2023-24
+
+A LETTER TO YOU
+Dear Students,
+Looking at the title of this book, you may wonder: “why am I studying
+Indian Constitution again? Didn’t I study it in the previous classes?”
+Yes, you have studied the broad structure of the Indian government
+and some bits of the Constitution. But this book takes you to
+something different from what you have already studied.
+You have now chosen Political Science and will study this subject
+for the next two years. What better way can there be to get introduced
+to Political Science than through politics of our own country? That
+is what this book does. The study of the working of the Indian
+Constitution here is a gateway to studying politics in India. The study
+of Indian politics is a window to understanding politics in other
+societies. We hope that through the study of institutions and the
+politics of power surrounding them, you would come to know about
+the principles and theories of politics. Thus this book will tell you
+about the way our Constitution has been working and the way it
+shapes politics in our country. This book is not about legal provisions
+and technical details in the Constitution. It is about how institutions
+are shaped through interaction with actual politics.
+We were inspired to write this different kind of a textbook by the
+National Curriculum Framework 2005. It says that instead of just
+memorisation and repetition, emphasis should be laid on ‘developing
+concepts and the ability to analyse socio-political realities’. The
+Foreword to this book by the Director of NCERT explains the vision
+of this new curriculum. The new syllabi for Political Science recognise
+the need to deepen the student’s understanding of the provisions
+and the working of the Constitution of India.
+That is why you would find more focus on the rationale and the
+real life consequences of the Constitution than just more and more
+information on the Constitution. This textbook will introduce you to
+the idea of constitution and the story of the making and working of
+the Indian Constitution. We certainly talk about the various key
+provisions of the Constitution. But we have added three new features.
+
+Rationalised 2023-24
+
+vi
+
+In the first place, this textbook responds to your curiosity about
+why a particular arrangement in the Constitution was adopted and
+why not some other. Secondly, it allows you to see how institutions
+grow in the company of actual politics. That is why chapters in this
+book do not stop at 1950. They in fact start off at 1950 and take you
+to some instances drawn from the political history of the last fifty
+years or more. We hope that this book will create an appetite for
+more information about Indian politics; it will prepare you for the
+course on Indian politics that you will study next year. Thirdly, this
+book allows you to compare India and its Constitution to other
+countries in the world having many similar concerns and different
+answers. So, wherever possible this textbook tells you about what
+has happened elsewhere in the world. We hope you will develop a
+habit of comparing any one institution to other institutions
+and other social situations.
+We have also introduced a number of aides for you to get
+more interested in the subject that you are studying. In
+each chapter, there will be some example of an article from
+Articles
+the Constitution itself. This will give you a feel of the exact
+wording, the vocabulary of our Constitution. You will also
+find some quotations in each chapter. Most of these are
+from the debates in
+the Constituent Assembly.
+Quotations from
+The purpose is to introduce
+Constituent
+Assembly
+you to this extraordinary
+Debates (CAD)
+heritage
+of
+political
+Source: http://parliamentofindia.nic.in/
+intelligence and foresight that
+ls/debates/debates.htm
+we have inherited and also
+the drama that was unfolding
+in the making of the Constitution.
+Many chapters have cartoons too. But they are not there simply
+as comic relief. They tell you about the criticisms, about the weak
+spots, about near-failures. We hope that apart from enjoying these
+cartoons, you would learn from them, both about politics and about
+how to think about politics. Finally, there are these two characters
+that keep popping up on the sides of your textbook pages from time
+to time. Irfaan, the cartoonist, has especially penned them so that
+you would relate to them. They are just like you: inquisitive, curious,
+
+Rationalised 2023-24
+
+vii
+
+often cynical! Some times they are bold—more than what the
+authors of this book have been!—enough to ask inconvenient
+questions and make comments that make one sit up and think.
+We call them Unni and Munni. While writing this book, we
+have grown quite fond of them and we hope that they will endear
+themselves to you as well. Perhaps, taking inspiration from
+them, you would ask more questions to your teachers and
+pass on some of these to us.
+At the end of each chapter, you would find some interesting
+puzzles in the form of exercises. Encouraged and inspired by
+the NCF and the hope of the Director of NCERT that textbooks
+must help improve the system of assessment, and with the help of
+some young friends, we have tried to mix the exercises with some
+innovative puzzles. They will make you ‘use your grey cells’! We hope
+that in solving these puzzles, you would not feel that you are
+answering exam questions.
+We have prepared this book with the help of a large team that
+kept working for over six months. This included many school and
+college teachers, educationists, political scientists and artists. You
+would read about this group under the title Textbook Development
+Team listed on page ix. Professor Krishna Kumar, Director of NCERT,
+supported us through out this effort and kept on guiding us. We
+also received support and valuable inputs from Professor Hari
+Vasudevan, Professor Gopal Guru, Professor Mrinal Miri, Professor
+G.P. Deshpande and members of the National Monitoring Committee.
+A large number of people have contributed generously to the
+making of this book.We were fortunate to have
+the benefit of the expertise of Professors Rajeev
+Bhargava, Pratap Mehta, Sandeep Shastri,
+Dr. Sanjeeb Mukherji, Dr. Sanjay Lodha,
+Dr. Pushkar Raj, Ms. M. Manisha,
+Unni
+Dr. Shailendra Deolankar and Ms. Chaitra
+Redkar in writing these chapters. Pankaj
+Pushkar, Manish Jain, Alex George and
+M. Manisha formed the backbone of the team.
+They did research for this book, spent sleepless
+nights in preparing the drafts, the boxes and
+
+Rationalised 2023-24
+
+Munni
+
+viii
+
+other material that you see in this book. Their concern for quality
+and their insights into the pedagogy of social science lifted the book
+a few notches above what it would otherwise have been. Manish Jain
+relentlessly pursued the agenda of improving the quality and
+innovativeness of the exercises. Pankaj Pushkar has practically
+steered this book through the last six months. Dr. SriRanjani and
+Dr. Sanjeer Alam, both at the Lokniti Programme of the CSDS kindly
+extended their help in times of urgent need. Amit Ahuja, a doctoral
+student at the university of Michigan, extended help in preparing
+the boxes with comparative examples.
+We are sure that you will appreciate this pleasant design that
+Shweta Rao has prepared and the cartoons and Unni-Munni
+characters born from the pencil of Irfaan Khan. The Children’s Book
+Trust kindly allowed us the use of Shankar’s cartoons. Mr. R. K.
+Laxman also gave permission for using cartoons drawn by him. In
+short, this is a collective effort to make study of Political Science more
+lively, relevant and student-friendly. We must also mention the
+generosity of the Lokniti Programme of the CSDS, and Professor Peter
+R. De Souza, Director, Lokniti, for literally housing the entire work of
+the book at their premises and for providing infrastructure.
+You have recently passed a big exam. Now it is our turn to be
+examined. Whether this textbook fails or passes in what it tried to do
+is for you to evaluate. We would be eagerly waiting for our exam
+result with your comments, criticisms and suggestions to make a
+better attempt next time.
+
+Suhas Palshikar
+Yogendra Yadav
+Chief Advisors
+
+Rationalised 2023-24
+
+TEXTBOOK DEVELOPMENT
+COMMITTEE
+CHAIRPERSON, ADVISORY COMMITTEE FOR TEXTBOOKS AT THE SECONDARY
+LEVEL
+Hari Vasudevan, Professor, Department of History, University of
+Calcutta, Kolkata
+CHIEF ADVISORS
+Suhas Palshikar, Professor, Department of Politics and Public
+Administration, University of Pune, Pune, Maharashtra
+Yogendra Yadav, Senior Fellow, Centre for the Study of Developing
+Societies, Delhi
+MEMBERS
+A.K. Verma, Reader, Department of Political Science, Christ Church
+College, Kanpur, U.P.
+Alex M. George, Independent Researcher, Eruvatty, District Kannur
+Kerala
+Anju Malhotra, Principal, Kalka Public School, New Delhi
+Chaitra Redkar, Sr. Lecturer, SNDT College, Mumbai, Maharashtra
+G. Pathak, PGT, Doni-Polo Public School, Itanagar, Arunachal Pradesh
+M. Manisha, Sr. Lecturer, Department of Political Science, Loreto
+College, Kolkata
+Manish Jain, former PGT and a Doctoral student with the Department
+of Education, University of Delhi, Delhi
+Manisha Priyam, Sr. Lecturer, Gargi College, New Delhi
+Pankaj Pushkar, Senior Lecturer, Directorate of Higher Education,
+Haldwani, Uttaranchal
+Pratap Bhanu Mehta, President, Centre for Policy Research,
+New Delhi
+
+Rationalised 2023-24
+
+x
+
+Pushkar Raj, Sr. Lecturer, Department of Politcal Science, Zakir
+Hussain College, New Delhi
+Rajeev Bhargava, Senior Fellow, Centre for the Study of Developing
+Societies, Delhi
+Rakesh Shukla, Advocate, Supreme Court, New Delhi
+Sandeep Shastri, Director, International Academy for Creative
+Teaching, Bangalore, Karnataka
+Sanjay Lodha, Associate Professor, Department of Political Science,
+Mohan Lal Sukhadia University, Udaipur, Rajasthan
+Sanjeeb Mukherjee, Sr. Lecturer, Department of Political Science,
+Calcutta University, Kolkata
+Sayed Sabkulla, PGT, Maharanis Government Pre-University College,
+Mysore, Karnataka
+Shailendra Deolankar, Lecturer, Department of Political Science, Govt.
+College, Aurangabad, Maharashtra
+Shefali Jha, Associate Professor, Centre for Political Studies, School
+of Social Sciences, Jawaharlal Nehru University, New Delhi
+Srilekha Mukherjee, PGT, St. Paul School, New Delhi
+Versha Manku, Vice Principal and PGT, Kulachi Hansraj Model
+School, New Delhi
+MEMBER-COORDINATOR
+Sanjay Dubey, Reader, DESSH, NCERT, New Delhi
+
+Rationalised 2023-24
+
+ACKNOWLEDGEMENTS
+Efforts of many persons and organisations have gone into the making
+of this book. We appreciate the help extended by the following
+institutions and persons:
+l
+Cagle Cartoons (for the use of cartoons of Chappatte, John
+Trever and Ares);
+l
+The Children’s Book Trust (for the use of Shankar’s
+cartoons);
+l
+Nehru Memorial Museum and Library and Down to Earth
+(for the photographs);
+l
+Sarai, an initiative of the Centre for the Study of Developing
+Societies (CSDS), and Nirantar — Centre for Gender and
+Education;
+l
+Lokniti, CSDS (for housing the project of making of this book);
+l
+R.K. Laxman (for allowing the use of his cartoons);
+l
+Arvind Sharma and Vikram Rawat (for helping in the
+preparation of a foolproof copy);
+l
+Amit Ahuja, Sriranjani and Sanjeer Alam (for providing
+research inputs);
+l
+Irfaan Khan (for the cartoons and the Unni-Munni
+characters);
+l
+Shweta Rao (for design and layout of the book);
+l
+Peter Ronald De Souza (for allowing the use of Lokniti
+resources);
+l
+Pankaj Pushkar (for untiring support in the making of this
+textbook)
+We are thankful to all these institutions and persons.
+Suhas Palshikar and Yogendra Yadav, Chief Advisors
+The contribution of M.V.S.V. Prasad, Assistant Professor, Department
+of Curriculum Studies, NCERT, in reviewing and updating the current
+edition is appreciated.
+
+Rationalised 2023-24
+
+Rationalised 2023-24
+
+CONTENTS
+Foreword
+A letter to you
+
+iii
+v
+
+CONSTITUTION:
+WHY AND HOW?
+
+1
+
+RIGHTS IN THE INDIAN
+CONSTITUTION
+
+26
+
+ELECTION AND
+REPRESENTATION
+
+51
+
+4.
+
+EXECUTIVE
+
+78
+
+5.
+
+LEGISLATURE
+
+100
+
+6.
+
+JUDICIARY
+
+124
+
+7.
+
+FEDERALISM
+
+150
+
+8.
+
+LOCAL
+GOVERNMENTS
+
+176
+
+CONSTITUTION AS A
+LIVING DOCUMENT
+
+196
+
+THE PHILOSOPHY OF
+THE CONSTITUTION
+
+220
+
+1.
+
+2.
+
+3.
+
+9.
+
+10.
+
+Rationalised 2023-24
+
+Constitution of India
+Part IV A (Article 51 A)
+
+Fundamental Duties
+It shall be the duty of every citizen of India —
+(a) to abide by the Constitution and respect its ideals and institutions, the
+National Flag and the National Anthem;
+(b) to cherish and follow the noble ideals which inspired our national struggle
+for freedom;
+(c) to uphold and protect the sovereignty, unity and integrity of India;
+(d) to defend the country and render national service when called upon to
+do so;
+(e) to promote harmony and the spirit of common brotherhood amongst all
+the people of India transcending religious, linguistic and regional or
+sectional diversities; to renounce practices derogatory to the dignity of
+women;
+(f) to value and preserve the rich heritage of our composite culture;
+(g) to protect and improve the natural environment including forests, lakes,
+rivers, wildlife and to have compassion for living creatures;
+(h) to develop the scientific temper, humanism and the spirit of inquiry and
+reform;
+(i)
+
+to safeguard public property and to abjure violence;
+
+(j)
+
+to strive towards excellence in all spheres of individual and collective
+activity so that the nation constantly rises to higher levels of endeavour
+and achievement;
+
+*(k) who is a parent or guardian, to provide opportunities for education to
+his child or, as the case may be, ward between the age of six and
+fourteen years.
+Note: The Article 51A containing Fundamental Duties was inserted by the Constitution
+(42nd Amendment) Act, 1976 (with effect from 3 January 1977).
+*(k) was inserted by the Constitution (86th Amendment) Act, 2002 (with effect from
+1 April 2010).
+
+Rationalised 2023-24
+
+Chapter 1: Constitution: Why and How?
+
+1
+
+Chapter One
+
+CONSTITUTION:
+WHY AND HOW?
+
+INTRODUCTION
+This book is about the working of the Indian Constitution. In the chapters that
+follow, you will read information about various aspects of the working of our
+Constitution. You will learn about the various institutions of the government in
+our country and their relationship with each other.
+But before you begin to read about elections, governments, and presidents
+and prime ministers, it is necessary to understand that the entire structure of the
+government and the various principles that bind the institutions of government
+have their origin in the Constitution of India.
+After studying this chapter, you will learn:
+± what a constitution means;
+± what a constitution does to the society;
+± how constitutions govern the allocation of power in society; and
+± what was the way in which the Constitution of India was made.
+
+Rationalised 2023-24
+
+Indian Constitution at Work
+
+WHY DO WE NEED A CONSTITUTION?
+What is a constitution? What are its functions? What role does it
+perform for a society? How does a constitution relate to our daily
+existence? Answering these questions is not as difficult as you might
+think.
+Constitution allows coordination and
+assurance
+Imagine yourself to be a member of a
+reasonably large group. Further imagine that
+this group has the following characteristics.
+The members of this group are diverse in
+various ways. They have different religious
+allegiances: some are Hindus, some are
+Muslims, some Christians and some perhaps
+profess no religion at all. They are also varied
+in many different respects: they
+pursue different professions, have
+different abilities, have different
+hobbies, different tastes in
+everything from films to books. This group is very much like the
+Some are rich and some are poor. people of my village.
+Some are old, some young.
+Imagine further that members of this group are likely to
+have disputes over various aspects of life: How much
+property should one be allowed to own? Should it be
+compulsory that every child be sent to school or should
+the parents be allowed to decide? How much should this
+Yes, this could be my colony as
+group spend on its safety and security? Or should it build
+well! Does this apply to your
+more parks instead? Should the group be allowed to
+village or town or colony too?
+discriminate against some of its members? Every question
+will elicit a variety of answers from different people. But,
+for all their diversity, this group has to live together. They are
+dependent upon each other in various ways. They require the
+2
+cooperation of each other. What will enable the group to live together
+peacefully?
+
+Rationalised 2023-24
+
+Chapter 1: Constitution: Why and How?
+
+One may say that perhaps members of this group can live together
+if they can agree on some basic rules. Why will the group need certain
+basic rules? Think of what would happen in the absence of some
+basic rules. Every individual would be insecure simply because they
+would not know what members of this group could do to each other,
+who could claim rights over what. Any group will need some basic
+rules that are publicly promulgated and known to all members of
+that group to achieve a minimal degree of coordination. But these
+rules must not only be known, they must also be enforceable. If
+citizens have no assurance that others will follow these rules, they
+will themselves have no reason to follow these rules. Saying that the
+rules are legally enforceable gives an assurance to everybody that
+others will follow these, for if they do not do so, they will be punished.
+The first function of a constitution is to provide a set of
+basic rules that allow for minimal coordination amongst
+members of a society.
+Activity
+Enact the thought experiment of this section in the
+classroom. The entire class should discuss and arrive
+at some decisions that would apply to everyone for
+this entire session. The decision could be about:
+± How would the class representatives be chosen?
+± Which decisions will the representative be able to
+take on behalf of the entire class?
+± Are there some decisions that the class
+representative cannot take without consulting the
+entire class?
+± You can add any other items to this list (collection
+of common kitty for the class, organisation of picnic
+and trips, sharing of common resources, …) as long
+as everyone agrees to it. Make sure that you
+include those subjects that have led to any
+differences in the past.
+± How to revise these decisions in case you
+need to?
+
+Rationalised 2023-24
+
+3
+
+Indian Constitution at Work
+±
+
+4
+
+Write down all these decisions on a paper and put
+it up on the notice board. Which problems did you
+encounter in this decision? Were there differences
+among different students? How did you resolve
+these differences? Did the entire class gain
+something from this exercise?
+
+Specification of decision making powers
+A constitution is a body of fundamental principles according to which
+a state is constituted or governed. But what should these
+fundamental rules be? And what makes them fundamental? Well,
+the first question you will have to decide is who gets to decide what
+the laws governing the society should be? You may want rule X, but
+others may want rule Y. How do we decide whose rules or preferences
+should govern us? You may think the rules you want everyone to
+live by are the best; but others think that their rules are the best.
+How do we resolve this dispute? So even before you decide what
+rules should govern this group you have to decide: Who gets to
+decide?
+The constitution has to provide an answer to this question. It
+specifies the basic allocation of power in a society. It decides who
+gets to decide what the laws will be. In principle, this question, who
+gets to decide, can be answered in many ways: in a monarchical
+constitution, a monarch decides; in some constitutions like the old
+Soviet Union, one single party was given the power to decide. But in
+democratic constitutions, broadly speaking, the people get to decide.
+But this matter is not so simple. Because even if you answer that the
+people should decide, it will not answer the question: how should
+the people decide? For something to be law, should everyone agree
+to it? Should the people directly vote on each matter as the ancient
+Greeks did? Or should the people express their preferences by electing
+representatives? But if the people act through their representatives,
+how should these representatives be elected? How many should there
+be?
+In the Indian Constitution for example, it is specified that in most
+instances, Parliament gets to decide laws and policies, and that
+Parliament itself be organised in a particular manner. Before
+identifying what the law in any given society is, you have to identify
+
+Rationalised 2023-24
+
+Chapter 1: Constitution: Why and How?
+
+5
+
+Limitations on the
+powers of government
+But this is clearly not
+enough. Suppose you
+decided who had the
+authority
+to
+make
+decisions. But then this
+authority passed laws that
+you thought were patently
+Countries of the European Union tried to create a
+unfair. It prohibited you
+European constitution. The attempt failed. Here is a
+from practising your
+cartoonist’s impression of this attempt. Does this
+religion for instance. Or it
+always happen in any constitution making?
+enjoined that clothes of a
+certain colour were
+prohibited, or that you
+were not free to sing certain songs or that people who belonged to a
+particular group (caste or religion) would always have to serve others
+and would not be allowed to retain any property. Or that government
+could arbitrarily arrest someone, or that only people of a certain skin
+colour would be allowed to draw water from wells. You would obviously
+think these laws were unjust and unfair. And even though they were
+passed by a government that had come into existence based
+
+Rationalised 2023-24
+
+“European Constitution” by Patrick Chappate, International Herald Tribune, 21SEP04 Copyright Cagle Cartoons.
+
+who has the authority to enact it. If Parliament has the authority to
+enact laws, there must be a law that bestows this authority on
+Parliament in the first
+place. This is the function
+of the constitution. It is an
+READ A CARTOON
+authority that constitutes
+government in the first
+place.
+The second function
+of a constitution is to
+specify who has the
+power
+to
+make
+decisions in a society.
+It decides how the
+government will be
+constituted.
+
+Indian Constitution at Work
+
+Ah! So you first create a monster
+and then start worrying about
+saving yourself from it! I would
+say, why create this monster called
+government in the first place?
+
+6
+
+on certain procedures there would be something
+obviously unjust about that government enacting these
+laws.
+So the third function of a constitution is to set
+some limits on what a government can impose on
+its citizens. These limits are fundamental in the
+sense that government may never trespass them.
+Constitutions limit the power of government in many
+ways. The most common way of limiting the power of
+government is to specify certain fundamental rights that
+all of us possess as citizens and which no government
+can ever be allowed to violate. The exact content and
+interpretation of these rights varies from constitution to
+constitution. But most constitutions will protect a basic
+cluster of rights. Citizens will be protected from being
+arrested arbitrarily and for no reason. This is one basic
+limitation upon the power of government. Citizens will
+normally have the right to some basic liberties: to freedom
+of speech, freedom of conscience, freedom of association,
+freedom to conduct a trade or business etc. In practice,
+these rights can be limited during times of national
+emergency and the constitution specifies the
+circumstances under which these rights may be
+withdrawn.
+Aspirations and goals of a society
+Most of the older constitutions limited themselves largely
+to allocating decision-making power and setting some
+limits to government power. But many twentieth century
+constitutions, of which the Indian Constitution is the
+finest example, also provide an enabling framework for
+the government to do certain positive things, to express
+the aspirations and goals of society. The Indian
+Constitution was particularly innovative in this respect.
+Societies with deep entrenched inequalities of various
+kinds, will not only have to set limits on the power of
+government, they will also have to enable and empower
+the government to take positive measures to overcome
+forms of inequality or deprivation.
+
+Rationalised 2023-24
+
+Chapter 1: Constitution: Why and How?
+
+For example, India aspires to be a society that is free of caste
+discrimination. If this is our society’s aspiration, the government will
+have to be enabled or empowered to take all the necessary steps to
+achieve this goal. In a country like South Africa, which had a deep
+history of racial discrimination, its new constitution had to enable
+the government to end racial discrimination. More positively, a
+Shankar. Copyright: Children’s Book Trust.
+
+7
+
+READ A CARTOON
+
+4 December 1949
+The constitution makers have to address themselves to very
+different aspirations. Here is Nehru trying to balance between
+different visions and ideologies. Can you identify what these
+different groups stand for? Who do you think prevailed in this
+balancing act?
+
+constitution may enshrine the aspirations of a society. The framers
+of the Indian Constitution, for example, thought that each
+individual in society should have all that is necessary for them to
+lead a life of minimal dignity and social self-respect — minimum
+material well-being, education etc. The Indian Constitution
+enables the government to take positive welfare measures
+some of which are legally enforceable. As we go on studying
+the Indian Constitution, we shall find that such enabling
+
+Rationalised 2023-24
+
+Indian Constitution at Work
+
+provisions have the support of the Preamble to our
+Constitution, and these provisions are found in the section
+on Fundamental Rights. The Directive Principles of State
+of Policy also enjoin government to fulfil certain
+aspirations of the people.
+The fourth function of a constitution is to enable
+the government to fulfil the aspirations of a society
+and create conditions for a just society.
+
+Enabling provisions of the Constitution
+
+What does it take to write nice
+things in the constitution?
+What is the point in writing
+down lofty aspirations and
+goals if they cannot change the
+life of the people?
+
+8
+
+Constitutions are not only rules and regulations
+controlling the powers of the government. They
+also give powers to the government for pursuing
+collective good of the society.
+± Constitution of South Africa assigns many
+responsibilities to the government: it wants
+the government to take measures to promote
+conservation of nature, make efforts to protect
+persons or groups subjected to unfair
+discrimination, and provides that the
+government must progressively ensure
+adequate housing to all, health care, etc.
+± In the case of Indonesia also, the government
+is enjoined to establish and conduct national
+education system. The Indonesian Constitution
+ensures that the poor and destitute children
+will be looked after by the government.
+
+Fundamental identity of a people
+Finally, and perhaps even most importantly, a
+constitution expresses the fundamental identity of a
+people.
+This means the people as a collective entity come
+into being only through the basic constitution. It is
+by agreeing to a basic set of norms about how one
+should be governed, and who should be governed that
+one forms a collective identity. One has many sets
+of identities that exist prior to a constitution. But by
+
+Rationalised 2023-24
+
+agreeing to certain basic norms and principles one constitutes one’s
+9
+basic political identity. Second, constitutional norms are the overarching
+framework within which one pursues individual aspirations, goals and
+freedoms. The constitution sets authoritative constraints upon what one
+may or may not do. It defines the fundamental values that we may not
+trespass. So the constitution also gives one a moral identity. Third and
+finally, it may be the case that many basic political and moral values are
+now shared across different constitutional traditions.
+If one looks at constitutions around the world, they differ in many
+respects — in the form of government they enjoin in many procedural
+details. But they also share a
+good deal. Most modern
+READ A CARTOON
+constitutions create a form of
+government that is democratic
+in some respects, most claim
+to protect certain basic rights.
+But constitutions are different
+in the way they embody
+conceptions of national
+identity. Most nations are an
+amalgamation of a complex
+set of historical traditions;
+they weave together the
+diverse groups that reside
+within the nation in different
+ways. For example, German
+identity was constituted by
+being ethnically German.
+The constitution gave
+The writing of the new Iraqi constitution after
+expression to this identity.
+the collapse of Saddam Hussain’s regime saw
+The Indian Constitution, on
+a lot of conflict between different ethnic
+the other hand, does not
+groups in the country. What do these
+make ethnic identity a
+different people stand for? Compare the
+conflict depicted here with that depicted in
+criterion for citizenship.
+earlier cartoons for the European Union and
+Different nations embody
+India.
+different conceptions of
+what the relationship
+
+Rationalised 2023-24
+
+“Iraqi Constitution”, John Trever, Albuquerque Journal, 18AUG05. Copyright. Cagle Cartoons.
+
+Chapter 1: Constitution: Why and How?
+
+Indian Constitution at Work
+
+between the different regions of a nation and the central government
+should be. This relationship constitutes the national identity of a
+country.
+
+Check your progress
+Here are some provisions of the Indian and other constitutions.
+For each of these write the function that this provision
+performs.
+The government cannot
+order any citizen to follow
+or not to follow any religion
+
+Limitations on the
+power of the
+government
+
+The government must try
+to reduce inequalities
+in income and wealth
+The President has the
+power to appoint
+the Prime Minister
+The Constitution is the
+supreme law that everyone
+has to obey
+Indian citizenship is not
+limited to people of
+any race, caste or religion
+
+10
+
+THE AUTHORITY OF A CONSTITUTION
+We have outlined some of the functions a constitution performs. These
+functions explain why most societies have a constitution. But there
+are three further questions we can ask about constitutions:
+
+Rationalised 2023-24
+
+Chapter 1: Constitution: Why and How?
+
+a) What is a constitution?
+b) How effective is a constitution?
+c) Is a constitution just?
+In most countries, ‘Constitution’ is a compact
+document that comprises a number of articles about the
+state, specifying how the state is to be constituted and
+what norms it should follow. When we ask for the
+constitution of a country we are usually referring to this
+document. But some countries, the United Kingdom for
+instance, do not have one single document that can be
+called the Constitution. Rather they have a series of
+documents and decisions that, taken collectively, are
+referred to as the constitution. So, we can say that
+constitution is the document or set of documents that
+seeks to perform the functions that we mentioned above.
+But many constitutions around the world exist only
+on paper; they are mere words existing on a parchment.
+The crucial question is: how effective is a constitution?
+What makes it effective? What ensures that it has a real
+impact on the lives of people? Making a constitution
+effective depends upon many factors.
+Mode of promulgation
+This refers to how a constitution comes into being. Who
+crafted the constitution and how much authority did they
+have? In many countries constitutions remain defunct
+because they are crafted by military leaders or leaders
+who are not popular and do not have the ability to carry
+the people with them. The most successful constitutions,
+like India, South Africa and the United States, are
+constitutions which were created in the aftermath of
+popular national movements. Although India’s
+Constitution was formally created by a Constituent
+Assembly between December 1946 and November
+1949, it drew upon a long history of the nationalist
+movement that had a remarkable ability to take along
+different sections of Indian society together. The
+Constitution drew enormous legitimacy from the
+
+Rationalised 2023-24
+
+11
+
+What do people do if they find
+out that their constitution is
+not just? What happens to
+people when a constitution
+exists only on paper?
+
+Indian Constitution at Work
+
+fact that it was drawn up by people
+who enjoyed immense public
+credibility, who had the capacity
+to negotiate and command the
+respect of a wide cross-section of
+society, and who were able to
+convince the people that the
+constitution was not an instrument
+for the aggrandisement of their
+personal power. The final
+document reflected the broad
+national consensus at the time.
+Some countries have subjected
+their constitution to a full-fledged
+referendum, where all the people
+vote on the desirability of a
+constitution.
+The
+Indian
+Constitution was never subjected
+to such a referendum, but
+nevertheless carried enormous
+public authority, because it had
+the consensus and backing of
+leaders who were themselves
+popular.
+Although
+the
+Constitution itself was not
+subjected to a referendum, the
+people adopted it as their own by
+abiding by its provisions.
+Therefore, the authority of people
+who enact the constitution helps
+determine in part its prospects for
+success.
+
+12
+
+The substantive provisions of a
+constitution
+It is the hallmark of a successful
+constitution that it gives everyone
+in society some reason to go along
+with its provisions. A constitution
+
+Debate over Constitution
+making in Nepal:
+Making a constitution is not always
+an easy and smooth affair. Nepal
+is an example of the complicated
+nature of constitution making.
+Since 1948, Nepal has had five
+constitutions, in 1948, 1951, 1959,
+1962 and 1990. But all these
+constitutions were ‘granted’ by the
+King of Nepal. The 1990
+constitution introduced a multiparty competition, though the King
+continued to hold final powers in
+many respects. For many years
+Nepal was faced with militant
+political agitations for restructuring
+the government. The main issue
+was the role of the monarchy in the
+constitution of Nepal. Some groups
+in Nepal wanted to abolish the
+institution of monarchy and
+establish republican form of
+government. Others believed that
+it may be useful to shift to limited
+monarchy with a reduced role for
+the King. The King himself was not
+ready to give up powers. He took
+over all powers in October 2002.
+Many political parties and
+organisations demanded the
+formation of a new constituent
+assembly. The Communist Party of
+Nepal (Maoist) was in the forefront
+of the struggle for a popularly
+elected constituent assembly.
+Finally, under pressure of popular
+agitation, the King had to install a
+government acceptable to the
+agitating parties. This government
+has stripped the King of almost all
+powers. In 2008, Nepal emerged as
+a democratic republic after
+abolishing the monarchy. Finally,
+Nepal adopted a new constitution
+in 2015.
+
+Rationalised 2023-24
+
+Chapter 1: Constitution: Why and How?
+
+that, for instance, allowed permanent majorities to oppress minority
+groups within society would give minorities no reason to go along
+with the provision of the constitution. Or a constitution that
+systematically privileged some members at the expense of others, or
+that systematically entrenched the power of small groups in society,
+would cease to command allegiance. If any group feels their identity
+is being stifled, they will have no reason to abide by the constitution.
+No constitution by itself achieves perfect justice. But it has to convince
+people that it provides the framework for pursuing basic justice.
+Do this thought experiment. Ask yourself this question: What
+would be the content of some basic rules in society, such that they
+gave everyone a reason to go along with them?
+The more a constitution preserves the freedom and equality of
+all its members, the more likely it is to succeed. Does the Indian
+Constitution, broadly speaking, give everyone a reason to go along
+with its broad outlines? After studying this book, one should be
+able to answer this question in the affirmative.
+Balanced institutional design
+Constitutions are often subverted, not by the people, but by small
+groups, who wish to enhance their own power. Well crafted
+constitutions fragment power in society intelligently so that no single
+group can subvert the constitution. One way of such intelligent
+designing of a constitution is to ensure that no single institution
+acquires monopoly of power. This is often done by fragmenting power
+across different institutions. The Indian Constitution, for example,
+horizontally fragments power across different institutions like the
+Legislature, Executive and the Judiciary and even independent
+statutory bodies like the Election Commission. This ensures that
+even if one institution wants to subvert the Constitution, others can
+check its transgressions. An intelligent system of checks and
+balances has facilitated the success of the Indian Constitution.
+Another important aspect of intelligent institutional design is:
+that a constitution must strike the right balance between certain
+values, norms and procedures as authoritative, and at the same
+time allow enough flexibility in its operations to adapt to changing
+needs and circumstances. Too rigid a constitution is likely to break
+under the weight of change; a constitution that is, on the other
+
+Rationalised 2023-24
+
+13
+
+“Castle of Cards” , Ares, copyright Cagle Cartoons, SEP05
+
+Indian Constitution at Work
+
+hand, too flexible, will give no security,
+predictability or identity to a people.
+Successful constitutions strike the right
+balance between preserving core values and
+adapting them to new circumstances. You
+will notice the wisdom of makers of the
+Indian Constitution in the chapter on the
+Constitution as a living document (Chapter
+9). The Indian Constitution is described as
+‘a living’ document. By striking a balance
+between the possibility to change the
+provisions and the limits on such changes,
+the Constitution has ensured that it will
+survive as a document respected by people.
+This arrangement also ensures that no
+section or group can, on its own, subvert
+the Constitution.
+Why does the cartoonist describe
+Therefore in determining whether a
+the new Iraqi Constitution as the
+constitution has authority you can ask
+castle of cards? Would this
+yourself three questions:
+description apply to the Indian
+± Were the people who enacted the
+Constitution?
+constitution credible? This question
+will be answered in the remaining part
+of this chapter.
+± Secondly, did the constitution ensure
+that power was intelligently organised so that it was not easy for
+any group to subvert the constitution? And, most importantly,
+does the constitution give everyone some reason to go along with
+it? Most of this book is about this question.
+± Also, is the constitution the locus of people’s hopes and
+aspiration? The ability of the constitution to command voluntary
+allegiance of the people depends to a certain extent upon whether
+the constitution is just. What are the principles of justice
+underlying the Indian Constitution? The last chapter of this book
+will answer this question.
+
+READ A CARTOON
+
+14
+
+How was the Indian Constitution made?
+Let us find out how the Indian Constitution was made. Formally, the
+Constitution was made by the Constituent Assembly which had been
+elected for undivided India. It held its first sitting on
+
+Rationalised 2023-24
+
+Chapter 1: Constitution: Why and How?
+
+9 December1946 and reassembled as Constituent Assembly for divided
+India on 14 August 1947. Its members were chosen by indirect election
+by the members of the Provincial Legislative Assemblies that had been
+established under the Government of India Act, 1935. The Constituent
+Assembly was composed roughly along the lines suggested by the
+plan proposed by the committee of the British cabinet, known as the
+Cabinet Mission. According to this plan:
+± Each Province and each Princely State or group of States were
+allotted seats proportional to their respective population roughly
+in the ratio of 1:10,00,000. As a result the Provinces (that were
+under direct British rule) were to elect 292 members while the
+Princely States were allotted a minimum of 93 seats.
+± The seats in each Province were distributed among the three main
+communities, Muslims, Sikhs and general, in proportion to their
+respective populations.
+± Members of each community in the Provincial Legislative
+Assembly elected their own representatives by the method of
+proportional representation with single transferable vote.
+± The method of selection in the case of representatives of Princely
+States was to be determined by consultation.
+For more details, visit http://164.100.47.194/loksabha/constituent/facts.html
+
+“We must make our political democracy a social democracy as well.
+Political democracy cannot last unless there lies at the base of it
+social democracy. What does social democracy mean? It means a
+way of life, which recognises liberty, equality and fraternity as the
+principles of life. These principles of liberty, equality and fraternity
+are not to be treated as separate items in a trinity. They form a
+union of trinity in the sense that to divorce one from the other is to
+defeat the very purpose of democracy. Liberty cannot be divorced
+from equality, equality cannot be divorced from liberty. Nor can
+liberty and equality be divorced from fraternity. Without equality,
+liberty would produce the supremacy of the few over the many.
+Equality without liberty would kill individual initiative. Without
+fraternity, liberty and equality could not become a natural course
+of things…”
+Dr. B.R. Ambedkar, CAD, Vol. XI, p.979, 25 November 1949
+Are the principles of liberty, equality and fraternity being practised in
+your classroom? How can they coexist? Discuss this with your friends.
+
+Rationalised 2023-24
+
+15
+
+Indian Constitution at Work
+
+The previous section discusses the three factors that
+make a constitution effective and respectable. How far
+does the Indian Constitution pass this test?
+
+What would have happened if
+the Constituent Assembly was
+elected by all the people of
+India? Could it be very
+different from what it was?
+
+16
+
+Composition of the Constituent Assembly
+As a consequence of the Partition under the plan of
+3 June 1947 those members who were elected from
+territories which fell under Pakistan ceased to be
+members of the Constituent Assembly. The number of
+members in the Assembly was reduced to 299. The
+Constitution was adopted on 26 November 1949. 284
+members were actually present on 24 January 1950 and
+appended their signature to the Constitution as finally
+passed. The Constitution came into force on 26 January
+1950. The Constitution was thus framed against the
+backdrop of the horrendous violence that the Partition
+unleashed on the subcontinent. But it is a tribute to the
+fortitude of the framers that they were not only able to
+draft a constitution under immense pressure, but also
+learnt the right lessons from the unimaginable violence
+that accompanied the Partition. The Constitution was
+committed to a new conception of citizenship, where not
+only would minorities be secure, but religious identity
+would have no bearing on citizenship rights.
+But this account of the composition of the Constituent
+Assembly that drafted the Constitution touches upon only
+the surface of how our Constitution was made. Although,
+the members of the Assembly were not elected by
+universal suffrage, there was a serious attempt to make
+the Assembly a representative body. Members of all
+religions were given representation under the scheme
+described above; in addition, the Assembly had twentyeight members from the Scheduled Castes. In terms of
+political parties, the Congress dominated the Assembly
+occupying as many as eighty-two per cent of the seats in
+the Assembly after the Partition. The Congress itself was
+such a diverse party that it managed to accommodate
+almost all shades of opinion within it.
+
+Rationalised 2023-24
+
+
