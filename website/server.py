@@ -276,6 +276,27 @@ def seed_mcqs(con) -> None:
        "Lord Clive", "Warren Hastings", "Lord Cornwallis", "Lord Wellesley",
        "B", "Warren Hastings became the first Governor-General of Bengal under the 1773 Act.")
 
+    # Union & Federal Structure (pre-cp-02)
+    _q(con, "pre-cp-02", "Under which Article can the Parliament of India admit or establish a new state that is NOT part of the existing Union?",
+       "Article 1", "Article 2", "Article 3", "Article 4",
+       "B", "Article 2 deals with the admission or establishment of new states that are not part of the Union of India.")
+
+    _q(con, "pre-cp-02", "On what date was the separate Andhra State created, following the hunger strike of Potti Sreeramulu?",
+       "August 15, 1947", "October 1, 1953", "November 1, 1956", "June 2, 2014",
+       "B", "The separate Andhra State was formed on October 1, 1953, with Kurnool as its capital.")
+
+    _q(con, "pre-cp-02", "Which Commission/Committee first rejected the linguistic basis for the reorganisation of states in 1948?",
+       "Fazal Ali Commission", "Sarkaria Commission", "S.K. Dhar Commission", "Punchhi Commission",
+       "C", "The S.K. Dhar Commission (1948) rejected the linguistic basis and recommended administrative convenience.")
+
+    _q(con, "pre-cp-02", "The Indian Constitution is often described as 'Quasi-federal'. Who used this term?",
+       "B.R. Ambedkar", "K.C. Wheare", "Granville Austin", "Ivor Jennings",
+       "B", "Professor K.C. Wheare described the Indian Constitution as 'Quasi-federal' due to its unitary bias.")
+
+    _q(con, "pre-cp-02", "The 7th Schedule of the Indian Constitution contains the three lists - Union, State, and Concurrent. In which list are 'Residuary Powers' kept in India?",
+       "Union List", "State List", "Concurrent List", "None (Vested in Parliament)",
+       "D", "In India, residuary powers are vested in the Union Parliament (consistent with a strong Centre).")
+
 
 def _q(con, topic_id, q, a, b, c, d, correct, exp) -> None:
     """Helper to insert a question if it doesn't exist."""
