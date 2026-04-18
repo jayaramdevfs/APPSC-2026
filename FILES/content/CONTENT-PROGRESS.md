@@ -56,7 +56,7 @@
 |--------|-------------|-------|-----------------|
 | ✅ | `pre-cp-01` | Indian Constitution — Evolution & Features | p1-con-01, m3-pc-01 | (Antigravity, 2026-04-18) |
 | ✅ | `pre-cp-02` | Union, States & Federal Structure | p1-con-02, p1-con-03, m3-pc-02, m3-pc-04 | (Antigravity, 2026-04-18) |
-| ⬜ | `pre-cp-03` | Constitutional Authorities & Governance | p1-con-03, p1-con-05, m3-pc-03, m3-pc-05 |
+| ✅ | `pre-cp-03` | Constitutional Authorities & Governance | p1-con-03, p1-con-05, m3-pc-03, m3-pc-05 | (Antigravity, 2026-04-18) |
 | ⬜ | `pre-cp-04` | LPG Impact & Regulatory Bodies | m3-pa-03 |
 | ⬜ | `pre-cp-05` | Rights Issues | — (twins covered by soc-03 already) |
 | ⬜ | `pre-cp-06` | India's Foreign Policy & IR | p1-con-04 |

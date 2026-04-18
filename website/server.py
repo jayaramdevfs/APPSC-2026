@@ -174,6 +174,14 @@ def init_db() -> None:
             UNIQUE(user_id, topic_id, para_index)
         )
     """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS user_pomodoro_settings (
+            user_id    INTEGER PRIMARY KEY,
+            work_min   INTEGER DEFAULT 25,
+            break_min  INTEGER DEFAULT 5,
+            updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
     con.commit()
 
     # Admin — password overrideable via ADMIN_PASSWORD env var on Render
@@ -296,6 +304,27 @@ def seed_mcqs(con) -> None:
     _q(con, "pre-cp-02", "The 7th Schedule of the Indian Constitution contains the three lists - Union, State, and Concurrent. In which list are 'Residuary Powers' kept in India?",
        "Union List", "State List", "Concurrent List", "None (Vested in Parliament)",
        "D", "In India, residuary powers are vested in the Union Parliament (consistent with a strong Centre).")
+
+    # Governance & Authorities (pre-cp-03)
+    _q(con, "pre-cp-03", "Article 74 of the Indian Constitution provides that there shall be a Council of Ministers headed by the Prime Minister to aid and advise whom?",
+       "The Speaker", "The Chief Justice", "The President", "The Vice-President",
+       "C", "The President of India exercises his functions on the aid and advice of the Council of Ministers.")
+
+    _q(con, "pre-cp-03", "Who is the 'Constitutional Head' of a State in India?",
+       "Chief Minister", "Governor", "Speaker of Assembly", "High Court Judge",
+       "B", "The Governor is the constitutional/formal head of the state, while the CM is the real head.")
+
+    _q(con, "pre-cp-03", "Which Constitutional Amendment Act introduced the 3-tier Panchayati Raj system in India?",
+       "42nd Amendment", "44th Amendment", "73rd Amendment", "74th Amendment",
+       "C", "The 73rd Constitutional Amendment Act (1992) gave constitutional status to Panchayati Raj Institutions.")
+
+    _q(con, "pre-cp-03", "Who has the power to decide whether a bill is a 'Money Bill' or not?",
+       "The President", "The Prime Minister", "The Speaker of Lok Sabha", "The Finance Minister",
+       "C", "Under Article 110, the Speaker of the Lok Sabha has the final authority to decide if a bill is a Money Bill.")
+
+    _q(con, "pre-cp-03", "How many members are nominated by the President to the Rajya Sabha for their excellence in science, art, literature, and social service?",
+       "2", "10", "12", "15",
+       "C", "The President nominates 12 members to the Rajya Sabha.")
 
 
 def _q(con, topic_id, q, a, b, c, d, correct, exp) -> None:
@@ -3167,6 +3196,43 @@ async def api_progress_grid(request: Request):
     return JSONResponse(results)
 
 
+
+async def api_get_pomodoro_settings(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Auth required"}, status_code=401)
+    
+    with sqlite3.connect(DB_PATH) as con:
+        con.row_factory = sqlite3.Row
+        row = con.execute("SELECT work_min, break_min FROM user_pomodoro_settings WHERE user_id = ?", (user["id"],)).fetchone()
+        if row:
+            return JSONResponse(dict(row))
+        return JSONResponse({"work_min": 25, "break_min": 5})
+
+async def api_save_pomodoro_settings(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Auth required"}, status_code=401)
+    
+    try:
+        data = await request.json()
+        work = int(data.get("work_min", 25))
+        break_m = int(data.get("break_min", 5))
+        
+        with sqlite3.connect(DB_PATH) as con:
+            con.execute("""
+                INSERT INTO user_pomodoro_settings (user_id, work_min, break_min, updated_at)
+                VALUES (?, ?, ?, CURRENT_TIMESTAMP)
+                ON CONFLICT(user_id) DO UPDATE SET
+                    work_min = EXCLUDED.work_min,
+                    break_min = EXCLUDED.break_min,
+                    updated_at = CURRENT_TIMESTAMP
+            """, (user["id"], work, break_m))
+            con.commit()
+        return JSONResponse({"status": "ok"})
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=400)
+
 async def api_study_log(request: Request):
     """POST — Logs study minutes for a specific topic."""
     user = get_current_user(request)
@@ -4167,6 +4233,8 @@ routes = [
     Route("/api/progress/summary",                api_progress_summary),
     Route("/api/progress/grid",                   api_progress_grid),
     Route("/api/study/log",                       api_study_log,           methods=["POST"]),
+    Route("/api/pomodoro/settings",               api_get_pomodoro_settings,methods=["GET"]),
+    Route("/api/pomodoro/settings",               api_save_pomodoro_settings,methods=["POST"]),
     Route("/admin",                               admin_page),
     Route("/api/admin/users",                     api_admin_users),
     Route("/api/admin/users/{id}",                api_admin_delete_user,   methods=["DELETE"]),

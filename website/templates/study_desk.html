@@ -126,6 +126,27 @@
       <div id="coach-message">
         <p>Your session is starting. As your coach, I will ensure maximum focus.</p>
       </div>
+      
+      <div class="coach-settings">
+        <div class="c-set-row">
+            <span>Focus Duration</span>
+            <select id="set-work-min">
+                <option value="15">15 Min</option>
+                <option value="25" selected>25 Min</option>
+                <option value="45">45 Min</option>
+                <option value="60">60 Min</option>
+            </select>
+        </div>
+        <div class="c-set-row">
+            <span>Break Duration</span>
+            <select id="set-break-min">
+                <option value="5" selected>5 Min</option>
+                <option value="10">10 Min</option>
+                <option value="15">15 Min</option>
+            </select>
+        </div>
+      </div>
+
       <button class="k-coach-btn" id="coach-btn-action">Start Focus Block</button>
       <button class="k-coach-btn-secondary" id="coach-btn-skip">Dismiss</button>
     </div>
@@ -207,6 +228,30 @@ nav.navbar { display: none !important; }
   background: transparent; color: #888; border: none; font-size: 0.9rem; cursor: pointer; text-decoration: underline;
 }
 .k-coach-btn-secondary:hover { color: white; }
+.coach-settings {
+    margin: 1.5rem 0;
+    background: rgba(255,153,51,0.05);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.c-set-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+.c-set-row select {
+    background: var(--navy);
+    color: var(--gold);
+    border: 1px solid var(--border);
+    padding: 4px 8px;
+    border-radius: 4px;
+    outline: none;
+}
 
 #kindle-app {
   background-color: var(--k-bg);
@@ -1015,12 +1060,26 @@ const TimeCoach = {
         const resp = await fetch(`/api/progress/topic-status/${TOPIC_ID}`);
         const data = await resp.json();
         this.minutesSpent = data.minutes_spent || 0;
+        
+        // Load Pomodoro Settings
+        const sResp = await fetch('/api/pomodoro/settings');
+        const sData = await sResp.json();
+        document.getElementById('set-work-min').value = sData.work_min;
+        document.getElementById('set-break-min').value = sData.break_min;
     } catch(e) { console.error("Coach data fetch failed:", e); }
 
     document.getElementById('btn-coach').addEventListener('click', () => this.toggle());
     
     // 2. Proactive Mastery Notification
     setTimeout(() => this.triggerWelcome(), 1000);
+  },
+
+  saveSettings(w, b) {
+    fetch('/api/pomodoro/settings', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({work_min: w, break_min: b})
+    });
   },
   
   triggerWelcome() {
@@ -1042,8 +1101,13 @@ const TimeCoach = {
     const actionBtn = document.getElementById('coach-btn-action');
     actionBtn.textContent = "Start Focus Block";
     actionBtn.onclick = () => {
+      // Save settings before starting
+      const w = document.getElementById('set-work-min').value;
+      const b = document.getElementById('set-break-min').value;
+      this.saveSettings(w, b);
+
       this.overlay.style.display = 'none';
-      this.pomodoroTimeLeft = 25 * 60;
+      this.pomodoroTimeLeft = w * 60;
       this.updateDisplay();
       this.start();
     };
@@ -1104,7 +1168,20 @@ const TimeCoach = {
   triggerBreak() {
     this.pause();
     this.isBreak = true;
-    this.pomodoroTimeLeft = 5 * 60; // 5 min break
+    const b = document.getElementById('set-break-min').value;
+    this.pomodoroTimeLeft = b * 60; 
+    
+    // Audio alert
+    try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioCtx.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(880, audioCtx.currentTime); 
+        osc.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.5);
+    } catch(e) {}
+
     const lock = document.getElementById('k-break-lock');
     if (lock) lock.style.display = 'flex';
     this.updateDisplay();
@@ -1125,7 +1202,7 @@ TimeCoach.init();
 // --- COMMAND CENTER SYNC ---
 (function() {
     localStorage.setItem('gg_last_studied_id', TOPIC_ID);
-    localStorage.setItem('gg_last_studied_title', TOPIC_TITLE);
+    localStorage.setItem('gg_last_studied_title', topicTitle);
     localStorage.setItem('gg_last_studied_time', new Date().getTime());
 })();
 </script>
