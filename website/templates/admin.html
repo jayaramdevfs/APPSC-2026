@@ -145,6 +145,23 @@
       <button type="submit" class="auth-btn">Save Current Affairs</button>
     </form>
   </div>
+
+  <!-- Topic Content Editor -->
+  <div class="admin-panel" style="grid-column: span 2;">
+    <h2>
+      Topic Content Manager
+      <button class="admin-btn" onclick="loadTopicsList()">Load Topics</button>
+    </h2>
+    <div class="ca-editor">
+      <div style="display: flex; gap: 1rem;">
+        <select id="topic-selector" class="ca-input" style="flex: 1;" onchange="loadTopicContent(this.value)">
+          <option value="">Select a Topic to Edit...</option>
+        </select>
+        <button class="admin-btn" onclick="saveTopicContent()">Save Content</button>
+      </div>
+      <textarea id="topic-content" class="ca-input ca-textarea" placeholder="# Official Reference Notes..."></textarea>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -268,10 +285,53 @@ async function deleteCA() {
   }
 }
 
+// --- Topic Content ---
+async function loadTopicsList() {
+  try {
+    const res = await fetch('/api/admin/topics');
+    const data = await res.json();
+    const sel = document.getElementById('topic-selector');
+    sel.innerHTML = '<option value="">Select a Topic to Edit...</option>';
+    data.topics.forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t.id;
+      opt.textContent = t.title;
+      sel.appendChild(opt);
+    });
+  } catch (e) { console.error(e); }
+}
+
+async function loadTopicContent(tid) {
+  if (!tid) return;
+  document.getElementById('topic-content').value = 'Loading...';
+  try {
+    const res = await fetch(`/api/content/${tid}`);
+    const data = await res.json();
+    document.getElementById('topic-content').value = data.content || '';
+  } catch (e) {
+    document.getElementById('topic-content').value = 'Error loading content';
+  }
+}
+
+async function saveTopicContent() {
+  const tid = document.getElementById('topic-selector').value;
+  const content = document.getElementById('topic-content').value;
+  if (!tid) return alert('Select a topic first');
+  
+  const res = await fetch('/api/admin/topics', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({topic_id: tid, content})
+  });
+  if (res.ok) alert('Topic content saved!');
+  else alert('Failed to save content');
+}
+
 // Init
 window.addEventListener('DOMContentLoaded', () => {
   loadUsers();
   loadCAFiles();
+  loadTopicsList();
 });
 </script>
 {% endblock %}

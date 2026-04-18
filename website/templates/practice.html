@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+{% block title %}Practice Mode — GroupsGuru{% endblock %}
+
+{% block content %}
+<div class="practice-desk">
+    <div class="practice-header">
+        <div class="ph-left">
+            <a href="/dashboard" class="quit-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Quit Session
+            </a>
+            <span class="topic-label" id="practice-topic-name">{{ topic_title }}</span>
+        </div>
+        <div class="ph-right">
+            <div class="session-stat">
+                <span class="label">Accuracy</span>
+                <span class="val" id="accuracy-val">0%</span>
+            </div>
+            <div class="session-stat">
+                <span class="label">Progress</span>
+                <span class="val" id="progress-text">0/0</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="practice-container">
+        <!-- Question Area -->
+        <div id="quiz-screen" class="quiz-card">
+            <div class="q-meta">Question <span id="q-number">1</span></div>
+            <h2 class="q-text" id="q-text"></h2>
+            
+            <div class="options-grid" id="options-grid">
+                <!-- Options injected here -->
+            </div>
+
+            <div id="explanation-box" class="explanation-box" style="display:none;">
+                <div class="ex-header">
+                    <span id="result-badge" class="badge">Correct</span>
+                    <span class="ex-title">Answer Breakdown</span>
+                </div>
+                <p id="ex-text" class="ex-content"></p>
+                <button class="next-btn" onclick="nextQuestion()">Continue &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Completion Screen -->
+        <div id="finish-screen" class="finish-card" style="display:none;">
+            <div class="f-icon">🏆</div>
+            <h1 class="f-title">Session Complete</h1>
+            <p class="f-subtitle">You've mastered these concepts. Excellent work!</p>
+            
+            <div class="f-stats">
+                <div class="f-stat">
+                    <span class="val" id="final-score">0</span>
+                    <span class="label">Correct</span>
+                </div>
+                <div class="f-stat">
+                    <span class="val" id="final-accuracy">0%</span>
+                    <span class="label">Accuracy</span>
+                </div>
+            </div>
+
+            <div class="f-actions">
+                <button class="f-btn primary" onclick="location.reload()">Replay Session</button>
+                <a href="/dashboard" class="f-btn secondary">Go to Dashboard</a>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-screen" class="finish-card" style="display:none;">
+            <div class="f-icon">📝</div>
+            <h1 class="f-title">No Questions Yet</h1>
+            <p class="f-subtitle">We are still populating practice questions for this topic. Check back soon!</p>
+            <a href="/dashboard" class="f-btn primary">Go to Dashboard</a>
+        </div>
+    </div>
+
+    <div class="practice-footer">
+        <div class="progress-bar-bg">
+            <div id="p-bar-fill" class="progress-bar-fill" style="width: 0%"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const TOPIC_ID = "{{ topic_id }}";
+    let questions = [];
+    let curIdx = 0;
+    let score = 0;
+    let attempted = 0;
+    let answered = false;
+
+    async function loadQuiz() {
+        const resp = await fetch(`/api/mcqs/${TOPIC_ID}`);
+        const data = await resp.json();
+        questions = data.mcqs;
+
+        if (questions.length === 0) {
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('empty-screen').style.display = 'block';
+            return;
+        }
+
+        renderQuestion();
+    }
+
+    function renderQuestion() {
+        answered = false;
+        const q = questions[curIdx];
+        document.getElementById('q-number').innerText = curIdx + 1;
+        document.getElementById('q-text').innerText = q.question;
+        document.getElementById('progress-text').innerText = `${curIdx + 1}/${questions.length}`;
+        
+        const grid = document.getElementById('options-grid');
+        grid.innerHTML = '';
+        document.getElementById('explanation-box').style.display = 'none';
+
+        ['a', 'b', 'c', 'd'].forEach(key => {
+            const btn = document.createElement('button');
+            btn.className = 'opt-btn';
+            btn.innerHTML = `
+                <span class="opt-key">${key.toUpperCase()}</span>
+                <span class="opt-val">${q['option_'+key]}</span>
+            `;
+            btn.onclick = () => selectOption(key, btn);
+            grid.appendChild(btn);
+        });
+
+        updateProgress();
+    }
+
+    function selectOption(key, btn) {
+        if (answered) return;
+        answered = true;
+        
+        attempted++;
+        const q = questions[curIdx];
+        const isCorrect = key.toUpperCase() === q.correct_option.toUpperCase();
+        
+        if (isCorrect) {
+            score++;
+            btn.classList.add('correct');
+        } else {
+            btn.classList.add('wrong');
+            // Show correct answer
+            const btns = document.querySelectorAll('.opt-btn');
+            btns.forEach(b => {
+                if (b.querySelector('.opt-key').innerText === q.correct_option.toUpperCase()) {
+                    b.classList.add('correct-hint');
+                }
+            });
+        }
+
+        document.getElementById('accuracy-val').innerText = Math.round((score/attempted)*100) + '%';
+        
+        // Show explanation
+        const exBox = document.getElementById('explanation-box');
+        const badge = document.getElementById('result-badge');
+        exBox.style.display = 'block';
+        badge.innerText = isCorrect ? 'Correct' : 'Incorrect';
+        badge.className = isCorrect ? 'badge correct' : 'badge wrong';
+        document.getElementById('ex-text').innerHTML = q.explanation || 'No explanation provided.';
+    }
+
+    function nextQuestion() {
+        curIdx++;
+        if (curIdx < questions.length) {
+            renderQuestion();
+        } else {
+            finishQuiz();
+        }
+    }
+
+    function finishQuiz() {
+        document.getElementById('quiz-screen').style.display = 'none';
+        document.getElementById('finish-screen').style.display = 'block';
+        document.getElementById('final-score').innerText = score;
+        document.getElementById('final-accuracy').innerText = Math.round((score/questions.length)*100) + '%';
+        document.getElementById('p-bar-fill').style.width = '100%';
+    }
+
+    function updateProgress() {
+        const pct = (curIdx / questions.length) * 100;
+        document.getElementById('p-bar-fill').style.width = pct + '%';
+    }
+
+    document.addEventListener('DOMContentLoaded', loadQuiz);
+</script>
+
+<style>
+.practice-desk {
+    position: fixed;
+    inset: 0;
+    background: var(--base);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.practice-header {
+    height: 70px;
+    background: var(--navy);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.ph-left { display: flex; align-items: center; gap: 1.5rem; }
+.quit-btn { 
+    color: var(--muted); 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+    transition: 0.2s;
+}
+.quit-btn:hover { color: var(--gold); }
+.topic-label { color: var(--white); font-weight: 700; font-size: 1rem; border-left: 1px solid var(--border); padding-left: 1.5rem; }
+
+.ph-right { display: flex; gap: 2rem; }
+.session-stat { display: flex; flex-direction: column; align-items: flex-end; }
+.session-stat .label { font-size: 0.65rem; color: var(--faint); text-transform: uppercase; letter-spacing: 1px; }
+.session-stat .val { font-size: 1.1rem; color: var(--gold); font-weight: 800; font-family: monospace; }
+
+.practice-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.quiz-card, .finish-card {
+    width: 100%;
+    max-width: 800px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+}
+
+.q-meta { font-size: 0.8rem; color: var(--gold); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; }
+.q-text { font-size: 1.75rem; font-weight: 700; color: var(--white); line-height: 1.4; margin-bottom: 2.5rem; }
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) { .options-grid { grid-template-columns: 1fr; } }
+
+.opt-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: left;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.opt-btn:hover:not(.correct):not(.wrong) {
+    border-color: var(--gold);
+    background: rgba(255, 153, 51, 0.05);
+}
+
+.opt-key {
+    width: 32px;
+    height: 32px;
+    background: var(--inset);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: var(--muted);
+    flex-shrink: 0;
+}
+
+.opt-btn.correct { background: rgba(74, 222, 128, 0.1); border-color: #4ade80; }
+.opt-btn.correct .opt-key { background: #4ade80; color: #000; border-color: #4ade80; }
+
+.opt-btn.wrong { background: rgba(248, 113, 113, 0.1); border-color: #f87171; }
+.opt-btn.wrong .opt-key { background: #f87171; color: #000; border-color: #f87171; }
+
+.opt-btn.correct-hint { border-color: #4ade80; border-style: dashed; }
+
+.explanation-box {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--inset);
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
+
+.ex-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+.ex-title { font-size: 0.8rem; font-weight: 800; color: var(--muted); text-transform: uppercase; }
+.badge { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; padding: 2px 8px; border-radius: 4px; }
+.badge.correct { background: #4ade80; color: #000; }
+.badge.wrong { background: #f87171; color: #000; }
+
+.ex-content { font-size: 0.95rem; color: var(--text); line-height: 1.6; margin-bottom: 1.5rem; }
+
+.next-btn {
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.next-btn:hover { background: #ffad5c; transform: translateX(5px); }
+
+.finish-card { text-align: center; }
+.f-icon { font-size: 4rem; margin-bottom: 1.5rem; }
+.f-title { font-size: 2.5rem; font-weight: 800; color: var(--gold); margin-bottom: 0.5rem; }
+.f-subtitle { color: var(--muted); margin-bottom: 2.5rem; }
+
+.f-stats { display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; }
+.f-stat { display: flex; flex-direction: column; }
+.f-stat .val { font-size: 3rem; font-weight: 900; color: var(--white); }
+.f-stat .label { font-size: 0.8rem; color: var(--faint); text-transform: uppercase; letter-spacing: 1px; }
+
+.f-actions { display: flex; gap: 1rem; justify-content: center; }
+.f-btn { 
+    padding: 1rem 2rem; 
+    border-radius: 12px; 
+    font-weight: 800; 
+    text-decoration: none; 
+    transition: 0.2s; 
+    font-family: inherit;
+    cursor: pointer;
+}
+.f-btn.primary { background: var(--gold); color: #000; border: none; }
+.f-btn.secondary { background: var(--card); color: var(--white); border: 1px solid var(--border); }
+.f-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+.practice-footer {
+    height: 6px;
+    background: var(--inset);
+}
+.progress-bar-fill {
+    height: 100%;
+    background: var(--gold);
+    transition: width 0.4s ease-out;
+    box-shadow: 0 0 10px var(--gold);
+}
+</style>
+{% endblock %}

@@ -151,6 +151,19 @@ def init_db() -> None:
         )
     """)
     con.execute("""
+        CREATE TABLE IF NOT EXISTS mcqs (
+            id             INTEGER PRIMARY KEY AUTOINCREMENT,
+            topic_id       TEXT NOT NULL,
+            question       TEXT NOT NULL,
+            option_a       TEXT NOT NULL,
+            option_b       TEXT NOT NULL,
+            option_c       TEXT NOT NULL,
+            option_d       TEXT NOT NULL,
+            correct_option TEXT NOT NULL,
+            explanation    TEXT
+        )
+    """)
+    con.execute("""
         CREATE TABLE IF NOT EXISTS paragraph_pins (
             id         INTEGER PRIMARY KEY AUTOINCREMENT,
             user_id    INTEGER NOT NULL,
@@ -170,7 +183,87 @@ def init_db() -> None:
     _seed_user(con, "leelarani", "Leela Rani","student", "leelarani@2026")
     _seed_user(con, "tejashree", "Tejashree", "student", "tejashree@2026")
 
+    seed_mcqs(con)
+    con.commit()
     con.close()
+
+
+def seed_mcqs(con) -> None:
+    """Populate sample MCQs for demonstration."""
+    # Ancient India (Group 2 Screening)
+    _q(con, "scr-hist-01", "Which of the following sites is NOT part of the Indus Valley Civilization?",
+       "Harappa", "Mohenjo-daro", "Hastinapur", "Lothal",
+       "C", "Hastinapur was an important site of the Vedic period, but not part of the primary Indus Valley Civilization sites like Harappa or Lothal.")
+    
+    _q(con, "scr-hist-01", "The 'Dockyard' of the Indus Valley Civilization was found at:",
+       "Kalibangan", "Lothal", "Ropar", "Banawali",
+       "B", "Lothal was the vital and only port city of the Indus Valley Civilization, featuring a massive brick basin that served as a dockyard.")
+
+    # Logical Reasoning
+    _q(con, "scr-ma-01", "In a certain code, 'APPLE' is written as 'BQQMF'. How is 'GRAPE' written?",
+       "HSBQF", "HTAQF", "JSBQF", "HSARF",
+       "A", "The logic is +1 for each letter. G+1=H, R+1=S, A+1=B, P+1=Q, E+1=F.")
+
+    # Indian Society (Group 2 Screening)
+    _q(con, "scr-soc-01", "Which of the following describes a kinship relationship based on blood ties?",
+       "Affinal kinship", "Consanguineous kinship", "Fictive kinship", "Secondary kinship",
+       "B", "Consanguineous kinship refers to relationships based on common blood or descent, such as parents and children.")
+    
+    _q(con, "scr-soc-01", "The practice where a woman has multiple husbands simultaneously is known as:",
+       "Polygyny", "Polyandry", "Monogamy", "Endogamy",
+       "B", "Polyandry is a form of polygamy where one woman is married to two or more men at the same time.")
+    
+    _q(con, "scr-soc-01", "Who introduced the concept of 'Sanskritization' to describe social mobility in the Indian caste system?",
+       "B.R. Ambedkar", "M.N. Srinivas", "G.S. Ghurye", "Jyotirao Phule",
+       "B", "M.N. Srinivas coined the term 'Sanskritization' to explain how lower castes emulate the rituals and practices of higher castes to improve their status.")
+    
+    _q(con, "scr-soc-01", "Which Constitutional Amendment provided 33% reservation for women in local bodies (Panchayats and Municipalities)?",
+       "42nd & 44th Amendments", "73rd & 74th Amendments", "86th Amendment", "101st Amendment",
+       "B", "The 73rd and 74th Constitutional Amendment Acts (1992) mandated 1/3rd (33%) reservation for women in local governance.")
+    
+    _q(con, "scr-soc-01", "Article 342 of the Indian Constitution empowers the President to notify which group?",
+       "Scheduled Castes", "Scheduled Tribes", "Backward Classes", "Religious Minorities",
+       "B", "Article 342 deals with the notification of Scheduled Tribes (STs) in India.")
+
+    # Social Issues (scr-soc-02)
+    _q(con, "scr-soc-02", "Under the POCSO Act (2012), at what age is an individual considered a child?",
+       "Below 14 years", "Below 16 years", "Below 18 years", "Below 21 years",
+       "C", "The Protection of Children from Sexual Offences (POCSO) Act defines a child as any person below the age of 18 years.")
+
+    _q(con, "scr-soc-02", "Which Article of the Indian Constitution prohibits the employment of children below 14 years in factories or mines?",
+       "Article 21", "Article 23", "Article 24", "Article 25",
+       "C", "Article 24 specifically prohibits hazardous child labor for those under 14 years.")
+
+    _q(con, "scr-soc-02", "The 'Mandal Commission' is associated with which of the following social issues?",
+       "Communalism", "Regionalisation", "Caste and Reservation for OBCs", "Youth Unrest",
+       "C", "The Mandal Commission (Socially and Educationally Backward Classes Commission) recommended 27% reservation for Other Backward Classes (OBCs).")
+
+    # Welfare Mechanism (scr-soc-03)
+    _q(con, "scr-soc-03", "Which Article of the Indian Constitution provides for the 'Abolition of Untouchability'?",
+       "Article 14", "Article 15", "Article 16", "Article 17",
+       "D", "Article 17 abolished 'Untouchability' and forbade its practice in any form.")
+
+    _q(con, "scr-soc-03", "The PM-KISAN scheme provides income support of how much per year to farmer families?",
+       "₹2,000", "₹4,000", "₹6,000", "₹10,000",
+       "C", "PM-KISAN provides ₹6,000 per year in three equal installments.")
+
+    _q(con, "scr-soc-03", "Which Constitutional Amendment established the National Commission for Backward Classes (Art 338B)?",
+       "100th Amendment", "101st Amendment", "102nd Amendment", "103rd Amendment",
+       "C", "The 102nd Constitutional Amendment Act of 2018 gave constitutional status to the NCBC.")
+
+    _q(con, "scr-soc-03", "The MGNREGA Act (2005) guarantees how many days of wage employment in a financial year?",
+       "100 days", "120 days", "150 days", "200 days",
+       "A", "MGNREGA guarantees 100 days of unskilled manual work to every rural household.")
+
+
+def _q(con, topic_id, q, a, b, c, d, correct, exp) -> None:
+    """Helper to insert a question if it doesn't exist."""
+    exist = con.execute("SELECT id FROM mcqs WHERE question = ?", (q,)).fetchone()
+    if not exist:
+        con.execute(
+            "INSERT INTO mcqs (topic_id, question, option_a, option_b, option_c, option_d, correct_option, explanation) VALUES (?,?,?,?,?,?,?,?)",
+            (topic_id, q, a, b, c, d, correct, exp)
+        )
 
 
 def db_get_user_by_username(username: str):
@@ -3169,6 +3262,47 @@ async def api_admin_ca_delete(request: Request):
     return JSONResponse({"ok": True})
 
 
+# ── Admin Topic Content API ───────────────────────────────────────────────────
+
+async def api_admin_list_topics(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+    
+    topics = []
+    # Collect from G1, G2, Aptitude
+    for s in G1_STRUCTURE.values():
+        for sec in s["sections"]:
+            for t in sec["topics"]:
+                topics.append({"id": t["id"], "title": f"G1: {t['title']}"})
+    for s in G2_STRUCTURE.values():
+        for sec in s["sections"]:
+            for t in sec["topics"]:
+                topics.append({"id": t["id"], "title": f"G2: {t['title']}"})
+    for sec in APT_STRUCTURE["sections"]:
+        for t in sec["topics"]:
+            topics.append({"id": t["id"], "title": f"APT: {t['title']}"})
+    
+    return JSONResponse({"topics": sorted(topics, key=lambda x: x["title"])})
+
+
+async def api_admin_save_topic(request: Request):
+    user = get_current_user(request)
+    if not user or user.get("role") != "admin":
+        return JSONResponse({"error": "Unauthorized"}, status_code=403)
+    
+    body = await request.json()
+    topic_id = body.get("topic_id")
+    content = body.get("content")
+    if not topic_id or content is None:
+        return JSONResponse({"error": "Missing data"}, status_code=400)
+    
+    NOTES_DIR.mkdir(parents=True, exist_ok=True)
+    path = NOTES_DIR / f"{topic_id}.md"
+    path.write_text(content, encoding="utf-8")
+    return JSONResponse({"ok": True})
+
+
 # ---------------------------------------------------------------------------
 # Auth route handlers
 # ---------------------------------------------------------------------------
@@ -3192,10 +3326,11 @@ async def login_page(request: Request):
     elif err_code == "no_email":
         error_msg = "Google account did not provide an email address."
         
-    return templates.TemplateResponse(request, "login.html", {
+    return templates.TemplateResponse(request, "auth.html", {
         "current_user": None,
         "error": error_msg,
         "registered": registered,
+        "mode": "login",
     })
 
 
@@ -3215,19 +3350,21 @@ async def login_post(request: Request):
         request.session["role"]     = user["role"]
         return RedirectResponse("/dashboard", status_code=302)
 
-    return templates.TemplateResponse(request, "login.html", {
+    return templates.TemplateResponse(request, "auth.html", {
         "current_user": None,
         "error": "Invalid username or password.",
         "registered": False,
+        "mode": "login",
     }, status_code=200)
 
 
 async def register_page(request: Request):
     if get_current_user(request):
         return RedirectResponse("/", status_code=302)
-    return templates.TemplateResponse(request, "register.html", {
+    return templates.TemplateResponse(request, "auth.html", {
         "current_user": None,
         "error": None,
+        "mode": "register",
     })
 
 
@@ -3242,9 +3379,10 @@ async def register_post(request: Request):
     confirm_pwd  = str(form.get("confirm_password", ""))
 
     def fail(msg):
-        return templates.TemplateResponse(request, "register.html", {
+        return templates.TemplateResponse(request, "auth.html", {
             "current_user": None,
             "error": msg,
+            "mode": "register",
             "vals": {"username": username, "display_name": display_name, "email": email},
         }, status_code=200)
 
@@ -3913,6 +4051,46 @@ async def study_desk(request: Request):
     })
 
 
+# ── Practice (MCQ) Page ──────────────────────────────────────────────────────
+
+async def practice_page(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    topic_id = request.path_params["topic_id"]
+    
+    # Try to find human title
+    topic_title = topic_id
+    for stage in G2_STRUCTURE.values():
+        for section in stage["sections"]:
+            for t in section["topics"]:
+                if t["id"] == topic_id:
+                    topic_title = t["title"]
+                    break
+
+    return templates.TemplateResponse(request, "practice.html", {
+        "current_user": user,
+        "user_id": user["id"],
+        "topic_id": topic_id,
+        "topic_title": topic_title,
+    })
+
+
+async def api_get_mcqs(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    topic_id = request.path_params["topic_id"]
+    con = sqlite3.connect(DB_PATH)
+    con.row_factory = sqlite3.Row
+    rows = con.execute(
+        "SELECT id, question, option_a, option_b, option_c, option_d, correct_option, explanation FROM mcqs WHERE topic_id=? ORDER BY id",
+        (topic_id,)
+    ).fetchall()
+    con.close()
+    return JSONResponse({"mcqs": [dict(r) for r in rows]})
+
+
 # ---------------------------------------------------------------------------
 # Routing table
 # ---------------------------------------------------------------------------
@@ -3954,6 +4132,8 @@ routes = [
     Route("/api/admin/ca",                        api_admin_ca_list),
     Route("/api/admin/ca",                        api_admin_ca_save,       methods=["POST"]),
     Route("/api/admin/ca/{date}",                 api_admin_ca_delete,     methods=["DELETE"]),
+    Route("/api/admin/topics",                    api_admin_list_topics,   methods=["GET"]),
+    Route("/api/admin/topics",                    api_admin_save_topic,    methods=["POST"]),
     Route("/api/search",                          api_search),
     Route("/api/content/{topic_id}",              api_get_content),
     Route("/api/highlights/{topic_id}",           api_get_highlights,       methods=["GET"]),
@@ -3968,8 +4148,10 @@ routes = [
     Route("/api/pins/{topic_id}",                 api_toggle_pin,           methods=["POST"]),
     Route("/api/pins",                            api_all_pins,             methods=["GET"]),
     Route("/api/progress/topic-status/{topic_id}", api_topic_status,        methods=["GET"]),
+    Route("/api/mcqs/{topic_id}",                 api_get_mcqs,             methods=["GET"]),
     Route("/last-day-revision",                   last_day_revision),
     Route("/study-desk/{topic_id}",               study_desk),
+    Route("/practice/{topic_id}",                 practice_page),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]

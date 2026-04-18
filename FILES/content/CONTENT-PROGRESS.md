@@ -43,9 +43,9 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `scr-soc-01` | Structure of Indian Society | m3-et-01 |
-| ⬜ | `scr-soc-02` | Social Issues | m3-et-01, m3-et-02 |
-| ⬜ | `scr-soc-03` | Welfare Mechanism | pre-cp-05, m3-pa-02 |
+| ✅ | `scr-soc-01` | Structure of Indian Society | m3-et-01 | (Antigravity, 2026-04-18) |
+| ✅ | `scr-soc-02` | Social Issues | m3-et-01, m3-et-02 | (Antigravity, 2026-04-18) |
+| ✅ | `scr-soc-03` | Welfare Mechanism | pre-cp-05, m3-pa-02 | (Antigravity, 2026-04-18) |
 
 ---
 
