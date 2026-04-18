@@ -88,35 +88,66 @@ document.addEventListener('DOMContentLoaded', () => {
             const g2Grid = document.getElementById('heatmap-g2');
             if (!data || !data.length) return;
 
-            let g1Html = '';
-            let g2Html = '';
-
+            // Group by Exam and then Area
+            const grouped = {};
             data.forEach(t => {
-                const doneClass = t.completed ? 'done' : '';
-                const titleAttr = t.title.replace(/"/g, '&quot;');
-                const tile = `<div class="ctile ${doneClass}" 
-                                   title="${titleAttr}"
-                                   onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
-                
-                if (t.exam === 'Group I') g1Html += tile;
-                else g2Html += tile;
+                if (!grouped[t.exam]) grouped[t.exam] = {};
+                if (!grouped[t.exam][t.area]) grouped[t.exam][t.area] = [];
+                grouped[t.exam][t.area].push(t);
             });
 
-            if (g1Grid) g1Grid.innerHTML = g1Html || '<div class="syllabus-loading">No topics mapped.</div>';
-            if (g2Grid) g2Grid.innerHTML = g2Html || '<div class="syllabus-loading">No topics mapped.</div>';
+            function renderExamGrid(examKey, container) {
+                if (!grouped[examKey]) {
+                    container.innerHTML = '<div class="syllabus-loading">No modules found.</div>';
+                    return;
+                }
+                
+                let html = '';
+                const areas = Object.keys(grouped[examKey]).sort();
+                
+                areas.forEach(area => {
+                    const topics = grouped[examKey][area];
+                    const doneCount = topics.filter(t => t.completed).length;
+                    const totalCount = topics.length;
+                    
+                    html += `
+                        <div class="subject-card">
+                            <div class="sc-header">
+                                <span class="sc-title">${area}</span>
+                                <span class="sc-stat">${doneCount}/${totalCount}</span>
+                            </div>
+                            <div class="sc-grid">
+                                ${topics.map(t => {
+                                    const doneClass = t.completed ? 'done' : '';
+                                    const titleAttr = t.title.replace(/"/g, '&quot;');
+                                    return `<div class="ctile ${doneClass}" 
+                                                  title="${titleAttr}"
+                                                  onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
+                container.innerHTML = html;
+            }
+
+            renderExamGrid('Group I', g1Grid);
+            renderExamGrid('Group II', g2Grid);
             
             // Update Coverage Pulse
             const total = data.length;
             const done = data.filter(t => t.completed).length;
             const pct = (done / total * 100).toFixed(1);
-            document.getElementById('cp-stats').textContent = `${done}/${total} Topics Completed (${pct}%)`;
-            document.getElementById('cp-fill').style.width = pct + '%';
+            const cpStats = document.getElementById('cp-stats');
+            if (cpStats) cpStats.textContent = `${done}/${total} Topics Completed (${pct}%)`;
+            const cpFill = document.getElementById('cp-fill');
+            if (cpFill) cpFill.style.width = pct + '%';
         })
         .catch(err => {
             console.error("Heatmap load failed:", err);
         });
 
-    // --- COUNTDOWN LOGIC ---
+    // --- COUNTDOWN LOGIC (Preserved) ---
     function updateTimers() {
         const dates = {
             g1: new Date("2026-08-16T09:00:00").getTime(),
@@ -134,22 +165,25 @@ document.addEventListener('DOMContentLoaded', () => {
             const container = document.getElementById('timer-' + id);
             if (container) {
                 const vals = container.querySelectorAll('.val');
-                vals[0].textContent = d.toString().padStart(2, '0');
-                vals[1].textContent = h.toString().padStart(2, '0');
-                vals[2].textContent = m.toString().padStart(2, '0');
+                if (vals.length >= 3) {
+                    vals[0].textContent = d.toString().padStart(2, '0');
+                    vals[1].textContent = h.toString().padStart(2, '0');
+                    vals[2].textContent = m.toString().padStart(2, '0');
+                }
             }
         });
     }
     updateTimers();
     setInterval(updateTimers, 60000);
 
-    // --- QUICK RESUME LOGIC ---
+    // --- QUICK RESUME LOGIC (Preserved) ---
     const lastId = localStorage.getItem('gg_last_studied_id');
     const lastTitle = localStorage.getItem('gg_last_studied_title');
     const lastTime = localStorage.getItem('gg_last_studied_time');
     
-    if (lastId && lastTitle) {
-        document.getElementById('resume-widget').style.display = 'block';
+    const resumeWidget = document.getElementById('resume-widget');
+    if (resumeWidget && lastId && lastTitle) {
+        resumeWidget.style.display = 'block';
         document.getElementById('resume-topic-title').textContent = lastTitle;
         const timeAgo = new Date(parseInt(lastTime)).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'short' });
         document.getElementById('resume-topic-time').textContent = 'LAST ACCESSED: ' + timeAgo;

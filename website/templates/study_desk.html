@@ -998,52 +998,49 @@ function showResumeBanner() {
     setTimeout(() => banner.remove(), 4500);
 }
 
-// --- INTELLECTUAL TIME COACH ---
+// --- INTELLECTUAL TIME COACH (Activated & Persistent) ---
 const TimeCoach = {
   minutesSpent: 0,
   pomodoroTimeLeft: 25 * 60,
   interval: null,
+  heartbeatInterval: null,
   isActive: false,
+  isBreak: false,
   displayEl: document.getElementById('coach-time-display'),
   overlay: document.getElementById('k-coach-overlay'),
-  topicKey: 'study_hours_' + TOPIC_ID,
   
-  init() {
-    this.minutesSpent = parseInt(localStorage.getItem(this.topicKey)) || 0;
-    
+  async init() {
+    // 1. Fetch initial persistence data from DB
+    try {
+        const resp = await fetch(`/api/progress/topic-status/${TOPIC_ID}`);
+        const data = await resp.json();
+        this.minutesSpent = data.minutes_spent || 0;
+    } catch(e) { console.error("Coach data fetch failed:", e); }
+
     document.getElementById('btn-coach').addEventListener('click', () => this.toggle());
     
-    // Log persistence
-    setInterval(() => {
-      if (this.isActive) {
-        // Track roughly 1 minute of active study time
-        this.minutesSpent += 1;
-        localStorage.setItem(this.topicKey, this.minutesSpent);
-      }
-    }, 60000);
-    
-    // Immediately assert control and instruct the student on load
-    setTimeout(() => this.triggerWelcome(), 500);
+    // 2. Proactive Mastery Notification
+    setTimeout(() => this.triggerWelcome(), 1000);
   },
   
   triggerWelcome() {
-    document.getElementById('coach-title').textContent = "Time Management Coach";
     const hrs = (this.minutesSpent / 60).toFixed(2);
+    const masteryPct = Math.min((this.minutesSpent / (19 * 60)) * 100, 100).toFixed(1);
+    
+    document.getElementById('coach-title').textContent = "GroupsGuru Time Coach";
     document.getElementById('coach-message').innerHTML = `
-      <div style="text-align:left; border-left: 3px solid var(--gold); padding-left: 15px;">
-        <b>Structural Persistence:</b> You have invested ${hrs} active hours into this module.
+      <div style="border-left:4px solid var(--gold); padding-left:1rem; margin-bottom:1.5rem;">
+        <div style="font-size:0.75rem; color:var(--muted); text-transform:uppercase;">Blueprint Mastery</div>
+        <div style="font-size:1.8rem; font-weight:900; color:var(--white);">${masteryPct}%</div>
+        <div class="mastery-gauge-container"><div class="mastery-gauge-fill" style="width:${masteryPct}%"></div></div>
+        <div style="font-size:0.8rem; margin-top:0.4rem; color:var(--muted);">${hrs} / 19 Hours Mastered</div>
       </div>
-      <br>
-      As your Time Coach, I am here to enforce the <b>25-minute Pomodoro rule</b>. 
-      Scientific studies prove that focus drops sharply after 25 minutes. 
-      <br><br>
-      <b>Instruction:</b> Start your focus block now.
+      <p>I am here to enforce the <b>19-Hour Mastery Blueprint</b>. Focus blocks of 25 minutes are mathematically optimal for retention.</p>
+      <p><b>Your Mission:</b> Start a deep-focus session now. I will log every minute of your work to your mastery record.</p>
     `;
     
     const actionBtn = document.getElementById('coach-btn-action');
-    const skipBtn = document.getElementById('coach-btn-skip');
-    
-    actionBtn.textContent = "Start 25m Focus Block";
+    actionBtn.textContent = "Start Focus Block";
     actionBtn.onclick = () => {
       this.overlay.style.display = 'none';
       this.pomodoroTimeLeft = 25 * 60;
@@ -1051,7 +1048,7 @@ const TimeCoach = {
       this.start();
     };
     
-    skipBtn.style.display = 'none'; 
+    document.getElementById('coach-btn-skip').style.display = 'none';
     this.overlay.style.display = 'flex';
   },
 
@@ -1060,9 +1057,8 @@ const TimeCoach = {
     let s = this.pomodoroTimeLeft % 60;
     const timeStr = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     this.displayEl.textContent = timeStr;
-    if (this.isBreak) {
-        document.getElementById('break-timer-display').textContent = timeStr;
-    }
+    const breakDisp = document.getElementById('break-timer-display');
+    if (breakDisp) breakDisp.textContent = timeStr;
   },
 
   toggle() {
@@ -1072,49 +1068,56 @@ const TimeCoach = {
 
   start() {
     this.isActive = true;
-    this.displayEl.parentElement.classList.add('highlight');
+    this.displayEl.parentElement.classList.add('coach-active-pulse');
     clearInterval(this.interval);
     this.interval = setInterval(() => {
       if (this.pomodoroTimeLeft <= 0) {
-        if (!this.isBreak) this.triggerIntervention();
+        if (!this.isBreak) this.triggerBreak();
         else this.endBreak();
       } else {
         this.pomodoroTimeLeft--;
         this.updateDisplay();
       }
     }, 1000);
+
+    // Heartbeat: Log to DB every minute
+    clearInterval(this.heartbeatInterval);
+    this.heartbeatInterval = setInterval(async () => {
+        if (this.isActive && !this.isBreak) {
+            this.minutesSpent++;
+            await fetch('/api/study/log', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({topic_id: TOPIC_ID, minutes: 1})
+            });
+        }
+    }, 60000);
   },
 
   pause() {
     this.isActive = false;
-    this.displayEl.parentElement.classList.remove('highlight');
+    this.displayEl.parentElement.classList.remove('coach-active-pulse');
     clearInterval(this.interval);
+    clearInterval(this.heartbeatInterval);
   },
 
-  triggerIntervention() {
+  triggerBreak() {
     this.pause();
     this.isBreak = true;
-    document.getElementById('k-break-lock').style.display = 'flex';
-    this.pomodoroTimeLeft = 5 * 60; 
+    this.pomodoroTimeLeft = 5 * 60; // 5 min break
+    const lock = document.getElementById('k-break-lock');
+    if (lock) lock.style.display = 'flex';
+    this.updateDisplay();
     this.start();
   },
 
   endBreak() {
     this.pause();
     this.isBreak = false;
-    document.getElementById('k-break-lock').style.display = 'none';
+    const lock = document.getElementById('k-break-lock');
+    if (lock) lock.style.display = 'none';
     
-    // Prompt to restart focus
-    document.getElementById('coach-title').textContent = "Break Complete";
-    document.getElementById('coach-message').textContent = "Your brain is refreshed. Start your next 25-minute focus block.";
-    const actionBtn = document.getElementById('coach-btn-action');
-    actionBtn.textContent = "Start Next Focus Block";
-    actionBtn.onclick = () => {
-        this.overlay.style.display = 'none';
-        this.pomodoroTimeLeft = 25 * 60;
-        this.start();
-    };
-    this.overlay.style.display = 'flex';
+    this.triggerWelcome(); // Show stats and offer next block
   }
 };
 TimeCoach.init();

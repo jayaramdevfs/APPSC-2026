@@ -101,6 +101,7 @@ def init_db() -> None:
             first_studied TEXT DEFAULT CURRENT_DATE,
             last_studied  TEXT DEFAULT CURRENT_DATE,
             study_count   INTEGER DEFAULT 1,
+            minutes_spent INTEGER DEFAULT 0,
             UNIQUE(user_id, topic_id)
         )
     """)
@@ -2971,7 +2972,8 @@ async def api_progress_grid(request: Request):
                         "title": topic["title"],
                         "exam": exam_label,
                         "area": area_label,
-                        "section": section_title
+                        "section": section_title,
+                        "minutes": 0 # Default, will be updated below
                     })
 
     extract_topics(G2_STRUCTURE, "Group II")
@@ -3004,29 +3006,59 @@ async def api_progress_grid(request: Request):
                 })
 
     # 2. Get User Progress
-    con = _progress_con()
-    prog_rows = con.execute(
-        "SELECT topic_id, study_count FROM topic_progress WHERE user_id=?",
-        (user["id"],)
-    ).fetchall()
-    con.close()
+    with sqlite3.connect(DB_PATH) as con:
+        con.row_factory = sqlite3.Row
+        prog_rows = con.execute(
+            "SELECT topic_id, study_count, minutes_spent FROM topic_progress WHERE user_id=?",
+            (user["id"],)
+        ).fetchall()
 
-    done_ids = {r["topic_id"]: r["study_count"] for r in prog_rows}
+    done_data = {r["topic_id"]: {"count": r["study_count"], "minutes": r["minutes_spent"]} for r in prog_rows}
 
     # 3. Merge
     results = []
     for t in topics:
+        stats = done_data.get(t["id"], {"count": 0, "minutes": 0})
         results.append({
             "id": t["id"],
             "title": t["title"],
             "exam": t["exam"],
             "area": t["area"],
             "section": t["section"],
-            "completed": t["id"] in done_ids,
-            "count": done_ids.get(t["id"], 0)
+            "completed": t["id"] in done_data,
+            "minutes": stats["minutes"]
         })
 
     return JSONResponse(results)
+
+
+async def api_study_log(request: Request):
+    """POST — Logs study minutes for a specific topic."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Auth required"}, status_code=401)
+    
+    try:
+        data = await request.json()
+        topic_id = data.get("topic_id")
+        minutes  = int(data.get("minutes", 1))
+        
+        if not topic_id:
+            return JSONResponse({"error": "topic_id required"}, status_code=400)
+            
+        with sqlite3.connect(DB_PATH) as con:
+            con.execute("""
+                INSERT INTO topic_progress (user_id, topic_id, minutes_spent, first_studied, last_studied, subject, topic_title)
+                VALUES (?, ?, ?, CURRENT_DATE, CURRENT_DATE, 'Active', 'Active')
+                ON CONFLICT(user_id, topic_id) DO UPDATE SET
+                    minutes_spent = minutes_spent + EXCLUDED.minutes_spent,
+                    last_studied = CURRENT_DATE
+            """, (user["id"], topic_id, minutes))
+            con.commit()
+            
+        return JSONResponse({"status": "ok"})
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
 
 
 # ---------------------------------------------------------------------------
@@ -3804,30 +3836,37 @@ async def api_topic_status(request: Request):
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
     topic_id = request.path_params["topic_id"]
-    con = sqlite3.connect(DB_PATH)
-    prog = con.execute(
-        "SELECT first_studied, last_studied, study_count FROM topic_progress WHERE user_id=? AND topic_id=?",
-        (user["id"], topic_id)
-    ).fetchone()
-    revs = con.execute(
-        "SELECT revision_number FROM revision_log WHERE user_id=? AND topic_id=? ORDER BY revision_number",
-        (user["id"], topic_id)
-    ).fetchall()
-    con.close()
+    
+    with sqlite3.connect(DB_PATH) as con:
+        con.row_factory = sqlite3.Row
+        prog = con.execute(
+            "SELECT first_studied, last_studied, study_count, minutes_spent FROM topic_progress WHERE user_id=? AND topic_id=?",
+            (user["id"], topic_id)
+        ).fetchone()
+        revs = con.execute(
+            "SELECT revision_number FROM revision_log WHERE user_id=? AND topic_id=? ORDER BY revision_number",
+            (user["id"], topic_id)
+        ).fetchall()
+    
     if not prog:
-        return JSONResponse({"studied": False})
+        return JSONResponse({"studied": False, "minutes_spent": 0})
+    
+    # Calculate next revision
     from datetime import date as _date, timedelta
-    first_studied = _date.fromisoformat(prog[0])
-    last_studied = _date.fromisoformat(prog[1])
+    first_studied = _date.fromisoformat(prog["first_studied"])
+    last_studied = _date.fromisoformat(prog["last_studied"])
     today = _date.today()
     days_since = (today - last_studied).days
     revs_done = [r[0] for r in revs]
+    
     # 1-4-7 schedule
     schedule = {1: first_studied + timedelta(days=1),
                 2: first_studied + timedelta(days=4),
                 3: first_studied + timedelta(days=7)}
     next_due = None
     next_rev_num = None
+    days_until = None
+
     for rev_num in [1, 2, 3]:
         if rev_num not in revs_done:
             due_date = schedule[rev_num]
@@ -3835,14 +3874,14 @@ async def api_topic_status(request: Request):
             next_rev_num = rev_num
             days_until = (due_date - today).days
             break
-    else:
-        days_until = None
+
     return JSONResponse({
         "studied": True,
-        "first_studied": prog[0],
-        "last_studied": prog[1],
+        "first_studied": prog["first_studied"],
+        "last_studied": prog["last_studied"],
         "days_since_studied": days_since,
-        "study_count": prog[2],
+        "study_count": prog["study_count"],
+        "minutes_spent": prog["minutes_spent"] or 0,
         "revisions_done": revs_done,
         "next_revision_due": next_due,
         "next_revision_num": next_rev_num,
@@ -3907,6 +3946,7 @@ routes = [
     Route("/api/progress/batch-status",           api_batch_status),
     Route("/api/progress/summary",                api_progress_summary),
     Route("/api/progress/grid",                   api_progress_grid),
+    Route("/api/study/log",                       api_study_log,           methods=["POST"]),
     Route("/admin",                               admin_page),
     Route("/api/admin/users",                     api_admin_users),
     Route("/api/admin/users/{id}",                api_admin_delete_user,   methods=["DELETE"]),
