@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=37">
+    <link rel="stylesheet" href="/static/css/style.css?v=38">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -62,29 +62,8 @@
     <div class="vfx-vibranium-orb vo3"></div>
     <div class="vfx-vibranium-orb vo4"></div>
 
-    <!-- Ghost Rider: rising hellfire flames + ember particles -->
-    <div class="vfx-hellfire">
-        <span class="hf-flame hf1"></span>
-        <span class="hf-flame hf2"></span>
-        <span class="hf-flame hf3"></span>
-        <span class="hf-flame hf4"></span>
-        <span class="hf-flame hf5"></span>
-        <span class="hf-flame hf6"></span>
-        <span class="hf-flame hf7"></span>
-        <span class="hf-flame hf8"></span>
-    </div>
-    <div class="vfx-embers">
-        <span class="hf-ember he1"></span>
-        <span class="hf-ember he2"></span>
-        <span class="hf-ember he3"></span>
-        <span class="hf-ember he4"></span>
-        <span class="hf-ember he5"></span>
-        <span class="hf-ember he6"></span>
-        <span class="hf-ember he7"></span>
-        <span class="hf-ember he8"></span>
-        <span class="hf-ember he9"></span>
-        <span class="hf-ember he10"></span>
-    </div>
+    <!-- Ghost Rider: canvas-based demoscene fire -->
+    <canvas id="hellfire-canvas" class="hellfire-canvas" aria-hidden="true"></canvas>
 </div>
 
 <nav class="navbar">
@@ -500,8 +479,94 @@
     const root = document.documentElement;
     root.classList.remove('theme-wakanda', 'theme-ghost-rider');
     if (name === 'wakanda')     root.classList.add('theme-wakanda');
-    if (name === 'ghost-rider') root.classList.add('theme-ghost-rider');
+    if (name === 'ghost-rider') { root.classList.add('theme-ghost-rider'); startHellfire(); }
+    else stopHellfire();
   }
+
+  // ── Ghost Rider: Demoscene canvas fire ───────────────────────────────
+  (function() {
+    const canvas = document.getElementById('hellfire-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const PX = 3; // pixel block size — smaller = more detailed
+    let W, H, COLS, ROWS, fire, buf32, imgData, animId = null;
+
+    // Build fire palette: transparent → black → deep red → orange → yellow → white
+    const PALETTE = new Uint32Array(256);
+    for (let i = 0; i < 256; i++) {
+      let r, g, b, a;
+      if      (i === 0)   { r=0;   g=0;   b=0;   a=0;   }
+      else if (i < 40)    { r=i*5; g=0;   b=0;   a=i*5; }
+      else if (i < 90)    { r=255; g=(i-40)*4; b=0; a=220; }
+      else if (i < 160)   { r=255; g=200+(i-90); b=0; a=240; }
+      else if (i < 210)   { r=255; g=255; b=(i-160)*4; a=250; }
+      else                { r=255; g=255; b=255; a=255; }
+      // Store as RGBA little-endian for ImageData buffer
+      PALETTE[i] = (a << 24) | (b << 16) | (g << 8) | r;
+    }
+
+    function resize() {
+      W = canvas.width  = window.innerWidth;
+      H = canvas.height = 340;
+      COLS = Math.ceil(W / PX);
+      ROWS = Math.ceil(H / PX);
+      fire  = new Uint8Array(COLS * ROWS);
+      imgData = ctx.createImageData(W, H);
+      buf32   = new Uint32Array(imgData.data.buffer);
+    }
+
+    function tick() {
+      // Seed bottom 2 rows with intense heat, random gaps for natural look
+      for (let x = 0; x < COLS; x++) {
+        const heat = Math.random() > 0.07 ? (200 + (Math.random() * 55 | 0)) : 0;
+        fire[(ROWS - 1) * COLS + x] = heat;
+        fire[(ROWS - 2) * COLS + x] = heat;
+      }
+      // Propagate upward: each cell = avg of cell below + 2 diagonal below + cell 2 below, minus cooling
+      for (let y = 0; y < ROWS - 2; y++) {
+        for (let x = 0; x < COLS; x++) {
+          const r1 = (y + 1) * COLS, r2 = (y + 2) * COLS;
+          const sum = fire[r1 + x]
+                    + fire[r1 + ((x - 1 + COLS) % COLS)]
+                    + fire[r1 + ((x + 1) % COLS)]
+                    + fire[r2 + x];
+          fire[y * COLS + x] = sum > 10 ? (sum >> 2) - 3 : 0;
+        }
+      }
+      // Draw pixel blocks
+      for (let y = 0; y < ROWS; y++) {
+        const py0 = y * PX;
+        for (let x = 0; x < COLS; x++) {
+          const c = PALETTE[fire[y * COLS + x]];
+          const px0 = x * PX;
+          for (let dy = 0; dy < PX && py0+dy < H; dy++) {
+            const row = (py0 + dy) * W;
+            for (let dx = 0; dx < PX && px0+dx < W; dx++) {
+              buf32[row + px0 + dx] = c;
+            }
+          }
+        }
+      }
+      ctx.putImageData(imgData, 0, 0);
+    }
+
+    function loop() { tick(); animId = requestAnimationFrame(loop); }
+
+    window.startHellfire = function() {
+      if (animId) return;
+      resize();
+      loop();
+    };
+    window.stopHellfire = function() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      ctx.clearRect(0, 0, canvas.width || 1, canvas.height || 1);
+    };
+
+    window.addEventListener('resize', () => { if (animId) resize(); });
+
+    // Auto-start if page loaded in ghost-rider theme
+    if (document.documentElement.classList.contains('theme-ghost-rider')) startHellfire();
+  }());
 
   function setTheme(name, persist) {
     if (currentTheme() === name) return;
