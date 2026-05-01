@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=34">
+    <link rel="stylesheet" href="/static/css/style.css?v=36">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -207,34 +207,31 @@
 
     <!-- Auth area — always visible, pinned top-right -->
     <div class="nav-auth">
-        <button class="nav-paw-btn" id="theme-toggle" aria-label="Cycle theme — click to switch, hold to preview" title="Click to cycle theme · Hold to preview">
-            <span class="paw-pulse" aria-hidden="true"></span>
-            <!-- Saffron: shows paw (next click → Wakanda) -->
-            <svg class="tt-icon tt-icon-paw" viewBox="0 0 32 32" aria-hidden="true">
-                <ellipse cx="8" cy="11" rx="2.6" ry="3.2"></ellipse>
-                <ellipse cx="13" cy="6.5" rx="2.6" ry="3.4"></ellipse>
-                <ellipse cx="19" cy="6.5" rx="2.6" ry="3.4"></ellipse>
-                <ellipse cx="24" cy="11" rx="2.6" ry="3.2"></ellipse>
-                <path d="M16 13 C9.5 13 6.5 18 8.5 24 C10.4 28 13.2 30 16 30 C18.8 30 21.6 28 23.5 24 C25.5 18 22.5 13 16 13 Z"></path>
-            </svg>
-            <!-- Wakanda: shows flame (next click → Ghost Rider) -->
-            <svg class="tt-icon tt-icon-flame" viewBox="0 0 32 32" aria-hidden="true">
-                <path d="M16 2 C14 8 9 11 9 18 C9 24 13 30 16 30 C19 30 23 24 23 18 C23 14 19 13 19 9 C17 11 15 11 16 2 Z" fill="currentColor"></path>
-                <path d="M16 14 C15 17 13 19 13 22 C13 26 15 28 16 28 C17 28 19 26 19 22 C19 19 17 17 16 14 Z" fill="#FFE25C"></path>
-            </svg>
-            <!-- Ghost Rider: shows sun/saffron mark (next click → Saffron) -->
-            <svg class="tt-icon tt-icon-sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-                <circle cx="16" cy="16" r="5" fill="currentColor"></circle>
-                <line x1="16" y1="3"  x2="16" y2="7"></line>
-                <line x1="16" y1="25" x2="16" y2="29"></line>
-                <line x1="3"  y1="16" x2="7"  y2="16"></line>
-                <line x1="25" y1="16" x2="29" y2="16"></line>
-                <line x1="6.5"  y1="6.5"  x2="9.5"  y2="9.5"></line>
-                <line x1="22.5" y1="22.5" x2="25.5" y2="25.5"></line>
-                <line x1="6.5"  y1="25.5" x2="9.5"  y2="22.5"></line>
-                <line x1="22.5" y1="9.5"  x2="25.5" y2="6.5"></line>
-            </svg>
-        </button>
+        <div class="nav-theme-wrap">
+            <button class="nav-paw-btn" id="theme-toggle" aria-label="Select theme" aria-expanded="false" title="Select theme">
+                <span class="tt-label">Theme</span>
+                <svg class="tt-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+                    <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="nav-theme-menu" id="theme-menu" hidden>
+                <button class="ntm-item" data-theme="saffron">
+                    <span class="ntm-dot" style="background:#FF9933"></span>
+                    Default
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="ntm-item" data-theme="wakanda">
+                    <span class="ntm-dot" style="background:#A855F7"></span>
+                    Black Panther
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="ntm-item" data-theme="ghost-rider">
+                    <span class="ntm-dot" style="background:#FF5722"></span>
+                    Ghost Rider
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
+            </div>
+        </div>
         <div class="nav-kebab-wrap">
             <button class="nav-kebab-btn" id="kebab-btn" aria-label="More options" aria-expanded="false" title="More">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -476,6 +473,10 @@
       b.classList.toggle('active', b.dataset.theme === t);
       b.setAttribute('aria-checked', b.dataset.theme === t ? 'true' : 'false');
     });
+    // Update theme dropdown checks
+    document.querySelectorAll('.ntm-item').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === t);
+    });
   }
 
   // Force play on first document click if browser blocked autoplay
@@ -513,54 +514,32 @@
     flashRipple();
   }
 
-  let holdTimer = null;
-  let didHoldPreview = false;
-  let preHoldTheme = 'saffron';
-  const HOLD_MS = 450;
+  const themeMenu = document.getElementById('theme-menu');
 
-  function beginHold() {
-    didHoldPreview = false;
-    preHoldTheme = currentTheme();
-    themeToggle.classList.add('charging');
-    holdTimer = setTimeout(() => {
-      didHoldPreview = true;
-      themeToggle.classList.remove('charging');
-      themeToggle.classList.add('previewing');
-      setTheme(nextTheme(preHoldTheme), false);
-    }, HOLD_MS);
+  function openThemeMenu() {
+    themeMenu.hidden = false;
+    themeToggle.setAttribute('aria-expanded', 'true');
+    updateThemeUI();
   }
-
-  function endHold() {
-    clearTimeout(holdTimer);
-    themeToggle.classList.remove('charging');
-    if (didHoldPreview) {
-      themeToggle.classList.remove('previewing');
-      setTheme(preHoldTheme, false);
-      didHoldPreview = false;
-    }
+  function closeThemeMenu() {
+    themeMenu.hidden = true;
+    themeToggle.setAttribute('aria-expanded', 'false');
   }
-
-  function cancelHold() {
-    clearTimeout(holdTimer);
-    themeToggle.classList.remove('charging');
-    if (didHoldPreview) {
-      themeToggle.classList.remove('previewing');
-      setTheme(preHoldTheme, false);
-      didHoldPreview = false;
-    }
-  }
-
-  themeToggle.addEventListener('mousedown',  (e) => { if (e.button === 0) beginHold(); });
-  themeToggle.addEventListener('mouseup',    (e) => { if (e.button === 0) endHold();   });
-  themeToggle.addEventListener('mouseleave', cancelHold);
-  themeToggle.addEventListener('touchstart', (e) => { beginHold(); }, { passive: true });
-  themeToggle.addEventListener('touchend',   endHold);
-  themeToggle.addEventListener('touchcancel', cancelHold);
 
   themeToggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (didHoldPreview) { didHoldPreview = false; return; }
-    setTheme(nextTheme(currentTheme()), true);
+    if (themeMenu.hidden) openThemeMenu(); else closeThemeMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!themeMenu.hidden && !themeMenu.contains(e.target) && e.target !== themeToggle) closeThemeMenu();
+  });
+
+  document.querySelectorAll('.ntm-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTheme(btn.dataset.theme, true);
+      closeThemeMenu();
+    });
   });
 
   // ── Kebab (3-dot) menu ────────────────────────────────────────

@@ -353,48 +353,98 @@ body::before {
 .nav-paw-btn {
     position: relative;
     background: transparent;
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    border: 1px solid var(--saffron);
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    padding: 0;
+    padding: 0 14px;
+    height: 32px;
     color: var(--saffron);
-    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.nav-paw-btn .tt-icon {
-    width: 22px;
-    height: 22px;
-    fill: currentColor;
-    transition: transform 0.25s ease, filter 0.3s ease;
+.nav-paw-btn .tt-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     z-index: 1;
 }
-.nav-paw-btn:hover { background: rgba(255, 153, 51, 0.08); transform: scale(1.05); }
-.nav-paw-btn:hover .tt-icon { transform: scale(1.08); }
-
-/* Toggle button shows the icon for the NEXT theme in the cycle */
-.tt-icon-paw   { display: inline-block; }
-.tt-icon-flame { display: none; }
-.tt-icon-sun   { display: none; }
-.theme-wakanda     .tt-icon-paw   { display: none; }
-.theme-wakanda     .tt-icon-flame { display: inline-block; }
-.theme-ghost-rider .tt-icon-paw   { display: none; }
-.theme-ghost-rider .tt-icon-sun   { display: inline-block; }
+.nav-paw-btn:hover {
+    background: rgba(255, 153, 51, 0.1);
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(255, 153, 51, 0.25);
+}
 
 /* Theme-specific button color */
-.theme-wakanda .nav-paw-btn { color: #A855F7; }
-.theme-wakanda .nav-paw-btn:hover { background: rgba(168, 85, 247, 0.12); }
-.theme-wakanda .nav-paw-btn .tt-icon {
-    filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.7));
+.theme-wakanda .nav-paw-btn { color: #A855F7; border-color: #A855F7; }
+.theme-wakanda .nav-paw-btn:hover {
+    background: rgba(168, 85, 247, 0.12);
+    box-shadow: 0 0 14px rgba(168, 85, 247, 0.35);
 }
-.theme-ghost-rider .nav-paw-btn { color: #FF7A1A; }
-.theme-ghost-rider .nav-paw-btn:hover { background: rgba(255, 87, 34, 0.14); }
-.theme-ghost-rider .nav-paw-btn .tt-icon {
-    filter: drop-shadow(0 0 6px rgba(255, 87, 34, 0.8));
+.theme-ghost-rider .nav-paw-btn { color: #FF7A1A; border-color: #FF7A1A; }
+.theme-ghost-rider .nav-paw-btn:hover {
+    background: rgba(255, 87, 34, 0.12);
+    box-shadow: 0 0 14px rgba(255, 87, 34, 0.35);
 }
+
+/* Chevron */
+.tt-chevron {
+    width: 10px;
+    height: 6px;
+    margin-left: 5px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+.nav-paw-btn[aria-expanded="true"] .tt-chevron { transform: rotate(180deg); }
+
+/* Theme dropdown panel */
+.nav-theme-wrap { position: relative; }
+.nav-theme-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 6px;
+    min-width: 165px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+    z-index: 200;
+}
+.ntm-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s ease;
+}
+.ntm-item:hover { background: var(--elevated); }
+.ntm-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.ntm-check {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+.ntm-item.active .ntm-check { opacity: 1; }
 
 /* Pulse ring (visible while charging the long-press) */
 .paw-pulse {
