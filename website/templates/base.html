@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=38">
+    <link rel="stylesheet" href="/static/css/style.css?v=39">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -483,88 +483,114 @@
     else stopHellfire();
   }
 
-  // ── Ghost Rider: Demoscene canvas fire ───────────────────────────────
+  // ── Ghost Rider: WebGL Shader Fire (FBM + domain warping) ──────────────
   (function() {
     const canvas = document.getElementById('hellfire-canvas');
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const PX = 3; // pixel block size — smaller = more detailed
-    let W, H, COLS, ROWS, fire, buf32, imgData, animId = null;
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    if (!gl) return;
 
-    // Build fire palette: transparent → black → deep red → orange → yellow → white
-    const PALETTE = new Uint32Array(256);
-    for (let i = 0; i < 256; i++) {
-      let r, g, b, a;
-      if      (i === 0)   { r=0;   g=0;   b=0;   a=0;   }
-      else if (i < 40)    { r=i*5; g=0;   b=0;   a=i*5; }
-      else if (i < 90)    { r=255; g=(i-40)*4; b=0; a=220; }
-      else if (i < 160)   { r=255; g=200+(i-90); b=0; a=240; }
-      else if (i < 210)   { r=255; g=255; b=(i-160)*4; a=250; }
-      else                { r=255; g=255; b=255; a=255; }
-      // Store as RGBA little-endian for ImageData buffer
-      PALETTE[i] = (a << 24) | (b << 16) | (g << 8) | r;
+    const VS = `attribute vec2 a_pos; void main(){gl_Position=vec4(a_pos,0,1);}`;
+    const FS = `
+      precision highp float;
+      uniform float u_time;
+      uniform vec2  u_res;
+
+      float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
+
+      float noise(vec2 p){
+        vec2 i=floor(p), f=fract(p);
+        f=f*f*(3.0-2.0*f);
+        return mix(mix(hash(i),hash(i+vec2(1,0)),f.x),
+                   mix(hash(i+vec2(0,1)),hash(i+vec2(1,1)),f.x),f.y);
+      }
+
+      float fbm(vec2 p){
+        float v=0.0,a=0.5;
+        for(int i=0;i<6;i++){v+=a*noise(p);p=p*2.1+vec2(1.3,1.7);a*=0.5;}
+        return v;
+      }
+
+      void main(){
+        vec2 uv = gl_FragCoord.xy / u_res;
+
+        /* Domain warp — two layers of fbm distortion for turbulence */
+        vec2 q = vec2(fbm(uv*2.5 + vec2(0.0, -u_time*0.55)),
+                      fbm(uv*2.5 + vec2(5.2,  1.3)));
+        vec2 r = vec2(fbm(uv*2.5 + 4.0*q + vec2(1.7, 9.2) + u_time*0.13),
+                      fbm(uv*2.5 + 4.0*q + vec2(8.3, 2.8) + u_time*0.11));
+
+        float f = fbm(uv*3.0 + 2.8*r + vec2(0.0, -u_time*0.65));
+
+        /* Fire mask: burns strong at base, dies at top */
+        float fire = clamp(f - uv.y*1.35 + 0.12, 0.0, 1.0);
+
+        /* Narrow toward top — realistic flame silhouette */
+        float edge = clamp(1.0 - abs(uv.x - 0.5)*2.2 + 0.3, 0.0, 1.0);
+        fire *= edge;
+
+        /* Flicker: high-freq noise on intensity */
+        fire *= 0.85 + 0.15*noise(uv*8.0 + vec2(0.0,-u_time*3.0));
+
+        /* Color ramp: black → deep crimson → orange → amber → yellow-white */
+        vec3 col = vec3(0.0);
+        col = mix(col, vec3(0.55,0.0,0.0),  smoothstep(0.0, 0.25, fire));
+        col = mix(col, vec3(1.0, 0.15,0.0), smoothstep(0.2, 0.45, fire));
+        col = mix(col, vec3(1.0, 0.55,0.0), smoothstep(0.4, 0.65, fire));
+        col = mix(col, vec3(1.0, 0.85,0.1), smoothstep(0.6, 0.80, fire));
+        col = mix(col, vec3(1.0, 1.0, 0.85),smoothstep(0.78,0.95, fire));
+
+        gl_FragColor = vec4(col, fire * 0.97);
+      }
+    `;
+
+    function mkShader(type, src) {
+      const s = gl.createShader(type);
+      gl.shaderSource(s, src); gl.compileShader(s); return s;
     }
+    const prog = gl.createProgram();
+    gl.attachShader(prog, mkShader(gl.VERTEX_SHADER, VS));
+    gl.attachShader(prog, mkShader(gl.FRAGMENT_SHADER, FS));
+    gl.linkProgram(prog); gl.useProgram(prog);
+
+    const buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]), gl.STATIC_DRAW);
+    const loc = gl.getAttribLocation(prog, 'a_pos');
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE); /* additive — fire adds light */
+
+    const uTime = gl.getUniformLocation(prog, 'u_time');
+    const uRes  = gl.getUniformLocation(prog, 'u_res');
+    let animId = null, t0 = 0;
 
     function resize() {
-      W = canvas.width  = window.innerWidth;
-      H = canvas.height = 340;
-      COLS = Math.ceil(W / PX);
-      ROWS = Math.ceil(H / PX);
-      fire  = new Uint8Array(COLS * ROWS);
-      imgData = ctx.createImageData(W, H);
-      buf32   = new Uint32Array(imgData.data.buffer);
+      canvas.width  = window.innerWidth;
+      canvas.height = 420;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.uniform2f(uRes, canvas.width, canvas.height);
     }
-
-    function tick() {
-      // Seed bottom 2 rows with intense heat, random gaps for natural look
-      for (let x = 0; x < COLS; x++) {
-        const heat = Math.random() > 0.07 ? (200 + (Math.random() * 55 | 0)) : 0;
-        fire[(ROWS - 1) * COLS + x] = heat;
-        fire[(ROWS - 2) * COLS + x] = heat;
-      }
-      // Propagate upward: each cell = avg of cell below + 2 diagonal below + cell 2 below, minus cooling
-      for (let y = 0; y < ROWS - 2; y++) {
-        for (let x = 0; x < COLS; x++) {
-          const r1 = (y + 1) * COLS, r2 = (y + 2) * COLS;
-          const sum = fire[r1 + x]
-                    + fire[r1 + ((x - 1 + COLS) % COLS)]
-                    + fire[r1 + ((x + 1) % COLS)]
-                    + fire[r2 + x];
-          fire[y * COLS + x] = sum > 10 ? (sum >> 2) - 3 : 0;
-        }
-      }
-      // Draw pixel blocks
-      for (let y = 0; y < ROWS; y++) {
-        const py0 = y * PX;
-        for (let x = 0; x < COLS; x++) {
-          const c = PALETTE[fire[y * COLS + x]];
-          const px0 = x * PX;
-          for (let dy = 0; dy < PX && py0+dy < H; dy++) {
-            const row = (py0 + dy) * W;
-            for (let dx = 0; dx < PX && px0+dx < W; dx++) {
-              buf32[row + px0 + dx] = c;
-            }
-          }
-        }
-      }
-      ctx.putImageData(imgData, 0, 0);
+    function loop(ts) {
+      gl.uniform1f(uTime, (ts - t0) * 0.001);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.drawArrays(gl.TRIANGLES, 0, 6);
+      animId = requestAnimationFrame(loop);
     }
-
-    function loop() { tick(); animId = requestAnimationFrame(loop); }
 
     window.startHellfire = function() {
       if (animId) return;
-      resize();
-      loop();
+      resize(); t0 = performance.now();
+      animId = requestAnimationFrame(loop);
     };
     window.stopHellfire = function() {
       if (animId) { cancelAnimationFrame(animId); animId = null; }
-      ctx.clearRect(0, 0, canvas.width || 1, canvas.height || 1);
+      gl.clear(gl.COLOR_BUFFER_BIT);
     };
 
     window.addEventListener('resize', () => { if (animId) resize(); });
-
-    // Auto-start if page loaded in ghost-rider theme
     if (document.documentElement.classList.contains('theme-ghost-rider')) startHellfire();
   }());
 
