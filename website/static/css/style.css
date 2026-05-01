@@ -4480,8 +4480,6 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
     50%      { filter: drop-shadow(0 0 10px rgba(255, 226, 92, 1));   opacity: 1;    }
 }
 
-/* Make sure logos sit above the VFX layer */
-.navbar, .nav-drawer, .main-content, .public-hero, .dash, .vfx-layer { position: relative; }
-.navbar       { z-index: 100; }
-.nav-drawer   { z-index: 200; }
-.main-content { z-index: 1; }
+/* Ensure main content stacks above the fixed VFX layer (z-index: 0).
+   Don't touch .navbar (already sticky+z100) or .vfx-layer (already fixed). */
+.main-content { position: relative; z-index: 1; }
