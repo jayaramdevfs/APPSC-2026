@@ -1,17 +1,20 @@
 {% extends "base.html" %}
 
-{% block title %}APPSC 2026 — Exam Preparation{% endblock %}
+{% block title %}GroupsGuru — APPSC 2026 Exam Preparation{% endblock %}
 
 {% block content %}
+
 {% if current_user %}
+<!-- ═══════════════════════════════════════════════════════
+     LOGGED-IN: MISSION CONTROL DASHBOARD
+     ═══════════════════════════════════════════════════════ -->
 <section class="command-center">
     <div class="cc-header">
         <div class="cc-brand-title">APPSC MISSION CONTROL 2026</div>
-        <div class="cc-status" id="live-status">● SYSTEM ACTIVE</div>
+        <div class="cc-status" id="live-status">&#9679; SYSTEM ACTIVE</div>
     </div>
 
     <div class="cc-dashboard-row">
-        <!-- COUNTDOWN 1: GROUP I -->
         <div class="cc-widget countdown-widget">
             <div class="cw-label">GROUP I PRELIMS</div>
             <div class="cw-timer" id="timer-g1">
@@ -19,12 +22,11 @@
                 <div class="timer-unit"><span class="val">--</span><span class="unit">HRS</span></div>
                 <div class="timer-unit"><span class="val">--</span><span class="unit">MIN</span></div>
             </div>
-            <div class="cw-target">MISSION DATE: AUG 16, 2026</div>
+            <div class="cw-target">TARGET: AUG 16, 2026</div>
         </div>
 
-        <!-- RECENT ACTIVITY (Quick Resume) -->
-        <div class="cc-widget resume-widget" id="resume-widget" style="display: none;">
-            <div class="cw-label">COMMAND RESUME</div>
+        <div class="cc-widget resume-widget" id="resume-widget" style="display:none">
+            <div class="cw-label">QUICK RESUME</div>
             <div class="resume-content">
                 <div class="resume-title" id="resume-topic-title">--</div>
                 <div class="resume-meta" id="resume-topic-time">LAST ACCESSED: --</div>
@@ -32,7 +34,6 @@
             </div>
         </div>
 
-        <!-- COUNTDOWN 2: GROUP II -->
         <div class="cc-widget countdown-widget">
             <div class="cw-label">GROUP II SCREENING</div>
             <div class="cw-timer" id="timer-g2">
@@ -40,241 +41,344 @@
                 <div class="timer-unit"><span class="val">--</span><span class="unit">HRS</span></div>
                 <div class="timer-unit"><span class="val">--</span><span class="unit">MIN</span></div>
             </div>
-            <div class="cw-target">MISSION DATE: NOV 22, 2026</div>
+            <div class="cw-target">TARGET: NOV 22, 2026</div>
         </div>
     </div>
 
-    <!-- COVERAGE PULSE BAR -->
     <div class="cc-coverage-panel">
         <div class="cp-header">
             <span>Syllabus Coverage Pulse</span>
-            <span id="cp-stats">0/0 Topics Completed</span>
+            <span id="cp-stats">Loading...</span>
         </div>
-        <div class="cp-bar-bg"><div class="cp-bar-fill" id="cp-fill" style="width: 0%"></div></div>
+        <div class="cp-bar-bg"><div class="cp-bar-fill" id="cp-fill" style="width:0%"></div></div>
     </div>
 </section>
 
-<!-- Syllabus Heatmap 2.0 (The Heart of the Home) -->
+<!-- Group-gated Heatmap -->
 <div class="home-heatmap-section">
     <div class="curriculum-header">
-        <h3 class="curriculum-title" style="margin:0; font-size:1.1rem; color: var(--gold);">Curriculum Coverage Map</h3>
-        <span class="curriculum-subtitle" style="font-size:0.85rem; color:var(--muted);">Strategic Tracking for Group I & II</span>
+        <div>
+            <h3 class="curriculum-title">Curriculum Coverage Map</h3>
+            <p class="curriculum-subtitle">Click any tile to open that topic's Study Desk</p>
+        </div>
+        <div class="heatmap-group-tabs">
+            <button class="hm-tab active" data-group="Group I">Group I</button>
+            <button class="hm-tab" data-group="Group II">Group II</button>
+        </div>
     </div>
-    
-    <link rel="stylesheet" href="/static/css/style.css?v=16">
-    <div class="heatmap-row" style="display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
-        <div class="heatmap-exam-block" style="flex: 1; min-width: 300px;">
-            <div class="exam-mini-label" style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; letter-spacing: 0.05em; opacity: 0.7;">Group I — Prelims & Mains Coverage</div>
-            <div id="heatmap-g1" class="heatmap-group" style="display: flex; flex-wrap: wrap; gap: 6px;">
-                <div class="syllabus-loading" style="font-size:0.8rem; opacity:0.5;">Loading Map...</div>
-            </div>
-        </div>
-
-        <div class="heatmap-exam-block" style="flex: 1; min-width: 300px;">
-            <div class="exam-mini-label" style="font-size: 0.65rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; letter-spacing: 0.05em; opacity: 0.7;">Group II — Screening & Mains Coverage</div>
-            <div id="heatmap-g2" class="heatmap-group" style="display: flex; flex-wrap: wrap; gap: 6px;">
-                <div class="syllabus-loading" style="font-size:0.8rem; opacity:0.5;">Loading Map...</div>
-            </div>
-        </div>
+    <div id="heatmap-active" class="heatmap-group-container">
+        <div class="hm-loading">Loading coverage map&hellip;</div>
     </div>
 </div>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+    let allData = [], grouped = {}, activeGroup = 'Group I';
+
     fetch('/api/progress/grid')
         .then(r => r.json())
         .then(data => {
-            const g1Grid = document.getElementById('heatmap-g1');
-            const g2Grid = document.getElementById('heatmap-g2');
-            if (!data || !data.length) return;
-
-            // Group by Exam and then Area
-            const grouped = {};
-            data.forEach(t => {
+            allData = data || [];
+            allData.forEach(t => {
                 if (!grouped[t.exam]) grouped[t.exam] = {};
                 if (!grouped[t.exam][t.area]) grouped[t.exam][t.area] = [];
                 grouped[t.exam][t.area].push(t);
             });
 
-            function renderExamGrid(examKey, container) {
-                if (!grouped[examKey]) {
-                    container.innerHTML = '<div class="syllabus-loading">No modules found.</div>';
-                    return;
-                }
-                
-                let html = '';
-                const areas = Object.keys(grouped[examKey]).sort();
-                
-                areas.forEach(area => {
-                    const topics = grouped[examKey][area];
-                    const doneCount = topics.filter(t => t.completed).length;
-                    const totalCount = topics.length;
-                    
-                    html += `
-                        <div class="subject-card">
-                            <div class="sc-header">
-                                <span class="sc-title">${area}</span>
-                                <span class="sc-stat">${doneCount}/${totalCount}</span>
-                            </div>
-                            <div class="sc-grid">
-                                ${topics.map(t => {
-                                    const doneClass = t.completed ? 'done' : '';
-                                    const titleAttr = t.title.replace(/"/g, '&quot;');
-                                    return `<div class="ctile ${doneClass}" 
-                                                  title="${titleAttr}"
-                                                  onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
-                                }).join('')}
-                            </div>
-                        </div>
-                    `;
-                });
-                container.innerHTML = html;
-            }
+            renderGroup(activeGroup);
 
-            renderExamGrid('Group I', g1Grid);
-            renderExamGrid('Group II', g2Grid);
-            
-            // Update Coverage Pulse
-            const total = data.length;
-            const done = data.filter(t => t.completed).length;
-            const pct = (done / total * 100).toFixed(1);
-            const cpStats = document.getElementById('cp-stats');
-            if (cpStats) cpStats.textContent = `${done}/${total} Topics Completed (${pct}%)`;
-            const cpFill = document.getElementById('cp-fill');
-            if (cpFill) cpFill.style.width = pct + '%';
+            const total = allData.length;
+            const done  = allData.filter(t => t.completed).length;
+            const pct   = total ? (done / total * 100).toFixed(1) : 0;
+            const el = document.getElementById('cp-stats');
+            if (el) el.textContent = `${done} / ${total} Topics Covered (${pct}%)`;
+            const fill = document.getElementById('cp-fill');
+            if (fill) fill.style.width = pct + '%';
         })
-        .catch(err => {
-            console.error("Heatmap load failed:", err);
+        .catch(() => {
+            document.getElementById('heatmap-active').innerHTML =
+                '<div class="hm-loading">Could not load map. Please refresh.</div>';
         });
 
-    // --- COUNTDOWN LOGIC (Preserved) ---
-    function updateTimers() {
-        const dates = {
-            g1: new Date("2026-08-16T09:00:00").getTime(),
-            g2: new Date("2026-11-22T09:00:00").getTime()
-        };
+    function renderGroup(examKey) {
+        const container = document.getElementById('heatmap-active');
+        const data = grouped[examKey];
+        if (!data) {
+            container.innerHTML = '<div class="hm-loading">No topics found for this group.</div>';
+            return;
+        }
+        const areas = Object.keys(data).sort();
+        container.innerHTML = areas.map(area => {
+            const topics = data[area];
+            const done  = topics.filter(t => t.completed).length;
+            const total = topics.length;
+            const pct   = total ? Math.round(done / total * 100) : 0;
+            return `
+            <div class="subject-card">
+                <div class="sc-header">
+                    <span class="sc-title">${area}</span>
+                    <span class="sc-stat">${done}/${total}
+                        <span class="sc-pct">${pct}%</span>
+                    </span>
+                </div>
+                <div class="sc-progress-bar">
+                    <div class="sc-progress-fill" style="width:${pct}%"></div>
+                </div>
+                <div class="sc-grid">
+                    ${topics.map(t => {
+                        const cls  = t.completed ? 'done' : '';
+                        const safe = t.title.replace(/"/g, '&quot;');
+                        return `<div class="ctile ${cls}" title="${safe}"
+                                     onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
+                    }).join('')}
+                </div>
+            </div>`;
+        }).join('');
+    }
 
-        const now = new Date().getTime();
+    document.querySelectorAll('.hm-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.hm-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeGroup = btn.dataset.group;
+            document.getElementById('heatmap-active').innerHTML =
+                '<div class="hm-loading">Loading&hellip;</div>';
+            setTimeout(() => renderGroup(activeGroup), 80);
+        });
+    });
 
-        ['g1', 'g2'].forEach(id => {
-            const diff = dates[id] - now;
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
-            const container = document.getElementById('timer-' + id);
-            if (container) {
-                const vals = container.querySelectorAll('.val');
-                if (vals.length >= 3) {
-                    vals[0].textContent = d.toString().padStart(2, '0');
-                    vals[1].textContent = h.toString().padStart(2, '0');
-                    vals[2].textContent = m.toString().padStart(2, '0');
-                }
+    // Countdown
+    function tick() {
+        const targets = { g1: new Date('2026-08-16T09:00:00'), g2: new Date('2026-11-22T09:00:00') };
+        const now = Date.now();
+        ['g1','g2'].forEach(id => {
+            const diff = targets[id] - now;
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const el = document.getElementById('timer-' + id);
+            if (el) {
+                const vals = el.querySelectorAll('.val');
+                vals[0].textContent = String(d).padStart(2,'0');
+                vals[1].textContent = String(h).padStart(2,'0');
+                vals[2].textContent = String(m).padStart(2,'0');
             }
         });
     }
-    updateTimers();
-    setInterval(updateTimers, 60000);
+    tick();
+    setInterval(tick, 60000);
 
-    // --- QUICK RESUME LOGIC (Preserved) ---
-    const lastId = localStorage.getItem('gg_last_studied_id');
+    // Quick Resume
+    const lastId    = localStorage.getItem('gg_last_studied_id');
     const lastTitle = localStorage.getItem('gg_last_studied_title');
-    const lastTime = localStorage.getItem('gg_last_studied_time');
-    
-    const resumeWidget = document.getElementById('resume-widget');
-    if (resumeWidget && lastId && lastTitle) {
-        resumeWidget.style.display = 'block';
+    const lastTime  = localStorage.getItem('gg_last_studied_time');
+    const rw = document.getElementById('resume-widget');
+    if (rw && lastId && lastTitle) {
+        rw.style.display = 'block';
         document.getElementById('resume-topic-title').textContent = lastTitle;
-        const timeAgo = new Date(parseInt(lastTime)).toLocaleString('en-IN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'short' });
-        document.getElementById('resume-topic-time').textContent = 'LAST ACCESSED: ' + timeAgo;
-        document.getElementById('resume-link').href = '/study-desk/' + lastId + '?title=' + encodeURIComponent(lastTitle);
+        document.getElementById('resume-topic-time').textContent =
+            'LAST: ' + new Date(parseInt(lastTime)).toLocaleString('en-IN', {hour:'2-digit',minute:'2-digit',day:'2-digit',month:'short'});
+        document.getElementById('resume-link').href =
+            '/study-desk/' + lastId + '?title=' + encodeURIComponent(lastTitle);
     }
 });
 </script>
+
 {% else %}
+
+<!-- ═══════════════════════════════════════════════════════
+     LOGGED-OUT: PUBLIC HERO
+     ═══════════════════════════════════════════════════════ -->
 <section class="public-hero">
+    <div class="ph-tricolor-bar">
+        <span class="tc-saffron"></span>
+        <span class="tc-white"></span>
+        <span class="tc-navy"></span>
+    </div>
+
     <div class="ph-container">
-        <div class="ph-badge">THE 19-HOUR MASTERY BLUEPRINT</div>
-        <h1 class="ph-title">Crack APPSC in 19 Hours of Mastery</h1>
-        <p class="ph-subtitle">Elite prep frameworks and the **GroupsGuru Desktop** experience—scientifically designed to achieve syllabus mastery in just 19 hours of focused study.</p>
-        
-        <div class="ph-actions">
-            <a href="/register" class="ph-btn-primary">Start Your Mission</a>
-            <a href="/login" class="ph-btn-secondary">Resume Briefing</a>
+        <div class="ph-badge">ANDHRA PRADESH STATE CIVIL SERVICES</div>
+
+        <h1 class="ph-title">Ace APPSC 2026<br><span class="ph-title-accent">With Precision.</span></h1>
+
+        <p class="ph-subtitle">
+            India's most structured APPSC prep platform — syllabus-mapped notes,
+            Pomodoro-powered focus sessions, and real-time progress tracking.
+            Built for Group I and Group II aspirants.
+        </p>
+
+        <div class="ph-exam-countdown">
+            <div class="ph-countdown-card">
+                <div class="pcc-label">Group I Prelims</div>
+                <div class="pcc-timer" id="hero-timer-g1">
+                    <span class="pct-num" id="hd1">--</span><span class="pct-sep">d</span>
+                    <span class="pct-num" id="hh1">--</span><span class="pct-sep">h</span>
+                    <span class="pct-num" id="hm1">--</span><span class="pct-sep">m</span>
+                </div>
+                <div class="pcc-date">Aug 16, 2026</div>
+            </div>
+            <div class="ph-countdown-divider">
+                <div class="pcd-line"></div>
+                <span class="pcd-text">VS</span>
+                <div class="pcd-line"></div>
+            </div>
+            <div class="ph-countdown-card">
+                <div class="pcc-label">Group II Screening</div>
+                <div class="pcc-timer" id="hero-timer-g2">
+                    <span class="pct-num" id="hd2">--</span><span class="pct-sep">d</span>
+                    <span class="pct-num" id="hh2">--</span><span class="pct-sep">h</span>
+                    <span class="pct-num" id="hm2">--</span><span class="pct-sep">m</span>
+                </div>
+                <div class="pcc-date">Nov 22, 2026</div>
+            </div>
         </div>
 
-        <div class="ph-features">
-            <div class="ph-feature">
-                <span class="phf-icon">💻</span>
-                <span class="phf-text">GroupsGuru Desktop</span>
+        <div class="ph-actions">
+            <a href="/register" class="ph-btn-primary">Start Preparing &rarr;</a>
+            <a href="/login" class="ph-btn-secondary">Login</a>
+        </div>
+
+        <div class="ph-stats-row">
+            <div class="ph-stat">
+                <span class="ps-number">200+</span>
+                <span class="ps-label">Topics Mapped</span>
             </div>
-            <div class="ph-feature">
-                <span class="phf-icon">⏱️</span>
-                <span class="phf-text">Time Coach Included</span>
+            <div class="ph-stat-divider"></div>
+            <div class="ph-stat">
+                <span class="ps-number">5</span>
+                <span class="ps-label">Exam Groups</span>
             </div>
-            <div class="ph-feature">
-                <span class="phf-icon">🎯</span>
-                <span class="phf-text">Precision Analytics</span>
+            <div class="ph-stat-divider"></div>
+            <div class="ph-stat">
+                <span class="ps-number">1-4-7</span>
+                <span class="ps-label">Revision System</span>
+            </div>
+            <div class="ph-stat-divider"></div>
+            <div class="ph-stat">
+                <span class="ps-number">Free</span>
+                <span class="ps-label">Always</span>
             </div>
         </div>
     </div>
 </section>
+
+<section class="ph-features-strip">
+    <div class="ph-feat-item">
+        <div class="ph-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="ph-feat-body">
+            <div class="ph-feat-title">Syllabus-Mapped Notes</div>
+            <div class="ph-feat-desc">Every APPSC topic covered with exam-focused study notes</div>
+        </div>
+    </div>
+    <div class="ph-feat-item">
+        <div class="ph-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="ph-feat-body">
+            <div class="ph-feat-title">Pomodoro Time Coach</div>
+            <div class="ph-feat-desc">25-minute focus sessions with enforced breaks for deep retention</div>
+        </div>
+    </div>
+    <div class="ph-feat-item">
+        <div class="ph-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="ph-feat-body">
+            <div class="ph-feat-title">1-4-7 Revision Tracker</div>
+            <div class="ph-feat-desc">Scientifically timed revision reminders to lock topics in memory</div>
+        </div>
+    </div>
+    <div class="ph-feat-item">
+        <div class="ph-feat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </div>
+        <div class="ph-feat-body">
+            <div class="ph-feat-title">Daily Current Affairs</div>
+            <div class="ph-feat-desc">Curated AP and national news with APPSC exam relevance tags</div>
+        </div>
+    </div>
+</section>
+
+<script>
+(function heroTimer() {
+    const targets = { g1: new Date('2026-08-16T09:00:00'), g2: new Date('2026-11-22T09:00:00') };
+    function update() {
+        const now = Date.now();
+        ['g1','g2'].forEach((id, i) => {
+            const n = i + 1;
+            const diff = targets[id] - now;
+            document.getElementById('hd'+n).textContent = String(Math.floor(diff/86400000)).padStart(2,'0');
+            document.getElementById('hh'+n).textContent = String(Math.floor((diff%86400000)/3600000)).padStart(2,'0');
+            document.getElementById('hm'+n).textContent = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
+        });
+    }
+    update();
+    setInterval(update, 60000);
+})();
+</script>
+
 {% endif %}
 
+<!-- ═══════════════════════════════════════════════════════
+     PORTAL CARDS (visible to all)
+     ═══════════════════════════════════════════════════════ -->
 <section class="cards-grid">
     <a href="/group1" class="card">
         <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
         </div>
         <div class="card-body">
             <h2 class="card-title">Group I</h2>
-            <p class="card-desc">Gazetted Officers &mdash; State Services (Mains & Prelims)</p>
+            <p class="card-desc">Gazetted Officers &mdash; Prelims &amp; Mains Portal</p>
         </div>
-        <div class="card-action">View Syllabus &rarr;</div>
+        <div class="card-action">Open Portal &rarr;</div>
     </a>
 
     <a href="/group2" class="card">
         <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"></path></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
         </div>
         <div class="card-body">
             <h2 class="card-title">Group II</h2>
-            <p class="card-desc">Non-Gazetted Subordinate Services (Full Syllabus)</p>
+            <p class="card-desc">Non-Gazetted Services &mdash; Screening &amp; Mains</p>
         </div>
-        <div class="card-action">View Syllabus &rarr;</div>
+        <div class="card-action">Open Portal &rarr;</div>
     </a>
 
     <a href="/current-affairs" class="card">
         <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
         </div>
         <div class="card-body">
             <h2 class="card-title">Current Affairs</h2>
-            <p class="card-desc">Curated Daily updates for AP & National events</p>
+            <p class="card-desc">Daily AP &amp; National news for APPSC aspirants</p>
         </div>
         <div class="card-action">Read Today &rarr;</div>
     </a>
 
     <a href="/aptitude" class="card">
         <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
         </div>
         <div class="card-body">
             <h2 class="card-title">Aptitude</h2>
-            <p class="card-desc">Quantitative & Mental Ability Practice Portals</p>
+            <p class="card-desc">Quantitative &amp; Mental Ability practice modules</p>
         </div>
         <div class="card-action">Practise &rarr;</div>
     </a>
 
     <a href="/telugu" class="card">
         <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         </div>
         <div class="card-body">
             <h2 class="card-title">Telugu</h2>
-            <p class="card-desc">APPSC Language Proficiency Frameworks</p>
+            <p class="card-desc">APPSC Language Paper &amp; Script Foundations</p>
         </div>
         <div class="card-action">Start Learning &rarr;</div>
     </a>
 </section>
+
 {% endblock %}

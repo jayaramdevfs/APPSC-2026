@@ -1,15 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Current Affairs 2026 — APPSC{% endblock %}
+{% block title %}Current Affairs 2026 — GroupsGuru{% endblock %}
 
 {% block content %}
 
 <div class="ca-header">
-  <a href="/" class="back-link">&larr; Back to Home</a>
+  <a href="/" class="back-link">&larr; Back</a>
   <h1 class="page-title">Current Affairs 2026</h1>
-  <p class="page-subtitle">Click any date to view that day&rsquo;s current affairs &nbsp;&bull;&nbsp; Dates with content are highlighted</p>
+  <p class="page-subtitle">Select a date to read that day&rsquo;s affairs &mdash; dates with content are highlighted in saffron</p>
 </div>
 
-<!-- ── Month strip ──────────────────────────────────────────────── -->
 <div class="ca-month-strip">
   {% set months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] %}
   {% for m in months %}
@@ -17,180 +16,149 @@
   {% endfor %}
 </div>
 
-<!-- ── Main layout: calendar + content ─────────────────────────── -->
 <div class="ca-body">
-
-  <!-- Calendar card -->
   <div class="ca-calendar-card">
-    <div class="ca-cal-title" id="cal-title">April 2026</div>
+    <div class="ca-cal-title" id="cal-title">Loading&hellip;</div>
     <div class="ca-cal-grid">
-      <div class="ca-dow">Sun</div>
-      <div class="ca-dow">Mon</div>
-      <div class="ca-dow">Tue</div>
-      <div class="ca-dow">Wed</div>
-      <div class="ca-dow">Thu</div>
-      <div class="ca-dow">Fri</div>
-      <div class="ca-dow">Sat</div>
+      <div class="ca-dow">Sun</div><div class="ca-dow">Mon</div><div class="ca-dow">Tue</div>
+      <div class="ca-dow">Wed</div><div class="ca-dow">Thu</div><div class="ca-dow">Fri</div><div class="ca-dow">Sat</div>
     </div>
     <div class="ca-cal-days" id="cal-days"></div>
   </div>
 
-  <!-- Content card -->
   <div class="ca-content-card" id="ca-content-card">
     <div class="ca-content-header" id="ca-date-label">
-      <span class="ca-date-text">Select a date</span>
+      <span class="ca-date-text">Loading latest&hellip;</span>
     </div>
     <div class="ca-content-body" id="ca-content-body">
-      <div class="ca-empty-state">
-        <div class="ca-empty-icon">&#128197;</div>
-        <p>Click any date on the calendar to see that day&rsquo;s current affairs.</p>
-      </div>
+      <div class="ca-loading">Fetching latest current affairs&hellip;</div>
     </div>
   </div>
-
 </div>
 
 <script src="/static/js/marked.min.js"></script>
 <script>
-// ── Constants ──────────────────────────────────────────────────────
-const YEAR = 2026;
+const YEAR        = 2026;
 const MONTH_NAMES = ['January','February','March','April','May','June',
                      'July','August','September','October','November','December'];
-const SHORT_MONTHS = ['Jan','Feb','Mar','Apr','May','Jun',
-                      'Jul','Aug','Sep','Oct','Nov','Dec'];
 
-const today = new Date();
+const today      = new Date();
 const todayYear  = today.getFullYear();
-const todayMonth = today.getMonth() + 1;  // 1-indexed
+const todayMonth = today.getMonth() + 1;
 const todayDay   = today.getDate();
 
-let activeMonth   = (todayYear === YEAR) ? todayMonth : 1;
-let activeDay     = null;
-let daysWithData  = new Set();   // day numbers for the current month
+let activeMonth  = (todayYear === YEAR) ? todayMonth : 1;
+let activeDay    = null;
+let daysWithData = new Set();
 
-// ── Month strip ─────────────────────────────────────────────────────
+// Month strip
 document.querySelectorAll('.ca-month-pill').forEach(btn => {
-  btn.addEventListener('click', () => {
-    setMonth(parseInt(btn.dataset.month));
-  });
+  btn.addEventListener('click', () => setMonth(parseInt(btn.dataset.month)));
 });
 
-function setMonth(month) {
+function setMonth(month, autoSelectLatest) {
   activeMonth = month;
   activeDay   = null;
 
-  document.querySelectorAll('.ca-month-pill').forEach(b => {
-    b.classList.toggle('active', parseInt(b.dataset.month) === month);
-  });
+  document.querySelectorAll('.ca-month-pill').forEach(b =>
+    b.classList.toggle('active', parseInt(b.dataset.month) === month));
 
-  document.getElementById('cal-title').textContent =
-    MONTH_NAMES[month - 1] + ' ' + YEAR;
+  document.getElementById('cal-title').textContent = MONTH_NAMES[month - 1] + ' ' + YEAR;
 
-  // Reset content panel
-  document.getElementById('ca-date-label').innerHTML =
-    `<span class="ca-date-text">Select a date</span>`;
-  document.getElementById('ca-content-body').innerHTML = `
-    <div class="ca-empty-state">
-      <div class="ca-empty-icon">&#128197;</div>
-      <p>Click any date to see that day&rsquo;s current affairs.</p>
-    </div>`;
-
-  // Fetch which days have data, then build calendar
   fetch('/api/ca/month/' + YEAR + '/' + month)
     .then(r => r.json())
     .then(data => {
       daysWithData = new Set(data.days || []);
       buildCalendar(month);
+
+      if (autoSelectLatest) {
+        // Auto-select the latest day with content in this month
+        if (daysWithData.size > 0) {
+          const latestDay = Math.max(...daysWithData);
+          setTimeout(() => selectDay(latestDay), 80);
+        } else if (month > 1) {
+          // No data this month — go back one month
+          setMonth(month - 1, true);
+        } else {
+          document.getElementById('ca-date-label').innerHTML =
+            '<span class="ca-date-text">No content available yet</span>';
+          document.getElementById('ca-content-body').innerHTML = `
+            <div class="ca-empty-state">
+              <div class="ca-empty-icon">&#128197;</div>
+              <p>No current affairs have been published yet.</p>
+            </div>`;
+        }
+      } else if (YEAR === todayYear && month === todayMonth && daysWithData.has(todayDay)) {
+        setTimeout(() => selectDay(todayDay), 80);
+      }
     })
-    .catch(() => {
-      daysWithData = new Set();
-      buildCalendar(month);
-    });
+    .catch(() => { daysWithData = new Set(); buildCalendar(month); });
 }
 
-// ── Calendar grid ───────────────────────────────────────────────────
 function buildCalendar(month) {
   const grid    = document.getElementById('cal-days');
-  const firstDow = new Date(YEAR, month - 1, 1).getDay();  // 0=Sun
+  const firstDow = new Date(YEAR, month - 1, 1).getDay();
   const numDays  = new Date(YEAR, month, 0).getDate();
 
   let html = '';
-
-  // Empty cells before day 1
-  for (let i = 0; i < firstDow; i++) {
-    html += '<div class="ca-day-cell empty"></div>';
-  }
+  for (let i = 0; i < firstDow; i++) html += '<div class="ca-day-cell empty"></div>';
 
   for (let d = 1; d <= numDays; d++) {
-    const isToday   = (YEAR === todayYear && month === todayMonth && d === todayDay);
-    const hasData   = daysWithData.has(d);
-    const classes   = ['ca-day-cell',
-                       isToday  ? 'today'    : '',
-                       hasData  ? 'has-data' : ''].filter(Boolean).join(' ');
-    html += `<div class="${classes}" data-day="${d}">
+    const isToday = (YEAR === todayYear && month === todayMonth && d === todayDay);
+    const hasData = daysWithData.has(d);
+    const isSelected = (d === activeDay);
+    const cls = ['ca-day-cell',
+      isToday   ? 'today'    : '',
+      hasData   ? 'has-data' : '',
+      isSelected? 'selected' : ''].filter(Boolean).join(' ');
+    html += `<div class="${cls}" data-day="${d}">
                <span class="ca-day-num">${d}</span>
                ${hasData ? '<span class="ca-dot"></span>' : ''}
              </div>`;
   }
 
   grid.innerHTML = html;
-
-  // Attach click handlers
   grid.querySelectorAll('.ca-day-cell:not(.empty)').forEach(cell => {
     cell.addEventListener('click', () => selectDay(parseInt(cell.dataset.day)));
   });
 }
 
-// ── Day selection ───────────────────────────────────────────────────
 function selectDay(day) {
   activeDay = day;
-
-  // Highlight selected
   document.querySelectorAll('.ca-day-cell').forEach(c => c.classList.remove('selected'));
   const cell = document.querySelector(`.ca-day-cell[data-day="${day}"]`);
   if (cell) cell.classList.add('selected');
 
-  const dateStr  = `${YEAR}-${String(activeMonth).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-  const label    = `${MONTH_NAMES[activeMonth-1]} ${day}, ${YEAR}`;
+  const dateStr = `${YEAR}-${String(activeMonth).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+  const label   = `${MONTH_NAMES[activeMonth-1]} ${day}, ${YEAR}`;
+  const isLatest = (day === Math.max(...(daysWithData.size ? daysWithData : [day])));
 
   document.getElementById('ca-date-label').innerHTML =
     `<span class="ca-date-text">${label}</span>
+     ${isLatest && !daysWithData.has(todayDay) ? '<span class="ca-latest-badge">Latest</span>' : ''}
      <span class="ca-date-iso">${dateStr}</span>`;
 
   const body = document.getElementById('ca-content-body');
   body.innerHTML = '<div class="ca-loading">Loading&hellip;</div>';
 
   fetch('/api/ca/content/' + dateStr)
-    .then(r => {
-      if (r.status === 404) return null;
-      return r.text();
-    })
+    .then(r => { if (r.status === 404) return null; return r.text(); })
     .then(md => {
-      if (!md || md.trim() === '') {
+      if (!md || !md.trim()) {
         body.innerHTML = `
           <div class="ca-empty-state">
             <div class="ca-empty-icon">&#9997;</div>
-            <p>No current affairs added for <strong>${label}</strong> yet.</p>
-            <p class="ca-add-hint">To add: create the file<br>
-               <code>FILES/current-affairs/${dateStr}.md</code></p>
+            <p>No current affairs for <strong>${label}</strong> yet.</p>
           </div>`;
       } else {
         body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(md)}</div>`;
       }
     })
-    .catch(() => {
-      body.innerHTML = '<p class="ca-error">Could not load content. Please try again.</p>';
-    });
+    .catch(() => { body.innerHTML = '<p class="ca-error">Could not load. Please try again.</p>'; });
 }
 
-// ── Init: open today's month ────────────────────────────────────────
-setMonth(activeMonth);
-
-// Auto-select today if we're in the current year
-if (todayYear === YEAR) {
-  // Wait for month data to load before selecting today
-  setTimeout(() => selectDay(todayDay), 600);
-}
+// Init: load current month, auto-select latest available
+setMonth(activeMonth, true);
 </script>
 
 {% endblock %}
