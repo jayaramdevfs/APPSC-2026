@@ -41,10 +41,12 @@
     <div class="k-aa-section">
       <div class="k-aa-label">Themes</div>
       <div class="k-aa-options">
-        <button class="k-theme-btn theme-light" data-theme="theme-light">Aa</button>
-        <button class="k-theme-btn theme-sepia active" data-theme="theme-sepia">Aa</button>
-        <button class="k-theme-btn theme-dark" data-theme="theme-dark">Aa</button>
-        <button class="k-theme-btn theme-wakanda" data-theme="theme-wakanda">Aa</button>
+        <button class="k-theme-btn theme-light" data-theme="theme-light" title="Light">Aa</button>
+        <button class="k-theme-btn theme-sepia" data-theme="theme-sepia" title="Sepia">Aa</button>
+        <button class="k-theme-btn theme-saffron" data-theme="theme-saffron" title="Saffron">Aa</button>
+        <button class="k-theme-btn theme-wakanda" data-theme="theme-wakanda" title="Wakanda">Aa</button>
+        <button class="k-theme-btn theme-ghost-rider" data-theme="theme-ghost-rider" title="Ghost Rider">Aa</button>
+        <button class="k-theme-btn theme-dark" data-theme="theme-dark" title="Dark (default)">Aa</button>
       </div>
     </div>
     <div class="k-aa-section">
@@ -181,6 +183,16 @@
   --k-theme-wakanda-text: #E2E8F0;
   --k-theme-wakanda-border: #A855F7;
 
+  /* Saffron — warm dark to match global Saffron theme */
+  --k-theme-saffron-bg: #1C1208;
+  --k-theme-saffron-text: #F5E6CC;
+  --k-theme-saffron-border: #FF9933;
+
+  /* Ghost Rider (Hellfire) — wine-dark with embers */
+  --k-theme-ghost-rider-bg: #150505;
+  --k-theme-ghost-rider-text: #F5DEB3;
+  --k-theme-ghost-rider-border: #FF5722;
+
   --k-font-serif: 'Georgia', 'Times New Roman', serif; /* Simulates Bookerly */
   --k-font-sans: 'Inter', '-apple-system', sans-serif; /* Simulates Amazon Ember */
 }
@@ -224,6 +236,35 @@ nav.navbar { display: none !important; }
 #kindle-app.theme-sepia { --k-bg: var(--k-theme-sepia-bg); --k-text: var(--k-theme-sepia-text); --k-border: var(--k-theme-sepia-border); }
 #kindle-app.theme-dark { --k-bg: var(--k-theme-dark-bg); --k-text: var(--k-theme-dark-text); --k-border: var(--k-theme-dark-border); }
 #kindle-app.theme-wakanda { --k-bg: var(--k-theme-wakanda-bg); --k-text: var(--k-theme-wakanda-text); --k-border: var(--k-theme-wakanda-border); }
+#kindle-app.theme-saffron { --k-bg: var(--k-theme-saffron-bg); --k-text: var(--k-theme-saffron-text); --k-border: var(--k-theme-saffron-border); }
+#kindle-app.theme-ghost-rider {
+  --k-bg: var(--k-theme-ghost-rider-bg);
+  --k-text: var(--k-theme-ghost-rider-text);
+  --k-border: var(--k-theme-ghost-rider-border);
+  background-image:
+    radial-gradient(circle at 80% 0%, rgba(255, 87, 34, 0.06) 0%, transparent 55%),
+    radial-gradient(circle at 10% 100%, rgba(255, 122, 26, 0.05) 0%, transparent 55%),
+    repeating-linear-gradient(0deg, rgba(255, 87, 34, 0.03) 0px, transparent 2px, transparent 4px);
+}
+#kindle-app.theme-ghost-rider .k-reader-content h1,
+#kindle-app.theme-ghost-rider .k-reader-content h2,
+#kindle-app.theme-ghost-rider .k-reader-content h3 {
+  color: #FF7A1A !important;
+  text-shadow: 0 0 10px rgba(255, 87, 34, 0.35);
+}
+#kindle-app.theme-ghost-rider .k-reader-content strong { color: #FFE25C; }
+#kindle-app.theme-ghost-rider .k-reader-content table { border: 1px solid #4A1A0F !important; }
+#kindle-app.theme-ghost-rider .k-reader-content th { background: #2A0A0A !important; color: #FFE25C !important; border-bottom: 2px solid #FF5722 !important; }
+#kindle-app.theme-ghost-rider .k-reader-content td { background: transparent !important; color: #F5DEB3 !important; border-bottom: 1px solid #4A1A0F !important; }
+#kindle-app.theme-saffron .k-reader-content h1,
+#kindle-app.theme-saffron .k-reader-content h2,
+#kindle-app.theme-saffron .k-reader-content h3 {
+  color: #FF9933 !important;
+}
+#kindle-app.theme-saffron .k-reader-content strong { color: #FFD699; }
+#kindle-app.theme-saffron .k-reader-content table { border: 1px solid #4A3520 !important; }
+#kindle-app.theme-saffron .k-reader-content th { background: #2A1F12 !important; color: #FFD699 !important; border-bottom: 2px solid #FF9933 !important; }
+#kindle-app.theme-saffron .k-reader-content td { background: transparent !important; color: #F5E6CC !important; border-bottom: 1px solid #4A3520 !important; }
 
 /* Typography Applications */
 #kindle-app.font-serif { --k-font-family: var(--k-font-serif); }
@@ -514,7 +555,10 @@ nav.navbar { display: none !important; }
 }
 .k-theme-btn.theme-light { background: var(--k-theme-light-bg); color: var(--k-theme-light-text); }
 .k-theme-btn.theme-sepia { background: var(--k-theme-sepia-bg); color: var(--k-theme-sepia-text); }
-.k-theme-btn.theme-dark { background: var(--k-theme-dark-bg); color: var(--k-theme-dark-text); }
+.k-theme-btn.theme-dark { background: #191919; color: #E8E8E8; }
+.k-theme-btn.theme-saffron { background: var(--k-theme-saffron-bg); color: var(--k-theme-saffron-border); }
+.k-theme-btn.theme-wakanda { background: var(--k-theme-wakanda-bg); color: #C084FC; }
+.k-theme-btn.theme-ghost-rider { background: var(--k-theme-ghost-rider-bg); color: #FF7A1A; }
 
 .k-font-btn.font-serif { font-family: var(--k-font-serif); }
 .k-font-btn.font-sans { font-family: var(--k-font-sans); }
@@ -761,26 +805,41 @@ app.addEventListener('click', (e) => {
   }
 });
 
-// Theme Selection
+const ALL_K_THEMES = ['theme-light','theme-sepia','theme-dark','theme-wakanda','theme-saffron','theme-ghost-rider'];
+
+function applyKTheme(themeClass) {
+  app.classList.remove(...ALL_K_THEMES);
+  app.classList.add(themeClass);
+  document.querySelectorAll('.k-theme-btn').forEach(b => b.classList.toggle('active', b.dataset.theme === themeClass));
+}
+
+// Theme Selection — manual override (user explicitly picks)
 document.querySelectorAll('.k-theme-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    app.classList.remove('theme-light', 'theme-sepia', 'theme-dark', 'theme-wakanda');
-    app.classList.add(btn.dataset.theme);
-    localStorage.setItem('k-theme-pref', btn.dataset.theme); // Persist reader theme
-    document.querySelectorAll('.k-theme-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+    applyKTheme(btn.dataset.theme);
+    localStorage.setItem('k-theme-pref', btn.dataset.theme);
+    localStorage.setItem('k-theme-manual', '1'); // user took control this session
   });
 });
 
-// Init saved theme
+// Map global site theme → reading theme
+function readingThemeForGlobal(globalTheme) {
+  if (globalTheme === 'wakanda')     return 'theme-wakanda';
+  if (globalTheme === 'ghost-rider') return 'theme-ghost-rider';
+  return 'theme-saffron'; // saffron / default
+}
+
+// Init: ALWAYS sync to global theme on load (dynamic).
+// Manual override only persists for this tab session — fresh page load mirrors global theme.
 (function() {
-  const savedTheme = localStorage.getItem('k-theme-pref');
-  const globalTheme = localStorage.getItem('theme');
-  const effectiveTheme = savedTheme || (globalTheme === 'wakanda' ? 'theme-wakanda' : 'theme-sepia');
-  
-  const btn = document.querySelector(`.k-theme-btn[data-theme="${effectiveTheme}"]`);
-  if (btn) btn.click();
+  const globalTheme = localStorage.getItem('theme') || 'saffron';
+  applyKTheme(readingThemeForGlobal(globalTheme));
 })();
+
+// Live-sync if global theme is changed in another tab
+window.addEventListener('storage', (e) => {
+  if (e.key === 'theme') applyKTheme(readingThemeForGlobal(e.newValue || 'saffron'));
+});
 
 // Font Selection
 document.querySelectorAll('.k-font-btn').forEach(btn => {
