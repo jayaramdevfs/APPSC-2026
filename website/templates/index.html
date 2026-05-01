@@ -6,181 +6,251 @@
 
 {% if current_user %}
 <!-- ═══════════════════════════════════════════════════════
-     LOGGED-IN: MISSION CONTROL DASHBOARD
+     LOGGED-IN: LIVE DASHBOARD
      ═══════════════════════════════════════════════════════ -->
-<section class="command-center">
-    <div class="cc-header">
-        <div class="cc-brand-title">APPSC MISSION CONTROL 2026</div>
-        <div class="cc-status" id="live-status">&#9679; SYSTEM ACTIVE</div>
-    </div>
-
-    <div class="cc-dashboard-row">
-        <div class="cc-widget countdown-widget">
-            <div class="cw-label">GROUP I PRELIMS</div>
-            <div class="cw-timer" id="timer-g1">
-                <div class="timer-unit"><span class="val">--</span><span class="unit">DAYS</span></div>
-                <div class="timer-unit"><span class="val">--</span><span class="unit">HRS</span></div>
-                <div class="timer-unit"><span class="val">--</span><span class="unit">MIN</span></div>
-            </div>
-            <div class="cw-target">TARGET: AUG 16, 2026</div>
+<section class="dash">
+    <div class="dash-greet-row">
+        <div class="dash-hello">
+            <div class="dash-eyebrow" id="dash-date">—</div>
+            <h1 class="dash-title">Hello, {{ current_user.username }}.</h1>
+            <p class="dash-sub">Your APPSC 2026 prep, at a glance.</p>
         </div>
-
-        <div class="cc-widget resume-widget" id="resume-widget" style="display:none">
-            <div class="cw-label">QUICK RESUME</div>
-            <div class="resume-content">
-                <div class="resume-title" id="resume-topic-title">--</div>
-                <div class="resume-meta" id="resume-topic-time">LAST ACCESSED: --</div>
-                <a href="#" id="resume-link" class="resume-btn">RE-ENGAGE &rarr;</a>
-            </div>
-        </div>
-
-        <div class="cc-widget countdown-widget">
-            <div class="cw-label">GROUP II SCREENING</div>
-            <div class="cw-timer" id="timer-g2">
-                <div class="timer-unit"><span class="val">--</span><span class="unit">DAYS</span></div>
-                <div class="timer-unit"><span class="val">--</span><span class="unit">HRS</span></div>
-                <div class="timer-unit"><span class="val">--</span><span class="unit">MIN</span></div>
-            </div>
-            <div class="cw-target">TARGET: NOV 22, 2026</div>
+        <div class="dash-clock">
+            <div class="dc-time" id="dash-time">--:--</div>
+            <div class="dc-tz">IST</div>
         </div>
     </div>
 
-    <div class="cc-coverage-panel">
-        <div class="cp-header">
-            <span>Syllabus Coverage Pulse</span>
-            <span id="cp-stats">Loading...</span>
+    <div class="dash-grid">
+        <div class="dash-card dash-cd">
+            <div class="dc-label">Group I Prelims</div>
+            <div class="dc-timer" id="cd-g1">
+                <span class="dc-num"><span class="dn-val" data-u="d">--</span><span class="dn-u">d</span></span>
+                <span class="dc-num"><span class="dn-val" data-u="h">--</span><span class="dn-u">h</span></span>
+                <span class="dc-num"><span class="dn-val" data-u="m">--</span><span class="dn-u">m</span></span>
+            </div>
+            <div class="dc-date">Aug 16, 2026</div>
         </div>
-        <div class="cp-bar-bg"><div class="cp-bar-fill" id="cp-fill" style="width:0%"></div></div>
+
+        <div class="dash-card dash-cd">
+            <div class="dc-label">Group II Screening</div>
+            <div class="dc-timer" id="cd-g2">
+                <span class="dc-num"><span class="dn-val" data-u="d">--</span><span class="dn-u">d</span></span>
+                <span class="dc-num"><span class="dn-val" data-u="h">--</span><span class="dn-u">h</span></span>
+                <span class="dc-num"><span class="dn-val" data-u="m">--</span><span class="dn-u">m</span></span>
+            </div>
+            <div class="dc-date">Nov 22, 2026</div>
+        </div>
+
+        <div class="dash-card dash-stat">
+            <div class="ds-num" id="ds-studied">0</div>
+            <div class="ds-label">Topics Studied</div>
+        </div>
+        <div class="dash-card dash-stat">
+            <div class="ds-num" id="ds-streak">0</div>
+            <div class="ds-label">Day Streak</div>
+        </div>
+        <div class="dash-card dash-stat">
+            <div class="ds-num" id="ds-due">0</div>
+            <div class="ds-label">Due to Revise</div>
+        </div>
+        <div class="dash-card dash-stat">
+            <div class="ds-num" id="ds-mastered">0</div>
+            <div class="ds-label">Mastered</div>
+        </div>
+    </div>
+
+    <div class="dash-resume" id="dash-resume" style="display:none">
+        <div class="dr-left">
+            <span class="dr-label">Pick up where you left off</span>
+            <span class="dr-title" id="dr-title">—</span>
+        </div>
+        <a href="#" class="dr-btn" id="dr-link">Continue &rarr;</a>
     </div>
 </section>
 
-<!-- Group-gated Heatmap -->
-<div class="home-heatmap-section">
-    <div class="curriculum-header">
-        <div>
-            <h3 class="curriculum-title">Curriculum Coverage Map</h3>
-            <p class="curriculum-subtitle">Click any tile to open that topic's Study Desk</p>
+<!-- ═══════════════════════════════════════════════════════
+     CURRENT AFFAIRS SPOTLIGHT — Group I / Group II focus
+     ═══════════════════════════════════════════════════════ -->
+<section class="ca-spot">
+    <div class="cas-head">
+        <div class="cas-title-row">
+            <h2 class="cas-title">Current Affairs</h2>
+            <span class="cas-date-pill" id="cas-date">Loading latest&hellip;</span>
         </div>
-        <div class="heatmap-group-tabs">
-            <button class="hm-tab active" data-group="Group I">Group I</button>
-            <button class="hm-tab" data-group="Group II">Group II</button>
+        <div class="cas-tabs">
+            <button class="cas-tab active" data-scope="group1">Group I</button>
+            <button class="cas-tab" data-scope="group2">Group II</button>
         </div>
     </div>
-    <div id="heatmap-active" class="heatmap-group-container">
-        <div class="hm-loading">Loading coverage map&hellip;</div>
+    <div class="cas-body" id="cas-body">
+        <div class="cas-skeleton">
+            <div class="csk-line w90"></div>
+            <div class="csk-line w70"></div>
+            <div class="csk-line w80"></div>
+        </div>
     </div>
-</div>
+    <a href="/current-affairs" class="cas-cta">Open Current Affairs Library &rarr;</a>
+</section>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    let allData = [], grouped = {}, activeGroup = 'Group I';
+    /* ---------- Live clock + date ---------- */
+    const monthsLong = ['January','February','March','April','May','June',
+                        'July','August','September','October','November','December'];
+    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
-    fetch('/api/progress/grid')
-        .then(r => r.json())
-        .then(data => {
-            allData = data || [];
-            allData.forEach(t => {
-                if (!grouped[t.exam]) grouped[t.exam] = {};
-                if (!grouped[t.exam][t.area]) grouped[t.exam][t.area] = [];
-                grouped[t.exam][t.area].push(t);
-            });
-
-            renderGroup(activeGroup);
-
-            const total = allData.length;
-            const done  = allData.filter(t => t.completed).length;
-            const pct   = total ? (done / total * 100).toFixed(1) : 0;
-            const el = document.getElementById('cp-stats');
-            if (el) el.textContent = `${done} / ${total} Topics Covered (${pct}%)`;
-            const fill = document.getElementById('cp-fill');
-            if (fill) fill.style.width = pct + '%';
-        })
-        .catch(() => {
-            document.getElementById('heatmap-active').innerHTML =
-                '<div class="hm-loading">Could not load map. Please refresh.</div>';
-        });
-
-    function renderGroup(examKey) {
-        const container = document.getElementById('heatmap-active');
-        const data = grouped[examKey];
-        if (!data) {
-            container.innerHTML = '<div class="hm-loading">No topics found for this group.</div>';
-            return;
-        }
-        const areas = Object.keys(data).sort();
-        container.innerHTML = areas.map(area => {
-            const topics = data[area];
-            const done  = topics.filter(t => t.completed).length;
-            const total = topics.length;
-            const pct   = total ? Math.round(done / total * 100) : 0;
-            return `
-            <div class="subject-card">
-                <div class="sc-header">
-                    <span class="sc-title">${area}</span>
-                    <span class="sc-stat">${done}/${total}
-                        <span class="sc-pct">${pct}%</span>
-                    </span>
-                </div>
-                <div class="sc-progress-bar">
-                    <div class="sc-progress-fill" style="width:${pct}%"></div>
-                </div>
-                <div class="sc-grid">
-                    ${topics.map(t => {
-                        const cls  = t.completed ? 'done' : '';
-                        const safe = t.title.replace(/"/g, '&quot;');
-                        return `<div class="ctile ${cls}" title="${safe}"
-                                     onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
-                    }).join('')}
-                </div>
-            </div>`;
-        }).join('');
+    function tickClock() {
+        const now = new Date();
+        const h = String(now.getHours()).padStart(2, '0');
+        const m = String(now.getMinutes()).padStart(2, '0');
+        const dateEl = document.getElementById('dash-date');
+        const timeEl = document.getElementById('dash-time');
+        if (dateEl) dateEl.textContent = `${days[now.getDay()]}, ${monthsLong[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+        if (timeEl) timeEl.textContent = `${h}:${m}`;
     }
+    tickClock();
+    setInterval(tickClock, 30000);
 
-    document.querySelectorAll('.hm-tab').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.hm-tab').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            activeGroup = btn.dataset.group;
-            document.getElementById('heatmap-active').innerHTML =
-                '<div class="hm-loading">Loading&hellip;</div>';
-            setTimeout(() => renderGroup(activeGroup), 80);
-        });
-    });
-
-    // Countdown
-    function tick() {
-        const targets = { g1: new Date('2026-08-16T09:00:00'), g2: new Date('2026-11-22T09:00:00') };
+    /* ---------- Countdowns ---------- */
+    const targets = {
+        g1: new Date('2026-08-16T09:00:00'),
+        g2: new Date('2026-11-22T09:00:00')
+    };
+    function tickCountdown() {
         const now = Date.now();
-        ['g1','g2'].forEach(id => {
-            const diff = targets[id] - now;
+        ['g1', 'g2'].forEach(id => {
+            const el = document.getElementById('cd-' + id);
+            if (!el) return;
+            const diff = Math.max(0, targets[id] - now);
             const d = Math.floor(diff / 86400000);
             const h = Math.floor((diff % 86400000) / 3600000);
             const m = Math.floor((diff % 3600000) / 60000);
-            const el = document.getElementById('timer-' + id);
-            if (el) {
-                const vals = el.querySelectorAll('.val');
-                vals[0].textContent = String(d).padStart(2,'0');
-                vals[1].textContent = String(h).padStart(2,'0');
-                vals[2].textContent = String(m).padStart(2,'0');
-            }
+            const vals = el.querySelectorAll('.dn-val');
+            vals[0].textContent = String(d).padStart(2, '0');
+            vals[1].textContent = String(h).padStart(2, '0');
+            vals[2].textContent = String(m).padStart(2, '0');
         });
     }
-    tick();
-    setInterval(tick, 60000);
+    tickCountdown();
+    setInterval(tickCountdown, 60000);
 
-    // Quick Resume
+    /* ---------- Live stats ---------- */
+    function animateNum(el, target) {
+        if (!el) return;
+        const start = 0;
+        const dur = 600;
+        const t0 = performance.now();
+        function step(t) {
+            const p = Math.min(1, (t - t0) / dur);
+            const eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(start + (target - start) * eased);
+            if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    fetch('/api/progress/summary').then(r => r.json()).then(d => {
+        animateNum(document.getElementById('ds-studied'), d.total_studied || 0);
+        animateNum(document.getElementById('ds-streak'),  d.streak_days   || 0);
+        animateNum(document.getElementById('ds-mastered'), d.mastered     || 0);
+    }).catch(() => {});
+
+    fetch('/api/progress/due-today').then(r => r.json()).then(d => {
+        const n = (d && d.due) ? d.due.length : 0;
+        animateNum(document.getElementById('ds-due'), n);
+    }).catch(() => {});
+
+    /* ---------- Quick Resume ---------- */
     const lastId    = localStorage.getItem('gg_last_studied_id');
     const lastTitle = localStorage.getItem('gg_last_studied_title');
-    const lastTime  = localStorage.getItem('gg_last_studied_time');
-    const rw = document.getElementById('resume-widget');
+    const rw = document.getElementById('dash-resume');
     if (rw && lastId && lastTitle) {
-        rw.style.display = 'block';
-        document.getElementById('resume-topic-title').textContent = lastTitle;
-        document.getElementById('resume-topic-time').textContent =
-            'LAST: ' + new Date(parseInt(lastTime)).toLocaleString('en-IN', {hour:'2-digit',minute:'2-digit',day:'2-digit',month:'short'});
-        document.getElementById('resume-link').href =
+        rw.style.display = 'flex';
+        document.getElementById('dr-title').textContent = lastTitle;
+        document.getElementById('dr-link').href =
             '/study-desk/' + lastId + '?title=' + encodeURIComponent(lastTitle);
     }
+
+    /* ---------- Current Affairs spotlight ---------- */
+    let currentScope = 'group1';
+    let cachedMd = '';
+
+    function snippet(md, scope) {
+        if (!md) return '';
+        // Strip markdown for a clean preview
+        let text = md
+            .replace(/^---[\s\S]*?---/m, '')
+            .replace(/^#+\s.*$/gm, '')
+            .replace(/!\[.*?\]\(.*?\)/g, '')
+            .replace(/\[(.*?)\]\(.*?\)/g, '$1')
+            .replace(/[*_`>#-]+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+        // Section "highlights" — try to spot lines tagged for the scope, else show first paragraph
+        const lines = md.split('\n').map(l => l.trim()).filter(Boolean);
+        const scopeRegex = scope === 'group1'
+            ? /(group\s*i\b|group\s*1\b|prelims|mains)/i
+            : /(group\s*ii\b|group\s*2\b|screening)/i;
+
+        const tagged = lines.filter(l => scopeRegex.test(l) && l.length < 220);
+        const bullets = tagged.length ? tagged.slice(0, 4) : lines.filter(l => /^[-*]\s/.test(l)).slice(0, 4);
+
+        if (bullets.length) {
+            return '<ul class="cas-bullets">' +
+                bullets.map(b => '<li>' + b.replace(/^[-*]\s+/, '').replace(/[*_`]/g, '') + '</li>').join('') +
+                '</ul>';
+        }
+        return '<p class="cas-para">' + text.slice(0, 320) + (text.length > 320 ? '&hellip;' : '') + '</p>';
+    }
+
+    function render() {
+        const body = document.getElementById('cas-body');
+        if (!cachedMd) {
+            body.innerHTML = '<p class="cas-empty">No current affairs published yet. Check back soon.</p>';
+            return;
+        }
+        body.innerHTML = snippet(cachedMd, currentScope);
+    }
+
+    async function loadLatestCA() {
+        const today = new Date();
+        let y = today.getFullYear();
+        let m = today.getMonth() + 1;
+        for (let i = 0; i < 12; i++) {
+            try {
+                const r = await fetch(`/api/ca/month/${y}/${m}`);
+                const data = await r.json();
+                if (data && data.days && data.days.length) {
+                    const day = Math.max(...data.days);
+                    const iso = `${y}-${String(m).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                    const md = await fetch(`/api/ca/content/${iso}`).then(x => x.ok ? x.text() : '');
+                    cachedMd = md || '';
+                    const label = `${monthsLong[m - 1]} ${day}, ${y}`;
+                    document.getElementById('cas-date').textContent = label;
+                    render();
+                    return;
+                }
+            } catch (e) { /* keep walking back */ }
+            m -= 1;
+            if (m < 1) { m = 12; y -= 1; }
+        }
+        document.getElementById('cas-date').textContent = '—';
+        cachedMd = '';
+        render();
+    }
+
+    document.querySelectorAll('.cas-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.cas-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentScope = btn.dataset.scope;
+            render();
+        });
+    });
+
+    loadLatestCA();
 });
 </script>
 
@@ -380,5 +450,111 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="card-action">Start Learning &rarr;</div>
     </a>
 </section>
+
+{% if current_user %}
+<!-- ═══════════════════════════════════════════════════════
+     CURRICULUM HEATMAP — ANCHORED AT THE BOTTOM
+     ═══════════════════════════════════════════════════════ -->
+<section class="home-heatmap-section">
+    <div class="curriculum-header">
+        <div>
+            <h3 class="curriculum-title">Curriculum Coverage Map</h3>
+            <p class="curriculum-subtitle">Click any tile to open that topic's Study Desk</p>
+        </div>
+        <div class="heatmap-group-tabs">
+            <button class="hm-tab active" data-group="Group I">Group I</button>
+            <button class="hm-tab" data-group="Group II">Group II</button>
+        </div>
+    </div>
+    <div class="cc-coverage-panel">
+        <div class="cp-header">
+            <span>Syllabus Coverage</span>
+            <span id="cp-stats">&nbsp;</span>
+        </div>
+        <div class="cp-bar-bg"><div class="cp-bar-fill" id="cp-fill" style="width:0%"></div></div>
+    </div>
+    <div id="heatmap-active" class="heatmap-group-container">
+        <div class="hm-loading">Loading coverage map&hellip;</div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    let allData = [], grouped = {}, activeGroup = 'Group I';
+
+    fetch('/api/progress/grid')
+        .then(r => r.json())
+        .then(data => {
+            allData = data || [];
+            allData.forEach(t => {
+                if (!grouped[t.exam]) grouped[t.exam] = {};
+                if (!grouped[t.exam][t.area]) grouped[t.exam][t.area] = [];
+                grouped[t.exam][t.area].push(t);
+            });
+
+            renderGroup(activeGroup);
+
+            const total = allData.length;
+            const done  = allData.filter(t => t.completed).length;
+            const pct   = total ? (done / total * 100).toFixed(1) : 0;
+            const el = document.getElementById('cp-stats');
+            if (el) el.textContent = `${done} / ${total} topics covered (${pct}%)`;
+            const fill = document.getElementById('cp-fill');
+            if (fill) fill.style.width = pct + '%';
+        })
+        .catch(() => {
+            document.getElementById('heatmap-active').innerHTML =
+                '<div class="hm-loading">Could not load map. Please refresh.</div>';
+        });
+
+    function renderGroup(examKey) {
+        const container = document.getElementById('heatmap-active');
+        const data = grouped[examKey];
+        if (!data) {
+            container.innerHTML = '<div class="hm-loading">No topics found for this group.</div>';
+            return;
+        }
+        const areas = Object.keys(data).sort();
+        container.innerHTML = areas.map(area => {
+            const topics = data[area];
+            const done  = topics.filter(t => t.completed).length;
+            const total = topics.length;
+            const pct   = total ? Math.round(done / total * 100) : 0;
+            return `
+            <div class="subject-card">
+                <div class="sc-header">
+                    <span class="sc-title">${area}</span>
+                    <span class="sc-stat">${done}/${total}
+                        <span class="sc-pct">${pct}%</span>
+                    </span>
+                </div>
+                <div class="sc-progress-bar">
+                    <div class="sc-progress-fill" style="width:${pct}%"></div>
+                </div>
+                <div class="sc-grid">
+                    ${topics.map(t => {
+                        const cls  = t.completed ? 'done' : '';
+                        const safe = t.title.replace(/"/g, '&quot;');
+                        return `<div class="ctile ${cls}" title="${safe}"
+                                     onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
+                    }).join('')}
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    document.querySelectorAll('.hm-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.hm-tab').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeGroup = btn.dataset.group;
+            document.getElementById('heatmap-active').innerHTML =
+                '<div class="hm-loading">Loading&hellip;</div>';
+            setTimeout(() => renderGroup(activeGroup), 80);
+        });
+    });
+});
+</script>
+{% endif %}
 
 {% endblock %}

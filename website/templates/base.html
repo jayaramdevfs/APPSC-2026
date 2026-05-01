@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=26">
+    <link rel="stylesheet" href="/static/css/style.css?v=32">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -32,14 +32,60 @@
     <script>
       // Early init to prevent flicker
       (function() {
-  const savedColor = localStorage.getItem('theme');
-  if (savedColor === 'wakanda') {
-    document.documentElement.classList.add('theme-wakanda');
-  }
+  const VALID = ['saffron', 'wakanda', 'ghost-rider'];
+  try {
+    const urlTheme = new URLSearchParams(location.search).get('theme');
+    if (VALID.includes(urlTheme)) localStorage.setItem('theme', urlTheme);
+  } catch (e) {}
+  const saved = localStorage.getItem('theme');
+  if (saved === 'wakanda')     document.documentElement.classList.add('theme-wakanda');
+  if (saved === 'ghost-rider') document.documentElement.classList.add('theme-ghost-rider');
 })();
 </script>
 </head>
 <body>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     GLOBAL THEME VFX LAYER — fixed full-viewport, theme-gated
+     ═══════════════════════════════════════════════════════════════ -->
+<div class="vfx-layer" aria-hidden="true">
+    <!-- Saffron: tricolor ribbon shimmer + lotus dust -->
+    <div class="vfx-saffron-ribbon"></div>
+    <div class="vfx-saffron-petal vp1"></div>
+    <div class="vfx-saffron-petal vp2"></div>
+    <div class="vfx-saffron-petal vp3"></div>
+
+    <!-- Wakanda: vibranium energy ripples + floating orbs -->
+    <div class="vfx-vibranium-ripple"></div>
+    <div class="vfx-vibranium-orb vo1"></div>
+    <div class="vfx-vibranium-orb vo2"></div>
+    <div class="vfx-vibranium-orb vo3"></div>
+    <div class="vfx-vibranium-orb vo4"></div>
+
+    <!-- Ghost Rider: rising hellfire flames + ember particles -->
+    <div class="vfx-hellfire">
+        <span class="hf-flame hf1"></span>
+        <span class="hf-flame hf2"></span>
+        <span class="hf-flame hf3"></span>
+        <span class="hf-flame hf4"></span>
+        <span class="hf-flame hf5"></span>
+        <span class="hf-flame hf6"></span>
+        <span class="hf-flame hf7"></span>
+        <span class="hf-flame hf8"></span>
+    </div>
+    <div class="vfx-embers">
+        <span class="hf-ember he1"></span>
+        <span class="hf-ember he2"></span>
+        <span class="hf-ember he3"></span>
+        <span class="hf-ember he4"></span>
+        <span class="hf-ember he5"></span>
+        <span class="hf-ember he6"></span>
+        <span class="hf-ember he7"></span>
+        <span class="hf-ember he8"></span>
+        <span class="hf-ember he9"></span>
+        <span class="hf-ember he10"></span>
+    </div>
+</div>
 
 <nav class="navbar">
     <!-- Hamburger — always LEFT (GroupsGuru pattern) -->
@@ -49,6 +95,111 @@
 
     <!-- Brand — links to home -->
     <a href="/" class="nav-brand">
+        <!-- ─── SAFFRON: Ashoka Chakra (24 spokes), rotating ─── -->
+        <svg class="gg-mark gg-mark-default" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+                <linearGradient id="ggSaffronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%"  stop-color="#FF9933"/>
+                    <stop offset="50%" stop-color="#FFFFFF"/>
+                    <stop offset="100%" stop-color="#138808"/>
+                </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="29" fill="none" stroke="url(#ggSaffronGrad)" stroke-width="2.5"/>
+            <circle cx="32" cy="32" r="6"  fill="#000080"/>
+            <g class="gg-chakra-spokes" stroke="#000080" stroke-width="1.4" stroke-linecap="round" style="transform-origin:32px 32px">
+                <line x1="32" y1="6"  x2="32" y2="14"/>
+                <line x1="32" y1="50" x2="32" y2="58"/>
+                <line x1="6"  y1="32" x2="14" y2="32"/>
+                <line x1="50" y1="32" x2="58" y2="32"/>
+                <line x1="13.7" y1="13.7" x2="19.4" y2="19.4"/>
+                <line x1="44.6" y1="44.6" x2="50.3" y2="50.3"/>
+                <line x1="13.7" y1="50.3" x2="19.4" y2="44.6"/>
+                <line x1="44.6" y1="19.4" x2="50.3" y2="13.7"/>
+                <line x1="22.0" y1="7.4"  x2="25.0" y2="14.8"/>
+                <line x1="39.0" y1="49.2" x2="42.0" y2="56.6"/>
+                <line x1="7.4"  y1="42.0" x2="14.8" y2="39.0"/>
+                <line x1="49.2" y1="25.0" x2="56.6" y2="22.0"/>
+                <line x1="42.0" y1="7.4"  x2="39.0" y2="14.8"/>
+                <line x1="25.0" y1="49.2" x2="22.0" y2="56.6"/>
+                <line x1="7.4"  y1="22.0" x2="14.8" y2="25.0"/>
+                <line x1="49.2" y1="39.0" x2="56.6" y2="42.0"/>
+                <line x1="9.7"  y1="17.6" x2="16.5" y2="21.5"/>
+                <line x1="47.5" y1="42.5" x2="54.3" y2="46.4"/>
+                <line x1="17.6" y1="54.3" x2="21.5" y2="47.5"/>
+                <line x1="42.5" y1="16.5" x2="46.4" y2="9.7"/>
+                <line x1="46.4" y1="54.3" x2="42.5" y2="47.5"/>
+                <line x1="21.5" y1="16.5" x2="17.6" y2="9.7"/>
+                <line x1="9.7"  y1="46.4" x2="16.5" y2="42.5"/>
+                <line x1="47.5" y1="21.5" x2="54.3" y2="17.6"/>
+            </g>
+        </svg>
+
+        <!-- ─── WAKANDA: Vibranium Panther head with pulsing eyes ─── -->
+        <svg class="gg-mark gg-mark-wakanda" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+                <radialGradient id="ggVibraniumEye" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%"  stop-color="#FFFFFF"/>
+                    <stop offset="40%" stop-color="#FBBF24"/>
+                    <stop offset="100%" stop-color="#A855F7"/>
+                </radialGradient>
+            </defs>
+            <!-- ear tufts -->
+            <path d="M6 4 L20 14 L14 26 Z" fill="currentColor"/>
+            <path d="M58 4 L44 14 L50 26 Z" fill="currentColor"/>
+            <!-- panther skull silhouette -->
+            <path d="M12 22 C12 14 20 10 32 10 C44 10 52 14 52 22 C56 30 56 42 50 52 C46 58 39 62 32 62 C25 62 18 58 14 52 C8 42 8 30 12 22 Z" fill="currentColor"/>
+            <!-- whisker streaks -->
+            <path d="M6 36 L18 34" stroke="#A855F7" stroke-width="1" opacity="0.55" fill="none"/>
+            <path d="M6 40 L18 39" stroke="#A855F7" stroke-width="1" opacity="0.45" fill="none"/>
+            <path d="M58 36 L46 34" stroke="#A855F7" stroke-width="1" opacity="0.55" fill="none"/>
+            <path d="M58 40 L46 39" stroke="#A855F7" stroke-width="1" opacity="0.45" fill="none"/>
+            <!-- glowing vibranium eyes -->
+            <ellipse class="gg-pan-eye" cx="22" cy="32" rx="4.5" ry="5.5" fill="url(#ggVibraniumEye)"/>
+            <ellipse class="gg-pan-eye" cx="42" cy="32" rx="4.5" ry="5.5" fill="url(#ggVibraniumEye)"/>
+            <!-- snout / fangs -->
+            <path d="M28 44 L36 44 L32 50 Z" fill="#1a0f2e"/>
+            <path d="M27 47 L29 52 L30 47 Z" fill="#FBBF24" opacity="0.9"/>
+            <path d="M37 47 L35 52 L34 47 Z" fill="#FBBF24" opacity="0.9"/>
+        </svg>
+
+        <!-- ─── GHOST RIDER: Flaming skull with separately-animated flame tongues ─── -->
+        <svg class="gg-mark gg-mark-ghost" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+                <radialGradient id="ggHellGlow" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%"  stop-color="#FFE25C"/>
+                    <stop offset="55%" stop-color="#FF7A1A"/>
+                    <stop offset="100%" stop-color="#B91C1C"/>
+                </radialGradient>
+                <radialGradient id="ggHellEye" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%"  stop-color="#FFFFFF"/>
+                    <stop offset="35%" stop-color="#FFE25C"/>
+                    <stop offset="80%" stop-color="#FF5722"/>
+                    <stop offset="100%" stop-color="#7B1F1F"/>
+                </radialGradient>
+            </defs>
+            <!-- back-glow halo behind skull -->
+            <circle class="gg-hell-halo" cx="32" cy="32" r="26" fill="url(#ggHellGlow)" opacity="0.35"/>
+            <!-- animated flame tongues (rotate / flicker independently) -->
+            <g class="gg-flames">
+                <path d="M32 4  Q26 14 30 18 Q24 12 22 4  Q20 18 28 22 Q18 18 14 8  Q14 22 24 26  Q12 26 8 18  Q12 32 22 30 Z" fill="url(#ggHellGlow)"/>
+                <path d="M32 4  Q38 14 34 18 Q40 12 42 4  Q44 18 36 22 Q46 18 50 8  Q50 22 40 26  Q52 26 56 18 Q52 32 42 30 Z" fill="url(#ggHellGlow)"/>
+                <path d="M32 2  Q30 12 32 18 Q34 12 32 2  Z" fill="#FFE25C" opacity="0.95"/>
+            </g>
+            <!-- skull -->
+            <path d="M14 32 C14 20 21 14 32 14 C43 14 50 20 50 32 C50 40 47 46 43 49 L43 56 L40 53 L40 58 L36 55 L36 60 L32 56 L28 60 L28 55 L24 58 L24 53 L21 56 L21 49 C17 46 14 40 14 32 Z" fill="#1a0303"/>
+            <!-- glowing eye sockets -->
+            <ellipse class="gg-hell-eye" cx="23" cy="33" rx="4.6" ry="5.6" fill="url(#ggHellEye)"/>
+            <ellipse class="gg-hell-eye" cx="41" cy="33" rx="4.6" ry="5.6" fill="url(#ggHellEye)"/>
+            <!-- nasal cavity -->
+            <path d="M30 42 L34 42 L32 47 Z" fill="#0a0303"/>
+            <!-- teeth row -->
+            <rect x="22" y="49" width="20" height="2" fill="#1a0303"/>
+            <line x1="26" y1="49" x2="26" y2="51" stroke="#FFE25C" stroke-width="0.6" opacity="0.7"/>
+            <line x1="30" y1="49" x2="30" y2="51" stroke="#FFE25C" stroke-width="0.6" opacity="0.7"/>
+            <line x1="34" y1="49" x2="34" y2="51" stroke="#FFE25C" stroke-width="0.6" opacity="0.7"/>
+            <line x1="38" y1="49" x2="38" y2="51" stroke="#FFE25C" stroke-width="0.6" opacity="0.7"/>
+        </svg>
+
         <span class="nav-title">GroupsGuru</span>
     </a>
 
@@ -56,9 +207,88 @@
 
     <!-- Auth area — always visible, pinned top-right -->
     <div class="nav-auth">
-        <button class="nav-theme-btn" id="theme-toggle" aria-label="Toggle Black Panther Theme" title="Toggle Black Panther Theme">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+        <button class="nav-paw-btn" id="theme-toggle" aria-label="Cycle theme — click to switch, hold to preview" title="Click to cycle theme · Hold to preview">
+            <span class="paw-pulse" aria-hidden="true"></span>
+            <!-- Saffron: shows paw (next click → Wakanda) -->
+            <svg class="tt-icon tt-icon-paw" viewBox="0 0 32 32" aria-hidden="true">
+                <ellipse cx="8" cy="11" rx="2.6" ry="3.2"></ellipse>
+                <ellipse cx="13" cy="6.5" rx="2.6" ry="3.4"></ellipse>
+                <ellipse cx="19" cy="6.5" rx="2.6" ry="3.4"></ellipse>
+                <ellipse cx="24" cy="11" rx="2.6" ry="3.2"></ellipse>
+                <path d="M16 13 C9.5 13 6.5 18 8.5 24 C10.4 28 13.2 30 16 30 C18.8 30 21.6 28 23.5 24 C25.5 18 22.5 13 16 13 Z"></path>
+            </svg>
+            <!-- Wakanda: shows flame (next click → Ghost Rider) -->
+            <svg class="tt-icon tt-icon-flame" viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16 2 C14 8 9 11 9 18 C9 24 13 30 16 30 C19 30 23 24 23 18 C23 14 19 13 19 9 C17 11 15 11 16 2 Z" fill="currentColor"></path>
+                <path d="M16 14 C15 17 13 19 13 22 C13 26 15 28 16 28 C17 28 19 26 19 22 C19 19 17 17 16 14 Z" fill="#FFE25C"></path>
+            </svg>
+            <!-- Ghost Rider: shows sun/saffron mark (next click → Saffron) -->
+            <svg class="tt-icon tt-icon-sun" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                <circle cx="16" cy="16" r="5" fill="currentColor"></circle>
+                <line x1="16" y1="3"  x2="16" y2="7"></line>
+                <line x1="16" y1="25" x2="16" y2="29"></line>
+                <line x1="3"  y1="16" x2="7"  y2="16"></line>
+                <line x1="25" y1="16" x2="29" y2="16"></line>
+                <line x1="6.5"  y1="6.5"  x2="9.5"  y2="9.5"></line>
+                <line x1="22.5" y1="22.5" x2="25.5" y2="25.5"></line>
+                <line x1="6.5"  y1="25.5" x2="9.5"  y2="22.5"></line>
+                <line x1="22.5" y1="9.5"  x2="25.5" y2="6.5"></line>
+            </svg>
         </button>
+        <div class="nav-kebab-wrap">
+            <button class="nav-kebab-btn" id="kebab-btn" aria-label="More options" aria-expanded="false" title="More">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <circle cx="12" cy="5" r="2"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                    <circle cx="12" cy="19" r="2"></circle>
+                </svg>
+            </button>
+            <div class="nav-kebab-menu" id="kebab-menu" role="menu" hidden>
+                <div class="nkm-section-label">Theme</div>
+                <button class="nkm-item nkm-theme" data-theme="saffron" role="menuitemradio">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M4 22 L16 12 L28 22"></path>
+                        <path d="M4 16 L16 6 L28 16"></path>
+                    </svg>
+                    <span class="nkm-label">Saffron <span class="nkm-sub">(default)</span></span>
+                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="nkm-item nkm-theme" data-theme="wakanda" role="menuitemradio">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <ellipse cx="8" cy="11" rx="2.6" ry="3.2" fill="currentColor"></ellipse>
+                        <ellipse cx="13" cy="6.5" rx="2.6" ry="3.4" fill="currentColor"></ellipse>
+                        <ellipse cx="19" cy="6.5" rx="2.6" ry="3.4" fill="currentColor"></ellipse>
+                        <ellipse cx="24" cy="11" rx="2.6" ry="3.2" fill="currentColor"></ellipse>
+                        <path d="M16 13 C9.5 13 6.5 18 8.5 24 C10.4 28 13.2 30 16 30 C18.8 30 21.6 28 23.5 24 C25.5 18 22.5 13 16 13 Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="nkm-label">Black Panther</span>
+                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="nkm-item nkm-theme" data-theme="ghost-rider" role="menuitemradio">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <path d="M16 2 C14 8 9 11 9 18 C9 24 13 30 16 30 C19 30 23 24 23 18 C23 14 19 13 19 9 C17 11 15 11 16 2 Z" fill="currentColor"></path>
+                    </svg>
+                    <span class="nkm-label">Ghost Rider</span>
+                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <div class="nkm-divider"></div>
+                <button class="nkm-item" id="kbm-toggle-music" role="menuitem">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M9 18V5l12-2v13"></path>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                    <span class="nkm-label" id="kbm-music-label">Ambient music: Off</span>
+                </button>
+                <a href="/dashboard" class="nkm-item" role="menuitem" {% if not current_user %}style="display:none"{% endif %}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span class="nkm-label">Open Dashboard</span>
+                </a>
+            </div>
+        </div>
         <button class="nav-music-btn" id="music-toggle" aria-label="Toggle Vibranium Ambient" title="Vibranium Ambient (All The Stars)" style="display:none;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
         </button>
@@ -84,6 +314,40 @@
 <div class="nav-drawer" id="nav-drawer">
     <div class="nav-drawer-header">
         <a href="/" class="nav-brand">
+            <svg class="gg-mark gg-mark-default" viewBox="0 0 64 64" aria-hidden="true">
+                <circle cx="32" cy="32" r="29" fill="none" stroke="#FF9933" stroke-width="2.5"/>
+                <circle cx="32" cy="32" r="6"  fill="#000080"/>
+                <g class="gg-chakra-spokes" stroke="#000080" stroke-width="1.4" stroke-linecap="round" style="transform-origin:32px 32px">
+                    <line x1="32" y1="6"  x2="32" y2="14"/><line x1="32" y1="50" x2="32" y2="58"/>
+                    <line x1="6"  y1="32" x2="14" y2="32"/><line x1="50" y1="32" x2="58" y2="32"/>
+                    <line x1="13.7" y1="13.7" x2="19.4" y2="19.4"/><line x1="44.6" y1="44.6" x2="50.3" y2="50.3"/>
+                    <line x1="13.7" y1="50.3" x2="19.4" y2="44.6"/><line x1="44.6" y1="19.4" x2="50.3" y2="13.7"/>
+                    <line x1="22.0" y1="7.4"  x2="25.0" y2="14.8"/><line x1="39.0" y1="49.2" x2="42.0" y2="56.6"/>
+                    <line x1="7.4"  y1="42.0" x2="14.8" y2="39.0"/><line x1="49.2" y1="25.0" x2="56.6" y2="22.0"/>
+                    <line x1="42.0" y1="7.4"  x2="39.0" y2="14.8"/><line x1="25.0" y1="49.2" x2="22.0" y2="56.6"/>
+                    <line x1="7.4"  y1="22.0" x2="14.8" y2="25.0"/><line x1="49.2" y1="39.0" x2="56.6" y2="42.0"/>
+                </g>
+            </svg>
+            <svg class="gg-mark gg-mark-wakanda" viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M6 4 L20 14 L14 26 Z" fill="currentColor"/>
+                <path d="M58 4 L44 14 L50 26 Z" fill="currentColor"/>
+                <path d="M12 22 C12 14 20 10 32 10 C44 10 52 14 52 22 C56 30 56 42 50 52 C46 58 39 62 32 62 C25 62 18 58 14 52 C8 42 8 30 12 22 Z" fill="currentColor"/>
+                <ellipse class="gg-pan-eye" cx="22" cy="32" rx="4.5" ry="5.5" fill="#FBBF24"/>
+                <ellipse class="gg-pan-eye" cx="42" cy="32" rx="4.5" ry="5.5" fill="#FBBF24"/>
+                <path d="M28 44 L36 44 L32 50 Z" fill="#1a0f2e"/>
+            </svg>
+            <svg class="gg-mark gg-mark-ghost" viewBox="0 0 64 64" aria-hidden="true">
+                <circle class="gg-hell-halo" cx="32" cy="32" r="26" fill="#FF7A1A" opacity="0.3"/>
+                <g class="gg-flames">
+                    <path d="M32 4  Q26 14 30 18 Q24 12 22 4  Q20 18 28 22 Q18 18 14 8  Q14 22 24 26  Q12 26 8 18  Q12 32 22 30 Z" fill="#FF7A1A"/>
+                    <path d="M32 4  Q38 14 34 18 Q40 12 42 4  Q44 18 36 22 Q46 18 50 8  Q50 22 40 26  Q52 26 56 18 Q52 32 42 30 Z" fill="#FF7A1A"/>
+                </g>
+                <path d="M14 32 C14 20 21 14 32 14 C43 14 50 20 50 32 C50 40 47 46 43 49 L43 56 L40 53 L40 58 L36 55 L36 60 L32 56 L28 60 L28 55 L24 58 L24 53 L21 56 L21 49 C17 46 14 40 14 32 Z" fill="#1a0303"/>
+                <ellipse class="gg-hell-eye" cx="23" cy="33" rx="4.6" ry="5.6" fill="#FFE25C"/>
+                <ellipse class="gg-hell-eye" cx="41" cy="33" rx="4.6" ry="5.6" fill="#FFE25C"/>
+                <path d="M30 42 L34 42 L32 47 Z" fill="#0a0303"/>
+                <rect x="22" y="49" width="20" height="2" fill="#1a0303"/>
+            </svg>
             <span class="nav-title">GroupsGuru</span>
         </a>
         <button class="nav-close" id="nav-close" aria-label="Close menu">&#10005;</button>
@@ -181,53 +445,164 @@
   const vibAudio    = document.getElementById('vib-audio');
   const songUrl     = "https://www.youtube.com/embed/vdXsLt0o_9g?autoplay=1&mute=0&loop=1&playlist=vdXsLt0o_9g";
   
+  // ── Three-way theme: saffron → wakanda → ghost-rider → saffron ───
+  const THEMES = ['saffron', 'wakanda', 'ghost-rider'];
+  function currentTheme() {
+    const r = document.documentElement;
+    if (r.classList.contains('theme-wakanda'))     return 'wakanda';
+    if (r.classList.contains('theme-ghost-rider')) return 'ghost-rider';
+    return 'saffron';
+  }
+  function nextTheme(t) { return THEMES[(THEMES.indexOf(t) + 1) % THEMES.length]; }
+
   function updateThemeUI() {
-    const isWakanda = document.documentElement.classList.contains('theme-wakanda');
-    if (isWakanda) {
-      themeToggle.classList.add('active');
+    const t = currentTheme();
+    // Music button: only relevant in Wakanda (existing behavior)
+    if (t === 'wakanda') {
       musicToggle.style.display = 'flex';
-      
-      // Attempt autoplay if preference is ON
       if (localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
-         vibAudio.src = songUrl;
-         musicToggle.classList.add('playing');
+        vibAudio.src = songUrl;
+        musicToggle.classList.add('playing');
       }
     } else {
-      themeToggle.classList.remove('active');
       musicToggle.style.display = 'none';
       vibAudio.src = "";
       musicToggle.classList.remove('playing');
     }
+    // Reflect active theme on the toggle button (CSS swaps icons via theme classes)
+    themeToggle.dataset.theme = t;
+    // Update kebab radio checks
+    document.querySelectorAll('.nkm-theme').forEach(b => {
+      b.classList.toggle('active', b.dataset.theme === t);
+      b.setAttribute('aria-checked', b.dataset.theme === t ? 'true' : 'false');
+    });
   }
 
   // Force play on first document click if browser blocked autoplay
   document.addEventListener('click', function startMusicOnInteraction() {
-     const isWakanda = document.documentElement.classList.contains('theme-wakanda');
-     if (isWakanda && localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
+     if (currentTheme() === 'wakanda' && localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
         vibAudio.src = songUrl;
         musicToggle.classList.add('playing');
      }
-     // Only need to do this once
      document.removeEventListener('click', startMusicOnInteraction);
   }, { once: true });
 
+  function flashRipple() {
+    const flash = document.createElement('div');
+    flash.className = 'theme-flash theme-flash-' + currentTheme();
+    document.body.appendChild(flash);
+    requestAnimationFrame(() => flash.classList.add('out'));
+    setTimeout(() => flash.remove(), 700);
+  }
+
+  function applyTheme(name) {
+    const root = document.documentElement;
+    root.classList.remove('theme-wakanda', 'theme-ghost-rider');
+    if (name === 'wakanda')     root.classList.add('theme-wakanda');
+    if (name === 'ghost-rider') root.classList.add('theme-ghost-rider');
+  }
+
+  function setTheme(name, persist) {
+    if (currentTheme() === name) return;
+    applyTheme(name);
+    if (persist) {
+      localStorage.setItem('theme', name);
+      if (name === 'wakanda') localStorage.setItem('theme_music', 'on');
+    }
+    updateThemeUI();
+    flashRipple();
+  }
+
+  let holdTimer = null;
+  let didHoldPreview = false;
+  let preHoldTheme = 'saffron';
+  const HOLD_MS = 450;
+
+  function beginHold() {
+    didHoldPreview = false;
+    preHoldTheme = currentTheme();
+    themeToggle.classList.add('charging');
+    holdTimer = setTimeout(() => {
+      didHoldPreview = true;
+      themeToggle.classList.remove('charging');
+      themeToggle.classList.add('previewing');
+      setTheme(nextTheme(preHoldTheme), false);
+    }, HOLD_MS);
+  }
+
+  function endHold() {
+    clearTimeout(holdTimer);
+    themeToggle.classList.remove('charging');
+    if (didHoldPreview) {
+      themeToggle.classList.remove('previewing');
+      setTheme(preHoldTheme, false);
+      didHoldPreview = false;
+    }
+  }
+
+  function cancelHold() {
+    clearTimeout(holdTimer);
+    themeToggle.classList.remove('charging');
+    if (didHoldPreview) {
+      themeToggle.classList.remove('previewing');
+      setTheme(preHoldTheme, false);
+      didHoldPreview = false;
+    }
+  }
+
+  themeToggle.addEventListener('mousedown',  (e) => { if (e.button === 0) beginHold(); });
+  themeToggle.addEventListener('mouseup',    (e) => { if (e.button === 0) endHold();   });
+  themeToggle.addEventListener('mouseleave', cancelHold);
+  themeToggle.addEventListener('touchstart', (e) => { beginHold(); }, { passive: true });
+  themeToggle.addEventListener('touchend',   endHold);
+  themeToggle.addEventListener('touchcancel', cancelHold);
+
   themeToggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    const isWakanda = document.documentElement.classList.toggle('theme-wakanda');
-    localStorage.setItem('theme', isWakanda ? 'wakanda' : 'saffron');
-    
-    if (isWakanda) {
+    if (didHoldPreview) { didHoldPreview = false; return; }
+    setTheme(nextTheme(currentTheme()), true);
+  });
+
+  // ── Kebab (3-dot) menu ────────────────────────────────────────
+  const kebabBtn   = document.getElementById('kebab-btn');
+  const kebabMenu  = document.getElementById('kebab-menu');
+  const kbmMusic   = document.getElementById('kbm-toggle-music');
+  const kbmMusicLabel = document.getElementById('kbm-music-label');
+
+  function refreshKebabLabels() {
+    const musicOn = !!vibAudio.src;
+    kbmMusicLabel.textContent = 'Ambient music: ' + (musicOn ? 'On' : 'Off');
+  }
+
+  function openKebab()  { kebabMenu.hidden = false; kebabBtn.setAttribute('aria-expanded', 'true');  refreshKebabLabels(); updateThemeUI(); }
+  function closeKebab() { kebabMenu.hidden = true;  kebabBtn.setAttribute('aria-expanded', 'false'); }
+
+  kebabBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (kebabMenu.hidden) openKebab(); else closeKebab();
+  });
+  document.addEventListener('click', (e) => {
+    if (!kebabMenu.hidden && !kebabMenu.contains(e.target) && e.target !== kebabBtn) closeKebab();
+  });
+
+  document.querySelectorAll('.nkm-theme').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTheme(btn.dataset.theme, true);
+      refreshKebabLabels();
+    });
+  });
+
+  kbmMusic.addEventListener('click', () => {
+    if (vibAudio.src) {
+      vibAudio.src = '';
+      musicToggle.classList.remove('playing');
+      localStorage.setItem('theme_music', 'off');
+    } else {
+      vibAudio.src = songUrl;
+      musicToggle.classList.add('playing');
       localStorage.setItem('theme_music', 'on');
     }
-    
-    updateThemeUI();
-    
-    // Impactful haptic-like flash on toggle
-    const flash = document.createElement('div');
-    flash.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(168,85,247,0.15);z-index:9999;pointer-events:none;transition:opacity 0.6s ease;opacity:1;';
-    document.body.appendChild(flash);
-    setTimeout(() => flash.style.opacity = '0', 50);
-    setTimeout(() => flash.remove(), 700);
+    refreshKebabLabels();
   });
 
   musicToggle.addEventListener('click', (e) => {
