@@ -326,6 +326,48 @@ def seed_mcqs(con) -> None:
        "2", "10", "12", "15",
        "C", "The President nominates 12 members to the Rajya Sabha.")
 
+    # LPG Impact & Regulatory Bodies (pre-cp-04)
+    _q(con, "pre-cp-04", "Which committee recommended the introduction of the Goods and Services Tax (GST) in India?",
+       "Vijay Kelkar Committee", "Rangarajan Committee", "Urjit Patel Committee", "Narasimham Committee",
+       "A", "The Vijay Kelkar Committee (TF on Indirect Taxes) first recommended the introduction of a comprehensive GST in India.")
+
+    _q(con, "pre-cp-04", "In which year did India adopt the New Economic Policy (LPG reforms) to tackle the balance of payments crisis?",
+       "1985", "1991", "1995", "2000",
+       "B", "The LPG (Liberalization, Privatization, and Globalization) reforms were introduced in 1991 by the Narasimha Rao government.")
+
+    _q(con, "pre-cp-04", "Which of the following is a 'Quasi-judicial' body in India?",
+       "NITI Aayog", "National Human Rights Commission", "Cabinet Committee on Security", "Parliamentary Accounts Committee",
+       "B", "The NHRC has the powers of a civil court while investigating complaints of human rights violations, making it a quasi-judicial body.")
+
+    _q(con, "pre-cp-04", "The Securities and Exchange Board of India (SEBI) was given statutory status in which year?",
+       "1988", "1990", "1992", "1994",
+       "C", "SEBI was established in 1988 but received statutory powers on January 30, 1992, through the SEBI Act, 1992.")
+
+    _q(con, "pre-cp-04", "Under which Article of the Constitution is the Finance Commission of India constituted every five years?",
+       "Article 260", "Article 270", "Article 280", "Article 290",
+       "C", "Article 280 of the Constitution provides for a Finance Commission as a quasi-judicial body.")
+
+    # Rights Issues (pre-cp-05)
+    _q(con, "pre-cp-05", "The National Human Rights Commission (NHRC) was established under which legislation?",
+       "Protection of Human Rights Act, 1993", "Civil Rights Act, 1955", "Human Rights Declaration, 1948", "Right to Information Act, 2005",
+       "A", "The NHRC was established on October 12, 1993, under the Protection of Human Rights Ordinance, later replaced by the Act.")
+
+    _q(con, "pre-cp-05", "Which Article of the Indian Constitution empowers the State to make 'special provisions for women and children'?",
+       "Article 14", "Article 15(1)", "Article 15(3)", "Article 16",
+       "C", "Article 15(3) is an exception to the rule of non-discrimination, allowing the State to make special provisions for women and children.")
+
+    _q(con, "pre-cp-05", "In which year was the 'Protection of Children from Sexual Offences (POCSO) Act' enacted?",
+       "2005", "2010", "2012", "2015",
+       "C", "The POCSO Act was enacted in 2012 to protect children from sexual assault, harassment, and pornography.")
+
+    _q(con, "pre-cp-05", "The 'Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act' was passed in which year?",
+       "1955", "1976", "1989", "2018",
+       "C", "The Prevention of Atrocities (PoA) Act was enacted in 1989 to protect SC/ST individuals from social disability and atrocities.")
+
+    _q(con, "pre-cp-05", "The National Commission for Scheduled Castes is established under which Article of the Constitution?",
+       "Article 330", "Article 332", "Article 338", "Article 338A",
+       "C", "Article 338 provides for the National Commission for Scheduled Castes, while 338A provides for the National Commission for STs.")
+
 
 def _q(con, topic_id, q, a, b, c, d, correct, exp) -> None:
     """Helper to insert a question if it doesn't exist."""
@@ -4262,6 +4304,8 @@ routes = [
     Route("/last-day-revision",                   last_day_revision),
     Route("/study-desk/{topic_id}",               study_desk),
     Route("/practice/{topic_id}",                 practice_page),
+    Route("/robots.txt",                          lambda r: PlainTextResponse(open(STATIC_DIR / "robots.txt").read())),
+    Route("/sitemap.xml",                         lambda r: PlainTextResponse(open(STATIC_DIR / "sitemap.xml").read(), media_type="application/xml")),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
     Mount("/pdfs",   StaticFiles(directory=str(FILES_DIR)),  name="pdfs"),
 ]

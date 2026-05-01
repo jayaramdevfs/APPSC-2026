@@ -3,11 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}GroupsGuru{% endblock %}</title>
+    <title>{% block title %}GroupsGuru - India's Premier Exam Prep{% endblock %}</title>
+    <!-- Global SEO Meta Tags -->
+    <meta name="description" content="GroupsGuru is the premier study platform for APPSC and other competitive exams. Master your syllabus with our blueprint, Pomodoro timers, and intelligent tracking.">
+    <meta name="keywords" content="GroupsGuru, APPSC, Group 2, Group 1, APPSC 2026, study portal, competitive exams, APPSC syllabus, mock tests, smart study">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://groupsguru.in/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://groupsguru.in/">
+    <meta property="og:title" content="GroupsGuru - Intelligent Study Portal">
+    <meta property="og:description" content="Master your exams with GroupsGuru. Intelligent blueprint tracking, deep focus timers, and a distraction-free learning environment.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://groupsguru.in/">
+    <meta property="twitter:title" content="GroupsGuru - Intelligent Study Portal">
+    <meta property="twitter:description" content="Master your exams with GroupsGuru. Intelligent blueprint tracking, deep focus timers, and a distraction-free learning environment.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=23">
+    <link rel="stylesheet" href="/static/css/style.css?v=25">
+    <style>
+      /* Smooth transitions for theme switching */
+      * { transition: var(--theme-transition, none); }
+    </style>
+    <script>
+      // Early init to prevent flicker
+      (function() {
+  const savedColor = localStorage.getItem('theme');
+  if (savedColor === 'wakanda') {
+    document.documentElement.classList.add('theme-wakanda');
+  }
+})();
+</script>
 </head>
 <body>
 
@@ -26,6 +56,12 @@
 
     <!-- Auth area — always visible, pinned top-right -->
     <div class="nav-auth">
+        <button class="nav-theme-btn" id="theme-toggle" aria-label="Toggle Black Panther Theme" title="Toggle Black Panther Theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+        </button>
+        <button class="nav-music-btn" id="music-toggle" aria-label="Toggle Vibranium Ambient" title="Vibranium Ambient (All The Stars)" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        </button>
         <button class="nav-search-btn" id="open-search" aria-label="Search" title="Search (Ctrl+K)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
@@ -36,7 +72,7 @@
             <a href="/logout" class="nav-auth-btn nav-auth-logout">Logout</a>
         {% else %}
             <a href="/register" class="nav-auth-btn nav-auth-join">Join Now</a>
-            <a href="/login" class="nav-auth-btn nav-auth-login {% if request.url.path == '/login' %}active{% endif %}">Login</a>
+            <a href="/login" class="nav-auth-btn nav-auth-login {% if request is defined and request.url.path == '/login' %}active{% endif %}">Login</a>
         {% endif %}
     </div>
 </nav>
@@ -139,6 +175,76 @@
     l.addEventListener('click', closeMenu);
   });
 
+  // ── Theme & Music Toggle Logic ────────────────────────────────────────
+  const themeToggle = document.getElementById('theme-toggle');
+  const musicToggle = document.getElementById('music-toggle');
+  const vibAudio    = document.getElementById('vib-audio');
+  const songUrl     = "https://www.youtube.com/embed/vdXsLt0o_9g?autoplay=1&mute=0&loop=1&playlist=vdXsLt0o_9g";
+  
+  function updateThemeUI() {
+    const isWakanda = document.documentElement.classList.contains('theme-wakanda');
+    if (isWakanda) {
+      themeToggle.classList.add('active');
+      musicToggle.style.display = 'flex';
+      
+      // Attempt autoplay if preference is ON
+      if (localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
+         vibAudio.src = songUrl;
+         musicToggle.classList.add('playing');
+      }
+    } else {
+      themeToggle.classList.remove('active');
+      musicToggle.style.display = 'none';
+      vibAudio.src = "";
+      musicToggle.classList.remove('playing');
+    }
+  }
+
+  // Force play on first document click if browser blocked autoplay
+  document.addEventListener('click', function startMusicOnInteraction() {
+     const isWakanda = document.documentElement.classList.contains('theme-wakanda');
+     if (isWakanda && localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
+        vibAudio.src = songUrl;
+        musicToggle.classList.add('playing');
+     }
+     // Only need to do this once
+     document.removeEventListener('click', startMusicOnInteraction);
+  }, { once: true });
+
+  themeToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isWakanda = document.documentElement.classList.toggle('theme-wakanda');
+    localStorage.setItem('theme', isWakanda ? 'wakanda' : 'saffron');
+    
+    if (isWakanda) {
+      localStorage.setItem('theme_music', 'on');
+    }
+    
+    updateThemeUI();
+    
+    // Impactful haptic-like flash on toggle
+    const flash = document.createElement('div');
+    flash.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(168,85,247,0.15);z-index:9999;pointer-events:none;transition:opacity 0.6s ease;opacity:1;';
+    document.body.appendChild(flash);
+    setTimeout(() => flash.style.opacity = '0', 50);
+    setTimeout(() => flash.remove(), 700);
+  });
+
+  musicToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (vibAudio.src) {
+      vibAudio.src = "";
+      musicToggle.classList.remove('playing');
+      localStorage.setItem('theme_music', 'off');
+    } else {
+      vibAudio.src = songUrl;
+      musicToggle.classList.add('playing');
+      localStorage.setItem('theme_music', 'on');
+    }
+  });
+
+  updateThemeUI();
+
   // ── Search modal ──────────────────────────────────────────────
   const searchOverlay = document.getElementById('search-overlay');
   const searchInput   = document.getElementById('search-input');
@@ -227,5 +333,8 @@
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<div id="vibranium-music-container" style="display:none;">
+  <iframe id="vib-audio" width="0" height="0" src="" frameborder="0" allow="autoplay"></iframe>
+</div>
 </body>
 </html>

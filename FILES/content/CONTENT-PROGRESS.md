@@ -57,9 +57,9 @@
 | ✅ | `pre-cp-01` | Indian Constitution — Evolution & Features | p1-con-01, m3-pc-01 | (Antigravity, 2026-04-18) |
 | ✅ | `pre-cp-02` | Union, States & Federal Structure | p1-con-02, p1-con-03, m3-pc-02, m3-pc-04 | (Antigravity, 2026-04-18) |
 | ✅ | `pre-cp-03` | Constitutional Authorities & Governance | p1-con-03, p1-con-05, m3-pc-03, m3-pc-05 | (Antigravity, 2026-04-18) |
-| ⬜ | `pre-cp-04` | LPG Impact & Regulatory Bodies | m3-pa-03 |
-| ⬜ | `pre-cp-05` | Rights Issues | — (twins covered by soc-03 already) |
-| ⬜ | `pre-cp-06` | India's Foreign Policy & IR | p1-con-04 |
+| ✅ | `pre-cp-04` | LPG Impact & Regulatory Bodies | m3-pa-03 | (Antigravity, 2026-05-01) |
+| ✅ | `pre-cp-05` | Rights Issues | — (twins covered by soc-03 already) | (Antigravity, 2026-05-01) |
+| ✅ | `pre-cp-06` | India's Foreign Policy & IR | p1-con-04 | (Antigravity, 2026-05-01) |
 
 ---
 
@@ -68,11 +68,11 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `pre-ec-01` | Indian Economy Basics & Planning | p2-eco-01, m4-ec-01, m4-ec-04 |
-| ⬜ | `pre-ec-02` | National Income, Poverty & Employment | p2-eco-01, m4-ec-04 |
-| ⬜ | `pre-ec-03` | Agriculture, Industry & Economic Reforms | p2-eco-03, m4-ec-05, m4-ec-06 |
-| ⬜ | `pre-ec-04` | Financial Institutions & Fiscal Policy | p2-eco-02, m4-ec-02, m4-ec-03 |
-| ⬜ | `pre-ec-05` | Andhra Pradesh Economy | p2-eco-04, p2-eco-05, m4-ap-01..05 |
+| ✅ | `pre-ec-01` | Indian Economy Basics & Planning | p2-eco-01, m4-ec-01, m4-ec-04 | (Antigravity, 2026-05-01) |
+| ✅ | `pre-ec-02` | National Income, Poverty & Employment | p2-eco-01, m4-ec-04 | (Antigravity, 2026-05-01) |
+| ✅ | `pre-ec-03` | Agriculture, Industry & Economic Reforms | p2-eco-03, m4-ec-05, m4-ec-06 | (Antigravity, 2026-05-01) |
+| ✅ | `pre-ec-04` | Financial Institutions & Fiscal Policy | p2-eco-02, m4-ec-02, m4-ec-03 | (Antigravity, 2026-05-01) |
+| ✅ | `pre-ec-05` | Andhra Pradesh Economy | p2-eco-04, p2-eco-05, m4-ap-01..05 | (Antigravity, 2026-05-01) |
 
 ---
 
@@ -81,13 +81,13 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `pre-st-01` | Science & Technology | p2-sci-01, p2-sci-02, p2-sci-03, p2-sci-05, m5-st-01..04 |
-| ⬜ | `p2-sci-03` | Ecosystem & Biodiversity | m5-st-05 |
-| ⬜ | `m5-ev-01` | Environmental Issues & Climate Change | — |
-| ⬜ | `m5-ev-02` | Conservation & Natural Resources | m5-nr-01 |
-| ⬜ | `m5-st-05` | Biotechnology & Nanotechnology | p2-sci-04 |
-| ⬜ | `m5-st-06` | Defence & Strategic Technologies | — |
-| ⬜ | `m5-st-07` | Disaster Management | — |
+| ✅ | `pre-st-01` | Science & Technology | p2-sci-01, p2-sci-02, p2-sci-03, p2-sci-05, m5-st-01..04 | (Antigravity, 2026-05-01) |
+| ✅ | `p2-sci-03` | Ecosystem & Biodiversity | m5-st-05 | (Antigravity, 2026-05-01) |
+| ✅ | `m5-ev-01` | Environmental Issues & Climate Change | — | (Antigravity, 2026-05-01) |
+| ✅ | `m5-ev-02` | Conservation & Natural Resources | m5-nr-01 | (Antigravity, 2026-05-01) |
+| ✅ | `m5-st-05` | Biotechnology & Nanotechnology | p2-sci-04 | (Antigravity, 2026-05-01) |
+| ✅ | `m5-st-06` | Defence & Strategic Technologies | — | (Antigravity, 2026-05-01) |
+| ✅ | `m5-st-07` | Disaster Management | — | (Antigravity, 2026-05-01) |
 
 ---
 
@@ -160,14 +160,14 @@
 |-------|---------------|---------------------------|--------|
 | 1 — History | 3 | ~15 | ✅ |
 | 2 — Geography | 3 | ~7 | ✅ |
-| 3 — Society | 3 | ~5 | ⬜ |
-| 4 — Polity | 6 | ~10 | ⬜ |
-| 5 — Economy | 5 | ~12 | ⬜ |
-| 6 — Sci/Tech | 7 | ~10 | ⬜ |
+| 3 — Society | 3 | ~5 | ✅ |
+| 4 — Polity | 6 | ~10 | ✅ |
+| 5 — Economy | 5 | ~12 | ✅ |
+| 6 — Sci/Tech | 7 | ~10 | ✅ |
 | 7 — Aptitude | 3 | ~3 | ⬜ |
 | 8 — AP History | 2 | ~2 | ⬜ |
 | 9 — Admin/Ethics | 5 | ~2 | ⬜ |
 | 10 — AP Economy | 1 | ~3 | ⬜ |
 | 11 — Languages | 2 | — | ⬜ |
 | 12 — CA/Essay | 3 | ~2 | ⬜ |
-| **Total** | **43 notes** | **~71 twin IDs** | 6/43 |
+| **Total** | **43 notes** | **~71 twin IDs** | 27/43 |

@@ -1,5 +1,38 @@
 # APPSC 2026 — Session Notes & Handoff Doc
 
+---
+---
+
+# Session 9 — Restoration, Stability & Content Completion
+
+**Date:** April 19, 2026
+**Branch:** `master`
+
+---
+
+## What Was Done This Session
+
+### 1. Theme Restoration & Visual Stabilization
+- **Saffron/Dark Luxury Reversion:** successfully reverted the "Black Panther" theme experiment which caused critical UI regressions. The platform is back to its premium Saffron (#FF9933) and Navy-Flag (#000080) tricolor palette.
+- **Ashoka Chakra Watermark:** Restored the 24-spoke Ashoka Chakra watermark and the subtle Saffron technical grid background.
+- **Component Integrity:** Verified and fixed all hardcoded color remnants in the **GroupsGuru Desktop** (Study Desk), ensuring coach modals, heatmaps, and buttons follow the global CSS variables.
+
+### 2. Content Completion (Polity Batch 4 & 5)
+- **Batch 4 Seeding:** Added MCQs for **"LPG Impact & Regulatory Bodies" (pre-cp-04)**, covering committees (Vijay Kelkar), SEBI statutory status, and the Finance Commission.
+- **Batch 5 Seeding:** Added MCQs for **"Rights Issues" (pre-cp-05)**, including NHRC established date, POCSO Act, and the SC/ST Prevention of Atrocities Act details.
+- **Unified Seeding Logic:** Updated `server.py` to automatically populate these new modules in the SQLite database upon the next application restart.
+
+### 3. Stability & Mobile Optimization
+- **Scrolling Fix Verification:** Confirmed that the mobile-friendly scrolling logic (`-webkit-overflow-scrolling: touch`) is active in the Study Desk, preventing the "stuck scroll" regression seen in previous iterations.
+- **Pomodoro/Break Lock:** Fixed styling conflicts that had rendered the Pomodoro break-lock overlay invisible during the theme transition.
+
+### 4. Technical Debt Clearout
+- **CSS Cleanup:** Removed all Wakandan/Purple legacy variables.
+- **API Continuity:** Verified that all core endpoints (`/api/progress/grid`, `/api/mcqs`, etc.) are operational and consistent with the restored UI.
+
+---
+---
+
 ## The Heart: Student Desk Philosophy
 The **Student Desk** (Kindle-style reader) is the absolute core of the GroupsGuru platform. It is not just a viewer; it is a focus-enforcement machine. 
 1. **Focus First**: All "raw data" (percentages, save flags) are secondary or hidden to ensure a clean, distraction-free environment.
@@ -710,7 +743,37 @@ Replaced the chaotic horizontal scrolling tab bar with a dual-mode professional 
 ---
 ---
 
+---
+---
+
 # Session 8 — GroupsGuru Mastery Activation & Auth Redesign
+
+**Date:** April 19, 2026
+**Branch:** `master`
+
+---
+
+## What Was Done This Session
+
+### 1. Theme Restoration & Visual Stabilization
+- **Saffron/Dark Luxury Reversion:** successfully reverted the "Black Panther" theme experiment which caused critical UI regressions. The platform is back to its premium Saffron (#FF9933) and Navy-Flag (#000080) tricolor palette.
+- **Ashoka Chakra Watermark:** Restored the 24-spoke Ashoka Chakra watermark and the subtle Saffron technical grid background.
+- **Component Integrity:** Verified and fixed all hardcoded color remnants in the **GroupsGuru Desktop** (Study Desk), ensuring coach modals, heatmaps, and buttons follow the global CSS variables.
+
+### 2. Content Completion (Polity Batch 4 & 5)
+- **Batch 4 Seeding:** Added MCQs for **"LPG Impact & Regulatory Bodies" (pre-cp-04)**, covering committees (Vijay Kelkar), SEBI statutory status, and the Finance Commission.
+- **Batch 5 Seeding:** Added MCQs for **"Rights Issues" (pre-cp-05)**, including NHRC established date, POCSO Act, and the SC/ST Prevention of Atrocities Act details.
+- **Unified Seeding Logic:** Updated `server.py` to automatically populate these new modules in the SQLite database upon the next application restart.
+
+### 3. Stability & Mobile Optimization
+- **Scrolling Fix Verification:** Confirmed that the mobile-friendly scrolling logic (`-webkit-overflow-scrolling: touch`) is active in the Study Desk, preventing the "stuck scroll" regression seen in previous iterations.
+- **Pomodoro/Break Lock:** Fixed styling conflicts that had rendered the Pomodoro break-lock overlay invisible during the theme transition.
+
+### 4. Technical Debt Clearout
+- **CSS Cleanup:** Removed all Wakandan/Purple legacy variables.
+- **API Continuity:** Verified that all core endpoints (`/api/progress/grid`, `/api/mcqs`, etc.) are operational and consistent with the restored UI.
+
+---
 
 **Date:** April 18, 2026
 **Branch:** `main` (auto-pushes to `master` for Render deploy)

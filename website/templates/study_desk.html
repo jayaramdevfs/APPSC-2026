@@ -44,6 +44,7 @@
         <button class="k-theme-btn theme-light" data-theme="theme-light">Aa</button>
         <button class="k-theme-btn theme-sepia active" data-theme="theme-sepia">Aa</button>
         <button class="k-theme-btn theme-dark" data-theme="theme-dark">Aa</button>
+        <button class="k-theme-btn theme-wakanda" data-theme="theme-wakanda">Aa</button>
       </div>
     </div>
     <div class="k-aa-section">
@@ -176,35 +177,53 @@
   --k-theme-dark-text: var(--text, #E8E8E8);
   --k-theme-dark-border: var(--border, #3A3A3A);
 
+  --k-theme-wakanda-bg: #0A0512;
+  --k-theme-wakanda-text: #E2E8F0;
+  --k-theme-wakanda-border: #A855F7;
+
   --k-font-serif: 'Georgia', 'Times New Roman', serif; /* Simulates Bookerly */
   --k-font-sans: 'Inter', '-apple-system', sans-serif; /* Simulates Amazon Ember */
 }
 
+html {
+  height: 100%;
+  overflow: hidden;
+}
 body { 
   margin: 0; padding: 0; 
-  height: 100vh;
-  min-height: -webkit-fill-available;
+  height: 100%;
   overflow: hidden; 
   background-color: var(--base, #191919);
-  background-image: linear-gradient(to right, rgba(255, 153, 51, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 153, 51, 0.04) 1px, transparent 1px);
+  background-image: linear-gradient(to right, rgba(var(--gold-rgb, 217, 119, 6), 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(var(--gold-rgb, 217, 119, 6), 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
+  background-attachment: scroll !important; /* Override global fixed attachment */
 } /* Hide global nav */
 nav.navbar { display: none !important; }
+.main-content {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
 
 /* The App Container */
 #kindle-app {
-  height: 100vh;
-  height: -webkit-fill-available;
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: background 0.3s ease, color 0.3s ease;
+  z-index: 50; /* Ensure it overlays everything else properly */
 }
 
 /* Base Theme Applications */
 #kindle-app.theme-light { --k-bg: var(--k-theme-light-bg); --k-text: var(--k-theme-light-text); --k-border: var(--k-theme-light-border); }
 #kindle-app.theme-sepia { --k-bg: var(--k-theme-sepia-bg); --k-text: var(--k-theme-sepia-text); --k-border: var(--k-theme-sepia-border); }
 #kindle-app.theme-dark { --k-bg: var(--k-theme-dark-bg); --k-text: var(--k-theme-dark-text); --k-border: var(--k-theme-dark-border); }
+#kindle-app.theme-wakanda { --k-bg: var(--k-theme-wakanda-bg); --k-text: var(--k-theme-wakanda-text); --k-border: var(--k-theme-wakanda-border); }
 
 /* Typography Applications */
 #kindle-app.font-serif { --k-font-family: var(--k-font-serif); }
@@ -279,6 +298,17 @@ nav.navbar { display: none !important; }
   font-family: var(--k-font-sans);
   flex-shrink: 0;
   z-index: 50;
+  transition: all 0.4s ease;
+}
+
+#kindle-app.theme-wakanda .k-topbar {
+    background: #110A1F;
+    border-bottom: 2px solid #A855F7;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.theme-wakanda #sd-topic-badge {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
 }
 .k-book-title {
   margin: 0; font-size: 1.25rem; font-weight: 800; color: var(--gold) !important;
@@ -393,14 +423,22 @@ nav.navbar { display: none !important; }
 }
 .k-break-lock h2 { color: var(--gold); font-size: 2rem; margin-bottom: 1rem; }
 
-/* Reader Scroll adjustments */
+/* Reader Scroll — bulletproof fixed-height approach */
 .k-reader-scroll {
-  flex: 1;
+  /* Explicit height: total viewport minus topbar(60px) minus footer(4px) */
+  height: calc(100vh - 64px);
+  max-height: calc(100vh - 64px);
+  /* Belt-and-suspenders flex settings */
+  flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto; overflow-x: hidden;
+  /* Scroll */
+  overflow-y: scroll;
+  overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
-  padding-bottom: 120px; 
+  padding-bottom: 120px;
+  overscroll-behavior: contain;
+  position: relative;
   z-index: 1;
 }
 .k-reader-scroll::-webkit-scrollbar { width: 8px; }
@@ -726,12 +764,23 @@ app.addEventListener('click', (e) => {
 // Theme Selection
 document.querySelectorAll('.k-theme-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    app.classList.remove('theme-light', 'theme-sepia', 'theme-dark');
+    app.classList.remove('theme-light', 'theme-sepia', 'theme-dark', 'theme-wakanda');
     app.classList.add(btn.dataset.theme);
+    localStorage.setItem('k-theme-pref', btn.dataset.theme); // Persist reader theme
     document.querySelectorAll('.k-theme-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   });
 });
+
+// Init saved theme
+(function() {
+  const savedTheme = localStorage.getItem('k-theme-pref');
+  const globalTheme = localStorage.getItem('theme');
+  const effectiveTheme = savedTheme || (globalTheme === 'wakanda' ? 'theme-wakanda' : 'theme-sepia');
+  
+  const btn = document.querySelector(`.k-theme-btn[data-theme="${effectiveTheme}"]`);
+  if (btn) btn.click();
+})();
 
 // Font Selection
 document.querySelectorAll('.k-font-btn').forEach(btn => {
