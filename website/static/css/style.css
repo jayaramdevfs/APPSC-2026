@@ -250,6 +250,135 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(168, 85, 247, 0.2);
 }
 
+/* =========================================
+   VARANASI (GANGA AARTI) THEME OVERRIDES
+   ========================================= */
+.theme-varanasi {
+    --base:       #070503;
+    --surface:    #110806;
+    --card:       #1A0E08;
+    --elevated:   #231408;
+    --inset:      #040302;
+    --navy:       #070503;
+    --navy-dark:  #030201;
+
+    --saffron:    #C8681A;
+    --white:      #EDD5A0;
+    --navy-flag:  #5C1800;
+
+    --gold:       #C8681A;
+    --gold-rgb:   200, 104, 26;
+    --accent:     #C8681A;
+    --accent-hover: #E8891A;
+    --bg:         #070503;
+    --text:       #EDD5A0;
+    --muted:      #A07850;
+    --faint:      #664830;
+    --border:     #3A1A08;
+    --border-hover: #5A2A10;
+
+    --glow-gold:        0 0 16px rgba(200, 104, 26, 0.30), 0 0 30px rgba(200, 104, 26, 0.12);
+    --glow-gold-hover:  0 0 28px rgba(200, 104, 26, 0.55), 0 0 50px rgba(200, 104, 26, 0.20);
+    --shadow:           0 4px 20px rgba(180, 80, 10, 0.22);
+}
+
+.theme-varanasi body {
+    background-image:
+        radial-gradient(ellipse 90% 50% at 50% 0%, rgba(200, 100, 20, 0.42) 0%, rgba(160, 60, 10, 0.22) 30%, rgba(100, 30, 5, 0.08) 55%, transparent 70%),
+        radial-gradient(ellipse 55% 35% at 78% 12%, rgba(220, 120, 20, 0.13) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 35% at 22% 12%, rgba(200, 90, 15, 0.10) 0%, transparent 55%),
+        repeating-linear-gradient(0deg, rgba(200, 104, 26, 0.025) 0px, transparent 2px, transparent 4px),
+        linear-gradient(to bottom, #0D0806 0%, #070503 40%, #050302 100%);
+    background-attachment: fixed;
+    animation: ganga-pulse 10s ease-in-out infinite;
+}
+
+@keyframes ganga-pulse {
+    0%, 100% { filter: brightness(1.00); }
+    50%       { filter: brightness(1.07); }
+}
+
+.theme-varanasi .nav-brand .nav-title {
+    background: linear-gradient(135deg, #7A3008 0%, #C8681A 38%, #E8B830 68%, #F0D888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: diya-flicker 4s ease-in-out infinite;
+}
+
+@keyframes diya-flicker {
+    0%, 100% { filter: drop-shadow(0 0 3px rgba(200, 104, 26, 0.55)); }
+    25%       { filter: drop-shadow(0 0 10px rgba(232, 184, 48, 0.82)); }
+    50%       { filter: drop-shadow(0 0 5px rgba(200, 104, 26, 0.65)); }
+    75%       { filter: drop-shadow(0 0 12px rgba(232, 180, 40, 0.72)); }
+}
+
+.theme-varanasi .ctile.done {
+    background: #7A3008;
+    border-color: #C8681A;
+    box-shadow: 0 0 8px rgba(200, 104, 26, 0.55);
+}
+
+.theme-varanasi .cc-widget {
+    background: rgba(200, 104, 26, 0.03);
+    border: 1px solid rgba(200, 104, 26, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
+
+.theme-varanasi .timer-unit .val {
+    color: #C8681A;
+    text-shadow: 0 0 15px rgba(200, 104, 26, 0.65);
+}
+
+.theme-varanasi .nav-user-badge {
+    color: #C8681A;
+    border-color: rgba(200, 104, 26, 0.3);
+}
+
+.theme-varanasi .btn-primary,
+.theme-varanasi .auth-submit-btn {
+    background: linear-gradient(135deg, #7A3008 0%, #C8681A 100%);
+    box-shadow: 0 4px 15px rgba(200, 104, 26, 0.30);
+}
+
+.theme-varanasi .btn-primary:hover,
+.theme-varanasi .auth-submit-btn:hover {
+    box-shadow: 0 6px 20px rgba(200, 104, 26, 0.50);
+}
+
+.theme-varanasi .subject-card {
+    background: rgba(200, 104, 26, 0.02);
+    border: 1px solid rgba(200, 104, 26, 0.12);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.theme-varanasi .subject-card:hover {
+    border-color: #C8681A;
+    background: rgba(200, 104, 26, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.65), 0 0 20px rgba(200, 104, 26, 0.30);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.theme-varanasi .cw-target {
+    color: #C8681A;
+    text-shadow: 0 0 8px rgba(200, 104, 26, 0.4);
+    border-top-color: rgba(200, 104, 26, 0.2);
+}
+
+.theme-varanasi .cp-bar-fill {
+    background: linear-gradient(90deg, #7A3008, #C8681A);
+    box-shadow: 0 0 10px rgba(200, 104, 26, 0.6);
+}
+
+.theme-varanasi .card {
+    background: rgba(200, 104, 26, 0.02);
+    border-color: rgba(200, 104, 26, 0.10);
+}
+
+.theme-varanasi .card:hover {
+    border-color: #C8681A;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(200, 104, 26, 0.22);
+}
+
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 600;
@@ -342,10 +471,22 @@ body::before {
     filter: drop-shadow(0 0 7px rgba(255, 87, 34, 0.7));
     animation: hellfire-pulse 2.4s infinite ease-in-out;
 }
+.gg-mark-varanasi {
+    color: #C8681A;
+    display: none;
+    filter: drop-shadow(0 0 6px rgba(200, 104, 26, 0.60));
+    animation: temple-glow 4s ease-in-out infinite;
+}
+@keyframes temple-glow {
+    0%, 100% { filter: drop-shadow(0 0 4px rgba(200, 104, 26, 0.55)); }
+    50%       { filter: drop-shadow(0 0 10px rgba(232, 184, 48, 0.82)); }
+}
 .theme-wakanda     .gg-mark-default { display: none; }
 .theme-wakanda     .gg-mark-wakanda { display: inline-block; }
-.theme-ghost-rider .gg-mark-default { display: none; }
-.theme-ghost-rider .gg-mark-ghost   { display: inline-block; }
+.theme-ghost-rider .gg-mark-default  { display: none; }
+.theme-ghost-rider .gg-mark-ghost    { display: inline-block; }
+.theme-varanasi    .gg-mark-default  { display: none; }
+.theme-varanasi    .gg-mark-varanasi { display: inline-block; }
 
 /* ═════════════════════════════════════════════════════════
    PAW THEME TOGGLE  (click = commit · hold = preview)
@@ -387,6 +528,11 @@ body::before {
 .theme-ghost-rider .nav-paw-btn:hover {
     background: rgba(255, 87, 34, 0.12);
     box-shadow: 0 0 14px rgba(255, 87, 34, 0.35);
+}
+.theme-varanasi .nav-paw-btn { color: #C8681A; border-color: #C8681A; }
+.theme-varanasi .nav-paw-btn:hover {
+    background: rgba(200, 104, 26, 0.12);
+    box-shadow: 0 0 14px rgba(200, 104, 26, 0.38);
 }
 
 /* Chevron */
@@ -608,6 +754,9 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
 .theme-ghost-rider .nkm-theme.active .nkm-check { color: #FF7A1A; }
 .theme-wakanda     .nkm-theme.active { background: rgba(168, 85, 247, 0.10); }
 .theme-ghost-rider .nkm-theme.active { background: rgba(255, 87, 34, 0.12); }
+.theme-varanasi    .nkm-item svg { color: #C8681A; }
+.theme-varanasi    .nkm-theme.active .nkm-check { color: #C8681A; }
+.theme-varanasi    .nkm-theme.active { background: rgba(200, 104, 26, 0.10); }
 
 .nav-title {
     color: var(--gold);
@@ -4346,8 +4495,8 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
 }
 
 /* ─────────── SAFFRON THEME VFX ─────────── */
-:root:not(.theme-wakanda):not(.theme-ghost-rider) .vfx-saffron-ribbon,
-:root:not(.theme-wakanda):not(.theme-ghost-rider) .vfx-saffron-petal { display: block; }
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-ribbon,
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-petal { display: block; }
 
 .vfx-saffron-ribbon {
     position: absolute;
@@ -4516,3 +4665,36 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
 /* Ensure main content stacks above the fixed VFX layer (z-index: 0).
    Don't touch .navbar (already sticky+z100) or .vfx-layer (already fixed). */
 .main-content { position: relative; z-index: 1; }
+
+/* ─────────── VARANASI (GANGA AARTI) THEME VFX ─────────── */
+.diya-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    display: none;
+}
+.theme-varanasi .diya-canvas { display: block; }
+
+/* ─────────── SAFFRON: exclude varanasi from ribbon VFX ─────────── */
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-ribbon,
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-petal { display: block; }
+
+/* ─────────── VARANASI title glow ─────────── */
+.theme-varanasi .nav-title,
+.theme-varanasi .ph-title,
+.theme-varanasi .ph-title-accent,
+.theme-varanasi .dash-title {
+    text-shadow:
+        0 0 4px  rgba(240, 200, 80, 0.60),
+        0 0 14px rgba(200, 104, 26, 0.65),
+        0 0 30px rgba(180, 70, 10, 0.40);
+    animation: diya-title-pulse 4s ease-in-out infinite;
+}
+@keyframes diya-title-pulse {
+    0%, 100% { filter: brightness(1.00) drop-shadow(0 0 5px rgba(200, 104, 26, 0.55)); }
+    35%      { filter: brightness(1.12) drop-shadow(0 0 14px rgba(240, 200, 80, 0.82)); }
+    65%      { filter: brightness(0.95) drop-shadow(0 0 4px  rgba(200, 104, 26, 0.45)); }
+}
