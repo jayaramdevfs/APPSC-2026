@@ -1744,64 +1744,140 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     margin-bottom: 0.75rem;
 }
 .notes-body {
-    line-height: 1.75;
+    line-height: 1.8;
     color: var(--text);
-    font-size: 0.92rem;
+    font-size: 0.93rem;
 }
+
+/* ── Paragraphs ── */
+.notes-body p {
+    margin-bottom: 0.9rem;
+}
+
+/* ── H1 — Topic Title ── */
+.notes-body h1 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.5rem;
+    margin: 0.5rem 0 1.25rem;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+/* ── H2 — Main Sections (Big Picture, numbered sections) ── */
+.notes-body h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(255,153,51,0.08);
+    border-left: 4px solid var(--gold);
+    padding: 0.5rem 0.85rem;
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0 0.85rem;
+    letter-spacing: 0.01em;
+}
+
+/* ── H3 — Sub-headings ── */
+.notes-body h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 1.5rem 0 0.5rem;
+    opacity: 0.85;
+}
+
+/* ── H4 — Minor labels ── */
+.notes-body h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted);
+    margin: 1.1rem 0 0.35rem;
+}
+
+/* ── HR — Section separator ── */
+.notes-body hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+}
+
+/* ── Strong — Key terms pop in gold ── */
+.notes-body strong {
+    color: var(--gold);
+    font-weight: 700;
+}
+
+/* ── Blockquotes — Callout boxes ── */
+.notes-body blockquote {
+    background: rgba(255,153,51,0.07);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 0.7rem 1rem;
+    margin: 1rem 0;
+    color: var(--text);
+    font-style: normal;
+}
+.notes-body blockquote p { margin-bottom: 0; }
+
+/* ── Tables ── */
 .notes-body table {
     width: 100%;
     border-collapse: collapse;
-    margin: 0.75rem 0;
+    margin: 1rem 0;
     font-size: 0.83rem;
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    border-radius: 6px;
+    overflow: hidden;
 }
 .notes-body th {
-    background: var(--inset);
+    background: rgba(255,153,51,0.12);
     color: var(--gold);
-    padding: 0.45rem 0.7rem;
+    padding: 0.5rem 0.75rem;
     text-align: left;
-    font-weight: 600;
-    border-bottom: 2px solid var(--border);
+    font-weight: 700;
+    border-bottom: 2px solid var(--gold);
     white-space: nowrap;
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 .notes-body td {
-    padding: 0.4rem 0.7rem;
+    padding: 0.42rem 0.75rem;
     border: 1px solid var(--border);
+    vertical-align: top;
 }
-.notes-body h1,
-.notes-body h2 {
-    color: var(--gold);
-    font-size: 1rem;
-    margin-top: 1.25rem;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
+.notes-body tr:nth-child(even) td {
+    background: rgba(255,255,255,0.025);
 }
-.notes-body h3 {
-    color: var(--text);
-    font-size: 0.92rem;
-    margin-top: 1rem;
-    font-weight: 600;
-}
+
+/* ── Lists ── */
 .notes-body ul,
 .notes-body ol {
-    padding-left: 1.25rem;
-    margin: 0.4rem 0;
+    padding-left: 1.35rem;
+    margin: 0.5rem 0;
 }
 .notes-body li {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.65;
 }
-.notes-body strong {
-    color: var(--text);
-    font-weight: 600;
+.notes-body li::marker {
+    color: var(--gold);
 }
-.notes-body blockquote {
-    border-left: 3px solid var(--gold);
-    padding-left: 0.75rem;
-    margin-left: 0;
-    color: var(--muted);
-    font-style: italic;
+
+/* ── Inline code ── */
+.notes-body code {
+    background: var(--inset);
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    font-size: 0.85em;
+    color: #e8c97a;
+    font-family: 'JetBrains Mono', monospace;
 }
 .notes-unavailable {
     color: var(--muted);
