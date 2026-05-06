@@ -526,7 +526,7 @@
 /* Theme switcher item */
 .theme-contrast .nkm-item svg { color: #FF9933; }
 .theme-contrast .nkm-theme.active .nkm-check { color: #FF9933; }
-.theme-contrast .nkm-theme.active { background: rgba(255, 255, 0, 0.10); }
+.theme-contrast .nkm-theme.active { background: rgba(255,153,51,0.10); }
 
 /* Links */
 .theme-contrast a { color: #FF9933; }
@@ -535,6 +535,59 @@
 /* Drawer */
 .theme-contrast .nav-drawer { background: #000000; border-right: 2px solid #FFFFFF; }
 .theme-contrast .nkm-panel { background: #111111; border: 2px solid #FFFFFF; }
+
+/* ── Icon overrides: most UI icons WHITE, only accent items orange ── */
+/* General rule: any svg/icon that's decorative → white */
+.theme-contrast .card-icon,
+.theme-contrast .card-icon svg,
+.theme-contrast .subject-icon,
+.theme-contrast .topic-icon,
+.theme-contrast .ph-feat-icon,
+.theme-contrast .ph-feat-icon svg { color: #FFFFFF; }
+
+/* Nav icons: white by default, orange on hover/active */
+.theme-contrast .nav-link svg,
+.theme-contrast .nav-search-btn svg,
+.theme-contrast .nav-theme-btn svg,
+.theme-contrast .nav-music-btn svg { color: #FFFFFF; }
+.theme-contrast .nav-link:hover svg,
+.theme-contrast .nav-link.active svg { color: #FF9933; }
+
+/* Tab/section labels in portals: white text, orange when active */
+.theme-contrast .g1-tab,
+.theme-contrast .g2-tab,
+.theme-contrast .portal-tab { color: #FFFFFF; border-color: #444444; }
+.theme-contrast .g1-tab.active,
+.theme-contrast .g2-tab.active,
+.theme-contrast .portal-tab.active {
+    color: #FF9933;
+    border-color: #FF9933;
+    background: rgba(255,153,51,0.08);
+}
+
+/* Subject/topic list items */
+.theme-contrast .subject-item,
+.theme-contrast .topic-item,
+.theme-contrast .area-item { border-color: #333333; }
+.theme-contrast .subject-item:hover,
+.theme-contrast .topic-item:hover { border-color: #FF9933; background: #1A1A1A; }
+
+/* Syllabus exam labels */
+.theme-contrast .syllabus-exam-label { color: #FF9933; border-bottom-color: #444444; }
+
+/* Revision / due tags */
+.theme-contrast .due-tag { border-color: #FFFFFF; color: #FFFFFF; }
+.theme-contrast .due-tag.overdue { color: #FF9933; border-color: #FF9933; }
+
+/* Dashboard stats */
+.theme-contrast .dash-stat-val { color: #FF9933; }
+.theme-contrast .dash-stat-label { color: #CCCCCC; }
+
+/* Back links and page titles */
+.theme-contrast .back-link { color: #FFFFFF; }
+.theme-contrast .back-link:hover { color: #FF9933; }
+.theme-contrast .page-title { color: #FFFFFF; }
+.theme-contrast .page-subtitle { color: #CCCCCC; }
 
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
