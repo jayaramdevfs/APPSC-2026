@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=42">
+    <link rel="stylesheet" href="/static/css/style.css?v=43">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -68,8 +68,9 @@
     <canvas id="ember-canvas"    class="ember-canvas"    aria-hidden="true"></canvas>
     <div class="hellfire-vignette" aria-hidden="true"></div>
 
-    <!-- Varanasi: floating diya lights on the Ganga -->
-    <canvas id="diya-canvas" class="diya-canvas" aria-hidden="true"></canvas>
+    <!-- Varanasi: WebGL cinematic sky (background) + diya river lights (overlay) -->
+    <canvas id="varanasi-sky" class="varanasi-sky" aria-hidden="true"></canvas>
+    <canvas id="diya-canvas"  class="diya-canvas"  aria-hidden="true"></canvas>
 </div>
 
 <nav class="navbar">
@@ -556,8 +557,10 @@
     }
     if (name === 'varanasi') {
       root.classList.add('theme-varanasi');
+      if (typeof startVaranasi === 'function') startVaranasi();
       if (typeof startDiyas === 'function') startDiyas();
     } else {
+      if (typeof stopVaranasi === 'function') stopVaranasi();
       if (typeof stopDiyas === 'function') stopDiyas();
     }
   }
@@ -714,7 +717,76 @@
     if(document.documentElement.classList.contains('theme-ghost-rider'))startEmbers();
   }());
 
-  // ── Varanasi: Diya / Ganga Aarti floating light particles ───────────────
+  // ── Varanasi: WebGL cinematic sky — FBM clouds, sun burst, temple silhouettes ──
+  (function(){
+    const sky=document.getElementById('varanasi-sky');
+    if(!sky)return;
+    const gl=sky.getContext('webgl')||sky.getContext('experimental-webgl');
+    if(!gl)return;
+    const VS=`attribute vec2 a;void main(){gl_Position=vec4(a,0,1);}`;
+    const FS=`
+precision highp float;
+uniform vec2 R;uniform float T;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+  return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<6;i++){v+=a*n(p);p=p*2.1+vec2(1.3,.8);a*=.5;}return v;}
+float tH(float x){
+  float d1=abs(x-.16),h1=max(0.,.22-d1*2.8);
+  float d2=abs(x-.78),h2=max(0.,.19-d2*3.2);
+  float d3=abs(x-.32),h3=max(0.,.15-d3*5.);
+  float d4=abs(x-.50),h4=max(0.,.12-d4*6.);
+  float d5=abs(x-.63),h5=max(0.,.10-d5*7.);
+  return max(max(max(h1,h2),max(h3,h4)),h5);
+}
+void main(){
+  vec2 uv=gl_FragCoord.xy/R;
+  vec2 sun=vec2(.60,.62);
+  float d=length(uv-sun);
+  vec2 np=uv*vec2(2.8,1.8)+vec2(T*.012,T*.006);
+  float cloud=fbm(np)*0.55+fbm(np*2.1+1.7)*0.30+fbm(np*.6-.9)*0.15;
+  float core =exp(-d*d*22.);
+  float glow =exp(-d*d*5.5);
+  float halo =exp(-d*d*1.5);
+  float sweep=exp(-d*d*.4);
+  float t=uv.y;
+  vec3 col=mix(vec3(.10,.04,.01),vec3(.025,.008,.002),smoothstep(.25,1.,t));
+  col+=vec3(.52,.20,.03)*sweep*(0.6+cloud*.7);
+  col+=vec3(.72,.32,.06)*halo*.75*(0.7+cloud*.4);
+  col+=vec3(.88,.48,.09)*glow*.85;
+  col+=vec3(.30,.11,.02)*cloud*sweep*.9;
+  col+=vec3(.18,.07,.01)*cloud*halo*.6;
+  col+=vec3(1.,.85,.28)*core*2.8;
+  col+=vec3(1.,.65,.12)*core*1.2;
+  col+=vec3(.95,.50,.08)*glow*.4;
+  float ground=smoothstep(.22,.0,t);
+  col=mix(col,vec3(.01,.004,.001),ground*.97);
+  float sil=step(uv.y,tH(uv.x));
+  col=mix(col,vec3(.006,.003,.001),sil);
+  col=clamp(col,0.,1.);
+  gl_FragColor=vec4(col,1.);
+}`;
+    function mk(t,s){const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
+    const prog=gl.createProgram();
+    gl.attachShader(prog,mk(gl.VERTEX_SHADER,VS));
+    gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,FS));
+    gl.linkProgram(prog);gl.useProgram(prog);
+    const buf=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+    const aLoc=gl.getAttribLocation(prog,'a');
+    gl.enableVertexAttribArray(aLoc);gl.vertexAttribPointer(aLoc,2,gl.FLOAT,false,0,0);
+    const uR=gl.getUniformLocation(prog,'R'),uT=gl.getUniformLocation(prog,'T');
+    let animId=null,t0=null;
+    function resize(){sky.width=window.innerWidth;sky.height=window.innerHeight;gl.viewport(0,0,sky.width,sky.height);}
+    function loop(ts){if(!t0)t0=ts;gl.uniform2f(uR,sky.width,sky.height);gl.uniform1f(uT,(ts-t0)*.001);gl.drawArrays(gl.TRIANGLES,0,6);animId=requestAnimationFrame(loop);}
+    window.startVaranasi=function(){if(animId)return;resize();t0=null;animId=requestAnimationFrame(loop);};
+    window.stopVaranasi=function(){if(animId){cancelAnimationFrame(animId);animId=null;}gl.clear(gl.COLOR_BUFFER_BIT);};
+    window.addEventListener('resize',()=>{if(animId)resize();});
+    if(document.documentElement.classList.contains('theme-varanasi'))startVaranasi();
+  }());
+
+  // ── Varanasi: Diya river lights — large warm glows along the bottom ────
   (function(){
     const canvas=document.getElementById('diya-canvas');
     if(!canvas)return;
@@ -723,34 +795,28 @@
     function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
     resize();
     function spawn(){
-      return{
-        x:Math.random()*canvas.width,
-        y:canvas.height+20,
-        size:3+Math.random()*5,
-        speed:0.25+Math.random()*0.45,
-        wobble:(Math.random()-0.5)*0.7,
-        wFreq:0.008+Math.random()*0.015,
-        t:Math.random()*6.28,
-        life:0,
-        maxLife:280+Math.random()*320,
-        alpha:0
-      };
+      const W=canvas.width,H=canvas.height;
+      return{x:Math.random()*W,y:H*0.88+Math.random()*H*0.15,
+        vx:(Math.random()-.5)*0.3,size:5+Math.random()*8,
+        t:Math.random()*6.28,wFreq:0.004+Math.random()*0.008,
+        life:0,maxLife:400+Math.random()*500,alpha:0};
     }
     function tick(){
       ctx.clearRect(0,0,canvas.width,canvas.height);
-      if(Math.random()<0.055)diyas.push(spawn());
+      if(diyas.length<18&&Math.random()<0.04)diyas.push(spawn());
       diyas=diyas.filter(d=>d.life<d.maxLife);
       for(const d of diyas){
-        d.life++;d.t+=d.wFreq;d.x+=Math.sin(d.t)*d.wobble;d.y-=d.speed;
+        d.life++;d.t+=d.wFreq;d.x+=d.vx+Math.sin(d.t)*0.4;
         const p=d.life/d.maxLife;
-        d.alpha=p<0.15?p/0.15:p>0.75?(1-p)/0.25:1;
-        const g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.size*4.5);
-        g.addColorStop(0,`rgba(240,205,80,${d.alpha*0.85})`);
-        g.addColorStop(0.4,`rgba(200,104,26,${d.alpha*0.38})`);
-        g.addColorStop(1,`rgba(200,104,26,0)`);
-        ctx.beginPath();ctx.arc(d.x,d.y,d.size*4.5,0,6.283);ctx.fillStyle=g;ctx.fill();
-        ctx.beginPath();ctx.arc(d.x,d.y,d.size*1.1,0,6.283);
-        ctx.fillStyle=`rgba(255,235,110,${d.alpha*0.92})`;ctx.fill();
+        d.alpha=p<0.1?p/0.1:p>0.8?(1-p)/0.2:1;
+        const g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.size*9);
+        g.addColorStop(0,`rgba(255,230,100,${d.alpha*0.90})`);
+        g.addColorStop(0.15,`rgba(240,170,40,${d.alpha*0.60})`);
+        g.addColorStop(0.45,`rgba(200,100,20,${d.alpha*0.25})`);
+        g.addColorStop(1,'rgba(200,100,20,0)');
+        ctx.beginPath();ctx.arc(d.x,d.y,d.size*9,0,6.283);ctx.fillStyle=g;ctx.fill();
+        ctx.beginPath();ctx.arc(d.x,d.y,d.size,0,6.283);
+        ctx.fillStyle=`rgba(255,245,180,${d.alpha})`;ctx.fill();
       }
     }
     function loop(){tick();animId=requestAnimationFrame(loop);}
