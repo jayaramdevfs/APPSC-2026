@@ -116,11 +116,26 @@ content/
 
 ## 5. OUTPUT FORMAT — STUDY NOTES
 
-Every notes file MUST follow this exact structure. No deviations.
+**Reference implementation**: `FILES/content/topics/scr-hist-01.md` — study this file before generating any notes.
+
+Every notes file MUST follow the **Textbook/Storytelling** structure below. No deviations. This is an international-textbook standard (NCERT/Oxford/Cambridge style) — NOT a reference sheet or bullet-point dump.
+
+### CRITICAL: Writing Style Rules
+- **PROSE FIRST**: Every section opens with 2–4 narrative paragraphs explaining WHY things happened, not just WHAT happened.
+- **BOLD key terms** inline in prose — never in standalone bullet lists.
+- **Callout boxes** for all exam-critical points (use blockquote markdown):
+  - `> 🔑 **Key Insight:**` — conceptual understanding for mains
+  - `> 📌 **Exam Note:**` — frequently tested facts
+  - `> ⚠️ **Exam Trap:**` — common wrong answers / confusions
+  - `> 🏛️ **AP Exam Focus:**` — Andhra Pradesh specific angle
+- **Tables ONLY** for comparative/tabular data (rulers, dates, sites). Never for prose content.
+- **Bullets ONLY** in the Quick Revision section. Nowhere else.
+
+### Mandatory Structure
 
 ```markdown
 # [Topic Name]
-## Micro-Topic: [Micro-topic description]
+> *[One-sentence essence of the topic — what the student should understand after reading]*
 
 **Sources Used:**
 - [Book 1] — [Chapter/Pages]
@@ -128,37 +143,92 @@ Every notes file MUST follow this exact structure. No deviations.
 
 ---
 
-## 1. Timeline Overview / Key Framework
-[Table or structured overview of the topic]
+## The Big Picture
 
-## 2-N. Content Sections
-For each sub-topic:
-- **Features / Key Points** (tagged with source: R.S. Sharma / NCERT / etc.)
-- **Important Sites / Personalities / Events** (as tables where applicable)
-- **Key Terms** with definitions
-- **Exam Tips** (common traps, frequently tested facts)
+[2–3 narrative paragraphs: Why does this period matter? What forces shaped it? 
+What is the thread connecting all sub-topics in this chapter?
+Think of this as the "opening of a documentary" — set the stage.]
 
-## [N+1]. Thematic Understanding (for Mains)
-- Evolution / progression chains (use Mermaid.js for visual flows)
-- Cause-effect relationships
-- Comparative analysis angles
+---
 
-## [N+2]. Prelims Revision Points (Quick Recall)
-Numbered list of 15-25 facts. Include:
-- Common exam traps marked explicitly
-- Source attribution for non-obvious facts
+## 1. [Sub-Topic Name]
+
+### [Sub-heading if needed]
+
+[Narrative paragraph explaining the sub-topic with **bold key terms** inline.
+WHY did it happen? What was the context? What were the causes?]
+
+> 🔑 **Key Insight:** [Conceptual point that connects to bigger themes]
+
+[Next paragraph — continuation or next aspect. Describe significance, outcomes, legacy.]
+
+| Column A | Column B | Column C |
+|----------|----------|----------|
+| [data]   | [data]   | [data]   |
+
+> ⚠️ **Exam Trap:** [Common confusion explicitly named]
+
+---
+
+## 2–N. [More Sub-Topics — same pattern]
+
+---
+
+## The [Region] Connection
+*(Include only if topic has significant AP/regional angle)*
+
+[Narrative paragraphs on how this topic connects to Andhra Pradesh history,
+sites, or figures. Tie to APPSC-specific exam focus.]
+
+> 🏛️ **AP Exam Focus:** [AP-specific fact]
+
+---
+
+## Connecting the Dots
+*(Analytical section for Mains)*
+
+[2–3 analytical paragraphs connecting this period to:
+- What came before / what caused this period
+- What came after / what this period caused
+- Comparisons across civilizations or themes
+Use Mermaid.js diagrams here for complex sequences or hierarchies.]
+
+---
+
+## Quick Revision
+
+### Timeline
+| Period | Key Development |
+|--------|----------------|
+| [date] | [event]        |
+
+### Core Facts
+- [Bullet 1 — specific, exam-ready fact]
+- [Bullet 2]
+- ... (15–25 bullets total)
+
+### Common Exam Traps
+| ❌ Wrong Belief | ✅ Correct Fact |
+|----------------|----------------|
+| [misconception] | [correction] |
+
+---
+
+## Think About It
+*[One reflective, mains-style question that makes the student think about the bigger picture.
+Example: "If the Harappan cities were so advanced, why did they leave no written history?"]*
 ```
 
 ### RULES FOR NOTES:
 1. **ONLY use information from the provided source text** — NEVER from AI training data
-2. If two sources overlap, merge without repetition
-3. If one source adds depth the other doesn't have, include it with source attribution
-4. Use tables for sites, timelines, comparisons
-5. Mark exam traps explicitly (e.g., "NOT Gujarat — exam trap")
-6. Keep concise but COMPLETE — no important fact should be missing
+2. If two sources overlap, merge without repetition; if one adds depth, include with source attribution
+3. **Prose is mandatory** — opening each section with narrative paragraphs is non-negotiable
+4. **Tables only for data** — timelines, rulers, comparisons, sites; never for concepts
+5. **Bullets only in Quick Revision** — everywhere else use prose + callout boxes
+6. Mark exam traps as `> ⚠️ **Exam Trap:**` callout boxes AND in the Quick Revision trap table
 7. Every fact must be traceable to a specific source
-8. **Visual Interaction (Mermaid.js)**: Convert complex power struggles, sequences, or hierarchies into Mermaid.js diagrams. This replaces long paragraphs and enhances structural retention.
-9. **Zero Raw Data**: Avoid including debug-style information, percentages, or meta-comments in the student-facing content. It should feel like a premium textbook.
+8. **Mermaid.js** for complex power sequences, succession chains, or administrative hierarchies (in "Connecting the Dots" section)
+9. **Zero Raw Data** — no percentages, debug info, or meta-comments. Feel like a premium textbook.
 
 ---
 
