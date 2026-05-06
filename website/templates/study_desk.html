@@ -47,6 +47,7 @@
         <button class="k-theme-btn theme-wakanda" data-theme="theme-wakanda" title="Wakanda">Aa</button>
         <button class="k-theme-btn theme-ghost-rider" data-theme="theme-ghost-rider" title="Ghost Rider">Aa</button>
         <button class="k-theme-btn theme-dark" data-theme="theme-dark" title="Dark (default)">Aa</button>
+        <button class="k-theme-btn theme-contrast" data-theme="theme-contrast" title="High Contrast" style="background:#000;color:#FF9933;border:2px solid #FF9933;">HC</button>
       </div>
     </div>
     <div class="k-aa-section">
@@ -193,6 +194,11 @@
   --k-theme-ghost-rider-text: #F5DEB3;
   --k-theme-ghost-rider-border: #FF5722;
 
+  /* High Contrast — pure black, white text, saffron accents */
+  --k-theme-contrast-bg: #000000;
+  --k-theme-contrast-text: #FFFFFF;
+  --k-theme-contrast-border: #FF9933;
+
   --k-font-serif: 'Georgia', 'Times New Roman', serif; /* Simulates Bookerly */
   --k-font-sans: 'Inter', '-apple-system', sans-serif; /* Simulates Amazon Ember */
 }
@@ -265,6 +271,19 @@ nav.navbar { display: none !important; }
 #kindle-app.theme-saffron .k-reader-content table { border: 1px solid #4A3520 !important; }
 #kindle-app.theme-saffron .k-reader-content th { background: #2A1F12 !important; color: #FFD699 !important; border-bottom: 2px solid #FF9933 !important; }
 #kindle-app.theme-saffron .k-reader-content td { background: transparent !important; color: #F5E6CC !important; border-bottom: 1px solid #4A3520 !important; }
+
+/* High Contrast reading theme */
+#kindle-app.theme-contrast { --k-bg: var(--k-theme-contrast-bg); --k-text: var(--k-theme-contrast-text); --k-border: var(--k-theme-contrast-border); }
+#kindle-app.theme-contrast .k-reader-content h1,
+#kindle-app.theme-contrast .k-reader-content h2,
+#kindle-app.theme-contrast .k-reader-content h3 { color: #FF9933 !important; }
+#kindle-app.theme-contrast .k-reader-content strong { color: #FF9933; }
+#kindle-app.theme-contrast .k-reader-content blockquote { border-left-color: #FF9933 !important; background: rgba(255,153,51,0.08) !important; color: #FFFFFF !important; }
+#kindle-app.theme-contrast .k-reader-content table { border: 2px solid #FFFFFF !important; }
+#kindle-app.theme-contrast .k-reader-content th { background: #111111 !important; color: #FF9933 !important; border-bottom: 2px solid #FF9933 !important; }
+#kindle-app.theme-contrast .k-reader-content td { background: #000000 !important; color: #FFFFFF !important; border-bottom: 1px solid #333333 !important; }
+#kindle-app.theme-contrast .k-topbar { background: #000000; border-bottom: 2px solid #FF9933; }
+#kindle-app.theme-contrast .k-menu-aa { background: #000000; border: 2px solid #FF9933; color: #FFFFFF; }
 
 /* Typography Applications */
 #kindle-app.font-serif { --k-font-family: var(--k-font-serif); }
@@ -805,7 +824,7 @@ app.addEventListener('click', (e) => {
   }
 });
 
-const ALL_K_THEMES = ['theme-light','theme-sepia','theme-dark','theme-wakanda','theme-saffron','theme-ghost-rider'];
+const ALL_K_THEMES = ['theme-light','theme-sepia','theme-dark','theme-wakanda','theme-saffron','theme-ghost-rider','theme-contrast'];
 
 function applyKTheme(themeClass) {
   app.classList.remove(...ALL_K_THEMES);
@@ -826,7 +845,9 @@ document.querySelectorAll('.k-theme-btn').forEach(btn => {
 function readingThemeForGlobal(globalTheme) {
   if (globalTheme === 'wakanda')     return 'theme-wakanda';
   if (globalTheme === 'ghost-rider') return 'theme-ghost-rider';
-  return 'theme-saffron'; // saffron / default
+  if (globalTheme === 'contrast')    return 'theme-contrast';
+  if (globalTheme === 'varanasi')    return 'theme-saffron';
+  return 'theme-saffron'; // default / saffron
 }
 
 // Init: ALWAYS sync to global theme on load (dynamic).
