@@ -374,6 +374,168 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 20px rgba(200, 104, 26, 0.22);
 }
 
+/* =========================================
+   HIGH CONTRAST THEME
+   Pure black + white + yellow. Zero decorative noise.
+   Maximum readability — designed for low vision / bright environments.
+   ========================================= */
+.theme-contrast {
+    --base:         #000000;
+    --surface:      #0D0D0D;
+    --card:         #111111;
+    --elevated:     #1A1A1A;
+    --inset:        #000000;
+    --navy:         #000000;
+    --navy-dark:    #000000;
+
+    --saffron:      #FFFF00;
+    --white:        #FFFFFF;
+    --gold:         #FFFF00;
+    --gold-rgb:     255, 255, 0;
+    --accent:       #FFFF00;
+    --accent-hover: #FFFFAA;
+    --bg:           #000000;
+    --text:         #FFFFFF;
+    --muted:        #CCCCCC;
+    --faint:        #999999;
+    --border:       #FFFFFF;
+    --border-hover: #FFFF00;
+    --shadow:       0 0 0 2px #FFFFFF;
+    --glow-gold:    none;
+    --glow-gold-hover: 0 0 0 3px #FFFF00;
+}
+
+.theme-contrast body {
+    background: #000000;
+    background-image: none;
+    animation: none;
+}
+
+/* Nav */
+.theme-contrast .nav-bar {
+    background: #000000;
+    border-bottom: 2px solid #FFFFFF;
+    box-shadow: none;
+}
+.theme-contrast .nav-brand .nav-title {
+    color: #FFFF00;
+    background: none;
+    -webkit-text-fill-color: #FFFF00;
+    text-shadow: none;
+    animation: none;
+}
+.theme-contrast .nav-user-badge { color: #FFFF00; border-color: #FFFF00; }
+.theme-contrast .nav-paw-btn svg { color: #FFFFFF; }
+.theme-contrast .nav-paw-btn:hover svg { color: #FFFF00; }
+
+/* Cards & surfaces */
+.theme-contrast .card,
+.theme-contrast .subject-card,
+.theme-contrast .dash-card,
+.theme-contrast .dash-plan-card {
+    background: #111111;
+    border: 2px solid #FFFFFF;
+    box-shadow: none;
+}
+.theme-contrast .card:hover,
+.theme-contrast .subject-card:hover,
+.theme-contrast .dash-plan-card:hover {
+    border-color: #FFFF00;
+    background: #1A1A1A;
+    box-shadow: 0 0 0 2px #FFFF00;
+    transform: none;
+}
+
+/* Buttons */
+.theme-contrast .btn-primary,
+.theme-contrast .auth-submit-btn {
+    background: #FFFF00;
+    color: #000000;
+    border: 2px solid #FFFF00;
+    font-weight: 800;
+    box-shadow: none;
+}
+.theme-contrast .btn-primary:hover,
+.theme-contrast .auth-submit-btn:hover {
+    background: #FFFFFF;
+    color: #000000;
+    border-color: #FFFFFF;
+    box-shadow: none;
+}
+
+/* Notes typography in high contrast */
+.theme-contrast .notes-body h1 {
+    color: #FFFF00;
+    border-bottom-color: #FFFF00;
+}
+.theme-contrast .notes-body h2 {
+    color: #FFFF00;
+    background: #1A1A1A;
+    border-left-color: #FFFF00;
+}
+.theme-contrast .notes-body h3 {
+    color: #FFFF00;
+    opacity: 1;
+}
+.theme-contrast .notes-body strong { color: #FFFF00; }
+.theme-contrast .notes-body blockquote {
+    background: #1A1A1A;
+    border-left-color: #FFFF00;
+    color: #FFFFFF;
+}
+.theme-contrast .notes-body th {
+    background: #1A1A1A;
+    color: #FFFF00;
+    border-bottom-color: #FFFF00;
+}
+.theme-contrast .notes-body td { border-color: #FFFFFF; }
+.theme-contrast .notes-body tr:nth-child(even) td { background: #0D0D0D; }
+.theme-contrast .notes-body li::marker { color: #FFFF00; }
+.theme-contrast .notes-body hr { border-top-color: #FFFFFF; }
+.theme-contrast .notes-body code { background: #1A1A1A; color: #FFFF00; border: 1px solid #FFFFFF; }
+
+/* Curriculum heatmap tiles */
+.theme-contrast .ctile {
+    background: #111111;
+    border: 2px solid #FFFFFF;
+}
+.theme-contrast .ctile.done {
+    background: #FFFF00;
+    border-color: #FFFF00;
+    box-shadow: none;
+}
+.theme-contrast .ctile:hover {
+    border-color: #FFFF00;
+    box-shadow: 0 0 0 2px #FFFF00;
+}
+
+/* Pomodoro / widgets */
+.theme-contrast .cc-widget {
+    background: #111111;
+    border: 2px solid #FFFFFF;
+    box-shadow: none;
+}
+.theme-contrast .timer-unit .val { color: #FFFF00; text-shadow: none; }
+
+/* Progress bar */
+.theme-contrast .cp-bar-fill {
+    background: #FFFF00;
+    box-shadow: none;
+}
+
+/* Theme switcher item */
+.theme-contrast .nkm-item svg { color: #FFFF00; }
+.theme-contrast .nkm-theme.active .nkm-check { color: #FFFF00; }
+.theme-contrast .nkm-theme.active { background: rgba(255, 255, 0, 0.10); }
+
+/* Links */
+.theme-contrast a { color: #FFFF00; }
+.theme-contrast a:hover { color: #FFFFFF; }
+
+/* Drawer */
+.theme-contrast .nav-drawer { background: #000000; border-right: 2px solid #FFFFFF; }
+.theme-contrast .nkm-panel { background: #111111; border: 2px solid #FFFFFF; }
+
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-weight: 600;
@@ -4566,8 +4728,8 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
 }
 
 /* ─────────── SAFFRON THEME VFX ─────────── */
-:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-ribbon,
-:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-petal { display: block; }
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi):not(.theme-contrast) .vfx-saffron-ribbon,
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi):not(.theme-contrast) .vfx-saffron-petal { display: block; }
 
 .vfx-saffron-ribbon {
     position: absolute;
@@ -4761,8 +4923,8 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
 .theme-varanasi .diya-canvas { display: block; }
 
 /* ─────────── SAFFRON: exclude varanasi from ribbon VFX ─────────── */
-:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-ribbon,
-:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi) .vfx-saffron-petal { display: block; }
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi):not(.theme-contrast) .vfx-saffron-ribbon,
+:root:not(.theme-wakanda):not(.theme-ghost-rider):not(.theme-varanasi):not(.theme-contrast) .vfx-saffron-petal { display: block; }
 
 /* ─────────── VARANASI title glow ─────────── */
 .theme-varanasi .nav-title,

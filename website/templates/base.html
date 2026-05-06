@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=44">
+    <link rel="stylesheet" href="/static/css/style.css?v=45">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -32,7 +32,7 @@
     <script>
       // Early init to prevent flicker
       (function() {
-  const VALID = ['saffron', 'wakanda', 'ghost-rider', 'varanasi'];
+  const VALID = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast'];
   try {
     const urlTheme = new URLSearchParams(location.search).get('theme');
     if (VALID.includes(urlTheme)) localStorage.setItem('theme', urlTheme);
@@ -41,6 +41,7 @@
   if (saved === 'wakanda')     document.documentElement.classList.add('theme-wakanda');
   if (saved === 'ghost-rider') document.documentElement.classList.add('theme-ghost-rider');
   if (saved === 'varanasi')    document.documentElement.classList.add('theme-varanasi');
+  if (saved === 'contrast')    document.documentElement.classList.add('theme-contrast');
 })();
 </script>
 </head>
@@ -251,6 +252,11 @@
                     Varanasi
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
+                <button class="ntm-item" data-theme="contrast">
+                    <span class="ntm-dot" style="background:#FFFF00;border:2px solid #fff"></span>
+                    High Contrast
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
             </div>
         </div>
         <div class="nav-kebab-wrap">
@@ -300,6 +306,14 @@
                         <circle cx="16" cy="4" r="1.5" fill="currentColor"/>
                     </svg>
                     <span class="nkm-label">Varanasi</span>
+                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="nkm-item nkm-theme" data-theme="contrast" role="menuitemradio">
+                    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                        <path d="M16 3 A13 13 0 0 1 16 29 Z"/>
+                    </svg>
+                    <span class="nkm-label">High Contrast</span>
                     <span class="nkm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <div class="nkm-divider"></div>
@@ -491,12 +505,13 @@
   const songUrl     = "https://www.youtube.com/embed/vdXsLt0o_9g?autoplay=1&mute=0&loop=1&playlist=vdXsLt0o_9g";
   
   // ── Three-way theme: saffron → wakanda → ghost-rider → saffron ───
-  const THEMES = ['saffron', 'wakanda', 'ghost-rider', 'varanasi'];
+  const THEMES = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast'];
   function currentTheme() {
     const r = document.documentElement;
     if (r.classList.contains('theme-wakanda'))     return 'wakanda';
     if (r.classList.contains('theme-ghost-rider')) return 'ghost-rider';
     if (r.classList.contains('theme-varanasi'))    return 'varanasi';
+    if (r.classList.contains('theme-contrast'))    return 'contrast';
     return 'saffron';
   }
   function nextTheme(t) { return THEMES[(THEMES.indexOf(t) + 1) % THEMES.length]; }
@@ -547,7 +562,7 @@
 
   function applyTheme(name) {
     const root = document.documentElement;
-    root.classList.remove('theme-wakanda', 'theme-ghost-rider', 'theme-varanasi');
+    root.classList.remove('theme-wakanda', 'theme-ghost-rider', 'theme-varanasi', 'theme-contrast');
     if (name === 'wakanda') root.classList.add('theme-wakanda');
     if (name === 'ghost-rider') {
       root.classList.add('theme-ghost-rider');
@@ -563,6 +578,7 @@
       if (typeof stopVaranasi === 'function') stopVaranasi();
       if (typeof stopDiyas === 'function') stopDiyas();
     }
+    if (name === 'contrast') root.classList.add('theme-contrast');
   }
 
   // ── Ghost Rider: WebGL Full-Viewport Fire (bottom + sides) ─────────────
