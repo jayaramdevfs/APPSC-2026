@@ -1980,27 +1980,23 @@ async def homepage(request: Request):
 
 async def group1(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group1.html", {
         "structure": G1_STRUCTURE,
         "structure_json": json.dumps(G1_STRUCTURE),
         "shared_topics_json": json.dumps(SHARED_TOPICS),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
 async def group2(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group2.html", {
         "structure": G2_STRUCTURE,
         "structure_json": json.dumps(G2_STRUCTURE),
         "shared_topics_json": json.dumps(SHARED_TOPICS),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
@@ -2397,13 +2393,11 @@ APT_STRUCTURE = {
 
 async def aptitude(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "aptitude.html", {
         "structure": APT_STRUCTURE,
         "structure_json": json.dumps(APT_STRUCTURE),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
@@ -2867,12 +2861,10 @@ TELUGU_STRUCTURE = {
 
 async def telugu(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "telugu.html", {
         "structure_json": json.dumps(TELUGU_STRUCTURE),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
@@ -2894,8 +2886,6 @@ def _ca_days_for_month(year: int, month: int) -> list[int]:
 
 async def current_affairs(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "current_affairs.html", {
         "current_user": user,
     })
@@ -2903,8 +2893,6 @@ async def current_affairs(request: Request):
 
 async def api_ca_content(request: Request):
     """Return raw markdown for a given date, or 404 if not found."""
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
     date = request.path_params["date"]
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
         return PlainTextResponse("Invalid date format.", status_code=400)
@@ -2916,8 +2904,6 @@ async def api_ca_content(request: Request):
 
 async def api_ca_month(request: Request):
     """Return list of day numbers (int) that have CA content for year/month."""
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
     try:
         year  = int(request.path_params["year"])
         month = int(request.path_params["month"])
@@ -3780,8 +3766,6 @@ async def change_password_post(request: Request):
 # ---------------------------------------------------------------------------
 
 async def api_search(request: Request):
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
     q = (request.query_params.get("q") or "").strip().lower()
     if len(q) < 2:
         return JSONResponse([])
@@ -3893,8 +3877,6 @@ async def api_search(request: Request):
 NOTES_DIR = FILES_DIR / "content" / "topics"
 
 async def api_get_content(request: Request):
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
     topic_id = request.path_params["topic_id"]
     if not re.match(r'^[a-z0-9-]+$', topic_id):
         return JSONResponse({"available": False})

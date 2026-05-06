@@ -47,25 +47,29 @@
           <p class="g2-detail-meta">Official Syllabus &nbsp;&bull;&nbsp; <span id="apt-exam-label"></span></p>
         </div>
         <div class="detail-header-right">
-          <div class="revision-badge" id="rev-badge-apt"></div>
+          {% if current_user %}<div class="revision-badge" id="rev-badge-apt"></div>{% endif %}
           <span class="apt-exam-badge-lg" id="apt-exam-badge-lg"></span>
           <span class="g2-official-tag">APPSC Official</span>
         </div>
       </div>
+      {% if not current_user %}<div class="guest-study-banner"><a href="/login">Login</a> to save highlights, flashcards &amp; track your progress &rarr;</div>{% endif %}
       <ul class="g2-syllabus-points" id="apt-points"></ul>
       <div class="open-desk-container" style="margin-top: 2rem; padding: 2rem; background: #121417; border-radius: 8px; text-align: center; border: 1px dashed #ff9800;">
         <h3 style="color:#ffb74d; margin-bottom: 10px;">Virtual Study Environment</h3>
         <p style="color:#c5c6c7; margin-bottom: 20px; font-size: 0.9em;">Access official notes, create highlights, add inline text snippets, format rich-text personal notes securely, and export PDFs in a distraction-free window.</p>
         <a href="#" class="btn-open-desk" id="btn-open-desk-apt" style="display:inline-block; background: #ff9800; color: #0b0c10; padding: 12px 24px; text-decoration: none; font-weight: bold; border-radius: 4px; box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);">Launch Study Desk &rarr;</a>
       </div>
+      {% if current_user %}
       <div class="g2-detail-footer">
         <button class="btn-mark-studied" id="btn-apt-studied" data-subject="aptitude">Mark as Studied</button>
       </div>
+      {% endif %}
     </div>
   </div>
 
 </div>
 
+{% if current_user %}
 <!-- Global floating highlight toolbar -->
 <div class="hl-toolbar" id="hl-toolbar" style="display:none">
   <button class="hl-btn hl-yellow" data-color="yellow" title="Yellow">&#9608;</button>
@@ -74,10 +78,11 @@
   <button class="hl-btn hl-remove" data-color="remove" title="Remove">&#10005;</button>
   <button class="hl-btn hl-fc"     data-action="flashcard" title="Flashcard">&#128204;</button>
 </div>
+{% endif %}
 
 <script>
 const APT = {{ structure_json | safe }};
-const USER_ID = {{ user_id }};
+const USER_ID = {{ user_id | tojson }};
 const LS_KEY = 'appsc_progress_' + USER_ID;
 const SUBJECT = 'aptitude';
 

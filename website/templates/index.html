@@ -303,6 +303,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
 
+        <div class="ph-ca-teaser" id="ph-ca-teaser" style="display:none">
+            <div class="ph-ca-teaser-date" id="ph-ca-date">&#128240; Today's Current Affairs</div>
+            <div class="ph-ca-teaser-preview" id="ph-ca-preview"></div>
+            <a href="/current-affairs" class="ph-ca-read-link">Read full Current Affairs &rarr;</a>
+        </div>
+
         <div class="ph-actions">
             <a href="/register" class="ph-btn-primary">Start Preparing &rarr;</a>
             <a href="/login" class="ph-btn-secondary">Login</a>
@@ -386,6 +392,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     update();
     setInterval(update, 60000);
+})();
+
+(function loadCATeaser() {
+    const today = new Date();
+    const dateStr = today.getFullYear() + '-' +
+        String(today.getMonth()+1).padStart(2,'0') + '-' +
+        String(today.getDate()).padStart(2,'0');
+    fetch('/api/ca/content/' + dateStr)
+        .then(r => r.ok ? r.text() : '')
+        .then(md => {
+            if (!md || md.length < 20) return;
+            const lines = md.split('\n')
+                .map(l => l.replace(/^#+\s*/, '').replace(/\*\*/g, '').trim())
+                .filter(l => l.length > 15)
+                .slice(0, 3);
+            if (!lines.length) return;
+            const preview = lines.join(' ').slice(0, 220) + '…';
+            document.getElementById('ph-ca-preview').textContent = preview;
+            document.getElementById('ph-ca-teaser').style.display = 'block';
+        })
+        .catch(function(){});
 })();
 </script>
 
