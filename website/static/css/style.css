@@ -376,7 +376,7 @@
 
 /* =========================================
    HIGH CONTRAST THEME
-   Pure black + white + yellow. Zero decorative noise.
+   Pure black + white + brand saffron. Zero decorative noise.
    Maximum readability — designed for low vision / bright environments.
    ========================================= */
 .theme-contrast {
@@ -388,21 +388,21 @@
     --navy:         #000000;
     --navy-dark:    #000000;
 
-    --saffron:      #FFFF00;
+    --saffron:      #FF9933;
     --white:        #FFFFFF;
-    --gold:         #FFFF00;
-    --gold-rgb:     255, 255, 0;
-    --accent:       #FFFF00;
-    --accent-hover: #FFFFAA;
+    --gold:         #FF9933;
+    --gold-rgb:     255, 153, 51;
+    --accent:       #FF9933;
+    --accent-hover: #FFB366;
     --bg:           #000000;
     --text:         #FFFFFF;
     --muted:        #CCCCCC;
     --faint:        #999999;
     --border:       #FFFFFF;
-    --border-hover: #FFFF00;
+    --border-hover: #FF9933;
     --shadow:       0 0 0 2px #FFFFFF;
     --glow-gold:    none;
-    --glow-gold-hover: 0 0 0 3px #FFFF00;
+    --glow-gold-hover: 0 0 0 3px #FF9933;
 }
 
 .theme-contrast body {
@@ -418,15 +418,15 @@
     box-shadow: none;
 }
 .theme-contrast .nav-brand .nav-title {
-    color: #FFFF00;
+    color: #FF9933;
     background: none;
-    -webkit-text-fill-color: #FFFF00;
+    -webkit-text-fill-color: #FF9933;
     text-shadow: none;
     animation: none;
 }
-.theme-contrast .nav-user-badge { color: #FFFF00; border-color: #FFFF00; }
+.theme-contrast .nav-user-badge { color: #FF9933; border-color: #FF9933; }
 .theme-contrast .nav-paw-btn svg { color: #FFFFFF; }
-.theme-contrast .nav-paw-btn:hover svg { color: #FFFF00; }
+.theme-contrast .nav-paw-btn:hover svg { color: #FF9933; }
 
 /* Cards & surfaces */
 .theme-contrast .card,
@@ -440,18 +440,18 @@
 .theme-contrast .card:hover,
 .theme-contrast .subject-card:hover,
 .theme-contrast .dash-plan-card:hover {
-    border-color: #FFFF00;
+    border-color: #FF9933;
     background: #1A1A1A;
-    box-shadow: 0 0 0 2px #FFFF00;
+    box-shadow: 0 0 0 2px #FF9933;
     transform: none;
 }
 
 /* Buttons */
 .theme-contrast .btn-primary,
 .theme-contrast .auth-submit-btn {
-    background: #FFFF00;
+    background: #FF9933;
     color: #000000;
-    border: 2px solid #FFFF00;
+    border: 2px solid #FF9933;
     font-weight: 800;
     box-shadow: none;
 }
@@ -465,34 +465,34 @@
 
 /* Notes typography in high contrast */
 .theme-contrast .notes-body h1 {
-    color: #FFFF00;
-    border-bottom-color: #FFFF00;
+    color: #FF9933;
+    border-bottom-color: #FF9933;
 }
 .theme-contrast .notes-body h2 {
-    color: #FFFF00;
+    color: #FF9933;
     background: #1A1A1A;
-    border-left-color: #FFFF00;
+    border-left-color: #FF9933;
 }
 .theme-contrast .notes-body h3 {
-    color: #FFFF00;
+    color: #FF9933;
     opacity: 1;
 }
-.theme-contrast .notes-body strong { color: #FFFF00; }
+.theme-contrast .notes-body strong { color: #FF9933; }
 .theme-contrast .notes-body blockquote {
     background: #1A1A1A;
-    border-left-color: #FFFF00;
+    border-left-color: #FF9933;
     color: #FFFFFF;
 }
 .theme-contrast .notes-body th {
     background: #1A1A1A;
-    color: #FFFF00;
-    border-bottom-color: #FFFF00;
+    color: #FF9933;
+    border-bottom-color: #FF9933;
 }
 .theme-contrast .notes-body td { border-color: #FFFFFF; }
 .theme-contrast .notes-body tr:nth-child(even) td { background: #0D0D0D; }
-.theme-contrast .notes-body li::marker { color: #FFFF00; }
+.theme-contrast .notes-body li::marker { color: #FF9933; }
 .theme-contrast .notes-body hr { border-top-color: #FFFFFF; }
-.theme-contrast .notes-body code { background: #1A1A1A; color: #FFFF00; border: 1px solid #FFFFFF; }
+.theme-contrast .notes-body code { background: #1A1A1A; color: #FF9933; border: 1px solid #FFFFFF; }
 
 /* Curriculum heatmap tiles */
 .theme-contrast .ctile {
@@ -500,13 +500,13 @@
     border: 2px solid #FFFFFF;
 }
 .theme-contrast .ctile.done {
-    background: #FFFF00;
-    border-color: #FFFF00;
+    background: #FF9933;
+    border-color: #FF9933;
     box-shadow: none;
 }
 .theme-contrast .ctile:hover {
-    border-color: #FFFF00;
-    box-shadow: 0 0 0 2px #FFFF00;
+    border-color: #FF9933;
+    box-shadow: 0 0 0 2px #FF9933;
 }
 
 /* Pomodoro / widgets */
@@ -515,21 +515,21 @@
     border: 2px solid #FFFFFF;
     box-shadow: none;
 }
-.theme-contrast .timer-unit .val { color: #FFFF00; text-shadow: none; }
+.theme-contrast .timer-unit .val { color: #FF9933; text-shadow: none; }
 
 /* Progress bar */
 .theme-contrast .cp-bar-fill {
-    background: #FFFF00;
+    background: #FF9933;
     box-shadow: none;
 }
 
 /* Theme switcher item */
-.theme-contrast .nkm-item svg { color: #FFFF00; }
-.theme-contrast .nkm-theme.active .nkm-check { color: #FFFF00; }
+.theme-contrast .nkm-item svg { color: #FF9933; }
+.theme-contrast .nkm-theme.active .nkm-check { color: #FF9933; }
 .theme-contrast .nkm-theme.active { background: rgba(255, 255, 0, 0.10); }
 
 /* Links */
-.theme-contrast a { color: #FFFF00; }
+.theme-contrast a { color: #FF9933; }
 .theme-contrast a:hover { color: #FFFFFF; }
 
 /* Drawer */
