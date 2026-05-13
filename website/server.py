@@ -2015,7 +2015,8 @@ SHARED_TOPICS = {
     # ── HISTORY ─────────────────────────────────────────────────────────────
 
     # G1 Prelims History ↔ G2 Screening History
-    "pre-ha-01": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
+    "pre-ha-01": [{"id": "cg-harappan-civilization", "label": "Focused: Indus Valley Civilization"},
+                  {"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
                   {"id": "m2-hi-01",    "label": "G1 Mains P2: Pre-Historic to Kushans"}],
     "pre-ha-02": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
                   {"id": "m2-hi-02",    "label": "G1 Mains P2: South Indian Dynasties"}],
@@ -2046,7 +2047,8 @@ SHARED_TOPICS = {
                     {"id": "p1-aph-03", "label": "G2 Paper 1: Advent of Europeans to Independence"}],
 
     # G1 Mains Paper 2 — History of India ↔ G2 Screening + G2 Paper 1 AP History
-    "m2-hi-01": [{"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+    "m2-hi-01": [{"id": "cg-prehistoric-culture", "label": "Focused: Pre-Historic Cultures of India"},
+                 {"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
                  {"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
                  {"id": "p1-aph-01",  "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"}],
     "m2-hi-02": [{"id": "pre-ha-02",  "label": "G1 Prelims: South Indian Dynasties"},
@@ -2064,6 +2066,16 @@ SHARED_TOPICS = {
                  {"id": "scr-hist-03","label": "G2 Screening: Modern India"},
                  {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
 
+    # Ancient History CG-specific notes → exam topic cross-links
+    "cg-prehistoric-culture":  [{"id": "p1-aph-01",  "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"},
+                                 {"id": "m2-hi-01",   "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+    "cg-harappan-civilization":[{"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+                                 {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
+    "cg-vedic-age":            [{"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
+                                 {"id": "m2-hi-01",   "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+    "cg-mahajanapadas":        [{"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
+                                 {"id": "m2-hi-01",   "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+
     # G1 Mains Paper 2 — AP History ↔ G2 Paper 1 AP History (STRONGEST OVERLAP)
     "m2-ap-01": [{"id": "p1-aph-01", "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"},
                  {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
@@ -2074,7 +2086,8 @@ SHARED_TOPICS = {
     "m2-ap-05": [{"id": "p1-aph-05", "label": "G2 Paper 1: Formation of Andhra Pradesh (1956–2014)"}],
 
     # G2 Paper 1 AP History ↔ G1 Mains AP History (STRONGEST OVERLAP — near identical)
-    "p1-aph-01": [{"id": "m2-ap-01",  "label": "G1 Mains P2: Ancient Andhra"},
+    "p1-aph-01": [{"id": "cg-prehistoric-culture", "label": "Focused: Pre-Historic Cultures of India"},
+                  {"id": "m2-ap-01",  "label": "G1 Mains P2: Ancient Andhra"},
                   {"id": "m2-hi-01",  "label": "G1 Mains P2: Pre-Historic to Kushans"},
                   {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
     "p1-aph-02": [{"id": "m2-ap-02",  "label": "G1 Mains P2: Medieval Andhra (1000–1565 AD)"},
