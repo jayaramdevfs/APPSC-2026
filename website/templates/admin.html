@@ -139,6 +139,7 @@
     <form class="ca-editor" onsubmit="saveCA(event)">
       <div style="display: flex; gap: 1rem;">
         <input type="text" id="ca-date" class="ca-input" placeholder="YYYY-MM-DD" required pattern="\d{4}-\d{2}-\d{2}" style="flex: 1;">
+        <button type="button" class="admin-btn" onclick="insertCATemplate()">Template</button>
         <button type="button" class="admin-btn admin-btn-danger" style="display:none;" id="ca-delete-btn" onclick="deleteCA()">Delete</button>
       </div>
       <textarea id="ca-content" class="ca-input ca-textarea" placeholder="# Markdown Content Here" required></textarea>
@@ -283,6 +284,13 @@ async function deleteCA() {
   } else {
     alert('Failed to delete');
   }
+}
+
+function insertCATemplate() {
+  if (!document.getElementById('ca-date').value) {
+    document.getElementById('ca-date').value = new Date().toISOString().slice(0, 10);
+  }
+  document.getElementById('ca-content').value = `# Current Affairs — Week of ...\n\n## International\n- **Topic**: ...\n- **Topic**: ...\n\n## National\n- **Topic**: ...\n- **Topic**: ...\n\n## Andhra Pradesh ⭐\n- **Topic**: ...\n- **Topic**: ...\n\n## Economy & Finance\n- **Topic**: ...\n\n## Science & Technology\n- **Topic**: ...\n\n## APPSC Angle\n> **What to remember for exam:**\n> - ...\n> - ...`;
 }
 
 // --- Topic Content ---
