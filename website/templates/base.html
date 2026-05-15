@@ -1067,11 +1067,6 @@ void main(){
     }
   });
 
-  // ── Default music ON for first-time visitors ─────────────────
-  if (localStorage.getItem('theme_music') === null) {
-    localStorage.setItem('theme_music', 'on');
-  }
-
   updateThemeUI();
 
   // ── Search modal ──────────────────────────────────────────────
