@@ -1125,6 +1125,91 @@ void main(){
         });
     }, 250);
   });
+
+  // ── Soft Navigation — music/VFX/navbar never destroyed on link clicks ──
+  (function(){
+    const HARD = ['/logout','/login','/register','/change-password',
+                  '/forgot-password','/reset-password','/admin'];
+    let busy = false;
+
+    // Stamp initial history state
+    history.replaceState({url: location.pathname + location.search}, document.title);
+
+    async function go(url) {
+      if (busy) return;
+      const path = new URL(url, location.origin).pathname;
+      // Auth / admin routes: full reload
+      if (HARD.some(h => path.startsWith(h))) { location.href = url; return; }
+      busy = true;
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (res.redirected) { location.href = res.url; return; }
+        if (!res.ok)         { location.href = url;    return; }
+
+        const html = await res.text();
+        const doc  = new DOMParser().parseFromString(html, 'text/html');
+        const nMain = doc.querySelector('.main-content');
+        const cMain = document.querySelector('.main-content');
+        if (!nMain || !cMain) { location.href = url; return; }
+
+        // Swap content — scripts inside innerHTML are inert by spec
+        cMain.innerHTML = nMain.innerHTML;
+
+        // Re-execute every <script> that was inside the new page's main
+        // (replaceChild on an inert script causes the browser to run it)
+        cMain.querySelectorAll('script').forEach(inert => {
+          const live = document.createElement('script');
+          if (inert.src) {
+            if (document.querySelector(`script[src="${inert.src}"]`)) return;
+            live.src = inert.src;
+          } else {
+            live.textContent = inert.textContent;
+          }
+          inert.parentNode.replaceChild(live, inert);
+        });
+
+        // Update browser chrome
+        document.title = doc.title;
+        history.pushState({ url }, doc.title, url);
+        window.scrollTo(0, 0);
+
+        // Close any open overlays
+        try { closeMenu();   } catch(e) {}
+        try { closeSearch(); } catch(e) {}
+        closeThemeMenu();
+        closeKebab();
+
+        // Sync active state on drawer links
+        document.querySelectorAll('.nav-drawer-link').forEach(el => {
+          el.classList.toggle('active', el.getAttribute('href') === location.pathname);
+        });
+
+      } catch(err) {
+        location.href = url;   // hard fallback
+      } finally {
+        busy = false;
+      }
+    }
+
+    // Intercept every internal <a> click
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href]');
+      if (!a || a.target === '_blank' || a.dataset.reload !== undefined) return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || /^(https?:)?\/\//.test(href)
+          || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      const dest = new URL(href, location.origin);
+      if (dest.origin !== location.origin) return;
+      e.preventDefault();
+      go(dest.pathname + dest.search);
+    });
+
+    // Handle browser back / forward
+    window.addEventListener('popstate', () => {
+      go(location.pathname + location.search);
+    });
+  }());
 </script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
