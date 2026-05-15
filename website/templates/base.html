@@ -504,7 +504,7 @@
   const vibAudio    = document.getElementById('vib-audio');
   const THEME_MUSIC = {
     saffron:      { id: 'jDn2bn7_YSM', title: 'Vande Mataram — A.R. Rahman' },
-    wakanda:      { id: 'JQbjS0_ZfJ0', title: 'All The Stars — Kendrick Lamar & SZA' },
+    wakanda:      { id: 'vdXsLt0o_9g', title: 'All The Stars — Kendrick Lamar & SZA' },
     'ghost-rider':{ id: 'wWd3Ti7QzkY', title: 'Ghost Riders In The Sky — Spiderbait' },
     varanasi:     { id: '5KIZ674msxI', title: 'Ganga Aarti — Kashi Vishwanath Ghat' },
     contrast:     null,
@@ -513,6 +513,17 @@
     const m = THEME_MUSIC[theme];
     if (!m) return '';
     return 'https://www.youtube.com/embed/' + m.id + '?autoplay=1&mute=0&loop=1&playlist=' + m.id;
+  }
+  function isPlaying() {
+    return vibAudio.src && vibAudio.src.includes('youtube.com/embed');
+  }
+  function stopMusic() {
+    vibAudio.removeAttribute('src');
+    musicToggle.classList.remove('playing');
+  }
+  function playMusic(url) {
+    vibAudio.src = url;
+    musicToggle.classList.add('playing');
   }
 
   // ── Theme list ───
@@ -534,15 +545,12 @@
       musicToggle.style.display = 'flex';
       musicToggle.title = music.title;
       musicToggle.setAttribute('aria-label', 'Toggle: ' + music.title);
-      if (localStorage.getItem('theme_music') === 'on') {
-        const url = songUrlFor(t);
-        if (vibAudio.src.indexOf(music.id) === -1) vibAudio.src = url;
-        musicToggle.classList.add('playing');
+      if (localStorage.getItem('theme_music') === 'on' && !isPlaying()) {
+        playMusic(songUrlFor(t));
       }
     } else {
       musicToggle.style.display = 'none';
-      vibAudio.src = '';
-      musicToggle.classList.remove('playing');
+      stopMusic();
     }
     // Reflect active theme on the toggle button (CSS swaps icons via theme classes)
     themeToggle.dataset.theme = t;
@@ -560,9 +568,8 @@
   // Force play on first document click if browser blocked autoplay
   document.addEventListener('click', function startMusicOnInteraction() {
      const t = currentTheme();
-     if (THEME_MUSIC[t] && localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
-        vibAudio.src = songUrlFor(t);
-        musicToggle.classList.add('playing');
+     if (THEME_MUSIC[t] && localStorage.getItem('theme_music') === 'on' && !isPlaying()) {
+        playMusic(songUrlFor(t));
      }
   }, { once: true });
 
@@ -866,9 +873,7 @@ void main(){
     // Swap music track if music is on
     if (localStorage.getItem('theme_music') === 'on') {
       const url = songUrlFor(name);
-      vibAudio.src = url;
-      if (url) musicToggle.classList.add('playing');
-      else musicToggle.classList.remove('playing');
+      if (url) playMusic(url); else stopMusic();
     }
     updateThemeUI();
     flashRipple();
@@ -909,8 +914,7 @@ void main(){
   const kbmMusicLabel = document.getElementById('kbm-music-label');
 
   function refreshKebabLabels() {
-    const musicOn = !!vibAudio.src;
-    kbmMusicLabel.textContent = 'Ambient music: ' + (musicOn ? 'On' : 'Off');
+    kbmMusicLabel.textContent = 'Ambient music: ' + (isPlaying() ? 'On' : 'Off');
   }
 
   function openKebab()  { kebabMenu.hidden = false; kebabBtn.setAttribute('aria-expanded', 'true');  refreshKebabLabels(); updateThemeUI(); }
@@ -932,34 +936,24 @@ void main(){
   });
 
   kbmMusic.addEventListener('click', () => {
-    if (vibAudio.src) {
-      vibAudio.src = '';
-      musicToggle.classList.remove('playing');
+    if (isPlaying()) {
+      stopMusic();
       localStorage.setItem('theme_music', 'off');
     } else {
       const url = songUrlFor(currentTheme());
-      if (url) {
-        vibAudio.src = url;
-        musicToggle.classList.add('playing');
-        localStorage.setItem('theme_music', 'on');
-      }
+      if (url) { playMusic(url); localStorage.setItem('theme_music', 'on'); }
     }
     refreshKebabLabels();
   });
 
   musicToggle.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (vibAudio.src) {
-      vibAudio.src = '';
-      musicToggle.classList.remove('playing');
+    if (isPlaying()) {
+      stopMusic();
       localStorage.setItem('theme_music', 'off');
     } else {
       const url = songUrlFor(currentTheme());
-      if (url) {
-        vibAudio.src = url;
-        musicToggle.classList.add('playing');
-        localStorage.setItem('theme_music', 'on');
-      }
+      if (url) { playMusic(url); localStorage.setItem('theme_music', 'on'); }
     }
   });
 
