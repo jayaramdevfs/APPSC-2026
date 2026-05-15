@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=50">
+    <link rel="stylesheet" href="/static/css/style.css?v=51">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -473,43 +473,38 @@
 
 <audio id="vib-audio" loop preload="none" style="display:none;"></audio>
 
-<!-- ═══════════════════════════════════════════════════════
-     GLOBAL MUSIC PLAYER — fixed, every page, every theme
-     ═══════════════════════════════════════════════════════ -->
-<div class="gmp-global" id="gmp-global" aria-label="Music player">
+<!-- ═══════════════════════════════════════════════════════════
+     GLOBAL MUSIC PLAYER — persistent bottom-center pill bar
+     ═══════════════════════════════════════════════════════════ -->
+<div class="gmp-bar" id="gmp-global" aria-label="Ambient music player">
 
-  <!-- Expanded panel (shown when open) -->
-  <div class="gmp-panel" id="gmp-panel" hidden>
-    <div class="gmp-track-row">
-      <svg class="gmp-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-        <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-      </svg>
-      <span class="gmp-track-name" id="gmp-track-name">No track selected</span>
-    </div>
-    <div class="gmp-controls-row">
-      <button class="gmp-ctrl" id="mmp-back" title="−10 sec">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm.5 6 8.5 6V6z"/></svg>
-      </button>
-      <button class="gmp-ctrl gmp-play-btn" id="music-toggle-inner" title="Play / Pause">
-        <svg class="gmp-ico-play"  viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-        <svg class="gmp-ico-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-      </button>
-      <button class="gmp-ctrl" id="mmp-fwd" title="+10 sec">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-6 5.5 4-5.5 4V6l5.5 4L8 12z"/></svg>
-      </button>
-      <button class="gmp-ctrl gmp-stop-btn" id="gmp-stop" title="Stop music">
-        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- FAB — always visible -->
-  <button class="gmp-fab" id="gmp-fab" aria-label="Toggle music player" title="Music">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+  <!-- Music note icon + live dot -->
+  <div class="gmp-bar-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
     </svg>
     <span class="gmp-live-dot" id="gmp-live-dot" aria-hidden="true"></span>
-  </button>
+  </div>
+
+  <!-- Track name -->
+  <span class="gmp-track-name" id="gmp-track-name">Ambient Music</span>
+
+  <!-- Controls -->
+  <div class="gmp-bar-controls">
+    <button class="gmp-ctrl" id="mmp-back" title="−10 sec" aria-label="Rewind 10 seconds">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm.5 6 8.5 6V6z"/></svg>
+    </button>
+    <button class="gmp-ctrl gmp-play-btn" id="music-toggle-inner" title="Play / Pause" aria-label="Play or pause music">
+      <svg class="gmp-ico-play"  viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+      <svg class="gmp-ico-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+    <button class="gmp-ctrl" id="mmp-fwd" title="+10 sec" aria-label="Skip forward 10 seconds">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-6 5.5 4-5.5 4V6l5.5 4L8 12z"/></svg>
+    </button>
+    <button class="gmp-ctrl gmp-stop-btn" id="gmp-stop" title="Stop music" aria-label="Stop music">
+      <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+    </button>
+  </div>
 
 </div>
 
@@ -553,8 +548,6 @@
   }
   // ── Global Music Player wiring ───────────────────────────────────────
   const gmpGlobal   = document.getElementById('gmp-global');
-  const gmpPanel    = document.getElementById('gmp-panel');
-  const gmpFab      = document.getElementById('gmp-fab');
   const gmpDot      = document.getElementById('gmp-live-dot');
   const gmpName     = document.getElementById('gmp-track-name');
   const gmpPlayBtn  = document.getElementById('music-toggle-inner');
@@ -577,24 +570,11 @@
     syncGMPIcons();
   }
 
-  // FAB click: toggle panel
-  gmpFab.addEventListener('click', e => {
-    e.stopPropagation();
-    const open = !gmpPanel.hidden;
-    gmpPanel.hidden = open;
-  });
-  // Close panel on outside click
-  document.addEventListener('click', e => {
-    if (!gmpPanel.hidden && !gmpGlobal.contains(e.target)) gmpPanel.hidden = true;
-  });
-  // Stop button
   document.getElementById('gmp-stop').addEventListener('click', e => {
     e.stopPropagation();
     stopMusic();
     localStorage.setItem('theme_music', 'off');
-    gmpPanel.hidden = true;
   });
-  // Sync icons whenever audio state changes
   vibAudio.addEventListener('play',  syncGMPIcons);
   vibAudio.addEventListener('pause', syncGMPIcons);
   vibAudio.addEventListener('ended', syncGMPIcons);
