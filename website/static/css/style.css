@@ -1082,8 +1082,8 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     width: 36px; height: 36px;
     border-radius: 50%;
     background: transparent;
-    border: 1.5px solid rgba(168,85,247,0.35);
-    color: rgba(168,85,247,0.85);
+    border: 1.5px solid rgba(var(--gold-rgb), 0.4);
+    color: rgba(var(--gold-rgb), 0.85);
     display: flex; align-items: center; justify-content: center;
     cursor: pointer;
     transition: border-color 0.25s, color 0.25s, box-shadow 0.25s;
@@ -1091,27 +1091,10 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
 }
 .mp-idle-btn svg { width: 16px; height: 16px; }
 .mp-idle-btn:hover {
-    border-color: #A855F7;
-    color: #A855F7;
-    box-shadow: 0 0 12px rgba(168,85,247,0.35);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 12px rgba(var(--gold-rgb), 0.35);
 }
-
-/* Default (saffron) idle colours */
-:root:not([class*="theme-"]) .mp-idle-btn,
-.mp-idle-btn {
-    border-color: rgba(217,119,6,0.4);
-    color: rgba(217,119,6,0.85);
-}
-:root:not([class*="theme-"]) .mp-idle-btn:hover {
-    border-color: #D97706; color: #D97706;
-    box-shadow: 0 0 12px rgba(217,119,6,0.3);
-}
-.theme-wakanda .mp-idle-btn         { border-color: rgba(168,85,247,0.4); color: rgba(168,85,247,0.85); }
-.theme-wakanda .mp-idle-btn:hover   { border-color: #A855F7; color: #A855F7; box-shadow: 0 0 12px rgba(168,85,247,0.35); }
-.theme-ghost-rider .mp-idle-btn     { border-color: rgba(255,87,34,0.4);  color: rgba(255,87,34,0.85); }
-.theme-ghost-rider .mp-idle-btn:hover { border-color: #FF5722; color: #FF5722; box-shadow: 0 0 12px rgba(255,87,34,0.35); }
-.theme-varanasi .mp-idle-btn        { border-color: rgba(200,104,26,0.4); color: rgba(200,104,26,0.85); }
-.theme-varanasi .mp-idle-btn:hover  { border-color: #C8681A; color: #C8681A; box-shadow: 0 0 12px rgba(200,104,26,0.35); }
 
 /* Expanded player pill */
 .mp-expanded {
@@ -1121,21 +1104,16 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     background: rgba(15,10,25,0.6);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(168,85,247,0.3);
+    border: 1px solid rgba(var(--gold-rgb), 0.35);
     border-radius: 24px;
     padding: 5px 10px 5px 6px;
     animation: mpSlideIn 0.25s cubic-bezier(.34,1.4,.64,1);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 0 1px rgba(168,85,247,0.08);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 16px rgba(var(--gold-rgb), 0.1);
 }
 @keyframes mpSlideIn {
     from { opacity: 0; transform: scale(0.88) translateX(6px); }
     to   { opacity: 1; transform: scale(1) translateX(0); }
 }
-
-/* Theme border tints */
-.theme-wakanda    .mp-expanded { border-color: rgba(168,85,247,0.4); box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 16px rgba(168,85,247,0.1); }
-.theme-ghost-rider .mp-expanded { border-color: rgba(255,87,34,0.4); box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 16px rgba(255,87,34,0.1); }
-.theme-varanasi   .mp-expanded { border-color: rgba(200,104,26,0.4); box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 16px rgba(200,104,26,0.1); }
 
 /* Control buttons inside pill */
 .mp-ctrl {
@@ -1144,33 +1122,20 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     background: none;
     border: none;
     cursor: pointer;
-    color: rgba(168,85,247,0.7);
+    color: rgba(var(--gold-rgb), 0.7);
     display: flex; align-items: center; justify-content: center;
     transition: background 0.2s, color 0.2s, transform 0.15s;
     flex-shrink: 0;
     padding: 0;
 }
 .mp-ctrl svg { width: 15px; height: 15px; }
-.mp-ctrl:hover { color: #A855F7; background: rgba(168,85,247,0.12); transform: scale(1.1); }
+.mp-ctrl:hover { color: var(--accent); background: rgba(var(--gold-rgb), 0.12); transform: scale(1.1); }
 .mp-ctrl:active { transform: scale(0.92); }
 
 /* Play/pause is slightly larger */
-.mp-ctrl.mp-play { width: 30px; height: 30px; background: rgba(168,85,247,0.15); }
+.mp-ctrl.mp-play { width: 30px; height: 30px; background: rgba(var(--gold-rgb), 0.15); }
 .mp-ctrl.mp-play svg { width: 16px; height: 16px; }
-.mp-ctrl.mp-play:hover { background: rgba(168,85,247,0.28); }
-
-/* Theme control colours */
-.theme-ghost-rider .mp-ctrl { color: rgba(255,87,34,0.75); }
-.theme-ghost-rider .mp-ctrl:hover { color: #FF5722; background: rgba(255,87,34,0.12); }
-.theme-ghost-rider .mp-ctrl.mp-play { background: rgba(255,87,34,0.15); }
-.theme-ghost-rider .mp-ctrl.mp-play:hover { background: rgba(255,87,34,0.28); }
-.theme-varanasi .mp-ctrl { color: rgba(200,104,26,0.75); }
-.theme-varanasi .mp-ctrl:hover { color: #C8681A; background: rgba(200,104,26,0.12); }
-.theme-varanasi .mp-ctrl.mp-play { background: rgba(200,104,26,0.15); }
-.theme-varanasi .mp-ctrl.mp-play:hover { background: rgba(200,104,26,0.28); }
-:root:not([class*="theme-"]) .mp-ctrl { color: rgba(217,119,6,0.75); }
-:root:not([class*="theme-"]) .mp-ctrl:hover { color: #D97706; background: rgba(217,119,6,0.12); }
-:root:not([class*="theme-"]) .mp-ctrl.mp-play { background: rgba(217,119,6,0.15); }
+.mp-ctrl.mp-play:hover { background: rgba(var(--gold-rgb), 0.28); }
 
 /* Scrolling title */
 .mp-title-track {
@@ -1209,8 +1174,8 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
 /* Vibranium Music Button */
 .nav-music-btn {
     background: transparent;
-    border: 1.5px solid rgba(168, 85, 247, 0.4);
-    color: #A855F7;
+    border: 1.5px solid rgba(var(--gold-rgb), 0.4);
+    color: var(--accent);
     width: 38px;
     height: 38px;
     border-radius: 50%;
@@ -1223,21 +1188,21 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
 }
 
 .nav-music-btn:hover {
-    background: rgba(168, 85, 247, 0.1);
-    border-color: #A855F7;
-    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    background: rgba(var(--gold-rgb), 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(var(--gold-rgb), 0.4);
 }
 
 .nav-music-btn.playing {
-    border-color: #A855F7;
-    background: rgba(168, 85, 247, 0.15);
+    border-color: var(--accent);
+    background: rgba(var(--gold-rgb), 0.15);
     animation: music-pulse 2s infinite ease-in-out;
 }
 
 @keyframes music-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.6); }
-    70% { box-shadow: 0 0 0 8px rgba(168, 85, 247, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(var(--gold-rgb), 0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(var(--gold-rgb), 0); }
+    100% { box-shadow: 0 0 0 0 rgba(var(--gold-rgb), 0); }
 }
 
 .k-topbar .nav-brand {

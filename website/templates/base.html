@@ -523,10 +523,10 @@
   const musicToggle = document.getElementById('music-toggle');
   const vibAudio    = document.getElementById('vib-audio');
   const THEME_MUSIC = {
-    saffron:      { file: 'saffron.mp3',      title: 'Vande Mataram — A.R. Rahman' },
-    wakanda:      { file: 'wakanda.mp3',      title: 'All The Stars — Kendrick Lamar & SZA' },
-    'ghost-rider':{ file: 'ghost-rider.mp3',  title: 'Ghost Riders In The Sky — Spiderbait' },
-    varanasi:     { file: 'varanasi.mp3',     title: 'Varanasi — MM Keeravaani & SS Rajamouli' },
+    saffron:      { file: 'saffron.mp3',     title: 'Vande Mataram — A.R. Rahman',            startAt: 0  },
+    wakanda:      { file: 'wakanda.mp3',     title: 'All The Stars — Kendrick Lamar & SZA',   startAt: 0  },
+    'ghost-rider':{ file: 'ghost-rider.mp3', title: 'Ghost Riders In The Sky — Spiderbait',   startAt: 0  },
+    varanasi:     { file: 'varanasi.mp3',    title: 'Sanchaari — MM Keeravani & Shruti Haasan', startAt: 22 },
     contrast:     null,
   };
   function songUrlFor(theme) {
@@ -558,13 +558,18 @@
     updateMiniBar();
   }
 
-  function playMusic(url) {
+  function playMusic(url, startAt) {
+    startAt = startAt || 0;
     const absUrl = location.origin + url;
     if (vibAudio.src !== absUrl) {
       vibAudio.src = url;
       vibAudio.addEventListener('loadedmetadata', () => {
-        const pos = parseFloat(localStorage.getItem('music_pos') || 0);
-        if (pos > 0 && pos < vibAudio.duration - 2) vibAudio.currentTime = pos;
+        const savedPos = parseFloat(localStorage.getItem('music_pos') || 0);
+        if (savedPos > startAt && savedPos < vibAudio.duration - 2) {
+          vibAudio.currentTime = savedPos;
+        } else {
+          vibAudio.currentTime = startAt;
+        }
         vibAudio.play().catch(() => {});
       }, { once: true });
     } else {
@@ -602,7 +607,7 @@
       musicToggle.title = music.title;
       musicToggle.setAttribute('aria-label', 'Toggle: ' + music.title);
       if (localStorage.getItem('theme_music') === 'on' && !isPlaying()) {
-        playMusic(songUrlFor(t));
+        playMusic(songUrlFor(t), music.startAt || 0);
       }
     } else {
       playerWrap.style.display = 'none';
@@ -928,7 +933,8 @@ void main(){
     // Swap music track if music is on
     if (localStorage.getItem('theme_music') === 'on') {
       const url = songUrlFor(name);
-      if (url) playMusic(url); else stopMusic();
+      const m = THEME_MUSIC[name];
+      if (url) playMusic(url, m ? m.startAt || 0 : 0); else stopMusic();
     }
     updateThemeUI();
     flashRipple();
@@ -995,8 +1001,8 @@ void main(){
       stopMusic();
       localStorage.setItem('theme_music', 'off');
     } else {
-      const url = songUrlFor(currentTheme());
-      if (url) { playMusic(url); localStorage.setItem('theme_music', 'on'); }
+      const t = currentTheme(); const m = THEME_MUSIC[t]; const url = songUrlFor(t);
+      if (url) { playMusic(url, m ? m.startAt || 0 : 0); localStorage.setItem('theme_music', 'on'); }
     }
     refreshKebabLabels();
   });
@@ -1007,14 +1013,15 @@ void main(){
       stopMusic();
       localStorage.setItem('theme_music', 'off');
     } else {
-      const url = songUrlFor(currentTheme());
-      if (url) { playMusic(url); localStorage.setItem('theme_music', 'on'); }
+      const t = currentTheme(); const m = THEME_MUSIC[t]; const url = songUrlFor(t);
+      if (url) { playMusic(url, m ? m.startAt || 0 : 0); localStorage.setItem('theme_music', 'on'); }
     }
   });
 
   document.getElementById('mmp-back').addEventListener('click', (e) => {
     e.stopPropagation();
-    vibAudio.currentTime = Math.max(0, vibAudio.currentTime - 10);
+    const m = THEME_MUSIC[currentTheme()];
+    vibAudio.currentTime = Math.max(m ? m.startAt || 0 : 0, vibAudio.currentTime - 10);
   });
   document.getElementById('mmp-fwd').addEventListener('click', (e) => {
     e.stopPropagation();
@@ -1025,8 +1032,8 @@ void main(){
     if (isPlaying()) {
       stopMusic(); localStorage.setItem('theme_music', 'off');
     } else {
-      const url = songUrlFor(currentTheme());
-      if (url) { playMusic(url); localStorage.setItem('theme_music', 'on'); }
+      const t = currentTheme(); const m = THEME_MUSIC[t]; const url = songUrlFor(t);
+      if (url) { playMusic(url, m ? m.startAt || 0 : 0); localStorage.setItem('theme_music', 'on'); }
     }
   });
 
