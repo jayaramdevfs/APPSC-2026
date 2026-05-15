@@ -474,9 +474,7 @@
     {% block content %}{% endblock %}
 </main>
 
-<div id="vibranium-music-container" style="display:none;">
-  <iframe id="vib-audio" width="0" height="0" src="" frameborder="0" allow="autoplay"></iframe>
-</div>
+<audio id="vib-audio" loop preload="none" style="display:none;"></audio>
 
 <script>
   const navToggle  = document.getElementById('nav-toggle');
@@ -507,26 +505,29 @@
   const musicToggle = document.getElementById('music-toggle');
   const vibAudio    = document.getElementById('vib-audio');
   const THEME_MUSIC = {
-    saffron:      { id: 'jDn2bn7_YSM', title: 'Vande Mataram — A.R. Rahman' },
-    wakanda:      { id: 'vdXsLt0o_9g', title: 'All The Stars — Kendrick Lamar & SZA' },
-    'ghost-rider':{ id: 'wWd3Ti7QzkY', title: 'Ghost Riders In The Sky — Spiderbait' },
-    varanasi:     { id: '5KIZ674msxI', title: 'Ganga Aarti — Kashi Vishwanath Ghat' },
+    saffron:      { file: 'saffron.mp3',      title: 'Vande Mataram — A.R. Rahman' },
+    wakanda:      { file: 'wakanda.mp3',      title: 'All The Stars — Kendrick Lamar & SZA' },
+    'ghost-rider':{ file: 'ghost-rider.mp3',  title: 'Ghost Riders In The Sky — Spiderbait' },
+    varanasi:     { file: 'varanasi.mp3',     title: 'Ganga Aarti — Kashi Vishwanath Ghat' },
     contrast:     null,
   };
   function songUrlFor(theme) {
     const m = THEME_MUSIC[theme];
-    if (!m) return '';
-    return 'https://www.youtube.com/embed/' + m.id + '?autoplay=1&mute=0&loop=1&playlist=' + m.id;
+    return m ? '/static/audio/' + m.file : '';
   }
   function isPlaying() {
-    return vibAudio.src && vibAudio.src.includes('youtube.com/embed');
+    return !vibAudio.paused;
   }
   function stopMusic() {
-    vibAudio.removeAttribute('src');
+    vibAudio.pause();
+    vibAudio.currentTime = 0;
     musicToggle.classList.remove('playing');
   }
   function playMusic(url) {
-    vibAudio.src = url;
+    if (vibAudio.src !== location.origin + url) {
+      vibAudio.src = url;
+    }
+    vibAudio.play().catch(() => {});
     musicToggle.classList.add('playing');
   }
 
@@ -569,12 +570,11 @@
     });
   }
 
-  // Force play on first document click if browser blocked autoplay
-  document.addEventListener('click', function startMusicOnInteraction() {
-     const t = currentTheme();
-     if (THEME_MUSIC[t] && localStorage.getItem('theme_music') === 'on' && !isPlaying()) {
-        playMusic(songUrlFor(t));
-     }
+  // Resume on first interaction if autoplay was blocked
+  document.addEventListener('click', function() {
+    if (localStorage.getItem('theme_music') === 'on' && vibAudio.paused && vibAudio.src) {
+      vibAudio.play().catch(() => {});
+    }
   }, { once: true });
 
   function flashRipple() {
