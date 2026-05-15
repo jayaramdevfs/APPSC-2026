@@ -3070,6 +3070,38 @@ async def api_ca_stats(request: Request):
     return JSONResponse({"total": total, "streak": streak})
 
 
+async def api_ca_heatmap(request: Request):
+    """GET 90-day heatmap: available CA dates + user read dates."""
+    from datetime import timedelta
+    user = get_current_user(request)
+    today_d = date.today()
+    start_d = today_d - timedelta(days=89)  # 90 days inclusive
+
+    # All CA file dates in range
+    all_ca = sorted([
+        f.stem for f in CA_DIR.glob("*.md")
+        if re.match(r"\d{4}-\d{2}-\d{2}", f.stem)
+        and start_d.isoformat() <= f.stem <= today_d.isoformat()
+    ])
+
+    read_dates: list = []
+    if user:
+        con = sqlite3.connect(DB_PATH)
+        rows = con.execute(
+            "SELECT ca_date FROM ca_reads WHERE user_id=? AND ca_date>=? AND ca_date<=?",
+            (user["id"], start_d.isoformat(), today_d.isoformat())
+        ).fetchall()
+        con.close()
+        read_dates = [r[0] for r in rows]
+
+    return JSONResponse({
+        "available_dates": all_ca,
+        "read_dates": read_dates,
+        "start": start_d.isoformat(),
+        "end": today_d.isoformat(),
+    })
+
+
 # ---------------------------------------------------------------------------
 # Progress API — 1-4-7 revision tracker
 # ---------------------------------------------------------------------------
@@ -4515,6 +4547,7 @@ routes = [
     Route("/api/ca/mark-read",                    api_ca_mark_read,        methods=["POST"]),
     Route("/api/ca/read-status/{year}/{month}",   api_ca_read_status),
     Route("/api/ca/stats",                        api_ca_stats),
+    Route("/api/ca/heatmap",                      api_ca_heatmap),
     Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
     Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
     Route("/api/progress/due-today",              api_due_today),

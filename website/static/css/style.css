@@ -3139,6 +3139,73 @@ a.nav-user-badge:hover {
     margin-bottom: 1.25rem;
 }
 
+/* CA Reading Heatmap card */
+.ca-heatmap-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+    box-shadow: var(--shadow);
+}
+
+.ca-heatmap-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.ca-heatmap-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--white);
+}
+
+.ca-heatmap-legend {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+
+.ca-hm-swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+}
+
+.ca-hm-swatch.ca-hm-none   { background: var(--inset); }
+.ca-hm-swatch.ca-hm-unread { background: #374151; }
+.ca-hm-swatch.ca-hm-read   { background: var(--gold); }
+
+.ca-heatmap-grid {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    gap: 3px;
+}
+
+.ca-hm-cell {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    transition: transform 0.15s;
+}
+
+.ca-hm-cell:hover { transform: scale(1.4); z-index: 1; position: relative; }
+
+.ca-hm-pad    { background: transparent; border-color: transparent; }
+.ca-hm-none   { background: var(--inset); border-color: var(--border); }
+.ca-hm-unread { background: #374151; border-color: #4B5563; }
+.ca-hm-read   { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 4px rgba(217,119,6,0.3); }
+
 .dash-card {
     background: var(--card);
     border: 1px solid var(--border);

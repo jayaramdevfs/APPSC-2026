@@ -24,6 +24,7 @@
     <div class="dash-stat"><span class="dash-stat-val" id="stat-mastered">—</span><span class="dash-stat-label">Mastered</span></div>
     <div class="dash-stat"><span class="dash-stat-val" id="stat-streak">—</span><span class="dash-stat-label">Day Streak</span></div>
     <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label">Due Today</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-ca-read">—</span><span class="dash-stat-label">CA Read</span></div>
 </div>
 
 <!-- Curriculum Heatmap (The Heart) -->
@@ -175,6 +176,21 @@
 
 </div>
 
+<!-- CA Reading Heatmap -->
+<div class="ca-heatmap-card" id="ca-heatmap-card">
+  <div class="ca-heatmap-header">
+    <span class="ca-heatmap-title">&#128240; CA Reading — Last 90 Days</span>
+    <span class="ca-heatmap-legend">
+      <span class="ca-hm-swatch ca-hm-none"></span>No file
+      <span class="ca-hm-swatch ca-hm-unread"></span>Unread
+      <span class="ca-hm-swatch ca-hm-read"></span>Read
+    </span>
+  </div>
+  <div class="ca-heatmap-grid" id="ca-heatmap-grid">
+    <div style="color:var(--faint);font-size:0.8rem;padding:0.5rem">Loading…</div>
+  </div>
+</div>
+
 <!-- Study Plan -->
 <div class="dash-card-title" style="margin-bottom: 0.75rem; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);">Today's Study Plan</div>
 <div class="dash-plan-grid">
@@ -307,6 +323,51 @@ fetch('/api/progress/due-today')
     .catch(() => {
         document.getElementById('stat-due').textContent = '?';
     });
+
+// ---- Load CA heatmap ----
+fetch('/api/ca/heatmap')
+  .then(r => r.json())
+  .then(data => {
+    const available = new Set(data.available_dates || []);
+    const read      = new Set(data.read_dates || []);
+    const startStr  = data.start;
+    const endStr    = data.end;
+    if (!startStr) return;
+
+    // Build 90-day date array
+    const days = [];
+    const cur  = new Date(startStr + 'T00:00:00');
+    const end  = new Date(endStr   + 'T00:00:00');
+    while (cur <= end) {
+      days.push(cur.toISOString().slice(0, 10));
+      cur.setDate(cur.getDate() + 1);
+    }
+
+    // Update stat
+    document.getElementById('stat-ca-read').textContent = read.size;
+
+    // Pad to start on Sunday
+    const firstDow = new Date(days[0] + 'T00:00:00').getDay();
+    const grid = document.getElementById('ca-heatmap-grid');
+    let html = '';
+    for (let i = 0; i < firstDow; i++) html += '<div class="ca-hm-cell ca-hm-pad"></div>';
+    days.forEach(d => {
+      let cls = 'ca-hm-cell';
+      const isAvail = available.has(d);
+      const isRead  = read.has(d);
+      if (isRead)        cls += ' ca-hm-read';
+      else if (isAvail)  cls += ' ca-hm-unread';
+      else               cls += ' ca-hm-none';
+      const label = isRead ? d + ' ✓' : isAvail ? d + ' (unread)' : d;
+      const nav   = isAvail ? `onclick="location='/current-affairs'"` : '';
+      const cursor = isAvail ? 'style="cursor:pointer"' : '';
+      html += `<div class="${cls}" title="${label}" ${nav} ${cursor}></div>`;
+    });
+    grid.innerHTML = html;
+  })
+  .catch(() => {
+    document.getElementById('stat-ca-read').textContent = '?';
+  });
 
 // ---- Load CA preview ----
 fetch('/api/ca/content/' + TODAY)
