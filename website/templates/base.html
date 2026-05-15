@@ -539,7 +539,6 @@
 
   // ── Theme & Music Toggle Logic ────────────────────────────────────────
   const themeToggle = document.getElementById('theme-toggle');
-  const musicToggle = document.getElementById('music-toggle');
   const vibAudio    = document.getElementById('vib-audio');
   const THEME_MUSIC = {
     saffron:      { file: 'saffron.mp3',     title: 'Vande Mataram — A.R. Rahman',            startAt: 0  },
@@ -1050,17 +1049,6 @@ void main(){
     refreshKebabLabels();
   });
 
-  musicToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (isPlaying()) {
-      stopMusic();
-      localStorage.setItem('theme_music', 'off');
-    } else {
-      const t = currentTheme(); const m = THEME_MUSIC[t]; const url = songUrlFor(t);
-      if (url) { playMusic(url, m ? m.startAt || 0 : 0); localStorage.setItem('theme_music', 'on'); }
-    }
-  });
-
   document.getElementById('mmp-back').addEventListener('click', (e) => {
     e.stopPropagation();
     const m = THEME_MUSIC[currentTheme()];
@@ -1206,7 +1194,7 @@ void main(){
             if (document.querySelector(`script[src="${inert.src}"]`)) return;
             live.src = inert.src;
           } else {
-            live.textContent = inert.textContent;
+            live.textContent = '(function(){\n' + inert.textContent + '\n})();';
           }
           inert.parentNode.replaceChild(live, inert);
         });
