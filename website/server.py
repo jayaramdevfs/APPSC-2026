@@ -191,6 +191,16 @@ def init_db() -> None:
             UNIQUE(user_id, ca_date)
         )
     """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS ca_quiz_attempts (
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id      INTEGER NOT NULL,
+            ca_date      TEXT NOT NULL,
+            score        INTEGER NOT NULL,
+            total        INTEGER NOT NULL,
+            attempted_at TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
     con.commit()
 
     # Admin — password overrideable via ADMIN_PASSWORD env var on Render
@@ -3116,6 +3126,95 @@ async def api_ca_digest(request: Request):
     return JSONResponse({"entries": entries})
 
 
+async def api_ca_quiz(request: Request):
+    """GET quiz questions embedded in a CA markdown file as <!-- QUIZ [...] -->."""
+    date_str = request.path_params["date"]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date"}, status_code=400)
+    ca_file = CA_DIR / f"{date_str}.md"
+    if not ca_file.exists():
+        return JSONResponse({"questions": []})
+    text = ca_file.read_text(encoding="utf-8")
+    m = re.search(r'<!--\s*QUIZ\s*([\s\S]*?)-->', text)
+    if not m:
+        return JSONResponse({"questions": []})
+    try:
+        import json as _json
+        questions = _json.loads(m.group(1).strip())
+        # Strip answers from response so client can't cheat via DevTools
+        safe = [{"q": q["q"], "opts": q["opts"]} for q in questions]
+        return JSONResponse({"questions": safe, "count": len(safe)})
+    except Exception:
+        return JSONResponse({"questions": [], "error": "Quiz parse error"})
+
+
+async def api_ca_quiz_check(request: Request):
+    """POST {"date": "YYYY-MM-DD", "answers": [0,2,1,...]} — check answers, save attempt."""
+    user = get_current_user(request)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    date_str = str(body.get("date", "")).strip()
+    answers  = body.get("answers", [])
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date"}, status_code=400)
+    ca_file = CA_DIR / f"{date_str}.md"
+    if not ca_file.exists():
+        return JSONResponse({"error": "File not found"}, status_code=404)
+    text = ca_file.read_text(encoding="utf-8")
+    m = re.search(r'<!--\s*QUIZ\s*([\s\S]*?)-->', text)
+    if not m:
+        return JSONResponse({"error": "No quiz"}, status_code=404)
+    try:
+        import json as _json
+        questions = _json.loads(m.group(1).strip())
+    except Exception:
+        return JSONResponse({"error": "Quiz parse error"}, status_code=500)
+
+    score = 0
+    results = []
+    for i, q in enumerate(questions):
+        correct = q.get("ans", -1)
+        given   = answers[i] if i < len(answers) else -1
+        is_correct = (given == correct)
+        if is_correct:
+            score += 1
+        results.append({
+            "correct": is_correct,
+            "correct_idx": correct,
+            "explanation": q.get("exp", ""),
+        })
+
+    if user:
+        con = sqlite3.connect(DB_PATH)
+        con.execute(
+            "INSERT INTO ca_quiz_attempts (user_id, ca_date, score, total) VALUES (?,?,?,?)",
+            (user["id"], date_str, score, len(questions))
+        )
+        con.commit()
+        con.close()
+
+    return JSONResponse({"score": score, "total": len(questions), "results": results})
+
+
+async def api_ca_quiz_history(request: Request):
+    """GET past quiz attempts for a given date."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"attempts": []})
+    date_str = request.path_params["date"]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT score, total, attempted_at FROM ca_quiz_attempts WHERE user_id=? AND ca_date=? ORDER BY attempted_at DESC LIMIT 5",
+        (user["id"], date_str)
+    ).fetchall()
+    con.close()
+    return JSONResponse({"attempts": [{"score": r[0], "total": r[1], "at": r[2]} for r in rows]})
+
+
 async def api_ca_heatmap(request: Request):
     """GET 90-day heatmap: available CA dates + user read dates."""
     from datetime import timedelta
@@ -4596,6 +4695,9 @@ routes = [
     Route("/api/ca/heatmap",                      api_ca_heatmap),
     Route("/current-affairs/digest/{year}/{month}", ca_digest_page),
     Route("/api/ca/digest/{year}/{month}",        api_ca_digest),
+    Route("/api/ca/quiz/submit",                  api_ca_quiz_check,       methods=["POST"]),
+    Route("/api/ca/quiz/history/{date}",          api_ca_quiz_history),
+    Route("/api/ca/quiz/{date}",                  api_ca_quiz),
     Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
     Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
     Route("/api/progress/due-today",              api_due_today),

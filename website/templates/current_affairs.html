@@ -37,10 +37,12 @@
     </div>
     <div class="ca-filter-bar" id="ca-filter-bar" style="display:none">
       <button class="ca-filter-btn" id="appsc-filter-btn" onclick="toggleAPPSCFilter()">&#11088; Show APPSC Only</button>
+      <button class="ca-filter-btn ca-quiz-btn" id="quiz-btn" onclick="loadQuiz()" style="display:none">&#129504; Test Yourself</button>
     </div>
     <div class="ca-content-body" id="ca-content-body">
       <div class="ca-loading">Fetching latest current affairs&hellip;</div>
     </div>
+    <div class="ca-quiz-section" id="ca-quiz-section" style="display:none"></div>
   </div>
 </div>
 
@@ -193,11 +195,15 @@ function selectDay(day) {
      ${isLatest && !todayInRange ? '<span class="ca-latest-badge">Latest</span>' : ''}
      <span class="ca-date-iso">${dateStr}</span>`;
 
-  // Reset filter bar
+  // Reset filter bar and quiz
   const filterBar = document.getElementById('ca-filter-bar');
   const filterBtn = document.getElementById('appsc-filter-btn');
+  const quizBtn   = document.getElementById('quiz-btn');
+  const quizSec   = document.getElementById('ca-quiz-section');
   if (filterBar) filterBar.style.display = 'none';
   if (filterBtn) filterBtn.textContent = '⭐ Show APPSC Only';
+  if (quizBtn)   quizBtn.style.display = 'none';
+  if (quizSec)   { quizSec.style.display = 'none'; quizSec.innerHTML = ''; }
 
   const body = document.getElementById('ca-content-body');
   body.innerHTML = '<div class="ca-loading">Loading&hellip;</div>';
@@ -214,6 +220,10 @@ function selectDay(day) {
       } else {
         body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(md)}</div>`;
         if (filterBar) filterBar.style.display = '';
+        // Check if quiz exists for this date
+        fetch('/api/ca/quiz/' + dateStr).then(r => r.json()).then(qd => {
+          if (qd.count > 0 && quizBtn) quizBtn.style.display = '';
+        }).catch(() => {});
         // Auto-mark as read
         fetch('/api/ca/mark-read', {
           method: 'POST',
@@ -268,6 +278,114 @@ function toggleAPPSCFilter() {
     body.dataset.filtered = 'false';
     btn.textContent = '⭐ Show APPSC Only';
   }
+}
+
+// ---- Quiz ----
+let quizQuestions = [];
+let quizAnswers   = [];
+
+function loadQuiz() {
+  const sec = document.getElementById('ca-quiz-section');
+  const btn = document.getElementById('quiz-btn');
+  if (!sec || !activeDay) return;
+  const dateStr = `${YEAR}-${String(activeMonth).padStart(2,'0')}-${String(activeDay).padStart(2,'0')}`;
+
+  if (sec.style.display !== 'none') {
+    sec.style.display = 'none';
+    btn.textContent = '🧠 Test Yourself';
+    return;
+  }
+
+  sec.style.display = '';
+  sec.innerHTML = '<div class="ca-loading" style="padding:1rem">Loading quiz&hellip;</div>';
+  btn.textContent = '✕ Close Quiz';
+
+  fetch('/api/ca/quiz/' + dateStr).then(r => r.json()).then(data => {
+    quizQuestions = data.questions || [];
+    quizAnswers   = new Array(quizQuestions.length).fill(-1);
+    if (!quizQuestions.length) {
+      sec.innerHTML = '<p style="padding:1rem;color:var(--muted)">No quiz available for this entry yet.</p>';
+      return;
+    }
+    renderQuiz(sec, dateStr);
+  }).catch(() => {
+    sec.innerHTML = '<p style="padding:1rem;color:var(--muted)">Could not load quiz.</p>';
+  });
+}
+
+function renderQuiz(sec, dateStr) {
+  let html = '<div class="quiz-container">';
+  html += `<div class="quiz-title">&#129504; Test Yourself — ${quizQuestions.length} question${quizQuestions.length > 1 ? 's' : ''}</div>`;
+  quizQuestions.forEach((q, qi) => {
+    html += `<div class="quiz-q" id="quiz-q-${qi}">`;
+    html += `<div class="quiz-q-text"><span class="quiz-q-num">${qi+1}.</span> ${escHtmlQ(q.q)}</div>`;
+    html += `<div class="quiz-opts">`;
+    q.opts.forEach((opt, oi) => {
+      html += `<button class="quiz-opt" data-qi="${qi}" data-oi="${oi}" onclick="selectQuizOpt(this,${qi},${oi})">${String.fromCharCode(65+oi)}. ${escHtmlQ(opt)}</button>`;
+    });
+    html += `</div><div class="quiz-explanation" id="quiz-exp-${qi}" style="display:none"></div>`;
+    html += `</div>`;
+  });
+  html += `<div class="quiz-actions">
+    <button class="quiz-submit-btn" onclick="submitQuiz('${dateStr}')">Submit Answers</button>
+  </div>`;
+  html += `<div class="quiz-score-card" id="quiz-score-card" style="display:none"></div>`;
+  html += '</div>';
+  sec.innerHTML = html;
+}
+
+function selectQuizOpt(btn, qi, oi) {
+  quizAnswers[qi] = oi;
+  // Highlight selected option, deselect others
+  const row = document.getElementById(`quiz-q-${qi}`);
+  row.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function submitQuiz(dateStr) {
+  const submitBtn = document.querySelector('.quiz-submit-btn');
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Checking…'; }
+  fetch('/api/ca/quiz/submit', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({date: dateStr, answers: quizAnswers})
+  }).then(r => r.json()).then(data => {
+    // Reveal correct/wrong on each question
+    data.results.forEach((res, qi) => {
+      const row  = document.getElementById(`quiz-q-${qi}`);
+      const expEl = document.getElementById(`quiz-exp-${qi}`);
+      row.querySelectorAll('.quiz-opt').forEach((b, oi) => {
+        if (oi === res.correct_idx) b.classList.add('correct');
+        else if (oi === quizAnswers[qi] && !res.correct) b.classList.add('wrong');
+        b.disabled = true;
+      });
+      if (res.explanation && expEl) {
+        expEl.textContent = '💡 ' + res.explanation;
+        expEl.style.display = '';
+      }
+    });
+    // Show score card
+    const scoreCard = document.getElementById('quiz-score-card');
+    if (scoreCard) {
+      const pct = Math.round(data.score / data.total * 100);
+      const emoji = pct >= 80 ? '🏆' : pct >= 60 ? '👍' : '📖';
+      scoreCard.innerHTML = `
+        <div class="quiz-score-emoji">${emoji}</div>
+        <div class="quiz-score-num">${data.score} / ${data.total}</div>
+        <div class="quiz-score-pct">${pct}% correct</div>
+        <div class="quiz-score-msg">${pct >= 80 ? 'Excellent!' : pct >= 60 ? 'Good effort — review the explanations.' : 'Re-read the entry and try again.'}</div>
+        <button class="quiz-retry-btn" onclick="loadQuiz();setTimeout(()=>loadQuiz(),50)">Try Again</button>
+      `;
+      scoreCard.style.display = '';
+    }
+    if (submitBtn) submitBtn.style.display = 'none';
+  }).catch(() => {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Answers'; }
+  });
+}
+
+function escHtmlQ(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
 // Init: load current month, auto-select latest available
