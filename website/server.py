@@ -4174,6 +4174,101 @@ async def api_all_pins(request: Request):
     return JSONResponse({"pins": grouped})
 
 
+# ── Profile Page & Update API ─────────────────────────────────────────────────
+
+async def profile_page(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute(
+        "SELECT username, display_name, email, role, created_at FROM users WHERE id=?",
+        (user["id"],)
+    ).fetchone()
+    topics_count   = con.execute("SELECT COUNT(*) FROM topic_progress WHERE user_id=?", (user["id"],)).fetchone()[0]
+    revisions_count = con.execute("SELECT COUNT(*) FROM revision_log WHERE user_id=?", (user["id"],)).fetchone()[0]
+    pins_count     = con.execute("SELECT COUNT(*) FROM paragraph_pins WHERE user_id=?", (user["id"],)).fetchone()[0]
+    minutes_total  = con.execute("SELECT COALESCE(SUM(minutes_spent),0) FROM topic_progress WHERE user_id=?", (user["id"],)).fetchone()[0]
+    con.close()
+    return templates.TemplateResponse(request, "profile.html", {
+        "current_user": user,
+        "profile": {
+            "username":     row["username"],
+            "display_name": row["display_name"],
+            "email":        row["email"] or "",
+            "role":         row["role"],
+            "joined":       (row["created_at"] or "")[:10],
+        },
+        "stats": {
+            "topics":    topics_count,
+            "revisions": revisions_count,
+            "pins":      pins_count,
+            "minutes":   minutes_total,
+        },
+    })
+
+
+async def api_profile_update(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    display_name = str(body.get("display_name", "")).strip()
+    email        = str(body.get("email", "")).strip()
+    if not display_name:
+        return JSONResponse({"error": "Display name cannot be empty"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    con.execute("UPDATE users SET display_name=?, email=? WHERE id=?",
+                (display_name, email or None, user["id"]))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True, "display_name": display_name})
+
+
+# ── Leaderboard Page ──────────────────────────────────────────────────────────
+
+async def leaderboard_page(request: Request):
+    user = get_current_user(request)
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute("""
+        SELECT
+            u.id,
+            u.display_name,
+            u.username,
+            COUNT(DISTINCT tp.topic_id)  AS topics,
+            COUNT(DISTINCT rl.id)        AS revisions,
+            COALESCE(SUM(tp.minutes_spent), 0) AS minutes
+        FROM users u
+        LEFT JOIN topic_progress tp ON tp.user_id = u.id
+        LEFT JOIN revision_log   rl ON rl.user_id = u.id
+        WHERE u.role = 'student' AND u.is_active = 1
+        GROUP BY u.id
+        ORDER BY (COUNT(DISTINCT tp.topic_id)*10 + COUNT(DISTINCT rl.id)*5) DESC
+        LIMIT 50
+    """).fetchall()
+    con.close()
+    leaders = []
+    for i, r in enumerate(rows):
+        leaders.append({
+            "rank":         i + 1,
+            "user_id":      r["id"],
+            "display_name": r["display_name"],
+            "username":     r["username"],
+            "topics":       r["topics"],
+            "revisions":    r["revisions"],
+            "minutes":      r["minutes"],
+            "score":        r["topics"] * 10 + r["revisions"] * 5,
+            "is_me":        bool(user and r["id"] == user["id"]),
+        })
+    return templates.TemplateResponse(request, "leaderboard.html", {
+        "current_user": user,
+        "leaders":      leaders,
+    })
+
+
 # ── Topic Status API (for revision badge) ─────────────────────────────────────
 
 async def api_topic_status(request: Request):
@@ -4365,6 +4460,9 @@ routes = [
     Route("/api/pins",                            api_all_pins,             methods=["GET"]),
     Route("/api/progress/topic-status/{topic_id}", api_topic_status,        methods=["GET"]),
     Route("/api/mcqs/{topic_id}",                 api_get_mcqs,             methods=["GET"]),
+    Route("/profile",                             profile_page),
+    Route("/api/profile/update",                  api_profile_update,      methods=["POST"]),
+    Route("/leaderboard",                         leaderboard_page),
     Route("/last-day-revision",                   last_day_revision),
     Route("/study-desk/{topic_id}",               study_desk),
     Route("/practice/{topic_id}",                 practice_page),

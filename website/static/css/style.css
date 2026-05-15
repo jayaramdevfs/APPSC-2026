@@ -5293,3 +5293,147 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
     font-weight: 600;
 }
 .ph-ca-read-link:hover { text-decoration: underline; }
+
+/* ==========================================================
+   PROFILE PAGE
+   ========================================================== */
+.prof-page { max-width: 760px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+.prof-header { margin-bottom: 1.5rem; }
+.prof-body { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.prof-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+}
+
+.prof-identity { display: flex; align-items: center; gap: 1.25rem; }
+.prof-avatar {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--accent); color: #111;
+    font-size: 1.8rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.prof-name { font-size: 1.3rem; font-weight: 700; color: var(--text); }
+.prof-username { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+.prof-badge {
+    display: inline-block; margin-top: 6px;
+    padding: 2px 10px; border-radius: 20px;
+    background: rgba(217,119,6,0.12); color: var(--gold);
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+}
+.prof-joined { font-size: 0.78rem; color: var(--faint); margin-top: 4px; }
+
+.prof-stats {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+}
+.prof-stat {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1rem; text-align: center;
+}
+.prof-stat-val { font-size: 1.6rem; font-weight: 800; color: var(--gold); }
+.prof-stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.prof-section-title { font-size: 0.9rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 1rem; }
+.prof-field { margin-bottom: 1rem; }
+.prof-label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 6px; font-weight: 600; }
+.prof-input {
+    width: 100%; padding: 0.55rem 0.85rem;
+    background: var(--inset); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text); font-size: 0.95rem;
+    box-sizing: border-box; transition: border-color 0.15s;
+}
+.prof-input:focus { outline: none; border-color: var(--gold); }
+.prof-actions { display: flex; align-items: center; gap: 1rem; margin-top: 1.25rem; }
+.prof-save-btn {
+    padding: 0.55rem 1.5rem; background: var(--accent); color: #111;
+    font-weight: 700; font-size: 0.9rem; border: none;
+    border-radius: 8px; cursor: pointer; transition: filter 0.15s;
+}
+.prof-save-btn:hover { filter: brightness(1.1); }
+.prof-pw-link { font-size: 0.85rem; color: var(--muted); text-decoration: none; }
+.prof-pw-link:hover { color: var(--gold); }
+.prof-msg { margin-top: 0.75rem; font-size: 0.85rem; min-height: 1.2em; }
+
+.prof-link-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+.prof-link-btn {
+    padding: 0.65rem 1rem; background: var(--inset);
+    border: 1px solid var(--border); border-radius: 9px;
+    color: var(--text); text-decoration: none; font-size: 0.88rem;
+    text-align: center; transition: border-color 0.15s, color 0.15s;
+}
+.prof-link-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+@media (max-width: 600px) {
+    .prof-stats { grid-template-columns: repeat(2, 1fr); }
+    .prof-link-grid { grid-template-columns: 1fr; }
+    .prof-identity { flex-direction: column; text-align: center; }
+}
+
+/* ==========================================================
+   LEADERBOARD PAGE
+   ========================================================== */
+.lb-page { max-width: 800px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+.lb-header { margin-bottom: 1.75rem; }
+.lb-empty { text-align: center; padding: 4rem 2rem; color: var(--muted); }
+
+.lb-podium {
+    display: flex; justify-content: center; align-items: flex-end;
+    gap: 1rem; margin-bottom: 2rem;
+}
+.lb-pod {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.25rem 1rem;
+    text-align: center; flex: 1; max-width: 200px;
+    transition: border-color 0.15s;
+}
+.lb-pod-1 { border-color: var(--gold); order: 2; padding-top: 1.75rem; }
+.lb-pod-2 { order: 1; }
+.lb-pod-3 { order: 3; }
+.lb-pod.lb-me { box-shadow: 0 0 0 2px var(--accent); }
+.lb-pod-medal { font-size: 2rem; margin-bottom: 0.5rem; }
+.lb-pod-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--accent); color: #111;
+    font-size: 1.1rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.5rem;
+}
+.lb-pod-name { font-size: 0.88rem; font-weight: 700; color: var(--text); }
+.lb-pod-score { font-size: 0.78rem; color: var(--gold); font-weight: 700; margin-top: 4px; }
+
+.lb-table-wrap { overflow-x: auto; }
+.lb-table { width: 100%; border-collapse: collapse; }
+.lb-table th {
+    background: var(--inset); color: var(--gold);
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.05em; padding: 0.7rem 1rem;
+    text-align: left; border-bottom: 2px solid var(--border);
+}
+.lb-table td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-size: 0.9rem; color: var(--text); }
+.lb-table tr:last-child td { border-bottom: none; }
+.lb-table tbody tr:hover { background: var(--card); }
+.lb-my-row { background: rgba(217,119,6,0.07) !important; }
+.lb-my-row td { color: var(--gold); font-weight: 600; }
+.lb-rank { font-weight: 700; color: var(--muted); }
+.lb-name { display: flex; align-items: center; gap: 0.6rem; }
+.lb-avatar-sm {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--accent); color: #111;
+    font-size: 0.78rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.lb-you-badge {
+    font-size: 0.65rem; padding: 1px 7px; border-radius: 20px;
+    background: var(--accent); color: #111; font-weight: 700;
+}
+.lb-score { font-weight: 700; color: var(--gold); }
+
+@media (max-width: 600px) {
+    .lb-podium { gap: 0.5rem; }
+    .lb-pod { padding: 1rem 0.5rem; }
+    .lb-table th, .lb-table td { padding: 0.6rem 0.6rem; font-size: 0.8rem; }
+}

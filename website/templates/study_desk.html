@@ -741,8 +741,9 @@ fetch('/api/content/' + TOPIC_ID)
         }
       });
       
-      loadAnnotations(); 
+      loadAnnotations();
       attemptResume();
+      initPins();
     } else {
       container.innerHTML = `
         <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center;gap:1.25rem;">
@@ -765,6 +766,42 @@ fetch('/api/user-notes/' + TOPIC_ID)
       document.getElementById('my-notes-editor').innerHTML = data.content;
     }
   });
+
+// ── Paragraph Pins ──────────────────────────────────────────────────────────
+function initPins() {
+  fetch('/api/pins/' + TOPIC_ID)
+    .then(r => r.json())
+    .then(data => {
+      const pinned = new Set((data.pins || []).map(p => p.para_index));
+      const container = document.getElementById('official-notes-container');
+      container.querySelectorAll('p').forEach((p, i) => {
+        const star = document.createElement('span');
+        star.className = 'pin-star' ;
+        star.title = 'Pin for Last-Day Revision';
+        star.textContent = '☆';
+        if (pinned.has(i)) {
+          star.textContent = '★';
+          p.classList.add('pinned-para');
+        }
+        star.addEventListener('click', e => {
+          e.stopPropagation();
+          const text = p.textContent.replace('☆','').replace('★','').trim().slice(0, 500);
+          fetch('/api/pins/' + TOPIC_ID, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({para_index: i, para_text: text})
+          }).then(r => r.json()).then(d => {
+            const added = d.action === 'added';
+            star.textContent = added ? '★' : '☆';
+            star.title = added ? 'Unpin' : 'Pin for Last-Day Revision';
+            p.classList.toggle('pinned-para', added);
+          });
+        });
+        p.insertBefore(star, p.firstChild);
+      });
+    })
+    .catch(() => {});
+}
 
 // Check Study Status
 const btnMarkStudied = document.getElementById('btn-mark-studied');

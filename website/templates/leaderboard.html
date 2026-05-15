@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Leaderboard — GroupsGuru{% endblock %}
+
+{% block content %}
+<div class="lb-page">
+
+  <div class="lb-header">
+    <a href="/dashboard" class="back-link">&larr; Dashboard</a>
+    <h1 class="page-title">&#127942; Leaderboard</h1>
+    <p class="page-subtitle">Ranked by study score &mdash; Topics&times;10 + Revisions&times;5</p>
+  </div>
+
+  {% if leaders %}
+  <!-- Top 3 Podium -->
+  <div class="lb-podium">
+    {% for l in leaders[:3] %}
+    <div class="lb-pod lb-pod-{{ loop.index }} {% if l.is_me %}lb-me{% endif %}">
+      <div class="lb-pod-medal">{{ ['🥇','🥈','🥉'][loop.index0] }}</div>
+      <div class="lb-pod-avatar">{{ l.display_name[0]|upper }}</div>
+      <div class="lb-pod-name">{{ l.display_name }}</div>
+      <div class="lb-pod-score">{{ l.score }} pts</div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Full Table -->
+  <div class="lb-table-wrap">
+    <table class="lb-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Student</th>
+          <th>Topics</th>
+          <th>Revisions</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for l in leaders %}
+        <tr class="{% if l.is_me %}lb-my-row{% endif %}">
+          <td class="lb-rank">
+            {% if l.rank == 1 %}🥇
+            {% elif l.rank == 2 %}🥈
+            {% elif l.rank == 3 %}🥉
+            {% else %}#{{ l.rank }}{% endif %}
+          </td>
+          <td class="lb-name">
+            <span class="lb-avatar-sm">{{ l.display_name[0]|upper }}</span>
+            {{ l.display_name }}
+            {% if l.is_me %}<span class="lb-you-badge">You</span>{% endif %}
+          </td>
+          <td>{{ l.topics }}</td>
+          <td>{{ l.revisions }}</td>
+          <td class="lb-score">{{ l.score }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  {% else %}
+  <div class="lb-empty">
+    <div style="font-size:3rem">&#127942;</div>
+    <p>No data yet &mdash; be the first to study and claim the top spot!</p>
+    <a href="/dashboard" class="back-link">Start Studying</a>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock %}

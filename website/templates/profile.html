@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block title %}My Profile — GroupsGuru{% endblock %}
+
+{% block content %}
+<div class="prof-page">
+
+  <div class="prof-header">
+    <a href="/dashboard" class="back-link">&larr; Dashboard</a>
+    <h1 class="page-title">My Profile</h1>
+  </div>
+
+  <div class="prof-body">
+
+    <!-- Avatar + Identity -->
+    <div class="prof-card prof-identity">
+      <div class="prof-avatar" id="prof-avatar">{{ profile.display_name[0]|upper }}</div>
+      <div class="prof-id-info">
+        <div class="prof-name" id="prof-name-display">{{ profile.display_name }}</div>
+        <div class="prof-username">@{{ profile.username }}</div>
+        <div class="prof-badge">{{ profile.role|capitalize }}</div>
+        <div class="prof-joined">Joined {{ profile.joined }}</div>
+      </div>
+    </div>
+
+    <!-- Stats Strip -->
+    <div class="prof-stats">
+      <div class="prof-stat">
+        <div class="prof-stat-val">{{ stats.topics }}</div>
+        <div class="prof-stat-label">Topics Studied</div>
+      </div>
+      <div class="prof-stat">
+        <div class="prof-stat-val">{{ stats.revisions }}</div>
+        <div class="prof-stat-label">Revisions Done</div>
+      </div>
+      <div class="prof-stat">
+        <div class="prof-stat-val">{{ stats.pins }}</div>
+        <div class="prof-stat-label">Paragraphs Pinned</div>
+      </div>
+      <div class="prof-stat">
+        <div class="prof-stat-val">{{ stats.minutes }}</div>
+        <div class="prof-stat-label">Study Minutes</div>
+      </div>
+    </div>
+
+    <!-- Edit Form -->
+    <div class="prof-card prof-edit">
+      <h2 class="prof-section-title">Edit Details</h2>
+      <div class="prof-field">
+        <label class="prof-label">Display Name</label>
+        <input class="prof-input" id="inp-name" type="text" value="{{ profile.display_name }}" maxlength="60" />
+      </div>
+      <div class="prof-field">
+        <label class="prof-label">Email <span style="color:var(--muted);font-weight:400">(optional)</span></label>
+        <input class="prof-input" id="inp-email" type="email" value="{{ profile.email }}" maxlength="120" />
+      </div>
+      <div class="prof-actions">
+        <button class="prof-save-btn" onclick="saveProfile()">Save Changes</button>
+        <a href="/change-password" class="prof-pw-link">Change Password</a>
+      </div>
+      <div class="prof-msg" id="prof-msg"></div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="prof-card prof-links">
+      <h2 class="prof-section-title">Quick Links</h2>
+      <div class="prof-link-grid">
+        <a href="/dashboard" class="prof-link-btn">&#127968; Dashboard</a>
+        <a href="/current-affairs" class="prof-link-btn">&#128240; Current Affairs</a>
+        <a href="/last-day-revision" class="prof-link-btn">&#11088; Pinned Notes</a>
+        <a href="/leaderboard" class="prof-link-btn">&#127942; Leaderboard</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function saveProfile() {
+  const name  = document.getElementById('inp-name').value.trim();
+  const email = document.getElementById('inp-email').value.trim();
+  const msg   = document.getElementById('prof-msg');
+  if (!name) { msg.textContent = 'Display name cannot be empty.'; msg.style.color = '#f87171'; return; }
+  fetch('/api/profile/update', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({display_name: name, email})
+  })
+  .then(r => r.json())
+  .then(d => {
+    if (d.ok) {
+      document.getElementById('prof-name-display').textContent = name;
+      document.getElementById('prof-avatar').textContent = name[0].toUpperCase();
+      msg.textContent = 'Saved!';
+      msg.style.color = 'var(--green)';
+      setTimeout(() => msg.textContent = '', 3000);
+    } else {
+      msg.textContent = d.error || 'Could not save.';
+      msg.style.color = '#f87171';
+    }
+  });
+}
+</script>
+{% endblock %}
