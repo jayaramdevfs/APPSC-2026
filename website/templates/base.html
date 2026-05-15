@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=49">
+    <link rel="stylesheet" href="/static/css/style.css?v=50">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -334,27 +334,6 @@
                 </a>
             </div>
         </div>
-        <div class="music-pill" id="music-player-wrap" style="display:none;">
-            <!-- idle: just the note icon -->
-            <button class="mp-idle-btn" id="music-toggle" aria-label="Play theme music" title="Play theme music">
-                <svg class="ico-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-            </button>
-            <!-- expanded player: back | pause | fwd | title -->
-            <div class="mp-expanded" id="music-mini-bar" style="display:none;">
-                <button class="mp-ctrl" id="mmp-back" title="−10s">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm.5 6 8.5 6V6z"/></svg>
-                </button>
-                <button class="mp-ctrl mp-play" id="music-toggle-inner" title="Pause">
-                    <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                </button>
-                <button class="mp-ctrl" id="mmp-fwd" title="+10s">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-6 5.5 4-5.5 4V6l5.5 4L8 12z"/></svg>
-                </button>
-                <div class="mp-title-track">
-                    <span class="mp-title-inner" id="mmp-title"></span>
-                </div>
-            </div>
-        </div>
         <button class="nav-search-btn" id="open-search" aria-label="Search" title="Search (Ctrl+K)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
@@ -494,6 +473,46 @@
 
 <audio id="vib-audio" loop preload="none" style="display:none;"></audio>
 
+<!-- ═══════════════════════════════════════════════════════
+     GLOBAL MUSIC PLAYER — fixed, every page, every theme
+     ═══════════════════════════════════════════════════════ -->
+<div class="gmp-global" id="gmp-global" aria-label="Music player">
+
+  <!-- Expanded panel (shown when open) -->
+  <div class="gmp-panel" id="gmp-panel" hidden>
+    <div class="gmp-track-row">
+      <svg class="gmp-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+      </svg>
+      <span class="gmp-track-name" id="gmp-track-name">No track selected</span>
+    </div>
+    <div class="gmp-controls-row">
+      <button class="gmp-ctrl" id="mmp-back" title="−10 sec">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm.5 6 8.5 6V6z"/></svg>
+      </button>
+      <button class="gmp-ctrl gmp-play-btn" id="music-toggle-inner" title="Play / Pause">
+        <svg class="gmp-ico-play"  viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        <svg class="gmp-ico-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </button>
+      <button class="gmp-ctrl" id="mmp-fwd" title="+10 sec">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-6 5.5 4-5.5 4V6l5.5 4L8 12z"/></svg>
+      </button>
+      <button class="gmp-ctrl gmp-stop-btn" id="gmp-stop" title="Stop music">
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- FAB — always visible -->
+  <button class="gmp-fab" id="gmp-fab" aria-label="Toggle music player" title="Music">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+    </svg>
+    <span class="gmp-live-dot" id="gmp-live-dot" aria-hidden="true"></span>
+  </button>
+
+</div>
+
 <script>
   const navToggle  = document.getElementById('nav-toggle');
   const navDrawer  = document.getElementById('nav-drawer');
@@ -533,28 +552,56 @@
     const m = THEME_MUSIC[theme];
     return m ? '/static/audio/' + m.file : '';
   }
-  const playerWrap  = document.getElementById('music-player-wrap');
-  const miniBar     = document.getElementById('music-mini-bar');
-  const mmpTitle    = document.getElementById('mmp-title');
+  // ── Global Music Player wiring ───────────────────────────────────────
+  const gmpGlobal   = document.getElementById('gmp-global');
+  const gmpPanel    = document.getElementById('gmp-panel');
+  const gmpFab      = document.getElementById('gmp-fab');
+  const gmpDot      = document.getElementById('gmp-live-dot');
+  const gmpName     = document.getElementById('gmp-track-name');
+  const gmpPlayBtn  = document.getElementById('music-toggle-inner');
+  const gmpIcoPlay  = gmpPlayBtn.querySelector('.gmp-ico-play');
+  const gmpIcoPause = gmpPlayBtn.querySelector('.gmp-ico-pause');
 
   function isPlaying() { return !vibAudio.paused; }
 
+  function syncGMPIcons() {
+    const playing = isPlaying();
+    gmpIcoPlay.style.display  = playing ? 'none'  : 'block';
+    gmpIcoPause.style.display = playing ? 'block' : 'none';
+    gmpDot.style.display      = playing ? 'block' : 'none';
+    gmpGlobal.classList.toggle('gmp-active', playing);
+  }
+
   function updateMiniBar() {
     const music = THEME_MUSIC[currentTheme()];
-    const idleBtn = document.getElementById('music-toggle');
-    if (isPlaying() && music) {
-      mmpTitle.textContent = music.title;
-      miniBar.style.display = 'flex';
-      idleBtn.style.display = 'none';
-    } else {
-      miniBar.style.display = 'none';
-      idleBtn.style.display = 'flex';
-    }
+    if (music) gmpName.textContent = music.title;
+    syncGMPIcons();
   }
+
+  // FAB click: toggle panel
+  gmpFab.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = !gmpPanel.hidden;
+    gmpPanel.hidden = open;
+  });
+  // Close panel on outside click
+  document.addEventListener('click', e => {
+    if (!gmpPanel.hidden && !gmpGlobal.contains(e.target)) gmpPanel.hidden = true;
+  });
+  // Stop button
+  document.getElementById('gmp-stop').addEventListener('click', e => {
+    e.stopPropagation();
+    stopMusic();
+    localStorage.setItem('theme_music', 'off');
+    gmpPanel.hidden = true;
+  });
+  // Sync icons whenever audio state changes
+  vibAudio.addEventListener('play',  syncGMPIcons);
+  vibAudio.addEventListener('pause', syncGMPIcons);
+  vibAudio.addEventListener('ended', syncGMPIcons);
 
   function stopMusic() {
     vibAudio.pause();
-    musicToggle.classList.remove('playing');
     updateMiniBar();
   }
 
@@ -575,7 +622,6 @@
     } else {
       vibAudio.play().catch(() => {});
     }
-    musicToggle.classList.add('playing');
     updateMiniBar();
   }
 
@@ -603,14 +649,11 @@
     const t = currentTheme();
     const music = THEME_MUSIC[t];
     if (music) {
-      playerWrap.style.display = 'flex';
-      musicToggle.title = music.title;
-      musicToggle.setAttribute('aria-label', 'Toggle: ' + music.title);
+      gmpName.textContent = music.title;
       if (localStorage.getItem('theme_music') === 'on' && !isPlaying()) {
         playMusic(songUrlFor(t), music.startAt || 0);
       }
     } else {
-      playerWrap.style.display = 'none';
       stopMusic();
     }
     // Reflect active theme on the toggle button (CSS swaps icons via theme classes)

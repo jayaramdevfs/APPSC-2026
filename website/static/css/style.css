@@ -3724,6 +3724,111 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
 }
 @keyframes fadeOut { 0%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
 
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL MUSIC PLAYER — fixed bottom-left, every page, every theme
+   ═══════════════════════════════════════════════════════════════ */
+.gmp-global {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+/* FAB button — always visible */
+.gmp-fab {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--card);
+    border: 1.5px solid var(--border);
+    color: var(--accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+}
+.gmp-fab svg { width: 18px; height: 18px; pointer-events: none; }
+.gmp-fab:hover {
+    transform: scale(1.08);
+    border-color: var(--accent);
+    box-shadow: 0 0 18px rgba(var(--gold-rgb), 0.3);
+}
+/* Pulsing dot — shows when playing */
+.gmp-live-dot {
+    position: absolute;
+    top: 7px; right: 7px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: none;
+    border: 2px solid var(--card);
+    animation: gmp-pulse 1.8s ease-in-out infinite;
+}
+@keyframes gmp-pulse {
+    0%,100% { transform: scale(1);   opacity: 1; }
+    50%      { transform: scale(0.6); opacity: 0.4; }
+}
+/* Expanded panel */
+.gmp-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    min-width: 210px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+}
+.gmp-track-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.gmp-note { width: 14px; height: 14px; flex-shrink: 0; color: var(--accent); }
+.gmp-track-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+}
+.gmp-controls-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.gmp-ctrl {
+    background: var(--elevated);
+    border: none;
+    border-radius: 8px;
+    color: var(--text);
+    width: 32px; height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+.gmp-ctrl svg { width: 14px; height: 14px; pointer-events: none; }
+.gmp-ctrl:hover { background: var(--border-hover); }
+.gmp-play-btn {
+    background: var(--accent);
+    border-radius: 50%;
+    width: 38px; height: 38px;
+    color: #000;
+}
+.gmp-play-btn svg { width: 14px; height: 14px; }
+.gmp-play-btn:hover { filter: brightness(1.15); background: var(--accent); }
+.gmp-stop-btn:hover { color: #ff4444; background: rgba(255,68,68,0.12); }
+
 /* ── Pomodoro widget (floating bottom-right) ─────────────────── */
 .pomo-widget {
     position: fixed;
