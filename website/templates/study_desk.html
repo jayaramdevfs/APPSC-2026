@@ -744,7 +744,17 @@ fetch('/api/content/' + TOPIC_ID)
       loadAnnotations(); 
       attemptResume();
     } else {
-      container.innerHTML = '<h2 style="text-align:center;">Book Not Available</h2><p style="text-align:center;">The content for this topic is missing or being prepared.</p>';
+      container.innerHTML = `
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:4rem 2rem;text-align:center;gap:1.25rem;">
+          <div style="font-size:3rem;">📖</div>
+          <h2 style="color:var(--gold);font-size:1.4rem;margin:0;">Content Coming Soon</h2>
+          <p style="color:var(--muted);max-width:420px;line-height:1.7;margin:0;">
+            Notes for this topic are being prepared and will appear here shortly.
+            In the meantime, use the <strong style="color:var(--text);">My Notes</strong> panel on the right
+            to jot down anything you already know.
+          </p>
+          <a href="/dashboard" style="margin-top:0.5rem;padding:0.55rem 1.5rem;background:var(--accent);color:#111;font-weight:700;border-radius:8px;text-decoration:none;font-size:0.9rem;">← Back to Dashboard</a>
+        </div>`;
     }
   });
 

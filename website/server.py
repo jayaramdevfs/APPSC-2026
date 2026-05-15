@@ -2968,7 +2968,10 @@ async def api_ca_content(request: Request):
     ca_file = CA_DIR / f"{date}.md"
     if not ca_file.exists():
         return PlainTextResponse("", status_code=404)
-    return PlainTextResponse(ca_file.read_text(encoding="utf-8"))
+    return PlainTextResponse(
+        ca_file.read_text(encoding="utf-8"),
+        headers={"Cache-Control": "public, max-age=900"},  # 15 min — CA files are stable once published
+    )
 
 
 async def api_ca_month(request: Request):
@@ -3951,10 +3954,12 @@ async def api_get_content(request: Request):
     if not re.match(r'^[a-z0-9-]+$', topic_id):
         return JSONResponse({"available": False})
 
+    cache_headers = {"Cache-Control": "public, max-age=1800"}  # 30 min — content rarely changes
+
     # Direct file check
     direct = NOTES_DIR / f"{topic_id}.md"
     if direct.exists():
-        return JSONResponse({"available": True, "content": direct.read_text("utf-8")})
+        return JSONResponse({"available": True, "content": direct.read_text("utf-8")}, headers=cache_headers)
 
     # Twin fallback via SHARED_TOPICS
     for twin in SHARED_TOPICS.get(topic_id, []):
@@ -3964,7 +3969,7 @@ async def api_get_content(request: Request):
                 "available": True,
                 "content": twin_file.read_text("utf-8"),
                 "source": twin["label"],
-            })
+            }, headers=cache_headers)
 
     return JSONResponse({"available": False, "content": None})
 
