@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=48">
+    <link rel="stylesheet" href="/static/css/style.css?v=49">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -334,20 +334,26 @@
                 </a>
             </div>
         </div>
-        <div class="music-player-wrap" id="music-player-wrap" style="display:none;">
-            <div class="music-mini-bar" id="music-mini-bar" style="display:none;">
-                <button class="mmp-ctrl" id="mmp-back" title="Back 10s">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="4" x2="5" y2="20"></line></svg>
-                </button>
-                <span class="mmp-title" id="mmp-title"></span>
-                <button class="mmp-ctrl" id="mmp-fwd" title="Forward 10s">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="4" x2="19" y2="20"></line></svg>
-                </button>
-            </div>
-            <button class="nav-music-btn" id="music-toggle" aria-label="Toggle theme music" title="Theme music">
-                <svg class="ico-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-                <svg class="ico-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+        <div class="music-pill" id="music-player-wrap" style="display:none;">
+            <!-- idle: just the note icon -->
+            <button class="mp-idle-btn" id="music-toggle" aria-label="Play theme music" title="Play theme music">
+                <svg class="ico-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
             </button>
+            <!-- expanded player: back | pause | fwd | title -->
+            <div class="mp-expanded" id="music-mini-bar" style="display:none;">
+                <button class="mp-ctrl" id="mmp-back" title="−10s">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm.5 6 8.5 6V6z"/></svg>
+                </button>
+                <button class="mp-ctrl mp-play" id="music-toggle-inner" title="Pause">
+                    <svg class="ico-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+                <button class="mp-ctrl" id="mmp-fwd" title="+10s">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-6 5.5 4-5.5 4V6l5.5 4L8 12z"/></svg>
+                </button>
+                <div class="mp-title-track">
+                    <span class="mp-title-inner" id="mmp-title"></span>
+                </div>
+            </div>
         </div>
         <button class="nav-search-btn" id="open-search" aria-label="Search" title="Search (Ctrl+K)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -530,22 +536,19 @@
   const playerWrap  = document.getElementById('music-player-wrap');
   const miniBar     = document.getElementById('music-mini-bar');
   const mmpTitle    = document.getElementById('mmp-title');
-  const icoMusic    = musicToggle.querySelector('.ico-music');
-  const icoPause    = musicToggle.querySelector('.ico-pause');
 
   function isPlaying() { return !vibAudio.paused; }
 
   function updateMiniBar() {
     const music = THEME_MUSIC[currentTheme()];
+    const idleBtn = document.getElementById('music-toggle');
     if (isPlaying() && music) {
       mmpTitle.textContent = music.title;
       miniBar.style.display = 'flex';
-      icoMusic.style.display = 'none';
-      icoPause.style.display = '';
+      idleBtn.style.display = 'none';
     } else {
       miniBar.style.display = 'none';
-      icoMusic.style.display = '';
-      icoPause.style.display = 'none';
+      idleBtn.style.display = 'flex';
     }
   }
 
@@ -1016,6 +1019,15 @@ void main(){
   document.getElementById('mmp-fwd').addEventListener('click', (e) => {
     e.stopPropagation();
     vibAudio.currentTime = Math.min(vibAudio.duration || 0, vibAudio.currentTime + 10);
+  });
+  document.getElementById('music-toggle-inner').addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isPlaying()) {
+      stopMusic(); localStorage.setItem('theme_music', 'off');
+    } else {
+      const url = songUrlFor(currentTheme());
+      if (url) { playMusic(url); localStorage.setItem('theme_music', 'on'); }
+    }
   });
 
   updateThemeUI();
