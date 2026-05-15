@@ -2358,6 +2358,41 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     background: rgba(0, 0, 0, 0.4);
 }
 
+.ca-day-cell.read {
+    background: rgba(34, 197, 94, 0.10);
+}
+
+.ca-day-cell.read.selected {
+    background: var(--gold) !important;
+}
+
+.ca-read-check {
+    font-size: 0.65rem;
+    color: #22c55e;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.ca-day-cell.selected .ca-read-check {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.ca-read-stats {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+}
+
+.ca-stat-pill {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    background: var(--inset);
+    border: 1px solid var(--border);
+    color: var(--muted);
+}
+
 /* ── Content card ── */
 .ca-content-card {
     background: var(--surface);

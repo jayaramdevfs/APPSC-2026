@@ -182,6 +182,15 @@ def init_db() -> None:
             updated_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
     """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS ca_reads (
+            id      INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            ca_date TEXT NOT NULL,
+            read_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(user_id, ca_date)
+        )
+    """)
     con.commit()
 
     # Admin — password overrideable via ADMIN_PASSWORD env var on Render
@@ -2985,6 +2994,82 @@ async def api_ca_month(request: Request):
     return JSONResponse({"days": days, "weekly_ranges": weekly_ranges})
 
 
+async def api_ca_mark_read(request: Request):
+    """POST {"date": "YYYY-MM-DD"} — mark a CA date as read for the current user."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Not logged in"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    ca_date = str(body.get("date", "")).strip()
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", ca_date):
+        return JSONResponse({"error": "Invalid date"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    con.execute(
+        "INSERT OR IGNORE INTO ca_reads (user_id, ca_date) VALUES (?, ?)",
+        (user["id"], ca_date)
+    )
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True})
+
+
+async def api_ca_read_status(request: Request):
+    """GET read dates for a given year/month for the current user."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"read_dates": []})
+    try:
+        year  = int(request.path_params["year"])
+        month = int(request.path_params["month"])
+    except ValueError:
+        return JSONResponse({"error": "Invalid year/month"}, status_code=400)
+    prefix = f"{year}-{str(month).zfill(2)}-"
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute(
+        "SELECT ca_date FROM ca_reads WHERE user_id=? AND ca_date LIKE ?",
+        (user["id"], prefix + "%")
+    ).fetchall()
+    con.close()
+    return JSONResponse({"read_dates": [r[0] for r in rows]})
+
+
+async def api_ca_stats(request: Request):
+    """GET total CA read count and current streak for the current user."""
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"total": 0, "streak": 0})
+    con = sqlite3.connect(DB_PATH)
+    total = con.execute(
+        "SELECT COUNT(*) FROM ca_reads WHERE user_id=?", (user["id"],)
+    ).fetchone()[0]
+    # Compute streak: consecutive weeks read going back from most recent
+    rows = con.execute(
+        "SELECT ca_date FROM ca_reads WHERE user_id=? ORDER BY ca_date DESC",
+        (user["id"],)
+    ).fetchall()
+    con.close()
+    streak = 0
+    if rows:
+        from datetime import timedelta
+        dates = sorted([r[0] for r in rows], reverse=True)
+        # Find all CA file dates available on disk
+        ca_dates_on_disk = sorted(
+            [f.stem for f in CA_DIR.glob("*.md") if re.match(r"\d{4}-\d{2}-\d{2}", f.stem)],
+            reverse=True
+        )
+        read_set = set(dates)
+        # Walk ca_dates_on_disk from latest; streak breaks when a file is not read
+        for ca_d in ca_dates_on_disk:
+            if ca_d in read_set:
+                streak += 1
+            else:
+                break
+    return JSONResponse({"total": total, "streak": streak})
+
+
 # ---------------------------------------------------------------------------
 # Progress API — 1-4-7 revision tracker
 # ---------------------------------------------------------------------------
@@ -4427,6 +4512,9 @@ routes = [
     Route("/change-password",                    change_password_post,    methods=["POST"]),
     Route("/api/ca/content/{date}",               api_ca_content),
     Route("/api/ca/month/{year}/{month}",         api_ca_month),
+    Route("/api/ca/mark-read",                    api_ca_mark_read,        methods=["POST"]),
+    Route("/api/ca/read-status/{year}/{month}",   api_ca_read_status),
+    Route("/api/ca/stats",                        api_ca_stats),
     Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
     Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
     Route("/api/progress/due-today",              api_due_today),

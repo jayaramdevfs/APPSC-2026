@@ -7,6 +7,10 @@
   <a href="/" class="back-link">&larr; Back</a>
   <h1 class="page-title">Current Affairs 2026</h1>
   <p class="page-subtitle">Select a date to read that day&rsquo;s affairs &mdash; dates with content are highlighted in saffron</p>
+  <div class="ca-read-stats" id="ca-read-stats" style="display:none">
+    <span class="ca-stat-pill" id="ca-stat-read">&#10003; <span id="ca-read-count">0</span> entries read</span>
+    <span class="ca-stat-pill" id="ca-stat-streak">&#128293; <span id="ca-streak-count">0</span>-week streak</span>
+  </div>
 </div>
 
 <div class="ca-month-strip">
@@ -54,6 +58,7 @@ let activeMonth   = (todayYear === YEAR) ? todayMonth : 1;
 let activeDay     = null;
 let daysWithData  = new Set();
 let weeklyRanges  = [];
+let readDates     = new Set();   // "YYYY-MM-DD" strings of dates the user has read
 
 // Returns the range object containing `day`, or null
 function getRangeForDay(day) {
@@ -83,11 +88,16 @@ function setMonth(month, autoSelectLatest) {
 
   document.getElementById('cal-title').textContent = MONTH_NAMES[month - 1] + ' ' + YEAR;
 
-  fetch('/api/ca/month/' + YEAR + '/' + month)
-    .then(r => r.json())
-    .then(data => {
+  Promise.all([
+    fetch('/api/ca/month/' + YEAR + '/' + month).then(r => r.json()),
+    fetch('/api/ca/read-status/' + YEAR + '/' + month).then(r => r.json()).catch(() => ({read_dates:[]}))
+  ]).then(([data, readData]) => {
       daysWithData = new Set(data.days || []);
       weeklyRanges = data.weekly_ranges || [];
+      readDates    = new Set((readData.read_dates || []).map(d => {
+        // extract day number from "YYYY-MM-DD"
+        return parseInt(d.split('-')[2], 10);
+      }));
       buildCalendar(month);
 
       if (autoSelectLatest) {
@@ -112,6 +122,18 @@ function setMonth(month, autoSelectLatest) {
       }
     })
     .catch(() => { daysWithData = new Set(); weeklyRanges = []; buildCalendar(month); });
+
+  // Load stats (total reads + streak) once per session
+  if (autoSelectLatest) {
+    fetch('/api/ca/stats').then(r => r.json()).then(s => {
+      const statsEl = document.getElementById('ca-read-stats');
+      if (s.total > 0 && statsEl) {
+        document.getElementById('ca-read-count').textContent   = s.total;
+        document.getElementById('ca-streak-count').textContent = s.streak;
+        statsEl.style.display = '';
+      }
+    }).catch(() => {});
+  }
 }
 
 function buildCalendar(month) {
@@ -127,14 +149,16 @@ function buildCalendar(month) {
     const isToday    = (YEAR === todayYear && month === todayMonth && d === todayDay);
     const fileDay    = dayToFile[d];
     const hasData    = fileDay !== undefined;
+    const isRead     = hasData && readDates.has(fileDay);
     const isSelected = hasData && fileDay === activeDay;
     const cls = ['ca-day-cell',
       isToday    ? 'today'    : '',
       hasData    ? 'has-data' : '',
+      isRead     ? 'read'     : '',
       isSelected ? 'selected' : ''].filter(Boolean).join(' ');
     html += `<div class="${cls}" data-day="${d}" data-fileday="${fileDay || d}">
                <span class="ca-day-num">${d}</span>
-               ${hasData ? '<span class="ca-dot"></span>' : ''}
+               ${isRead ? '<span class="ca-read-check">&#10003;</span>' : (hasData ? '<span class="ca-dot"></span>' : '')}
              </div>`;
   }
 
@@ -187,6 +211,29 @@ function selectDay(day) {
       } else {
         body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(md)}</div>`;
         if (filterBar) filterBar.style.display = '';
+        // Auto-mark as read
+        fetch('/api/ca/mark-read', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({date: dateStr})
+        }).then(r => r.json()).then(d => {
+          if (d.ok && !readDates.has(day)) {
+            readDates.add(day);
+            // Update calendar cell to show checkmark
+            document.querySelectorAll(`.ca-day-cell[data-fileday="${day}"]`).forEach(c => {
+              c.classList.add('read');
+              const dot = c.querySelector('.ca-dot');
+              if (dot) { dot.className = 'ca-read-check'; dot.innerHTML = '&#10003;'; }
+            });
+            // Increment stat counter
+            const el = document.getElementById('ca-read-count');
+            if (el) {
+              const newTotal = parseInt(el.textContent || '0') + 1;
+              el.textContent = newTotal;
+              document.getElementById('ca-read-stats').style.display = '';
+            }
+          }
+        }).catch(() => {});
       }
     })
     .catch(() => { body.innerHTML = '<p class="ca-error">Could not load. Please try again.</p>'; });
