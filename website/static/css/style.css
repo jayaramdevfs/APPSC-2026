@@ -2394,6 +2394,28 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     padding: 1.5rem;
 }
 
+.ca-filter-bar {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--inset);
+}
+
+.ca-filter-btn {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--gold);
+    cursor: pointer;
+    transition: background 0.18s, color 0.18s;
+}
+
+.ca-filter-btn:hover {
+    background: var(--gold);
+    color: #000;
+}
+
 /* Empty / placeholder states */
 .ca-empty-state {
     display: flex;

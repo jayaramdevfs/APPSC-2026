@@ -2938,6 +2938,21 @@ def _ca_days_for_month(year: int, month: int) -> list[int]:
     return sorted(days)
 
 
+def _ca_weeks_for_month(year: int, month: int):
+    """Return (days, weekly_ranges) where each range covers file_day to next_file_day-1 (max 7 days)."""
+    days = _ca_days_for_month(year, month)
+    if not days:
+        return [], []
+    last_day = (date(year, month % 12 + 1, 1) - timedelta(days=1)).day if month < 12 else 31
+    weekly_ranges = []
+    for i, d in enumerate(days):
+        end = min(d + 6, last_day)
+        if i + 1 < len(days):
+            end = min(end, days[i + 1] - 1)
+        weekly_ranges.append({"file_day": d, "start": d, "end": end})
+    return days, weekly_ranges
+
+
 async def current_affairs(request: Request):
     user = get_current_user(request)
     return templates.TemplateResponse(request, "current_affairs.html", {
@@ -2957,13 +2972,14 @@ async def api_ca_content(request: Request):
 
 
 async def api_ca_month(request: Request):
-    """Return list of day numbers (int) that have CA content for year/month."""
+    """Return CA days and weekly ranges so the calendar can highlight full weeks."""
     try:
         year  = int(request.path_params["year"])
         month = int(request.path_params["month"])
     except ValueError:
         return JSONResponse({"error": "Invalid year/month"}, status_code=400)
-    return JSONResponse({"days": _ca_days_for_month(year, month)})
+    days, weekly_ranges = _ca_weeks_for_month(year, month)
+    return JSONResponse({"days": days, "weekly_ranges": weekly_ranges})
 
 
 # ---------------------------------------------------------------------------
