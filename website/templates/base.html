@@ -72,6 +72,9 @@
     <!-- Varanasi: WebGL cinematic sky (background) + diya river lights (overlay) -->
     <canvas id="varanasi-sky" class="varanasi-sky" aria-hidden="true"></canvas>
     <canvas id="diya-canvas"  class="diya-canvas"  aria-hidden="true"></canvas>
+
+    <!-- Binary rain — always-on subtle background -->
+    <canvas id="binary-rain-canvas" aria-hidden="true" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.045;"></canvas>
 </div>
 
 <nav class="navbar">
@@ -1064,6 +1067,11 @@ void main(){
     }
   });
 
+  // ── Default music ON for first-time visitors ─────────────────
+  if (localStorage.getItem('theme_music') === null) {
+    localStorage.setItem('theme_music', 'on');
+  }
+
   updateThemeUI();
 
   // ── Search modal ──────────────────────────────────────────────
@@ -1236,6 +1244,48 @@ void main(){
     window.addEventListener('popstate', () => {
       go(location.pathname + location.search);
     });
+  }());
+
+  // ── Binary Rain — always-on background 1s and 0s ─────────────
+  (function(){
+    const canvas = document.getElementById('binary-rain-canvas');
+    const ctx    = canvas.getContext('2d');
+    const CHARS  = '10';
+    const FONT_SIZE = 14;
+    let cols, drops, raf;
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      cols  = Math.floor(canvas.width / FONT_SIZE);
+      drops = new Array(cols).fill(1);
+    }
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0,0,0,0.04)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = FONT_SIZE + 'px "JetBrains Mono", monospace';
+
+      // Pick color based on current theme
+      const root = document.documentElement;
+      if (root.classList.contains('theme-wakanda'))      ctx.fillStyle = '#7B3FE4';
+      else if (root.classList.contains('theme-ghost-rider')) ctx.fillStyle = '#FF4500';
+      else if (root.classList.contains('theme-varanasi'))    ctx.fillStyle = '#FF8C00';
+      else if (root.classList.contains('theme-contrast'))    ctx.fillStyle = '#ffffff';
+      else                                                   ctx.fillStyle = '#D97706';
+
+      for (let i = 0; i < cols; i++) {
+        const ch = CHARS[Math.random() > 0.5 ? 0 : 1];
+        ctx.fillText(ch, i * FONT_SIZE, drops[i] * FONT_SIZE);
+        if (drops[i] * FONT_SIZE > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+      raf = requestAnimationFrame(draw);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    draw();
   }());
 </script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
