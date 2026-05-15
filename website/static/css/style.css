@@ -2240,6 +2240,20 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     font-weight: 700;
 }
 
+.ca-digest-link {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: border-color 0.15s, color 0.15s;
+    margin-left: auto;
+}
+
+.ca-digest-link:hover { border-color: var(--gold); color: var(--gold); }
+
 /* ── Body layout: calendar + content side by side ── */
 .ca-body {
     display: grid;
@@ -3205,6 +3219,99 @@ a.nav-user-badge:hover {
 .ca-hm-none   { background: var(--inset); border-color: var(--border); }
 .ca-hm-unread { background: #374151; border-color: #4B5563; }
 .ca-hm-read   { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 4px rgba(217,119,6,0.3); }
+
+/* Monthly Digest page */
+.digest-page { max-width: 820px; margin: 0 auto; padding-bottom: 3rem; }
+
+.digest-header { margin-bottom: 1.5rem; }
+
+.digest-back-top {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.digest-toc {
+    background: var(--inset);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.digest-toc-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+}
+
+.digest-toc-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.digest-toc-link {
+    font-size: 0.76rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--gold);
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.digest-toc-link:hover { background: var(--gold); color: #000; }
+
+.digest-entry { margin-bottom: 0.5rem; }
+
+.digest-entry-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 1rem;
+}
+
+.digest-entry-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+}
+
+.digest-next-link {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.digest-next-link:hover { color: var(--gold); }
+
+.digest-entry-body { padding: 0 0 1rem; }
+
+.digest-divider {
+    height: 2px;
+    background: var(--border);
+    margin: 2rem 0;
+    border-radius: 1px;
+}
+
+.digest-footer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
 
 .dash-card {
     background: var(--card);

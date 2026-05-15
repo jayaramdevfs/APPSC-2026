@@ -3070,6 +3070,52 @@ async def api_ca_stats(request: Request):
     return JSONResponse({"total": total, "streak": streak})
 
 
+async def ca_digest_page(request: Request):
+    """Monthly digest page — all CA entries for a month in one scrollable view."""
+    user = get_current_user(request)
+    if not user:
+        return RedirectResponse("/login", status_code=302)
+    try:
+        year  = int(request.path_params["year"])
+        month = int(request.path_params["month"])
+    except ValueError:
+        return PlainTextResponse("Invalid year/month", status_code=400)
+
+    prefix = f"{year}-{str(month).zfill(2)}-"
+    entries = []
+    for f in sorted(CA_DIR.glob(f"{prefix}*.md")):
+        text = f.read_text(encoding="utf-8")
+        # Strip QUIZ blocks
+        text = re.sub(r'<!--\s*QUIZ[\s\S]*?-->', '', text).strip()
+        entries.append({"date": f.stem, "content": text})
+
+    month_name = ["", "January","February","March","April","May","June",
+                  "July","August","September","October","November","December"][month]
+    return templates.TemplateResponse(request, "ca_digest.html", {
+        "entries": entries,
+        "year": year,
+        "month": month,
+        "month_name": month_name,
+        "current_user": user,
+    })
+
+
+async def api_ca_digest(request: Request):
+    """API: Return all CA entries for a given month."""
+    try:
+        year  = int(request.path_params["year"])
+        month = int(request.path_params["month"])
+    except ValueError:
+        return JSONResponse({"error": "Invalid year/month"}, status_code=400)
+    prefix = f"{year}-{str(month).zfill(2)}-"
+    entries = []
+    for f in sorted(CA_DIR.glob(f"{prefix}*.md")):
+        text = f.read_text(encoding="utf-8")
+        text = re.sub(r'<!--\s*QUIZ[\s\S]*?-->', '', text).strip()
+        entries.append({"date": f.stem, "content": text})
+    return JSONResponse({"entries": entries})
+
+
 async def api_ca_heatmap(request: Request):
     """GET 90-day heatmap: available CA dates + user read dates."""
     from datetime import timedelta
@@ -4548,6 +4594,8 @@ routes = [
     Route("/api/ca/read-status/{year}/{month}",   api_ca_read_status),
     Route("/api/ca/stats",                        api_ca_stats),
     Route("/api/ca/heatmap",                      api_ca_heatmap),
+    Route("/current-affairs/digest/{year}/{month}", ca_digest_page),
+    Route("/api/ca/digest/{year}/{month}",        api_ca_digest),
     Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
     Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
     Route("/api/progress/due-today",              api_due_today),

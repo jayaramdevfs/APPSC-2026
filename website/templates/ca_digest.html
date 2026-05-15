@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}{{ month_name }} {{ year }} Digest — GroupsGuru{% endblock %}
+
+{% block content %}
+<div class="digest-page">
+
+  <div class="digest-header">
+    <a href="/current-affairs" class="back-link">&larr; Current Affairs</a>
+    <h1 class="page-title">&#128240; {{ month_name }} {{ year }} — Monthly Digest</h1>
+    <p class="page-subtitle">All {{ entries|length }} entries for {{ month_name }} in one scrollable view</p>
+    {% if entries %}
+    <a href="#digest-top" class="digest-back-top" id="digest-back-top">&#8679; Back to Top</a>
+    {% endif %}
+  </div>
+
+  {% if entries %}
+  <div class="digest-toc">
+    <div class="digest-toc-title">Jump To</div>
+    <div class="digest-toc-links">
+      {% for e in entries %}
+      <a href="#entry-{{ e.date }}" class="digest-toc-link">{{ e.date }}</a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div id="digest-top"></div>
+  {% for e in entries %}
+  <div class="digest-entry" id="entry-{{ e.date }}">
+    <div class="digest-entry-header">
+      <span class="digest-entry-date">{{ e.date }}</span>
+      {% if not loop.last %}
+      <a href="#entry-{{ loop.nextitem.date }}" class="digest-next-link">Next &rarr;</a>
+      {% endif %}
+    </div>
+    <div class="digest-entry-body markdown-body" data-date="{{ e.date }}">
+      Loading…
+    </div>
+    {% if not loop.last %}
+    <div class="digest-divider"></div>
+    {% endif %}
+  </div>
+  {% endfor %}
+
+  <div class="digest-footer">
+    <a href="#digest-top" class="back-link">&#8679; Back to Top</a>
+    <a href="/current-affairs" class="back-link">&#8592; Current Affairs Calendar</a>
+  </div>
+
+  {% else %}
+  <div class="lb-empty">
+    <div style="font-size:3rem">&#128197;</div>
+    <p>No current affairs for {{ month_name }} {{ year }} yet.</p>
+    <a href="/current-affairs" class="back-link">Go to Calendar</a>
+  </div>
+  {% endif %}
+
+</div>
+
+<script src="/static/js/marked.min.js"></script>
+<script>
+// Render all markdown bodies
+const entries = {{ entries | tojson }};
+entries.forEach(e => {
+  const el = document.querySelector(`.digest-entry-body[data-date="${e.date}"]`);
+  if (el && e.content) {
+    el.innerHTML = marked.parse(e.content);
+  } else if (el) {
+    el.innerHTML = '<p style="color:var(--faint)">No content.</p>';
+  }
+});
+
+// Floating back-to-top visibility
+const backTop = document.getElementById('digest-back-top');
+if (backTop) {
+  window.addEventListener('scroll', () => {
+    backTop.style.display = window.scrollY > 400 ? '' : 'none';
+  }, {passive: true});
+  backTop.style.display = 'none';
+}
+</script>
+{% endblock %}

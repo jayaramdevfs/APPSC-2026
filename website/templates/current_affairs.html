@@ -18,6 +18,7 @@
   {% for m in months %}
   <button class="ca-month-pill" data-month="{{ loop.index }}">{{ m }}</button>
   {% endfor %}
+  <a class="ca-digest-link" id="ca-digest-link" href="/current-affairs/digest/2026/5">&#128196; Monthly Digest</a>
 </div>
 
 <div class="ca-body">
@@ -85,6 +86,8 @@ function setMonth(month, autoSelectLatest) {
 
   document.querySelectorAll('.ca-month-pill').forEach(b =>
     b.classList.toggle('active', parseInt(b.dataset.month) === month));
+  const digestLink = document.getElementById('ca-digest-link');
+  if (digestLink) digestLink.href = `/current-affairs/digest/${YEAR}/${month}`;
 
   document.getElementById('cal-title').textContent = MONTH_NAMES[month - 1] + ' ' + YEAR;
 
