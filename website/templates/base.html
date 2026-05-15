@@ -509,6 +509,16 @@
 </div>
 
 <script>
+  // Convert a topic title to a clean URL slug (mirrors server.py _slugify)
+  function topicSlug(title) {
+    return (title || '').toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .trim()
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
   const navToggle  = document.getElementById('nav-toggle');
   const navDrawer  = document.getElementById('nav-drawer');
   const navBackdrop = document.getElementById('nav-backdrop');

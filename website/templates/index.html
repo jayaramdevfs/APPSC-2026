@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rw.style.display = 'flex';
         document.getElementById('dr-title').textContent = lastTitle;
         document.getElementById('dr-link').href =
-            '/study-desk/' + lastId + '?title=' + encodeURIComponent(lastTitle);
+            '/study-desk/' + topicSlug(lastTitle);
     }
 
     /* ---------- Current Affairs spotlight ---------- */
@@ -563,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const cls  = t.completed ? 'done' : '';
                         const safe = t.title.replace(/"/g, '&quot;');
                         return `<div class="ctile ${cls}" title="${safe}"
-                                     onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
+                                     onclick="window.location='/study-desk/'+topicSlug(t.title)"></div>`;
                     }).join('')}
                 </div>
             </div>`;

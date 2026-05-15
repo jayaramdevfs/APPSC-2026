@@ -270,7 +270,7 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
     const btnDesk = document.getElementById('btn-open-desk-' + stageKey);
     const btnPrac = document.getElementById('btn-practice-' + stageKey);
     if (btnDesk) {
-      btnDesk.href = '/study-desk/' + topicId + '?title=' + encodeURIComponent(topic.title);
+      btnDesk.href = '/study-desk/' + topicSlug(topic.title);
     }
     if (btnPrac) {
       btnPrac.href = '/practice/' + topicId;

@@ -261,7 +261,7 @@ fetch('/api/progress/grid')
                 const doneClass = t.completed ? 'done' : '';
                 html += `<div class="ctile ${doneClass}" 
                              data-title="${t.title}" 
-                             onclick="window.location='/study-desk/${t.id}'"></div>`;
+                             onclick="window.location='/study-desk/'+topicSlug(t.title)"></div>`;
             });
             html += `</div>`;
         }

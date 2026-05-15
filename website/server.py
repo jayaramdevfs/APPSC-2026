@@ -2403,6 +2403,47 @@ APT_STRUCTURE = {
     ],
 }
 
+# ── Topic slug index — maps internal IDs to clean URL slugs ──────────────────
+def _slugify(s: str) -> str:
+    s = s.lower().strip()
+    s = re.sub(r'[^a-z0-9\s]', ' ', s)
+    s = re.sub(r'\s+', '-', s.strip())
+    s = re.sub(r'-+', '-', s)
+    return s.strip('-')
+
+def _build_topic_index() -> dict:
+    index: dict = {}
+    seen_slugs: dict = {}
+
+    def _add(tid: str, title: str):
+        if tid in index:
+            return
+        base = _slugify(title)
+        slug = base
+        if slug in seen_slugs and seen_slugs[slug] != tid:
+            slug = f"{base}-{_slugify(tid)}"
+        seen_slugs[slug] = tid
+        index[tid] = {"title": title, "slug": slug}
+
+    for stage in G2_STRUCTURE.values():
+        for sec in stage["sections"]:
+            for t in sec["topics"]:
+                _add(t["id"], t["title"])
+
+    for stage in G1_STRUCTURE.values():
+        for sec in stage["sections"]:
+            for t in sec["topics"]:
+                _add(t["id"], t["title"])
+
+    for sec in APT_STRUCTURE["sections"]:
+        for t in sec["topics"]:
+            _add(t["id"], t["title"])
+
+    return index
+
+TOPIC_INDEX = _build_topic_index()
+SLUG_TO_ID  = {v["slug"]: k for k, v in TOPIC_INDEX.items()}
+
 
 async def aptitude(request: Request):
     user = get_current_user(request)
@@ -4188,11 +4229,18 @@ async def study_desk(request: Request):
     user = get_current_user(request)
     if not user:
         return RedirectResponse("/login", status_code=302)
-    topic_id = request.path_params["topic_id"]
+    slug = request.path_params["topic_id"]
+    topic_id = SLUG_TO_ID.get(slug, slug)
+    info = TOPIC_INDEX.get(topic_id, {})
+    topic_title = info.get("title") or request.query_params.get("title") or topic_id
+    # Redirect raw internal IDs to their clean slug URL
+    if slug == topic_id and info.get("slug"):
+        return RedirectResponse(f"/study-desk/{info['slug']}", status_code=301)
     return templates.TemplateResponse(request, "study_desk.html", {
         "current_user": user,
         "user_id": user["id"],
         "topic_id": topic_id,
+        "topic_title": topic_title,
     })
 
 
