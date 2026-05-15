@@ -96,9 +96,9 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `scr-ma-01` | Logical Reasoning | pre-ma-01 |
-| ⬜ | `scr-ma-02` | Mental Ability | pre-ma-02 |
-| ⬜ | `scr-ma-03` | Basic Numeracy & Data Analysis | pre-ma-02 |
+| ✅ | `scr-ma-01` | Logical Reasoning | pre-ma-01 | (2026-05-15) |
+| ✅ | `scr-ma-02` | Mental Ability | pre-ma-02 | (2026-05-15) |
+| ✅ | `scr-ma-03` | Basic Numeracy & Data Analysis | pre-ma-02 | (2026-05-15) |
 
 ---
 
@@ -107,8 +107,8 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `m2-ap-04` | Andhra Movement & State Formation | p1-aph-04 |
-| ⬜ | `m2-ap-05` | AP 1956–2014 & Bifurcation | p1-aph-05 |
+| ✅ | `m2-ap-04` | Andhra Movement & State Formation | p1-aph-04 | (2026-05-15) |
+| ✅ | `m2-ap-05` | AP 1956–2014 & Bifurcation | p1-aph-05 | (2026-05-15) |
 
 ---
 
@@ -117,11 +117,11 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `m3-pa-01` | Public Administration Concepts | — |
-| ⬜ | `m3-pa-02` | Government Policies, Civil Society & NGOs | scr-soc-03 |
-| ⬜ | `m3-pa-04` | Governance, Transparency & Accountability | — |
-| ⬜ | `m3-et-03` | Integrity, Aptitude & Foundational Values | — |
-| ⬜ | `m3-et-04` | Ethical Issues in Governance | — |
+| ✅ | `m3-pa-01` | Public Administration Concepts | — | (2026-05-15) |
+| ✅ | `m3-pa-02` | Government Policies, Civil Society & NGOs | scr-soc-03 | (2026-05-15) |
+| ✅ | `m3-pa-04` | Governance, Transparency & Accountability | — | (2026-05-15) |
+| ✅ | `m3-et-03` | Integrity, Aptitude & Foundational Values | — | (2026-05-15) |
+| ✅ | `m3-et-04` | Ethical Issues in Governance | — | (2026-05-15) |
 
 ---
 
