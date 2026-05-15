@@ -107,8 +107,11 @@ function setMonth(month, autoSelectLatest) {
 
       if (autoSelectLatest) {
         if (daysWithData.size > 0) {
-          const latestDay = Math.max(...daysWithData);
-          setTimeout(() => selectDay(latestDay), 80);
+          // If we're in today's month, show today's week — otherwise show latest
+          const todayRange = (YEAR === todayYear && month === todayMonth)
+            ? getRangeForDay(todayDay) : null;
+          const dayToSelect = todayRange ? todayRange.file_day : Math.max(...daysWithData);
+          setTimeout(() => selectDay(dayToSelect), 80);
         } else if (month > 1) {
           setMonth(month - 1, true);
         } else {
@@ -121,7 +124,7 @@ function setMonth(month, autoSelectLatest) {
             </div>`;
         }
       } else if (YEAR === todayYear && month === todayMonth) {
-        // Auto-select the week that covers today, if any
+        // Manual month-switch: still highlight today's week if present
         const todayRange = getRangeForDay(todayDay);
         if (todayRange) setTimeout(() => selectDay(todayRange.file_day), 80);
       }
