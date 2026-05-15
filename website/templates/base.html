@@ -474,6 +474,10 @@
     {% block content %}{% endblock %}
 </main>
 
+<div id="vibranium-music-container" style="display:none;">
+  <iframe id="vib-audio" width="0" height="0" src="" frameborder="0" allow="autoplay"></iframe>
+</div>
+
 <script>
   const navToggle  = document.getElementById('nav-toggle');
   const navDrawer  = document.getElementById('nav-drawer');
@@ -1047,8 +1051,5 @@ void main(){
   });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<div id="vibranium-music-container" style="display:none;">
-  <iframe id="vib-audio" width="0" height="0" src="" frameborder="0" allow="autoplay"></iframe>
-</div>
 </body>
 </html>
