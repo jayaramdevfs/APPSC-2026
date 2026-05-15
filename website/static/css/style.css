@@ -1071,6 +1071,50 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     flex-shrink: 0;
 }
 
+/* Music Player Wrap + Mini Bar */
+.music-player-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.music-mini-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 20px;
+    padding: 4px 10px;
+    animation: fadeInBar 0.3s ease;
+}
+@keyframes fadeInBar {
+    from { opacity: 0; transform: translateX(8px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+.mmp-title {
+    font-size: 11px;
+    color: rgba(168, 85, 247, 0.9);
+    max-width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.2px;
+}
+.mmp-ctrl {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(168, 85, 247, 0.8);
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: color 0.2s;
+}
+.mmp-ctrl svg { width: 14px; height: 14px; }
+.mmp-ctrl:hover { color: #A855F7; }
+
 /* Vibranium Music Button */
 .nav-music-btn {
     background: transparent;

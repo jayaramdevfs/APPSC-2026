@@ -334,9 +334,21 @@
                 </a>
             </div>
         </div>
-        <button class="nav-music-btn" id="music-toggle" aria-label="Toggle theme music" title="Theme music" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
-        </button>
+        <div class="music-player-wrap" id="music-player-wrap" style="display:none;">
+            <div class="music-mini-bar" id="music-mini-bar" style="display:none;">
+                <button class="mmp-ctrl" id="mmp-back" title="Back 10s">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" y1="4" x2="5" y2="20"></line></svg>
+                </button>
+                <span class="mmp-title" id="mmp-title"></span>
+                <button class="mmp-ctrl" id="mmp-fwd" title="Forward 10s">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" y1="4" x2="19" y2="20"></line></svg>
+                </button>
+            </div>
+            <button class="nav-music-btn" id="music-toggle" aria-label="Toggle theme music" title="Theme music">
+                <svg class="ico-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+                <svg class="ico-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none;"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+            </button>
+        </div>
         <button class="nav-search-btn" id="open-search" aria-label="Search" title="Search (Ctrl+K)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
@@ -515,21 +527,57 @@
     const m = THEME_MUSIC[theme];
     return m ? '/static/audio/' + m.file : '';
   }
-  function isPlaying() {
-    return !vibAudio.paused;
+  const playerWrap  = document.getElementById('music-player-wrap');
+  const miniBar     = document.getElementById('music-mini-bar');
+  const mmpTitle    = document.getElementById('mmp-title');
+  const icoMusic    = musicToggle.querySelector('.ico-music');
+  const icoPause    = musicToggle.querySelector('.ico-pause');
+
+  function isPlaying() { return !vibAudio.paused; }
+
+  function updateMiniBar() {
+    const music = THEME_MUSIC[currentTheme()];
+    if (isPlaying() && music) {
+      mmpTitle.textContent = music.title;
+      miniBar.style.display = 'flex';
+      icoMusic.style.display = 'none';
+      icoPause.style.display = '';
+    } else {
+      miniBar.style.display = 'none';
+      icoMusic.style.display = '';
+      icoPause.style.display = 'none';
+    }
   }
+
   function stopMusic() {
     vibAudio.pause();
-    vibAudio.currentTime = 0;
     musicToggle.classList.remove('playing');
+    updateMiniBar();
   }
+
   function playMusic(url) {
-    if (vibAudio.src !== location.origin + url) {
+    const absUrl = location.origin + url;
+    if (vibAudio.src !== absUrl) {
       vibAudio.src = url;
+      vibAudio.addEventListener('loadedmetadata', () => {
+        const pos = parseFloat(localStorage.getItem('music_pos') || 0);
+        if (pos > 0 && pos < vibAudio.duration - 2) vibAudio.currentTime = pos;
+        vibAudio.play().catch(() => {});
+      }, { once: true });
+    } else {
+      vibAudio.play().catch(() => {});
     }
-    vibAudio.play().catch(() => {});
     musicToggle.classList.add('playing');
+    updateMiniBar();
   }
+
+  // Save position every second for cross-page continuity
+  setInterval(() => {
+    if (!vibAudio.paused) localStorage.setItem('music_pos', Math.floor(vibAudio.currentTime));
+  }, 1000);
+
+  // When track ends, clear saved position so next page starts fresh
+  vibAudio.addEventListener('ended', () => localStorage.removeItem('music_pos'));
 
   // ── Theme list ───
   const THEMES = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast'];
@@ -547,14 +595,14 @@
     const t = currentTheme();
     const music = THEME_MUSIC[t];
     if (music) {
-      musicToggle.style.display = 'flex';
+      playerWrap.style.display = 'flex';
       musicToggle.title = music.title;
       musicToggle.setAttribute('aria-label', 'Toggle: ' + music.title);
       if (localStorage.getItem('theme_music') === 'on' && !isPlaying()) {
         playMusic(songUrlFor(t));
       }
     } else {
-      musicToggle.style.display = 'none';
+      playerWrap.style.display = 'none';
       stopMusic();
     }
     // Reflect active theme on the toggle button (CSS swaps icons via theme classes)
@@ -959,6 +1007,15 @@ void main(){
       const url = songUrlFor(currentTheme());
       if (url) { playMusic(url); localStorage.setItem('theme_music', 'on'); }
     }
+  });
+
+  document.getElementById('mmp-back').addEventListener('click', (e) => {
+    e.stopPropagation();
+    vibAudio.currentTime = Math.max(0, vibAudio.currentTime - 10);
+  });
+  document.getElementById('mmp-fwd').addEventListener('click', (e) => {
+    e.stopPropagation();
+    vibAudio.currentTime = Math.min(vibAudio.duration || 0, vibAudio.currentTime + 10);
   });
 
   updateThemeUI();
