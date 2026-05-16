@@ -116,6 +116,28 @@
     50%       { box-shadow: 0 0 0 1px rgba(168, 85, 247, 0.45), 0 0 28px rgba(168, 85, 247, 0.18); }
 }
 
+/* ── FONT — Space Grotesk for the Wakanda theme ── */
+.theme-wakanda,
+.theme-wakanda body,
+.theme-wakanda .nav-brand .nav-title,
+.theme-wakanda h1,
+.theme-wakanda h2,
+.theme-wakanda h3,
+.theme-wakanda h4,
+.theme-wakanda h5,
+.theme-wakanda .dash-title,
+.theme-wakanda .ph-title,
+.theme-wakanda .subject-card,
+.theme-wakanda .card,
+.theme-wakanda .dash-card,
+.theme-wakanda .btn-primary,
+.theme-wakanda .auth-submit-btn,
+.theme-wakanda .nav-item,
+.theme-wakanda button:not(.ctile) {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    letter-spacing: -0.01em;
+}
+
 /* ── NAV BAR — frosted vibranium glass ── */
 .theme-wakanda .nav-bar {
     background: rgba(3, 3, 18, 0.88);
