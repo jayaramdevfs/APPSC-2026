@@ -50,47 +50,221 @@
 }
 
 /* =========================================
-   BLACK PANTHER (WAKANDA) THEME OVERRIDES
+   BLACK PANTHER — PREMIUM VIBRANIUM EDITION
+   Deep obsidian · Indigo-core · Claude-grade
    ========================================= */
 .theme-wakanda {
-    --base:       #0A0512;
-    --surface:    #110A1F;
-    --card:       #180F2A;
-    --elevated:   #22163B;
-    --inset:      #06030A;
-    --navy:       #0A0512;
-    --navy-dark:  #050308;
-    
-    --saffron:    #A855F7; /* Vibranium Purple */
-    --white:      #E2E8F0;
-    --navy-flag:  #2D0EA1;
-    
-    --gold:       #A855F7;
-    --gold-rgb:   168, 85, 247;
-    --accent:     #A855F7;
-    --accent-hover: #C084FC;
-    --bg:         #0A0512;
-    --border:     #2D1B4E;
-    --border-hover: #4C2D85;
+    --base:       #02020D;
+    --surface:    #05061A;
+    --card:       #080921;
+    --elevated:   #0D0E2B;
+    --inset:      #01010A;
+    --navy:       #02020D;
+    --navy-dark:  #010109;
 
-    --glow-gold:  0 0 15px rgba(168, 85, 247, 0.25), 0 0 30px rgba(168, 85, 247, 0.1);
-    --glow-gold-hover: 0 0 25px rgba(168, 85, 247, 0.5), 0 0 50px rgba(168, 85, 247, 0.2);
+    /* Vibranium Indigo — premium, not garish */
+    --saffron:    #7C6FF7;
+    --white:      #EEF0FF;
+    --navy-flag:  #1E1B6B;
+
+    --gold:       #7C6FF7;
+    --gold-rgb:   124, 111, 247;
+    --accent:     #7C6FF7;
+    --accent-hover: #A09BFF;
+    --bg:         #02020D;
+    --text:       #DDE1FF;
+    --muted:      #7B82B8;
+    --faint:      #3D4270;
+    --border:     rgba(124, 111, 247, 0.10);
+    --border-hover: rgba(124, 111, 247, 0.28);
+
+    --glow-gold:      0 0 28px rgba(124, 111, 247, 0.14), 0 0 70px rgba(99, 88, 220, 0.06);
+    --glow-gold-hover: 0 0 36px rgba(124, 111, 247, 0.32), 0 0 90px rgba(99, 88, 220, 0.12);
+    --shadow:         0 4px 24px rgba(0, 0, 0, 0.75);
 }
 
 .theme-wakanda body {
+    background: #02020D;
     background-image:
-        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.04) 0%, transparent 70%),
-        linear-gradient(to right, rgba(168, 85, 247, 0.08) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(168, 85, 247, 0.08) 1px, transparent 1px),
-        repeating-linear-gradient(0deg, rgba(168, 85, 247, 0.03) 0px, transparent 2px, transparent 4px);
-    background-size: 100% 100%, 40px 40px, 40px 40px, 100% 4px;
-    animation: scanline 10s linear infinite;
+        /* Primary ambient — top crown, the vibranium core */
+        radial-gradient(ellipse 110% 55% at 50% -8%, rgba(99, 88, 220, 0.11) 0%, transparent 52%),
+        /* Secondary — lower-right atmospheric bleed */
+        radial-gradient(ellipse 65% 45% at 108% 108%, rgba(79, 70, 200, 0.07) 0%, transparent 48%),
+        /* Tertiary — left-edge cold halo */
+        radial-gradient(ellipse 45% 70% at -8% 55%, rgba(99, 88, 220, 0.05) 0%, transparent 48%),
+        /* Floor glow — barely-visible depth cue */
+        radial-gradient(ellipse 80% 30% at 50% 108%, rgba(60, 50, 180, 0.06) 0%, transparent 50%);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    animation: none;
 }
 
-@keyframes scanline {
-    from { background-position: 0 0, 0 0, 0 0, 0 0; }
-    to { background-position: 0 0, 0 0, 0 0, 0 100%; }
+/* Theme-specific Ashoka Chakra — Vibranium tint, refined */
+.theme-wakanda body::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='44' fill='none' stroke='%237C6FF7' stroke-width='0.3' opacity='0.06'/%3E%3Ccircle cx='50' cy='50' r='36' fill='none' stroke='%237C6FF7' stroke-width='0.2' opacity='0.04'/%3E%3Cg stroke='%237C6FF7' stroke-width='0.12' opacity='0.05'%3E%3Cpath d='M50 50 L50 12 M50 50 L59.8 13.3 M50 50 L68.9 17.1 M50 50 L76.7 23.3 M50 50 L82.9 31.1 M50 50 L86.7 40.2 M50 50 L88 50 M50 50 L86.7 59.8 M50 50 L82.9 68.9 M50 50 L76.7 76.7 M50 50 L68.9 82.9 M50 50 L59.8 86.7 M50 50 L50 88 M50 50 L40.2 86.7 M50 50 L31.1 82.9 M50 50 L23.3 76.7 M50 50 L17.1 68.9 M50 50 L13.3 59.8 M50 50 L12 50 M50 50 L13.3 40.2 M50 50 L17.1 31.1 M50 50 L23.3 23.3 M50 50 L31.1 17.1 M50 50 L40.2 13.3'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.08;
 }
+
+/* Vibranium Breathe — slow, cinematic, not frantic */
+@keyframes vibranium-breathe {
+    0%, 100% { filter: drop-shadow(0 0 3px rgba(124, 111, 247, 0.45)); }
+    50%       { filter: drop-shadow(0 0 10px rgba(160, 155, 255, 0.65)); }
+}
+
+/* Title — premium gradient with slow breathe */
+.theme-wakanda .nav-brand .nav-title {
+    background: linear-gradient(135deg, #6B60E8 0%, #9B96FF 45%, #C4C0FF 80%, #9B96FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: vibranium-breathe 5s ease-in-out infinite;
+    letter-spacing: 0.01em;
+}
+
+/* Completed tiles */
+.theme-wakanda .ctile.done {
+    background: linear-gradient(135deg, #3730A3 0%, #4F46E5 100%);
+    border-color: rgba(124, 111, 247, 0.6);
+    box-shadow: 0 0 12px rgba(124, 111, 247, 0.30), 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Widgets — glass morphism */
+.theme-wakanda .cc-widget {
+    background: rgba(124, 111, 247, 0.03);
+    border: 1px solid rgba(124, 111, 247, 0.12);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.55),
+        0 1px 0 rgba(255, 255, 255, 0.04) inset,
+        0 0 0 1px rgba(124, 111, 247, 0.06) inset;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Timer — vibranium glow */
+.theme-wakanda .timer-unit .val {
+    color: #A09BFF;
+    text-shadow: 0 0 18px rgba(124, 111, 247, 0.55), 0 0 4px rgba(124, 111, 247, 0.3);
+}
+
+/* User badge */
+.theme-wakanda .nav-user-badge {
+    color: #A09BFF;
+    border-color: rgba(124, 111, 247, 0.28);
+}
+
+/* Active theme icon */
+.theme-wakanda .nav-theme-btn.active svg {
+    color: #A09BFF;
+    filter: drop-shadow(0 0 6px rgba(124, 111, 247, 0.75));
+}
+
+/* Primary buttons — premium with shimmer */
+.theme-wakanda .btn-primary,
+.theme-wakanda .auth-submit-btn {
+    background: linear-gradient(135deg, #4338CA 0%, #6B60E8 50%, #7C6FF7 100%);
+    box-shadow:
+        0 4px 18px rgba(124, 111, 247, 0.28),
+        0 1px 0 rgba(255, 255, 255, 0.10) inset;
+    border: 1px solid rgba(160, 155, 255, 0.18);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-wakanda .btn-primary:hover,
+.theme-wakanda .auth-submit-btn:hover {
+    background: linear-gradient(135deg, #4F46E5 0%, #7C6FF7 50%, #9B96FF 100%);
+    box-shadow:
+        0 6px 28px rgba(124, 111, 247, 0.42),
+        0 1px 0 rgba(255, 255, 255, 0.14) inset;
+    transform: translateY(-1px);
+}
+
+/* Subject cards — glass depth */
+.theme-wakanda .subject-card {
+    background: rgba(124, 111, 247, 0.025);
+    border: 1px solid rgba(124, 111, 247, 0.10);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.50);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.theme-wakanda .subject-card:hover {
+    border-color: rgba(124, 111, 247, 0.32);
+    background: rgba(124, 111, 247, 0.055);
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.70),
+        0 0 24px rgba(124, 111, 247, 0.18),
+        0 1px 0 rgba(255, 255, 255, 0.05) inset;
+    transform: translateY(-6px);
+}
+
+/* Weekly target */
+.theme-wakanda .cw-target {
+    color: #A09BFF;
+    text-shadow: 0 0 10px rgba(124, 111, 247, 0.35);
+    border-top-color: rgba(124, 111, 247, 0.14);
+}
+
+/* Progress bar */
+.theme-wakanda .cp-bar-fill {
+    background: linear-gradient(90deg, #4338CA 0%, #7C6FF7 60%, #A09BFF 100%);
+    box-shadow: 0 0 12px rgba(124, 111, 247, 0.50);
+}
+
+/* Generic cards — layered depth */
+.theme-wakanda .card {
+    background: rgba(124, 111, 247, 0.02);
+    border: 1px solid rgba(124, 111, 247, 0.09);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: all 0.30s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.theme-wakanda .card:hover {
+    border-color: rgba(124, 111, 247, 0.24);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.65),
+        0 0 20px rgba(124, 111, 247, 0.12),
+        0 1px 0 rgba(255, 255, 255, 0.04) inset;
+    transform: translateY(-3px);
+}
+
+/* Nav bar — glass */
+.theme-wakanda .nav-bar {
+    background: rgba(5, 6, 26, 0.82);
+    border-bottom: 1px solid rgba(124, 111, 247, 0.09);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(124, 111, 247, 0.08), 0 8px 32px rgba(0, 0, 0, 0.40);
+}
+
+/* Inputs */
+.theme-wakanda input,
+.theme-wakanda textarea,
+.theme-wakanda select {
+    background: rgba(124, 111, 247, 0.04);
+    border-color: rgba(124, 111, 247, 0.14);
+    color: #DDE1FF;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.theme-wakanda input:focus,
+.theme-wakanda textarea:focus,
+.theme-wakanda select:focus {
+    border-color: rgba(124, 111, 247, 0.40);
+    box-shadow: 0 0 0 3px rgba(124, 111, 247, 0.10), 0 0 16px rgba(124, 111, 247, 0.08);
+    outline: none;
+}
+
+/* Links */
+.theme-wakanda a:not(.btn-primary):not(.nav-item) {
+    color: #A09BFF;
+}
+
+/* NKM menu (theme picker panel) active state */
+.theme-wakanda .nkm-item svg { color: #A09BFF; }
+.theme-wakanda .nkm-theme.active .nkm-check { color: #A09BFF; }
+.theme-wakanda .nkm-theme.active { background: rgba(124, 111, 247, 0.10); }
 
 /* =========================================
    GHOST RIDER (HELLFIRE) THEME OVERRIDES
@@ -155,99 +329,6 @@
     background: #DC2626;
     border-color: #FF7A1A;
     box-shadow: 0 0 8px rgba(255, 87, 34, 0.55);
-}
-
-/* Theme-specific Ashoka Chakra (Vibranium tint) */
-.theme-wakanda body::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 4.5A45.5 45.5 0 1 0 50 95.5 45.5 45.5 0 1 0 50 4.5Z' fill='none' stroke='%23A855F7' stroke-width='0.4' opacity='0.08'/%3E%3Cg stroke='%23A855F7' stroke-width='0.15' opacity='0.08'%3E%3Cpath d='M50 50 L50 12 M50 50 L59.8 13.3 M50 50 L68.9 17.1 M50 50 L76.7 23.3 M50 50 L82.9 31.1 M50 50 L86.7 40.2 M50 50 L88 50 M50 50 L86.7 59.8 M50 50 L82.9 68.9 M50 50 L76.7 76.7 M50 50 L68.9 82.9 M50 50 L59.8 86.7 M50 50 L50 88 M50 50 L40.2 86.7 M50 50 L31.1 82.9 M50 50 L23.3 76.7 M50 50 L17.1 68.9 M50 50 L13.3 59.8 M50 50 L12 50 M50 50 L13.3 40.2 M50 50 L17.1 31.1 M50 50 L23.3 23.3 M50 50 L31.1 17.1 M50 50 L40.2 13.3'/%3E%3C/g%3E%3C/svg%3E");
-    opacity: 0.1;
-}
-
-/* Vibranium Pulse Animation */
-@keyframes vibranium-pulse {
-    0% { filter: drop-shadow(0 0 2px rgba(168, 85, 247, 0.5)); }
-    50% { filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.8)); }
-    100% { filter: drop-shadow(0 0 2px rgba(168, 85, 247, 0.5)); }
-}
-
-.theme-wakanda .nav-brand .nav-title {
-    animation: vibranium-pulse 3s infinite ease-in-out;
-    background: linear-gradient(135deg, #A855F7 0%, #C084FC 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Vibranium Glow Classes */
-.theme-wakanda .ctile.done {
-    background: #7E22CE; /* Purple-700 */
-    border-color: #A855F7;
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
-}
-
-.theme-wakanda .cc-widget {
-    background: rgba(168, 85, 247, 0.03);
-    border: 1px solid rgba(168, 85, 247, 0.15);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-.theme-wakanda .timer-unit .val {
-    color: #A855F7;
-    text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
-}
-
-.theme-wakanda .nav-user-badge {
-    color: #A855F7;
-    border-color: rgba(168, 85, 247, 0.3);
-}
-
-.theme-wakanda .nav-theme-btn.active svg {
-    color: #A855F7;
-    filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.8));
-}
-
-.theme-wakanda .btn-primary,
-.theme-wakanda .auth-submit-btn {
-    background: linear-gradient(135deg, #7E22CE 0%, #A855F7 100%);
-    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
-}
-
-.theme-wakanda .btn-primary:hover,
-.theme-wakanda .auth-submit-btn:hover {
-    box-shadow: 0 6px 20px rgba(168, 85, 247, 0.5);
-}
-
-.theme-wakanda .subject-card {
-    background: rgba(168, 85, 247, 0.03);
-    border: 1px solid rgba(168, 85, 247, 0.15);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.theme-wakanda .subject-card:hover {
-    border-color: #A855F7;
-    background: rgba(168, 85, 247, 0.06);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(168, 85, 247, 0.3);
-    transform: translateY(-8px) scale(1.02);
-}
-
-.theme-wakanda .cw-target {
-    color: #A855F7;
-    text-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
-    border-top-color: rgba(168, 85, 247, 0.2);
-}
-
-.theme-wakanda .cp-bar-fill {
-    background: linear-gradient(90deg, #7E22CE, #A855F7);
-    box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
-}
-
-.theme-wakanda .card {
-    background: rgba(168, 85, 247, 0.02);
-    border-color: rgba(168, 85, 247, 0.1);
-}
-
-.theme-wakanda .card:hover {
-    border-color: #A855F7;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(168, 85, 247, 0.2);
 }
 
 /* =========================================
@@ -670,10 +751,10 @@ body::before {
     display: inline-block;
 }
 .gg-mark-wakanda {
-    color: #A855F7;
+    color: #7C6FF7;
     display: none;
-    filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.55));
-    animation: vibranium-pulse 3s infinite ease-in-out;
+    filter: drop-shadow(0 0 6px rgba(124, 111, 247, 0.55));
+    animation: vibranium-breathe 5s ease-in-out infinite;
 }
 .gg-mark-ghost {
     color: #FF5722;
@@ -729,10 +810,10 @@ body::before {
 }
 
 /* Theme-specific button color */
-.theme-wakanda .nav-paw-btn { color: #A855F7; border-color: #A855F7; }
+.theme-wakanda .nav-paw-btn { color: #A09BFF; border-color: rgba(124, 111, 247, 0.35); }
 .theme-wakanda .nav-paw-btn:hover {
-    background: rgba(168, 85, 247, 0.12);
-    box-shadow: 0 0 14px rgba(168, 85, 247, 0.35);
+    background: rgba(124, 111, 247, 0.10);
+    box-shadow: 0 0 16px rgba(124, 111, 247, 0.30);
 }
 .theme-ghost-rider .nav-paw-btn { color: #FF7A1A; border-color: #FF7A1A; }
 .theme-ghost-rider .nav-paw-btn:hover {
@@ -819,7 +900,7 @@ body::before {
     animation: paw-shake 0.45s ease-in-out;
 }
 .nav-paw-btn.previewing .paw-icon {
-    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.85));
+    filter: drop-shadow(0 0 10px rgba(124, 111, 247, 0.85));
 }
 @keyframes paw-charge {
     0%   { opacity: 0;    transform: scale(0.5); }
@@ -842,7 +923,7 @@ body::before {
     transition: opacity 0.55s ease;
 }
 .theme-flash-saffron     { background: radial-gradient(circle at 80% 0%, rgba(255, 153, 51, 0.22), rgba(255, 153, 51, 0) 60%); }
-.theme-flash-wakanda     { background: radial-gradient(circle at 80% 0%, rgba(168, 85, 247, 0.28), rgba(168, 85, 247, 0) 60%); }
+.theme-flash-wakanda     { background: radial-gradient(circle at 80% 0%, rgba(124, 111, 247, 0.28), rgba(124, 111, 247, 0) 60%); }
 .theme-flash-ghost-rider { background: radial-gradient(circle at 80% 0%, rgba(255, 87, 34, 0.34), rgba(255, 200, 0, 0.10) 35%, rgba(255, 87, 34, 0) 65%); }
 .theme-flash.out { opacity: 0; }
 
@@ -927,7 +1008,7 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
     flex-shrink: 0;
     color: var(--saffron);
 }
-.theme-wakanda     .nkm-item svg { color: #A855F7; }
+.theme-wakanda     .nkm-item svg { color: #A09BFF; }
 .theme-ghost-rider .nkm-item svg { color: #FF7A1A; }
 .nkm-label {
     flex: 1;
@@ -960,9 +1041,9 @@ html, body, .navbar, .nav-drawer, .card, .dash, .ca-spot,
 }
 .nkm-theme.active .nkm-check { opacity: 1; }
 .nkm-theme.active { background: rgba(255, 153, 51, 0.06); }
-.theme-wakanda     .nkm-theme.active .nkm-check { color: #A855F7; }
+.theme-wakanda     .nkm-theme.active .nkm-check { color: #A09BFF; }
 .theme-ghost-rider .nkm-theme.active .nkm-check { color: #FF7A1A; }
-.theme-wakanda     .nkm-theme.active { background: rgba(168, 85, 247, 0.10); }
+.theme-wakanda     .nkm-theme.active { background: rgba(124, 111, 247, 0.10); }
 .theme-ghost-rider .nkm-theme.active { background: rgba(255, 87, 34, 0.12); }
 .theme-varanasi    .nkm-item svg { color: #C8681A; }
 .theme-varanasi    .nkm-theme.active .nkm-check { color: #C8681A; }
@@ -5043,9 +5124,9 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
     width: 30vmax;
     height: 30vmax;
     border-radius: 50%;
-    border: 2px solid rgba(168, 85, 247, 0.18);
+    border: 1px solid rgba(124, 111, 247, 0.16);
     transform: translate(-50%, -50%) scale(0.2);
-    box-shadow: 0 0 60px rgba(168, 85, 247, 0.25), inset 0 0 40px rgba(168, 85, 247, 0.18);
+    box-shadow: 0 0 60px rgba(124, 111, 247, 0.20), inset 0 0 40px rgba(124, 111, 247, 0.12);
     animation: vibranium-ripple 6s ease-out infinite;
 }
 @keyframes vibranium-ripple {
@@ -5056,8 +5137,8 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
     position: absolute;
     width: 8px; height: 8px;
     border-radius: 50%;
-    background: radial-gradient(circle, #fff 0%, #C084FC 30%, rgba(168,85,247,0) 75%);
-    box-shadow: 0 0 18px rgba(168, 85, 247, 0.85), 0 0 36px rgba(168, 85, 247, 0.45);
+    background: radial-gradient(circle, #fff 0%, #A09BFF 30%, rgba(124,111,247,0) 75%);
+    box-shadow: 0 0 18px rgba(124, 111, 247, 0.75), 0 0 36px rgba(124, 111, 247, 0.35);
     animation: vibranium-float 11s ease-in-out infinite;
     opacity: 0;
 }
@@ -5110,15 +5191,15 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
     to   { transform: rotate(360deg); }
 }
 
-/* Wakanda — Vibranium eyes pulse */
+/* Wakanda — Vibranium eyes breathe (refined, not frantic) */
 .gg-pan-eye {
-    animation: pan-eye-pulse 2s ease-in-out infinite;
+    animation: pan-eye-pulse 4s ease-in-out infinite;
     transform-origin: center;
     transform-box: fill-box;
 }
 @keyframes pan-eye-pulse {
-    0%, 100% { filter: drop-shadow(0 0 2px rgba(168, 85, 247, 0.6)); opacity: 0.95; }
-    50%      { filter: drop-shadow(0 0 8px rgba(251, 191,  36, 0.95)); opacity: 1;  }
+    0%, 100% { filter: drop-shadow(0 0 2px rgba(124, 111, 247, 0.55)); opacity: 0.92; }
+    50%      { filter: drop-shadow(0 0 10px rgba(160, 155, 255, 0.90)); opacity: 1;  }
 }
 
 /* Ghost Rider — Skull halo + flame tongues animate independently */
