@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=51">
+    <link rel="stylesheet" href="/static/css/style.css?v=52">
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
@@ -32,7 +32,7 @@
     <script>
       // Early init to prevent flicker
       (function() {
-  const VALID = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast'];
+  const VALID = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast', 'retro'];
   try {
     const urlTheme = new URLSearchParams(location.search).get('theme');
     if (VALID.includes(urlTheme)) localStorage.setItem('theme', urlTheme);
@@ -42,6 +42,7 @@
   if (saved === 'ghost-rider') document.documentElement.classList.add('theme-ghost-rider');
   if (saved === 'varanasi')    document.documentElement.classList.add('theme-varanasi');
   if (saved === 'contrast')    document.documentElement.classList.add('theme-contrast');
+  if (saved === 'retro')       document.documentElement.classList.add('theme-retro');
 })();
 </script>
 </head>
@@ -72,6 +73,10 @@
     <!-- Varanasi: WebGL cinematic sky (background) + diya river lights (overlay) -->
     <canvas id="varanasi-sky" class="varanasi-sky" aria-hidden="true"></canvas>
     <canvas id="diya-canvas"  class="diya-canvas"  aria-hidden="true"></canvas>
+
+    <!-- Retro: Synthwave perspective grid + scanline overlay -->
+    <canvas id="retro-grid-canvas" class="retro-grid-canvas" aria-hidden="true"></canvas>
+    <div class="vfx-retro-scan" aria-hidden="true"></div>
 </div>
 
 <nav class="navbar">
@@ -217,6 +222,34 @@
             <circle  cx="32" cy="5.5" r="1.3" fill="currentColor"/>
         </svg>
 
+        <!-- ─── RETRO: Synthwave cassette tape ─── -->
+        <svg class="gg-mark gg-mark-retro" viewBox="0 0 64 64" aria-hidden="true">
+            <!-- Cassette body -->
+            <rect x="6" y="16" width="52" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <!-- Label strip -->
+            <rect x="12" y="20" width="40" height="10" rx="2" fill="currentColor" opacity="0.25"/>
+            <rect x="16" y="23" width="32" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+            <!-- Left reel -->
+            <circle cx="20" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="20" cy="38" r="2.8" fill="currentColor"/>
+            <line x1="20" y1="30.5" x2="20" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="20" y1="40.8" x2="20" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="12.5" y1="38" x2="17.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="22.8" y1="38" x2="27.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <!-- Right reel -->
+            <circle cx="44" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="44" cy="38" r="2.8" fill="currentColor"/>
+            <line x1="44" y1="30.5" x2="44" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="44" y1="40.8" x2="44" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="36.5" y1="38" x2="41.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="46.8" y1="38" x2="51.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <!-- Tape window bridge -->
+            <path d="M13 46 Q20 42 28 44 L36 44 Q44 42 51 46" stroke="currentColor" stroke-width="1.4" fill="none"/>
+            <!-- Corner notches -->
+            <rect x="7"  y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
+            <rect x="52" y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
+        </svg>
+
         <span class="nav-title">GroupsGuru</span>
     </a>
 
@@ -255,6 +288,11 @@
                 <button class="ntm-item" data-theme="contrast">
                     <span class="ntm-dot" style="background:#000;border:2px solid #FF9933;outline:2px solid #fff;outline-offset:1px"></span>
                     High Contrast
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="ntm-item" data-theme="retro">
+                    <span class="ntm-dot" style="background:linear-gradient(135deg,#FF2D78,#00E5FF)"></span>
+                    Retro
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
             </div>
@@ -314,6 +352,18 @@
                         <path d="M16 3 A13 13 0 0 1 16 29 Z"/>
                     </svg>
                     <span class="nkm-label">High Contrast</span>
+                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="nkm-item nkm-theme" data-theme="retro" role="menuitemradio">
+                    <svg viewBox="0 0 32 32" aria-hidden="true">
+                        <rect x="3" y="9" width="26" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="10" cy="19" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="10" cy="19" r="1.4" fill="currentColor"/>
+                        <circle cx="22" cy="19" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="22" cy="19" r="1.4" fill="currentColor"/>
+                        <rect x="7" y="11" width="18" height="5" rx="1" fill="currentColor" opacity="0.3"/>
+                    </svg>
+                    <span class="nkm-label">Retro</span>
                     <span class="nkm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <div class="nkm-divider"></div>
@@ -403,6 +453,26 @@
                 <ellipse cx="32" cy="10" rx="3.5" ry="2.5" fill="currentColor"/>
                 <circle  cx="32" cy="7.5" r="2"   fill="currentColor"/>
                 <circle  cx="32" cy="5.5" r="1.3" fill="currentColor"/>
+            </svg>
+            <svg class="gg-mark gg-mark-retro" viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="6" y="16" width="52" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <rect x="12" y="20" width="40" height="10" rx="2" fill="currentColor" opacity="0.25"/>
+                <rect x="16" y="23" width="32" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+                <circle cx="20" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="20" cy="38" r="2.8" fill="currentColor"/>
+                <line x1="20" y1="30.5" x2="20" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="20" y1="40.8" x2="20" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="12.5" y1="38" x2="17.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="22.8" y1="38" x2="27.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="44" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="44" cy="38" r="2.8" fill="currentColor"/>
+                <line x1="44" y1="30.5" x2="44" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="44" y1="40.8" x2="44" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="36.5" y1="38" x2="41.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="46.8" y1="38" x2="51.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M13 46 Q20 42 28 44 L36 44 Q44 42 51 46" stroke="currentColor" stroke-width="1.4" fill="none"/>
+                <rect x="7"  y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
+                <rect x="52" y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
             </svg>
             <span class="nav-title">GroupsGuru</span>
         </a>
@@ -551,6 +621,7 @@
     'ghost-rider':{ file: 'ghost-rider.mp3', title: 'Ghost Riders In The Sky — Spiderbait',   startAt: 0  },
     varanasi:     { file: 'varanasi.mp3',    title: 'Sanchaari — MM Keeravani & Shruti Haasan', startAt: 22 },
     contrast:     null,
+    retro:        { file: 'retro.mp3',       title: 'The One — Suriya · Santhosh Narayanan',   startAt: 44 },
   };
   function songUrlFor(theme) {
     const m = THEME_MUSIC[theme];
@@ -623,13 +694,14 @@
   vibAudio.addEventListener('ended', () => localStorage.removeItem('music_pos'));
 
   // ── Theme list ───
-  const THEMES = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast'];
+  const THEMES = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast', 'retro'];
   function currentTheme() {
     const r = document.documentElement;
     if (r.classList.contains('theme-wakanda'))     return 'wakanda';
     if (r.classList.contains('theme-ghost-rider')) return 'ghost-rider';
     if (r.classList.contains('theme-varanasi'))    return 'varanasi';
     if (r.classList.contains('theme-contrast'))    return 'contrast';
+    if (r.classList.contains('theme-retro'))       return 'retro';
     return 'saffron';
   }
   function nextTheme(t) { return THEMES[(THEMES.indexOf(t) + 1) % THEMES.length]; }
@@ -675,7 +747,7 @@
 
   function applyTheme(name) {
     const root = document.documentElement;
-    root.classList.remove('theme-wakanda', 'theme-ghost-rider', 'theme-varanasi', 'theme-contrast');
+    root.classList.remove('theme-wakanda', 'theme-ghost-rider', 'theme-varanasi', 'theme-contrast', 'theme-retro');
     if (name === 'wakanda') root.classList.add('theme-wakanda');
     if (name === 'ghost-rider') {
       root.classList.add('theme-ghost-rider');
@@ -692,6 +764,12 @@
       if (typeof stopDiyas === 'function') stopDiyas();
     }
     if (name === 'contrast') root.classList.add('theme-contrast');
+    if (name === 'retro') {
+      root.classList.add('theme-retro');
+      if (typeof startRetroGrid === 'function') startRetroGrid();
+    } else {
+      if (typeof stopRetroGrid === 'function') stopRetroGrid();
+    }
   }
 
   // ── Ghost Rider: WebGL Full-Viewport Fire (bottom + sides) ─────────────
@@ -953,6 +1031,82 @@ void main(){
     window.stopDiyas=function(){if(animId){cancelAnimationFrame(animId);animId=null;}ctx.clearRect(0,0,canvas.width||1,canvas.height||1);diyas=[];};
     window.addEventListener('resize',()=>{if(animId)resize();});
     if(document.documentElement.classList.contains('theme-varanasi'))startDiyas();
+  }());
+
+  // ── Retro: Synthwave perspective grid ──────────────────────────────────
+  (function(){
+    const canvas = document.getElementById('retro-grid-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animId = null, t = 0;
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+    function draw() {
+      const W = canvas.width, H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+
+      const horizon = H * 0.62;
+      const vanishX = W * 0.5;
+
+      // Bottom glow base
+      const bg = ctx.createLinearGradient(0, horizon, 0, H);
+      bg.addColorStop(0, 'rgba(255,45,120,0)');
+      bg.addColorStop(1, 'rgba(255,45,120,0.07)');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, horizon, W, H - horizon);
+
+      // Horizontal grid lines — scroll toward viewer
+      const numH = 14;
+      for (let i = 0; i < numH; i++) {
+        const p = ((i + t % 1) / numH);
+        const y = horizon + Math.pow(p, 1.7) * (H - horizon);
+        const alpha = p * 0.65;
+        ctx.strokeStyle = `rgba(255,45,120,${alpha})`;
+        ctx.lineWidth = 0.4 + p * 1.8;
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+      }
+
+      // Vertical lines from vanishing point
+      const numV = 18;
+      for (let i = 0; i <= numV; i++) {
+        const xBot = (i / numV) * W;
+        const alpha = Math.max(0.04, 0.5 - Math.abs(i / numV - 0.5) * 0.9);
+        ctx.strokeStyle = `rgba(0,229,255,${alpha})`;
+        ctx.lineWidth = 0.7;
+        ctx.beginPath(); ctx.moveTo(vanishX, horizon); ctx.lineTo(xBot, H); ctx.stroke();
+      }
+
+      // Cyan horizon glow line
+      ctx.save();
+      ctx.shadowColor = '#00E5FF';
+      ctx.shadowBlur = 14;
+      ctx.strokeStyle = 'rgba(0,229,255,0.85)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(0, horizon); ctx.lineTo(W, horizon); ctx.stroke();
+      ctx.restore();
+
+      // Magenta horizon bloom
+      const mg = ctx.createLinearGradient(0, horizon, 0, horizon + 50);
+      mg.addColorStop(0, 'rgba(255,45,120,0.35)');
+      mg.addColorStop(1, 'rgba(255,45,120,0)');
+      ctx.fillStyle = mg;
+      ctx.fillRect(0, horizon, W, 50);
+    }
+
+    function loop() { t += 0.007; draw(); animId = requestAnimationFrame(loop); }
+
+    window.startRetroGrid = function() {
+      if (animId) return;
+      resize();
+      animId = requestAnimationFrame(loop);
+    };
+    window.stopRetroGrid = function() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      ctx.clearRect(0, 0, canvas.width || 1, canvas.height || 1);
+    };
+    window.addEventListener('resize', () => { if (animId) resize(); });
+    if (document.documentElement.classList.contains('theme-retro')) startRetroGrid();
   }());
 
   function setTheme(name, persist) {
