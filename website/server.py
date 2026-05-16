@@ -2966,6 +2966,31 @@ async def api_ca_month(request: Request):
     return JSONResponse({"days": _ca_days_for_month(year, month)})
 
 
+async def api_ca_nearest(request: Request):
+    """Return content for the nearest date on or before the requested date (up to 60 days back)."""
+    from datetime import date as _date, timedelta
+    date_str = request.path_params["date"]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date format"}, status_code=400)
+    try:
+        requested = _date.fromisoformat(date_str)
+    except ValueError:
+        return JSONResponse({"error": "Invalid date"}, status_code=400)
+
+    for offset in range(61):
+        candidate = requested - timedelta(days=offset)
+        ca_file = CA_DIR / f"{candidate.isoformat()}.md"
+        if ca_file.exists():
+            content = ca_file.read_text(encoding="utf-8")
+            return JSONResponse({
+                "found":     True,
+                "date":      candidate.isoformat(),
+                "requested": date_str,
+                "content":   content,
+            })
+    return JSONResponse({"found": False, "requested": date_str})
+
+
 # ---------------------------------------------------------------------------
 # Progress API — 1-4-7 revision tracker
 # ---------------------------------------------------------------------------
@@ -4311,6 +4336,7 @@ routes = [
     Route("/change-password",                    change_password_post,    methods=["POST"]),
     Route("/api/ca/content/{date}",               api_ca_content),
     Route("/api/ca/month/{year}/{month}",         api_ca_month),
+    Route("/api/ca/nearest/{date}",               api_ca_nearest),
     Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
     Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
     Route("/api/progress/due-today",              api_due_today),

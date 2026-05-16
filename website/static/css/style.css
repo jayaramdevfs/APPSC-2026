@@ -4905,6 +4905,22 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
     vertical-align: middle;
 }
 
+/* "Nearest to [date]" note — shown when clicked date has no exact content */
+.ca-nearest-note {
+    display: inline-block;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+/* All non-empty past cells are clickable — subtle hover so users know */
+.ca-day-cell:not(.empty):not(.has-data):hover {
+    background: rgba(255, 153, 51, 0.06);
+    cursor: pointer;
+}
+
 /* ═════════════════════════════════════════════════════════
    LIVE DASHBOARD (logged-in homepage)
    ═════════════════════════════════════════════════════════ */

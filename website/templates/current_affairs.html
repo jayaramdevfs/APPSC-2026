@@ -129,30 +129,40 @@ function selectDay(day) {
   const cell = document.querySelector(`.ca-day-cell[data-day="${day}"]`);
   if (cell) cell.classList.add('selected');
 
-  const dateStr = `${YEAR}-${String(activeMonth).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-  const label   = `${MONTH_NAMES[activeMonth-1]} ${day}, ${YEAR}`;
-  const isLatest = (day === Math.max(...(daysWithData.size ? daysWithData : [day])));
-
-  document.getElementById('ca-date-label').innerHTML =
-    `<span class="ca-date-text">${label}</span>
-     ${isLatest && !daysWithData.has(todayDay) ? '<span class="ca-latest-badge">Latest</span>' : ''}
-     <span class="ca-date-iso">${dateStr}</span>`;
+  const dateStr   = `${YEAR}-${String(activeMonth).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+  const clickedLabel = `${MONTH_NAMES[activeMonth-1]} ${day}, ${YEAR}`;
 
   const body = document.getElementById('ca-content-body');
   body.innerHTML = '<div class="ca-loading">Loading&hellip;</div>';
 
-  fetch('/api/ca/content/' + dateStr)
-    .then(r => { if (r.status === 404) return null; return r.text(); })
-    .then(md => {
-      if (!md || !md.trim()) {
+  fetch('/api/ca/nearest/' + dateStr)
+    .then(r => r.json())
+    .then(data => {
+      if (!data.found) {
+        document.getElementById('ca-date-label').innerHTML =
+          `<span class="ca-date-text">${clickedLabel}</span>
+           <span class="ca-date-iso">${dateStr}</span>`;
         body.innerHTML = `
           <div class="ca-empty-state">
-            <div class="ca-empty-icon">&#9997;</div>
-            <p>No current affairs for <strong>${label}</strong> yet.</p>
+            <div class="ca-empty-icon">&#128197;</div>
+            <p>No current affairs available yet for or before <strong>${clickedLabel}</strong>.</p>
           </div>`;
-      } else {
-        body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(md)}</div>`;
+        return;
       }
+
+      // Show the actual content date, with a note if it differs from what was clicked
+      const [cy, cm, cd] = data.date.split('-').map(Number);
+      const contentLabel  = `${MONTH_NAMES[cm-1]} ${cd}, ${cy}`;
+      const isDifferent   = data.date !== dateStr;
+      const isLatest      = daysWithData.size > 0 && day === Math.max(...daysWithData) && !isDifferent;
+
+      document.getElementById('ca-date-label').innerHTML =
+        `<span class="ca-date-text">${contentLabel}</span>
+         ${isLatest ? '<span class="ca-latest-badge">Latest</span>' : ''}
+         ${isDifferent ? `<span class="ca-nearest-note">nearest to ${clickedLabel}</span>` : ''}
+         <span class="ca-date-iso">${data.date}</span>`;
+
+      body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(data.content)}</div>`;
     })
     .catch(() => { body.innerHTML = '<p class="ca-error">Could not load. Please try again.</p>'; });
 }
