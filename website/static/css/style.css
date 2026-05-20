@@ -1116,6 +1116,16 @@ a.nav-brand:hover .nav-title {
     color: var(--accent-hover);
 }
 
+.gg-mark {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+}
+.gg-mark-default {
+    color: var(--saffron);
+    display: inline-block;
+}
+
 /* Always-visible top-right auth area */
 .nav-auth {
     display: flex;
