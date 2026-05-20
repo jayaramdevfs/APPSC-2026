@@ -20,24 +20,24 @@
 
 <!-- Stats strip -->
 <div class="dash-stats" id="dash-stats">
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-studied">—</span><span class="dash-stat-label">Topics Studied</span></div>
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-mastered">—</span><span class="dash-stat-label">Mastered</span></div>
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-streak">—</span><span class="dash-stat-label">Day Streak</span></div>
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label">Due Today</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-studied">—</span><span class="dash-stat-label" data-i18n="dashboard.topics_studied">Topics Studied</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-mastered">—</span><span class="dash-stat-label" data-i18n="dashboard.mastered">Mastered</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-streak">—</span><span class="dash-stat-label" data-i18n="dashboard.day_streak">Day Streak</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label" data-i18n="dashboard.due_today">Due Today</span></div>
 </div>
 
 <!-- Curriculum Heatmap (The Heart) -->
 <div class="curriculum-container" id="curriculum-container">
     <button class="curriculum-header" id="curriculum-toggle" onclick="toggleCurriculum()" aria-expanded="false">
         <div>
-            <h3 class="curriculum-title">Curriculum Heatmap</h3>
-            <span class="curriculum-subtitle">Click to expand — Super-Interactive Syllabus Progress</span>
+            <h3 class="curriculum-title" data-i18n="dashboard.curriculum_heatmap">Curriculum Heatmap</h3>
+            <span class="curriculum-subtitle" data-i18n="dashboard.click_to_expand">Click to expand — Super-Interactive Syllabus Progress</span>
         </div>
         <span class="curriculum-chevron" id="curriculum-chevron">▶</span>
     </button>
     <div id="syllabus-grid-belt" class="syllabus-belt syllabus-belt--collapsed">
         <!-- JS populated groups of tiles -->
-        <div class="syllabus-loading">Generating Grid...</div>
+        <div class="syllabus-loading" data-i18n="dashboard.generating">Generating Grid...</div>
     </div>
 </div>
 

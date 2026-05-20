@@ -4,9 +4,9 @@
 {% block content %}
 
 <div class="g2-header">
-  <a href="/" class="back-link">&larr; Back to Home</a>
-  <h1 class="page-title">Group I &mdash; Study Portal</h1>
-  <p class="page-subtitle">APPSC Gazetted Officers Exam &nbsp;|&nbsp; Prelims &bull; Mains Paper II &bull; Paper III &bull; Paper IV &bull; Paper V</p>
+  <a href="/" class="back-link" data-i18n="group1.back">← Back to Home</a>
+  <h1 class="page-title" data-i18n="group1.title">Group I — Study Portal</h1>
+  <p class="page-subtitle" data-i18n="group1.subtitle">APPSC Gazetted Officers Exam | Prelims • Mains Paper II • Paper III • Paper IV • Paper V</p>
 </div>
 
 <!-- ── Tab bar (Desktop & Mobile) ───────────────────────────────── -->
@@ -14,8 +14,8 @@
   <!-- Desktop Nav: Segmented Control -->
   <div class="portal-nav g2-tabs desktop-only">
     <button class="g2-tab active" data-tab="syllabus">
-      <span class="tab-label">Exam Scheme</span>
-      <span class="tab-sub">Official Pattern</span>
+      <span class="tab-label" data-i18n="group1.exam_scheme">Exam Scheme</span>
+      <span class="tab-sub" data-i18n="group1.official_pattern">Official Pattern</span>
     </button>
     {% for key, stage in structure.items() %}
     <button class="g2-tab" data-tab="{{ key }}">
@@ -36,8 +36,8 @@
     </button>
     <div class="portal-select-dropdown" id="mobile-tab-dropdown">
       <div class="select-option active" data-tab="syllabus">
-        <span class="option-label">Exam Scheme</span>
-        <span class="option-sub">Official Pattern</span>
+        <span class="option-label" data-i18n="group1.exam_scheme">Exam Scheme</span>
+        <span class="option-sub" data-i18n="group1.official_pattern">Official Pattern</span>
       </div>
       {% for key, stage in structure.items() %}
       <div class="select-option" data-tab="{{ key }}">
@@ -57,10 +57,10 @@
     <table class="scheme-table">
       <thead>
         <tr>
-          <th>Subject</th>
-          <th>No. of Questions</th>
-          <th>Duration Minutes</th>
-          <th>Maximum Marks</th>
+          <th data-i18n="common.subject">Subject</th>
+          <th data-i18n="common.questions">No. of Questions</th>
+          <th data-i18n="common.duration_min">Duration Minutes</th>
+          <th data-i18n="common.max_marks">Maximum Marks</th>
         </tr>
       </thead>
       <tbody>

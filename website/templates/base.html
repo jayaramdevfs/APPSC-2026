@@ -25,9 +25,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/static/css/style.css?v=53">
+    <script src="/static/js/i18n.js"></script>
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
+      /* Language toggle button */
+      .nav-lang-btn {
+        background: none;
+        border: 1.5px solid var(--border);
+        border-radius: 20px;
+        color: var(--text);
+        cursor: pointer;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 0.26rem 0.65rem;
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+        font-family: inherit;
+        white-space: nowrap;
+        letter-spacing: 0.01em;
+        line-height: 1.4;
+      }
+      .nav-lang-btn:hover {
+        background: rgba(255,153,51,0.1);
+        border-color: var(--gold);
+        color: var(--gold);
+      }
     </style>
     <script>
       // Early init to prevent flicker
@@ -259,7 +281,7 @@
     <div class="nav-auth">
         <div class="nav-theme-wrap">
             <button class="nav-paw-btn" id="theme-toggle" aria-label="Select theme" aria-expanded="false" title="Select theme">
-                <span class="tt-label">Theme</span>
+                <span class="tt-label" data-i18n="nav.theme">Theme</span>
                 <svg class="tt-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                     <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -267,32 +289,32 @@
             <div class="nav-theme-menu" id="theme-menu" hidden>
                 <button class="ntm-item" data-theme="saffron">
                     <span class="ntm-dot" style="background:#FF9933"></span>
-                    Default
+                    <span data-i18n="nav.theme.default">Default</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <button class="ntm-item" data-theme="wakanda">
                     <span class="ntm-dot" style="background:#A855F7"></span>
-                    Black Panther
+                    <span data-i18n="nav.theme.black_panther">Black Panther</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <button class="ntm-item" data-theme="ghost-rider">
                     <span class="ntm-dot" style="background:#FF5722"></span>
-                    Ghost Rider
+                    <span data-i18n="nav.theme.ghost_rider">Ghost Rider</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <button class="ntm-item" data-theme="varanasi">
                     <span class="ntm-dot" style="background:#C8681A"></span>
-                    Varanasi
+                    <span data-i18n="nav.theme.varanasi">Varanasi</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <button class="ntm-item" data-theme="contrast">
                     <span class="ntm-dot" style="background:#000;border:2px solid #FF9933;outline:2px solid #fff;outline-offset:1px"></span>
-                    High Contrast
+                    <span data-i18n="nav.theme.high_contrast">High Contrast</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <button class="ntm-item" data-theme="retro">
                     <span class="ntm-dot" style="background:linear-gradient(135deg,#FF2D78,#00E5FF)"></span>
-                    Retro
+                    <span data-i18n="nav.theme.retro">Retro</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
             </div>
@@ -306,7 +328,7 @@
                 </svg>
             </button>
             <div class="nav-kebab-menu" id="kebab-menu" role="menu" hidden>
-                <div class="nkm-section-label">Theme</div>
+                <div class="nkm-section-label" data-i18n="nav.theme">Theme</div>
                 <button class="nkm-item nkm-theme" data-theme="saffron" role="menuitemradio">
                     <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M4 22 L16 12 L28 22"></path>
@@ -380,10 +402,13 @@
                         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
                         <polyline points="9 22 9 12 15 12 15 22"></polyline>
                     </svg>
-                    <span class="nkm-label">Open Dashboard</span>
+                    <span class="nkm-label" data-i18n="nav.open_dashboard">Open Dashboard</span>
                 </a>
             </div>
         </div>
+        <button class="nav-lang-btn" id="lang-toggle" onclick="window.GG_I18N && GG_I18N.toggleLang()" title="Switch Language / భాష మార్చండి" aria-label="Switch language">
+            <span class="lang-btn-label">తెలుగు</span>
+        </button>
         <button class="nav-search-btn" id="open-search" aria-label="Search" title="Search (Ctrl+K)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
         </button>
@@ -391,10 +416,10 @@
             <a href="/change-password" class="nav-user-badge" title="Change password">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;margin-right:4px;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 {{ current_user.username }}</a>
-            <a href="/logout" class="nav-auth-btn nav-auth-logout">Logout</a>
+            <a href="/logout" class="nav-auth-btn nav-auth-logout" data-i18n="nav.logout">Logout</a>
         {% else %}
-            <a href="/register" class="nav-auth-btn nav-auth-join">Join Now</a>
-            <a href="/login" class="nav-auth-btn nav-auth-login {% if request is defined and request.url.path == '/login' %}active{% endif %}">Login</a>
+            <a href="/register" class="nav-auth-btn nav-auth-join" data-i18n="nav.join_now">Join Now</a>
+            <a href="/login" class="nav-auth-btn nav-auth-login {% if request is defined and request.url.path == '/login' %}active{% endif %}" data-i18n="nav.login">Login</a>
         {% endif %}
     </div>
 </nav>
@@ -482,42 +507,42 @@
         {% if current_user %}
             <li><a href="/dashboard" class="nav-drawer-link {% if request.url.path == '/dashboard' %}active{% endif %}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                Dashboard</a></li>
+                <span data-i18n="nav.dashboard">Dashboard</span></a></li>
             <li><a href="/last-day-revision" class="nav-drawer-link {% if request.url.path == '/last-day-revision' %}active{% endif %}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path></svg>
-                Pins</a></li>
+                <span data-i18n="nav.pins">Pins</span></a></li>
         {% endif %}
         <li><a href="/" class="nav-drawer-link {% if request.url.path == '/' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            Home</a></li>
+            <span data-i18n="nav.home">Home</span></a></li>
         <li><a href="/group1" class="nav-drawer-link {% if request.url.path == '/group1' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            Group I</a></li>
+            <span data-i18n="nav.group1">Group I</span></a></li>
         <li><a href="/group2" class="nav-drawer-link {% if request.url.path == '/group2' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.63 3 12"></polyline><polyline points="21 12 16.5 14.63 16.5 19.79"></polyline><polyline points="12 22 12 16.81"></polyline><polyline points="12 11.61 21 6.64"></polyline><polyline points="12 11.61 3 6.64"></polyline></svg>
-            Group II</a></li>
+            <span data-i18n="nav.group2">Group II</span></a></li>
         <li><a href="/current-affairs" class="nav-drawer-link {% if request.url.path == '/current-affairs' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-            Current Affairs</a></li>
+            <span data-i18n="nav.current_affairs">Current Affairs</span></a></li>
         <li><a href="/aptitude" class="nav-drawer-link {% if request.url.path == '/aptitude' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-            Aptitude</a></li>
+            <span data-i18n="nav.aptitude">Aptitude</span></a></li>
         <li><a href="/telugu" class="nav-drawer-link {% if request.url.path == '/telugu' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>
-            Telugu</a></li>
+            <span data-i18n="nav.telugu">Telugu</span></a></li>
 
         <li style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">
             {% if current_user %}
                 <a href="/change-password" class="nav-drawer-link">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
-                    Change Password</a>
+                    <span data-i18n="nav.change_password">Change Password</span></a>
                 <a href="/logout" class="nav-drawer-link nav-drawer-logout">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                    Logout</a>
+                    <span data-i18n="nav.logout">Logout</span></a>
             {% else %}
                 <a href="/login" class="nav-drawer-link {% if request.url.path == '/login' %}active{% endif %}">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
-                    Login</a>
+                    <span data-i18n="nav.login">Login</span></a>
             {% endif %}
         </li>
     </ul>
@@ -528,11 +553,11 @@
   <div class="search-modal">
     <div class="search-input-wrap">
       <span class="search-icon">&#128269;</span>
-      <input type="text" id="search-input" placeholder="Search syllabus topics…" autocomplete="off" spellcheck="false">
+      <input type="text" id="search-input" placeholder="Search syllabus topics…" data-i18n-placeholder="nav.search.placeholder" autocomplete="off" spellcheck="false">
       <kbd class="search-kbd">ESC</kbd>
     </div>
     <div class="search-results" id="search-results">
-      <div class="search-empty">Type at least 2 characters to search across all subjects.</div>
+      <div class="search-empty" data-i18n="nav.search.hint">Type at least 2 characters to search across all subjects.</div>
     </div>
   </div>
 </div>
@@ -1161,7 +1186,8 @@ void main(){
   const kbmMusicLabel = document.getElementById('kbm-music-label');
 
   function refreshKebabLabels() {
-    kbmMusicLabel.textContent = 'Ambient music: ' + (isPlaying() ? 'On' : 'Off');
+    var key = isPlaying() ? 'nav.music.on' : 'nav.music.off';
+    kbmMusicLabel.textContent = window.GG_I18N ? GG_I18N.t(key) : 'Ambient music: ' + (isPlaying() ? 'On' : 'Off');
   }
 
   function openKebab()  { kebabMenu.hidden = false; kebabBtn.setAttribute('aria-expanded', 'true');  refreshKebabLabels(); updateThemeUI(); }
@@ -1214,6 +1240,14 @@ void main(){
 
   updateThemeUI();
 
+  // Refresh dynamic labels on language change
+  document.addEventListener('gg:langchange', function() {
+    refreshKebabLabels();
+    var hint = window.GG_I18N ? GG_I18N.t('nav.search.hint') : 'Type at least 2 characters to search across all subjects.';
+    var emptyEl = document.querySelector('#search-results .search-empty');
+    if (emptyEl && !document.getElementById('search-input').value) emptyEl.textContent = hint;
+  });
+
   // ── Search modal ──────────────────────────────────────────────
   const searchOverlay = document.getElementById('search-overlay');
   const searchInput   = document.getElementById('search-input');
@@ -1230,7 +1264,8 @@ void main(){
     searchOverlay.classList.remove('open');
     document.body.style.overflow = '';
     searchInput.value = '';
-    searchResults.innerHTML = '<div class="search-empty">Type at least 2 characters to search across all subjects.</div>';
+    var hint = window.GG_I18N ? GG_I18N.t('nav.search.hint') : 'Type at least 2 characters to search across all subjects.';
+    searchResults.innerHTML = '<div class="search-empty">' + hint + '</div>';
   }
 
   openSearchBtn.addEventListener('click', openSearch);
@@ -1270,16 +1305,19 @@ void main(){
     clearTimeout(searchTimer);
     const q = searchInput.value.trim();
     if (q.length < 2) {
-      searchResults.innerHTML = '<div class="search-empty">Type at least 2 characters to search across all subjects.</div>';
+      var hint2 = window.GG_I18N ? GG_I18N.t('nav.search.hint') : 'Type at least 2 characters to search across all subjects.';
+      searchResults.innerHTML = '<div class="search-empty">' + hint2 + '</div>';
       return;
     }
-    searchResults.innerHTML = '<div class="search-empty search-loading">Searching…</div>';
+    var loadingMsg = window.GG_I18N ? GG_I18N.t('nav.search.loading') : 'Searching…';
+    searchResults.innerHTML = '<div class="search-empty search-loading">' + loadingMsg + '</div>';
     searchTimer = setTimeout(() => {
       fetch('/api/search?q=' + encodeURIComponent(q))
         .then(r => r.json())
         .then(items => {
           if (!items.length) {
-            searchResults.innerHTML = '<div class="search-empty">No results found for "' + escHtmlBase(q) + '".</div>';
+            var noResMsg = window.GG_I18N ? GG_I18N.t('nav.search.no_results').replace('{q}', escHtmlBase(q)) : 'No results found for "' + escHtmlBase(q) + '".';
+            searchResults.innerHTML = '<div class="search-empty">' + noResMsg + '</div>';
             return;
           }
           searchResults.innerHTML = items.map(it => {
@@ -1296,7 +1334,8 @@ void main(){
           }).join('');
         })
         .catch(() => {
-          searchResults.innerHTML = '<div class="search-empty">Search failed. Try again.</div>';
+          var errMsg = window.GG_I18N ? GG_I18N.t('nav.search.error') : 'Search failed. Try again.';
+          searchResults.innerHTML = '<div class="search-empty">' + errMsg + '</div>';
         });
     }, 250);
   });

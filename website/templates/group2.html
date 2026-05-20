@@ -4,9 +4,9 @@
 {% block content %}
 
 <div class="g2-header">
-  <a href="/" class="back-link">&larr; Back to Home</a>
-  <h1 class="page-title">Group II &mdash; Study Portal</h1>
-  <p class="page-subtitle">APPSC Non-Gazetted Officers Exam &nbsp;|&nbsp; Screening Test &bull; Paper 1 &bull; Paper 2</p>
+  <a href="/" class="back-link" data-i18n="group2.back">← Back to Home</a>
+  <h1 class="page-title" data-i18n="group2.title">Group II — Study Portal</h1>
+  <p class="page-subtitle" data-i18n="group2.subtitle">APPSC Non-Gazetted Officers Exam | Screening Test • Paper 1 • Paper 2</p>
 </div>
 
 <!-- ── Tab bar (Desktop & Mobile) ───────────────────────────────── -->
@@ -14,8 +14,8 @@
   <!-- Desktop Nav: Segmented Control -->
   <div class="portal-nav g2-tabs desktop-only">
     <button class="g2-tab active" data-tab="syllabus">
-      <span class="tab-label">Exam Scheme</span>
-      <span class="tab-sub">Official Pattern</span>
+      <span class="tab-label" data-i18n="group2.exam_scheme">Exam Scheme</span>
+      <span class="tab-sub" data-i18n="group2.official_pattern">Official Pattern</span>
     </button>
     {% for key, stage in structure.items() %}
     <button class="g2-tab" data-tab="{{ key }}">
@@ -29,15 +29,15 @@
   <div class="mobile-only portal-select-wrap">
     <button class="portal-select-trigger" id="mobile-tab-trigger">
       <div class="select-current">
-        <span class="current-label">Exam Scheme</span>
-        <span class="current-sub">Official Pattern</span>
+        <span class="current-label" data-i18n="group2.exam_scheme">Exam Scheme</span>
+        <span class="current-sub" data-i18n="group2.official_pattern">Official Pattern</span>
       </div>
       <span class="select-chevron">&#9662;</span>
     </button>
     <div class="portal-select-dropdown" id="mobile-tab-dropdown">
       <div class="select-option active" data-tab="syllabus">
-        <span class="option-label">Exam Scheme</span>
-        <span class="option-sub">Official Pattern</span>
+        <span class="option-label" data-i18n="group2.exam_scheme">Exam Scheme</span>
+        <span class="option-sub" data-i18n="group2.official_pattern">Official Pattern</span>
       </div>
       {% for key, stage in structure.items() %}
       <div class="select-option" data-tab="{{ key }}">
@@ -57,7 +57,7 @@
     <table class="scheme-table">
       <thead>
         <tr>
-          <th>Subject</th>
+          <th data-i18n="common.subject">Subject</th>
           <th style="width: 20%">No. of Questions</th>
           <th style="width: 20%">Duration in Minutes</th>
           <th style="width: 20%">Maximum Marks</th>
