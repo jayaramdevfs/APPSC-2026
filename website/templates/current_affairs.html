@@ -136,7 +136,8 @@ function selectDay(day) {
   var loadingStr = window.GG_I18N ? GG_I18N.t('ca.loading') : 'Loading…';
   body.innerHTML = '<div class="ca-loading">' + loadingStr + '</div>';
 
-  fetch('/api/ca/nearest/' + dateStr)
+  var caLang = window.GG_I18N ? GG_I18N.lang() : 'en';
+  fetch('/api/ca/nearest/' + dateStr + '?lang=' + caLang)
     .then(r => r.json())
     .then(data => {
       if (!data.found) {
@@ -153,6 +154,7 @@ function selectDay(day) {
       const contentLabel  = `${MONTH_NAMES()[cm-1]} ${cd}, ${cy}`;
       const isDifferent   = data.date !== dateStr;
       const isLatest      = daysWithData.size > 0 && day === Math.max(...daysWithData) && !isDifferent;
+      var autoTranslated  = caLang === 'te' && data.lang !== 'te';
 
       document.getElementById('ca-date-label').innerHTML =
         `<span class="ca-date-text">${contentLabel}</span>
@@ -160,7 +162,18 @@ function selectDay(day) {
          ${isDifferent ? '<span class="ca-nearest-note">' + (window.GG_I18N ? GG_I18N.t('ca.nearest_to') : 'nearest to') + ' ' + clickedLabel + '</span>' : ''}
          <span class="ca-date-iso">${data.date}</span>`;
 
-      body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(data.content)}</div>`;
+      // If Telugu requested but got English content, auto-translate
+      if (autoTranslated && window.GG_TRANSLATE) {
+        body.innerHTML = `<div class="ca-loading">${window.GG_I18N ? GG_I18N.t('sd.translating') : 'తెలుగులోకి అనువదిస్తోంది...'}</div>`;
+        GG_TRANSLATE.markdown(data.content).then(function(translated) {
+          var notice = `<div style="background:rgba(255,153,51,0.1);border:1px solid rgba(255,153,51,0.3);border-radius:6px;padding:0.4rem 0.8rem;margin-bottom:1rem;font-size:0.78rem;color:var(--muted);">${window.GG_I18N ? GG_I18N.t('ca.auto_translated') : '🌐 Auto-translated to Telugu'}</div>`;
+          body.innerHTML = notice + `<div class="ca-md-body markdown-body">${marked.parse(translated)}</div>`;
+        }).catch(function() {
+          body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(data.content)}</div>`;
+        });
+      } else {
+        body.innerHTML = `<div class="ca-md-body markdown-body">${marked.parse(data.content)}</div>`;
+      }
     })
     .catch(() => {
       var errMsg = window.GG_I18N ? GG_I18N.t('ca.load_error') : 'Could not load. Please try again.';
@@ -176,6 +189,10 @@ document.addEventListener('gg:langchange', function() {
   var calTitle = document.getElementById('cal-title');
   if (calTitle && activeMonth) {
     calTitle.textContent = MONTH_NAMES()[activeMonth - 1] + ' ' + YEAR;
+  }
+  // Reload content in the new language if a day is selected
+  if (activeDay) {
+    selectDay(activeDay);
   }
 });
 </script>

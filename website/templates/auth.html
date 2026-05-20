@@ -11,8 +11,8 @@
 
     <!-- LOGIN FORM SECTION -->
     <div id="section-login" class="auth-section">
-        <h1 class="auth-title">Welcome back</h1>
-        <p class="auth-subtitle">Command Center Access</p>
+        <h1 class="auth-title" data-i18n="auth.login_title">Welcome back</h1>
+        <p class="auth-subtitle" data-i18n="auth.login_sub">Login to continue your APPSC prep</p>
 
         {% if registered or request.query_params.get('registered') == '1' %}
         <div class="auth-success">
@@ -68,7 +68,7 @@
             </div>
           </div>
 
-          <button type="submit" class="auth-btn" style="width:100%;">Enter GroupsGuru</button>
+          <button type="submit" class="auth-btn" style="width:100%;" data-i18n="auth.login_btn">Login</button>
         </form>
 
         <div class="auth-footer">
@@ -79,8 +79,8 @@
 
     <!-- REGISTER FORM SECTION -->
     <div id="section-register" class="auth-section" style="display:none;">
-        <h1 class="auth-title">Join GroupsGuru</h1>
-        <p class="auth-subtitle">Begin Your 19-Hour Mastery Mission</p>
+        <h1 class="auth-title" data-i18n="auth.register_title">Create Account</h1>
+        <p class="auth-subtitle" data-i18n="auth.register_sub">Start your APPSC 2026 journey</p>
 
         {% if error and mode == 'register' %}
         <div class="auth-error">{{ error }}</div>
@@ -141,7 +141,7 @@
             <div class="auth-pwd-strength" id="pwd-strength"></div>
           </div>
 
-          <button type="submit" class="auth-btn" style="width:100%;">Initialize Account</button>
+          <button type="submit" class="auth-btn" style="width:100%;" data-i18n="auth.register_btn">Create Account</button>
         </form>
 
         <div class="auth-footer">

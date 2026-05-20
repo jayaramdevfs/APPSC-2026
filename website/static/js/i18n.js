@@ -2,7 +2,8 @@
    Usage: window.GG_I18N.t(key), window.GG_I18N.toggleLang()
    Elements with data-i18n="key" are auto-translated on load and toggle.
    Elements with data-i18n-placeholder="key" get their placeholder translated.
-   Listen for "gg:langchange" custom event for page-specific re-renders. */
+   Listen for "gg:langchange" custom event for page-specific re-renders.
+   Content auto-translation: GG_TRANSLATE.markdownToTelugu(md) → Promise<string> */
 (function () {
   'use strict';
 
@@ -58,12 +59,12 @@
       'hero.badge':           'ANDHRA PRADESH STATE CIVIL SERVICES',
       'hero.title':           'Ace APPSC 2026',
       'hero.title_accent':    'With Precision.',
-      'hero.subtitle':        "India’s most structured APPSC prep platform — syllabus-mapped notes, Pomodoro-powered focus sessions, and real-time progress tracking. Built for Group I and Group II aspirants.",
+      'hero.subtitle':        "India's most structured APPSC prep platform — syllabus-mapped notes, Pomodoro-powered focus sessions, and real-time progress tracking. Built for Group I and Group II aspirants.",
       'hero.group1_prelims':  'Group I Prelims',
       'hero.group2_screening':'Group II Screening',
       'hero.start_preparing': 'Start Preparing →',
       'hero.login':           'Login',
-      'hero.today_ca':        '📰 Today’s Current Affairs',
+      'hero.today_ca':        '📰 Today\'s Current Affairs',
       'hero.read_full_ca':    'Read full Current Affairs →',
       'hero.topics_mapped':   'Topics Mapped',
       'hero.exam_groups':     'Exam Groups',
@@ -83,7 +84,7 @@
 
       /* ── Current Affairs page ──────────────────────── */
       'ca.title':             'Current Affairs 2026',
-      'ca.subtitle':          "Select a date to read that day’s affairs — dates with content are highlighted in saffron",
+      'ca.subtitle':          "Select a date to read that day's affairs — dates with content are highlighted in saffron",
       'ca.loading':           'Loading…',
       'ca.loading_content':   'Loading latest…',
       'ca.fetching':          'Fetching latest current affairs…',
@@ -93,6 +94,7 @@
       'ca.nearest_to':        'nearest to',
       'ca.load_error':        'Could not load. Please try again.',
       'ca.back':              '← Back',
+      'ca.auto_translated':   '🌐 Auto-translated to Telugu',
       'ca.dow.sun': 'Sun', 'ca.dow.mon': 'Mon', 'ca.dow.tue': 'Tue', 'ca.dow.wed': 'Wed',
       'ca.dow.thu': 'Thu', 'ca.dow.fri': 'Fri', 'ca.dow.sat': 'Sat',
 
@@ -109,16 +111,109 @@
       /* ── Group I page ──────────────────────────────── */
       'group1.back':          '← Back to Home',
       'group1.title':         'Group I — Study Portal',
-      'group1.subtitle':      'APPSC Gazetted Officers Exam | Prelims • Mains Paper II • Paper III • Paper IV • Paper V',
+      'group1.subtitle':      'APPSC Gazetted Officers Exam | Prelims • Mains Paper II • Paper III • Paper IV • Paper V',
       'group1.exam_scheme':   'Exam Scheme',
       'group1.official_pattern': 'Official Pattern',
 
       /* ── Group II page ─────────────────────────────── */
       'group2.back':          '← Back to Home',
       'group2.title':         'Group II — Study Portal',
-      'group2.subtitle':      'APPSC Non-Gazetted Officers Exam | Screening • Mains',
+      'group2.subtitle':      'APPSC Non-Gazetted Officers Exam | Screening • Mains',
       'group2.exam_scheme':   'Exam Scheme',
       'group2.official_pattern': 'Official Pattern',
+
+      /* ── Study Desk ────────────────────────────────── */
+      'sd.mark_finished':     'Mark as Finished',
+      'sd.export':            'Export',
+      'sd.logout':            'Log Out',
+      'sd.themes':            'Themes',
+      'sd.font_family':       'Font Family',
+      'sd.font_size':         'Font Size',
+      'sd.loading':           'Loading book securely...',
+      'sd.no_content':        'No notes available for this topic yet. Check back soon!',
+      'sd.translate_notice':  '🌐 Displaying in Telugu (auto-translated)',
+      'sd.translate_btn':     'తెలుగులో చదవండి',
+      'sd.translating':       'తెలుగులోకి అనువదిస్తోంది...',
+      'sd.translate_error':   'Auto-translation failed. Showing English version.',
+      'sd.already_studied':   'Already marked as studied',
+      'sd.mark_revised':      'Mark as Revised',
+      'sd.next_revision':     'Next revision',
+      'sd.pomodoro':          'Pomodoro',
+      'sd.flashcards':        'Flashcards',
+      'sd.notes':             'My Notes',
+      'sd.pins':              'Pinned',
+      'sd.highlights':        'Highlights',
+
+      /* ── Practice (MCQ) page ───────────────────────── */
+      'practice.quit':        'Quit Session',
+      'practice.accuracy':    'Accuracy',
+      'practice.progress':    'Progress',
+      'practice.question':    'Question',
+      'practice.correct':     'Correct',
+      'practice.incorrect':   'Incorrect',
+      'practice.explanation': 'Answer Breakdown',
+      'practice.continue':    'Continue →',
+      'practice.complete':    'Session Complete',
+      'practice.mastered':    "You've mastered these concepts. Excellent work!",
+      'practice.replay':      'Replay Session',
+      'practice.dashboard':   'Go to Dashboard',
+      'practice.no_questions':'No Questions Yet',
+      'practice.no_q_desc':   'We are still populating practice questions for this topic. Check back soon!',
+      'practice.loading':     'Loading questions…',
+      'practice.translating': 'తెలుగులోకి అనువదిస్తోంది...',
+
+      /* ── Aptitude page ─────────────────────────────── */
+      'apt.back':             '← Back to Home',
+      'apt.title':            'Aptitude — Study Portal',
+      'apt.subtitle':         'Reasoning & Quantitative Aptitude for APPSC Exams',
+      'apt.loading':          'Loading topics…',
+
+      /* ── Telugu page ───────────────────────────────── */
+      'tel.back':             '← Back to Home',
+      'tel.title':            'Telugu — Study Portal',
+      'tel.subtitle':         'Telugu Language & Literature for APPSC Exams',
+      'tel.loading':          'Loading topics…',
+
+      /* ── Auth page ─────────────────────────────────── */
+      'auth.login_title':     'Welcome back',
+      'auth.login_sub':       'Login to continue your APPSC prep',
+      'auth.register_title':  'Create Account',
+      'auth.register_sub':    'Start your APPSC 2026 journey',
+      'auth.username':        'Username',
+      'auth.display_name':    'Display Name',
+      'auth.email':           'Email (optional)',
+      'auth.password':        'Password',
+      'auth.confirm_password':'Confirm Password',
+      'auth.login_btn':       'Login',
+      'auth.register_btn':    'Create Account',
+      'auth.no_account':      "Don't have an account?",
+      'auth.have_account':    'Already have an account?',
+      'auth.register_link':   'Register',
+      'auth.login_link':      'Login',
+      'auth.forgot_password': 'Forgot Password?',
+      'auth.or_google':       'Or continue with',
+      'auth.google_btn':      'Google',
+
+      /* ── Change / Forgot / Reset Password ─────────── */
+      'pwd.change_title':     'Change Password',
+      'pwd.current':          'Current Password',
+      'pwd.new':              'New Password',
+      'pwd.confirm':          'Confirm New Password',
+      'pwd.change_btn':       'Change Password',
+      'pwd.forgot_title':     'Forgot Password',
+      'pwd.forgot_sub':       "Enter your email and we'll send a reset link",
+      'pwd.email':            'Email Address',
+      'pwd.send_btn':         'Send Reset Link',
+      'pwd.reset_title':      'Reset Password',
+      'pwd.reset_btn':        'Reset Password',
+      'pwd.back_login':       '← Back to Login',
+
+      /* ── Last Day Revision ─────────────────────────── */
+      'ldr.title':            'Last Day Revision',
+      'ldr.subtitle':         'Your pinned paragraphs from all topics — your personal exam cheat-sheet',
+      'ldr.loading':          'Loading your pins…',
+      'ldr.no_pins':          'No pins yet! While reading topics, click the 📌 icon on any paragraph to pin it here.',
+      'ldr.print':            'Print / Save PDF',
 
       /* ── Common ────────────────────────────────────── */
       'common.back':          '← Back',
@@ -129,6 +224,8 @@
       'common.qualifying':    'Qualifying Nature',
       'common.paper':         'Paper',
       'common.duration':      'Duration',
+      'common.loading':       'Loading…',
+      'common.error':         'Something went wrong. Please try again.',
 
       /* ── Days & Months (arrays, used by JS) ─────────── */
       'days.long':   ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
@@ -222,6 +319,7 @@
       'ca.nearest_to':        'సమీపంలో',
       'ca.load_error':        'లోడ్ కాలేదు. మళ్ళీ ప్రయత్నించండి.',
       'ca.back':              '← వెనుకకు',
+      'ca.auto_translated':   '🌐 తెలుగులోకి స్వయంచాలకంగా అనువదించబడింది',
       'ca.dow.sun': 'ఆది', 'ca.dow.mon': 'సోమ', 'ca.dow.tue': 'మంగ', 'ca.dow.wed': 'బుధ',
       'ca.dow.thu': 'గురు', 'ca.dow.fri': 'శుక్ర', 'ca.dow.sat': 'శని',
 
@@ -238,16 +336,109 @@
       /* ── Group I page ──────────────────────────────── */
       'group1.back':          '← హోమ్‌కి తిరిగి',
       'group1.title':         'గ్రూప్ I — అధ్యయన పోర్టల్',
-      'group1.subtitle':      'APPSC గెజిటెడ్ అధికారుల పరీక్ష | ప్రిలిమ్స్ • మెయిన్స్ పేపర్ II • III • IV • V',
+      'group1.subtitle':      'APPSC గెజిటెడ్ అధికారుల పరీక్ష | ప్రిలిమ్స్ • మెయిన్స్ పేపర్ II • III • IV • V',
       'group1.exam_scheme':   'పరీక్షా విధానం',
       'group1.official_pattern': 'అధికారిక నమూనా',
 
       /* ── Group II page ─────────────────────────────── */
       'group2.back':          '← హోమ్‌కి తిరిగి',
       'group2.title':         'గ్రూప్ II — అధ్యయన పోర్టల్',
-      'group2.subtitle':      'APPSC నాన్-గెజిటెడ్ అధికారుల పరీక్ష | స్క్రీనింగ్ • మెయిన్స్',
+      'group2.subtitle':      'APPSC నాన్-గెజిటెడ్ అధికారుల పరీక్ష | స్క్రీనింగ్ • మెయిన్స్',
       'group2.exam_scheme':   'పరీక్షా విధానం',
       'group2.official_pattern': 'అధికారిక నమూనా',
+
+      /* ── Study Desk ────────────────────────────────── */
+      'sd.mark_finished':     'పూర్తయినట్లు గుర్తించండి',
+      'sd.export':            'ఎగుమతి',
+      'sd.logout':            'లాగ్అవుట్',
+      'sd.themes':            'థీమ్‌లు',
+      'sd.font_family':       'ఫాంట్ శ్రేణి',
+      'sd.font_size':         'ఫాంట్ పరిమాణం',
+      'sd.loading':           'పుస్తకం సురక్షితంగా లోడ్ అవుతోంది...',
+      'sd.no_content':        'ఈ విషయానికి ఇంకా నోట్స్ అందుబాటులో లేవు. తర్వాత చెక్ చేయండి!',
+      'sd.translate_notice':  '🌐 తెలుగులో చూపబడుతోంది (స్వయంచాలక అనువాదం)',
+      'sd.translate_btn':     'తెలుగులో చదవండి',
+      'sd.translating':       'తెలుగులోకి అనువదిస్తోంది...',
+      'sd.translate_error':   'స్వయంచాలక అనువాదం విఫలమైంది. ఆంగ్ల వెర్షన్ చూపబడుతోంది.',
+      'sd.already_studied':   'ఇప్పటికే చదివినట్లు గుర్తించబడింది',
+      'sd.mark_revised':      'రివిజన్ చేసినట్లు గుర్తించండి',
+      'sd.next_revision':     'తదుపరి రివిజన్',
+      'sd.pomodoro':          'పొమోడోరో',
+      'sd.flashcards':        'ఫ్లాష్‌కార్డ్‌లు',
+      'sd.notes':             'నా నోట్స్',
+      'sd.pins':              'పిన్ చేసినవి',
+      'sd.highlights':        'హైలైట్‌లు',
+
+      /* ── Practice (MCQ) page ───────────────────────── */
+      'practice.quit':        'సెషన్ విడిచిపెట్టండి',
+      'practice.accuracy':    'ఖచ్చితత',
+      'practice.progress':    'పురోగతి',
+      'practice.question':    'ప్రశ్న',
+      'practice.correct':     'సరైనది',
+      'practice.incorrect':   'తప్పు',
+      'practice.explanation': 'సమాధానం వివరణ',
+      'practice.continue':    'కొనసాగించు →',
+      'practice.complete':    'సెషన్ పూర్తయింది',
+      'practice.mastered':    'మీరు ఈ భావనలను అర్థం చేసుకున్నారు. అద్భుతమైన పని!',
+      'practice.replay':      'మళ్ళీ ప్రయత్నించండి',
+      'practice.dashboard':   'డాష్‌బోర్డ్‌కి వెళ్ళండి',
+      'practice.no_questions':'ఇంకా ప్రశ్నలు లేవు',
+      'practice.no_q_desc':   'ఈ విషయానికి ప్రాక్టీస్ ప్రశ్నలు సిద్ధమవుతున్నాయి. తర్వాత చెక్ చేయండి!',
+      'practice.loading':     'ప్రశ్నలు లోడ్ అవుతున్నాయి…',
+      'practice.translating': 'తెలుగులోకి అనువదిస్తోంది...',
+
+      /* ── Aptitude page ─────────────────────────────── */
+      'apt.back':             '← హోమ్‌కి తిరిగి',
+      'apt.title':            'అప్టిట్యూడ్ — అధ్యయన పోర్టల్',
+      'apt.subtitle':         'APPSC పరీక్షల కోసం రీజనింగ్ & క్వాంటిటేటివ్ అప్టిట్యూడ్',
+      'apt.loading':          'విషయాలు లోడ్ అవుతున్నాయి…',
+
+      /* ── Telugu page ───────────────────────────────── */
+      'tel.back':             '← హోమ్‌కి తిరిగి',
+      'tel.title':            'తెలుగు — అధ్యయన పోర్టల్',
+      'tel.subtitle':         'APPSC పరీక్షల కోసం తెలుగు భాష & సాహిత్యం',
+      'tel.loading':          'విషయాలు లోడ్ అవుతున్నాయి…',
+
+      /* ── Auth page ─────────────────────────────────── */
+      'auth.login_title':     'తిరిగి స్వాగతం',
+      'auth.login_sub':       'మీ APPSC సన్నద్ధత కొనసాగించడానికి లాగిన్ చేయండి',
+      'auth.register_title':  'ఖాతా సృష్టించండి',
+      'auth.register_sub':    'మీ APPSC 2026 ప్రయాణం ప్రారంభించండి',
+      'auth.username':        'వినియోగదారు పేరు',
+      'auth.display_name':    'ప్రదర్శన పేరు',
+      'auth.email':           'ఇమెయిల్ (ఐచ్ఛికం)',
+      'auth.password':        'పాస్‌వర్డ్',
+      'auth.confirm_password':'పాస్‌వర్డ్ నిర్ధారించండి',
+      'auth.login_btn':       'లాగిన్',
+      'auth.register_btn':    'ఖాతా సృష్టించండి',
+      'auth.no_account':      'ఖాతా లేదా?',
+      'auth.have_account':    'ఇప్పటికే ఖాతా ఉందా?',
+      'auth.register_link':   'నమోదు చేసుకోండి',
+      'auth.login_link':      'లాగిన్',
+      'auth.forgot_password': 'పాస్‌వర్డ్ మర్చిపోయారా?',
+      'auth.or_google':       'లేదా ఇతర మార్గంలో',
+      'auth.google_btn':      'గూగుల్',
+
+      /* ── Change / Forgot / Reset Password ─────────── */
+      'pwd.change_title':     'పాస్‌వర్డ్ మార్చండి',
+      'pwd.current':          'ప్రస్తుత పాస్‌వర్డ్',
+      'pwd.new':              'కొత్త పాస్‌వర్డ్',
+      'pwd.confirm':          'కొత్త పాస్‌వర్డ్ నిర్ధారించండి',
+      'pwd.change_btn':       'పాస్‌వర్డ్ మార్చండి',
+      'pwd.forgot_title':     'పాస్‌వర్డ్ మర్చిపోయారు',
+      'pwd.forgot_sub':       'మీ ఇమెయిల్ నమోదు చేయండి, రీసెట్ లింక్ పంపుతాం',
+      'pwd.email':            'ఇమెయిల్ చిరునామా',
+      'pwd.send_btn':         'రీసెట్ లింక్ పంపండి',
+      'pwd.reset_title':      'పాస్‌వర్డ్ రీసెట్ చేయండి',
+      'pwd.reset_btn':        'పాస్‌వర్డ్ రీసెట్ చేయండి',
+      'pwd.back_login':       '← లాగిన్‌కి తిరిగి',
+
+      /* ── Last Day Revision ─────────────────────────── */
+      'ldr.title':            'చివరి రోజు రివిజన్',
+      'ldr.subtitle':         'అన్ని విషయాల నుండి మీ పిన్ చేసిన పేరాగ్రాఫ్‌లు — మీ వ్యక్తిగత పరీక్షా చీట్-షీట్',
+      'ldr.loading':          'మీ పిన్స్ లోడ్ అవుతున్నాయి…',
+      'ldr.no_pins':          'ఇంకా పిన్స్ లేవు! విషయాలు చదువుతున్నప్పుడు, ఏదైనా పేరాగ్రాఫ్‌పై 📌 చిహ్నాన్ని క్లిక్ చేసి ఇక్కడ పిన్ చేయండి.',
+      'ldr.print':            'ప్రింట్ / PDF సేవ్ చేయండి',
 
       /* ── Common ────────────────────────────────────── */
       'common.back':          '← వెనుకకు',
@@ -258,6 +449,8 @@
       'common.qualifying':    'అర్హత స్వభావం',
       'common.paper':         'పేపర్',
       'common.duration':      'వ్యవధి',
+      'common.loading':       'లోడ్ అవుతోంది…',
+      'common.error':         'ఏదో తప్పు జరిగింది. మళ్ళీ ప్రయత్నించండి.',
 
       /* ── Days & Months (arrays, used by JS) ─────────── */
       'days.long':   ['ఆదివారం','సోమవారం','మంగళవారం','బుధవారం','గురువారం','శుక్రవారం','శనివారం'],
@@ -318,4 +511,125 @@
   } else {
     applyLang();
   }
+})();
+
+/* ── Auto-Translation Utility (MyMemory API) ───────────────────────────────
+   GG_TRANSLATE.text(str)          → Promise<string>  (translates one string)
+   GG_TRANSLATE.markdown(md)       → Promise<string>  (translates markdown preserving headers/bullets)
+   Results are cached in sessionStorage to avoid re-translating.
+   Only active when GG_I18N.lang() === 'te'.
+   ────────────────────────────────────────────────────────────────────────── */
+(function () {
+  'use strict';
+
+  var CACHE_PREFIX = 'gg_trans_';
+  var API = 'https://api.mymemory.translated.net/get';
+  var MAX_CHUNK = 450; // MyMemory safe limit per request
+
+  function cacheKey(text) {
+    // simple hash to keep keys short
+    var h = 0;
+    for (var i = 0; i < Math.min(text.length, 100); i++) {
+      h = ((h << 5) - h) + text.charCodeAt(i);
+      h |= 0;
+    }
+    return CACHE_PREFIX + Math.abs(h);
+  }
+
+  function getCached(text) {
+    try { return sessionStorage.getItem(cacheKey(text)); } catch(e) { return null; }
+  }
+
+  function setCache(text, result) {
+    try { sessionStorage.setItem(cacheKey(text), result); } catch(e) {}
+  }
+
+  function translateChunk(chunk) {
+    if (!chunk.trim()) return Promise.resolve(chunk);
+    var cached = getCached(chunk);
+    if (cached !== null) return Promise.resolve(cached);
+
+    var url = API + '?q=' + encodeURIComponent(chunk) + '&langpair=en|te';
+    return fetch(url)
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var result = (data.responseData && data.responseData.translatedText) || chunk;
+        // MyMemory returns quota error as translated text sometimes
+        if (result.indexOf('QUERY LENGTH LIMIT') !== -1 || result.indexOf('MYMEMORY WARNING') !== -1) {
+          return chunk; // fallback to original
+        }
+        setCache(chunk, result);
+        return result;
+      })
+      .catch(function() { return chunk; });
+  }
+
+  /* Split text into chunks at natural boundaries (newlines) under MAX_CHUNK chars */
+  function splitIntoChunks(text) {
+    var lines = text.split('\n');
+    var chunks = [];
+    var current = '';
+    lines.forEach(function(line) {
+      if ((current + '\n' + line).length > MAX_CHUNK && current) {
+        chunks.push(current);
+        current = line;
+      } else {
+        current = current ? current + '\n' + line : line;
+      }
+    });
+    if (current) chunks.push(current);
+    return chunks;
+  }
+
+  /* Translate a plain string */
+  function translateText(str) {
+    if (!str || !str.trim()) return Promise.resolve(str);
+    if (str.length <= MAX_CHUNK) return translateChunk(str);
+    // Split long strings
+    var chunks = splitIntoChunks(str);
+    return Promise.all(chunks.map(translateChunk)).then(function(parts) {
+      return parts.join('\n');
+    });
+  }
+
+  /* Translate markdown — preserves heading markers (#, ##, ###) and bullet points */
+  function translateMarkdown(md) {
+    if (!md) return Promise.resolve('');
+    var lines = md.split('\n');
+    var promises = lines.map(function(line) {
+      // Preserve heading markers and empty lines
+      var headingMatch = line.match(/^(#{1,4}\s+)(.*)/);
+      if (headingMatch) {
+        return translateChunk(headingMatch[2]).then(function(translated) {
+          return headingMatch[1] + translated;
+        });
+      }
+      // Preserve bullet markers
+      var bulletMatch = line.match(/^(\s*[-*•]\s+)(.*)/);
+      if (bulletMatch) {
+        return translateChunk(bulletMatch[2]).then(function(translated) {
+          return bulletMatch[1] + translated;
+        });
+      }
+      // Preserve numbered list markers
+      var numMatch = line.match(/^(\s*\d+\.\s+)(.*)/);
+      if (numMatch) {
+        return translateChunk(numMatch[2]).then(function(translated) {
+          return numMatch[1] + translated;
+        });
+      }
+      // Empty lines pass through
+      if (!line.trim()) return Promise.resolve(line);
+      // Regular paragraph lines — translate in chunks
+      return translateText(line);
+    });
+    return Promise.all(promises).then(function(parts) {
+      return parts.join('\n');
+    });
+  }
+
+  window.GG_TRANSLATE = {
+    text: translateText,
+    markdown: translateMarkdown
+  };
 })();

@@ -160,9 +160,16 @@ def init_db() -> None:
             option_c       TEXT NOT NULL,
             option_d       TEXT NOT NULL,
             correct_option TEXT NOT NULL,
-            explanation    TEXT
+            explanation    TEXT,
+            lang           TEXT DEFAULT 'en'
         )
     """)
+    # Migration: add lang column if missing (existing DBs)
+    try:
+        con.execute("ALTER TABLE mcqs ADD COLUMN lang TEXT DEFAULT 'en'")
+        con.commit()
+    except Exception:
+        pass  # Column already exists
     con.execute("""
         CREATE TABLE IF NOT EXISTS paragraph_pins (
             id         INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -2948,8 +2955,14 @@ async def current_affairs(request: Request):
 async def api_ca_content(request: Request):
     """Return raw markdown for a given date, or 404 if not found."""
     date = request.path_params["date"]
+    lang = request.query_params.get("lang", "en")
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
         return PlainTextResponse("Invalid date format.", status_code=400)
+    # Serve Telugu version if requested and exists
+    if lang == "te":
+        te_file = CA_DIR / f"{date}-te.md"
+        if te_file.exists():
+            return PlainTextResponse(te_file.read_text(encoding="utf-8"))
     ca_file = CA_DIR / f"{date}.md"
     if not ca_file.exists():
         return PlainTextResponse("", status_code=404)
@@ -2977,8 +2990,21 @@ async def api_ca_nearest(request: Request):
     except ValueError:
         return JSONResponse({"error": "Invalid date"}, status_code=400)
 
+    lang = request.query_params.get("lang", "en")
     for offset in range(61):
         candidate = requested - timedelta(days=offset)
+        # Try Telugu version first
+        if lang == "te":
+            te_file = CA_DIR / f"{candidate.isoformat()}-te.md"
+            if te_file.exists():
+                content = te_file.read_text(encoding="utf-8")
+                return JSONResponse({
+                    "found":     True,
+                    "date":      candidate.isoformat(),
+                    "requested": date_str,
+                    "content":   content,
+                    "lang":      "te",
+                })
         ca_file = CA_DIR / f"{candidate.isoformat()}.md"
         if ca_file.exists():
             content = ca_file.read_text(encoding="utf-8")
@@ -3505,15 +3531,17 @@ async def api_admin_save_topic(request: Request):
     user = get_current_user(request)
     if not user or user.get("role") != "admin":
         return JSONResponse({"error": "Unauthorized"}, status_code=403)
-    
+
     body = await request.json()
     topic_id = body.get("topic_id")
     content = body.get("content")
+    lang = body.get("lang", "en")  # 'en' or 'te'
     if not topic_id or content is None:
         return JSONResponse({"error": "Missing data"}, status_code=400)
-    
+
     NOTES_DIR.mkdir(parents=True, exist_ok=True)
-    path = NOTES_DIR / f"{topic_id}.md"
+    suffix = "-te" if lang == "te" else ""
+    path = NOTES_DIR / f"{topic_id}{suffix}.md"
     path.write_text(content, encoding="utf-8")
     return JSONResponse({"ok": True})
 
@@ -3957,13 +3985,20 @@ NOTES_DIR = FILES_DIR / "content" / "topics"
 
 async def api_get_content(request: Request):
     topic_id = request.path_params["topic_id"]
+    lang = request.query_params.get("lang", "en")
     if not re.match(r'^[a-z0-9-]+$', topic_id):
         return JSONResponse({"available": False})
 
-    # Direct file check
+    # Telugu version first if requested
+    if lang == "te":
+        te_file = NOTES_DIR / f"{topic_id}-te.md"
+        if te_file.exists():
+            return JSONResponse({"available": True, "content": te_file.read_text("utf-8"), "lang": "te"})
+
+    # Direct file check (English)
     direct = NOTES_DIR / f"{topic_id}.md"
     if direct.exists():
-        return JSONResponse({"available": True, "content": direct.read_text("utf-8")})
+        return JSONResponse({"available": True, "content": direct.read_text("utf-8"), "lang": "en"})
 
     # Twin fallback via SHARED_TOPICS
     for twin in SHARED_TOPICS.get(topic_id, []):
@@ -3973,6 +4008,7 @@ async def api_get_content(request: Request):
                 "available": True,
                 "content": twin_file.read_text("utf-8"),
                 "source": twin["label"],
+                "lang": "en",
             })
 
     return JSONResponse({"available": False, "content": None})
@@ -4299,14 +4335,21 @@ async def api_get_mcqs(request: Request):
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
     topic_id = request.path_params["topic_id"]
+    lang = request.query_params.get("lang", "en")
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
+    # Try requested language first; fall back to English
     rows = con.execute(
-        "SELECT id, question, option_a, option_b, option_c, option_d, correct_option, explanation FROM mcqs WHERE topic_id=? ORDER BY id",
-        (topic_id,)
+        "SELECT id, question, option_a, option_b, option_c, option_d, correct_option, explanation, lang FROM mcqs WHERE topic_id=? AND lang=? ORDER BY id",
+        (topic_id, lang)
     ).fetchall()
+    if not rows and lang != "en":
+        rows = con.execute(
+            "SELECT id, question, option_a, option_b, option_c, option_d, correct_option, explanation, lang FROM mcqs WHERE topic_id=? AND (lang='en' OR lang IS NULL) ORDER BY id",
+            (topic_id,)
+        ).fetchall()
     con.close()
-    return JSONResponse({"mcqs": [dict(r) for r in rows]})
+    return JSONResponse({"mcqs": [dict(r) for r in rows], "lang": lang if rows else "en"})
 
 
 # ---------------------------------------------------------------------------

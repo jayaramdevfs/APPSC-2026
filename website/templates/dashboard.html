@@ -309,7 +309,8 @@ fetch('/api/progress/due-today')
     });
 
 // ---- Load CA preview ----
-fetch('/api/ca/content/' + TODAY)
+var _caLang = window.GG_I18N ? GG_I18N.lang() : 'en';
+fetch('/api/ca/content/' + TODAY + '?lang=' + _caLang)
     .then(r => r.ok ? r.text() : Promise.reject())
     .then(md => {
         // extract first 4 non-heading, non-empty lines
