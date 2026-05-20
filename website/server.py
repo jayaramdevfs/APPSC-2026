@@ -41,6 +41,9 @@ EMAIL_PASS = os.environ.get("EMAIL_PASS", "")
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
 
+RAZORPAY_KEY_ID     = os.environ.get("RAZORPAY_KEY_ID", "")
+RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET", "")
+
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 
 # ---------------------------------------------------------------------------
@@ -75,6 +78,20 @@ def _seed_user(con, username: str, display_name: str, role: str, password: str) 
             (username, display_name, role, hash_password(password)),
         )
         con.commit()
+
+
+def _seed_plans(con) -> None:
+    plans = [
+        ("free",    "Free",    0,     36500, '["20 MCQs per topic","User notes","7 days current affairs"]'),
+        ("monthly", "Monthly", 199,   30,    '["All MCQs","Flashcards","Highlights","Full current affairs archive","Priority content"]'),
+        ("yearly",  "Yearly",  999,   365,   '["All MCQs","Flashcards","Highlights","Full current affairs archive","Priority content","Best value"]'),
+    ]
+    for plan in plans:
+        con.execute(
+            "INSERT OR IGNORE INTO subscription_plans (id, name, price_inr, duration_days, features) VALUES (?,?,?,?,?)",
+            plan,
+        )
+    con.commit()
 
 
 def init_db() -> None:
@@ -189,7 +206,45 @@ def init_db() -> None:
             updated_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
     """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS subscription_plans (
+            id            TEXT PRIMARY KEY,
+            name          TEXT NOT NULL,
+            price_inr     INTEGER NOT NULL,
+            duration_days INTEGER NOT NULL,
+            features      TEXT
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS user_subscriptions (
+            id                   INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id              INTEGER NOT NULL UNIQUE,
+            plan_id              TEXT NOT NULL DEFAULT 'free',
+            razorpay_order_id    TEXT,
+            razorpay_payment_id  TEXT UNIQUE,
+            razorpay_signature   TEXT,
+            started_at           TEXT DEFAULT CURRENT_TIMESTAMP,
+            expires_at           TEXT,
+            status               TEXT DEFAULT 'active'
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS payment_log (
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id      INTEGER NOT NULL,
+            order_id     TEXT NOT NULL UNIQUE,
+            payment_id   TEXT,
+            amount_paise INTEGER NOT NULL,
+            plan_id      TEXT NOT NULL,
+            status       TEXT DEFAULT 'created',
+            created_at   TEXT DEFAULT CURRENT_TIMESTAMP,
+            updated_at   TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
     con.commit()
+
+    # Seed subscription plans
+    _seed_plans(con)
 
     # Admin — password overrideable via ADMIN_PASSWORD env var on Render
     _seed_user(con, "jayaramadmin", "Jayaram", "admin", os.environ.get("ADMIN_PASSWORD", "jayaramadmin@2026"))
@@ -4353,6 +4408,182 @@ async def api_get_mcqs(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Subscription helpers
+# ---------------------------------------------------------------------------
+
+def get_user_subscription(user_id: int) -> dict:
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute(
+        "SELECT plan_id, expires_at, status FROM user_subscriptions WHERE user_id = ?",
+        (user_id,),
+    ).fetchone()
+    con.close()
+    if not row:
+        return {"plan_id": "free", "is_premium": False}
+    plan_id, expires_at, _status = row[0], row[1], row[2]
+    if plan_id == "free":
+        return {"plan_id": "free", "is_premium": False}
+    if expires_at and datetime.utcnow() > datetime.fromisoformat(expires_at):
+        return {"plan_id": "free", "is_premium": False, "expired": True}
+    return {"plan_id": plan_id, "is_premium": True, "expires_at": expires_at}
+
+
+def _upgrade_user(con, user_id: int, plan_id: str, order_id: str, payment_id: str, signature: str) -> None:
+    now = datetime.utcnow()
+    duration = 30 if plan_id == "monthly" else 365
+    expires = (now + timedelta(days=duration)).isoformat()
+    con.execute("""
+        INSERT INTO user_subscriptions (user_id, plan_id, razorpay_order_id, razorpay_payment_id, razorpay_signature, started_at, expires_at, status)
+        VALUES (?,?,?,?,?,?,?,'active')
+        ON CONFLICT(user_id) DO UPDATE SET
+            plan_id=excluded.plan_id,
+            razorpay_order_id=excluded.razorpay_order_id,
+            razorpay_payment_id=excluded.razorpay_payment_id,
+            razorpay_signature=excluded.razorpay_signature,
+            started_at=excluded.started_at,
+            expires_at=excluded.expires_at,
+            status='active'
+    """, (user_id, plan_id, order_id, payment_id, signature, now.isoformat(), expires))
+    con.execute("""
+        UPDATE payment_log SET status='paid', payment_id=?, updated_at=? WHERE order_id=?
+    """, (payment_id, now.isoformat(), order_id))
+    con.commit()
+
+
+# ---------------------------------------------------------------------------
+# Payment routes
+# ---------------------------------------------------------------------------
+
+async def pricing_page(request: Request):
+    user = request.session.get("user")
+    sub  = get_user_subscription(user["id"]) if user else {"plan_id": "free", "is_premium": False}
+    return templates.TemplateResponse("pricing.html", {
+        "request": request,
+        "current_user": user,
+        "sub": sub,
+        "razorpay_key": RAZORPAY_KEY_ID,
+    })
+
+
+async def api_create_order(request: Request):
+    user = request.session.get("user")
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    plan_id = body.get("plan_id", "")
+    if plan_id not in ("monthly", "yearly"):
+        return JSONResponse({"error": "Invalid plan"}, status_code=400)
+    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
+        return JSONResponse({"error": "Payments not configured"}, status_code=503)
+    amount_map = {"monthly": 19900, "yearly": 99900}
+    amount = amount_map[plan_id]
+    receipt = f"gg_{user['id']}_{int(datetime.utcnow().timestamp())}"
+    try:
+        import hmac as _hmac
+        async with httpx.AsyncClient(timeout=10) as client:
+            resp = await client.post(
+                "https://api.razorpay.com/v1/orders",
+                auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET),
+                json={
+                    "amount": amount,
+                    "currency": "INR",
+                    "receipt": receipt,
+                    "notes": {"user_id": str(user["id"]), "plan_id": plan_id},
+                },
+            )
+        if resp.status_code != 200:
+            return JSONResponse({"error": "Order creation failed"}, status_code=502)
+        order = resp.json()
+        con = sqlite3.connect(DB_PATH)
+        con.execute("""
+            INSERT OR IGNORE INTO payment_log (user_id, order_id, amount_paise, plan_id, status)
+            VALUES (?,?,?,?,'created')
+        """, (user["id"], order["id"], amount, plan_id))
+        con.commit()
+        con.close()
+        return JSONResponse({"order_id": order["id"], "key": RAZORPAY_KEY_ID, "amount": amount})
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
+
+
+async def api_verify_payment(request: Request):
+    user = request.session.get("user")
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    order_id   = body.get("order_id", "")
+    payment_id = body.get("payment_id", "")
+    signature  = body.get("signature", "")
+    plan_id    = body.get("plan_id", "")
+    if not all([order_id, payment_id, signature, plan_id]):
+        return JSONResponse({"error": "Missing fields"}, status_code=400)
+    import hmac as _hmac, hashlib as _hashlib
+    expected = _hmac.new(
+        RAZORPAY_KEY_SECRET.encode(),
+        f"{order_id}|{payment_id}".encode(),
+        _hashlib.sha256,
+    ).hexdigest()
+    if not secrets.compare_digest(expected, signature):
+        return JSONResponse({"error": "Signature mismatch"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    # Idempotency: skip if payment_id already processed
+    existing = con.execute(
+        "SELECT id FROM user_subscriptions WHERE razorpay_payment_id = ?", (payment_id,)
+    ).fetchone()
+    if existing:
+        con.close()
+        return JSONResponse({"ok": True, "plan": plan_id, "already_processed": True})
+    _upgrade_user(con, user["id"], plan_id, order_id, payment_id, signature)
+    con.close()
+    return JSONResponse({"ok": True, "plan": plan_id})
+
+
+async def api_payment_webhook(request: Request):
+    """Razorpay webhook backup — verifies X-Razorpay-Signature header."""
+    import hmac as _hmac, hashlib as _hashlib
+    body_bytes = await request.body()
+    sig_header = request.headers.get("X-Razorpay-Signature", "")
+    expected = _hmac.new(
+        RAZORPAY_KEY_SECRET.encode(), body_bytes, _hashlib.sha256
+    ).hexdigest()
+    if not secrets.compare_digest(expected, sig_header):
+        return JSONResponse({"error": "Invalid signature"}, status_code=400)
+    try:
+        event = json.loads(body_bytes)
+    except Exception:
+        return JSONResponse({"error": "Bad JSON"}, status_code=400)
+    if event.get("event") == "payment.captured":
+        payload = event.get("payload", {}).get("payment", {}).get("entity", {})
+        order_id   = payload.get("order_id", "")
+        payment_id = payload.get("id", "")
+        notes      = payload.get("notes", {})
+        user_id    = int(notes.get("user_id", 0))
+        plan_id    = notes.get("plan_id", "monthly")
+        if user_id and order_id and payment_id:
+            con = sqlite3.connect(DB_PATH)
+            existing = con.execute(
+                "SELECT id FROM user_subscriptions WHERE razorpay_payment_id = ?", (payment_id,)
+            ).fetchone()
+            if not existing:
+                _upgrade_user(con, user_id, plan_id, order_id, payment_id, "webhook")
+            con.close()
+    return JSONResponse({"ok": True})
+
+
+async def api_user_subscription(request: Request):
+    user = request.session.get("user")
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    return JSONResponse(get_user_subscription(user["id"]))
+
+
+# ---------------------------------------------------------------------------
 # Routing table
 # ---------------------------------------------------------------------------
 
@@ -4416,6 +4647,11 @@ routes = [
     Route("/last-day-revision",                   last_day_revision),
     Route("/study-desk/{topic_id}",               study_desk),
     Route("/practice/{topic_id}",                 practice_page),
+    Route("/pricing",                              pricing_page),
+    Route("/api/payment/create-order",            api_create_order,          methods=["POST"]),
+    Route("/api/payment/verify",                  api_verify_payment,        methods=["POST"]),
+    Route("/api/payment/webhook",                 api_payment_webhook,       methods=["POST"]),
+    Route("/api/user/subscription",               api_user_subscription,     methods=["GET"]),
     Route("/robots.txt",                          lambda r: PlainTextResponse(open(STATIC_DIR / "robots.txt").read())),
     Route("/sitemap.xml",                         lambda r: PlainTextResponse(open(STATIC_DIR / "sitemap.xml").read(), media_type="application/xml")),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
