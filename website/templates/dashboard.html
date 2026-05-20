@@ -26,6 +26,20 @@
     <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label" data-i18n="dashboard.due_today">Due Today</span></div>
 </div>
 
+{% if upgraded %}
+<div id="upgrade-toast" style="position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;padding:0.75rem 1.5rem;border-radius:8px;font-weight:700;font-size:0.9rem;z-index:9998;white-space:nowrap;box-shadow:0 8px 24px rgba(255,153,51,0.4);">
+    You are now Premium! Welcome to the full GroupsGuru experience.
+</div>
+<script>setTimeout(()=>{const t=document.getElementById('upgrade-toast');if(t)t.remove();},4000);</script>
+{% endif %}
+
+{% if not sub.is_premium %}
+<div style="background:rgba(255,153,51,0.08);border:1px solid rgba(255,153,51,0.25);border-radius:10px;padding:0.75rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
+    <span style="font-size:0.85rem;color:var(--muted);">🔒 Unlock all features — flashcards, highlights, full current affairs archive</span>
+    <a href="/pricing" style="background:var(--gold);color:#000;font-size:0.8rem;font-weight:700;padding:0.4rem 1rem;border-radius:6px;text-decoration:none;white-space:nowrap;">Upgrade ₹199/mo</a>
+</div>
+{% endif %}
+
 <!-- Curriculum Heatmap (The Heart) -->
 <div class="curriculum-container" id="curriculum-container">
     <button class="curriculum-header" id="curriculum-toggle" onclick="toggleCurriculum()" aria-expanded="false">

@@ -3009,16 +3009,28 @@ async def current_affairs(request: Request):
 
 async def api_ca_content(request: Request):
     """Return raw markdown for a given date, or 404 if not found."""
-    date = request.path_params["date"]
+    req_date = request.path_params["date"]
     lang = request.query_params.get("lang", "en")
-    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", req_date):
         return PlainTextResponse("Invalid date format.", status_code=400)
+    # Content gating: free users can only access last 7 days of CA
+    user = request.session.get("user")
+    if user:
+        sub = get_user_subscription(user["id"])
+        if not sub["is_premium"]:
+            cutoff = (datetime.utcnow() - timedelta(days=7)).date()
+            try:
+                req_date_obj = date.fromisoformat(req_date)
+            except ValueError:
+                req_date_obj = None
+            if req_date_obj and req_date_obj < cutoff:
+                return PlainTextResponse("", status_code=402)
     # Serve Telugu version if requested and exists
     if lang == "te":
-        te_file = CA_DIR / f"{date}-te.md"
+        te_file = CA_DIR / f"{req_date}-te.md"
         if te_file.exists():
             return PlainTextResponse(te_file.read_text(encoding="utf-8"))
-    ca_file = CA_DIR / f"{date}.md"
+    ca_file = CA_DIR / f"{req_date}.md"
     if not ca_file.exists():
         return PlainTextResponse("", status_code=404)
     return PlainTextResponse(ca_file.read_text(encoding="utf-8"))
@@ -3458,9 +3470,13 @@ async def dashboard(request: Request):
     user = get_current_user(request)
     if not user:
         return RedirectResponse("/login", status_code=302)
+    sub = get_user_subscription(user["id"])
+    upgraded = request.query_params.get("upgraded") == "1"
     return templates.TemplateResponse(request, "dashboard.html", {
         "current_user": user,
         "today": date.today().isoformat(),
+        "sub": sub,
+        "upgraded": upgraded,
     })
 
 
@@ -4089,6 +4105,9 @@ async def api_save_highlights(request: Request):
     user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"]:
+        return JSONResponse({"error": "Premium required", "upgrade": True, "upgrade_url": "/pricing"}, status_code=403)
     topic_id = request.path_params["topic_id"]
     body = await request.json()
     highlights = body.get("highlights", [])
@@ -4161,6 +4180,9 @@ async def api_create_flashcard(request: Request):
     user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"]:
+        return JSONResponse({"error": "Premium required", "upgrade": True, "upgrade_url": "/pricing"}, status_code=403)
     topic_id = request.path_params["topic_id"]
     body = await request.json()
     front = (body.get("front") or "").strip()
@@ -4227,6 +4249,9 @@ async def api_toggle_pin(request: Request):
     user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"]:
+        return JSONResponse({"error": "Premium required", "upgrade": True, "upgrade_url": "/pricing"}, status_code=403)
     topic_id = request.path_params["topic_id"]
     body = await request.json()
     para_index = int(body.get("para_index", -1))
@@ -4404,6 +4429,11 @@ async def api_get_mcqs(request: Request):
             (topic_id,)
         ).fetchall()
     con.close()
+    # Content gating: free users get max 20 MCQs per topic
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"] and len(rows) > 20:
+        rows = rows[:20]
+        return JSONResponse({"mcqs": [dict(r) for r in rows], "lang": lang if rows else "en", "limited": True, "limit": 20})
     return JSONResponse({"mcqs": [dict(r) for r in rows], "lang": lang if rows else "en"})
 
 

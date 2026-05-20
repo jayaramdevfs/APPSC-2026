@@ -195,6 +195,10 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>
             <span data-i18n="nav.telugu">Telugu</span></a></li>
 
+        <li><a href="/pricing" class="nav-drawer-link {% if request.url.path == '/pricing' %}active{% endif %}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>
+            <span>Pricing</span></a></li>
+
         <li style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">
             {% if current_user %}
                 <a href="/change-password" class="nav-drawer-link">
