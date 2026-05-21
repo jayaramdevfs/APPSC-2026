@@ -4741,7 +4741,7 @@ async def api_payment_webhook(request: Request):
 
 
 async def api_user_subscription(request: Request):
-    user = request.session.get("user")
+    user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
     return JSONResponse(get_user_subscription(user["id"]))
