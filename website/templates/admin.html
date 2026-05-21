@@ -147,6 +147,30 @@
     </form>
   </div>
 
+  <!-- Subscription Management -->
+  <div class="admin-panel" style="grid-column: span 2;">
+    <h2>
+      Subscription Management
+      <button class="admin-btn" onclick="loadSubscriptions()">Refresh</button>
+    </h2>
+    <div style="overflow-x: auto;">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Plan</th>
+            <th>Expires</th>
+            <th>Grant Plan</th>
+          </tr>
+        </thead>
+        <tbody id="subs-tbody">
+          <tr><td colspan="5">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <!-- Topic Content Editor -->
   <div class="admin-panel" style="grid-column: span 2;">
     <h2>
@@ -335,11 +359,60 @@ async function saveTopicContent() {
   else alert('Failed to save content');
 }
 
+// --- Subscriptions ---
+async function loadSubscriptions() {
+  const tbody = document.getElementById('subs-tbody');
+  tbody.innerHTML = '<tr><td colspan="5">Loading...</td></tr>';
+  try {
+    const res = await fetch('/api/admin/subscriptions');
+    if (!res.ok) throw new Error('Unauthorized');
+    const rows = await res.json();
+    tbody.innerHTML = '';
+    rows.forEach(u => {
+      const isPremium = u.plan_id !== 'free';
+      const expiresStr = u.expires_at ? new Date(u.expires_at).toLocaleDateString('en-IN') : '—';
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${u.id}</td>
+        <td>
+          <div style="font-weight:600">${u.username}</div>
+          <div style="font-size:0.8rem;color:var(--muted)">${u.email || 'No email'}</div>
+        </td>
+        <td>
+          <span style="background:${isPremium ? 'var(--gold)' : 'var(--border)'};color:${isPremium ? '#000' : 'var(--muted)'};padding:0.2rem 0.6rem;border-radius:4px;font-size:0.85rem;font-weight:600;">
+            ${u.plan_id}
+          </span>
+        </td>
+        <td style="font-size:0.85rem;color:var(--muted)">${expiresStr}</td>
+        <td style="display:flex;gap:0.4rem;flex-wrap:wrap;">
+          <button class="admin-btn" onclick="grantSub(${u.id},'monthly')">Monthly</button>
+          <button class="admin-btn" onclick="grantSub(${u.id},'yearly')">Yearly</button>
+          <button class="admin-btn admin-btn-danger" onclick="grantSub(${u.id},'free')">Revoke</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  } catch (e) {
+    tbody.innerHTML = '<tr><td colspan="5" style="color:#ff4d4d">Failed to load</td></tr>';
+  }
+}
+
+async function grantSub(userId, planId) {
+  const res = await fetch(`/api/admin/subscriptions/${userId}`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({plan_id: planId})
+  });
+  if (res.ok) loadSubscriptions();
+  else alert('Failed to update subscription');
+}
+
 // Init
 window.addEventListener('DOMContentLoaded', () => {
   loadUsers();
   loadCAFiles();
   loadTopicsList();
+  loadSubscriptions();
 });
 </script>
 {% endblock %}

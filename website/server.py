@@ -77,6 +77,8 @@ def _csrf_header_ok(request: Request) -> bool:
     return bool(expected and secrets.compare_digest(expected, provided))
 
 templates.env.globals["csrf_token"] = _csrf_token
+templates.env.globals["google_enabled"] = bool(GOOGLE_CLIENT_ID)
+templates.env.globals["email_configured"] = bool(EMAIL_USER)
 
 # ---------------------------------------------------------------------------
 # Security — Rate limiting (in-memory sliding window)
@@ -103,6 +105,8 @@ class _SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers.setdefault("X-Frame-Options", "DENY")
         response.headers.setdefault("X-XSS-Protection", "1; mode=block")
         response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+        if request.url.path.startswith("/static/"):
+            response.headers["Cache-Control"] = "public, max-age=86400"
         return response
 
 # ---------------------------------------------------------------------------
@@ -4745,6 +4749,81 @@ async def api_user_subscription(request: Request):
 
 
 # ---------------------------------------------------------------------------
+# Admin — subscription management
+# ---------------------------------------------------------------------------
+
+async def api_admin_subscriptions(request: Request):
+    user = get_current_user(request)
+    if not user or user["role"] != "admin":
+        return JSONResponse({"error": "Forbidden"}, status_code=403)
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute("""
+        SELECT u.id, u.username, u.email,
+               COALESCE(s.plan_id, 'free') as plan_id,
+               s.expires_at, COALESCE(s.status, 'active') as status
+        FROM users u
+        LEFT JOIN user_subscriptions s ON u.id = s.user_id
+        ORDER BY u.id
+    """).fetchall()
+    con.close()
+    return JSONResponse([{
+        "id": r[0], "username": r[1], "email": r[2],
+        "plan_id": r[3], "expires_at": r[4], "status": r[5]
+    } for r in rows])
+
+
+async def api_admin_grant_subscription(request: Request):
+    user = get_current_user(request)
+    if not user or user["role"] != "admin":
+        return JSONResponse({"error": "Forbidden"}, status_code=403)
+    target_id = int(request.path_params["user_id"])
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    plan_id = body.get("plan_id", "monthly")
+    if plan_id not in ("free", "monthly", "yearly"):
+        return JSONResponse({"error": "Invalid plan"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    if plan_id == "free":
+        con.execute("DELETE FROM user_subscriptions WHERE user_id = ?", (target_id,))
+        con.commit()
+        con.close()
+        return JSONResponse({"ok": True, "plan_id": "free"})
+    now = datetime.utcnow()
+    days = 30 if plan_id == "monthly" else 365
+    expires = (now + timedelta(days=days)).isoformat()
+    con.execute("""
+        INSERT INTO user_subscriptions (user_id, plan_id, started_at, expires_at, status)
+        VALUES (?, ?, ?, ?, 'active')
+        ON CONFLICT(user_id) DO UPDATE SET
+            plan_id=excluded.plan_id, started_at=excluded.started_at,
+            expires_at=excluded.expires_at, status='active'
+    """, (target_id, plan_id, now.isoformat(), expires))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True, "plan_id": plan_id, "expires_at": expires})
+
+
+# ---------------------------------------------------------------------------
+# Exception handlers
+# ---------------------------------------------------------------------------
+
+async def _handler_404(request: Request, exc: Exception):
+    return templates.TemplateResponse("404.html", {
+        "request": request,
+        "current_user": get_current_user(request),
+    }, status_code=404)
+
+
+async def _handler_500(request: Request, exc: Exception):
+    return templates.TemplateResponse("500.html", {
+        "request": request,
+        "current_user": get_current_user(request),
+    }, status_code=500)
+
+
+# ---------------------------------------------------------------------------
 # Routing table
 # ---------------------------------------------------------------------------
 
@@ -4790,6 +4869,8 @@ routes = [
     Route("/api/admin/ca/{date}",                 api_admin_ca_delete,     methods=["DELETE"]),
     Route("/api/admin/topics",                    api_admin_list_topics,   methods=["GET"]),
     Route("/api/admin/topics",                    api_admin_save_topic,    methods=["POST"]),
+    Route("/api/admin/subscriptions",             api_admin_subscriptions, methods=["GET"]),
+    Route("/api/admin/subscriptions/{user_id}",   api_admin_grant_subscription, methods=["POST"]),
     Route("/api/search",                          api_search),
     Route("/api/content/{topic_id}",              api_get_content),
     Route("/api/highlights/{topic_id}",           api_get_highlights,       methods=["GET"]),
@@ -4813,6 +4894,8 @@ routes = [
     Route("/api/payment/verify",                  api_verify_payment,        methods=["POST"]),
     Route("/api/payment/webhook",                 api_payment_webhook,       methods=["POST"]),
     Route("/api/user/subscription",               api_user_subscription,     methods=["GET"]),
+    Route("/privacy",                              lambda r: templates.TemplateResponse("privacy.html", {"request": r, "current_user": get_current_user(r)})),
+    Route("/terms",                               lambda r: templates.TemplateResponse("terms.html",   {"request": r, "current_user": get_current_user(r)})),
     Route("/robots.txt",                          lambda r: PlainTextResponse(open(STATIC_DIR / "robots.txt").read())),
     Route("/sitemap.xml",                         lambda r: PlainTextResponse(open(STATIC_DIR / "sitemap.xml").read(), media_type="application/xml")),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
@@ -4825,6 +4908,7 @@ app = Starlette(
         Middleware(_SecurityHeadersMiddleware),
         Middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=_IS_PROD),
     ],
+    exception_handlers={404: _handler_404, 500: _handler_500},
 )
 
 init_db()
