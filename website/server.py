@@ -4613,7 +4613,7 @@ def _upgrade_user(con, user_id: int, plan_id: str, order_id: str, payment_id: st
 # ---------------------------------------------------------------------------
 
 async def pricing_page(request: Request):
-    user = request.session.get("user")
+    user = get_current_user(request)
     sub  = get_user_subscription(user["id"]) if user else {"plan_id": "free", "is_premium": False}
     return templates.TemplateResponse(request, "pricing.html", {
         "current_user": user,
