@@ -304,6 +304,8 @@
 <script>
 const RZP_KEY = {{ razorpay_key | tojson }};
 
+const CSRF_TOKEN = {{ csrf_token(request) | tojson }};
+
 async function startPayment(planId) {
     if (!RZP_KEY) {
         alert('Payments are not yet configured. Please try again later.');
@@ -314,7 +316,7 @@ async function startPayment(planId) {
     try {
         const res = await fetch('/api/payment/create-order', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': CSRF_TOKEN },
             body: JSON.stringify({ plan_id: planId }),
         });
         const data = await res.json();
@@ -338,7 +340,7 @@ async function startPayment(planId) {
                 try {
                     const v = await fetch('/api/payment/verify', {
                         method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
+                        headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': CSRF_TOKEN },
                         body: JSON.stringify({
                             order_id:   response.razorpay_order_id,
                             payment_id: response.razorpay_payment_id,

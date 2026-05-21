@@ -5,13 +5,16 @@ import re
 import secrets
 import sqlite3
 import smtplib
+import time
 import httpx
 import urllib.parse
+from collections import defaultdict
 from email.message import EmailMessage
 from datetime import date, timedelta, datetime
 from pathlib import Path
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
+from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Route, Mount
 from starlette.responses import JSONResponse, PlainTextResponse, RedirectResponse
@@ -33,7 +36,13 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR    = BASE_DIR / "static"
 DB_PATH       = BASE_DIR / "users.db"
 
-SECRET_KEY     = os.environ.get("SECRET_KEY", "dev-secret-groupsguru-2026")
+_IS_PROD = bool(os.environ.get("RENDER"))
+SECRET_KEY = os.environ.get("SECRET_KEY", "")
+if not SECRET_KEY:
+    if _IS_PROD:
+        raise RuntimeError("SECRET_KEY env var must be set in production")
+    SECRET_KEY = "dev-secret-groupsguru-2026"
+
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "GroupsGuru@2026")
 
 EMAIL_USER = os.environ.get("EMAIL_USER", "")
@@ -45,6 +54,56 @@ RAZORPAY_KEY_ID     = os.environ.get("RAZORPAY_KEY_ID", "")
 RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET", "")
 
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+
+# ---------------------------------------------------------------------------
+# Security — CSRF
+# ---------------------------------------------------------------------------
+
+def _csrf_token(request: Request) -> str:
+    token = request.session.get("csrf_token")
+    if not token:
+        token = secrets.token_hex(32)
+        request.session["csrf_token"] = token
+    return token
+
+def _csrf_ok(request: Request, form) -> bool:
+    expected = request.session.get("csrf_token", "")
+    provided = str(form.get("_csrf", ""))
+    return bool(expected and secrets.compare_digest(expected, provided))
+
+def _csrf_header_ok(request: Request) -> bool:
+    expected = request.session.get("csrf_token", "")
+    provided = request.headers.get("X-CSRF-Token", "")
+    return bool(expected and secrets.compare_digest(expected, provided))
+
+templates.env.globals["csrf_token"] = _csrf_token
+
+# ---------------------------------------------------------------------------
+# Security — Rate limiting (in-memory sliding window)
+# ---------------------------------------------------------------------------
+
+_rl_buckets: dict[str, list[float]] = defaultdict(list)
+
+def _rate_ok(key: str, limit: int, window: int = 60) -> bool:
+    now = time.monotonic()
+    _rl_buckets[key] = [t for t in _rl_buckets[key] if now - t < window]
+    if len(_rl_buckets[key]) >= limit:
+        return False
+    _rl_buckets[key].append(now)
+    return True
+
+# ---------------------------------------------------------------------------
+# Security — HTTP response headers
+# ---------------------------------------------------------------------------
+
+class _SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        response.headers.setdefault("X-Content-Type-Options", "nosniff")
+        response.headers.setdefault("X-Frame-Options", "DENY")
+        response.headers.setdefault("X-XSS-Protection", "1; mode=block")
+        response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+        return response
 
 # ---------------------------------------------------------------------------
 # Auth — password helpers
@@ -3652,9 +3711,26 @@ async def login_post(request: Request):
     if get_current_user(request):
         return RedirectResponse("/", status_code=302)
     form = await request.form()
+
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"login:{ip}", limit=5, window=60):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Too many login attempts. Please wait a minute and try again.",
+            "registered": False,
+            "mode": "login",
+        }, status_code=429)
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Session expired. Please try again.",
+            "registered": False,
+            "mode": "login",
+        }, status_code=403)
+
     raw_username = str(form.get("username", "")).strip().lower()
     password     = str(form.get("password", ""))
-    # Strip @groupsguru.in if user typed the full address
     username = raw_username.replace("@groupsguru.in", "")
 
     user = db_get_user_by_username(username)
@@ -3686,6 +3762,22 @@ async def register_post(request: Request):
     if get_current_user(request):
         return RedirectResponse("/", status_code=302)
     form = await request.form()
+
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"register:{ip}", limit=3, window=60):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Too many registration attempts. Please wait a minute.",
+            "mode": "register",
+        }, status_code=429)
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Session expired. Please try again.",
+            "mode": "register",
+        }, status_code=403)
+
     username     = str(form.get("username", "")).strip().lower()
     display_name = str(form.get("display_name", "")).strip()
     email        = str(form.get("email", "")).strip()
@@ -3730,6 +3822,22 @@ async def forgot_password_page(request: Request):
 
 async def forgot_password_post(request: Request):
     form = await request.form()
+
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"forgot:{ip}", limit=3, window=300):
+        return templates.TemplateResponse(request, "forgot_password.html", {
+            "current_user": get_current_user(request),
+            "error": "Too many requests. Please wait 5 minutes and try again.",
+            "success": None,
+        }, status_code=429)
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "forgot_password.html", {
+            "current_user": get_current_user(request),
+            "error": "Session expired. Please try again.",
+            "success": None,
+        }, status_code=403)
+
     email_addr = str(form.get("email", "")).strip()
     
     user = db_get_user_by_email(email_addr)
@@ -3776,10 +3884,18 @@ async def reset_password_page(request: Request):
 
 async def reset_password_post(request: Request):
     form = await request.form()
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "reset_password.html", {
+            "current_user": None,
+            "error": "Session expired. Please request a new reset link.",
+            "token": "",
+        }, status_code=403)
+
     token = str(form.get("token", ""))
     new_pwd = str(form.get("new_password", ""))
     confirm_pwd = str(form.get("confirm_password", ""))
-    
+
     def fail(msg):
         return templates.TemplateResponse(request, "reset_password.html", {
             "current_user": None,
@@ -3911,7 +4027,15 @@ async def change_password_post(request: Request):
     if not user:
         return RedirectResponse("/login", status_code=302)
 
-    form        = await request.form()
+    form = await request.form()
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "change_password.html", {
+            "current_user": user,
+            "error": "Session expired. Please try again.",
+            "success": None,
+        }, status_code=403)
+
     current_pwd = str(form.get("current_password", ""))
     new_pwd     = str(form.get("new_password", ""))
     confirm_pwd = str(form.get("confirm_password", ""))
@@ -4496,9 +4620,14 @@ async def pricing_page(request: Request):
 
 
 async def api_create_order(request: Request):
-    user = request.session.get("user")
+    user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    if not _csrf_header_ok(request):
+        return JSONResponse({"error": "CSRF check failed"}, status_code=403)
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"order:{ip}", limit=10, window=60):
+        return JSONResponse({"error": "Too many requests"}, status_code=429)
     try:
         body = await request.json()
     except Exception:
@@ -4540,9 +4669,11 @@ async def api_create_order(request: Request):
 
 
 async def api_verify_payment(request: Request):
-    user = request.session.get("user")
+    user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    if not _csrf_header_ok(request):
+        return JSONResponse({"error": "CSRF check failed"}, status_code=403)
     try:
         body = await request.json()
     except Exception:
@@ -4690,7 +4821,10 @@ routes = [
 
 app = Starlette(
     routes=routes,
-    middleware=[Middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=False)],
+    middleware=[
+        Middleware(_SecurityHeadersMiddleware),
+        Middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=_IS_PROD),
+    ],
 )
 
 init_db()

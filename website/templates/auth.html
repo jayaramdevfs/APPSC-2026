@@ -45,6 +45,7 @@
         </div>
 
         <form method="POST" action="/login" autocomplete="on">
+          <input type="hidden" name="_csrf" value="{{ csrf_token(request) }}">
           <div class="auth-field">
             <label class="auth-label" for="username-login">User Identity</label>
             <div class="auth-input-row">
@@ -101,6 +102,7 @@
         </div>
 
         <form method="POST" action="/register" autocomplete="off">
+          <input type="hidden" name="_csrf" value="{{ csrf_token(request) }}">
           <div class="auth-field">
             <label class="auth-label" for="username-reg">Set Username</label>
             <div class="auth-input-row">
