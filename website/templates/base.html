@@ -389,14 +389,6 @@
                     <span class="nkm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <div class="nkm-divider"></div>
-                <button class="nkm-item" id="kbm-toggle-music" role="menuitem">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M9 18V5l12-2v13"></path>
-                        <circle cx="6" cy="18" r="3"></circle>
-                        <circle cx="18" cy="16" r="3"></circle>
-                    </svg>
-                    <span class="nkm-label" id="kbm-music-label">Ambient music: Off</span>
-                </button>
                 <a href="/dashboard" class="nkm-item" role="menuitem" {% if not current_user %}style="display:none"{% endif %}>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                         <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
@@ -584,42 +576,6 @@
   </div>
 </footer>
 
-<audio id="vib-audio" loop preload="none" style="display:none;"></audio>
-
-<!-- ═══════════════════════════════════════════════════════════
-     GLOBAL MUSIC PLAYER — persistent bottom-center pill bar
-     ═══════════════════════════════════════════════════════════ -->
-<div class="gmp-bar" id="gmp-global" aria-label="Ambient music player">
-
-  <!-- Music note icon + live dot -->
-  <div class="gmp-bar-icon" aria-hidden="true">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-    </svg>
-    <span class="gmp-live-dot" id="gmp-live-dot" aria-hidden="true"></span>
-  </div>
-
-  <!-- Track name -->
-  <span class="gmp-track-name" id="gmp-track-name">Ambient Music</span>
-
-  <!-- Controls -->
-  <div class="gmp-bar-controls">
-    <button class="gmp-ctrl" id="mmp-back" title="−10 sec" aria-label="Rewind 10 seconds">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm.5 6 8.5 6V6z"/></svg>
-    </button>
-    <button class="gmp-ctrl gmp-play-btn" id="music-toggle-inner" title="Play / Pause" aria-label="Play or pause music">
-      <svg class="gmp-ico-play"  viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-      <svg class="gmp-ico-pause" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-    </button>
-    <button class="gmp-ctrl" id="mmp-fwd" title="+10 sec" aria-label="Skip forward 10 seconds">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zm2-6 5.5 4-5.5 4V6l5.5 4L8 12z"/></svg>
-    </button>
-    <button class="gmp-ctrl gmp-stop-btn" id="gmp-stop" title="Stop music" aria-label="Stop music">
-      <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
-    </button>
-  </div>
-
-</div>
 
 <script>
   // Convert a topic title to a clean URL slug (mirrors server.py _slugify)
@@ -655,86 +611,8 @@
     l.addEventListener('click', closeMenu);
   });
 
-  // ── Theme & Music Toggle Logic ────────────────────────────────────────
+  // ── Theme Toggle Logic ────────────────────────────────────────
   const themeToggle = document.getElementById('theme-toggle');
-  const vibAudio    = document.getElementById('vib-audio');
-  const THEME_MUSIC = {
-    saffron:      { file: 'saffron.mp3',     title: 'Vande Mataram — A.R. Rahman',            startAt: 0  },
-    wakanda:      { file: 'wakanda.mp3',     title: 'All The Stars — Kendrick Lamar & SZA',   startAt: 0  },
-    'ghost-rider':{ file: 'ghost-rider.mp3', title: 'Ghost Riders In The Sky — Spiderbait',   startAt: 0  },
-    varanasi:     { file: 'varanasi.mp3',    title: 'Sanchaari — MM Keeravani & Shruti Haasan', startAt: 22 },
-    contrast:     null,
-    retro:        { file: 'retro.mp3',       title: 'The One — Suriya · Santhosh Narayanan',   startAt: 44 },
-  };
-  function songUrlFor(theme) {
-    const m = THEME_MUSIC[theme];
-    return m ? '/static/audio/' + m.file : '';
-  }
-  // ── Global Music Player wiring ───────────────────────────────────────
-  const gmpGlobal   = document.getElementById('gmp-global');
-  const gmpDot      = document.getElementById('gmp-live-dot');
-  const gmpName     = document.getElementById('gmp-track-name');
-  const gmpPlayBtn  = document.getElementById('music-toggle-inner');
-  const gmpIcoPlay  = gmpPlayBtn.querySelector('.gmp-ico-play');
-  const gmpIcoPause = gmpPlayBtn.querySelector('.gmp-ico-pause');
-
-  function isPlaying() { return !vibAudio.paused; }
-
-  function syncGMPIcons() {
-    const playing = isPlaying();
-    gmpIcoPlay.style.display  = playing ? 'none'  : 'block';
-    gmpIcoPause.style.display = playing ? 'block' : 'none';
-    gmpDot.style.display      = playing ? 'block' : 'none';
-    gmpGlobal.classList.toggle('gmp-active', playing);
-  }
-
-  function updateMiniBar() {
-    const music = THEME_MUSIC[currentTheme()];
-    if (music) gmpName.textContent = music.title;
-    syncGMPIcons();
-  }
-
-  document.getElementById('gmp-stop').addEventListener('click', e => {
-    e.stopPropagation();
-    stopMusic();
-    localStorage.setItem('theme_music', 'off');
-  });
-  vibAudio.addEventListener('play',  syncGMPIcons);
-  vibAudio.addEventListener('pause', syncGMPIcons);
-  vibAudio.addEventListener('ended', syncGMPIcons);
-
-  function stopMusic() {
-    vibAudio.pause();
-    updateMiniBar();
-  }
-
-  function playMusic(url, startAt) {
-    startAt = startAt || 0;
-    const absUrl = location.origin + url;
-    if (vibAudio.src !== absUrl) {
-      vibAudio.src = url;
-      vibAudio.addEventListener('loadedmetadata', () => {
-        const savedPos = parseFloat(localStorage.getItem('music_pos') || 0);
-        if (savedPos > startAt && savedPos < vibAudio.duration - 2) {
-          vibAudio.currentTime = savedPos;
-        } else {
-          vibAudio.currentTime = startAt;
-        }
-        vibAudio.play().catch(() => {});
-      }, { once: true });
-    } else {
-      vibAudio.play().catch(() => {});
-    }
-    updateMiniBar();
-  }
-
-  // Save position every second for cross-page continuity
-  setInterval(() => {
-    if (!vibAudio.paused) localStorage.setItem('music_pos', Math.floor(vibAudio.currentTime));
-  }, 1000);
-
-  // When track ends, clear saved position so next page starts fresh
-  vibAudio.addEventListener('ended', () => localStorage.removeItem('music_pos'));
 
   // ── Theme list ───
   const THEMES = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast', 'retro'];
@@ -751,15 +629,6 @@
 
   function updateThemeUI() {
     const t = currentTheme();
-    const music = THEME_MUSIC[t];
-    if (music) {
-      gmpName.textContent = music.title;
-      if (localStorage.getItem('theme_music') === 'on' && !isPlaying()) {
-        playMusic(songUrlFor(t), music.startAt || 0);
-      }
-    } else {
-      stopMusic();
-    }
     // Reflect active theme on the toggle button (CSS swaps icons via theme classes)
     themeToggle.dataset.theme = t;
     // Update kebab radio checks
@@ -773,12 +642,6 @@
     });
   }
 
-  // Resume on first interaction if autoplay was blocked
-  document.addEventListener('click', function() {
-    if (localStorage.getItem('theme_music') === 'on' && vibAudio.paused && vibAudio.src) {
-      vibAudio.play().catch(() => {});
-    }
-  }, { once: true });
 
   function flashRipple() {
     const flash = document.createElement('div');
@@ -1157,13 +1020,6 @@ void main(){
     applyTheme(name);
     if (persist) {
       localStorage.setItem('theme', name);
-      if (name === 'wakanda') localStorage.setItem('theme_music', 'on');
-    }
-    // Swap music track if music is on
-    if (localStorage.getItem('theme_music') === 'on') {
-      const url = songUrlFor(name);
-      const m = THEME_MUSIC[name];
-      if (url) playMusic(url, m ? m.startAt || 0 : 0); else stopMusic();
     }
     updateThemeUI();
     flashRipple();
@@ -1200,15 +1056,7 @@ void main(){
   // ── Kebab (3-dot) menu ────────────────────────────────────────
   const kebabBtn   = document.getElementById('kebab-btn');
   const kebabMenu  = document.getElementById('kebab-menu');
-  const kbmMusic   = document.getElementById('kbm-toggle-music');
-  const kbmMusicLabel = document.getElementById('kbm-music-label');
-
-  function refreshKebabLabels() {
-    var key = isPlaying() ? 'nav.music.on' : 'nav.music.off';
-    kbmMusicLabel.textContent = window.GG_I18N ? GG_I18N.t(key) : 'Ambient music: ' + (isPlaying() ? 'On' : 'Off');
-  }
-
-  function openKebab()  { kebabMenu.hidden = false; kebabBtn.setAttribute('aria-expanded', 'true');  refreshKebabLabels(); updateThemeUI(); }
+  function openKebab()  { kebabMenu.hidden = false; kebabBtn.setAttribute('aria-expanded', 'true');  updateThemeUI(); }
   function closeKebab() { kebabMenu.hidden = true;  kebabBtn.setAttribute('aria-expanded', 'false'); }
 
   kebabBtn.addEventListener('click', (e) => {
@@ -1222,45 +1070,14 @@ void main(){
   document.querySelectorAll('.nkm-theme').forEach(btn => {
     btn.addEventListener('click', () => {
       setTheme(btn.dataset.theme, true);
-      refreshKebabLabels();
     });
   });
 
-  kbmMusic.addEventListener('click', () => {
-    if (isPlaying()) {
-      stopMusic();
-      localStorage.setItem('theme_music', 'off');
-    } else {
-      const t = currentTheme(); const m = THEME_MUSIC[t]; const url = songUrlFor(t);
-      if (url) { playMusic(url, m ? m.startAt || 0 : 0); localStorage.setItem('theme_music', 'on'); }
-    }
-    refreshKebabLabels();
-  });
-
-  document.getElementById('mmp-back').addEventListener('click', (e) => {
-    e.stopPropagation();
-    const m = THEME_MUSIC[currentTheme()];
-    vibAudio.currentTime = Math.max(m ? m.startAt || 0 : 0, vibAudio.currentTime - 10);
-  });
-  document.getElementById('mmp-fwd').addEventListener('click', (e) => {
-    e.stopPropagation();
-    vibAudio.currentTime = Math.min(vibAudio.duration || 0, vibAudio.currentTime + 10);
-  });
-  document.getElementById('music-toggle-inner').addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (isPlaying()) {
-      stopMusic(); localStorage.setItem('theme_music', 'off');
-    } else {
-      const t = currentTheme(); const m = THEME_MUSIC[t]; const url = songUrlFor(t);
-      if (url) { playMusic(url, m ? m.startAt || 0 : 0); localStorage.setItem('theme_music', 'on'); }
-    }
-  });
 
   updateThemeUI();
 
   // Refresh dynamic labels on language change
   document.addEventListener('gg:langchange', function() {
-    refreshKebabLabels();
     var hint = window.GG_I18N ? GG_I18N.t('nav.search.hint') : 'Type at least 2 characters to search across all subjects.';
     var emptyEl = document.querySelector('#search-results .search-empty');
     if (emptyEl && !document.getElementById('search-input').value) emptyEl.textContent = hint;
