@@ -554,14 +554,16 @@
       .then(function(r) { return r.json(); })
       .then(function(data) {
         var result = (data.responseData && data.responseData.translatedText) || chunk;
-        // MyMemory returns quota error as translated text sometimes
         if (result.indexOf('QUERY LENGTH LIMIT') !== -1 || result.indexOf('MYMEMORY WARNING') !== -1) {
-          return chunk; // fallback to original
+          throw new Error('quota'); // propagate so callers can show a proper error
         }
         setCache(chunk, result);
         return result;
       })
-      .catch(function() { return chunk; });
+      .catch(function(e) {
+        if (e && e.message === 'quota') throw e; // re-propagate quota failures
+        return chunk; // silently fall back for actual network errors only
+      });
   }
 
   /* Split text into chunks at natural boundaries (newlines) under MAX_CHUNK chars */

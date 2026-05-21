@@ -94,7 +94,7 @@
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
     /* ---------- Live clock + date (i18n-aware) ---------- */
     function getDays() {
         return window.GG_I18N ? GG_I18N.t('days.long') : ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     loadLatestCA();
-});
+})();
 </script>
 
 {% else %}
@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="ph-tricolor-bar">
         <span class="tc-saffron"></span>
         <span class="tc-white"></span>
-        <span class="tc-navy"></span>
+        <span class="tc-green"></span>
     </div>
 
     <div class="ph-container">

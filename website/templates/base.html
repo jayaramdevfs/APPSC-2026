@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=57">
+    <link rel="stylesheet" href="/static/css/style.css?v=58">
     <script src="/static/js/i18n.js"></script>
     <style>
       /* Smooth transitions for theme switching */
@@ -317,85 +317,6 @@
                     <span data-i18n="nav.theme.retro">Retro</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
-            </div>
-        </div>
-        <div class="nav-kebab-wrap">
-            <button class="nav-kebab-btn" id="kebab-btn" aria-label="More options" aria-expanded="false" title="More">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <circle cx="12" cy="5" r="2"></circle>
-                    <circle cx="12" cy="12" r="2"></circle>
-                    <circle cx="12" cy="19" r="2"></circle>
-                </svg>
-            </button>
-            <div class="nav-kebab-menu" id="kebab-menu" role="menu" hidden>
-                <div class="nkm-section-label" data-i18n="nav.theme">Theme</div>
-                <button class="nkm-item nkm-theme" data-theme="saffron" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M4 22 L16 12 L28 22"></path>
-                        <path d="M4 16 L16 6 L28 16"></path>
-                    </svg>
-                    <span class="nkm-label">Saffron <span class="nkm-sub">(default)</span></span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <button class="nkm-item nkm-theme" data-theme="wakanda" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" aria-hidden="true">
-                        <ellipse cx="8" cy="11" rx="2.6" ry="3.2" fill="currentColor"></ellipse>
-                        <ellipse cx="13" cy="6.5" rx="2.6" ry="3.4" fill="currentColor"></ellipse>
-                        <ellipse cx="19" cy="6.5" rx="2.6" ry="3.4" fill="currentColor"></ellipse>
-                        <ellipse cx="24" cy="11" rx="2.6" ry="3.2" fill="currentColor"></ellipse>
-                        <path d="M16 13 C9.5 13 6.5 18 8.5 24 C10.4 28 13.2 30 16 30 C18.8 30 21.6 28 23.5 24 C25.5 18 22.5 13 16 13 Z" fill="currentColor"></path>
-                    </svg>
-                    <span class="nkm-label">Black Panther</span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <button class="nkm-item nkm-theme" data-theme="ghost-rider" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" aria-hidden="true">
-                        <path d="M16 2 C14 8 9 11 9 18 C9 24 13 30 16 30 C19 30 23 24 23 18 C23 14 19 13 19 9 C17 11 15 11 16 2 Z" fill="currentColor"></path>
-                    </svg>
-                    <span class="nkm-label">Ghost Rider</span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <button class="nkm-item nkm-theme" data-theme="varanasi" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" aria-hidden="true">
-                        <rect x="4"  y="28" width="24" height="3" rx="1" fill="currentColor" opacity="0.9"/>
-                        <rect x="10" y="20" width="12" height="8"  rx="0.5" fill="currentColor" opacity="0.9"/>
-                        <polygon points="8,20 24,20 22,16 10,16" fill="currentColor" opacity="0.92"/>
-                        <polygon points="10,16 22,16 20,12 12,12" fill="currentColor" opacity="0.93"/>
-                        <polygon points="12,12 20,12 18,8 14,8" fill="currentColor" opacity="0.95"/>
-                        <polygon points="14,8 18,8 17,5 15,5" fill="currentColor"/>
-                        <circle cx="16" cy="4" r="1.5" fill="currentColor"/>
-                    </svg>
-                    <span class="nkm-label">Varanasi</span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <button class="nkm-item nkm-theme" data-theme="contrast" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-                        <circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/>
-                        <path d="M16 3 A13 13 0 0 1 16 29 Z"/>
-                    </svg>
-                    <span class="nkm-label">High Contrast</span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <button class="nkm-item nkm-theme" data-theme="retro" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" aria-hidden="true">
-                        <rect x="3" y="9" width="26" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="10" cy="19" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <circle cx="10" cy="19" r="1.4" fill="currentColor"/>
-                        <circle cx="22" cy="19" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                        <circle cx="22" cy="19" r="1.4" fill="currentColor"/>
-                        <rect x="7" y="11" width="18" height="5" rx="1" fill="currentColor" opacity="0.3"/>
-                    </svg>
-                    <span class="nkm-label">Retro</span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <div class="nkm-divider"></div>
-                <a href="/dashboard" class="nkm-item" role="menuitem" {% if not current_user %}style="display:none"{% endif %}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                    <span class="nkm-label" data-i18n="nav.open_dashboard">Open Dashboard</span>
-                </a>
             </div>
         </div>
         <button class="nav-lang-btn" id="lang-toggle" onclick="window.GG_I18N && GG_I18N.toggleLang()" title="Switch Language / భాష మార్చండి" aria-label="Switch language">
@@ -1053,25 +974,7 @@ void main(){
     });
   });
 
-  // ── Kebab (3-dot) menu ────────────────────────────────────────
-  const kebabBtn   = document.getElementById('kebab-btn');
-  const kebabMenu  = document.getElementById('kebab-menu');
-  function openKebab()  { kebabMenu.hidden = false; kebabBtn.setAttribute('aria-expanded', 'true');  updateThemeUI(); }
-  function closeKebab() { kebabMenu.hidden = true;  kebabBtn.setAttribute('aria-expanded', 'false'); }
-
-  kebabBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (kebabMenu.hidden) openKebab(); else closeKebab();
-  });
-  document.addEventListener('click', (e) => {
-    if (!kebabMenu.hidden && !kebabMenu.contains(e.target) && e.target !== kebabBtn) closeKebab();
-  });
-
-  document.querySelectorAll('.nkm-theme').forEach(btn => {
-    btn.addEventListener('click', () => {
-      setTheme(btn.dataset.theme, true);
-    });
-  });
+  function closeKebab() {}
 
 
   updateThemeUI();

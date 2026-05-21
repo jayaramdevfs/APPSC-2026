@@ -4635,7 +4635,7 @@ mark.hl-pink   { background: #FBCFE8; color: #111; border-radius: 2px; padding: 
 .ph-tricolor-bar { display: flex; height: 4px; width: 100%; }
 .ph-tricolor-bar .tc-saffron { flex: 1; background: #FF9933; }
 .ph-tricolor-bar .tc-white   { flex: 1; background: #E8E8E8; }
-.ph-tricolor-bar .tc-navy    { flex: 1; background: #000080; }
+.ph-tricolor-bar .tc-green   { flex: 1; background: #138808; }
 
 .ph-container {
     max-width: 1100px;
