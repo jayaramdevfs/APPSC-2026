@@ -523,11 +523,10 @@
   'use strict';
 
   var CACHE_PREFIX = 'gg_trans_';
-  var API = 'https://api.mymemory.translated.net/get';
-  var MAX_CHUNK = 450; // MyMemory safe limit per request
+  var API = 'https://translate.googleapis.com/translate_a/single';
+  var MAX_CHUNK = 1000; // Google Translate handles much more than MyMemory
 
   function cacheKey(text) {
-    // simple hash to keep keys short
     var h = 0;
     for (var i = 0; i < Math.min(text.length, 100); i++) {
       h = ((h << 5) - h) + text.charCodeAt(i);
@@ -549,21 +548,19 @@
     var cached = getCached(chunk);
     if (cached !== null) return Promise.resolve(cached);
 
-    var url = API + '?q=' + encodeURIComponent(chunk) + '&langpair=en|te';
+    // Unofficial Google Translate endpoint — no API key required, no daily quota
+    var url = API + '?client=gtx&sl=en&tl=te&dt=t&q=' + encodeURIComponent(chunk);
     return fetch(url)
       .then(function(r) { return r.json(); })
       .then(function(data) {
-        var result = (data.responseData && data.responseData.translatedText) || chunk;
-        if (result.indexOf('QUERY LENGTH LIMIT') !== -1 || result.indexOf('MYMEMORY WARNING') !== -1) {
-          throw new Error('quota'); // propagate so callers can show a proper error
-        }
+        // Response: [ [ ["translated","original",...], ... ], null, "en", ... ]
+        if (!data || !data[0] || !data[0].length) throw new Error('bad_response');
+        var result = data[0].map(function(seg) { return seg[0] || ''; }).join('');
+        if (!result.trim()) throw new Error('empty');
         setCache(chunk, result);
         return result;
       })
-      .catch(function(e) {
-        if (e && e.message === 'quota') throw e; // re-propagate quota failures
-        return chunk; // silently fall back for actual network errors only
-      });
+      .catch(function() { return chunk; }); // fallback to original on any error
   }
 
   /* Split text into chunks at natural boundaries (newlines) under MAX_CHUNK chars */
