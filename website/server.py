@@ -4615,8 +4615,7 @@ def _upgrade_user(con, user_id: int, plan_id: str, order_id: str, payment_id: st
 async def pricing_page(request: Request):
     user = request.session.get("user")
     sub  = get_user_subscription(user["id"]) if user else {"plan_id": "free", "is_premium": False}
-    return templates.TemplateResponse("pricing.html", {
-        "request": request,
+    return templates.TemplateResponse(request, "pricing.html", {
         "current_user": user,
         "sub": sub,
         "razorpay_key": RAZORPAY_KEY_ID,
@@ -4810,15 +4809,13 @@ async def api_admin_grant_subscription(request: Request):
 # ---------------------------------------------------------------------------
 
 async def _handler_404(request: Request, exc: Exception):
-    return templates.TemplateResponse("404.html", {
-        "request": request,
+    return templates.TemplateResponse(request, "404.html", {
         "current_user": get_current_user(request),
     }, status_code=404)
 
 
 async def _handler_500(request: Request, exc: Exception):
-    return templates.TemplateResponse("500.html", {
-        "request": request,
+    return templates.TemplateResponse(request, "500.html", {
         "current_user": get_current_user(request),
     }, status_code=500)
 
@@ -4894,8 +4891,8 @@ routes = [
     Route("/api/payment/verify",                  api_verify_payment,        methods=["POST"]),
     Route("/api/payment/webhook",                 api_payment_webhook,       methods=["POST"]),
     Route("/api/user/subscription",               api_user_subscription,     methods=["GET"]),
-    Route("/privacy",                              lambda r: templates.TemplateResponse("privacy.html", {"request": r, "current_user": get_current_user(r)})),
-    Route("/terms",                               lambda r: templates.TemplateResponse("terms.html",   {"request": r, "current_user": get_current_user(r)})),
+    Route("/privacy",                              lambda r: templates.TemplateResponse(r, "privacy.html", {"current_user": get_current_user(r)})),
+    Route("/terms",                               lambda r: templates.TemplateResponse(r, "terms.html",   {"current_user": get_current_user(r)})),
     Route("/robots.txt",                          lambda r: PlainTextResponse(open(STATIC_DIR / "robots.txt").read())),
     Route("/sitemap.xml",                         lambda r: PlainTextResponse(open(STATIC_DIR / "sitemap.xml").read(), media_type="application/xml")),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
