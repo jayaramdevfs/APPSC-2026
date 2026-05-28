@@ -4640,7 +4640,7 @@ async def api_create_order(request: Request):
         return JSONResponse({"error": "Invalid plan"}, status_code=400)
     if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
         return JSONResponse({"error": "Payments not configured"}, status_code=503)
-    amount_map = {"monthly": 19900, "yearly": 99900}
+    amount_map = {"monthly": 200, "yearly": 99900}  # TEST: monthly set to ₹2
     amount = amount_map[plan_id]
     receipt = f"gg_{user['id']}_{int(datetime.utcnow().timestamp())}"
     try:
