@@ -9,17 +9,17 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Quit Session
+                <span data-i18n="practice.quit">Quit Session</span>
             </a>
             <span class="topic-label" id="practice-topic-name">{{ topic_title }}</span>
         </div>
         <div class="ph-right">
             <div class="session-stat">
-                <span class="label">Accuracy</span>
+                <span class="label" data-i18n="practice.accuracy">Accuracy</span>
                 <span class="val" id="accuracy-val">0%</span>
             </div>
             <div class="session-stat">
-                <span class="label">Progress</span>
+                <span class="label" data-i18n="practice.progress">Progress</span>
                 <span class="val" id="progress-text">0/0</span>
             </div>
         </div>
@@ -28,7 +28,7 @@
     <div class="practice-container">
         <!-- Question Area -->
         <div id="quiz-screen" class="quiz-card">
-            <div class="q-meta">Question <span id="q-number">1</span></div>
+            <div class="q-meta"><span data-i18n="practice.question">Question</span> <span id="q-number">1</span></div>
             <h2 class="q-text" id="q-text"></h2>
             
             <div class="options-grid" id="options-grid">
@@ -38,42 +38,42 @@
             <div id="explanation-box" class="explanation-box" style="display:none;">
                 <div class="ex-header">
                     <span id="result-badge" class="badge">Correct</span>
-                    <span class="ex-title">Answer Breakdown</span>
+                    <span class="ex-title" data-i18n="practice.explanation">Answer Breakdown</span>
                 </div>
                 <p id="ex-text" class="ex-content"></p>
-                <button class="next-btn" onclick="nextQuestion()">Continue &rarr;</button>
+                <button class="next-btn" onclick="nextQuestion()" data-i18n="practice.continue">Continue →</button>
             </div>
         </div>
 
         <!-- Completion Screen -->
         <div id="finish-screen" class="finish-card" style="display:none;">
             <div class="f-icon">🏆</div>
-            <h1 class="f-title">Session Complete</h1>
-            <p class="f-subtitle">You've mastered these concepts. Excellent work!</p>
+            <h1 class="f-title" data-i18n="practice.complete">Session Complete</h1>
+            <p class="f-subtitle" data-i18n="practice.mastered">You've mastered these concepts. Excellent work!</p>
             
             <div class="f-stats">
                 <div class="f-stat">
                     <span class="val" id="final-score">0</span>
-                    <span class="label">Correct</span>
+                    <span class="label" data-i18n="practice.correct">Correct</span>
                 </div>
                 <div class="f-stat">
                     <span class="val" id="final-accuracy">0%</span>
-                    <span class="label">Accuracy</span>
+                    <span class="label" data-i18n="practice.accuracy">Accuracy</span>
                 </div>
             </div>
 
             <div class="f-actions">
-                <button class="f-btn primary" onclick="location.reload()">Replay Session</button>
-                <a href="/dashboard" class="f-btn secondary">Go to Dashboard</a>
+                <button class="f-btn primary" onclick="location.reload()" data-i18n="practice.replay">Replay Session</button>
+                <a href="/dashboard" class="f-btn secondary" data-i18n="practice.dashboard">Go to Dashboard</a>
             </div>
         </div>
 
         <!-- Empty State -->
         <div id="empty-screen" class="finish-card" style="display:none;">
             <div class="f-icon">📝</div>
-            <h1 class="f-title">No Questions Yet</h1>
-            <p class="f-subtitle">We are still populating practice questions for this topic. Check back soon!</p>
-            <a href="/dashboard" class="f-btn primary">Go to Dashboard</a>
+            <h1 class="f-title" data-i18n="practice.no_questions">No Questions Yet</h1>
+            <p class="f-subtitle" data-i18n="practice.no_q_desc">We are still populating practice questions for this topic. Check back soon!</p>
+            <a href="/dashboard" class="f-btn primary" data-i18n="practice.dashboard">Go to Dashboard</a>
         </div>
     </div>
 
@@ -93,9 +93,16 @@
     let answered = false;
 
     async function loadQuiz() {
-        const resp = await fetch(`/api/mcqs/${TOPIC_ID}`);
+        const lang = window.GG_I18N ? GG_I18N.lang() : 'en';
+        const resp = await fetch(`/api/mcqs/${TOPIC_ID}?lang=${lang}`);
         const data = await resp.json();
         questions = data.mcqs;
+
+        // If requested Telugu but got English, auto-translate question text
+        if (lang === 'te' && data.lang !== 'te' && window.GG_TRANSLATE && questions.length > 0) {
+            // Translate questions lazily — translate as each question is shown
+            _translateQueue = true;
+        }
 
         if (questions.length === 0) {
             document.getElementById('quiz-screen').style.display = 'none';
@@ -106,14 +113,33 @@
         renderQuestion();
     }
 
-    function renderQuestion() {
+    let _translateQueue = false;
+
+    async function maybeTranslateQuestion(q) {
+        if (!_translateQueue || !window.GG_TRANSLATE) return q;
+        const [tq, ta, tb, tc, td, tex] = await Promise.all([
+            GG_TRANSLATE.text(q.question),
+            GG_TRANSLATE.text(q.option_a),
+            GG_TRANSLATE.text(q.option_b),
+            GG_TRANSLATE.text(q.option_c),
+            GG_TRANSLATE.text(q.option_d),
+            q.explanation ? GG_TRANSLATE.text(q.explanation) : Promise.resolve(q.explanation),
+        ]);
+        return { ...q, question: tq, option_a: ta, option_b: tb, option_c: tc, option_d: td, explanation: tex };
+    }
+
+    async function renderQuestion() {
         answered = false;
-        const q = questions[curIdx];
+        const grid = document.getElementById('options-grid');
+        grid.innerHTML = `<div style="text-align:center; color:var(--muted); padding:1rem;" data-i18n="practice.loading">${window.GG_I18N ? GG_I18N.t('practice.loading') : 'Loading questions…'}</div>`;
+
+        const rawQ = questions[curIdx];
+        const q = await maybeTranslateQuestion(rawQ);
+
         document.getElementById('q-number').innerText = curIdx + 1;
         document.getElementById('q-text').innerText = q.question;
         document.getElementById('progress-text').innerText = `${curIdx + 1}/${questions.length}`;
-        
-        const grid = document.getElementById('options-grid');
+
         grid.innerHTML = '';
         document.getElementById('explanation-box').style.display = 'none';
 
@@ -124,21 +150,20 @@
                 <span class="opt-key">${key.toUpperCase()}</span>
                 <span class="opt-val">${q['option_'+key]}</span>
             `;
-            btn.onclick = () => selectOption(key, btn);
+            btn.onclick = () => selectOption(key, btn, q);
             grid.appendChild(btn);
         });
 
         updateProgress();
     }
 
-    function selectOption(key, btn) {
+    function selectOption(key, btn, q) {
         if (answered) return;
         answered = true;
-        
+
         attempted++;
-        const q = questions[curIdx];
         const isCorrect = key.toUpperCase() === q.correct_option.toUpperCase();
-        
+
         if (isCorrect) {
             score++;
             btn.classList.add('correct');
@@ -154,12 +179,14 @@
         }
 
         document.getElementById('accuracy-val').innerText = Math.round((score/attempted)*100) + '%';
-        
+
         // Show explanation
         const exBox = document.getElementById('explanation-box');
         const badge = document.getElementById('result-badge');
         exBox.style.display = 'block';
-        badge.innerText = isCorrect ? 'Correct' : 'Incorrect';
+        badge.innerText = isCorrect
+            ? (window.GG_I18N ? GG_I18N.t('practice.correct') : 'Correct')
+            : (window.GG_I18N ? GG_I18N.t('practice.incorrect') : 'Incorrect');
         badge.className = isCorrect ? 'badge correct' : 'badge wrong';
         document.getElementById('ex-text').innerHTML = q.explanation || 'No explanation provided.';
     }

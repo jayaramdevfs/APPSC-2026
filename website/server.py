@@ -5,13 +5,16 @@ import re
 import secrets
 import sqlite3
 import smtplib
+import time
 import httpx
 import urllib.parse
+from collections import defaultdict
 from email.message import EmailMessage
 from datetime import date, timedelta, datetime
 from pathlib import Path
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
+from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.routing import Route, Mount
 from starlette.responses import JSONResponse, PlainTextResponse, RedirectResponse
@@ -33,7 +36,13 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 STATIC_DIR    = BASE_DIR / "static"
 DB_PATH       = BASE_DIR / "users.db"
 
-SECRET_KEY     = os.environ.get("SECRET_KEY", "dev-secret-groupsguru-2026")
+_IS_PROD = bool(os.environ.get("RENDER"))
+SECRET_KEY = os.environ.get("SECRET_KEY", "")
+if not SECRET_KEY:
+    if _IS_PROD:
+        raise RuntimeError("SECRET_KEY env var must be set in production")
+    SECRET_KEY = "dev-secret-groupsguru-2026"
+
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "GroupsGuru@2026")
 
 EMAIL_USER = os.environ.get("EMAIL_USER", "")
@@ -41,7 +50,64 @@ EMAIL_PASS = os.environ.get("EMAIL_PASS", "")
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET", "")
 
+RAZORPAY_KEY_ID     = os.environ.get("RAZORPAY_KEY_ID", "")
+RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET", "")
+
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
+
+# ---------------------------------------------------------------------------
+# Security — CSRF
+# ---------------------------------------------------------------------------
+
+def _csrf_token(request: Request) -> str:
+    token = request.session.get("csrf_token")
+    if not token:
+        token = secrets.token_hex(32)
+        request.session["csrf_token"] = token
+    return token
+
+def _csrf_ok(request: Request, form) -> bool:
+    expected = request.session.get("csrf_token", "")
+    provided = str(form.get("_csrf", ""))
+    return bool(expected and secrets.compare_digest(expected, provided))
+
+def _csrf_header_ok(request: Request) -> bool:
+    expected = request.session.get("csrf_token", "")
+    provided = request.headers.get("X-CSRF-Token", "")
+    return bool(expected and secrets.compare_digest(expected, provided))
+
+templates.env.globals["csrf_token"] = _csrf_token
+templates.env.globals["google_enabled"] = bool(GOOGLE_CLIENT_ID)
+templates.env.globals["email_configured"] = bool(EMAIL_USER)
+
+# ---------------------------------------------------------------------------
+# Security — Rate limiting (in-memory sliding window)
+# ---------------------------------------------------------------------------
+
+_rl_buckets: dict[str, list[float]] = defaultdict(list)
+
+def _rate_ok(key: str, limit: int, window: int = 60) -> bool:
+    now = time.monotonic()
+    _rl_buckets[key] = [t for t in _rl_buckets[key] if now - t < window]
+    if len(_rl_buckets[key]) >= limit:
+        return False
+    _rl_buckets[key].append(now)
+    return True
+
+# ---------------------------------------------------------------------------
+# Security — HTTP response headers
+# ---------------------------------------------------------------------------
+
+class _SecurityHeadersMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request, call_next):
+        response = await call_next(request)
+        response.headers.setdefault("X-Content-Type-Options", "nosniff")
+        response.headers.setdefault("X-Frame-Options", "DENY")
+        response.headers.setdefault("X-XSS-Protection", "1; mode=block")
+        response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+        if request.url.path.startswith("/static/"):
+            response.headers["Cache-Control"] = "public, max-age=86400"
+        return response
 
 # ---------------------------------------------------------------------------
 # Auth — password helpers
@@ -75,6 +141,20 @@ def _seed_user(con, username: str, display_name: str, role: str, password: str) 
             (username, display_name, role, hash_password(password)),
         )
         con.commit()
+
+
+def _seed_plans(con) -> None:
+    plans = [
+        ("free",    "Free",    0,     36500, '["20 MCQs per topic","User notes","7 days current affairs"]'),
+        ("monthly", "Monthly", 199,   30,    '["All MCQs","Flashcards","Highlights","Full current affairs archive","Priority content"]'),
+        ("yearly",  "Yearly",  999,   365,   '["All MCQs","Flashcards","Highlights","Full current affairs archive","Priority content","Best value"]'),
+    ]
+    for plan in plans:
+        con.execute(
+            "INSERT OR IGNORE INTO subscription_plans (id, name, price_inr, duration_days, features) VALUES (?,?,?,?,?)",
+            plan,
+        )
+    con.commit()
 
 
 def init_db() -> None:
@@ -160,9 +240,16 @@ def init_db() -> None:
             option_c       TEXT NOT NULL,
             option_d       TEXT NOT NULL,
             correct_option TEXT NOT NULL,
-            explanation    TEXT
+            explanation    TEXT,
+            lang           TEXT DEFAULT 'en'
         )
     """)
+    # Migration: add lang column if missing (existing DBs)
+    try:
+        con.execute("ALTER TABLE mcqs ADD COLUMN lang TEXT DEFAULT 'en'")
+        con.commit()
+    except Exception:
+        pass  # Column already exists
     con.execute("""
         CREATE TABLE IF NOT EXISTS paragraph_pins (
             id         INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -182,7 +269,45 @@ def init_db() -> None:
             updated_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
     """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS subscription_plans (
+            id            TEXT PRIMARY KEY,
+            name          TEXT NOT NULL,
+            price_inr     INTEGER NOT NULL,
+            duration_days INTEGER NOT NULL,
+            features      TEXT
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS user_subscriptions (
+            id                   INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id              INTEGER NOT NULL UNIQUE,
+            plan_id              TEXT NOT NULL DEFAULT 'free',
+            razorpay_order_id    TEXT,
+            razorpay_payment_id  TEXT UNIQUE,
+            razorpay_signature   TEXT,
+            started_at           TEXT DEFAULT CURRENT_TIMESTAMP,
+            expires_at           TEXT,
+            status               TEXT DEFAULT 'active'
+        )
+    """)
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS payment_log (
+            id           INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id      INTEGER NOT NULL,
+            order_id     TEXT NOT NULL UNIQUE,
+            payment_id   TEXT,
+            amount_paise INTEGER NOT NULL,
+            plan_id      TEXT NOT NULL,
+            status       TEXT DEFAULT 'created',
+            created_at   TEXT DEFAULT CURRENT_TIMESTAMP,
+            updated_at   TEXT DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
     con.commit()
+
+    # Seed subscription plans
+    _seed_plans(con)
 
     # Admin — password overrideable via ADMIN_PASSWORD env var on Render
     _seed_user(con, "jayaramadmin", "Jayaram", "admin", os.environ.get("ADMIN_PASSWORD", "jayaramadmin@2026"))
@@ -1980,27 +2105,23 @@ async def homepage(request: Request):
 
 async def group1(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group1.html", {
         "structure": G1_STRUCTURE,
         "structure_json": json.dumps(G1_STRUCTURE),
         "shared_topics_json": json.dumps(SHARED_TOPICS),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
 async def group2(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "group2.html", {
         "structure": G2_STRUCTURE,
         "structure_json": json.dumps(G2_STRUCTURE),
         "shared_topics_json": json.dumps(SHARED_TOPICS),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
@@ -2019,7 +2140,8 @@ SHARED_TOPICS = {
     # ── HISTORY ─────────────────────────────────────────────────────────────
 
     # G1 Prelims History ↔ G2 Screening History
-    "pre-ha-01": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
+    "pre-ha-01": [{"id": "cg-harappan-civilization", "label": "Focused: Indus Valley Civilization"},
+                  {"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
                   {"id": "m2-hi-01",    "label": "G1 Mains P2: Pre-Historic to Kushans"}],
     "pre-ha-02": [{"id": "scr-hist-01", "label": "G2 Screening: Ancient India"},
                   {"id": "m2-hi-02",    "label": "G1 Mains P2: South Indian Dynasties"}],
@@ -2050,7 +2172,8 @@ SHARED_TOPICS = {
                     {"id": "p1-aph-03", "label": "G2 Paper 1: Advent of Europeans to Independence"}],
 
     # G1 Mains Paper 2 — History of India ↔ G2 Screening + G2 Paper 1 AP History
-    "m2-hi-01": [{"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+    "m2-hi-01": [{"id": "cg-prehistoric-culture", "label": "Focused: Pre-Historic Cultures of India"},
+                 {"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
                  {"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
                  {"id": "p1-aph-01",  "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"}],
     "m2-hi-02": [{"id": "pre-ha-02",  "label": "G1 Prelims: South Indian Dynasties"},
@@ -2068,6 +2191,16 @@ SHARED_TOPICS = {
                  {"id": "scr-hist-03","label": "G2 Screening: Modern India"},
                  {"id": "p1-aph-03",  "label": "G2 Paper 1: Advent of Europeans to Independence"}],
 
+    # Ancient History CG-specific notes → exam topic cross-links
+    "cg-prehistoric-culture":  [{"id": "p1-aph-01",  "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"},
+                                 {"id": "m2-hi-01",   "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+    "cg-harappan-civilization":[{"id": "pre-ha-01",  "label": "G1 Prelims: Ancient India — Indus Valley to Guptas"},
+                                 {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
+    "cg-vedic-age":            [{"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
+                                 {"id": "m2-hi-01",   "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+    "cg-mahajanapadas":        [{"id": "scr-hist-01","label": "G2 Screening: Ancient India"},
+                                 {"id": "m2-hi-01",   "label": "G1 Mains P2: Pre-Historic to Kushans"}],
+
     # G1 Mains Paper 2 — AP History ↔ G2 Paper 1 AP History (STRONGEST OVERLAP)
     "m2-ap-01": [{"id": "p1-aph-01", "label": "G2 Paper 1: Pre-historic Cultures & Early Dynasties"},
                  {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
@@ -2078,7 +2211,8 @@ SHARED_TOPICS = {
     "m2-ap-05": [{"id": "p1-aph-05", "label": "G2 Paper 1: Formation of Andhra Pradesh (1956–2014)"}],
 
     # G2 Paper 1 AP History ↔ G1 Mains AP History (STRONGEST OVERLAP — near identical)
-    "p1-aph-01": [{"id": "m2-ap-01",  "label": "G1 Mains P2: Ancient Andhra"},
+    "p1-aph-01": [{"id": "cg-prehistoric-culture", "label": "Focused: Pre-Historic Cultures of India"},
+                  {"id": "m2-ap-01",  "label": "G1 Mains P2: Ancient Andhra"},
                   {"id": "m2-hi-01",  "label": "G1 Mains P2: Pre-Historic to Kushans"},
                   {"id": "scr-hist-01","label": "G2 Screening: Ancient India"}],
     "p1-aph-02": [{"id": "m2-ap-02",  "label": "G1 Mains P2: Medieval Andhra (1000–1565 AD)"},
@@ -2394,16 +2528,55 @@ APT_STRUCTURE = {
     ],
 }
 
+# ── Topic slug index — maps internal IDs to clean URL slugs ──────────────────
+def _slugify(s: str) -> str:
+    s = s.lower().strip()
+    s = re.sub(r'[^a-z0-9\s]', ' ', s)
+    s = re.sub(r'\s+', '-', s.strip())
+    s = re.sub(r'-+', '-', s)
+    return s.strip('-')
+
+def _build_topic_index() -> dict:
+    index: dict = {}
+    seen_slugs: dict = {}
+
+    def _add(tid: str, title: str):
+        if tid in index:
+            return
+        base = _slugify(title)
+        slug = base
+        if slug in seen_slugs and seen_slugs[slug] != tid:
+            slug = f"{base}-{_slugify(tid)}"
+        seen_slugs[slug] = tid
+        index[tid] = {"title": title, "slug": slug}
+
+    for stage in G2_STRUCTURE.values():
+        for sec in stage["sections"]:
+            for t in sec["topics"]:
+                _add(t["id"], t["title"])
+
+    for stage in G1_STRUCTURE.values():
+        for sec in stage["sections"]:
+            for t in sec["topics"]:
+                _add(t["id"], t["title"])
+
+    for sec in APT_STRUCTURE["sections"]:
+        for t in sec["topics"]:
+            _add(t["id"], t["title"])
+
+    return index
+
+TOPIC_INDEX = _build_topic_index()
+SLUG_TO_ID  = {v["slug"]: k for k, v in TOPIC_INDEX.items()}
+
 
 async def aptitude(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "aptitude.html", {
         "structure": APT_STRUCTURE,
         "structure_json": json.dumps(APT_STRUCTURE),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
@@ -2867,12 +3040,10 @@ TELUGU_STRUCTURE = {
 
 async def telugu(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "telugu.html", {
         "structure_json": json.dumps(TELUGU_STRUCTURE),
         "current_user": user,
-        "user_id": user["id"],
+        "user_id": user["id"] if user else None,
     })
 
 
@@ -2894,8 +3065,6 @@ def _ca_days_for_month(year: int, month: int) -> list[int]:
 
 async def current_affairs(request: Request):
     user = get_current_user(request)
-    if not user:
-        return RedirectResponse("/login", status_code=302)
     return templates.TemplateResponse(request, "current_affairs.html", {
         "current_user": user,
     })
@@ -2903,12 +3072,28 @@ async def current_affairs(request: Request):
 
 async def api_ca_content(request: Request):
     """Return raw markdown for a given date, or 404 if not found."""
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
-    date = request.path_params["date"]
-    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date):
+    req_date = request.path_params["date"]
+    lang = request.query_params.get("lang", "en")
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", req_date):
         return PlainTextResponse("Invalid date format.", status_code=400)
-    ca_file = CA_DIR / f"{date}.md"
+    # Content gating: free users can only access last 7 days of CA
+    user = request.session.get("user")
+    if user:
+        sub = get_user_subscription(user["id"])
+        if not sub["is_premium"]:
+            cutoff = (datetime.utcnow() - timedelta(days=7)).date()
+            try:
+                req_date_obj = date.fromisoformat(req_date)
+            except ValueError:
+                req_date_obj = None
+            if req_date_obj and req_date_obj < cutoff:
+                return PlainTextResponse("", status_code=402)
+    # Serve Telugu version if requested and exists
+    if lang == "te":
+        te_file = CA_DIR / f"{req_date}-te.md"
+        if te_file.exists():
+            return PlainTextResponse(te_file.read_text(encoding="utf-8"))
+    ca_file = CA_DIR / f"{req_date}.md"
     if not ca_file.exists():
         return PlainTextResponse("", status_code=404)
     return PlainTextResponse(ca_file.read_text(encoding="utf-8"))
@@ -2916,14 +3101,50 @@ async def api_ca_content(request: Request):
 
 async def api_ca_month(request: Request):
     """Return list of day numbers (int) that have CA content for year/month."""
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
     try:
         year  = int(request.path_params["year"])
         month = int(request.path_params["month"])
     except ValueError:
         return JSONResponse({"error": "Invalid year/month"}, status_code=400)
     return JSONResponse({"days": _ca_days_for_month(year, month)})
+
+
+async def api_ca_nearest(request: Request):
+    """Return content for the nearest date on or before the requested date (up to 60 days back)."""
+    from datetime import date as _date, timedelta
+    date_str = request.path_params["date"]
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date_str):
+        return JSONResponse({"error": "Invalid date format"}, status_code=400)
+    try:
+        requested = _date.fromisoformat(date_str)
+    except ValueError:
+        return JSONResponse({"error": "Invalid date"}, status_code=400)
+
+    lang = request.query_params.get("lang", "en")
+    for offset in range(61):
+        candidate = requested - timedelta(days=offset)
+        # Try Telugu version first
+        if lang == "te":
+            te_file = CA_DIR / f"{candidate.isoformat()}-te.md"
+            if te_file.exists():
+                content = te_file.read_text(encoding="utf-8")
+                return JSONResponse({
+                    "found":     True,
+                    "date":      candidate.isoformat(),
+                    "requested": date_str,
+                    "content":   content,
+                    "lang":      "te",
+                })
+        ca_file = CA_DIR / f"{candidate.isoformat()}.md"
+        if ca_file.exists():
+            content = ca_file.read_text(encoding="utf-8")
+            return JSONResponse({
+                "found":     True,
+                "date":      candidate.isoformat(),
+                "requested": date_str,
+                "content":   content,
+            })
+    return JSONResponse({"found": False, "requested": date_str})
 
 
 # ---------------------------------------------------------------------------
@@ -3312,9 +3533,13 @@ async def dashboard(request: Request):
     user = get_current_user(request)
     if not user:
         return RedirectResponse("/login", status_code=302)
+    sub = get_user_subscription(user["id"])
+    upgraded = request.query_params.get("upgraded") == "1"
     return templates.TemplateResponse(request, "dashboard.html", {
         "current_user": user,
         "today": date.today().isoformat(),
+        "sub": sub,
+        "upgraded": upgraded,
     })
 
 
@@ -3440,15 +3665,17 @@ async def api_admin_save_topic(request: Request):
     user = get_current_user(request)
     if not user or user.get("role") != "admin":
         return JSONResponse({"error": "Unauthorized"}, status_code=403)
-    
+
     body = await request.json()
     topic_id = body.get("topic_id")
     content = body.get("content")
+    lang = body.get("lang", "en")  # 'en' or 'te'
     if not topic_id or content is None:
         return JSONResponse({"error": "Missing data"}, status_code=400)
-    
+
     NOTES_DIR.mkdir(parents=True, exist_ok=True)
-    path = NOTES_DIR / f"{topic_id}.md"
+    suffix = "-te" if lang == "te" else ""
+    path = NOTES_DIR / f"{topic_id}{suffix}.md"
     path.write_text(content, encoding="utf-8")
     return JSONResponse({"ok": True})
 
@@ -3488,9 +3715,26 @@ async def login_post(request: Request):
     if get_current_user(request):
         return RedirectResponse("/", status_code=302)
     form = await request.form()
+
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"login:{ip}", limit=5, window=60):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Too many login attempts. Please wait a minute and try again.",
+            "registered": False,
+            "mode": "login",
+        }, status_code=429)
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Session expired. Please try again.",
+            "registered": False,
+            "mode": "login",
+        }, status_code=403)
+
     raw_username = str(form.get("username", "")).strip().lower()
     password     = str(form.get("password", ""))
-    # Strip @groupsguru.in if user typed the full address
     username = raw_username.replace("@groupsguru.in", "")
 
     user = db_get_user_by_username(username)
@@ -3522,6 +3766,22 @@ async def register_post(request: Request):
     if get_current_user(request):
         return RedirectResponse("/", status_code=302)
     form = await request.form()
+
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"register:{ip}", limit=3, window=60):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Too many registration attempts. Please wait a minute.",
+            "mode": "register",
+        }, status_code=429)
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "auth.html", {
+            "current_user": None,
+            "error": "Session expired. Please try again.",
+            "mode": "register",
+        }, status_code=403)
+
     username     = str(form.get("username", "")).strip().lower()
     display_name = str(form.get("display_name", "")).strip()
     email        = str(form.get("email", "")).strip()
@@ -3566,6 +3826,22 @@ async def forgot_password_page(request: Request):
 
 async def forgot_password_post(request: Request):
     form = await request.form()
+
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"forgot:{ip}", limit=3, window=300):
+        return templates.TemplateResponse(request, "forgot_password.html", {
+            "current_user": get_current_user(request),
+            "error": "Too many requests. Please wait 5 minutes and try again.",
+            "success": None,
+        }, status_code=429)
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "forgot_password.html", {
+            "current_user": get_current_user(request),
+            "error": "Session expired. Please try again.",
+            "success": None,
+        }, status_code=403)
+
     email_addr = str(form.get("email", "")).strip()
     
     user = db_get_user_by_email(email_addr)
@@ -3612,10 +3888,18 @@ async def reset_password_page(request: Request):
 
 async def reset_password_post(request: Request):
     form = await request.form()
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "reset_password.html", {
+            "current_user": None,
+            "error": "Session expired. Please request a new reset link.",
+            "token": "",
+        }, status_code=403)
+
     token = str(form.get("token", ""))
     new_pwd = str(form.get("new_password", ""))
     confirm_pwd = str(form.get("confirm_password", ""))
-    
+
     def fail(msg):
         return templates.TemplateResponse(request, "reset_password.html", {
             "current_user": None,
@@ -3747,7 +4031,15 @@ async def change_password_post(request: Request):
     if not user:
         return RedirectResponse("/login", status_code=302)
 
-    form        = await request.form()
+    form = await request.form()
+
+    if not _csrf_ok(request, form):
+        return templates.TemplateResponse(request, "change_password.html", {
+            "current_user": user,
+            "error": "Session expired. Please try again.",
+            "success": None,
+        }, status_code=403)
+
     current_pwd = str(form.get("current_password", ""))
     new_pwd     = str(form.get("new_password", ""))
     confirm_pwd = str(form.get("confirm_password", ""))
@@ -3780,8 +4072,6 @@ async def change_password_post(request: Request):
 # ---------------------------------------------------------------------------
 
 async def api_search(request: Request):
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
     q = (request.query_params.get("q") or "").strip().lower()
     if len(q) < 2:
         return JSONResponse([])
@@ -3893,16 +4183,21 @@ async def api_search(request: Request):
 NOTES_DIR = FILES_DIR / "content" / "topics"
 
 async def api_get_content(request: Request):
-    if not get_current_user(request):
-        return JSONResponse({"error": "Login required"}, status_code=401)
     topic_id = request.path_params["topic_id"]
+    lang = request.query_params.get("lang", "en")
     if not re.match(r'^[a-z0-9-]+$', topic_id):
         return JSONResponse({"available": False})
 
-    # Direct file check
+    # Telugu version first if requested
+    if lang == "te":
+        te_file = NOTES_DIR / f"{topic_id}-te.md"
+        if te_file.exists():
+            return JSONResponse({"available": True, "content": te_file.read_text("utf-8"), "lang": "te"})
+
+    # Direct file check (English)
     direct = NOTES_DIR / f"{topic_id}.md"
     if direct.exists():
-        return JSONResponse({"available": True, "content": direct.read_text("utf-8")})
+        return JSONResponse({"available": True, "content": direct.read_text("utf-8"), "lang": "en"})
 
     # Twin fallback via SHARED_TOPICS
     for twin in SHARED_TOPICS.get(topic_id, []):
@@ -3912,6 +4207,7 @@ async def api_get_content(request: Request):
                 "available": True,
                 "content": twin_file.read_text("utf-8"),
                 "source": twin["label"],
+                "lang": "en",
             })
 
     return JSONResponse({"available": False, "content": None})
@@ -3937,6 +4233,9 @@ async def api_save_highlights(request: Request):
     user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"]:
+        return JSONResponse({"error": "Premium required", "upgrade": True, "upgrade_url": "/pricing"}, status_code=403)
     topic_id = request.path_params["topic_id"]
     body = await request.json()
     highlights = body.get("highlights", [])
@@ -4009,6 +4308,9 @@ async def api_create_flashcard(request: Request):
     user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"]:
+        return JSONResponse({"error": "Premium required", "upgrade": True, "upgrade_url": "/pricing"}, status_code=403)
     topic_id = request.path_params["topic_id"]
     body = await request.json()
     front = (body.get("front") or "").strip()
@@ -4075,6 +4377,9 @@ async def api_toggle_pin(request: Request):
     user = get_current_user(request)
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"]:
+        return JSONResponse({"error": "Premium required", "upgrade": True, "upgrade_url": "/pricing"}, status_code=403)
     topic_id = request.path_params["topic_id"]
     body = await request.json()
     para_index = int(body.get("para_index", -1))
@@ -4193,11 +4498,18 @@ async def study_desk(request: Request):
     user = get_current_user(request)
     if not user:
         return RedirectResponse("/login", status_code=302)
-    topic_id = request.path_params["topic_id"]
+    slug = request.path_params["topic_id"]
+    topic_id = SLUG_TO_ID.get(slug, slug)
+    info = TOPIC_INDEX.get(topic_id, {})
+    topic_title = info.get("title") or request.query_params.get("title") or topic_id
+    # Redirect raw internal IDs to their clean slug URL
+    if slug == topic_id and info.get("slug"):
+        return RedirectResponse(f"/study-desk/{info['slug']}", status_code=301)
     return templates.TemplateResponse(request, "study_desk.html", {
         "current_user": user,
         "user_id": user["id"],
         "topic_id": topic_id,
+        "topic_title": topic_title,
     })
 
 
@@ -4231,14 +4543,281 @@ async def api_get_mcqs(request: Request):
     if not user:
         return JSONResponse({"error": "Login required"}, status_code=401)
     topic_id = request.path_params["topic_id"]
+    lang = request.query_params.get("lang", "en")
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
+    # Try requested language first; fall back to English
     rows = con.execute(
-        "SELECT id, question, option_a, option_b, option_c, option_d, correct_option, explanation FROM mcqs WHERE topic_id=? ORDER BY id",
-        (topic_id,)
+        "SELECT id, question, option_a, option_b, option_c, option_d, correct_option, explanation, lang FROM mcqs WHERE topic_id=? AND lang=? ORDER BY id",
+        (topic_id, lang)
     ).fetchall()
+    if not rows and lang != "en":
+        rows = con.execute(
+            "SELECT id, question, option_a, option_b, option_c, option_d, correct_option, explanation, lang FROM mcqs WHERE topic_id=? AND (lang='en' OR lang IS NULL) ORDER BY id",
+            (topic_id,)
+        ).fetchall()
     con.close()
-    return JSONResponse({"mcqs": [dict(r) for r in rows]})
+    # Content gating: free users get max 20 MCQs per topic
+    sub = get_user_subscription(user["id"])
+    if not sub["is_premium"] and len(rows) > 20:
+        rows = rows[:20]
+        return JSONResponse({"mcqs": [dict(r) for r in rows], "lang": lang if rows else "en", "limited": True, "limit": 20})
+    return JSONResponse({"mcqs": [dict(r) for r in rows], "lang": lang if rows else "en"})
+
+
+# ---------------------------------------------------------------------------
+# Subscription helpers
+# ---------------------------------------------------------------------------
+
+def get_user_subscription(user_id: int) -> dict:
+    con = sqlite3.connect(DB_PATH)
+    row = con.execute(
+        "SELECT plan_id, expires_at, status FROM user_subscriptions WHERE user_id = ?",
+        (user_id,),
+    ).fetchone()
+    con.close()
+    if not row:
+        return {"plan_id": "free", "is_premium": False}
+    plan_id, expires_at, _status = row[0], row[1], row[2]
+    if plan_id == "free":
+        return {"plan_id": "free", "is_premium": False}
+    if expires_at and datetime.utcnow() > datetime.fromisoformat(expires_at):
+        return {"plan_id": "free", "is_premium": False, "expired": True}
+    return {"plan_id": plan_id, "is_premium": True, "expires_at": expires_at}
+
+
+def _upgrade_user(con, user_id: int, plan_id: str, order_id: str, payment_id: str, signature: str) -> None:
+    now = datetime.utcnow()
+    duration = 30 if plan_id == "monthly" else 365
+    expires = (now + timedelta(days=duration)).isoformat()
+    con.execute("""
+        INSERT INTO user_subscriptions (user_id, plan_id, razorpay_order_id, razorpay_payment_id, razorpay_signature, started_at, expires_at, status)
+        VALUES (?,?,?,?,?,?,?,'active')
+        ON CONFLICT(user_id) DO UPDATE SET
+            plan_id=excluded.plan_id,
+            razorpay_order_id=excluded.razorpay_order_id,
+            razorpay_payment_id=excluded.razorpay_payment_id,
+            razorpay_signature=excluded.razorpay_signature,
+            started_at=excluded.started_at,
+            expires_at=excluded.expires_at,
+            status='active'
+    """, (user_id, plan_id, order_id, payment_id, signature, now.isoformat(), expires))
+    con.execute("""
+        UPDATE payment_log SET status='paid', payment_id=?, updated_at=? WHERE order_id=?
+    """, (payment_id, now.isoformat(), order_id))
+    con.commit()
+
+
+# ---------------------------------------------------------------------------
+# Payment routes
+# ---------------------------------------------------------------------------
+
+async def pricing_page(request: Request):
+    user = get_current_user(request)
+    sub  = get_user_subscription(user["id"]) if user else {"plan_id": "free", "is_premium": False}
+    return templates.TemplateResponse(request, "pricing.html", {
+        "current_user": user,
+        "sub": sub,
+        "razorpay_key": RAZORPAY_KEY_ID,
+    })
+
+
+async def api_create_order(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    if not _csrf_header_ok(request):
+        return JSONResponse({"error": "CSRF check failed"}, status_code=403)
+    ip = request.client.host or "unknown"
+    if not _rate_ok(f"order:{ip}", limit=10, window=60):
+        return JSONResponse({"error": "Too many requests"}, status_code=429)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    plan_id = body.get("plan_id", "")
+    if plan_id not in ("monthly", "yearly"):
+        return JSONResponse({"error": "Invalid plan"}, status_code=400)
+    if not RAZORPAY_KEY_ID or not RAZORPAY_KEY_SECRET:
+        return JSONResponse({"error": "Payments not configured"}, status_code=503)
+    amount_map = {"monthly": 200, "yearly": 99900}  # TEST: monthly set to ₹2
+    amount = amount_map[plan_id]
+    receipt = f"gg_{user['id']}_{int(datetime.utcnow().timestamp())}"
+    try:
+        import hmac as _hmac
+        async with httpx.AsyncClient(timeout=10) as client:
+            resp = await client.post(
+                "https://api.razorpay.com/v1/orders",
+                auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET),
+                json={
+                    "amount": amount,
+                    "currency": "INR",
+                    "receipt": receipt,
+                    "notes": {"user_id": str(user["id"]), "plan_id": plan_id},
+                },
+            )
+        if resp.status_code != 200:
+            return JSONResponse({"error": "Order creation failed"}, status_code=502)
+        order = resp.json()
+        con = sqlite3.connect(DB_PATH)
+        con.execute("""
+            INSERT OR IGNORE INTO payment_log (user_id, order_id, amount_paise, plan_id, status)
+            VALUES (?,?,?,?,'created')
+        """, (user["id"], order["id"], amount, plan_id))
+        con.commit()
+        con.close()
+        return JSONResponse({"order_id": order["id"], "key": RAZORPAY_KEY_ID, "amount": amount})
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
+
+
+async def api_verify_payment(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    if not _csrf_header_ok(request):
+        return JSONResponse({"error": "CSRF check failed"}, status_code=403)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    order_id   = body.get("order_id", "")
+    payment_id = body.get("payment_id", "")
+    signature  = body.get("signature", "")
+    plan_id    = body.get("plan_id", "")
+    if not all([order_id, payment_id, signature, plan_id]):
+        return JSONResponse({"error": "Missing fields"}, status_code=400)
+    import hmac as _hmac, hashlib as _hashlib
+    expected = _hmac.new(
+        RAZORPAY_KEY_SECRET.encode(),
+        f"{order_id}|{payment_id}".encode(),
+        _hashlib.sha256,
+    ).hexdigest()
+    if not secrets.compare_digest(expected, signature):
+        return JSONResponse({"error": "Signature mismatch"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    # Idempotency: skip if payment_id already processed
+    existing = con.execute(
+        "SELECT id FROM user_subscriptions WHERE razorpay_payment_id = ?", (payment_id,)
+    ).fetchone()
+    if existing:
+        con.close()
+        return JSONResponse({"ok": True, "plan": plan_id, "already_processed": True})
+    _upgrade_user(con, user["id"], plan_id, order_id, payment_id, signature)
+    con.close()
+    return JSONResponse({"ok": True, "plan": plan_id})
+
+
+async def api_payment_webhook(request: Request):
+    """Razorpay webhook backup — verifies X-Razorpay-Signature header."""
+    import hmac as _hmac, hashlib as _hashlib
+    body_bytes = await request.body()
+    sig_header = request.headers.get("X-Razorpay-Signature", "")
+    expected = _hmac.new(
+        RAZORPAY_KEY_SECRET.encode(), body_bytes, _hashlib.sha256
+    ).hexdigest()
+    if not secrets.compare_digest(expected, sig_header):
+        return JSONResponse({"error": "Invalid signature"}, status_code=400)
+    try:
+        event = json.loads(body_bytes)
+    except Exception:
+        return JSONResponse({"error": "Bad JSON"}, status_code=400)
+    if event.get("event") == "payment.captured":
+        payload = event.get("payload", {}).get("payment", {}).get("entity", {})
+        order_id   = payload.get("order_id", "")
+        payment_id = payload.get("id", "")
+        notes      = payload.get("notes", {})
+        user_id    = int(notes.get("user_id", 0))
+        plan_id    = notes.get("plan_id", "monthly")
+        if user_id and order_id and payment_id:
+            con = sqlite3.connect(DB_PATH)
+            existing = con.execute(
+                "SELECT id FROM user_subscriptions WHERE razorpay_payment_id = ?", (payment_id,)
+            ).fetchone()
+            if not existing:
+                _upgrade_user(con, user_id, plan_id, order_id, payment_id, "webhook")
+            con.close()
+    return JSONResponse({"ok": True})
+
+
+async def api_user_subscription(request: Request):
+    user = get_current_user(request)
+    if not user:
+        return JSONResponse({"error": "Login required"}, status_code=401)
+    return JSONResponse(get_user_subscription(user["id"]))
+
+
+# ---------------------------------------------------------------------------
+# Admin — subscription management
+# ---------------------------------------------------------------------------
+
+async def api_admin_subscriptions(request: Request):
+    user = get_current_user(request)
+    if not user or user["role"] != "admin":
+        return JSONResponse({"error": "Forbidden"}, status_code=403)
+    con = sqlite3.connect(DB_PATH)
+    rows = con.execute("""
+        SELECT u.id, u.username, u.email,
+               COALESCE(s.plan_id, 'free') as plan_id,
+               s.expires_at, COALESCE(s.status, 'active') as status
+        FROM users u
+        LEFT JOIN user_subscriptions s ON u.id = s.user_id
+        ORDER BY u.id
+    """).fetchall()
+    con.close()
+    return JSONResponse([{
+        "id": r[0], "username": r[1], "email": r[2],
+        "plan_id": r[3], "expires_at": r[4], "status": r[5]
+    } for r in rows])
+
+
+async def api_admin_grant_subscription(request: Request):
+    user = get_current_user(request)
+    if not user or user["role"] != "admin":
+        return JSONResponse({"error": "Forbidden"}, status_code=403)
+    target_id = int(request.path_params["user_id"])
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid JSON"}, status_code=400)
+    plan_id = body.get("plan_id", "monthly")
+    if plan_id not in ("free", "monthly", "yearly"):
+        return JSONResponse({"error": "Invalid plan"}, status_code=400)
+    con = sqlite3.connect(DB_PATH)
+    if plan_id == "free":
+        con.execute("DELETE FROM user_subscriptions WHERE user_id = ?", (target_id,))
+        con.commit()
+        con.close()
+        return JSONResponse({"ok": True, "plan_id": "free"})
+    now = datetime.utcnow()
+    days = 30 if plan_id == "monthly" else 365
+    expires = (now + timedelta(days=days)).isoformat()
+    con.execute("""
+        INSERT INTO user_subscriptions (user_id, plan_id, started_at, expires_at, status)
+        VALUES (?, ?, ?, ?, 'active')
+        ON CONFLICT(user_id) DO UPDATE SET
+            plan_id=excluded.plan_id, started_at=excluded.started_at,
+            expires_at=excluded.expires_at, status='active'
+    """, (target_id, plan_id, now.isoformat(), expires))
+    con.commit()
+    con.close()
+    return JSONResponse({"ok": True, "plan_id": plan_id, "expires_at": expires})
+
+
+# ---------------------------------------------------------------------------
+# Exception handlers
+# ---------------------------------------------------------------------------
+
+async def _handler_404(request: Request, exc: Exception):
+    return templates.TemplateResponse(request, "404.html", {
+        "current_user": get_current_user(request),
+    }, status_code=404)
+
+
+async def _handler_500(request: Request, exc: Exception):
+    return templates.TemplateResponse(request, "500.html", {
+        "current_user": get_current_user(request),
+    }, status_code=500)
 
 
 # ---------------------------------------------------------------------------
@@ -4268,6 +4847,7 @@ routes = [
     Route("/change-password",                    change_password_post,    methods=["POST"]),
     Route("/api/ca/content/{date}",               api_ca_content),
     Route("/api/ca/month/{year}/{month}",         api_ca_month),
+    Route("/api/ca/nearest/{date}",               api_ca_nearest),
     Route("/api/progress/mark-studied",           api_mark_studied,        methods=["POST"]),
     Route("/api/progress/mark-revised",           api_mark_revised,        methods=["POST"]),
     Route("/api/progress/due-today",              api_due_today),
@@ -4286,6 +4866,8 @@ routes = [
     Route("/api/admin/ca/{date}",                 api_admin_ca_delete,     methods=["DELETE"]),
     Route("/api/admin/topics",                    api_admin_list_topics,   methods=["GET"]),
     Route("/api/admin/topics",                    api_admin_save_topic,    methods=["POST"]),
+    Route("/api/admin/subscriptions",             api_admin_subscriptions, methods=["GET"]),
+    Route("/api/admin/subscriptions/{user_id}",   api_admin_grant_subscription, methods=["POST"]),
     Route("/api/search",                          api_search),
     Route("/api/content/{topic_id}",              api_get_content),
     Route("/api/highlights/{topic_id}",           api_get_highlights,       methods=["GET"]),
@@ -4304,6 +4886,13 @@ routes = [
     Route("/last-day-revision",                   last_day_revision),
     Route("/study-desk/{topic_id}",               study_desk),
     Route("/practice/{topic_id}",                 practice_page),
+    Route("/pricing",                              pricing_page),
+    Route("/api/payment/create-order",            api_create_order,          methods=["POST"]),
+    Route("/api/payment/verify",                  api_verify_payment,        methods=["POST"]),
+    Route("/api/payment/webhook",                 api_payment_webhook,       methods=["POST"]),
+    Route("/api/user/subscription",               api_user_subscription,     methods=["GET"]),
+    Route("/privacy",                              lambda r: templates.TemplateResponse(r, "privacy.html", {"current_user": get_current_user(r)})),
+    Route("/terms",                               lambda r: templates.TemplateResponse(r, "terms.html",   {"current_user": get_current_user(r)})),
     Route("/robots.txt",                          lambda r: PlainTextResponse(open(STATIC_DIR / "robots.txt").read())),
     Route("/sitemap.xml",                         lambda r: PlainTextResponse(open(STATIC_DIR / "sitemap.xml").read(), media_type="application/xml")),
     Mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static"),
@@ -4312,7 +4901,11 @@ routes = [
 
 app = Starlette(
     routes=routes,
-    middleware=[Middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=False)],
+    middleware=[
+        Middleware(_SecurityHeadersMiddleware),
+        Middleware(SessionMiddleware, secret_key=SECRET_KEY, https_only=_IS_PROD),
+    ],
+    exception_handlers={404: _handler_404, 500: _handler_500},
 )
 
 init_db()

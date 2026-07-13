@@ -11,8 +11,8 @@
 
     <!-- LOGIN FORM SECTION -->
     <div id="section-login" class="auth-section">
-        <h1 class="auth-title">Welcome back</h1>
-        <p class="auth-subtitle">Command Center Access</p>
+        <h1 class="auth-title" data-i18n="auth.login_title">Welcome back</h1>
+        <p class="auth-subtitle" data-i18n="auth.login_sub">Login to continue your APPSC prep</p>
 
         {% if registered or request.query_params.get('registered') == '1' %}
         <div class="auth-success">
@@ -30,6 +30,7 @@
         <div class="auth-error">{{ error }}</div>
         {% endif %}
 
+        {% if google_enabled %}
         <a href="/login/google" class="auth-google-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -43,8 +44,10 @@
         <div class="auth-divider">
           <span>or email access</span>
         </div>
+        {% endif %}
 
         <form method="POST" action="/login" autocomplete="on">
+          <input type="hidden" name="_csrf" value="{{ csrf_token(request) }}">
           <div class="auth-field">
             <label class="auth-label" for="username-login">User Identity</label>
             <div class="auth-input-row">
@@ -68,7 +71,7 @@
             </div>
           </div>
 
-          <button type="submit" class="auth-btn" style="width:100%;">Enter GroupsGuru</button>
+          <button type="submit" class="auth-btn" style="width:100%;" data-i18n="auth.login_btn">Login</button>
         </form>
 
         <div class="auth-footer">
@@ -79,13 +82,14 @@
 
     <!-- REGISTER FORM SECTION -->
     <div id="section-register" class="auth-section" style="display:none;">
-        <h1 class="auth-title">Join GroupsGuru</h1>
-        <p class="auth-subtitle">Begin Your 19-Hour Mastery Mission</p>
+        <h1 class="auth-title" data-i18n="auth.register_title">Create Account</h1>
+        <p class="auth-subtitle" data-i18n="auth.register_sub">Start your APPSC 2026 journey</p>
 
         {% if error and mode == 'register' %}
         <div class="auth-error">{{ error }}</div>
         {% endif %}
 
+        {% if google_enabled %}
         <a href="/login/google" class="auth-google-btn">
           <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -99,8 +103,10 @@
         <div class="auth-divider">
           <span>or create credentials</span>
         </div>
+        {% endif %}
 
         <form method="POST" action="/register" autocomplete="off">
+          <input type="hidden" name="_csrf" value="{{ csrf_token(request) }}">
           <div class="auth-field">
             <label class="auth-label" for="username-reg">Set Username</label>
             <div class="auth-input-row">
@@ -141,7 +147,7 @@
             <div class="auth-pwd-strength" id="pwd-strength"></div>
           </div>
 
-          <button type="submit" class="auth-btn" style="width:100%;">Initialize Account</button>
+          <button type="submit" class="auth-btn" style="width:100%;" data-i18n="auth.register_btn">Create Account</button>
         </form>
 
         <div class="auth-footer">
@@ -234,19 +240,6 @@ if (currentPath === '/register' || "{{ mode }}" === "register") {
     color: var(--gold);
     font-weight: 800;
     text-decoration: none;
-}
-.auth-tab {
-    background: none;
-    border: none;
-    color: var(--muted);
-    font-weight: 700;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    transition: 0.2s;
-}
-.auth-tab.active {
-    color: var(--gold);
-    border-bottom: 2px solid var(--gold);
 }
 </style>
 {% endblock %}

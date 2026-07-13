@@ -4,9 +4,9 @@
 {% block content %}
 
 <div class="g2-header">
-  <a href="/" class="back-link">&larr; Back to Home</a>
-  <h1 class="page-title">Group I &mdash; Study Portal</h1>
-  <p class="page-subtitle">APPSC Gazetted Officers Exam &nbsp;|&nbsp; Prelims &bull; Mains Paper II &bull; Paper III &bull; Paper IV &bull; Paper V</p>
+  <a href="/" class="back-link" data-i18n="group1.back">← Back to Home</a>
+  <h1 class="page-title" data-i18n="group1.title">Group I — Study Portal</h1>
+  <p class="page-subtitle" data-i18n="group1.subtitle">APPSC Gazetted Officers Exam | Prelims • Mains Paper II • Paper III • Paper IV • Paper V</p>
 </div>
 
 <!-- ── Tab bar (Desktop & Mobile) ───────────────────────────────── -->
@@ -14,8 +14,8 @@
   <!-- Desktop Nav: Segmented Control -->
   <div class="portal-nav g2-tabs desktop-only">
     <button class="g2-tab active" data-tab="syllabus">
-      <span class="tab-label">Exam Scheme</span>
-      <span class="tab-sub">Official Pattern</span>
+      <span class="tab-label" data-i18n="group1.exam_scheme">Exam Scheme</span>
+      <span class="tab-sub" data-i18n="group1.official_pattern">Official Pattern</span>
     </button>
     {% for key, stage in structure.items() %}
     <button class="g2-tab" data-tab="{{ key }}">
@@ -36,8 +36,8 @@
     </button>
     <div class="portal-select-dropdown" id="mobile-tab-dropdown">
       <div class="select-option active" data-tab="syllabus">
-        <span class="option-label">Exam Scheme</span>
-        <span class="option-sub">Official Pattern</span>
+        <span class="option-label" data-i18n="group1.exam_scheme">Exam Scheme</span>
+        <span class="option-sub" data-i18n="group1.official_pattern">Official Pattern</span>
       </div>
       {% for key, stage in structure.items() %}
       <div class="select-option" data-tab="{{ key }}">
@@ -57,10 +57,10 @@
     <table class="scheme-table">
       <thead>
         <tr>
-          <th>Subject</th>
-          <th>No. of Questions</th>
-          <th>Duration Minutes</th>
-          <th>Maximum Marks</th>
+          <th data-i18n="common.subject">Subject</th>
+          <th data-i18n="common.questions">No. of Questions</th>
+          <th data-i18n="common.duration_min">Duration Minutes</th>
+          <th data-i18n="common.max_marks">Maximum Marks</th>
         </tr>
       </thead>
       <tbody>
@@ -209,11 +209,12 @@
             <p class="g2-detail-meta">Official Syllabus &nbsp;&bull;&nbsp; {{ stage.label }}</p>
           </div>
           <div class="detail-header-right">
-            <div class="revision-badge" id="rev-badge-{{ key }}"></div>
+            {% if current_user %}<div class="revision-badge" id="rev-badge-{{ key }}"></div>{% endif %}
             <span class="g2-official-tag">APPSC Official</span>
           </div>
         </div>
         <div class="shared-topic-banner" id="shared-{{ key }}" style="display:none"></div>
+        {% if not current_user %}<div class="guest-study-banner"><a href="/login">Login</a> to save highlights, flashcards &amp; track your progress &rarr;</div>{% endif %}
         <ul class="g2-syllabus-points" id="points-{{ key }}"></ul>
         <div class="open-desk-container">
           <h3 class="odc-title">GroupsGuru Study Desk</h3>
@@ -222,10 +223,12 @@
             <a href="#" class="odc-btn-primary" id="btn-open-desk-{{ key }}">Launch Study Desk &rarr;</a>
           </div>
         </div>
+        {% if current_user %}
         <div class="g2-detail-footer">
           <button class="btn-mark-studied" id="btn-studied-{{ key }}"
                   data-stage="{{ key }}" data-subject="g1">Mark as Studied</button>
         </div>
+        {% endif %}
       </div>
     </div>
 
@@ -233,6 +236,7 @@
 </div>
 {% endfor %}
 
+{% if current_user %}
 <!-- Global floating highlight toolbar -->
 <div class="hl-toolbar" id="hl-toolbar" style="display:none">
   <button class="hl-btn hl-yellow" data-color="yellow" title="Yellow">&#9608;</button>
@@ -241,12 +245,13 @@
   <button class="hl-btn hl-remove" data-color="remove" title="Remove">&#10005;</button>
   <button class="hl-btn hl-fc"     data-action="flashcard" title="Flashcard">&#128204;</button>
 </div>
+{% endif %}
 
 
 <script>
 const G1 = {{ structure_json | safe }};
 const SHARED = {{ shared_topics_json | safe }};
-const USER_ID = {{ user_id }};
+const USER_ID = {{ user_id | tojson }};
 const LS_KEY = 'appsc_progress_' + USER_ID;
 const SUBJECT = 'g1';
 
@@ -351,7 +356,7 @@ document.querySelectorAll('.g2-topic-item').forEach(li => {
 
     const btnDesk = document.getElementById('btn-open-desk-' + stageKey);
     if (btnDesk) {
-      btnDesk.href = '/study-desk/' + topicId + '?title=' + encodeURIComponent(topic.title);
+      btnDesk.href = '/study-desk/' + topicSlug(topic.title);
     }
     loadRevisionBadge(topicId, stageKey);
 

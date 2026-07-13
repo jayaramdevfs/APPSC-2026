@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}GroupsGuru Desktop — Topic: {{ topic_id }}{% endblock %}
+{% block title %}GroupsGuru — {{ topic_title }}{% endblock %}
 
 {% block content %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -18,20 +18,24 @@
       </a>
     </div>
     <div class="k-topbar-center">
-      <h1 class="k-book-title" id="sd-topic-badge">{{ topic_id }}</h1>
+      <h1 class="k-book-title" id="sd-topic-badge">{{ topic_title }}</h1>
     </div>
     <div class="k-topbar-right">
       <button class="k-btn-action" id="btn-mark-studied" title="Mark as Studied">
-        <span class="icon">✓</span> <span class="text">Mark as Finished</span>
+        <span class="icon">✓</span> <span class="text" data-i18n="sd.mark_finished">Mark as Finished</span>
       </button>
       <button class="k-btn-action" id="btn-aa" title="Appearance (Aa)">Aa</button>
       <button class="k-btn-action" onclick="confirmExport()" title="Export PDF">
         <svg viewBox="0 0 24 24" fill="none" class="icon-tiny" xmlns="http://www.w3.org/2000/svg"><path d="M12 15V3M12 15L8 11M12 15L16 11M2 17V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="text">Export</span>
+        <span class="text" data-i18n="sd.export">Export</span>
+      </button>
+      <!-- Language toggle (visible only in study desk since global nav is hidden) -->
+      <button class="k-btn-action" id="sd-lang-toggle" onclick="window.GG_I18N && GG_I18N.toggleLang(); sdReloadContent();" title="Switch Language / భాష మార్చండి" style="font-size:0.75rem; letter-spacing:0.03em;">
+        <span id="sd-lang-label">తెలుగు</span>
       </button>
       <button class="k-btn-action logout" id="btn-sd-logout" title="Save & Logout">
         <svg viewBox="0 0 24 24" fill="none" class="icon-tiny" xmlns="http://www.w3.org/2000/svg"><path d="M15 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H15M19 12L15 8M19 12L15 16M19 12H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span class="text">Log Out</span>
+        <span class="text" data-i18n="sd.logout">Log Out</span>
       </button>
     </div>
   </div>
@@ -39,7 +43,7 @@
   <!-- Appearance Menu (Aa) Popup -->
   <div class="k-menu-aa" id="k-menu-aa" style="display: none;">
     <div class="k-aa-section">
-      <div class="k-aa-label">Themes</div>
+      <div class="k-aa-label" data-i18n="sd.themes">Themes</div>
       <div class="k-aa-options">
         <button class="k-theme-btn theme-light" data-theme="theme-light" title="Light">Aa</button>
         <button class="k-theme-btn theme-sepia" data-theme="theme-sepia" title="Sepia">Aa</button>
@@ -47,17 +51,18 @@
         <button class="k-theme-btn theme-wakanda" data-theme="theme-wakanda" title="Wakanda">Aa</button>
         <button class="k-theme-btn theme-ghost-rider" data-theme="theme-ghost-rider" title="Ghost Rider">Aa</button>
         <button class="k-theme-btn theme-dark" data-theme="theme-dark" title="Dark (default)">Aa</button>
+        <button class="k-theme-btn theme-contrast" data-theme="theme-contrast" title="High Contrast" style="background:#000;color:#FF9933;border:2px solid #FF9933;">HC</button>
       </div>
     </div>
     <div class="k-aa-section">
-      <div class="k-aa-label">Font Family</div>
+      <div class="k-aa-label" data-i18n="sd.font_family">Font Family</div>
       <div class="k-aa-options">
         <button class="k-font-btn font-serif active" data-font="font-serif">Bookerly</button>
         <button class="k-font-btn font-sans" data-font="font-sans">Amazon Ember</button>
       </div>
     </div>
     <div class="k-aa-section">
-      <div class="k-aa-label">Font Size</div>
+      <div class="k-aa-label" data-i18n="sd.font_size">Font Size</div>
       <div class="k-aa-options">
         <button class="k-size-btn" data-size="size-small">A-</button>
         <button class="k-size-btn active" data-size="size-medium">A</button>
@@ -69,7 +74,7 @@
   <!-- E-Reader Content Area -->
   <div class="k-reader-scroll" id="k-reader-scroll">
     <div class="k-reader-content" id="official-notes-container">
-      <div class="k-loading">Loading book securely...</div>
+      <div class="k-loading" data-i18n="sd.loading">Loading book securely...</div>
     </div>
   </div>
 
@@ -193,6 +198,11 @@
   --k-theme-ghost-rider-text: #F5DEB3;
   --k-theme-ghost-rider-border: #FF5722;
 
+  /* High Contrast — pure black, white text, saffron accents */
+  --k-theme-contrast-bg: #000000;
+  --k-theme-contrast-text: #FFFFFF;
+  --k-theme-contrast-border: #FF9933;
+
   --k-font-serif: 'Georgia', 'Times New Roman', serif; /* Simulates Bookerly */
   --k-font-sans: 'Inter', '-apple-system', sans-serif; /* Simulates Amazon Ember */
 }
@@ -265,6 +275,19 @@ nav.navbar { display: none !important; }
 #kindle-app.theme-saffron .k-reader-content table { border: 1px solid #4A3520 !important; }
 #kindle-app.theme-saffron .k-reader-content th { background: #2A1F12 !important; color: #FFD699 !important; border-bottom: 2px solid #FF9933 !important; }
 #kindle-app.theme-saffron .k-reader-content td { background: transparent !important; color: #F5E6CC !important; border-bottom: 1px solid #4A3520 !important; }
+
+/* High Contrast reading theme */
+#kindle-app.theme-contrast { --k-bg: var(--k-theme-contrast-bg); --k-text: var(--k-theme-contrast-text); --k-border: var(--k-theme-contrast-border); }
+#kindle-app.theme-contrast .k-reader-content h1,
+#kindle-app.theme-contrast .k-reader-content h2,
+#kindle-app.theme-contrast .k-reader-content h3 { color: #FF9933 !important; }
+#kindle-app.theme-contrast .k-reader-content strong { color: #FF9933; }
+#kindle-app.theme-contrast .k-reader-content blockquote { border-left-color: #FF9933 !important; background: rgba(255,153,51,0.08) !important; color: #FFFFFF !important; }
+#kindle-app.theme-contrast .k-reader-content table { border: 2px solid #FFFFFF !important; }
+#kindle-app.theme-contrast .k-reader-content th { background: #111111 !important; color: #FF9933 !important; border-bottom: 2px solid #FF9933 !important; }
+#kindle-app.theme-contrast .k-reader-content td { background: #000000 !important; color: #FFFFFF !important; border-bottom: 1px solid #333333 !important; }
+#kindle-app.theme-contrast .k-topbar { background: #000000; border-bottom: 2px solid #FF9933; }
+#kindle-app.theme-contrast .k-menu-aa { background: #000000; border: 2px solid #FF9933; color: #FFFFFF; }
 
 /* Typography Applications */
 #kindle-app.font-serif { --k-font-family: var(--k-font-serif); }
@@ -697,37 +720,95 @@ const urlParams = new URLSearchParams(window.location.search);
 const topicTitle = urlParams.get('title') || TOPIC_ID;
 document.getElementById('sd-topic-badge').textContent = topicTitle;
 
-// --- LOAD CONTENT ---
-fetch('/api/content/' + TOPIC_ID)
-  .then(r => r.json())
-  .then(data => {
-    const container = document.getElementById('official-notes-container');
-    if (data.available) {
-      container.innerHTML = marked.parse(data.content);
-      
-      // Post-process custom elements
-      // 1. Convert mermaid code blocks to structural divs
-      container.querySelectorAll('pre code.language-mermaid').forEach(el => {
-        const div = document.createElement('div');
-        div.className = 'mermaid';
-        div.textContent = el.textContent;
-        el.parentElement.replaceWith(div);
+// --- LOAD CONTENT (bilingual-aware) ---
+function sdLang() { return window.GG_I18N ? GG_I18N.lang() : 'en'; }
+
+function sdRefreshLangBtn() {
+  var lbl = document.getElementById('sd-lang-label');
+  if (lbl) lbl.textContent = sdLang() === 'en' ? 'తెలుగు' : 'English';
+}
+sdRefreshLangBtn();
+
+function renderContent(markdownText, serverLang) {
+  const container = document.getElementById('official-notes-container');
+  const currentLang = sdLang();
+
+  function applyMarkdown(md) {
+    container.innerHTML = marked.parse(md);
+    // Post-process: mermaid
+    container.querySelectorAll('pre code.language-mermaid').forEach(el => {
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = el.textContent;
+      el.parentElement.replaceWith(div);
+    });
+    mermaid.run({ querySelector: '.mermaid' }).catch(e => console.error("Mermaid error:", e));
+    // Post-process: exam trap blockquotes
+    container.querySelectorAll('blockquote').forEach(bq => {
+      if (bq.innerHTML.includes('PRELIMS TRAP') || bq.innerHTML.includes('EXAM TRAP') || bq.innerHTML.includes('💡') || bq.innerHTML.includes('🧨')) {
+        bq.classList.add('exam-trap');
+      }
+    });
+    loadAnnotations();
+    attemptResume();
+  }
+
+  // If we already have Telugu content from server, just render it
+  if (serverLang === 'te' || currentLang === 'en') {
+    applyMarkdown(markdownText);
+    return;
+  }
+
+  // We have English content but user wants Telugu — auto-translate
+  if (currentLang === 'te' && window.GG_TRANSLATE) {
+    // Show translating notice
+    container.innerHTML = `<div class="k-loading" style="text-align:center; padding:3rem;">
+      <div style="font-size:1.5rem; margin-bottom:1rem;">🌐</div>
+      <div data-i18n="sd.translating">${window.GG_I18N ? GG_I18N.t('sd.translating') : 'తెలుగులోకి అనువదిస్తోంది...'}</div>
+    </div>`;
+    GG_TRANSLATE.markdown(markdownText)
+      .then(function(translated) {
+        applyMarkdown(translated);
+        // Add notice at top
+        var notice = document.createElement('div');
+        notice.style.cssText = 'background:rgba(255,153,51,0.1);border:1px solid rgba(255,153,51,0.3);border-radius:6px;padding:0.5rem 1rem;margin-bottom:1.5rem;font-size:0.8rem;color:var(--muted);';
+        notice.textContent = window.GG_I18N ? GG_I18N.t('sd.translate_notice') : '🌐 తెలుగులో చూపబడుతోంది (స్వయంచాలక అనువాదం)';
+        container.insertBefore(notice, container.firstChild);
+      })
+      .catch(function() {
+        applyMarkdown(markdownText); // fallback to English
+        var notice = document.createElement('div');
+        notice.style.cssText = 'background:rgba(255,87,34,0.1);border:1px solid rgba(255,87,34,0.3);border-radius:6px;padding:0.5rem 1rem;margin-bottom:1.5rem;font-size:0.8rem;color:var(--muted);';
+        notice.textContent = window.GG_I18N ? GG_I18N.t('sd.translate_error') : 'Auto-translation failed. Showing English version.';
+        container.insertBefore(notice, container.firstChild);
       });
-      mermaid.run({ querySelector: '.mermaid' }).catch(e => console.error("Mermaid error:", e));
-      
-      // 2. Identify custom exam trap blockquotes
-      container.querySelectorAll('blockquote').forEach(bq => {
-        if (bq.innerHTML.includes('PRELIMS TRAP') || bq.innerHTML.includes('EXAM TRAP') || bq.innerHTML.includes('💡') || bq.innerHTML.includes('🧨')) {
-          bq.classList.add('exam-trap');
-        }
-      });
-      
-      loadAnnotations(); 
-      attemptResume();
-    } else {
-      container.innerHTML = '<h2 style="text-align:center;">Book Not Available</h2><p style="text-align:center;">The content for this topic is missing or being prepared.</p>';
-    }
-  });
+    return;
+  }
+
+  applyMarkdown(markdownText);
+}
+
+function sdLoadContent() {
+  const lang = sdLang();
+  const container = document.getElementById('official-notes-container');
+  container.innerHTML = `<div class="k-loading">${window.GG_I18N ? GG_I18N.t('sd.loading') : 'Loading...'}</div>`;
+  fetch('/api/content/' + TOPIC_ID + '?lang=' + lang)
+    .then(r => r.json())
+    .then(data => {
+      if (data.available) {
+        renderContent(data.content, data.lang || 'en');
+      } else {
+        container.innerHTML = `<h2 style="text-align:center;">${window.GG_I18N ? GG_I18N.t('sd.no_content') : 'No notes available for this topic yet.'}</h2>`;
+      }
+    });
+}
+
+function sdReloadContent() {
+  sdRefreshLangBtn();
+  sdLoadContent();
+}
+
+sdLoadContent();
 
 fetch('/api/user-notes/' + TOPIC_ID)
   .then(r => r.json())
@@ -748,10 +829,11 @@ function refreshStudyStatus() {
       isTopicStudied = !!data.studied;
       if (isTopicStudied) {
         btnMarkStudied.classList.add('studied');
-        btnMarkStudied.querySelector('.text').textContent = 'Finished ✓';
+        btnMarkStudied.querySelector('.text').textContent = '✓ ' + (window.GG_I18N ? GG_I18N.t('sd.already_studied') : 'Already marked as studied');
       } else {
         btnMarkStudied.classList.remove('studied');
-        btnMarkStudied.querySelector('.text').textContent = 'Mark as Finished';
+        btnMarkStudied.querySelector('.text').setAttribute('data-i18n', 'sd.mark_finished');
+        btnMarkStudied.querySelector('.text').textContent = window.GG_I18N ? GG_I18N.t('sd.mark_finished') : 'Mark as Finished';
       }
     });
 }
@@ -805,7 +887,7 @@ app.addEventListener('click', (e) => {
   }
 });
 
-const ALL_K_THEMES = ['theme-light','theme-sepia','theme-dark','theme-wakanda','theme-saffron','theme-ghost-rider'];
+const ALL_K_THEMES = ['theme-light','theme-sepia','theme-dark','theme-wakanda','theme-saffron','theme-ghost-rider','theme-contrast'];
 
 function applyKTheme(themeClass) {
   app.classList.remove(...ALL_K_THEMES);
@@ -826,7 +908,9 @@ document.querySelectorAll('.k-theme-btn').forEach(btn => {
 function readingThemeForGlobal(globalTheme) {
   if (globalTheme === 'wakanda')     return 'theme-wakanda';
   if (globalTheme === 'ghost-rider') return 'theme-ghost-rider';
-  return 'theme-saffron'; // saffron / default
+  if (globalTheme === 'contrast')    return 'theme-contrast';
+  if (globalTheme === 'varanasi')    return 'theme-saffron';
+  return 'theme-saffron'; // default / saffron
 }
 
 // Init: ALWAYS sync to global theme on load (dynamic).
@@ -1340,5 +1424,15 @@ TimeCoach.init();
     localStorage.setItem('gg_last_studied_title', topicTitle);
     localStorage.setItem('gg_last_studied_time', new Date().getTime());
 })();
+
+// Language toggle sync
+document.addEventListener('gg:langchange', function() {
+  sdRefreshLangBtn();
+  // Re-apply data-i18n on the mark studied button text
+  var markText = document.querySelector('#btn-mark-studied .text');
+  if (markText && !markText.closest('#btn-mark-studied').classList.contains('studied')) {
+    markText.textContent = window.GG_I18N ? GG_I18N.t('sd.mark_finished') : 'Mark as Finished';
+  }
+});
 </script>
 {% endblock %}

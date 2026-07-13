@@ -13,7 +13,7 @@
         <div class="dash-hello">
             <div class="dash-eyebrow" id="dash-date">—</div>
             <h1 class="dash-title">Hello, {{ current_user.username }}.</h1>
-            <p class="dash-sub">Your APPSC 2026 prep, at a glance.</p>
+            <p class="dash-sub" data-i18n="dash.your_prep">Your APPSC 2026 prep, at a glance.</p>
         </div>
         <div class="dash-clock">
             <div class="dc-time" id="dash-time">--:--</div>
@@ -23,7 +23,7 @@
 
     <div class="dash-grid">
         <div class="dash-card dash-cd">
-            <div class="dc-label">Group I Prelims</div>
+            <div class="dc-label" data-i18n="dash.group1_prelims">Group I Prelims</div>
             <div class="dc-timer" id="cd-g1">
                 <span class="dc-num"><span class="dn-val" data-u="d">--</span><span class="dn-u">d</span></span>
                 <span class="dc-num"><span class="dn-val" data-u="h">--</span><span class="dn-u">h</span></span>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="dash-card dash-cd">
-            <div class="dc-label">Group II Screening</div>
+            <div class="dc-label" data-i18n="dash.group2_screening">Group II Screening</div>
             <div class="dc-timer" id="cd-g2">
                 <span class="dc-num"><span class="dn-val" data-u="d">--</span><span class="dn-u">d</span></span>
                 <span class="dc-num"><span class="dn-val" data-u="h">--</span><span class="dn-u">h</span></span>
@@ -44,28 +44,28 @@
 
         <div class="dash-card dash-stat">
             <div class="ds-num" id="ds-studied">0</div>
-            <div class="ds-label">Topics Studied</div>
+            <div class="ds-label" data-i18n="dash.topics_studied">Topics Studied</div>
         </div>
         <div class="dash-card dash-stat">
             <div class="ds-num" id="ds-streak">0</div>
-            <div class="ds-label">Day Streak</div>
+            <div class="ds-label" data-i18n="dash.day_streak">Day Streak</div>
         </div>
         <div class="dash-card dash-stat">
             <div class="ds-num" id="ds-due">0</div>
-            <div class="ds-label">Due to Revise</div>
+            <div class="ds-label" data-i18n="dash.due_to_revise">Due to Revise</div>
         </div>
         <div class="dash-card dash-stat">
             <div class="ds-num" id="ds-mastered">0</div>
-            <div class="ds-label">Mastered</div>
+            <div class="ds-label" data-i18n="dash.mastered">Mastered</div>
         </div>
     </div>
 
     <div class="dash-resume" id="dash-resume" style="display:none">
         <div class="dr-left">
-            <span class="dr-label">Pick up where you left off</span>
+            <span class="dr-label" data-i18n="dash.resume_label">Pick up where you left off</span>
             <span class="dr-title" id="dr-title">—</span>
         </div>
-        <a href="#" class="dr-btn" id="dr-link">Continue &rarr;</a>
+        <a href="#" class="dr-btn" id="dr-link" data-i18n="dash.continue">Continue →</a>
     </div>
 </section>
 
@@ -75,12 +75,12 @@
 <section class="ca-spot">
     <div class="cas-head">
         <div class="cas-title-row">
-            <h2 class="cas-title">Current Affairs</h2>
-            <span class="cas-date-pill" id="cas-date">Loading latest&hellip;</span>
+            <h2 class="cas-title" data-i18n="dash.current_affairs">Current Affairs</h2>
+            <span class="cas-date-pill" id="cas-date" data-i18n="dash.loading_latest">Loading latest…</span>
         </div>
         <div class="cas-tabs">
-            <button class="cas-tab active" data-scope="group1">Group I</button>
-            <button class="cas-tab" data-scope="group2">Group II</button>
+            <button class="cas-tab active" data-scope="group1" data-i18n="dash.group1_tab">Group I</button>
+            <button class="cas-tab" data-scope="group2" data-i18n="dash.group2_tab">Group II</button>
         </div>
     </div>
     <div class="cas-body" id="cas-body">
@@ -90,15 +90,18 @@
             <div class="csk-line w80"></div>
         </div>
     </div>
-    <a href="/current-affairs" class="cas-cta">Open Current Affairs Library &rarr;</a>
+    <a href="/current-affairs" class="cas-cta" data-i18n="dash.open_ca_library">Open Current Affairs Library →</a>
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    /* ---------- Live clock + date ---------- */
-    const monthsLong = ['January','February','March','April','May','June',
-                        'July','August','September','October','November','December'];
-    const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+(function() {
+    /* ---------- Live clock + date (i18n-aware) ---------- */
+    function getDays() {
+        return window.GG_I18N ? GG_I18N.t('days.long') : ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    }
+    function getMonthsLong() {
+        return window.GG_I18N ? GG_I18N.t('months.long') : ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    }
 
     function tickClock() {
         const now = new Date();
@@ -106,11 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const m = String(now.getMinutes()).padStart(2, '0');
         const dateEl = document.getElementById('dash-date');
         const timeEl = document.getElementById('dash-time');
+        const days = getDays();
+        const monthsLong = getMonthsLong();
         if (dateEl) dateEl.textContent = `${days[now.getDay()]}, ${monthsLong[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
         if (timeEl) timeEl.textContent = `${h}:${m}`;
     }
     tickClock();
     setInterval(tickClock, 30000);
+    document.addEventListener('gg:langchange', tickClock);
 
     /* ---------- Countdowns ---------- */
     const targets = {
@@ -169,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rw.style.display = 'flex';
         document.getElementById('dr-title').textContent = lastTitle;
         document.getElementById('dr-link').href =
-            '/study-desk/' + lastId + '?title=' + encodeURIComponent(lastTitle);
+            '/study-desk/' + topicSlug(lastTitle);
     }
 
     /* ---------- Current Affairs spotlight ---------- */
@@ -208,7 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function render() {
         const body = document.getElementById('cas-body');
         if (!cachedMd) {
-            body.innerHTML = '<p class="cas-empty">No current affairs published yet. Check back soon.</p>';
+            const noCA = window.GG_I18N ? GG_I18N.t('dash.no_ca') : 'No current affairs published yet. Check back soon.';
+            body.innerHTML = '<p class="cas-empty">' + noCA + '</p>';
             return;
         }
         body.innerHTML = snippet(cachedMd, currentScope);
@@ -251,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     loadLatestCA();
-});
+})();
 </script>
 
 {% else %}
@@ -263,15 +270,15 @@ document.addEventListener('DOMContentLoaded', () => {
     <div class="ph-tricolor-bar">
         <span class="tc-saffron"></span>
         <span class="tc-white"></span>
-        <span class="tc-navy"></span>
+        <span class="tc-green"></span>
     </div>
 
     <div class="ph-container">
-        <div class="ph-badge">ANDHRA PRADESH STATE CIVIL SERVICES</div>
+        <div class="ph-badge" data-i18n="hero.badge">ANDHRA PRADESH STATE CIVIL SERVICES</div>
 
-        <h1 class="ph-title">Ace APPSC 2026<br><span class="ph-title-accent">With Precision.</span></h1>
+        <h1 class="ph-title"><span data-i18n="hero.title">Ace APPSC 2026</span><br><span class="ph-title-accent" data-i18n="hero.title_accent">With Precision.</span></h1>
 
-        <p class="ph-subtitle">
+        <p class="ph-subtitle" data-i18n="hero.subtitle">
             India's most structured APPSC prep platform — syllabus-mapped notes,
             Pomodoro-powered focus sessions, and real-time progress tracking.
             Built for Group I and Group II aspirants.
@@ -279,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <div class="ph-exam-countdown">
             <div class="ph-countdown-card">
-                <div class="pcc-label">Group I Prelims</div>
+                <div class="pcc-label" data-i18n="hero.group1_prelims">Group I Prelims</div>
                 <div class="pcc-timer" id="hero-timer-g1">
                     <span class="pct-num" id="hd1">--</span><span class="pct-sep">d</span>
                     <span class="pct-num" id="hh1">--</span><span class="pct-sep">h</span>
@@ -293,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="pcd-line"></div>
             </div>
             <div class="ph-countdown-card">
-                <div class="pcc-label">Group II Screening</div>
+                <div class="pcc-label" data-i18n="hero.group2_screening">Group II Screening</div>
                 <div class="pcc-timer" id="hero-timer-g2">
                     <span class="pct-num" id="hd2">--</span><span class="pct-sep">d</span>
                     <span class="pct-num" id="hh2">--</span><span class="pct-sep">h</span>
@@ -303,30 +310,36 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         </div>
 
+        <div class="ph-ca-teaser" id="ph-ca-teaser" style="display:none">
+            <div class="ph-ca-teaser-date" id="ph-ca-date" data-i18n="hero.today_ca">📰 Today's Current Affairs</div>
+            <div class="ph-ca-teaser-preview" id="ph-ca-preview"></div>
+            <a href="/current-affairs" class="ph-ca-read-link" data-i18n="hero.read_full_ca">Read full Current Affairs →</a>
+        </div>
+
         <div class="ph-actions">
-            <a href="/register" class="ph-btn-primary">Start Preparing &rarr;</a>
-            <a href="/login" class="ph-btn-secondary">Login</a>
+            <a href="/register" class="ph-btn-primary" data-i18n="hero.start_preparing">Start Preparing →</a>
+            <a href="/login" class="ph-btn-secondary" data-i18n="hero.login">Login</a>
         </div>
 
         <div class="ph-stats-row">
             <div class="ph-stat">
                 <span class="ps-number">200+</span>
-                <span class="ps-label">Topics Mapped</span>
+                <span class="ps-label" data-i18n="hero.topics_mapped">Topics Mapped</span>
             </div>
             <div class="ph-stat-divider"></div>
             <div class="ph-stat">
                 <span class="ps-number">5</span>
-                <span class="ps-label">Exam Groups</span>
+                <span class="ps-label" data-i18n="hero.exam_groups">Exam Groups</span>
             </div>
             <div class="ph-stat-divider"></div>
             <div class="ph-stat">
                 <span class="ps-number">1-4-7</span>
-                <span class="ps-label">Revision System</span>
+                <span class="ps-label" data-i18n="hero.revision_system">Revision System</span>
             </div>
             <div class="ph-stat-divider"></div>
             <div class="ph-stat">
-                <span class="ps-number">Free</span>
-                <span class="ps-label">Always</span>
+                <span class="ps-number" data-i18n="hero.free">Free</span>
+                <span class="ps-label" data-i18n="hero.always">Always</span>
             </div>
         </div>
     </div>
@@ -338,8 +351,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
         <div class="ph-feat-body">
-            <div class="ph-feat-title">Syllabus-Mapped Notes</div>
-            <div class="ph-feat-desc">Every APPSC topic covered with exam-focused study notes</div>
+            <div class="ph-feat-title" data-i18n="feat.syllabus_notes">Syllabus-Mapped Notes</div>
+            <div class="ph-feat-desc" data-i18n="feat.syllabus_desc">Every APPSC topic covered with exam-focused study notes</div>
         </div>
     </div>
     <div class="ph-feat-item">
@@ -347,8 +360,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div class="ph-feat-body">
-            <div class="ph-feat-title">Pomodoro Time Coach</div>
-            <div class="ph-feat-desc">25-minute focus sessions with enforced breaks for deep retention</div>
+            <div class="ph-feat-title" data-i18n="feat.pomodoro">Pomodoro Time Coach</div>
+            <div class="ph-feat-desc" data-i18n="feat.pomodoro_desc">25-minute focus sessions with enforced breaks for deep retention</div>
         </div>
     </div>
     <div class="ph-feat-item">
@@ -356,8 +369,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
         </div>
         <div class="ph-feat-body">
-            <div class="ph-feat-title">1-4-7 Revision Tracker</div>
-            <div class="ph-feat-desc">Scientifically timed revision reminders to lock topics in memory</div>
+            <div class="ph-feat-title" data-i18n="feat.revision_tracker">1-4-7 Revision Tracker</div>
+            <div class="ph-feat-desc" data-i18n="feat.revision_desc">Scientifically timed revision reminders to lock topics in memory</div>
         </div>
     </div>
     <div class="ph-feat-item">
@@ -365,8 +378,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
         </div>
         <div class="ph-feat-body">
-            <div class="ph-feat-title">Daily Current Affairs</div>
-            <div class="ph-feat-desc">Curated AP and national news with APPSC exam relevance tags</div>
+            <div class="ph-feat-title" data-i18n="feat.daily_ca">Daily Current Affairs</div>
+            <div class="ph-feat-desc" data-i18n="feat.daily_ca_desc">Curated AP and national news with APPSC exam relevance tags</div>
         </div>
     </div>
 </section>
@@ -386,6 +399,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     update();
     setInterval(update, 60000);
+})();
+
+(function loadCATeaser() {
+    const today = new Date();
+    const dateStr = today.getFullYear() + '-' +
+        String(today.getMonth()+1).padStart(2,'0') + '-' +
+        String(today.getDate()).padStart(2,'0');
+    fetch('/api/ca/content/' + dateStr)
+        .then(r => r.ok ? r.text() : '')
+        .then(md => {
+            if (!md || md.length < 20) return;
+            const lines = md.split('\n')
+                .map(l => l.replace(/^#+\s*/, '').replace(/\*\*/g, '').trim())
+                .filter(l => l.length > 15)
+                .slice(0, 3);
+            if (!lines.length) return;
+            const preview = lines.join(' ').slice(0, 220) + '…';
+            document.getElementById('ph-ca-preview').textContent = preview;
+            document.getElementById('ph-ca-teaser').style.display = 'block';
+        })
+        .catch(function(){});
 })();
 </script>
 
@@ -536,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const cls  = t.completed ? 'done' : '';
                         const safe = t.title.replace(/"/g, '&quot;');
                         return `<div class="ctile ${cls}" title="${safe}"
-                                     onclick="window.location='/study-desk/${t.id}?title=${encodeURIComponent(t.title)}'"></div>`;
+                                     onclick="window.location='/study-desk/'+topicSlug(t.title)"></div>`;
                     }).join('')}
                 </div>
             </div>`;

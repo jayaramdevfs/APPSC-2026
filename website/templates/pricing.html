@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+{% block title %}Pricing — GroupsGuru{% endblock %}
+{% block content %}
+
+<style>
+.pricing-hero {
+    text-align: center;
+    padding: 3rem 1rem 2rem;
+}
+.pricing-hero h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+.pricing-hero p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+}
+
+.plan-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.plan-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 32px rgba(255,153,51,0.12);
+}
+.plan-card.featured {
+    border-color: var(--gold);
+    box-shadow: 0 8px 32px rgba(255,153,51,0.15);
+}
+.plan-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: #000;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 3px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.plan-name {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+}
+.plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 0.25rem;
+}
+.plan-price-num {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1;
+}
+.plan-price-currency {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--muted);
+    align-self: flex-start;
+    margin-top: 0.4rem;
+}
+.plan-period {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+}
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+.plan-features li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.plan-features li::before {
+    content: "✓";
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+.plan-features li.locked {
+    opacity: 0.4;
+}
+.plan-features li.locked::before {
+    content: "✕";
+    color: var(--faint);
+}
+.plan-cta {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s, transform 0.1s;
+}
+.plan-cta:active { transform: scale(0.98); }
+.plan-cta.primary {
+    background: var(--gold);
+    color: #000;
+}
+.plan-cta.primary:hover { opacity: 0.9; }
+.plan-cta.secondary {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+.plan-cta.secondary:hover { border-color: var(--gold); color: var(--white); }
+.plan-cta:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.pricing-note {
+    text-align: center;
+    color: var(--faint);
+    font-size: 0.78rem;
+    margin-bottom: 2rem;
+}
+.pricing-note a { color: var(--gold); }
+
+/* Payment loading overlay */
+.pay-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--white);
+    font-size: 0.9rem;
+}
+.pay-overlay.active { display: flex; }
+.pay-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(255,153,51,0.3);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Toast */
+.pay-toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--gold);
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 9998;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: nowrap;
+}
+.pay-toast.show { transform: translateX(-50%) translateY(0); }
+</style>
+
+<div class="pricing-hero">
+    <h1>Unlock Your Full Potential</h1>
+    <p>Everything you need to crack APPSC Group I & II — from MCQs to full current affairs archive.</p>
+</div>
+
+<div class="pricing-grid">
+
+    <!-- Free -->
+    <div class="plan-card">
+        <div class="plan-name">Free</div>
+        <div class="plan-price">
+            <span class="plan-price-currency">₹</span>
+            <span class="plan-price-num">0</span>
+        </div>
+        <div class="plan-period">Forever free</div>
+        <ul class="plan-features">
+            <li>20 MCQs per topic</li>
+            <li>User notes</li>
+            <li>7 days current affairs</li>
+            <li class="locked">Flashcards</li>
+            <li class="locked">Highlights & pins</li>
+            <li class="locked">Full current affairs archive</li>
+        </ul>
+        {% if sub.plan_id == "free" %}
+        <span class="plan-cta secondary" style="pointer-events:none;opacity:0.6">Current Plan</span>
+        {% else %}
+        <a href="/dashboard" class="plan-cta secondary">Go to Dashboard</a>
+        {% endif %}
+    </div>
+
+    <!-- Monthly -->
+    <div class="plan-card">
+        <div class="plan-name">Monthly</div>
+        <div class="plan-price">
+            <span class="plan-price-currency">₹</span>
+            <span class="plan-price-num">199</span>
+        </div>
+        <div class="plan-period">per month · billed monthly</div>
+        <ul class="plan-features">
+            <li>All MCQs — unlimited</li>
+            <li>Flashcards</li>
+            <li>Highlights & pins</li>
+            <li>Full current affairs archive</li>
+            <li>Priority content updates</li>
+        </ul>
+        {% if sub.is_premium %}
+        <span class="plan-cta secondary" style="pointer-events:none;opacity:0.6">Already Premium</span>
+        {% elif current_user %}
+        <button class="plan-cta primary" onclick="startPayment('monthly')">Subscribe Monthly</button>
+        {% else %}
+        <a href="/login?next=/pricing" class="plan-cta primary">Login to Subscribe</a>
+        {% endif %}
+    </div>
+
+    <!-- Yearly — featured -->
+    <div class="plan-card featured">
+        <span class="plan-badge">Best Value — Save 58%</span>
+        <div class="plan-name">Yearly</div>
+        <div class="plan-price">
+            <span class="plan-price-currency">₹</span>
+            <span class="plan-price-num">999</span>
+        </div>
+        <div class="plan-period">per year · just ₹83/month</div>
+        <ul class="plan-features">
+            <li>Everything in Monthly</li>
+            <li>Full year access</li>
+            <li>Priority content updates</li>
+            <li>Best value for APPSC prep</li>
+        </ul>
+        {% if sub.is_premium %}
+        <span class="plan-cta secondary" style="pointer-events:none;opacity:0.6">Already Premium</span>
+        {% elif current_user %}
+        <button class="plan-cta primary" onclick="startPayment('yearly')">Subscribe Yearly</button>
+        {% else %}
+        <a href="/login?next=/pricing" class="plan-cta primary">Login to Subscribe</a>
+        {% endif %}
+    </div>
+
+</div>
+
+<p class="pricing-note">
+    Payments are secure and processed by Razorpay · UPI, Cards, NetBanking accepted ·
+    Questions? <a href="mailto:support@groupsguru.in">support@groupsguru.in</a>
+</p>
+
+<!-- Loading overlay -->
+<div class="pay-overlay" id="pay-overlay">
+    <div class="pay-spinner"></div>
+    <span>Opening payment…</span>
+</div>
+
+<!-- Success toast -->
+<div class="pay-toast" id="pay-toast"></div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+const RZP_KEY = {{ razorpay_key | tojson }};
+
+const CSRF_TOKEN = {{ csrf_token(request) | tojson }};
+
+async function startPayment(planId) {
+    if (!RZP_KEY) {
+        alert('Payments are not yet configured. Please try again later.');
+        return;
+    }
+    const overlay = document.getElementById('pay-overlay');
+    overlay.classList.add('active');
+    try {
+        const res = await fetch('/api/payment/create-order', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': CSRF_TOKEN },
+            body: JSON.stringify({ plan_id: planId }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            overlay.classList.remove('active');
+            alert(data.error || 'Could not create order. Please try again.');
+            return;
+        }
+        overlay.classList.remove('active');
+        const rzp = new Razorpay({
+            key: data.key,
+            order_id: data.order_id,
+            amount: data.amount,
+            currency: 'INR',
+            name: 'GroupsGuru',
+            description: planId === 'monthly' ? 'Monthly Plan — ₹199' : 'Yearly Plan — ₹999',
+            image: '/static/img/logo.png',
+            theme: { color: '#FF9933' },
+            handler: async function(response) {
+                overlay.classList.add('active');
+                try {
+                    const v = await fetch('/api/payment/verify', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': CSRF_TOKEN },
+                        body: JSON.stringify({
+                            order_id:   response.razorpay_order_id,
+                            payment_id: response.razorpay_payment_id,
+                            signature:  response.razorpay_signature,
+                            plan_id:    planId,
+                        }),
+                    });
+                    const vdata = await v.json();
+                    overlay.classList.remove('active');
+                    if (vdata.ok) {
+                        showToast('You are now Premium! Redirecting…');
+                        setTimeout(() => { window.location = '/dashboard?upgraded=1'; }, 1800);
+                    } else {
+                        alert('Payment verification failed. Contact support@groupsguru.in');
+                    }
+                } catch(e) {
+                    overlay.classList.remove('active');
+                    alert('Verification error. Contact support@groupsguru.in');
+                }
+            },
+            modal: {
+                ondismiss: function() { overlay.classList.remove('active'); }
+            },
+        });
+        rzp.open();
+    } catch(e) {
+        overlay.classList.remove('active');
+        alert('Network error. Please check your connection and try again.');
+    }
+}
+
+function showToast(msg) {
+    const t = document.getElementById('pay-toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+}
+</script>
+
+{% endblock %}

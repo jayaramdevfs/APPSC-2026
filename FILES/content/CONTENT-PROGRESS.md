@@ -96,9 +96,9 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `scr-ma-01` | Logical Reasoning | pre-ma-01 |
-| ⬜ | `scr-ma-02` | Mental Ability | pre-ma-02 |
-| ⬜ | `scr-ma-03` | Basic Numeracy & Data Analysis | pre-ma-02 |
+| ✅ | `scr-ma-01` | Logical Reasoning | pre-ma-01 | (2026-05-15) |
+| ✅ | `scr-ma-02` | Mental Ability | pre-ma-02 | (2026-05-15) |
+| ✅ | `scr-ma-03` | Basic Numeracy & Data Analysis | pre-ma-02 | (2026-05-15) |
 
 ---
 
@@ -107,8 +107,8 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `m2-ap-04` | Andhra Movement & State Formation | p1-aph-04 |
-| ⬜ | `m2-ap-05` | AP 1956–2014 & Bifurcation | p1-aph-05 |
+| ✅ | `m2-ap-04` | Andhra Movement & State Formation | p1-aph-04 | (2026-05-15) |
+| ✅ | `m2-ap-05` | AP 1956–2014 & Bifurcation | p1-aph-05 | (2026-05-15) |
 
 ---
 
@@ -117,11 +117,11 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `m3-pa-01` | Public Administration Concepts | — |
-| ⬜ | `m3-pa-02` | Government Policies, Civil Society & NGOs | scr-soc-03 |
-| ⬜ | `m3-pa-04` | Governance, Transparency & Accountability | — |
-| ⬜ | `m3-et-03` | Integrity, Aptitude & Foundational Values | — |
-| ⬜ | `m3-et-04` | Ethical Issues in Governance | — |
+| ✅ | `m3-pa-01` | Public Administration Concepts | — | (2026-05-15) |
+| ✅ | `m3-pa-02` | Government Policies, Civil Society & NGOs | scr-soc-03 | (2026-05-15) |
+| ✅ | `m3-pa-04` | Governance, Transparency & Accountability | — | (2026-05-15) |
+| ✅ | `m3-et-03` | Integrity, Aptitude & Foundational Values | — | (2026-05-15) |
+| ✅ | `m3-et-04` | Ethical Issues in Governance | — | (2026-05-15) |
 
 ---
 
@@ -129,7 +129,7 @@
 
 | Status | Canonical ID | Topic | Twin IDs Covered |
 |--------|-------------|-------|-----------------|
-| ⬜ | `m4-ec-07` | Infrastructure in India | m4-ap-05, p2-eco-04 |
+| ✅ | `m4-ec-07` | Infrastructure in India | m4-ap-05, p2-eco-04 | (Claude, 2026-05-16) |
 
 ---
 
@@ -138,8 +138,8 @@
 
 | Status | Canonical ID | Topic | Notes |
 |--------|-------------|-------|-------|
-| ⬜ | `tel-01` | Telugu Paper | Grammar rules, essay templates, letter formats |
-| ⬜ | `eng-01` | English Paper | Grammar rules, essay templates, letter formats |
+| ✅ | `tel-01` | Telugu Paper | Grammar rules, essay templates, letter formats | (Claude, 2026-05-16) |
+| ✅ | `eng-01` | English Paper | Grammar rules, essay templates, letter formats | (Claude, 2026-05-16) |
 
 ---
 
@@ -148,9 +148,9 @@
 
 | Status | Canonical ID | Topic | Notes |
 |--------|-------------|-------|-------|
-| ⬜ | `scr-ca-01` | Current Affairs | Linked to /current-affairs page; notes = static frameworks |
-| ⬜ | `m1-ge-01` | General Essay | Essay writing frameworks + sample structures |
-| ⬜ | `pre-st-02` | Current Events | Same as scr-ca-01 — API twin fallback covers this |
+| ✅ | `scr-ca-01` | Current Affairs | Linked to /current-affairs page; notes = static frameworks | (Claude, 2026-05-16) |
+| ✅ | `m1-ge-01` | General Essay | Essay writing frameworks + sample structures | (Claude, 2026-05-16) |
+| ✅ | `pre-st-02` | Current Events | Twin of scr-ca-01 — API twin fallback covers this; no separate file needed | (Claude, 2026-05-16) |
 
 ---
 
@@ -164,10 +164,10 @@
 | 4 — Polity | 6 | ~10 | ✅ |
 | 5 — Economy | 5 | ~12 | ✅ |
 | 6 — Sci/Tech | 7 | ~10 | ✅ |
-| 7 — Aptitude | 3 | ~3 | ⬜ |
-| 8 — AP History | 2 | ~2 | ⬜ |
-| 9 — Admin/Ethics | 5 | ~2 | ⬜ |
-| 10 — AP Economy | 1 | ~3 | ⬜ |
-| 11 — Languages | 2 | — | ⬜ |
-| 12 — CA/Essay | 3 | ~2 | ⬜ |
-| **Total** | **43 notes** | **~71 twin IDs** | 27/43 |
+| 7 — Aptitude | 3 | ~3 | ✅ |
+| 8 — AP History | 2 | ~2 | ✅ |
+| 9 — Admin/Ethics | 5 | ~2 | ✅ |
+| 10 — AP Economy | 1 | ~3 | ✅ |
+| 11 — Languages | 2 | — | ✅ |
+| 12 — CA/Essay | 3 | ~2 | ✅ |
+| **Total** | **43 notes** | **~71 twin IDs** | **43/43 ✅ COMPLETE** |

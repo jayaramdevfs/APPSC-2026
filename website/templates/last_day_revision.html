@@ -4,14 +4,14 @@
 {% block content %}
 <div class="ldr-page">
   <div class="ldr-header">
-    <a href="/" class="back-link">&larr; Back to Home</a>
-    <h1>&#11088; Last-Day Revision</h1>
-    <p>All paragraphs you pinned as exam-important, grouped by topic.</p>
-    <button class="ldr-print-btn" onclick="window.print()">&#128438; Print / Save as PDF</button>
+    <a href="/" class="back-link" data-i18n="common.back">← Back</a>
+    <h1>⭐ <span data-i18n="ldr.title">Last-Day Revision</span></h1>
+    <p data-i18n="ldr.subtitle">All paragraphs you pinned as exam-important, grouped by topic.</p>
+    <button class="ldr-print-btn" onclick="window.print()" data-i18n="ldr.print">📎 Print / Save as PDF</button>
   </div>
 
   <div id="ldr-content">
-    <div class="ldr-empty">Loading your pinned notes&hellip;</div>
+    <div class="ldr-empty" data-i18n="ldr.loading">Loading your pins…</div>
   </div>
 </div>
 

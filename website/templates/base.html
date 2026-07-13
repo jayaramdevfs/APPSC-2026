@@ -23,16 +23,38 @@
     <meta property="twitter:description" content="Master your exams with GroupsGuru. Intelligent blueprint tracking, deep focus timers, and a distraction-free learning environment.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=40">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=58">
+    <script src="/static/js/i18n.js"></script>
     <style>
       /* Smooth transitions for theme switching */
       * { transition: var(--theme-transition, none); }
+      /* Language toggle button */
+      .nav-lang-btn {
+        background: none;
+        border: 1.5px solid var(--border);
+        border-radius: 20px;
+        color: var(--text);
+        cursor: pointer;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 0.26rem 0.65rem;
+        transition: background 0.2s, border-color 0.2s, color 0.2s;
+        font-family: inherit;
+        white-space: nowrap;
+        letter-spacing: 0.01em;
+        line-height: 1.4;
+      }
+      .nav-lang-btn:hover {
+        background: rgba(255,153,51,0.1);
+        border-color: var(--gold);
+        color: var(--gold);
+      }
     </style>
     <script>
       // Early init to prevent flicker
       (function() {
-  const VALID = ['saffron', 'wakanda', 'ghost-rider'];
+  const VALID = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast', 'retro'];
   try {
     const urlTheme = new URLSearchParams(location.search).get('theme');
     if (VALID.includes(urlTheme)) localStorage.setItem('theme', urlTheme);
@@ -40,6 +62,9 @@
   const saved = localStorage.getItem('theme');
   if (saved === 'wakanda')     document.documentElement.classList.add('theme-wakanda');
   if (saved === 'ghost-rider') document.documentElement.classList.add('theme-ghost-rider');
+  if (saved === 'varanasi')    document.documentElement.classList.add('theme-varanasi');
+  if (saved === 'contrast')    document.documentElement.classList.add('theme-contrast');
+  if (saved === 'retro')       document.documentElement.classList.add('theme-retro');
 })();
 </script>
 </head>
@@ -66,6 +91,14 @@
     <canvas id="hellfire-canvas" class="hellfire-canvas" aria-hidden="true"></canvas>
     <canvas id="ember-canvas"    class="ember-canvas"    aria-hidden="true"></canvas>
     <div class="hellfire-vignette" aria-hidden="true"></div>
+
+    <!-- Varanasi: WebGL cinematic sky (background) + diya river lights (overlay) -->
+    <canvas id="varanasi-sky" class="varanasi-sky" aria-hidden="true"></canvas>
+    <canvas id="diya-canvas"  class="diya-canvas"  aria-hidden="true"></canvas>
+
+    <!-- Retro: Synthwave perspective grid + scanline overlay -->
+    <canvas id="retro-grid-canvas" class="retro-grid-canvas" aria-hidden="true"></canvas>
+    <div class="vfx-retro-scan" aria-hidden="true"></div>
 </div>
 
 <nav class="navbar">
@@ -181,6 +214,64 @@
             <line x1="38" y1="49" x2="38" y2="51" stroke="#FFE25C" stroke-width="0.6" opacity="0.7"/>
         </svg>
 
+        <!-- ─── VARANASI: Temple shikhara with diya flame ─── -->
+        <svg class="gg-mark gg-mark-varanasi" viewBox="0 0 64 64" aria-hidden="true">
+            <defs>
+                <radialGradient id="ggDiyaHalo" cx="50%" cy="60%" r="55%">
+                    <stop offset="0%"  stop-color="#F0C060" stop-opacity="0.5"/>
+                    <stop offset="55%" stop-color="#C8681A" stop-opacity="0.2"/>
+                    <stop offset="100%" stop-color="#C8681A" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+            <!-- Ambient glow halo -->
+            <ellipse cx="32" cy="44" rx="24" ry="16" fill="url(#ggDiyaHalo)"/>
+            <!-- Ghat steps (base) -->
+            <rect x="8"  y="58" width="48" height="4" rx="1" fill="currentColor" opacity="0.88"/>
+            <rect x="12" y="54" width="40" height="4" rx="1" fill="currentColor" opacity="0.82"/>
+            <!-- Temple sanctum -->
+            <rect x="23" y="40" width="18" height="14" rx="1" fill="currentColor" opacity="0.90"/>
+            <!-- Door arch -->
+            <path d="M28 54 L28 47 Q32 43 36 47 L36 54 Z" fill="#070503" opacity="0.8"/>
+            <!-- Shikhara (tapering tower layers) -->
+            <polygon points="19,40 45,40 43,34 21,34" fill="currentColor" opacity="0.90"/>
+            <polygon points="21,34 43,34 41,28 23,28" fill="currentColor" opacity="0.92"/>
+            <polygon points="23,28 41,28 39,22 25,22" fill="currentColor" opacity="0.93"/>
+            <polygon points="25,22 39,22 37,17 27,17" fill="currentColor" opacity="0.94"/>
+            <polygon points="27,17 37,17 35,12 29,12" fill="currentColor" opacity="0.95"/>
+            <!-- Kalasha (sacred pot at apex) -->
+            <ellipse cx="32" cy="10" rx="3.5" ry="2.5" fill="currentColor"/>
+            <circle  cx="32" cy="7.5" r="2"   fill="currentColor"/>
+            <circle  cx="32" cy="5.5" r="1.3" fill="currentColor"/>
+        </svg>
+
+        <!-- ─── RETRO: Synthwave cassette tape ─── -->
+        <svg class="gg-mark gg-mark-retro" viewBox="0 0 64 64" aria-hidden="true">
+            <!-- Cassette body -->
+            <rect x="6" y="16" width="52" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <!-- Label strip -->
+            <rect x="12" y="20" width="40" height="10" rx="2" fill="currentColor" opacity="0.25"/>
+            <rect x="16" y="23" width="32" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+            <!-- Left reel -->
+            <circle cx="20" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="20" cy="38" r="2.8" fill="currentColor"/>
+            <line x1="20" y1="30.5" x2="20" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="20" y1="40.8" x2="20" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="12.5" y1="38" x2="17.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="22.8" y1="38" x2="27.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <!-- Right reel -->
+            <circle cx="44" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="44" cy="38" r="2.8" fill="currentColor"/>
+            <line x1="44" y1="30.5" x2="44" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="44" y1="40.8" x2="44" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="36.5" y1="38" x2="41.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <line x1="46.8" y1="38" x2="51.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+            <!-- Tape window bridge -->
+            <path d="M13 46 Q20 42 28 44 L36 44 Q44 42 51 46" stroke="currentColor" stroke-width="1.4" fill="none"/>
+            <!-- Corner notches -->
+            <rect x="7"  y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
+            <rect x="52" y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
+        </svg>
+
         <span class="nav-title">GroupsGuru</span>
     </a>
 
@@ -190,7 +281,7 @@
     <div class="nav-auth">
         <div class="nav-theme-wrap">
             <button class="nav-paw-btn" id="theme-toggle" aria-label="Select theme" aria-expanded="false" title="Select theme">
-                <span class="tt-label">Theme</span>
+                <span class="tt-label" data-i18n="nav.theme">Theme</span>
                 <svg class="tt-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true">
                     <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -198,77 +289,38 @@
             <div class="nav-theme-menu" id="theme-menu" hidden>
                 <button class="ntm-item" data-theme="saffron">
                     <span class="ntm-dot" style="background:#FF9933"></span>
-                    Default
+                    <span data-i18n="nav.theme.default">Default</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <button class="ntm-item" data-theme="wakanda">
                     <span class="ntm-dot" style="background:#A855F7"></span>
-                    Black Panther
+                    <span data-i18n="nav.theme.black_panther">Black Panther</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
                 <button class="ntm-item" data-theme="ghost-rider">
                     <span class="ntm-dot" style="background:#FF5722"></span>
-                    Ghost Rider
+                    <span data-i18n="nav.theme.ghost_rider">Ghost Rider</span>
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="ntm-item" data-theme="varanasi">
+                    <span class="ntm-dot" style="background:#C8681A"></span>
+                    <span data-i18n="nav.theme.varanasi">Varanasi</span>
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="ntm-item" data-theme="contrast">
+                    <span class="ntm-dot" style="background:#000;border:2px solid #FF9933;outline:2px solid #fff;outline-offset:1px"></span>
+                    <span data-i18n="nav.theme.high_contrast">High Contrast</span>
+                    <span class="ntm-check" aria-hidden="true">&#10003;</span>
+                </button>
+                <button class="ntm-item" data-theme="retro">
+                    <span class="ntm-dot" style="background:linear-gradient(135deg,#FF2D78,#00E5FF)"></span>
+                    <span data-i18n="nav.theme.retro">Retro</span>
                     <span class="ntm-check" aria-hidden="true">&#10003;</span>
                 </button>
             </div>
         </div>
-        <div class="nav-kebab-wrap">
-            <button class="nav-kebab-btn" id="kebab-btn" aria-label="More options" aria-expanded="false" title="More">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <circle cx="12" cy="5" r="2"></circle>
-                    <circle cx="12" cy="12" r="2"></circle>
-                    <circle cx="12" cy="19" r="2"></circle>
-                </svg>
-            </button>
-            <div class="nav-kebab-menu" id="kebab-menu" role="menu" hidden>
-                <div class="nkm-section-label">Theme</div>
-                <button class="nkm-item nkm-theme" data-theme="saffron" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M4 22 L16 12 L28 22"></path>
-                        <path d="M4 16 L16 6 L28 16"></path>
-                    </svg>
-                    <span class="nkm-label">Saffron <span class="nkm-sub">(default)</span></span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <button class="nkm-item nkm-theme" data-theme="wakanda" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" aria-hidden="true">
-                        <ellipse cx="8" cy="11" rx="2.6" ry="3.2" fill="currentColor"></ellipse>
-                        <ellipse cx="13" cy="6.5" rx="2.6" ry="3.4" fill="currentColor"></ellipse>
-                        <ellipse cx="19" cy="6.5" rx="2.6" ry="3.4" fill="currentColor"></ellipse>
-                        <ellipse cx="24" cy="11" rx="2.6" ry="3.2" fill="currentColor"></ellipse>
-                        <path d="M16 13 C9.5 13 6.5 18 8.5 24 C10.4 28 13.2 30 16 30 C18.8 30 21.6 28 23.5 24 C25.5 18 22.5 13 16 13 Z" fill="currentColor"></path>
-                    </svg>
-                    <span class="nkm-label">Black Panther</span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <button class="nkm-item nkm-theme" data-theme="ghost-rider" role="menuitemradio">
-                    <svg viewBox="0 0 32 32" aria-hidden="true">
-                        <path d="M16 2 C14 8 9 11 9 18 C9 24 13 30 16 30 C19 30 23 24 23 18 C23 14 19 13 19 9 C17 11 15 11 16 2 Z" fill="currentColor"></path>
-                    </svg>
-                    <span class="nkm-label">Ghost Rider</span>
-                    <span class="nkm-check" aria-hidden="true">&#10003;</span>
-                </button>
-                <div class="nkm-divider"></div>
-                <button class="nkm-item" id="kbm-toggle-music" role="menuitem">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M9 18V5l12-2v13"></path>
-                        <circle cx="6" cy="18" r="3"></circle>
-                        <circle cx="18" cy="16" r="3"></circle>
-                    </svg>
-                    <span class="nkm-label" id="kbm-music-label">Ambient music: Off</span>
-                </button>
-                <a href="/dashboard" class="nkm-item" role="menuitem" {% if not current_user %}style="display:none"{% endif %}>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                    <span class="nkm-label">Open Dashboard</span>
-                </a>
-            </div>
-        </div>
-        <button class="nav-music-btn" id="music-toggle" aria-label="Toggle Vibranium Ambient" title="Vibranium Ambient (All The Stars)" style="display:none;">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        <button class="nav-lang-btn" id="lang-toggle" onclick="window.GG_I18N && GG_I18N.toggleLang()" title="Switch Language / భాష మార్చండి" aria-label="Switch language">
+            <span class="lang-btn-label">తెలుగు</span>
         </button>
         <button class="nav-search-btn" id="open-search" aria-label="Search" title="Search (Ctrl+K)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
@@ -277,10 +329,10 @@
             <a href="/change-password" class="nav-user-badge" title="Change password">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px;margin-right:4px;"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                 {{ current_user.username }}</a>
-            <a href="/logout" class="nav-auth-btn nav-auth-logout">Logout</a>
+            <a href="/logout" class="nav-auth-btn nav-auth-logout" data-i18n="nav.logout">Logout</a>
         {% else %}
-            <a href="/register" class="nav-auth-btn nav-auth-join">Join Now</a>
-            <a href="/login" class="nav-auth-btn nav-auth-login {% if request is defined and request.url.path == '/login' %}active{% endif %}">Login</a>
+            <a href="/register" class="nav-auth-btn nav-auth-join" data-i18n="nav.join_now">Join Now</a>
+            <a href="/login" class="nav-auth-btn nav-auth-login {% if request is defined and request.url.path == '/login' %}active{% endif %}" data-i18n="nav.login">Login</a>
         {% endif %}
     </div>
 </nav>
@@ -326,6 +378,40 @@
                 <path d="M30 42 L34 42 L32 47 Z" fill="#0a0303"/>
                 <rect x="22" y="49" width="20" height="2" fill="#1a0303"/>
             </svg>
+            <svg class="gg-mark gg-mark-varanasi" viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="8"  y="58" width="48" height="4" rx="1" fill="currentColor" opacity="0.88"/>
+                <rect x="12" y="54" width="40" height="4" rx="1" fill="currentColor" opacity="0.82"/>
+                <rect x="23" y="40" width="18" height="14" rx="1" fill="currentColor" opacity="0.90"/>
+                <path d="M28 54 L28 47 Q32 43 36 47 L36 54 Z" fill="#070503" opacity="0.8"/>
+                <polygon points="19,40 45,40 43,34 21,34" fill="currentColor" opacity="0.90"/>
+                <polygon points="21,34 43,34 41,28 23,28" fill="currentColor" opacity="0.92"/>
+                <polygon points="23,28 41,28 39,22 25,22" fill="currentColor" opacity="0.93"/>
+                <polygon points="25,22 39,22 37,17 27,17" fill="currentColor" opacity="0.94"/>
+                <polygon points="27,17 37,17 35,12 29,12" fill="currentColor" opacity="0.95"/>
+                <ellipse cx="32" cy="10" rx="3.5" ry="2.5" fill="currentColor"/>
+                <circle  cx="32" cy="7.5" r="2"   fill="currentColor"/>
+                <circle  cx="32" cy="5.5" r="1.3" fill="currentColor"/>
+            </svg>
+            <svg class="gg-mark gg-mark-retro" viewBox="0 0 64 64" aria-hidden="true">
+                <rect x="6" y="16" width="52" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+                <rect x="12" y="20" width="40" height="10" rx="2" fill="currentColor" opacity="0.25"/>
+                <rect x="16" y="23" width="32" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+                <circle cx="20" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="20" cy="38" r="2.8" fill="currentColor"/>
+                <line x1="20" y1="30.5" x2="20" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="20" y1="40.8" x2="20" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="12.5" y1="38" x2="17.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="22.8" y1="38" x2="27.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <circle cx="44" cy="38" r="7.5" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="44" cy="38" r="2.8" fill="currentColor"/>
+                <line x1="44" y1="30.5" x2="44" y2="35.2" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="44" y1="40.8" x2="44" y2="45.5" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="36.5" y1="38" x2="41.2" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <line x1="46.8" y1="38" x2="51.5" y2="38" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M13 46 Q20 42 28 44 L36 44 Q44 42 51 46" stroke="currentColor" stroke-width="1.4" fill="none"/>
+                <rect x="7"  y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
+                <rect x="52" y="44" width="5" height="4" rx="1" fill="currentColor" opacity="0.55"/>
+            </svg>
             <span class="nav-title">GroupsGuru</span>
         </a>
         <button class="nav-close" id="nav-close" aria-label="Close menu">&#10005;</button>
@@ -334,42 +420,45 @@
         {% if current_user %}
             <li><a href="/dashboard" class="nav-drawer-link {% if request.url.path == '/dashboard' %}active{% endif %}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                Dashboard</a></li>
+                <span data-i18n="nav.dashboard">Dashboard</span></a></li>
             <li><a href="/last-day-revision" class="nav-drawer-link {% if request.url.path == '/last-day-revision' %}active{% endif %}">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"></path></svg>
-                Pins</a></li>
+                <span data-i18n="nav.pins">Pins</span></a></li>
         {% endif %}
         <li><a href="/" class="nav-drawer-link {% if request.url.path == '/' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            Home</a></li>
+            <span data-i18n="nav.home">Home</span></a></li>
         <li><a href="/group1" class="nav-drawer-link {% if request.url.path == '/group1' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
-            Group I</a></li>
+            <span data-i18n="nav.group1">Group I</span></a></li>
         <li><a href="/group2" class="nav-drawer-link {% if request.url.path == '/group2' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.63 3 12"></polyline><polyline points="21 12 16.5 14.63 16.5 19.79"></polyline><polyline points="12 22 12 16.81"></polyline><polyline points="12 11.61 21 6.64"></polyline><polyline points="12 11.61 3 6.64"></polyline></svg>
-            Group II</a></li>
+            <span data-i18n="nav.group2">Group II</span></a></li>
         <li><a href="/current-affairs" class="nav-drawer-link {% if request.url.path == '/current-affairs' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
-            Current Affairs</a></li>
+            <span data-i18n="nav.current_affairs">Current Affairs</span></a></li>
         <li><a href="/aptitude" class="nav-drawer-link {% if request.url.path == '/aptitude' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-            Aptitude</a></li>
+            <span data-i18n="nav.aptitude">Aptitude</span></a></li>
         <li><a href="/telugu" class="nav-drawer-link {% if request.url.path == '/telugu' %}active{% endif %}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>
-            Telugu</a></li>
+            <span data-i18n="nav.telugu">Telugu</span></a></li>
+        <li><a href="/pricing" class="nav-drawer-link {% if request.url.path == '/pricing' %}active{% endif %}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>
+            <span>Pricing</span></a></li>
 
         <li style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem;">
             {% if current_user %}
                 <a href="/change-password" class="nav-drawer-link">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
-                    Change Password</a>
+                    <span data-i18n="nav.change_password">Change Password</span></a>
                 <a href="/logout" class="nav-drawer-link nav-drawer-logout">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                    Logout</a>
+                    <span data-i18n="nav.logout">Logout</span></a>
             {% else %}
                 <a href="/login" class="nav-drawer-link {% if request.url.path == '/login' %}active{% endif %}">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
-                    Login</a>
+                    <span data-i18n="nav.login">Login</span></a>
             {% endif %}
         </li>
     </ul>
@@ -380,11 +469,11 @@
   <div class="search-modal">
     <div class="search-input-wrap">
       <span class="search-icon">&#128269;</span>
-      <input type="text" id="search-input" placeholder="Search syllabus topics…" autocomplete="off" spellcheck="false">
+      <input type="text" id="search-input" placeholder="Search syllabus topics…" data-i18n-placeholder="nav.search.placeholder" autocomplete="off" spellcheck="false">
       <kbd class="search-kbd">ESC</kbd>
     </div>
     <div class="search-results" id="search-results">
-      <div class="search-empty">Type at least 2 characters to search across all subjects.</div>
+      <div class="search-empty" data-i18n="nav.search.hint">Type at least 2 characters to search across all subjects.</div>
     </div>
   </div>
 </div>
@@ -393,7 +482,33 @@
     {% block content %}{% endblock %}
 </main>
 
+<footer class="gg-footer">
+  <div class="gg-footer-inner">
+    <div class="gg-footer-brand">
+      <span style="font-weight:700;color:var(--accent);">GroupsGuru</span>
+      <span style="color:var(--muted);font-size:0.85rem;">&copy; 2026 All rights reserved.</span>
+    </div>
+    <nav class="gg-footer-links">
+      <a href="/pricing">Pricing</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+      <a href="mailto:support@groupsguru.in">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+
 <script>
+  // Convert a topic title to a clean URL slug (mirrors server.py _slugify)
+  function topicSlug(title) {
+    return (title || '').toLowerCase()
+      .replace(/[^a-z0-9\s]/g, ' ')
+      .trim()
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  }
+
   const navToggle  = document.getElementById('nav-toggle');
   const navDrawer  = document.getElementById('nav-drawer');
   const navBackdrop = document.getElementById('nav-backdrop');
@@ -417,36 +532,24 @@
     l.addEventListener('click', closeMenu);
   });
 
-  // ── Theme & Music Toggle Logic ────────────────────────────────────────
+  // ── Theme Toggle Logic ────────────────────────────────────────
   const themeToggle = document.getElementById('theme-toggle');
-  const musicToggle = document.getElementById('music-toggle');
-  const vibAudio    = document.getElementById('vib-audio');
-  const songUrl     = "https://www.youtube.com/embed/vdXsLt0o_9g?autoplay=1&mute=0&loop=1&playlist=vdXsLt0o_9g";
-  
-  // ── Three-way theme: saffron → wakanda → ghost-rider → saffron ───
-  const THEMES = ['saffron', 'wakanda', 'ghost-rider'];
+
+  // ── Theme list ───
+  const THEMES = ['saffron', 'wakanda', 'ghost-rider', 'varanasi', 'contrast', 'retro'];
   function currentTheme() {
     const r = document.documentElement;
     if (r.classList.contains('theme-wakanda'))     return 'wakanda';
     if (r.classList.contains('theme-ghost-rider')) return 'ghost-rider';
+    if (r.classList.contains('theme-varanasi'))    return 'varanasi';
+    if (r.classList.contains('theme-contrast'))    return 'contrast';
+    if (r.classList.contains('theme-retro'))       return 'retro';
     return 'saffron';
   }
   function nextTheme(t) { return THEMES[(THEMES.indexOf(t) + 1) % THEMES.length]; }
 
   function updateThemeUI() {
     const t = currentTheme();
-    // Music button: only relevant in Wakanda (existing behavior)
-    if (t === 'wakanda') {
-      musicToggle.style.display = 'flex';
-      if (localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
-        vibAudio.src = songUrl;
-        musicToggle.classList.add('playing');
-      }
-    } else {
-      musicToggle.style.display = 'none';
-      vibAudio.src = "";
-      musicToggle.classList.remove('playing');
-    }
     // Reflect active theme on the toggle button (CSS swaps icons via theme classes)
     themeToggle.dataset.theme = t;
     // Update kebab radio checks
@@ -460,14 +563,6 @@
     });
   }
 
-  // Force play on first document click if browser blocked autoplay
-  document.addEventListener('click', function startMusicOnInteraction() {
-     if (currentTheme() === 'wakanda' && localStorage.getItem('theme_music') === 'on' && !vibAudio.src) {
-        vibAudio.src = songUrl;
-        musicToggle.classList.add('playing');
-     }
-     document.removeEventListener('click', startMusicOnInteraction);
-  }, { once: true });
 
   function flashRipple() {
     const flash = document.createElement('div');
@@ -479,13 +574,28 @@
 
   function applyTheme(name) {
     const root = document.documentElement;
-    root.classList.remove('theme-wakanda', 'theme-ghost-rider');
+    root.classList.remove('theme-wakanda', 'theme-ghost-rider', 'theme-varanasi', 'theme-contrast', 'theme-retro');
     if (name === 'wakanda') root.classList.add('theme-wakanda');
     if (name === 'ghost-rider') {
       root.classList.add('theme-ghost-rider');
       startHellfire(); startEmbers();
     } else {
       stopHellfire(); stopEmbers();
+    }
+    if (name === 'varanasi') {
+      root.classList.add('theme-varanasi');
+      if (typeof startVaranasi === 'function') startVaranasi();
+      if (typeof startDiyas === 'function') startDiyas();
+    } else {
+      if (typeof stopVaranasi === 'function') stopVaranasi();
+      if (typeof stopDiyas === 'function') stopDiyas();
+    }
+    if (name === 'contrast') root.classList.add('theme-contrast');
+    if (name === 'retro') {
+      root.classList.add('theme-retro');
+      if (typeof startRetroGrid === 'function') startRetroGrid();
+    } else {
+      if (typeof stopRetroGrid === 'function') stopRetroGrid();
     }
   }
 
@@ -641,12 +751,196 @@
     if(document.documentElement.classList.contains('theme-ghost-rider'))startEmbers();
   }());
 
+  // ── Varanasi: WebGL cinematic sky — FBM clouds, sun burst, temple silhouettes ──
+  (function(){
+    const sky=document.getElementById('varanasi-sky');
+    if(!sky)return;
+    const gl=sky.getContext('webgl')||sky.getContext('experimental-webgl');
+    if(!gl)return;
+    const VS=`attribute vec2 a;void main(){gl_Position=vec4(a,0,1);}`;
+    const FS=`
+precision highp float;
+uniform vec2 R;uniform float T;
+float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5);}
+float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);
+  return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}
+float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<6;i++){v+=a*n(p);p=p*2.1+vec2(1.3,.8);a*=.5;}return v;}
+float tH(float x){
+  float d1=abs(x-.16),h1=max(0.,.22-d1*2.8);
+  float d2=abs(x-.78),h2=max(0.,.19-d2*3.2);
+  float d3=abs(x-.32),h3=max(0.,.15-d3*5.);
+  float d4=abs(x-.50),h4=max(0.,.12-d4*6.);
+  float d5=abs(x-.63),h5=max(0.,.10-d5*7.);
+  return max(max(max(h1,h2),max(h3,h4)),h5);
+}
+void main(){
+  vec2 uv=gl_FragCoord.xy/R;
+  vec2 sun=vec2(.60,.62);
+  float d=length(uv-sun);
+  vec2 np=uv*vec2(2.8,1.8)+vec2(T*.012,T*.006);
+  float cloud=fbm(np)*0.55+fbm(np*2.1+1.7)*0.30+fbm(np*.6-.9)*0.15;
+  float core =exp(-d*d*22.);
+  float glow =exp(-d*d*5.5);
+  float halo =exp(-d*d*1.5);
+  float sweep=exp(-d*d*.4);
+  float t=uv.y;
+  vec3 col=mix(vec3(.10,.04,.01),vec3(.025,.008,.002),smoothstep(.25,1.,t));
+  col+=vec3(.52,.20,.03)*sweep*(0.6+cloud*.7);
+  col+=vec3(.72,.32,.06)*halo*.75*(0.7+cloud*.4);
+  col+=vec3(.88,.48,.09)*glow*.85;
+  col+=vec3(.30,.11,.02)*cloud*sweep*.9;
+  col+=vec3(.18,.07,.01)*cloud*halo*.6;
+  col+=vec3(1.,.85,.28)*core*2.8;
+  col+=vec3(1.,.65,.12)*core*1.2;
+  col+=vec3(.95,.50,.08)*glow*.4;
+  float ground=smoothstep(.22,.0,t);
+  col=mix(col,vec3(.01,.004,.001),ground*.97);
+  float sil=step(uv.y,tH(uv.x));
+  col=mix(col,vec3(.006,.003,.001),sil);
+  col=clamp(col,0.,1.);
+  gl_FragColor=vec4(col,1.);
+}`;
+    function mk(t,s){const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
+    const prog=gl.createProgram();
+    gl.attachShader(prog,mk(gl.VERTEX_SHADER,VS));
+    gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,FS));
+    gl.linkProgram(prog);gl.useProgram(prog);
+    const buf=gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+    gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
+    const aLoc=gl.getAttribLocation(prog,'a');
+    gl.enableVertexAttribArray(aLoc);gl.vertexAttribPointer(aLoc,2,gl.FLOAT,false,0,0);
+    const uR=gl.getUniformLocation(prog,'R'),uT=gl.getUniformLocation(prog,'T');
+    let animId=null,t0=null;
+    function resize(){sky.width=window.innerWidth;sky.height=window.innerHeight;gl.viewport(0,0,sky.width,sky.height);}
+    function loop(ts){if(!t0)t0=ts;gl.uniform2f(uR,sky.width,sky.height);gl.uniform1f(uT,(ts-t0)*.001);gl.drawArrays(gl.TRIANGLES,0,6);animId=requestAnimationFrame(loop);}
+    window.startVaranasi=function(){if(animId)return;resize();t0=null;animId=requestAnimationFrame(loop);};
+    window.stopVaranasi=function(){if(animId){cancelAnimationFrame(animId);animId=null;}gl.clear(gl.COLOR_BUFFER_BIT);};
+    window.addEventListener('resize',()=>{if(animId)resize();});
+    if(document.documentElement.classList.contains('theme-varanasi'))startVaranasi();
+  }());
+
+  // ── Varanasi: Diya river lights — large warm glows along the bottom ────
+  (function(){
+    const canvas=document.getElementById('diya-canvas');
+    if(!canvas)return;
+    const ctx=canvas.getContext('2d');
+    let diyas=[],animId=null;
+    function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+    resize();
+    function spawn(){
+      const W=canvas.width,H=canvas.height;
+      return{x:Math.random()*W,y:H*0.88+Math.random()*H*0.15,
+        vx:(Math.random()-.5)*0.3,size:5+Math.random()*8,
+        t:Math.random()*6.28,wFreq:0.004+Math.random()*0.008,
+        life:0,maxLife:400+Math.random()*500,alpha:0};
+    }
+    function tick(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      if(diyas.length<18&&Math.random()<0.04)diyas.push(spawn());
+      diyas=diyas.filter(d=>d.life<d.maxLife);
+      for(const d of diyas){
+        d.life++;d.t+=d.wFreq;d.x+=d.vx+Math.sin(d.t)*0.4;
+        const p=d.life/d.maxLife;
+        d.alpha=p<0.1?p/0.1:p>0.8?(1-p)/0.2:1;
+        const g=ctx.createRadialGradient(d.x,d.y,0,d.x,d.y,d.size*9);
+        g.addColorStop(0,`rgba(255,230,100,${d.alpha*0.90})`);
+        g.addColorStop(0.15,`rgba(240,170,40,${d.alpha*0.60})`);
+        g.addColorStop(0.45,`rgba(200,100,20,${d.alpha*0.25})`);
+        g.addColorStop(1,'rgba(200,100,20,0)');
+        ctx.beginPath();ctx.arc(d.x,d.y,d.size*9,0,6.283);ctx.fillStyle=g;ctx.fill();
+        ctx.beginPath();ctx.arc(d.x,d.y,d.size,0,6.283);
+        ctx.fillStyle=`rgba(255,245,180,${d.alpha})`;ctx.fill();
+      }
+    }
+    function loop(){tick();animId=requestAnimationFrame(loop);}
+    window.startDiyas=function(){if(animId)return;resize();animId=requestAnimationFrame(loop);};
+    window.stopDiyas=function(){if(animId){cancelAnimationFrame(animId);animId=null;}ctx.clearRect(0,0,canvas.width||1,canvas.height||1);diyas=[];};
+    window.addEventListener('resize',()=>{if(animId)resize();});
+    if(document.documentElement.classList.contains('theme-varanasi'))startDiyas();
+  }());
+
+  // ── Retro: Synthwave perspective grid ──────────────────────────────────
+  (function(){
+    const canvas = document.getElementById('retro-grid-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let animId = null, t = 0;
+
+    function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+
+    function draw() {
+      const W = canvas.width, H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+
+      const horizon = H * 0.62;
+      const vanishX = W * 0.5;
+
+      // Bottom glow base
+      const bg = ctx.createLinearGradient(0, horizon, 0, H);
+      bg.addColorStop(0, 'rgba(255,45,120,0)');
+      bg.addColorStop(1, 'rgba(255,45,120,0.07)');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, horizon, W, H - horizon);
+
+      // Horizontal grid lines — scroll toward viewer
+      const numH = 14;
+      for (let i = 0; i < numH; i++) {
+        const p = ((i + t % 1) / numH);
+        const y = horizon + Math.pow(p, 1.7) * (H - horizon);
+        const alpha = p * 0.65;
+        ctx.strokeStyle = `rgba(255,45,120,${alpha})`;
+        ctx.lineWidth = 0.4 + p * 1.8;
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+      }
+
+      // Vertical lines from vanishing point
+      const numV = 18;
+      for (let i = 0; i <= numV; i++) {
+        const xBot = (i / numV) * W;
+        const alpha = Math.max(0.04, 0.5 - Math.abs(i / numV - 0.5) * 0.9);
+        ctx.strokeStyle = `rgba(0,229,255,${alpha})`;
+        ctx.lineWidth = 0.7;
+        ctx.beginPath(); ctx.moveTo(vanishX, horizon); ctx.lineTo(xBot, H); ctx.stroke();
+      }
+
+      // Cyan horizon glow line
+      ctx.save();
+      ctx.shadowColor = '#00E5FF';
+      ctx.shadowBlur = 14;
+      ctx.strokeStyle = 'rgba(0,229,255,0.85)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(0, horizon); ctx.lineTo(W, horizon); ctx.stroke();
+      ctx.restore();
+
+      // Magenta horizon bloom
+      const mg = ctx.createLinearGradient(0, horizon, 0, horizon + 50);
+      mg.addColorStop(0, 'rgba(255,45,120,0.35)');
+      mg.addColorStop(1, 'rgba(255,45,120,0)');
+      ctx.fillStyle = mg;
+      ctx.fillRect(0, horizon, W, 50);
+    }
+
+    function loop() { t += 0.007; draw(); animId = requestAnimationFrame(loop); }
+
+    window.startRetroGrid = function() {
+      if (animId) return;
+      resize();
+      animId = requestAnimationFrame(loop);
+    };
+    window.stopRetroGrid = function() {
+      if (animId) { cancelAnimationFrame(animId); animId = null; }
+      ctx.clearRect(0, 0, canvas.width || 1, canvas.height || 1);
+    };
+    window.addEventListener('resize', () => { if (animId) resize(); });
+    if (document.documentElement.classList.contains('theme-retro')) startRetroGrid();
+  }());
+
   function setTheme(name, persist) {
     if (currentTheme() === name) return;
     applyTheme(name);
     if (persist) {
       localStorage.setItem('theme', name);
-      if (name === 'wakanda') localStorage.setItem('theme_music', 'on');
     }
     updateThemeUI();
     flashRipple();
@@ -680,62 +974,17 @@
     });
   });
 
-  // ── Kebab (3-dot) menu ────────────────────────────────────────
-  const kebabBtn   = document.getElementById('kebab-btn');
-  const kebabMenu  = document.getElementById('kebab-menu');
-  const kbmMusic   = document.getElementById('kbm-toggle-music');
-  const kbmMusicLabel = document.getElementById('kbm-music-label');
+  function closeKebab() {}
 
-  function refreshKebabLabels() {
-    const musicOn = !!vibAudio.src;
-    kbmMusicLabel.textContent = 'Ambient music: ' + (musicOn ? 'On' : 'Off');
-  }
-
-  function openKebab()  { kebabMenu.hidden = false; kebabBtn.setAttribute('aria-expanded', 'true');  refreshKebabLabels(); updateThemeUI(); }
-  function closeKebab() { kebabMenu.hidden = true;  kebabBtn.setAttribute('aria-expanded', 'false'); }
-
-  kebabBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (kebabMenu.hidden) openKebab(); else closeKebab();
-  });
-  document.addEventListener('click', (e) => {
-    if (!kebabMenu.hidden && !kebabMenu.contains(e.target) && e.target !== kebabBtn) closeKebab();
-  });
-
-  document.querySelectorAll('.nkm-theme').forEach(btn => {
-    btn.addEventListener('click', () => {
-      setTheme(btn.dataset.theme, true);
-      refreshKebabLabels();
-    });
-  });
-
-  kbmMusic.addEventListener('click', () => {
-    if (vibAudio.src) {
-      vibAudio.src = '';
-      musicToggle.classList.remove('playing');
-      localStorage.setItem('theme_music', 'off');
-    } else {
-      vibAudio.src = songUrl;
-      musicToggle.classList.add('playing');
-      localStorage.setItem('theme_music', 'on');
-    }
-    refreshKebabLabels();
-  });
-
-  musicToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (vibAudio.src) {
-      vibAudio.src = "";
-      musicToggle.classList.remove('playing');
-      localStorage.setItem('theme_music', 'off');
-    } else {
-      vibAudio.src = songUrl;
-      musicToggle.classList.add('playing');
-      localStorage.setItem('theme_music', 'on');
-    }
-  });
 
   updateThemeUI();
+
+  // Refresh dynamic labels on language change
+  document.addEventListener('gg:langchange', function() {
+    var hint = window.GG_I18N ? GG_I18N.t('nav.search.hint') : 'Type at least 2 characters to search across all subjects.';
+    var emptyEl = document.querySelector('#search-results .search-empty');
+    if (emptyEl && !document.getElementById('search-input').value) emptyEl.textContent = hint;
+  });
 
   // ── Search modal ──────────────────────────────────────────────
   const searchOverlay = document.getElementById('search-overlay');
@@ -753,7 +1002,8 @@
     searchOverlay.classList.remove('open');
     document.body.style.overflow = '';
     searchInput.value = '';
-    searchResults.innerHTML = '<div class="search-empty">Type at least 2 characters to search across all subjects.</div>';
+    var hint = window.GG_I18N ? GG_I18N.t('nav.search.hint') : 'Type at least 2 characters to search across all subjects.';
+    searchResults.innerHTML = '<div class="search-empty">' + hint + '</div>';
   }
 
   openSearchBtn.addEventListener('click', openSearch);
@@ -793,16 +1043,19 @@
     clearTimeout(searchTimer);
     const q = searchInput.value.trim();
     if (q.length < 2) {
-      searchResults.innerHTML = '<div class="search-empty">Type at least 2 characters to search across all subjects.</div>';
+      var hint2 = window.GG_I18N ? GG_I18N.t('nav.search.hint') : 'Type at least 2 characters to search across all subjects.';
+      searchResults.innerHTML = '<div class="search-empty">' + hint2 + '</div>';
       return;
     }
-    searchResults.innerHTML = '<div class="search-empty search-loading">Searching…</div>';
+    var loadingMsg = window.GG_I18N ? GG_I18N.t('nav.search.loading') : 'Searching…';
+    searchResults.innerHTML = '<div class="search-empty search-loading">' + loadingMsg + '</div>';
     searchTimer = setTimeout(() => {
       fetch('/api/search?q=' + encodeURIComponent(q))
         .then(r => r.json())
         .then(items => {
           if (!items.length) {
-            searchResults.innerHTML = '<div class="search-empty">No results found for "' + escHtmlBase(q) + '".</div>';
+            var noResMsg = window.GG_I18N ? GG_I18N.t('nav.search.no_results').replace('{q}', escHtmlBase(q)) : 'No results found for "' + escHtmlBase(q) + '".';
+            searchResults.innerHTML = '<div class="search-empty">' + noResMsg + '</div>';
             return;
           }
           searchResults.innerHTML = items.map(it => {
@@ -819,14 +1072,97 @@
           }).join('');
         })
         .catch(() => {
-          searchResults.innerHTML = '<div class="search-empty">Search failed. Try again.</div>';
+          var errMsg = window.GG_I18N ? GG_I18N.t('nav.search.error') : 'Search failed. Try again.';
+          searchResults.innerHTML = '<div class="search-empty">' + errMsg + '</div>';
         });
     }, 250);
   });
+
+  // ── Soft Navigation — music/VFX/navbar never destroyed on link clicks ──
+  (function(){
+    const HARD = ['/logout','/login','/register','/change-password',
+                  '/forgot-password','/reset-password','/admin'];
+    let busy = false;
+
+    // Stamp initial history state
+    history.replaceState({url: location.pathname + location.search}, document.title);
+
+    async function go(url) {
+      if (busy) return;
+      const path = new URL(url, location.origin).pathname;
+      // Auth / admin routes: full reload
+      if (HARD.some(h => path.startsWith(h))) { location.href = url; return; }
+      busy = true;
+      try {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (res.redirected) { location.href = res.url; return; }
+        if (!res.ok)         { location.href = url;    return; }
+
+        const html = await res.text();
+        const doc  = new DOMParser().parseFromString(html, 'text/html');
+        const nMain = doc.querySelector('.main-content');
+        const cMain = document.querySelector('.main-content');
+        if (!nMain || !cMain) { location.href = url; return; }
+
+        // Swap content — scripts inside innerHTML are inert by spec
+        cMain.innerHTML = nMain.innerHTML;
+
+        // Re-execute every <script> that was inside the new page's main
+        // (replaceChild on an inert script causes the browser to run it)
+        cMain.querySelectorAll('script').forEach(inert => {
+          const live = document.createElement('script');
+          if (inert.src) {
+            if (document.querySelector(`script[src="${inert.src}"]`)) return;
+            live.src = inert.src;
+          } else {
+            live.textContent = '(function(){\n' + inert.textContent + '\n})();';
+          }
+          inert.parentNode.replaceChild(live, inert);
+        });
+
+        // Update browser chrome
+        document.title = doc.title;
+        history.pushState({ url }, doc.title, url);
+        window.scrollTo(0, 0);
+
+        // Close any open overlays
+        try { closeMenu();   } catch(e) {}
+        try { closeSearch(); } catch(e) {}
+        closeThemeMenu();
+        closeKebab();
+
+        // Sync active state on drawer links
+        document.querySelectorAll('.nav-drawer-link').forEach(el => {
+          el.classList.toggle('active', el.getAttribute('href') === location.pathname);
+        });
+
+      } catch(err) {
+        location.href = url;   // hard fallback
+      } finally {
+        busy = false;
+      }
+    }
+
+    // Intercept every internal <a> click
+    document.addEventListener('click', e => {
+      const a = e.target.closest('a[href]');
+      if (!a || a.target === '_blank' || a.dataset.reload !== undefined) return;
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      const href = a.getAttribute('href');
+      if (!href || href.startsWith('#') || /^(https?:)?\/\//.test(href)
+          || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+      const dest = new URL(href, location.origin);
+      if (dest.origin !== location.origin) return;
+      e.preventDefault();
+      go(dest.pathname + dest.search);
+    });
+
+    // Handle browser back / forward
+    window.addEventListener('popstate', () => {
+      go(location.pathname + location.search);
+    });
+  }());
 </script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<div id="vibranium-music-container" style="display:none;">
-  <iframe id="vib-audio" width="0" height="0" src="" frameborder="0" allow="autoplay"></iframe>
-</div>
 </body>
 </html>

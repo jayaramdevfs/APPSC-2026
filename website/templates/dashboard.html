@@ -20,21 +20,38 @@
 
 <!-- Stats strip -->
 <div class="dash-stats" id="dash-stats">
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-studied">—</span><span class="dash-stat-label">Topics Studied</span></div>
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-mastered">—</span><span class="dash-stat-label">Mastered</span></div>
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-streak">—</span><span class="dash-stat-label">Day Streak</span></div>
-    <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label">Due Today</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-studied">—</span><span class="dash-stat-label" data-i18n="dashboard.topics_studied">Topics Studied</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-mastered">—</span><span class="dash-stat-label" data-i18n="dashboard.mastered">Mastered</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-streak">—</span><span class="dash-stat-label" data-i18n="dashboard.day_streak">Day Streak</span></div>
+    <div class="dash-stat"><span class="dash-stat-val" id="stat-due">—</span><span class="dash-stat-label" data-i18n="dashboard.due_today">Due Today</span></div>
 </div>
 
+{% if upgraded %}
+<div id="upgrade-toast" style="position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;padding:0.75rem 1.5rem;border-radius:8px;font-weight:700;font-size:0.9rem;z-index:9998;white-space:nowrap;box-shadow:0 8px 24px rgba(255,153,51,0.4);">
+    You are now Premium! Welcome to the full GroupsGuru experience.
+</div>
+<script>setTimeout(()=>{const t=document.getElementById('upgrade-toast');if(t)t.remove();},4000);</script>
+{% endif %}
+
+{% if not sub.is_premium %}
+<div style="background:rgba(255,153,51,0.08);border:1px solid rgba(255,153,51,0.25);border-radius:10px;padding:0.75rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
+    <span style="font-size:0.85rem;color:var(--muted);">🔒 Unlock all features — flashcards, highlights, full current affairs archive</span>
+    <a href="/pricing" style="background:var(--gold);color:#000;font-size:0.8rem;font-weight:700;padding:0.4rem 1rem;border-radius:6px;text-decoration:none;white-space:nowrap;">Upgrade ₹199/mo</a>
+</div>
+{% endif %}
+
 <!-- Curriculum Heatmap (The Heart) -->
-<div class="curriculum-container">
-    <div class="curriculum-header">
-        <h3 class="curriculum-title">Curriculum Heatmap</h3>
-        <span class="curriculum-subtitle">Super-Interactive Syllabus Progress</span>
-    </div>
-    <div id="syllabus-grid-belt" class="syllabus-belt">
+<div class="curriculum-container" id="curriculum-container">
+    <button class="curriculum-header" id="curriculum-toggle" onclick="toggleCurriculum()" aria-expanded="false">
+        <div>
+            <h3 class="curriculum-title" data-i18n="dashboard.curriculum_heatmap">Curriculum Heatmap</h3>
+            <span class="curriculum-subtitle" data-i18n="dashboard.click_to_expand">Click to expand — Super-Interactive Syllabus Progress</span>
+        </div>
+        <span class="curriculum-chevron" id="curriculum-chevron">▶</span>
+    </button>
+    <div id="syllabus-grid-belt" class="syllabus-belt syllabus-belt--collapsed">
         <!-- JS populated groups of tiles -->
-        <div class="syllabus-loading">Generating Grid...</div>
+        <div class="syllabus-loading" data-i18n="dashboard.generating">Generating Grid...</div>
     </div>
 </div>
 
@@ -43,18 +60,43 @@
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 1.5rem;
+    overflow: hidden;
     margin-bottom: 2rem;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
-.curriculum-header { margin-bottom: 1.25rem; }
+.curriculum-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+    margin-bottom: 0;
+}
+.curriculum-header:hover { background: rgba(255,153,51,0.05); }
 .curriculum-title { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; color: var(--white); margin: 0; letter-spacing: 0.05em;}
 .curriculum-subtitle { font-size: 0.75rem; color: var(--muted); display: block; margin-top: 0.2rem; }
+.curriculum-chevron {
+    font-size: 0.85rem;
+    color: var(--gold);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+.curriculum-chevron.open { transform: rotate(90deg); }
 
 .syllabus-belt {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    padding: 0 1.5rem 1.5rem;
+}
+.syllabus-belt--collapsed {
+    display: none;
 }
 .syllabus-group {
     display: flex;
@@ -233,7 +275,7 @@ fetch('/api/progress/grid')
                 const doneClass = t.completed ? 'done' : '';
                 html += `<div class="ctile ${doneClass}" 
                              data-title="${t.title}" 
-                             onclick="window.location='/study-desk/${t.id}'"></div>`;
+                             onclick="window.location='/study-desk/'+topicSlug(t.title)"></div>`;
             });
             html += `</div>`;
         }
@@ -281,7 +323,8 @@ fetch('/api/progress/due-today')
     });
 
 // ---- Load CA preview ----
-fetch('/api/ca/content/' + TODAY)
+var _caLang = window.GG_I18N ? GG_I18N.lang() : 'en';
+fetch('/api/ca/content/' + TODAY + '?lang=' + _caLang)
     .then(r => r.ok ? r.text() : Promise.reject())
     .then(md => {
         // extract first 4 non-heading, non-empty lines
@@ -327,6 +370,25 @@ function markRevised(btn) {
 
 function escHtml(str) {
     return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ---- Curriculum heatmap toggle ----
+function toggleCurriculum() {
+    const belt    = document.getElementById('syllabus-grid-belt');
+    const chevron = document.getElementById('curriculum-chevron');
+    const btn     = document.getElementById('curriculum-toggle');
+    const isOpen  = !belt.classList.contains('syllabus-belt--collapsed');
+    if (isOpen) {
+        belt.classList.add('syllabus-belt--collapsed');
+        chevron.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.querySelector('.curriculum-subtitle').textContent = 'Click to expand — Super-Interactive Syllabus Progress';
+    } else {
+        belt.classList.remove('syllabus-belt--collapsed');
+        chevron.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        document.querySelector('.curriculum-subtitle').textContent = 'Super-Interactive Syllabus Progress';
+    }
 }
 </script>
 

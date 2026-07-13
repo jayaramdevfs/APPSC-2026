@@ -4,9 +4,9 @@
 {% block content %}
 
 <div class="g2-header">
-  <a href="/" class="back-link">&larr; Back to Home</a>
-  <h1 class="page-title">Telugu &mdash; Study Portal</h1>
-  <p class="page-subtitle">Learn from scratch &nbsp;&bull;&nbsp; APPSC Telugu Paper topics</p>
+  <a href="/" class="back-link" data-i18n="tel.back">← Back to Home</a>
+  <h1 class="page-title" data-i18n="tel.title">Telugu — Study Portal</h1>
+  <p class="page-subtitle" data-i18n="tel.subtitle">Telugu Language & Literature for APPSC Exams</p>
 </div>
 
 <!-- ── Tab bar ────────────────────────────────────────────────── -->
@@ -42,24 +42,29 @@
             <p class="g2-detail-meta" id="meta-basics"></p>
           </div>
           <div class="detail-header-right">
-            <div class="revision-badge" id="rev-badge-basics"></div>
+            {% if current_user %}<div class="revision-badge" id="rev-badge-basics"></div>{% endif %}
             <span class="g2-official-tag telugu-tag">Telugu Basics</span>
           </div>
         </div>
+        {% if not current_user %}<div class="guest-study-banner"><a href="/login">Login</a> to save highlights, flashcards &amp; track your progress &rarr;</div>{% endif %}
         <ul class="g2-syllabus-points" id="points-basics"></ul>
+        {% if current_user %}
         <div class="desk-topbar">
           <button class="btn-fc" id="btn-fc-basics" onclick="toggleFcPanel('basics')">&#128218; Flashcards (<span id="fc-count-basics">0</span>)</button>
           <a href="/last-day-revision" class="btn-pins" target="_blank">&#11088; My Pins</a>
         </div>
+        {% endif %}
         <div class="topic-study-desk">
           <div class="desk-toc hidden" id="toc-basics"><div class="toc-label">Contents</div><nav id="toc-nav-basics"></nav></div>
           <div class="desk-notes" id="notes-panel-basics"></div>
-          <div class="desk-mynotes"><div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-basics"></span></div><textarea class="mynotes-area" id="user-notes-basics" placeholder="Take notes while you study&#8230;"></textarea></div>
+          {% if current_user %}<div class="desk-mynotes"><div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-basics"></span></div><textarea class="mynotes-area" id="user-notes-basics" placeholder="Take notes while you study&#8230;"></textarea></div>{% endif %}
         </div>
-        <div class="fc-panel hidden" id="fc-panel-basics"><div class="fc-panel-hdr">Flashcards <button class="fc-close-btn" onclick="toggleFcPanel('basics')">&#10005;</button></div><div id="fc-list-basics"></div></div>
+        {% if current_user %}<div class="fc-panel hidden" id="fc-panel-basics"><div class="fc-panel-hdr">Flashcards <button class="fc-close-btn" onclick="toggleFcPanel('basics')">&#10005;</button></div><div id="fc-list-basics"></div></div>{% endif %}
+        {% if current_user %}
         <div class="g2-detail-footer">
           <button class="btn-mark-studied" id="btn-tel-basics-studied" data-subject="telugu">Mark as Studied</button>
         </div>
+        {% endif %}
       </div>
     </div>
 
@@ -87,30 +92,36 @@
             <p class="g2-detail-meta" id="meta-appsc"></p>
           </div>
           <div class="detail-header-right">
-            <div class="revision-badge" id="rev-badge-appsc"></div>
+            {% if current_user %}<div class="revision-badge" id="rev-badge-appsc"></div>{% endif %}
             <span class="g2-official-tag">APPSC Official</span>
           </div>
         </div>
+        {% if not current_user %}<div class="guest-study-banner"><a href="/login">Login</a> to save highlights, flashcards &amp; track your progress &rarr;</div>{% endif %}
         <ul class="g2-syllabus-points" id="points-appsc"></ul>
+        {% if current_user %}
         <div class="desk-topbar">
           <button class="btn-fc" id="btn-fc-appsc" onclick="toggleFcPanel('appsc')">&#128218; Flashcards (<span id="fc-count-appsc">0</span>)</button>
           <a href="/last-day-revision" class="btn-pins" target="_blank">&#11088; My Pins</a>
         </div>
+        {% endif %}
         <div class="topic-study-desk">
           <div class="desk-toc hidden" id="toc-appsc"><div class="toc-label">Contents</div><nav id="toc-nav-appsc"></nav></div>
           <div class="desk-notes" id="notes-panel-appsc"></div>
-          <div class="desk-mynotes"><div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-appsc"></span></div><textarea class="mynotes-area" id="user-notes-appsc" placeholder="Take notes while you study&#8230;"></textarea></div>
+          {% if current_user %}<div class="desk-mynotes"><div class="mynotes-header">My Notes <span class="save-ind" id="save-ind-appsc"></span></div><textarea class="mynotes-area" id="user-notes-appsc" placeholder="Take notes while you study&#8230;"></textarea></div>{% endif %}
         </div>
-        <div class="fc-panel hidden" id="fc-panel-appsc"><div class="fc-panel-hdr">Flashcards <button class="fc-close-btn" onclick="toggleFcPanel('appsc')">&#10005;</button></div><div id="fc-list-appsc"></div></div>
+        {% if current_user %}<div class="fc-panel hidden" id="fc-panel-appsc"><div class="fc-panel-hdr">Flashcards <button class="fc-close-btn" onclick="toggleFcPanel('appsc')">&#10005;</button></div><div id="fc-list-appsc"></div></div>{% endif %}
+        {% if current_user %}
         <div class="g2-detail-footer">
           <button class="btn-mark-studied" id="btn-tel-appsc-studied" data-subject="telugu">Mark as Studied</button>
         </div>
+        {% endif %}
       </div>
     </div>
 
   </div>
 </div>
 
+{% if current_user %}
 <!-- Global floating highlight toolbar -->
 <div class="hl-toolbar" id="hl-toolbar" style="display:none">
   <button class="hl-btn hl-yellow" data-color="yellow" title="Yellow">&#9608;</button>
@@ -119,10 +130,11 @@
   <button class="hl-btn hl-remove" data-color="remove" title="Remove">&#10005;</button>
   <button class="hl-btn hl-fc"     data-action="flashcard" title="Flashcard">&#128204;</button>
 </div>
+{% endif %}
 
 <script>
 const TELUGU = {{ structure_json | safe }};
-const USER_ID = {{ user_id }};
+const USER_ID = {{ user_id | tojson }};
 const LS_KEY = 'appsc_progress_' + USER_ID;
 
 const SUBJECT = 'telugu';
